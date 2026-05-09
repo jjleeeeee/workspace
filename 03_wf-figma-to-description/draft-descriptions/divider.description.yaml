@@ -1,0 +1,138 @@
+component:
+  name: "Divider"
+  figma_name: "[V1] Divider"
+  description: "콘텐츠 영역을 시각적으로 구분하는 수평 구분선 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "10379:40800"
+  component_set_key: "5153f6a88c72583fd7bf2923e355e3b5d0e85773"
+  last_synced: "2026-05-04"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Height: ["1", "2", "8"]
+  Style: ["Default-50a", "Default-50a-2"]
+
+variants:
+  count: 12
+  formula: "Mode(2) x Height(3) x Style(2)"
+  constraints:
+    - "All Mode, Height, and Style combinations are valid."
+  registry:
+    - { variant: "Mode=Default, Height=1, Style=Default-50a", node_id: "11849:5885", key: "d44a056f2e073383cdaf0926cf9c7d409dcc0c29" }
+    - { variant: "Mode=Default, Height=2, Style=Default-50a", node_id: "11849:5882", key: "e809a38bd1b934b2102d782c9a805bf4666276f8" }
+    - { variant: "Mode=Default, Height=8, Style=Default-50a", node_id: "10379:40805", key: "a8c1372195c0c2136053a041fff03ef2ded3238e" }
+    - { variant: "Mode=Default, Height=1, Style=Default-50a-2", node_id: "19207:20382", key: "342b2d6fe47a0699492eba560819d24acd54afa0" }
+    - { variant: "Mode=Default, Height=2, Style=Default-50a-2", node_id: "19207:20380", key: "bd24efde1e89a15ed893cf4b37e1f72387414a4d" }
+    - { variant: "Mode=Default, Height=8, Style=Default-50a-2", node_id: "19207:20378", key: "e75327bd9da8e9bc67795e709438d7b7b609b28e" }
+    - { variant: "Mode=Fixed, Height=1, Style=Default-50a", node_id: "11849:5880", key: "41c5b7f3ed217bb5a305989fddcd6e9ccf9d6b4b" }
+    - { variant: "Mode=Fixed, Height=2, Style=Default-50a", node_id: "10379:40803", key: "7c59466b88a571746f07aaaa76def832e4df0252" }
+    - { variant: "Mode=Fixed, Height=8, Style=Default-50a", node_id: "10379:40807", key: "03cdaa8f8e7afadd32d964e2641d3114c8c6d585" }
+    - { variant: "Mode=Fixed, Height=1, Style=Default-50a-2", node_id: "19207:20388", key: "3b97ccd080937027671637ed137302330cbc17a3" }
+    - { variant: "Mode=Fixed, Height=2, Style=Default-50a-2", node_id: "19207:20386", key: "0c7a8d58c3a7219aa625f483fb06cdf8d37d9937" }
+    - { variant: "Mode=Fixed, Height=8, Style=Default-50a-2", node_id: "19207:20384", key: "778efdc10430ff15292dad575f617812f2073f64" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default follows theme outline tokens; Fixed uses fixed outline token families."
+  Height:
+    type: '"1" | "2" | "8"'
+    default: '"1"'
+    description: "Controls divider thickness in pixels."
+  Style:
+    type: '"Default-50a" | "Default-50a-2"'
+    default: '"Default-50a"'
+    description: "Controls the outline alpha token used for the divider fill."
+
+tokens:
+  default_50a:
+    part: "divider"
+    role: "fill"
+    applies_to: "Style=Default-50a"
+    default: "system/color/outline/default-50a"
+    fixed: "system/fixed_color/outline/default-50a"
+  default_50a_2:
+    part: "divider"
+    role: "fill"
+    applies_to: "Style=Default-50a-2"
+    default: "system/color/outline/default-50a-2"
+    fixed: "system/fixed_color/outline/default-100a"
+  height_1:
+    part: "divider"
+    role: "height"
+    applies_to: "Height=1"
+    value: "1px"
+  height_2:
+    part: "divider"
+    role: "height"
+    applies_to: "Height=2"
+    value: "2px"
+  height_8:
+    part: "divider"
+    role: "height"
+    applies_to: "Height=8"
+    value: "8px"
+
+layout:
+  component_size:
+    width: "393px"
+    heights: ["1px", "2px", "8px"]
+  divider:
+    sizing:
+      horizontal: "fill"
+      vertical: "fill or fixed by Height"
+    alignment: "stretch"
+  part_spacing:
+    "component__to__divider":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "none"
+        value: "0px"
+      variants: []
+
+implementation_order:
+  - "Resolve Height first and render a 393px-wide horizontal region."
+  - "Apply Mode and Style token to the divider fill."
+  - "Stretch the divider across the parent width when used in a container."
+  - "Keep the divider free of radius, text, icon, and interaction behavior."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+    - "Height"
+    - "Style"
+  props:
+    - "Mode"
+    - "Height"
+    - "Style"
+  assets:
+    - "No asset-backed visuals."
+  layout:
+    - "393px reference width"
+    - "1px, 2px, and 8px heights"
+    - "Stretch alignment"
+  exclusions:
+    - "No matching markitdown divider reference exists in refs/markitdown-output."
+    - "This workflow does not create a derived divider.md file."
+
+rules:
+  do:
+    - "Use Divider to separate content groups without adding semantic content."
+    - "Use Height=1 or Height=2 for thin separation."
+    - "Use Height=8 only when a stronger section break is needed."
+    - "Use Fixed mode only in fixed-theme surfaces."
+  dont:
+    - "Do not use Divider as a text label or interactive control."
+    - "Do not override the fill color outside the Style and Mode tokens."
+    - "Do not add icon, text, or radius to the divider."
+
+spec_notes:
+  source:
+    - "Framelink full extraction for node 10379:40800."
+    - "Official Figma Plugin API read-only extraction for all 12 variants and bound fill tokens."
+    - "Code Connect context for variant properties."
+    - "Registry reference: refs/figma-component-keys/variant-keys/divider.md."

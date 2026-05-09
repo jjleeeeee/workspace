@@ -1,0 +1,181 @@
+component:
+  name: "Select Number Box"
+  figma_name: "Select_Number_Box"
+  description: "선택된 요소의 순서나 99+ 초과 상태를 작은 원형 숫자로 표시하는 상태 표시 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "12436:362"
+  component_set_key: "9d3d023e0d5060cdbcb54f40ff6c1df7a0c333a5"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  State: ["Selected", "Selected-99+", "Unselected"]
+
+variants:
+  count: 6
+  formula: "Mode(2) x State(3)"
+  constraints:
+    - "All Mode and State combinations are valid."
+    - "Selected uses a numeric label up to two digits; Selected-99+ uses the text label 99+."
+    - "Unselected has no number text child."
+  registry:
+    - { variant: "Mode=Default, State=Selected", node_id: "12436:394", key: "c11f6eb4ddb78f5b3f2ae2139ef159337aa23172" }
+    - { variant: "Mode=Default, State=Selected-99+", node_id: "15538:847", key: "31267794ff4f6670fc791297569acb7fb0f60cda" }
+    - { variant: "Mode=Default, State=Unselected", node_id: "12436:397", key: "d2ca6975c7bd129eeaae629b8417ffad90402514" }
+    - { variant: "Mode=Fixed, State=Selected", node_id: "12436:376", key: "519ef74860760d4f2c6e95e8ed5279715d099bc0" }
+    - { variant: "Mode=Fixed, State=Selected-99+", node_id: "15538:852", key: "d36fec3d6c005fa162632b27112411852c7ca967" }
+    - { variant: "Mode=Fixed, State=Unselected", node_id: "12436:379", key: "3147c2e5f3b66ec79c3192a6ba2023407e82b6a7" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default is for normal surfaces; Fixed is for image-editing or high-contrast overlay contexts."
+  State:
+    type: '"Selected" | "Selected-99+" | "Unselected"'
+    default: '"Selected"'
+    description: "Selected shows a two-digit number, Selected-99+ shows 99+, and Unselected shows only the empty marker."
+  value:
+    type: '"1-99" | "99+" | null'
+    default: '"99"'
+    description: "Content prop for selected order. Values with three or more digits must be represented by the Selected-99+ state."
+
+tokens:
+  selected_bg_default:
+    part: "checkbox"
+    role: "fill"
+    applies_to: "Mode=Default, State=Selected or Selected-99+"
+    token: "system/fixed_color/roles/accent-primary"
+  selected_bg_fixed:
+    part: "checkbox"
+    role: "fill"
+    applies_to: "Mode=Fixed, State=Selected or Selected-99+"
+    token: "system/fixed_color/status/active-primary"
+  selected_text_default:
+    part: "number text"
+    role: "fill"
+    applies_to: "Mode=Default, State=Selected or Selected-99+"
+    token: "system/color/text/default-reverse"
+  selected_text_fixed:
+    part: "number text"
+    role: "fill"
+    applies_to: "Mode=Fixed, State=Selected or Selected-99+"
+    token: "system/fixed_color/text/default-reverse"
+  unselected_bg:
+    part: "checkbox"
+    role: "fill"
+    applies_to: "State=Unselected"
+    token: "system/fixed_color/surface/default-200a"
+    opacity: "20%"
+  unselected_stroke_default:
+    part: "checkbox"
+    role: "stroke"
+    applies_to: "Mode=Default, State=Unselected"
+    token: "system/fixed_color/outline/default-300a"
+    opacity: "30%"
+  unselected_stroke_fixed:
+    part: "checkbox"
+    role: "stroke"
+    applies_to: "Mode=Fixed, State=Unselected"
+    token: "system/fixed_color/icon/300a"
+    opacity: "30%"
+  selected_text_typography:
+    part: "number text"
+    role: "typography"
+    applies_to: "State=Selected"
+    font_size: "base/text_size/text-50"
+    line_height: "base/lineheight/text-lineheight-50"
+    font_weight: "base/text_weight/text-weight-700"
+  selected_99_text_typography:
+    part: "number text"
+    role: "typography"
+    applies_to: "State=Selected-99+"
+    font_size: "base/text_size/text-25"
+    line_height: "base/lineheight/text-lineheight-25"
+    font_weight: "base/text_weight/text-weight-700"
+
+
+typography:
+  caption_s_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-s/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 2 text nodes."
+  caption_xs_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-xs/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 2 text nodes."
+
+layout:
+  component_size: "24x24"
+  checkbox_size: "22x22"
+  checkbox_radius: "100px"
+  unselected_stroke_weight: "1.5px"
+  text_bounds:
+    Selected: "16x16"
+    Selected-99+: "20x13"
+  part_spacing:
+    checkbox__to__number_text:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "center aligned"
+        value: "0px; text is centered inside checkbox"
+      variants:
+        - when: "State=Unselected"
+          token: "not applicable"
+          value: "No text node"
+
+implementation_order:
+  - "Select Mode and State variant."
+  - "Render a 24x24 outer component with a 22x22 circular marker."
+  - "For Selected state, show the selected order with caption-s typography."
+  - "For Selected-99+ state, show 99+ with caption-xs typography."
+  - "For Unselected state, remove the number text and apply fill plus stroke tokens."
+  - "Apply fixed-color tokens for image-editing or overlay contexts."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+    - "State"
+  props:
+    - "Mode"
+    - "State"
+    - "value"
+  assets:
+    - "No asset-backed visual is used."
+  layout:
+    - "24x24 component"
+    - "22x22 checkbox"
+    - "100px radius"
+    - "1.5px unselected stroke"
+    - "16x16 Selected text bounds"
+    - "20x13 Selected-99+ text bounds"
+  exclusions:
+    - "This workflow does not create a derived select-number-box.md file."
+    - "Figma Description writeback is intentionally skipped for this worker task."
+
+rules:
+  do:
+    - "Use Select Number Box when selection order affects the result."
+    - "Show selected order up to two digits."
+    - "Use 99+ when the selected order has three or more digits."
+    - "Use fixed_color treatment in image-editing contexts."
+    - "Place the number inside or close to the selected object so the target remains clear."
+  dont:
+    - "Do not expose three or more digits directly inside the box."
+    - "Do not show a number in Unselected state."
+    - "Do not use Select Number Box for simple checkbox selection."
+    - "Do not place the number far away from the selected target."
+
+spec_notes:
+  source:
+    - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 12436:362."
+    - "Local usage reference: refs/markitdown-output/markitdown-select-number-box.md."
+  figma_name_cleanup:
+    - "Live Figma component set name includes a control character before Select_Number_Box; YAML stores the cleaned name."

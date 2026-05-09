@@ -1,0 +1,25 @@
+{
+  "$schema": "cds-ds/manifest/v1",
+  "description": "Weverse DS 모듈 매니페스트 스킴. DS module 최상위 폴더에 ds-manifest.json 으로 배치한다.",
+  "placement": "DS module 최상위 폴더 고정. 경로: <ds-module-root>/ds-manifest.json",
+  "fields": {
+    "$schema": "스킴 식별자 (optional). 'cds-ds/manifest/v1'",
+    "platform": "대상 플랫폼. 'ios' | 'android' | 'web' (필수)",
+    "version": "DS 모듈 버전 레이블 (optional). 예: 'v2.0.0' — 정보 표기용, 카탈로그 fetch에 사용 안 함",
+    "tokens": "플랫폼에서 사용 가능한 DS 토큰 컬렉션 이름 배열 (필수). cds-catalogs catalogs/tokens/ 의 파일명과 일치",
+    "components": "플랫폼에서 사용 가능한 DS 컴포넌트(atom) 이름 배열 (필수). cds-catalogs catalogs/atoms/ 의 디렉터리명과 일치"
+  },
+  "notes": {
+    "ownership": "ds-manifest.json 은 플랫폼 팀(호출자)이 소유·관리한다. DS MCP 플러그인은 스킴만 공급한다.",
+    "role": "manifest='무엇을 쓸 수 있다' / cds-catalog='무엇이란 이런 속성을 가지고 있다'. 둘 다 DSL 생성에 필요하다.",
+    "filtering": "manifest 전달 시 ds_list/ds_get 은 선언된 항목만 반환·허용한다. cds-catalog fetch 는 항상 수행한다.",
+    "fallback": "ds-manifest.json 없으면 기존 동작(cds-catalogs 전체 카탈로그) 유지."
+  },
+  "example": {
+    "$schema": "cds-ds/manifest/v1",
+    "platform": "ios",
+    "version": "v2.0.0",
+    "tokens": ["WDS_tokens", "WDS_tokens_dark", "WDS_size"],
+    "components": ["textbutton", "chip", "checkbox", "textfield"]
+  }
+}

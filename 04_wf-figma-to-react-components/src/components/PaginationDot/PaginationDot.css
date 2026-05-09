@@ -1,0 +1,63 @@
+.chord-pagination-dot {
+  --pagination-selected-fill: var(--cds-system-fixed-color-icon-default, #ffffff);
+  --pagination-selected-stroke: var(--cds-system-fixed-color-outline-gray-300, #3e3e3e);
+  --pagination-unselected-fill: var(--cds-system-fixed-color-icon-white-300a-same, #ffffff4d);
+  --pagination-unselected-stroke: var(--cds-system-fixed-color-outline-default-reverse-300a, #0000004d);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 120px;
+  block-size: 32px;
+  gap: var(--cds-system-size-padding-box-75, 6px);
+  padding-block: var(--cds-system-size-padding-box-150, 12px);
+  vertical-align: middle;
+}
+
+.chord-pagination-dot__frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 8px;
+  block-size: 8px;
+}
+
+.chord-pagination-dot__frame[data-size="small"] {
+  inline-size: 6px;
+  block-size: 6px;
+}
+
+.chord-pagination-dot__frame[data-size="tiny"] {
+  inline-size: 4px;
+  block-size: 4px;
+}
+
+.chord-pagination-dot__dot {
+  display: block;
+  inline-size: 6px;
+  block-size: 6px;
+  border: 1px solid var(--pagination-unselected-stroke);
+  border-radius: 999px;
+  background: var(--pagination-unselected-fill);
+}
+
+.chord-pagination-dot__frame[data-size="small"] .chord-pagination-dot__dot {
+  inline-size: 4px;
+  block-size: 4px;
+}
+
+.chord-pagination-dot__frame[data-size="tiny"] .chord-pagination-dot__dot {
+  inline-size: 2px;
+  block-size: 2px;
+}
+
+.chord-pagination-dot__dot[data-selected="true"] {
+  border-color: var(--pagination-selected-stroke);
+  background: var(--pagination-selected-fill);
+}
+
+.chord-pagination-dot[data-mode="default"] {
+  --pagination-selected-fill: var(--cds-system-color-icon-default, #000000);
+  --pagination-selected-stroke: var(--cds-system-color-outline-default-reverse, #ffffff);
+  --pagination-unselected-fill: var(--cds-system-color-icon-300a, #0000004d);
+  --pagination-unselected-stroke: var(--cds-system-color-outline-default-reverse-300a, #ffffff4d);
+}

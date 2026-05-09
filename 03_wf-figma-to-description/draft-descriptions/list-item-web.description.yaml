@@ -1,0 +1,301 @@
+component:
+  name: "List Item Web"
+  figma_name: "[V2] List_Item_Web"
+  description: "웹 목록에서 대표 이미지, 제목/보조문구, 우측 보조 액션을 중앙 정렬 행으로 조합하는 리스트 아이템 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "69579:9043"
+  component_set_key: "42c19f42926776126ff312006b4505a4e03a905a"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Size: ["Small", "Medium"]
+  Alignment: ["Center"]
+  States: ["Default", "Hover(Pressed)", "Disabled"]
+
+variants:
+  count: 12
+  formula: "Mode(2) x Size(2) x Alignment(1) x States(3)"
+  constraints:
+    - "All Mode, Size, Alignment=Center, and States combinations are valid."
+    - "Alignment currently has only Center as a live variant value."
+    - "Show Trailing, Show Divider, Show Medium Leading, and Show Small Leading are boolean props, not variant axes."
+  registry:
+    - { variant: "Mode=Default, Size=Small, Alignment=Center, States=Default", node_id: "69579:9044", key: "67ac2de74867f18f35dbcdaa55942e9667226037" }
+    - { variant: "Mode=Default, Size=Small, Alignment=Center, States=Hover(Pressed)", node_id: "69579:9050", key: "8b6668700dac10ed1214b8e32cb23e7c84222aa9" }
+    - { variant: "Mode=Default, Size=Small, Alignment=Center, States=Disabled", node_id: "69579:9056", key: "d911689c72b0738e502371c62b0140597f63f280" }
+    - { variant: "Mode=Default, Size=Medium, Alignment=Center, States=Default", node_id: "69579:9080", key: "27a7faaf7b1d2c0b34502d703e63d67c672b24c2" }
+    - { variant: "Mode=Default, Size=Medium, Alignment=Center, States=Hover(Pressed)", node_id: "69579:9086", key: "ca7be8762f9f1dd7220b06a61a31ba318ac56c8f" }
+    - { variant: "Mode=Default, Size=Medium, Alignment=Center, States=Disabled", node_id: "69579:9092", key: "f62e822ff8f5c8c54c343a67070a5ec573889771" }
+    - { variant: "Mode=Fixed, Size=Small, Alignment=Center, States=Default", node_id: "69579:9116", key: "d368da60bc4a0dc573f0899254f4d835ac00a06f" }
+    - { variant: "Mode=Fixed, Size=Small, Alignment=Center, States=Hover(Pressed)", node_id: "69579:9122", key: "29ba4768f1bbb110db69d4dfb51bec3951b215cd" }
+    - { variant: "Mode=Fixed, Size=Small, Alignment=Center, States=Disabled", node_id: "69579:9128", key: "c306056a8fb8f7db85b0b21c3531079af21b3086" }
+    - { variant: "Mode=Fixed, Size=Medium, Alignment=Center, States=Default", node_id: "69579:9152", key: "c716f4e9ab461cd8423dadcff03ea04c4e2d2a44" }
+    - { variant: "Mode=Fixed, Size=Medium, Alignment=Center, States=Hover(Pressed)", node_id: "69579:9158", key: "139837123c74ccaa4fa0e5ba868ea6fddc42fdd2" }
+    - { variant: "Mode=Fixed, Size=Medium, Alignment=Center, States=Disabled", node_id: "69579:9164", key: "e693cf738805aea6444445ed34b21c7d04c61837" }
+
+props:
+  showTrailing:
+    figma_property: "Show Trailing#37809:4"
+    type: "boolean"
+    default: "true"
+    description: "Shows the trailing detail and icon module."
+  showDivider:
+    figma_property: "Show Divider#37809:5"
+    type: "boolean"
+    default: "true"
+    description: "Shows the row divider when enabled."
+  showMediumLeading:
+    figma_property: "Show Medium Leading#69756:0"
+    type: "boolean"
+    default: "true"
+    description: "Shows the 56x56 leading media slot for Size=Medium."
+  showSmallLeading:
+    figma_property: "Show Small Leading#69756:13"
+    type: "boolean"
+    default: "true"
+    description: "Shows the 44x44 leading media slot for Size=Small."
+
+tokens:
+  title_text_default:
+    part: "Content / Title"
+    role: "text fill"
+    applies_to: "Mode=Default"
+    token: "system/color/text/default"
+  title_text_fixed:
+    part: "Content / Title"
+    role: "text fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/text/default"
+  body_text_default:
+    part: "Content / Body"
+    role: "text fill"
+    applies_to: "Mode=Default"
+    token: "system/color/text/400a"
+    opacity: 0.5
+  body_text_fixed:
+    part: "Content / Body"
+    role: "text fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/text/400a"
+    opacity: 0.5
+  trailing_detail_default:
+    part: "Trailing / Detail"
+    role: "text fill"
+    applies_to: "Mode=Default"
+    token: "system/color/text/default"
+  trailing_detail_fixed:
+    part: "Trailing / Detail"
+    role: "text fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/text/default"
+  trailing_icon_default:
+    part: "Trailing / Icon"
+    role: "icon fill"
+    applies_to: "Mode=Default"
+    token: "system/color/icon/default"
+  trailing_icon_fixed:
+    part: "Trailing / Icon"
+    role: "icon fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/icon/default"
+  badge_dot:
+    part: "Content / Title / BadgeDot"
+    role: "fill"
+    applies_to: "Title badge indicator"
+    token: "system/color/status/danger-red"
+  disabled_opacity:
+    part: "state layer"
+    role: "opacity"
+    applies_to: "States=Disabled"
+    value: 0.2
+  typography_title:
+    part: "Content / Title"
+    role: "typography"
+    token: "body-m/system-700"
+    value: "15px font, 21px line-height"
+  typography_body:
+    part: "Content / Body"
+    role: "typography"
+    token: "body-xs/system-400"
+    value: "13px font, 17px line-height"
+  typography_trailing:
+    part: "Trailing / Detail"
+    role: "typography"
+    token: "body-xs/system-500"
+    value: "13px font, 17px line-height"
+
+
+typography:
+  caption_m_system_700:
+    font_family: "Pretendard"
+    classification: "actual-font"
+    system_fallback: "system sans-serif"
+    token_fallback: "caption-m/system-700"
+    note: "Pretendard is treated as an actual product font family observed in live Figma. Live typography-only audit 2026-05-09; Figma font style Bold; 12 text nodes."
+  body_m_system_700:
+    font_family: "Pretendard"
+    classification: "actual-font"
+    system_fallback: "system sans-serif"
+    token_fallback: "body-m/system-700"
+    note: "Pretendard is treated as an actual product font family observed in live Figma. Live typography-only audit 2026-05-09; Figma font style Bold; 12 text nodes."
+  body_xs_system_400:
+    font_family: "Pretendard"
+    classification: "actual-font"
+    system_fallback: "system sans-serif"
+    token_fallback: "body-xs/system-400"
+    note: "Pretendard is treated as an actual product font family observed in live Figma. Live typography-only audit 2026-05-09; Figma font style Regular; 12 text nodes."
+  body_xs_system_500:
+    font_family: "Pretendard"
+    classification: "actual-font"
+    system_fallback: "system sans-serif"
+    token_fallback: "body-xs/system-500"
+    note: "Pretendard is treated as an actual product font family observed in live Figma. Live typography-only audit 2026-05-09; Figma font style Medium; 11 text nodes."
+
+assets:
+  leading_thumbnail:
+    part: "Leading"
+    role: "image"
+    source: "[V2] Thumbnail"
+    component_set_key: "d0a05143f1a3867b7d8d30eacf939b885d41e0eb"
+    applies_to: "Show Small Leading=true or Show Medium Leading=true"
+    size: "44x44px for Size=Small; 56x56px for Size=Medium"
+    implementation: "Use the nested Thumbnail component for media."
+    semantic_rule: "The leading slot remains media content, not a generic rectangle."
+  title_badge_dot:
+    part: "Content / Title / BadgeDot"
+    role: "badge"
+    source: "Badge_Dot"
+    component_set_key: "d1ea898a9e908e7470a7518abae5b45c18e0a58a"
+    applies_to: "Title badge indicator"
+    size: "4x4px"
+    implementation: "Use the nested Badge_Dot component."
+    semantic_rule: "The dot is a status badge, not punctuation or text content."
+  trailing_arrow_icon:
+    part: "Trailing / Icon"
+    role: "icon"
+    source: "24/en/ic_arrow_right_en_medium"
+    applies_to: "Show Trailing=true"
+    size: "10x20px rendered through icon_area size=small(20), em=Off"
+    tint:
+      default: "system/color/icon/default"
+      fixed: "system/fixed_color/icon/default"
+    implementation: "Use the existing DS icon asset."
+    semantic_rule: "The trailing arrow is a navigation affordance icon, not a text character."
+
+composition:
+  uses:
+    - component: "[V2] Thumbnail"
+      node_id: "50545:51014"
+      component_set_key: "d0a05143f1a3867b7d8d30eacf939b885d41e0eb"
+      role: "leading media slot"
+      usage_condition: "Show Small Leading=true or Show Medium Leading=true"
+      spec_owner: "[V2] Thumbnail Description"
+    - component: "Badge_Dot"
+      node_id: "8451:112783"
+      component_set_key: "d1ea898a9e908e7470a7518abae5b45c18e0a58a"
+      role: "title badge indicator"
+      usage_condition: "referenced in the Title module"
+      spec_owner: "Badge_Dot Description"
+    - component: "_atoms / modules / Trailing (Optional)"
+      node_id: "57343:20409"
+      component_set_key: "a984ca34f20a11ce339609566d77496f48630b55"
+      role: "right-side detail and icon slot"
+      usage_condition: "Show Trailing=true"
+      spec_owner: "Trailing component set"
+    - component: "[V2] Divider"
+      node_id: "59215:76787"
+      component_set_key: "a4421d92006feceff814786c7733c63403cebf92"
+      role: "row separator"
+      usage_condition: "Show Divider=true"
+      spec_owner: "[V2] Divider Description"
+
+layout:
+  component_size: "393px wide; Size=Small 393x57px; Size=Medium 393x81px"
+  state_layer:
+    direction: "horizontal"
+    align: "start / center"
+    gap: "12px"
+    Small:
+      size: "393x56px"
+      padding: "6px 16px"
+    Medium:
+      size: "393x80px"
+      padding: "12px 16px"
+  slots:
+    leading:
+      Small: "44x44px"
+      Medium: "56x56px"
+    content:
+      Small: "245x44px"
+      Medium: "233x44px"
+      title_height: "21px"
+      body_height: "17px"
+    trailing:
+      size: "48x20px"
+  part_spacing:
+    "Leading__to__Content":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        value: "12px"
+      variants: []
+    "Content__to__Trailing":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        value: "12px"
+      variants: []
+
+interaction:
+  status:
+    behavior: "States=Disabled applies 0.2 opacity to the state layer; Hover(Pressed) preserves Default layout metrics."
+  alignment:
+    behavior: "Alignment currently resolves to Center only."
+  optional_slots:
+    behavior: "When leading, trailing, or divider props are false, remove the slot and collapse the associated gap."
+
+implementation_order:
+  - "Resolve Size first because it changes row height, vertical padding, leading media size, and content width."
+  - "Resolve Alignment next; the current component set only supports Center alignment."
+  - "Resolve Mode before color application because text and icon tokens switch token families."
+  - "Apply States after Mode; Disabled lowers state-layer opacity without replacing text or icon tokens."
+  - "Apply optional leading, trailing, and divider props last so removed slots collapse their layout gaps."
+
+implementation_coverage:
+  axes: "Implement all 12 Mode x Size x Alignment x States variants, with Alignment fixed to Center."
+  props: "Expose Show Trailing, Show Divider, Show Medium Leading, and Show Small Leading as boolean controls."
+  assets: "Leading Thumbnail, title Badge_Dot, and trailing arrow icon must remain component or asset backed."
+  layout: "Reflect Size-specific row height, padding, leading size, content width, 12px horizontal gaps, and Center alignment."
+  exclusions: "Do not implement nested Thumbnail, Badge_Dot, Trailing, Divider, icon_area, or text module internals inside the parent."
+
+rules:
+  do:
+    - "Use Web List Item for web list rows that need a leading media thumbnail, two-line content, and optional trailing detail."
+    - "Keep Alignment=Center unless a new live variant value is added."
+    - "Use Default mode for adaptive web surfaces and Fixed mode only in fixed-color contexts."
+    - "Apply Disabled through the verified state-layer opacity behavior."
+    - "Keep leading, trailing, and divider visibility controlled by their boolean props."
+  dont:
+    - "Do not create left, right, or stretch alignment variants that are not present in the component set."
+    - "Do not replace Thumbnail or Badge_Dot with parent-level CSS primitives."
+    - "Do not preserve layout gaps after optional slots are hidden."
+    - "Do not use Native typography metrics for Web variants."
+    - "Do not treat internal icon_area or vector layers as parent-level composition dependencies."
+
+spec_notes:
+  source:
+    - "Live Figma Plugin API readback from component set 69579:9043 on 2026-05-04."
+    - "Local variant registry reference: refs/figma-component-keys/variant-keys/list-item-web.md."
+  readback:
+    - "componentPropertyDefinitions exposes four boolean optional-slot props."
+    - "States=Disabled is verified as state-layer opacity 0.2 in the sampled live variants."
+
+source_gaps:
+  - field: "usage_reference"
+    issue: "No matching markitdown-output file for List_Item_Web was present in the workflow refs."
+    decision: "Usage rules are limited to live Figma structure, variant keys, and confirmed nested DS composition."

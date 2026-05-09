@@ -1,0 +1,73 @@
+{
+  "$schema": "cds-ds/dsl/v2",
+  "schemaVersion": "2.0.0",
+  "metadata": {
+    "generatedAt": "2026-04-28T00:00:00+09:00",
+    "generator": "cds-ds@2.0.0",
+    "sourceFile": {
+      "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
+      "fileName": "Chord-Design-System",
+      "nodeId": "11992:71718"
+    }
+  },
+  "coordinateSystem": { "unit": "px", "origin": "topLeft", "scope": "relativeToParent", "scale": 1.0 },
+  "themes": ["light", "dark"],
+  "platform": "ios",
+  "dsManifest": {
+    "platform": "ios",
+    "tokens": ["tokens.color.v1.0", "tokens.size.v1.0", "tokens.typography.v1.0"],
+    "components": ["checkbox"]
+  },
+  "nodes": [
+    {
+      "id": "checkbox",
+      "type": "component",
+      "name": "WDSCheckbox",
+      "catalog": {
+        "id": "checkbox",
+        "variant": { "Type": "circle", "Status": "Default" },
+        "props": {
+          "checked": false,
+          "label": "텍스트를 입력해주세요",
+          "enabled": true
+        },
+        "slots": {
+          "label": { "text": "텍스트를 입력해주세요" }
+        },
+        "state": "default"
+      },
+      "layout": {
+        "kind": "stack",
+        "axis": "horizontal",
+        "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 24 } },
+        "spacing": 8,
+        "alignment": { "main": "start", "cross": "center" }
+      },
+      "children": [
+        {
+          "id": "check-indicator",
+          "type": "shape",
+          "name": "check-indicator",
+          "layout": {
+            "size": { "width": { "mode": "fixed", "value": 24 }, "height": { "mode": "fixed", "value": 24 } }
+          },
+          "style": {
+            "strokes": [{ "align": "inside", "thickness": 1.5, "color": "token:system.color.line.default" }],
+            "cornerRadius": 999
+          }
+        },
+        {
+          "id": "checkbox-label",
+          "type": "text",
+          "name": "checkbox-label",
+          "layout": { "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } } },
+          "text": {
+            "value": "텍스트를 입력해주세요",
+            "textStyle": "textStyle:body-md/system-400",
+            "color": "token:system.color.text.default-50a"
+          }
+        }
+      ]
+    }
+  ]
+}

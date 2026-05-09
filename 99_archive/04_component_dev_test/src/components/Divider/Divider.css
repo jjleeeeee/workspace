@@ -1,0 +1,36 @@
+.chord-divider {
+  display: block;
+  inline-size: 100%;
+  block-size: var(--divider-height);
+  margin: 0;
+  border: 0;
+  background: var(--divider-color);
+}
+
+.chord-divider[data-mode="default"][data-style-variant="default-50a"] {
+  --divider-color: var(--cds-system-color-outline-default-50a, #0000000a);
+}
+
+.chord-divider[data-mode="default"][data-style-variant="default-50a-2"] {
+  --divider-color: var(--cds-system-color-outline-default-50a-2, #0000000a);
+}
+
+.chord-divider[data-mode="fixed"][data-style-variant="default-50a"] {
+  --divider-color: var(--cds-system-fixed-color-outline-default-50a, var(--cds-system-color-outline-default-50a, #0000000a));
+}
+
+.chord-divider[data-mode="fixed"][data-style-variant="default-50a-2"] {
+  --divider-color: var(--cds-system-fixed-color-outline-default-50a-2, var(--cds-system-color-outline-default-50a-2, #0000000a));
+}
+
+.chord-divider[data-height="1"] {
+  --divider-height: 1px;
+}
+
+.chord-divider[data-height="2"] {
+  --divider-height: 2px;
+}
+
+.chord-divider[data-height="8"] {
+  --divider-height: 8px;
+}

@@ -1,0 +1,216 @@
+component:
+  name: "Search"
+  figma_name: "[V2] Search"
+  description: "키워드를 입력해 원하는 정보나 결과를 찾는 검색 입력 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "59722:17972"
+  component_set_key: "cbcd2baf8a758cd859c194359b69faf7fa3e543a"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  State: ["Default", "Enabled", "Completed"]
+
+variants:
+  count: 6
+  formula: "Mode(2) x State(3)"
+  constraints:
+    - "All Mode and State combinations are implemented."
+    - "Label is a text component property, not a variant axis."
+  registry:
+    - { variant: "Mode=Default, State=Default", node_id: "59722:17973", key: "d455cda2821f776c79c12fc451fe92f527406650" }
+    - { variant: "Mode=Default, State=Enabled", node_id: "59722:17986", key: "f3ebde5ec61aeae719550549371fefce873058b5" }
+    - { variant: "Mode=Default, State=Completed", node_id: "59722:17998", key: "dcfbf828f3bf36255f90867756ab8d674e1b25bc" }
+    - { variant: "Mode=Fixed, State=Default", node_id: "59722:18010", key: "a9aef86d9671516fad65b68a1c76e576f267f16b" }
+    - { variant: "Mode=Fixed, State=Enabled", node_id: "59722:18016", key: "2a667f4884fe254dd46268566355dab0178eaa81" }
+    - { variant: "Mode=Fixed, State=Completed", node_id: "59722:18036", key: "cf3643e8293a9ab5d5982642c8daf979f906a832" }
+
+props:
+  Label:
+    type: "text"
+    default: "Search"
+    description: "Placeholder or query text shown inside the search input."
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default uses adaptive color tokens; Fixed uses fixed_color tokens."
+  State:
+    type: '"Default" | "Enabled" | "Completed"'
+    default: '"Default"'
+    description: "Default is empty, Enabled is active typing, Completed is populated search text."
+
+tokens:
+  search_bar_surface_default:
+    part: "Search Bar"
+    role: "fill"
+    applies_to: "Mode=Default"
+    token: "system/color/surface/default-gray-50"
+  search_bar_surface_fixed:
+    part: "Search Bar"
+    role: "fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/surface/default-gray-50"
+  placeholder_text_default:
+    part: "Text"
+    role: "fill"
+    applies_to: "Mode=Default, State=Default"
+    token: "system/color/text/300a"
+    opacity: 0.3
+  placeholder_text_fixed:
+    part: "Text"
+    role: "fill"
+    applies_to: "Mode=Fixed, State=Default"
+    token: "system/fixed_color/text/300a"
+    opacity: 0.3
+  query_text_default:
+    part: "Text"
+    role: "fill"
+    applies_to: "Mode=Default, State=Enabled or Completed"
+    token: "system/color/text/default"
+  query_text_fixed:
+    part: "Text"
+    role: "fill"
+    applies_to: "Mode=Fixed, State=Enabled or Completed"
+    token: "system/fixed_color/text/default"
+  caret_default:
+    part: "Caret"
+    role: "fill"
+    applies_to: "Mode=Default, State=Enabled or Completed"
+    token: "system/color/surface/default-reverse"
+  caret_fixed:
+    part: "Caret"
+    role: "fill"
+    applies_to: "Mode=Fixed, State=Enabled or Completed"
+    token: "system/fixed_color/surface/default-reverse"
+  clear_button_bg_default:
+    part: "Ellipse 197"
+    role: "fill"
+    applies_to: "Mode=Default"
+    token: "system/color/surface/gray-300"
+  clear_button_bg_fixed:
+    part: "Ellipse 197"
+    role: "fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/surface/gray-300"
+  clear_icon_default_mode_default_state:
+    part: "Vector 39 and Vector 40"
+    role: "stroke"
+    applies_to: "Mode=Default, State=Default"
+    token: "system/color/icon/default-reverse"
+  clear_icon_fixed_family:
+    part: "Vector 39 and Vector 40"
+    role: "stroke"
+    applies_to: "Mode=Default active states and Mode=Fixed states"
+    token: "system/fixed_color/icon/default"
+
+
+typography:
+  body_s_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-s/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 6 text nodes."
+
+assets:
+  search_icon:
+    part: "icon_area"
+    role: "icon"
+    source: "icon_area, size=xsmall(16), em=On"
+    applies_to: "All variants"
+    size: "16x16px"
+    implementation: "Use the existing search icon slot in icon_area."
+    semantic_rule: "Search purpose must be communicated with an icon, not only placeholder text."
+  clear_button:
+    part: "Delete Icon"
+    role: "icon"
+    source: "icon/20/ic_delete and 공통요소 / 인풋박스 / ic_input_X"
+    applies_to: "Enabled and Completed states"
+    size: "24x24px"
+    implementation: "Use the existing clear icon component for deleting the whole query."
+    semantic_rule: "Clear action must remain an interactive icon button, not a text X."
+
+layout:
+  component_set:
+    width: 1360
+    height: 428
+  variant:
+    width: 361
+    height: 36
+    direction: "horizontal"
+    radius: 24
+    item_spacing_default: 12
+    item_spacing_fixed_completed: 8
+  search_bar:
+    width: 361
+    height: 36
+    direction: "horizontal"
+    gap: 8
+    padding: "6px 12px"
+    radius: 24
+  input_area:
+    width: 305
+    height: 24
+    gap: 4
+  icons:
+    search_icon: "16x16px"
+    clear_icon: "24x24px"
+  part_spacing:
+    "Search_Icon__to__Text":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        value: "4px inside input area"
+      variants: []
+    "Input_Area__to__Clear_Button":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        value: "8px inside Search Bar"
+      variants: []
+
+implementation_order:
+  - "Resolve Mode first because Default and Fixed use different token families."
+  - "Resolve State next to switch placeholder text, query text, caret, and clear action visibility."
+  - "Render the search icon before the input label in every variant."
+  - "Render clear button only when the component is active or populated."
+  - "Keep the 36px pill search bar, 12px horizontal padding, and 24px radius."
+
+implementation_coverage:
+  axes: "Implement all 6 Mode x State variants."
+  props: "Expose Label as the text content control for placeholder or search query."
+  assets: "Preserve search icon and clear icon as icon-backed visuals."
+  layout: "Reflect 361x36 search bar, 24px radius, 12px horizontal padding, 8px bar gap, and 16px search icon."
+  exclusions: "Do not create a results list in this component Description; result feedback belongs to the surrounding search experience."
+
+rules:
+  do:
+    - "Use Search when users enter a keyword to narrow or find content."
+    - "Show the search icon before the input text."
+    - "Provide a clear action while a query is active or completed."
+    - "Connect result count or no-result feedback near the search context outside this field."
+    - "Open the keyboard when the enabled search field is focused."
+  dont:
+    - "Do not make Search look like a generic text field without the search icon."
+    - "Do not hide the clear action when a query is present."
+    - "Do not visually treat an enabled search box as disabled."
+    - "Do not detach search results from the query context."
+
+spec_notes:
+  source:
+    - "Live Figma readback from component set 59722:17972 on 2026-05-04."
+    - "Variant key snapshot: refs/figma-component-keys/variant-keys/search.md."
+    - "Usage reference: refs/markitdown-output/markitdown-search.md."
+  usage:
+    - "Search is an input component for query entry, not a generic Text Field substitute."
+    - "Live readback has a legacy rich-text description value, but this draft stores YAML only in plain description."
+
+source_gaps:
+  - field: "legacy_description_markdown"
+    reason: "Live readback reports existing rich-text description length 16; no Figma write was requested, so this draft does not clear it."
+  - part: "search icon"
+    reason: "The icon_area instance confirms a 16px icon slot, but the exact selected search icon component key was not returned as a component set."

@@ -1,0 +1,83 @@
+{
+  "$schema": "cds-ds/dsl/v1",
+  "description": "Weverse DS DSL v1 — Figma 뷰를 DS 컴포넌트·토큰·레이아웃으로 표현한다.",
+  "fields": {
+    "screen": "Figma 프레임 이름 (frame.name)",
+    "themes": "테마 축과 값 (optional). 예: { Mode: ['Light','Dark'] }",
+    "platform": "대상 플랫폼 (optional). ds-manifest.json 로드 시 포함. 'ios' | 'android' | 'web'",
+    "dsManifest": "DSL 생성 시 적용된 플랫폼 매니페스트 스냅샷 (optional). { platform, tokens, components } — 어떤 DS 자산 범위에서 생성됐는지 추적용",
+    "components[].type": "cds-catalogs atom 이름 (소문자, kebab-case). ds_list().components 에서 선택",
+    "components[].variant": "컴포넌트 variant (optional). componentProperties 또는 이름 경로에서 추론",
+    "components[].text": "텍스트 콘텐츠 (optional). Figma characters 필드",
+    "components[].tokens": "시멘틱 토큰 참조 ($prefix 포함). ds_get() 결과에서 매핑. fill/stroke 토큰도 포함 가능",
+    "components[].layout": "레이아웃 설정 (optional). Layout 타입 참조",
+    "components[].width": "너비 (optional). SizingBehavior 타입 참조",
+    "components[].height": "높이 (optional). SizingBehavior 타입 참조",
+    "components[].fill": "배경 채우기 (optional). Fill 타입 참조. 토큰 바인딩 시 tokens.fill 로 이동",
+    "components[].stroke": "테두리 (optional). Stroke 타입 참조",
+    "components[].effect": "효과 배열 (optional). Effect 타입 배열",
+    "components[].opacity": "불투명도 (optional). 1.0 미만 시만 포함",
+    "components[].x": "X 좌표 px (optional). 부모 layout이 'none'일 때만 포함",
+    "components[].y": "Y 좌표 px (optional). 부모 layout이 'none'일 때만 포함",
+    "components[].children": "중첩 컴포넌트 배열 (재귀, 필요 시)",
+    "components[].missing_ds_mapping": "true이면 DS 카탈로그 매핑 실패 (알 수 없는 컴포넌트)"
+  },
+  "types": {
+    "Layout": {
+      "layout": "'none' | 'vertical' | 'horizontal'",
+      "gap": "자식 간 간격 (px)",
+      "padding": "number | [vertical, horizontal] | [top, right, bottom, left]",
+      "justifyContent": "'start' | 'center' | 'end' | 'space_between' | 'space_around'",
+      "alignItems": "'start' | 'center' | 'end'"
+    },
+    "SizingBehavior": "number(px) | 'fit_content' | 'fit_content(fallback)' | 'fill_container' | 'fill_container(fallback)'",
+    "Fill": "'#RRGGBB' | '#RRGGBBAA' | { type: 'gradient', gradientType: 'linear'|'radial'|'angular', colors: [{color, position}] } | { type: 'image', mode: 'fill'|'fit'|'stretch' }",
+    "Stroke": "{ align?: 'inside'|'center'|'outside', thickness?: number, fill?: string, dashPattern?: number[] }",
+    "Effect": "{ type: 'blur'|'background_blur', radius: number } | { type: 'shadow', shadowType: 'inner'|'outer', offset: {x,y}, spread: number, blur: number, color: string }"
+  },
+  "example": {
+    "screen": "ProductDetail",
+    "themes": { "Mode": ["Light", "Dark"] },
+    "platform": "ios",
+    "dsManifest": {
+      "platform": "ios",
+      "tokens": ["WDS_tokens", "WDS_size"],
+      "components": ["textbutton", "chip"]
+    },
+    "components": [
+      {
+        "type": "textbutton",
+        "variant": "primary",
+        "text": "구매하기",
+        "tokens": {
+          "color": "$color.brand.primary",
+          "size": "$size.button.md",
+          "typography": "$typography.body.md"
+        },
+        "layout": {
+          "layout": "horizontal",
+          "gap": 8,
+          "padding": [12, 16],
+          "justifyContent": "center",
+          "alignItems": "center"
+        },
+        "width": "fill_container",
+        "height": 48,
+        "fill": "#FF8400",
+        "children": []
+      },
+      {
+        "type": "chip",
+        "variant": "outline",
+        "text": "신규",
+        "tokens": {
+          "color": "$color.label.secondary"
+        },
+        "width": 60,
+        "height": 28,
+        "stroke": { "thickness": 1, "fill": "$color.border.default", "align": "inside" },
+        "children": []
+      }
+    ]
+  }
+}

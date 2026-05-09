@@ -1,0 +1,47 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "weverse-marketplace",
+  "version": "1.0.0",
+  "owner": {
+    "name": "Weverse Company",
+    "email": "kyungtaek.lim@weversecompany.com"
+  },
+  "description": "Weverse Company 사내 공용 Claude Code 플러그인 마켓플레이스",
+  "plugins": [
+    {
+      "name": "figma-impl",
+      "description": "Figma → Multi-platform UI 생성 하네스 (Web React/iOS SwiftUI/AOS Compose). T0~T6 오케스트레이션, DS 토큰 사전 준비(/impl-tokens) 포함. 결과물: docs/design-brief/<feature>/by-figma/",
+      "version": "1.1.0",
+      "source": "./plugins/figma-impl",
+      "keywords": ["figma", "figma-impl", "react", "ios", "android", "design-system", "harness"]
+    },
+    {
+      "name": "ui-generator-by-md",
+      "description": "DESIGN.md → Multi-platform UI 생성 하네스 (Web React/iOS SwiftUI/AOS Compose). Figma MCP 대신 DESIGN.md 파일을 소스로 사용. T0~T6 오케스트레이션, DS 토큰 사전 준비(/setup-tokens) 포함. 결과물: docs/design-brief/<feature>/by-md/",
+      "version": "1.0.0",
+      "source": "./plugins/ui-generator-by-md",
+      "keywords": ["design-md", "ui-generator", "react", "ios", "android", "design-system", "harness"]
+    },
+    {
+      "name": "persona",
+      "description": "사용자 인터뷰를 위한 페르소나 에이전트 플러그인. K-POP 팬 및 아티스트 페르소나로 제품/서비스 UX 테스트 및 사용자 피드백 수집",
+      "version": "3.5.0",
+      "source": "./plugins/persona",
+      "keywords": ["user-research", "persona", "ux-testing", "user-interview"]
+    },
+    {
+      "name": "design-md-harness",
+      "description": "Figma URL → design.md 자동 생성 하네스. Figma 커버리지 정적 검사·CDS 토큰 검사·pixel diff 시각 비교를 통해 최대 5회 생성-평가 루프로 품질 고도화. 산출물: ${COMPONENT_NAME}.md + 스크린샷 2종",
+      "version": "0.1.0",
+      "source": "./plugins/design-md-harness",
+      "keywords": ["design-md", "figma", "design-tokens", "harness", "pixel-diff", "cds"]
+    },
+    {
+      "name": "cds-ds",
+      "description": "Weverse 디자인 시스템 카탈로그(cds-catalogs) MCP 서버. DS Token · Component 카탈로그를 on-demand 로 fetch하고 Figma URL → DS DSL 변환(/figma-to-dsl), 토큰 lint(/ds-token-lint), 플랫폼별 컴포넌트 샘플(samples/), DSL → 플랫폼 코드 자동 변환·검증(dsl-to-code skill)을 지원",
+      "version": "0.10.5",
+      "source": "./plugins/cds-ds",
+      "keywords": ["design-system", "cds-catalogs", "mcp", "design-tokens", "figma", "samples"]
+    }
+  ]
+}

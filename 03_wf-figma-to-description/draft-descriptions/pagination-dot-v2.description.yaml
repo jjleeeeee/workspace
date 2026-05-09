@@ -1,0 +1,187 @@
+component:
+  name: "Pagination Dot"
+  figma_name: "Pagination_Dot(v2)"
+  description: "정확한 페이지 번호보다 현재 위치와 콘텐츠 흐름을 간단히 보여줄 때 사용하는 점 형태 페이지네이션"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "62324:12061"
+  component_set_key: "6dc90bf874beb759995aee563475cf96c3aa9a58"
+  last_synced: "2026-05-04"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Dots: ["2", "3", "4", "5", "6+"]
+  Selection: ["1", "2", "3", "4", "5", "6"]
+
+variants:
+  count: 40
+  formula: "Mode(2) x Dots(5) x Selection(6), with invalid selection positions omitted"
+  constraints:
+    - "Selection must not exceed the available dot count for Dots=2, 3, 4, or 5."
+    - "Dots=6+ supports Selection=1 through Selection=6 and uses condensed dot sizes near the edges."
+  registry:
+    - { variant: "Mode=Fixed, Dots=5, Selection=1", node_id: "62324:12688", key: "7a35e8be5ae5b3e9c04b236a0251446ad691ee30" }
+    - { variant: "Mode=Default, Dots=5, Selection=1", node_id: "62370:9717", key: "49a2ed2c70cad6f35cd0ce487d0a1e51ddec32b5" }
+    - { variant: "Mode=Fixed, Dots=2, Selection=2", node_id: "62370:9710", key: "74cb4600e7e8de76aff8e9440f9384ca821a13a6" }
+    - { variant: "Mode=Default, Dots=2, Selection=2", node_id: "62370:9921", key: "58e8b8968ce583145949b64f205498609be7b9d6" }
+    - { variant: "Mode=Fixed, Dots=6+, Selection=6", node_id: "62370:9486", key: "49382cd6dc333000f8e03008dfcfedf15db2e216" }
+    - { variant: "Mode=Default, Dots=6+, Selection=6", node_id: "62370:9873", key: "e86a0822768c7e153671423425402f9677be2d9c" }
+  registry_policy:
+    mode: "sample"
+    full_reference: "refs/figma-component-keys/variant-keys/pagination-dot-v2.md"
+    live_check: "Figma live read confirmed 40 variant names, ids, keys, and componentPropertyDefinitions on node 62324:12061."
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Fixed"'
+    description: "Default adapts to system color tokens; Fixed uses fixed color tokens."
+  Dots:
+    type: '"2" | "3" | "4" | "5" | "6+"'
+    default: '"2"'
+    description: "Controls the number of visible pagination dots."
+  Selection:
+    type: '"1" | "2" | "3" | "4" | "5" | "6"'
+    default: '"1"'
+    description: "Marks the currently selected content position."
+
+tokens:
+  selected_dot_fill_default:
+    part: "dot ellipse"
+    role: "fill"
+    applies_to: "Mode=Default, selected dot"
+    token: "system/color/icon/default"
+  selected_dot_stroke_default:
+    part: "dot ellipse"
+    role: "stroke"
+    applies_to: "Mode=Default, selected dot"
+    token: "system/color/outline/default-reverse"
+  unselected_dot_fill_default:
+    part: "dot ellipse"
+    role: "fill"
+    applies_to: "Mode=Default, unselected dot"
+    token: "system/color/icon/300a"
+    opacity: 0.3
+  unselected_dot_stroke_default:
+    part: "dot ellipse"
+    role: "stroke"
+    applies_to: "Mode=Default, unselected dot"
+    token: "system/color/outline/default-reverse-300a"
+    opacity: 0.3
+  selected_dot_fill_fixed:
+    part: "dot ellipse"
+    role: "fill"
+    applies_to: "Mode=Fixed, selected dot"
+    token: "system/fixed_color/icon/default"
+  selected_dot_stroke_fixed:
+    part: "dot ellipse"
+    role: "stroke"
+    applies_to: "Mode=Fixed, selected dot"
+    token: "system/fixed_color/outline/gray-300"
+  unselected_dot_fill_fixed_white:
+    part: "dot ellipse"
+    role: "fill"
+    applies_to: "Mode=Fixed, unselected dot in most live variants"
+    token: "system/fixed_color/icon/white-300a-same"
+    opacity: 0.3
+  unselected_dot_fill_fixed_neutral:
+    part: "dot ellipse"
+    role: "fill"
+    applies_to: "Mode=Fixed, unselected dot in live mid-position variants"
+    token: "system/fixed_color/icon/300a"
+    opacity: 0.3
+  unselected_dot_stroke_fixed:
+    part: "dot ellipse"
+    role: "stroke"
+    applies_to: "Mode=Fixed, unselected dot"
+    token: "system/fixed_color/outline/default-reverse-300a"
+    opacity: 0.3
+  dot_gap:
+    part: "dot frame"
+    role: "spacing"
+    token: "system/size/padding/box/75"
+    value: "6px"
+  vertical_padding:
+    part: "component"
+    role: "padding"
+    token: "system/size/padding/box/150"
+    value: "12px top and bottom"
+
+assets:
+  dot_indicator:
+    part: "dot"
+    role: "indicator"
+    source: "Figma ellipse nodes inside dot frames"
+    applies_to: "All variants"
+    size: "6x6px normal dot; 4x4px and 2x2px condensed dots in Dots=6+"
+    semantic_rule: "Dots are visual indicators from Figma geometry, not text characters."
+
+layout:
+  component_size: "120x32"
+  normal_dot_frame: "8x8"
+  normal_dot_ellipse: "6x6"
+  condensed_dot_frames: "8x8, 6x6, 4x4"
+  condensed_dot_ellipses: "6x6, 4x4, 2x2"
+  vertical_padding: "12px"
+  item_spacing: "6px"
+  part_spacing:
+    dot__to__dot:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "system/size/padding/box/75"
+        value: "6px"
+      variants: []
+
+implementation_order:
+  - "Resolve Mode, Dots, and Selection first."
+  - "Render the 120x32 horizontal component with tokenized 12px vertical padding and 6px dot spacing."
+  - "For Dots=2 through Dots=5, render one 6px selected dot and remaining 6px unselected dots."
+  - "For Dots=6+, render condensed 6px, 4px, and 2px dots according to the selected position."
+  - "Apply selected and unselected fill and stroke tokens after the dot size pattern is chosen."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+    - "Dots"
+    - "Selection"
+  props:
+    - "Mode"
+    - "Dots"
+    - "Selection"
+  assets:
+    - "dot_indicator"
+  layout:
+    - "120x32 component"
+    - "8x8 normal dot frame"
+    - "6x6 normal dot ellipse"
+    - "6px dot spacing"
+    - "12px vertical padding"
+    - "Condensed Dots=6+ dot sizes"
+  exclusions:
+    - "This workflow does not create a derived pagination-dot-v2.md file."
+
+rules:
+  do:
+    - "Use Dot Pagination when users only need a lightweight sense of current position."
+    - "Use Dot Pagination when exact page count or direct page jumping is not required."
+    - "Keep the selected position visually distinct from unselected positions."
+  dont:
+    - "Do not use Dot Pagination for lists that require direct numeric page navigation."
+    - "Do not expose unavailable selections beyond the configured Dots value."
+    - "Do not replace dot indicators with text punctuation."
+
+source_gaps:
+  - field: "tokens.unselected_dot_fill_fixed_white vs tokens.unselected_dot_fill_fixed_neutral"
+    reason: "Live extraction confirms both fixed-mode unselected fill tokens, but the design source does not name the semantic split beyond variant position."
+    impact: "Implementation should map directly from the Figma variant pattern or verify the intended fixed-mode split with design before simplifying."
+  - field: "layout.right_padding for some Dots=6+ edge variants"
+    reason: "Live extraction shows numeric right padding of 8px or 9px on some edge variants without a bound paddingRight token."
+    impact: "Use the extracted numeric padding for those variants or verify whether a missing variable binding should be added in Figma."
+
+spec_notes:
+  source:
+    - "Figma live read via Framelink and read-only Plugin API extraction from node 62324:12061."
+    - "Variant key reference: refs/figma-component-keys/variant-keys/pagination-dot-v2.md."
+    - "Usage reference: refs/markitdown-output/markitdown-pagination.md."

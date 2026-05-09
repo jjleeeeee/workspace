@@ -1,0 +1,400 @@
+.chord-text-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 393px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  font-family:
+    "WeGothicSans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+}
+
+/* Title row */
+.chord-text-fields__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 361px;
+  height: 18px;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.chord-text-fields__title-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 2px;
+  font-size: 14px;
+  line-height: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chord-text-fields__title-text {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--cds-system-color-text-400a, #00000080);
+}
+
+.chord-text-fields__title-badge {
+  margin-block-start: 0;
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__title-text {
+  color: var(--cds-system-fixed-color-text-400a, #ffffff80);
+}
+
+.chord-text-fields[data-status="success"] .chord-text-fields__title-text {
+  color: var(--cds-system-color-text-primary, #00b8c1);
+}
+
+.chord-text-fields[data-mode="fixed"][data-status="success"] .chord-text-fields__title-text {
+  color: var(--cds-system-fixed-color-text-primary, #00b8c1);
+}
+
+.chord-text-fields[data-status="error"] .chord-text-fields__title-text {
+  color: var(--cds-system-color-status-danger-red, #fe5b58);
+}
+
+.chord-text-fields[data-mode="fixed"][data-status="error"] .chord-text-fields__title-text {
+  color: var(--cds-system-fixed-color-status-danger-red, #fe5b58);
+}
+
+/* Character counter */
+.chord-text-fields__counter {
+  flex-shrink: 0;
+  width: 46px;
+  height: 18px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  color: var(--cds-system-color-text-400a, #00000080);
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__counter {
+  color: var(--cds-system-fixed-color-text-400a, #ffffff80);
+}
+
+/* Field box */
+.chord-text-fields__field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 361px;
+  box-sizing: border-box;
+  border: 1px solid var(--cds-system-color-status-inactive-gray, #dcdee4);
+  border-radius: var(--cds-system-size-radius-box-100, 8px);
+  background: transparent;
+}
+
+.chord-text-fields[data-lines="single"] .chord-text-fields__field {
+  height: 48px;
+  gap: 8px;
+  padding: 12px 16px;
+}
+
+.chord-text-fields[data-lines="multiple"] .chord-text-fields__field {
+  height: 108px;
+  gap: 2px;
+  padding: 12px 16px;
+  align-items: flex-start;
+}
+
+/* Mode=Fixed keeps the same field radius and switches to fixed color tokens. */
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__field {
+  border-color: var(--cds-system-fixed-color-status-inactive-gray, #3e3e3e);
+}
+
+/* Status strokes */
+.chord-text-fields[data-status="enabled"] .chord-text-fields__field {
+  border-color: var(--cds-system-color-status-focus-gray-400, #aeb1b8);
+}
+
+.chord-text-fields[data-mode="fixed"][data-status="enabled"] .chord-text-fields__field {
+  border-color: var(--cds-system-fixed-color-status-focus-gray-400, #555555);
+}
+
+.chord-text-fields[data-status="error"] .chord-text-fields__field {
+  border-color: var(--cds-system-color-status-danger-red, #fe5b58);
+}
+
+.chord-text-fields[data-mode="fixed"][data-status="error"] .chord-text-fields__field {
+  border-color: var(--cds-system-fixed-color-status-danger-red, #fe5b58);
+}
+
+/* Disabled field background */
+.chord-text-fields[data-status="disabled"] .chord-text-fields__field {
+  background: var(--cds-system-color-status-background-disabled, #f2f3f7);
+}
+
+.chord-text-fields[data-mode="fixed"][data-status="disabled"] .chord-text-fields__field {
+  background: var(--cds-system-fixed-color-status-background-disabled, #1f1f1f);
+}
+
+/* Country code prefix */
+.chord-text-fields__country-code {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 63px;
+  height: 22px;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--cds-system-color-text-default, #000000);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.chord-text-fields__country-code-value {
+  flex: 0 0 30px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chord-text-fields__country-code-chevron {
+  flex: 0 0 16px;
+}
+
+.chord-text-fields__country-code-divider {
+  display: block;
+  flex: 0 0 1px;
+  width: 1px;
+  height: 18px;
+  background: var(--cds-system-color-divider-default-200a, #00000033);
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__country-code {
+  color: var(--cds-system-fixed-color-text-default, #ffffff);
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__country-code-divider {
+  background: var(--cds-system-fixed-color-divider-default-200a, #ffffff33);
+}
+
+.chord-text-fields__input-module {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+/* Native input / textarea */
+.chord-text-fields__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  height: 22px;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--cds-system-color-text-default, #000000);
+  resize: none;
+  font-family: inherit;
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__input {
+  color: var(--cds-system-fixed-color-text-default, #ffffff);
+}
+
+.chord-text-fields__input::placeholder {
+  color: var(--cds-system-color-text-300a, #0000004d);
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__input::placeholder {
+  color: var(--cds-system-fixed-color-text-300a, #ffffff4d);
+}
+
+.chord-text-fields__input:disabled {
+  color: var(--cds-system-color-text-200a, #00000033);
+  cursor: not-allowed;
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__input:disabled {
+  color: var(--cds-system-fixed-color-text-200a, #ffffff33);
+}
+
+.chord-text-fields[data-lines="multiple"] .chord-text-fields__input {
+  height: auto;
+  min-height: 84px;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+.chord-text-fields__input-button {
+  flex: 0 0 auto;
+}
+
+.chord-text-fields__timer {
+  flex: 0 0 37px;
+  width: 37px;
+  height: 18px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  color: var(--cds-system-color-text-primary, #00b8c1);
+  white-space: nowrap;
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__timer {
+  color: var(--cds-system-fixed-color-text-primary, #00b8c1);
+}
+
+.chord-text-fields[data-status="disabled"] .chord-text-fields__timer {
+  color: var(--cds-system-color-text-200a, #00000033);
+}
+
+.chord-text-fields[data-mode="fixed"][data-status="disabled"] .chord-text-fields__timer {
+  color: var(--cds-system-fixed-color-text-200a, #ffffff33);
+}
+
+/* Guide message */
+.chord-text-fields__guide {
+  width: 361px;
+  min-height: 17px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--cds-system-color-text-400a, #00000080);
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__guide {
+  color: var(--cds-system-fixed-color-text-400a, #ffffff80);
+}
+
+.chord-text-fields[data-status="success"] .chord-text-fields__guide {
+  color: var(--cds-system-color-text-primary, #00b8c1);
+}
+
+.chord-text-fields[data-mode="fixed"][data-status="success"] .chord-text-fields__guide {
+  color: var(--cds-system-fixed-color-text-primary, #00b8c1);
+}
+
+.chord-text-fields[data-status="error"] .chord-text-fields__guide {
+  color: var(--cds-system-color-status-danger-red, #fe5b58);
+}
+
+.chord-text-fields[data-mode="fixed"][data-status="error"] .chord-text-fields__guide {
+  color: var(--cds-system-fixed-color-status-danger-red, #fe5b58);
+}
+
+.chord-text-fields__guide-text {
+  display: inline;
+}
+
+/* Caret bar */
+.chord-text-fields__caret {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 1.5px;
+  height: 14px;
+  background: var(--cds-system-color-surface-default-reverse, #000000);
+  border-radius: 100px;
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__caret {
+  background: var(--cds-system-fixed-color-surface-default-reverse, #ffffff);
+}
+
+/* Clear button */
+.chord-text-fields__clear-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.chord-text-fields__clear-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.chord-text-fields__clear-icon::before,
+.chord-text-fields__clear-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 1.5px;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.chord-text-fields__clear-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.chord-text-fields__clear-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Check icon slot */
+.chord-text-fields__check-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* Eye/hidden icon slot */
+.chord-text-fields__eye-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* Guide message — text-button case */
+.chord-text-fields__guide-text-button {
+  display: inline;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17px;
+  text-decoration: underline;
+  color: var(--cds-system-color-text-default, #000000);
+}
+
+.chord-text-fields[data-mode="fixed"] .chord-text-fields__guide-text-button {
+  color: var(--cds-system-fixed-color-text-default, #ffffff);
+}

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma-console__figma_get_status",
+      "mcp__Framelink_Figma_MCP__get_figma_data",
+      "mcp__figma-console__figma_execute",
+      "mcp__figma-console__figma_set_description"
+    ]
+  }
+}

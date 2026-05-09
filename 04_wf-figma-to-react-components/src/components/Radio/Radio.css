@@ -1,0 +1,72 @@
+.chord-radio {
+  --radio-stroke: var(--cds-system-color-outline-default-200a, #00000033);
+  --radio-bg: transparent;
+  --radio-inner: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 24px;
+  block-size: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.chord-radio:focus-visible {
+  outline: 2px solid var(--cds-system-color-outline-default, #000000);
+  outline-offset: 2px;
+}
+
+.chord-radio:disabled {
+  cursor: not-allowed;
+}
+
+.chord-radio__outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 22px;
+  block-size: 22px;
+  border: 1px solid var(--radio-stroke);
+  border-radius: 999px;
+  background: var(--radio-bg);
+}
+
+.chord-radio__inner {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 999px;
+  background: var(--radio-inner);
+}
+
+.chord-radio[data-mode="fixed"] {
+  --radio-stroke: var(--cds-system-fixed-color-outline-default-200a, #ffffff33);
+}
+
+.chord-radio[data-status="enabled"] {
+  --radio-stroke: var(--cds-system-color-status-active-primary, #00cbd5);
+  --radio-bg: var(--cds-system-color-status-active-primary, #00cbd5);
+  --radio-inner: var(--cds-system-color-surface-default, #ffffff);
+}
+
+.chord-radio[data-mode="fixed"][data-status="enabled"] {
+  --radio-stroke: var(--cds-system-fixed-color-status-active-primary, #01d5df);
+  --radio-bg: var(--cds-system-fixed-color-status-active-primary, #01d5df);
+  --radio-inner: var(--cds-system-fixed-color-surface-default-reverse, #ffffff);
+}
+
+.chord-radio[data-status="disabled"] {
+  --radio-stroke: var(--cds-system-color-outline-default-200a, #00000033);
+  --radio-bg: var(--cds-system-color-surface-default-reverse-100a, #0000001a);
+  --radio-inner: var(--cds-system-color-surface-default-reverse-200a, #00000033);
+}
+
+.chord-radio[data-mode="fixed"][data-status="disabled"] {
+  --radio-stroke: var(--cds-system-fixed-color-outline-default-200a, #ffffff33);
+  --radio-bg: var(--cds-system-fixed-color-surface-default-reverse-100a, #ffffff1a);
+  --radio-inner: var(--cds-system-fixed-color-surface-default-reverse-200a, #ffffff33);
+}

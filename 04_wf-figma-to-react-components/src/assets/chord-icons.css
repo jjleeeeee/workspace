@@ -1,0 +1,31 @@
+.chord-icon {
+  --chord-icon-size: 24px;
+
+  block-size: var(--chord-icon-size);
+  color: currentColor;
+  display: inline-block;
+  flex: 0 0 auto;
+  inline-size: var(--chord-icon-size);
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.chord-icon__glyph {
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+}
+
+.chord-icon__glyph svg {
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+}
+
+.chord-icon:not([data-icon-color-mode="original"]) .chord-icon__glyph svg [fill]:not([fill="none"]) {
+  fill: currentColor;
+}
+
+.chord-icon:not([data-icon-color-mode="original"]) .chord-icon__glyph svg [stroke]:not([stroke="none"]) {
+  stroke: currentColor;
+}

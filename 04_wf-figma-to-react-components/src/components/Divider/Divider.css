@@ -1,0 +1,28 @@
+.chord-divider {
+  --divider-color: var(--cds-system-color-outline-default-50a, #0000000a);
+  display: block;
+  inline-size: 393px;
+  block-size: 1px;
+  flex: none;
+  background: var(--divider-color);
+}
+
+.chord-divider[data-height="2"] {
+  block-size: 2px;
+}
+
+.chord-divider[data-height="8"] {
+  block-size: 8px;
+}
+
+.chord-divider[data-style="default-50a-2"] {
+  --divider-color: var(--cds-system-color-outline-default-50a-2, #0000000a);
+}
+
+.chord-divider[data-mode="fixed"] {
+  --divider-color: var(--cds-system-fixed-color-outline-default-50a, #ffffff0d);
+}
+
+.chord-divider[data-mode="fixed"][data-style="default-50a-2"] {
+  --divider-color: var(--cds-system-fixed-color-outline-default-100a, #ffffff1a);
+}

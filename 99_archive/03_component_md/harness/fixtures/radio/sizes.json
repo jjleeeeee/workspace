@@ -1,0 +1,5 @@
+{
+  "Radio": { "image": 24, "touch": 24 },
+  "Outline": { "image": 22, "touch": 24 },
+  "Inner circle": { "image": 8, "touch": 24 }
+}

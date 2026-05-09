@@ -1,0 +1,15 @@
+{
+  "Small": {
+    "image": 4,
+    "touch": 6
+  },
+  "Medium": {
+    "image": 6,
+    "touch": 8
+  },
+  "Large": {
+    "image": 8,
+    "touch": 12
+  }
+}
+

@@ -1,0 +1,255 @@
+component:
+  name: "Tabs"
+  figma_name: "[V2] Tabs"
+  description: "한 화면 안에서 관련 카테고리나 콘텐츠 그룹을 빠르게 전환하는 탭 탐색 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "65172:10165"
+  component_set_key: "12eee519d7ee66e179cb03c579962a37beba7e7f"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Style: ["Bar", "Chip"]
+  Type: ["Fixed", "Scrollable", "Expand(Only Chips)"]
+  Size: ["Medium", "Small (Only Chips)", "Small"]
+
+variants:
+  count: 16
+  theoretical_formula: "Mode(2) x Style(2) x Type(3) x Size(3) = 36"
+  implemented_formula: "16 valid navigation and chip-tab combinations"
+  constraints:
+    - "Style=Bar is implemented only with Size=Medium and Type=Fixed or Type=Scrollable."
+    - "Style=Chip supports Fixed, Scrollable, and Expand(Only Chips)."
+    - "Size=Small and Size=Small (Only Chips) are chip-only sizes."
+    - "Expand Button is a boolean prop, not a variant axis."
+  registry:
+    - { variant: "Mode=Fixed, Style=Chip, Type=Fixed, Size=Medium", node_id: "65172:10197", key: "37a7de17ad3e742897e59d9bcc0b2361402ad6db" }
+    - { variant: "Mode=Fixed, Style=Chip, Type=Fixed, Size=Small (Only Chips)", node_id: "65172:10206", key: "bd644e0066487598c3442463bdbc68e94d954de6" }
+    - { variant: "Mode=Default, Style=Chip, Type=Fixed, Size=Medium", node_id: "65172:10215", key: "4a99b87172c49a7337dc8490785028231686bc0f" }
+    - { variant: "Mode=Default, Style=Chip, Type=Fixed, Size=Small (Only Chips)", node_id: "65172:10224", key: "a3d7b3698ce2544271ceb240b1f6371d0fa7e7a4" }
+    - { variant: "Mode=Default, Style=Bar, Type=Fixed, Size=Medium", node_id: "66562:18181", key: "9fc88f7a30b16d4804a828d94ecf9b14a640a67f" }
+    - { variant: "Mode=Fixed, Style=Bar, Type=Fixed, Size=Medium", node_id: "66570:42095", key: "3ed87483307fc1e4380270d0faf3127daaa92e2f" }
+    - { variant: "Mode=Default, Style=Bar, Type=Scrollable, Size=Medium", node_id: "66570:39526", key: "0272a1bcbcb64ed2728ade3528b912f6c6d487d6" }
+    - { variant: "Mode=Fixed, Style=Bar, Type=Scrollable, Size=Medium", node_id: "66570:42101", key: "924025a1273d6fc681ffe99368a3306c21596227" }
+    - { variant: "Mode=Default, Style=Chip, Type=Scrollable, Size=Small (Only Chips)", node_id: "66660:73129", key: "7eb9909e97d3919f4ebbc5eb89ab5da2d8e39c99" }
+    - { variant: "Mode=Default, Style=Chip, Type=Scrollable, Size=Medium", node_id: "66660:73407", key: "857cafd4c99f65fd62c9699bdfc67e6746f8703b" }
+    - { variant: "Mode=Fixed, Style=Chip, Type=Scrollable, Size=Small (Only Chips)", node_id: "66660:73594", key: "c808603e96c7215eb76c48bccb9ccd9d61b0c650" }
+    - { variant: "Mode=Fixed, Style=Chip, Type=Scrollable, Size=Medium", node_id: "66660:73651", key: "09a14f002cfae8a770d782bef41d12588c00872c" }
+    - { variant: "Mode=Default, Style=Chip, Type=Expand(Only Chips), Size=Small", node_id: "66680:27578", key: "f674f21a775c5fd3638ef11620bf71168d311dff" }
+    - { variant: "Mode=Default, Style=Chip, Type=Expand(Only Chips), Size=Medium", node_id: "66680:27881", key: "07b1399f640a0842fb71b0b42ef637469198d2ab" }
+    - { variant: "Mode=Fixed, Style=Chip, Type=Expand(Only Chips), Size=Small", node_id: "66680:28519", key: "36fd5ee68d33cd9eea1b0a1adb8654b212b0fa3b" }
+    - { variant: "Mode=Fixed, Style=Chip, Type=Expand(Only Chips), Size=Medium", node_id: "66680:28811", key: "96b2130e7c0d0163787bd82c16994236867865af" }
+
+props:
+  Expand_Button:
+    type: "boolean"
+    default: "true"
+    description: "Controls the expand or collapse affordance in Expand(Only Chips) variants."
+  selected_index:
+    type: "number"
+    default: "0"
+    description: "Consumer-side selected tab index; selected styling is delegated to child tab or chip components."
+  tab_items:
+    type: "array"
+    default: "sample tabs"
+    description: "Labels and optional chip content are supplied by the consumer while preserving one Style and Type per tab group."
+
+tokens:
+  bar_selected_line_default:
+    part: "_atoms/Tabs Line"
+    role: "fill"
+    applies_to: "Mode=Default, Style=Bar"
+    token: "system/color/outline/default"
+  bar_selected_line_fixed:
+    part: "_atoms/Tabs Line"
+    role: "fill"
+    applies_to: "Mode=Fixed, Style=Bar"
+    token: "system/fixed_color/outline/default"
+  bar_bottom_line_default:
+    part: "Bar bottom Line"
+    role: "fill"
+    applies_to: "Mode=Default, Style=Bar"
+    token: "system/color/outline/default-100a"
+  bar_bottom_line_fixed:
+    part: "Bar bottom Line"
+    role: "fill"
+    applies_to: "Mode=Fixed, Style=Bar"
+    token: "system/fixed_color/outline/default-100a"
+  scroll_more_surface_default:
+    part: "scroll_more"
+    role: "fill"
+    applies_to: "Mode=Default, Style=Chip, Type=Scrollable or Expand(Only Chips)"
+    token: "system/color/surface/default-4"
+  scroll_more_surface_fixed:
+    part: "scroll_more"
+    role: "fill"
+    applies_to: "Mode=Fixed, Style=Chip, Type=Scrollable or Expand(Only Chips)"
+    token: "system/fixed_color/surface/default-reverse-100a"
+  scroll_more_stroke_default:
+    part: "scroll_more"
+    role: "stroke"
+    applies_to: "Mode=Default, Style=Chip, Type=Scrollable or Expand(Only Chips)"
+    token: "system/color/outline/default-50a-2"
+  scroll_more_stroke_fixed:
+    part: "scroll_more"
+    role: "stroke"
+    applies_to: "Mode=Fixed, Style=Chip, Type=Scrollable or Expand(Only Chips)"
+    token: "system/fixed_color/outline/default-50a"
+  expand_surface_default:
+    part: "Expand chip container"
+    role: "fill"
+    applies_to: "Mode=Default, Type=Expand(Only Chips)"
+    token: "system/color/surface/default-2"
+  expand_surface_fixed:
+    part: "Expand chip container"
+    role: "fill"
+    applies_to: "Mode=Fixed, Type=Expand(Only Chips)"
+    token: "system/fixed_color/surface/default-gray-50"
+  expand_gradient_default:
+    part: "Gradient_color"
+    role: "fill"
+    applies_to: "Mode=Default, Type=Expand(Only Chips)"
+    token: "system/color/surface/default"
+  expand_gradient_fixed:
+    part: "Gradient_color"
+    role: "fill"
+    applies_to: "Mode=Fixed, Type=Expand(Only Chips)"
+    token: "system/fixed_color/surface/default"
+
+
+typography:
+  body_s_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-s/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 171 text nodes."
+  caption_s_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-s/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 171 text nodes."
+  body_s_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-s/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 18 text nodes."
+
+assets:
+  more_icon:
+    part: "scroll_more arrow"
+    role: "icon"
+    source: "16/em/ic_arrow_down_xsmall"
+    applies_to: "Style=Chip, Type=Scrollable or Type=Expand(Only Chips)"
+    size: "inside 32x32 more control"
+    semantic_rule: "Use the DS arrow icon asset; do not replace it with a text arrow."
+  expand_gradient:
+    part: "Gradient_color"
+    role: "image"
+    source: "Gradient_color component set"
+    applies_to: "Style=Chip, Type=Expand(Only Chips)"
+    size: "321x40px"
+    semantic_rule: "Treat the fade overlay as a component-backed gradient asset, not as tab content."
+
+composition:
+  uses:
+    - component: "[V2] Chips"
+      node_id: "59869:78921"
+      component_set_key: "6f1fa3aadc347f4c8c2f26405695b2415dbdcb95"
+      role: "Chip-style tab item"
+      usage_condition: "Style=Chip"
+      spec_owner: "[V2] Chips component set"
+    - component: "_atoms/Tabs"
+      node_id: "67331:10317"
+      component_set_key: "f8c82baf217b6690605da7ebdf928574b169e2bc"
+      role: "Bar-style tab item"
+      usage_condition: "Style=Bar"
+      spec_owner: "_atoms/Tabs component set"
+    - component: "element / component / scroll_more"
+      node_id: "12400:7597"
+      component_set_key: "b69dec363d6827c71917884f16c090610ffebf78"
+      role: "Scrollable and expandable chip affordance"
+      usage_condition: "Style=Chip, Type=Scrollable or Type=Expand(Only Chips)"
+      spec_owner: "scroll_more component set"
+    - component: "Gradient_color"
+      node_id: "12445:16080"
+      component_set_key: "bc5c5939e789262646a5af3aaf204246f007fccb"
+      role: "Expanded chip fade overlay"
+      usage_condition: "Style=Chip, Type=Expand(Only Chips)"
+      spec_owner: "Gradient_color component set"
+
+layout:
+  component_width: "393px"
+  board_size: "1038x1334px"
+  heights:
+    bar_medium: "44px"
+    chip_medium: "52px"
+    chip_small: "48px"
+    chip_expand: "308px"
+  chip:
+    container_padding: "8px 16px"
+    item_gap: "8px"
+    fixed_tabs_width: "361px"
+    scrollable_chips_width: "321px"
+    more_control: "32x32px"
+  bar:
+    tabs_height: "44px"
+    horizontal_padding: "16px"
+    bottom_line_height: "1px"
+    vertical_stack_gap: "-1px"
+  expand:
+    chips_region: "321x292px"
+    more_button: "32x32px"
+    gradient: "321x40px"
+  part_spacing:
+    tabs__to__more:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "system/size/padding/box/100"
+        value: "8px"
+      variants:
+        - when: "Style=Bar"
+          token: "not applicable"
+          value: "No more control"
+
+implementation_order:
+  - "Resolve Style first because Bar and Chip use different nested tab item components."
+  - "Resolve Type next to choose Fixed width, Scrollable overflow, or Expand chip behavior."
+  - "Resolve Size only within the valid Style and Type constraints."
+  - "Resolve Mode to choose Default or Fixed token families for parent-owned lines, surfaces, and controls."
+  - "Render selected state through the child tab or chip component rather than duplicating child visual rules."
+  - "Apply Expand_Button only for Expand(Only Chips) chip variants."
+
+implementation_coverage:
+  axes: "Implement all 16 valid Mode x Style x Type x Size variants and reject invalid theoretical combinations."
+  props: "Expose Expand_Button and selected_index behavior while keeping one Style and Type per tab group."
+  assets: "Use scroll_more arrow and Gradient_color as component-backed assets; child chip badges remain owned by [V2] Chips."
+  layout: "Reflect 393px width, 44px Bar height, 48px or 52px Chip heights, 308px Expand height, 16px side padding, and 8px chip gaps."
+  exclusions: "Do not use Tabs for top-level app navigation; Bottom Navigation owns that use case."
+
+rules:
+  do:
+    - "Use Tabs to switch related content within the current screen."
+    - "Keep Type, Size, and padding rules consistent within one tab group."
+    - "Show a clear selected state for the active tab."
+    - "Update the related content immediately when a tab is selected."
+    - "Use Marquee behavior for labels that exceed the supported width."
+    - "Use Medium size only when image content is included."
+  dont:
+    - "Do not use Tabs for unrelated page transitions or independent task flows."
+    - "Do not mix different tab item types in one group unless the chip usage explicitly supports it."
+    - "Do not truncate long labels with an ellipsis."
+    - "Do not use Medium size for text-only or icon-only chip tabs."
+    - "Do not arbitrarily change horizontal padding."
+    - "Do not render selected and unselected tabs with the same visual treatment."
+
+spec_notes:
+  source:
+    - "Live Figma read-only extraction from node 65172:10165 on 2026-05-04."
+    - "Registry reference: refs/figma-component-keys/variant-keys/tabs.md."
+    - "Usage reference: refs/markitdown-output/markitdown-tabs.md."

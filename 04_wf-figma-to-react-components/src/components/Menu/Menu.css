@@ -1,0 +1,47 @@
+.chord-menu {
+  --menu-export-block-size: 418px;
+  --menu-export-inline-size: 288px;
+  --menu-panel-block-size: 370px;
+  --menu-panel-inline-size: 240px;
+  --menu-panel-max-block-size: 370px;
+  --menu-panel-surface: var(--cds-system-color-surface-default-4, #ffffff);
+  --menu-text: var(--cds-system-color-text-default, #000000);
+
+  block-size: var(--menu-export-block-size);
+  box-sizing: border-box;
+  display: inline-flex;
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  inline-size: var(--menu-export-inline-size);
+  letter-spacing: 0;
+  padding: 24px;
+}
+
+.chord-menu[data-mode="fixed"] {
+  --menu-panel-surface: var(--cds-system-fixed-color-surface-gray-100, #1f1f1f);
+  --menu-text: var(--cds-system-fixed-color-text-default, #ffffff);
+}
+
+.chord-menu__panel {
+  background: var(--menu-panel-surface);
+  block-size: min(var(--menu-panel-block-size), var(--menu-panel-max-block-size));
+  border-radius: var(--cds-system-size-radius-box-100, 8px);
+  box-shadow: 0 2px 28px -4px rgb(0 0 0 / 12%);
+  box-sizing: border-box;
+  color: var(--menu-text);
+  inline-size: var(--menu-panel-inline-size);
+  overflow: hidden;
+  padding: 4px 0;
+  position: relative;
+}
+
+.chord-menu__items {
+  block-size: 100%;
+  overflow: hidden;
+}
+
+.chord-menu__scrollbar {
+  inset-block-start: 4px;
+  inset-inline-end: 0;
+  position: absolute;
+}

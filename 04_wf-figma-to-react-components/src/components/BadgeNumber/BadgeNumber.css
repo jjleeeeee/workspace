@@ -1,0 +1,32 @@
+.chord-badge-number {
+  --badge-number-bg: var(--cds-system-color-roles-negative, #ff3b30);
+  --badge-number-color: var(--cds-system-color-text-white-same, #ffffff);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 16px;
+  block-size: 16px;
+  padding-inline: var(--cds-system-size-padding-box-50, 4px);
+  border-radius: 20px;
+  background: var(--badge-number-bg);
+  color: var(--badge-number-color);
+  box-sizing: border-box;
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--cds-typography-default-base-text-size-text-75, 12px);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500, 500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75, 16px);
+  letter-spacing: 0;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.chord-badge-number[data-mode="fixed"] {
+  --badge-number-bg: var(--cds-system-fixed-color-roles-negative, #ff453a);
+  --badge-number-color: var(--cds-system-fixed-color-text-white-same, #ffffff);
+}
+
+.chord-badge-number[data-type="new"] {
+  inline-size: 16px;
+  padding-inline: 0;
+}

@@ -1,0 +1,49 @@
+{
+  "axes": {
+    "Mode": ["Default", "Fixed"],
+    "Type": ["Circle", "Squircle"],
+    "Size": [
+      "Tiny",
+      "XXXSmall",
+      "XXSmall",
+      "XSmall",
+      "Small",
+      "Medium",
+      "Large",
+      "XLarge",
+      "XXLarge",
+      "XXXLarge",
+      "XXXXLarge"
+    ]
+  },
+  "componentProps": {
+    "Ring": {
+      "type": "boolean",
+      "defaultValue": true
+    },
+    "Birthday_Hat": {
+      "type": "boolean",
+      "defaultValue": true
+    },
+    "Emoji": {
+      "type": "boolean",
+      "defaultValue": true
+    },
+    "Badge_Dot": {
+      "type": "boolean",
+      "defaultValue": true
+    },
+    "Host": {
+      "type": "boolean",
+      "defaultValue": true
+    }
+  },
+  "variantCount": 44,
+  "_source": {
+    "tool": "framelink.get_figma_data",
+    "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
+    "componentSetId": "62973:7556",
+    "componentSetKey": "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
+  }
+}
+

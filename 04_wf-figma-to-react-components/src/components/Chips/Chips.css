@@ -1,0 +1,161 @@
+.chord-chips {
+  --chips-fill: transparent;
+  --chips-stroke: var(--cds-system-color-button-outlined-gray, #dedede);
+  --chips-text: var(--cds-system-color-text-default, #000000);
+  --chips-radius: 100px;
+  --chips-padding-start: var(--cds-system-size-padding-box-150, 12px);
+  --chips-padding-end: var(--cds-system-size-padding-box-150, 12px);
+  --chips-content-max: 166px;
+
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-inline-size: 190px;
+  block-size: 32px;
+  padding-inline-start: var(--chips-padding-start);
+  padding-inline-end: var(--chips-padding-end);
+  border: 1px solid var(--chips-stroke);
+  border-radius: var(--chips-radius);
+  background: var(--chips-fill);
+  color: var(--chips-text);
+  cursor: pointer;
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--cds-typography-default-base-text-size-text-150, 14px);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500, 500);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-150, 21px);
+  letter-spacing: 0;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+
+.chord-chips[data-size="medium"] {
+  block-size: 36px;
+}
+
+.chord-chips[data-radius="off"] {
+  --chips-radius: var(--cds-system-size-radius-box-100, 8px);
+}
+
+.chord-chips[data-type="image"] {
+  --chips-padding-start: var(--cds-system-size-padding-box-75, 6px);
+  --chips-content-max: 172px;
+}
+
+.chord-chips[data-mode="fixed"] {
+  --chips-stroke: var(--cds-system-fixed-color-button-outlined-gray, #333333);
+  --chips-text: var(--cds-system-fixed-color-text-default, #ffffff);
+}
+
+.chord-chips[data-mode="default"][data-state="filled-selected"] {
+  --chips-fill: var(--cds-system-color-surface-default-reverse, #000000);
+  --chips-stroke: transparent;
+  --chips-text: var(--cds-system-color-text-default-reverse, #ffffff);
+}
+
+.chord-chips[data-mode="default"][data-state="outlined-selected"] {
+  --chips-stroke: var(--cds-system-color-button-default, #00cbd5);
+  --chips-text: var(--cds-system-color-text-primary, #00b8c1);
+}
+
+.chord-chips[data-mode="default"][data-state="filled-disabled"] {
+  --chips-fill: var(--cds-system-color-button-disabled, #0000001a);
+  --chips-stroke: transparent;
+  --chips-text: var(--cds-system-color-text-200a, #00000033);
+}
+
+.chord-chips[data-mode="default"][data-state="outlined-disabled"] {
+  --chips-stroke: var(--cds-system-color-button-disabled, #0000001a);
+  --chips-text: var(--cds-system-color-text-200a, #00000033);
+}
+
+.chord-chips[data-mode="fixed"][data-state="filled-selected"] {
+  --chips-fill: var(--cds-system-fixed-color-surface-default-reverse, #ffffff);
+  --chips-stroke: transparent;
+  --chips-text: var(--cds-system-fixed-color-text-default-reverse, #000000);
+}
+
+.chord-chips[data-mode="fixed"][data-state="outlined-selected"] {
+  --chips-stroke: var(--cds-system-fixed-color-button-default, #01d5df);
+  --chips-text: var(--cds-system-fixed-color-text-primary, #01d5df);
+}
+
+.chord-chips[data-mode="fixed"][data-state="filled-disabled"] {
+  --chips-fill: var(--cds-system-fixed-color-button-disabled, #ffffff1a);
+  --chips-stroke: transparent;
+  --chips-text: var(--cds-system-fixed-color-text-200a, #ffffff33);
+}
+
+.chord-chips[data-mode="fixed"][data-state="outlined-disabled"] {
+  --chips-stroke: var(--cds-system-fixed-color-button-disabled, #ffffff1a);
+  --chips-text: var(--cds-system-fixed-color-text-200a, #ffffff33);
+}
+
+.chord-chips:disabled {
+  cursor: not-allowed;
+}
+
+.chord-chips__content {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 1 auto;
+  gap: var(--cds-system-size-padding-box-50, 4px);
+  max-inline-size: var(--chips-content-max);
+  min-inline-size: 0;
+  overflow: hidden;
+}
+
+.chord-chips__leading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  inline-size: 16px;
+  block-size: 16px;
+  color: currentColor;
+}
+
+.chord-chips__image {
+  inline-size: 24px;
+  block-size: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.chord-chips__image img {
+  display: block;
+  inline-size: 24px;
+  block-size: 24px;
+  object-fit: cover;
+}
+
+.chord-chips__label {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chord-chips[data-marquee="true"] .chord-chips__label {
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 24px), transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 24px), transparent 100%);
+}
+
+.chord-chips__badge {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding-inline-start: var(--cds-system-size-padding-box-50, 4px);
+}
+
+.chord-chips__badge--dot {
+  align-items: flex-start;
+  align-self: center;
+  block-size: 14px;
+  box-sizing: border-box;
+}

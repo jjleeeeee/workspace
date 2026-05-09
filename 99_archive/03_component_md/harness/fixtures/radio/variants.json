@@ -1,0 +1,11 @@
+{
+  "source": "figma-console/analyze_component_set",
+  "nodeId": "59215:200965",
+  "componentSetName": "[V2] Radio",
+  "variantCount": 6,
+  "axes": {
+    "Mode": ["Default", "Fixed"],
+    "Status": ["Default", "Enabled", "Disabled"]
+  },
+  "componentProps": {}
+}

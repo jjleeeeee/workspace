@@ -1,0 +1,79 @@
+{
+  "$schema": "cds-ds/dsl/v2",
+  "schemaVersion": "2.0.0",
+  "metadata": {
+    "generatedAt": "2026-04-28T00:00:00+09:00",
+    "generator": "cds-ds@2.0.0",
+    "sourceFile": {
+      "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
+      "fileName": "Chord-Design-System",
+      "nodeId": "11992:71718"
+    }
+  },
+  "coordinateSystem": { "unit": "px", "origin": "topLeft", "scope": "relativeToParent", "scale": 1.0 },
+  "themes": ["light", "dark"],
+  "platform": "ios",
+  "dsManifest": {
+    "platform": "ios",
+    "tokens": ["tokens.color.v1.0", "tokens.size.v1.0", "tokens.typography.v1.0"],
+    "components": ["topnavigation"]
+  },
+  "nodes": [
+    {
+      "id": "top-navigation",
+      "type": "component",
+      "name": "WDSTopNavigation",
+      "catalog": {
+        "id": "topnavigation",
+        "props": {
+          "title": "Title",
+          "showClose": true,
+          "leftContent": "none"
+        },
+        "state": "default"
+      },
+      "layout": {
+        "kind": "stack",
+        "axis": "horizontal",
+        "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 48 } },
+        "padding": { "top": 0, "right": 4, "bottom": 0, "left": 4 },
+        "alignment": { "main": "spaceBetween", "cross": "center" }
+      },
+      "style": {
+        "fills": [{ "type": "solid", "color": "token:system.color.surface.default-4" }]
+      },
+      "children": [
+        {
+          "id": "left-action",
+          "type": "icon",
+          "name": "left-action",
+          "asset": { "kind": "icon", "ref": "icon/left-action", "format": "svg", "tint": "token:system.color.text.default" },
+          "layout": {
+            "size": { "width": { "mode": "fixed", "value": 40 }, "height": { "mode": "fixed", "value": 40 } }
+          }
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "name": "title",
+          "layout": { "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } } },
+          "text": {
+            "value": "Title",
+            "textStyle": "textStyle:body-lg/system-700",
+            "color": "token:system.color.text.default",
+            "textAlign": "left"
+          }
+        },
+        {
+          "id": "close-button",
+          "type": "icon",
+          "name": "close-button",
+          "asset": { "kind": "icon", "ref": "icon/close", "format": "svg", "tint": "token:system.color.text.default" },
+          "layout": {
+            "size": { "width": { "mode": "fixed", "value": 40 }, "height": { "mode": "fixed", "value": 40 } }
+          }
+        }
+      ]
+    }
+  ]
+}

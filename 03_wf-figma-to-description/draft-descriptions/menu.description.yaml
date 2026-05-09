@@ -1,0 +1,166 @@
+component:
+  name: "Menu"
+  figma_name: "[V2] Menu"
+  description: "현재 맥락에서 선택 가능한 여러 액션이나 항목을 짧게 보여주는 오버레이 선택 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "25963:37235"
+  component_set_key: "f1e30b43648b4839e2cd69b1de633dd29a408fed"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+
+variants:
+  count: 2
+  formula: "Mode(2)"
+  constraints:
+    - "All Mode values are valid."
+    - "Menu item structure is provided by nested [V2] List_Item_Native instances, not by additional Menu variant axes."
+    - "Scrollbar is hidden in the base variants and is used for overflow when menu content exceeds max height."
+  registry:
+    - { variant: "Mode=Default", node_id: "25963:37236", key: "2c9dab8fe97ad77325c7e52a149018aa5a31119b" }
+    - { variant: "Mode=Fixed", node_id: "28236:18156", key: "fbaee8c05fa757bc7b4bd8bf785e2f851cc94153" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default follows normal surface tokens; Fixed uses fixed surface tokens."
+  item_count:
+    type: "number"
+    default: "9"
+    description: "Live variants include nine List_Item_Native rows as the sample menu content."
+  position:
+    type: '"top" | "bottom" | "center"'
+    default: '"bottom"'
+    description: "Placement is resolved by trigger position and overlay direction, not by a Figma variant axis."
+  max_height:
+    type: "number"
+    default: "370"
+    description: "Menu content must scroll internally when it exceeds 370px height."
+
+tokens:
+  surface_default:
+    part: "Menu container"
+    role: "fill"
+    applies_to: "Mode=Default"
+    token: "system/color/surface/default-4"
+  surface_fixed:
+    part: "Menu container"
+    role: "fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/surface/gray-100"
+  scrollbar_thumb_default:
+    part: "Scrollbar thumb"
+    role: "fill"
+    applies_to: "Mode=Default, overflow visible"
+    token: "system/color/surface/default-reverse-200a"
+  scrollbar_thumb_fixed:
+    part: "Scrollbar thumb"
+    role: "fill"
+    applies_to: "Mode=Fixed, overflow visible"
+    token: "system/fixed_color/surface/default-reverse-200a"
+
+
+typography:
+  body_m_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-m/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 18 text nodes."
+  body_xs_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 18 text nodes."
+  body_xs_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 18 text nodes."
+
+composition:
+  uses:
+    - component: "[V2] List_Item_Native"
+      node_id: "57343:18628"
+      component_set_key: "e120970b1638c0fa7a5b7638923eb91479384ebe"
+      role: "Menu option row"
+      usage_condition: "All menu items"
+      spec_owner: "[V2] List_Item_Native component set"
+    - component: "Scrollbar"
+      node_id: "27782:8837"
+      component_set_key: "ec2d17107a68bb443f80245ab791fb69380f0a50"
+      role: "Overflow scroll affordance"
+      usage_condition: "When menu content exceeds max height"
+      spec_owner: "Scrollbar component set"
+
+layout:
+  component_size: "240x370px"
+  board_size: "1360x591px"
+  container:
+    layout: "horizontal"
+    width: "240px"
+    max_height: "370px"
+    padding_y: "4px"
+    padding_x: "0px"
+    radius: "8px"
+  list:
+    row_count_sample: 9
+    row_height: "48px via [V2] List_Item_Native"
+    content_height_sample: "432px"
+    width_default: "240px"
+    width_fixed_live_sample: "180px"
+  scrollbar:
+    width: "8px"
+    default_height_sample: "384px"
+    fixed_height_sample: "362px"
+    padding: "4px 2px"
+    thumb_width: "4px"
+    thumb_radius: "3px"
+  part_spacing:
+    list__to__scrollbar:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "none"
+        value: "0px; scrollbar sits in the same horizontal container"
+      variants: []
+
+implementation_order:
+  - "Resolve Mode first to choose Default or Fixed surface and scrollbar thumb tokens."
+  - "Render menu as a 240px wide overlay with max height 370px and 8px radius."
+  - "Compose menu rows from [V2] List_Item_Native and keep row height consistent within one Menu."
+  - "Apply internal scrolling when row content exceeds the max height."
+  - "Position Menu from the trigger context using top, bottom, or center placement rules."
+
+implementation_coverage:
+  axes: "Implement both Default and Fixed Mode variants."
+  props: "Support item count, position, and max-height behavior outside the Figma variant axis."
+  assets: "No parent-owned icon asset is defined; row-level assets are owned by [V2] List_Item_Native."
+  layout: "Reflect 240x370 max component size, 4px vertical padding, 8px radius, 48px list rows, and internal scrollbar behavior."
+  exclusions: "Do not copy List_Item_Native internal Leading, Content, Trailing, or Divider specs into Menu."
+
+rules:
+  do:
+    - "Use Menu for a short list of actions or selectable items in the current context."
+    - "Build Menu items with [V2] List_Item_Native."
+    - "Keep the trigger location and Menu placement visually related."
+    - "Use internal scrolling when menu content exceeds 370px height."
+    - "Keep all rows in one Menu structurally consistent."
+  dont:
+    - "Do not use Menu as an independent navigation page."
+    - "Do not put long settings flows or multi-step explanations inside Menu."
+    - "Do not mix row heights and row structures within one Menu."
+    - "Do not display Menu in a position unrelated to the trigger."
+    - "Do not let Menu grow beyond the max height into surrounding screen content."
+
+spec_notes:
+  source:
+    - "Live Figma read-only extraction from node 25963:37235 on 2026-05-04."
+    - "Registry reference: refs/figma-component-keys/variant-keys/menu.md."
+    - "Usage reference: refs/markitdown-output/markitdown-menu.md."

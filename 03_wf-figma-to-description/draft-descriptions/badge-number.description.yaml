@@ -1,0 +1,141 @@
+component:
+  name: "Badge Number"
+  figma_name: "Badge_Number"
+  description: "탐색 항목이나 아이콘에 알림 수량 또는 신규 상태를 라벨로 표시하는 배지 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "8451:113030"
+  component_set_key: "0ec884a8ce648a69360a64bc9b883cd0b3cc948d"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Type: ["Number", "New"]
+
+variants:
+  count: 4
+  formula: "Mode(2) x Type(2)"
+  constraints:
+    - "All Mode and Type combinations are valid."
+  registry:
+    - { variant: "Mode=Default, Type=Number", node_id: "11098:2468", key: "ef6ff2a742a94d11d2357ba7587daa82bb751835" }
+    - { variant: "Mode=Default, Type=New", node_id: "11098:2470", key: "008df581f536e71c5f23742c37cdb7264fce4008" }
+    - { variant: "Mode=Fixed, Type=Number", node_id: "11098:2478", key: "0fce9ac8b679ab83d45b14c18e989c75f95addb9" }
+    - { variant: "Mode=Fixed, Type=New", node_id: "11098:2480", key: "cda05092bd74ae16e8e5922ffabcd0003b138058" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default adapts to OS theme; Fixed stays in fixed dark-theme colors."
+  Type:
+    type: '"Number" | "New"'
+    default: '"Number"'
+    description: "Number displays a count label; New displays the single-character N label."
+  Label:
+    type: "text"
+    default: '"999+" for Number, "N" for New'
+    description: "Badge label text. Limit to 4 characters including plus sign."
+
+tokens:
+  background_default:
+    part: "Badge_Number container"
+    role: "fill"
+    applies_to: "Mode=Default"
+    token: "system/color/roles/negative"
+  background_fixed:
+    part: "Badge_Number container"
+    role: "fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/roles/negative"
+  label_default:
+    part: "Label"
+    role: "text fill"
+    applies_to: "Mode=Default"
+    token: "system/color/text/white-same"
+  label_fixed:
+    part: "Label"
+    role: "text fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/text/white-same"
+  radius:
+    part: "Badge_Number container"
+    role: "corner radius"
+    value: 20
+
+
+typography:
+  caption_s_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-s/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 4 text nodes."
+
+assets:
+  number_label:
+    part: "999+"
+    source_node: "Number label text"
+    semantic_rule: "Render as editable text for Type=Number and cap content to 4 characters including plus sign."
+  new_label:
+    part: "N"
+    source_node: "New label text"
+    semantic_rule: "Render as the single-character New label for Type=New."
+
+layout:
+  component_size:
+    Number: "39x16"
+    New: "16x16"
+  radius: 20
+  label_examples:
+    Number: "999+"
+    New: "N"
+  label_limit: "Maximum 4 characters including plus sign."
+
+interaction:
+  notification_count:
+    behavior: "Use Number when an exact or capped count should be visible."
+  new_state:
+    behavior: "Use New when the item should be marked as newly available rather than counted."
+
+implementation_order:
+  - "Select Mode and Type variant."
+  - "Apply mode-specific negative background token."
+  - "Apply mode-specific white-same label token."
+  - "For Type=Number, render the Label prop and cap it to 4 characters including plus sign."
+  - "For Type=New, render the N label."
+  - "Keep Number at 39x16 and New at 16x16 with 20 radius."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+    - "Type"
+  props:
+    - "Mode"
+    - "Type"
+    - "Label"
+  assets:
+    - "number_label"
+    - "new_label"
+  layout:
+    - "Number 39x16"
+    - "New 16x16"
+    - "20 radius"
+    - "4-character label limit"
+  exclusions:
+    - "This workflow does not create a derived badge-number.md file."
+    - "Do/Don't product guidance is not present in markitdown-badge.md."
+
+rules:
+  do:
+    - "Use Number Badge when a notification count should be visible."
+    - "Use New Badge when the item should show new state instead of a count."
+    - "Limit Number labels to 4 characters including the plus sign."
+  dont:
+    - "Do not use Number Badge for status presence only; use Dot Badge instead."
+    - "Do not exceed the 4-character label limit."
+    - "Do not change the New label away from N without an explicit product rule."
+
+spec_notes:
+  source:
+    - "Figma component metadata and compact Plugin API extraction from node 8451:113030."
+    - "Local usage reference: refs/markitdown-output/markitdown-badge.md."

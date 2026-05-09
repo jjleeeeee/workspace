@@ -1,0 +1,2035 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chord Component Test 4</title>
+    <style>
+      :root {
+        --canvas: #f2f3f7;
+        --panel: #ffffff;
+        --ink: #101114;
+        --muted: #686e7d;
+        --line: #dfe2ea;
+        --soft-line: #eef0f5;
+        --primary: #00cbd5;
+        --primary-fixed: #01d5df;
+        --outline-default-200a: #00000033;
+        --outline-fixed-200a: #ffffff33;
+        --surface-reverse-100a: #0000001a;
+        --surface-fixed-reverse-100a: #ffffff1a;
+        --surface-reverse-200a: #00000033;
+        --surface-fixed-reverse-200a: #ffffff33;
+        --icon-default-reverse: #ffffff;
+        --icon-fixed-reverse: #000000;
+        --icon-default-200a: #00000033;
+        --icon-fixed-200a: #ffffff33;
+        --danger: #fe5b58;
+        --default-surface: #ffffff;
+        --fixed-surface: #000000;
+        --fixed-badge-stroke: #000000;
+        --guide: #5989fe;
+        --button-black: #000000;
+        --button-disabled: #f1f2f4;
+        --button-disabled-text: #00000033;
+        --button-fixed-disabled: #ffffff1a;
+        --button-fixed-disabled-text: #ffffff33;
+        --button-outline-gray: #00000033;
+        --button-fixed-outline-gray: #ffffff33;
+        --button-ghost: #f5f6f8;
+        --button-hover-overlay: #0000000a;
+        --button-fixed-hover-overlay: #ffffff1a;
+        --button-gray-text: #3a3f47;
+        --squircle-mask: url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 64C0 17.9205 17.9205 0 64 0C110.079 0 128 17.9205 128 64C128 110.079 110.079 128 64 128C17.9205 128 0 110.079 0 64Z' fill='white'/%3E%3C/svg%3E");
+        --lnb-width: 220px;
+        --content-gap: 32px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--canvas);
+        color: var(--ink);
+        display: grid;
+        grid-template-columns: var(--lnb-width) minmax(0, 1fr);
+        font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        width: min(1360px, 100%);
+        margin: 0 auto;
+        padding: 32px var(--content-gap) 40px;
+      }
+
+      .lnb {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        height: 100vh;
+        padding: 28px 16px;
+        border-right: 1px solid var(--line);
+        background: #ffffffcc;
+        backdrop-filter: blur(16px);
+      }
+
+      .lnb-title {
+        display: grid;
+        gap: 3px;
+        padding: 0 8px 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .lnb-title strong {
+        font-size: 15px;
+        line-height: 1.25;
+      }
+
+      .lnb-title span {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .lnb-nav {
+        display: grid;
+        gap: 6px;
+      }
+
+      .lnb-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 36px;
+        padding: 0 10px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .lnb-link:hover {
+        border-color: var(--line);
+        background: #f7f8fa;
+      }
+
+      .lnb-link span {
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .masthead {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: end;
+        margin-bottom: 18px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 30px;
+        line-height: 1.1;
+      }
+
+      .lead {
+        max-width: 820px;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .chip {
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--panel);
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        margin-bottom: 16px;
+      }
+
+      .toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 32px;
+        padding: 0 10px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 800;
+        user-select: none;
+      }
+
+      .toggle input {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        accent-color: var(--guide);
+      }
+
+      .toggle select,
+      .toggle input[type="text"] {
+        height: 24px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        background: var(--panel);
+        color: var(--ink);
+        font: inherit;
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .toggle input[type="text"] {
+        width: 96px;
+        padding: 0 8px;
+      }
+
+      .meta {
+        margin-left: auto;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .board {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .mode-panel {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .mode-panel.fixed {
+        background: #101114;
+        color: #f4f4f4;
+        border-color: #ffffff26;
+      }
+
+      .panel-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: start;
+        padding: 14px 16px 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .fixed .panel-head {
+        border-bottom-color: #ffffff1a;
+      }
+
+      h2 {
+        font-size: 15px;
+        line-height: 1.25;
+      }
+
+      .panel-note {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .fixed .panel-note,
+      .fixed .count {
+        color: #ffffff99;
+      }
+
+      .count {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .variants {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(116px, 1fr));
+        gap: 0;
+      }
+
+      .variant-card {
+        position: relative;
+        display: grid;
+        grid-template-rows: 160px auto;
+        min-width: 0;
+        border-right: 1px solid var(--soft-line);
+        border-bottom: 1px solid var(--soft-line);
+        background: #ffffff;
+      }
+
+      .fixed .variant-card {
+        background: #101114;
+        border-color: #ffffff14;
+      }
+
+      .variant-card:nth-child(6n) {
+        border-right: 0;
+      }
+
+      .cell-stage {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 160px;
+        padding: 10px;
+        background:
+          linear-gradient(90deg, #00000006 1px, transparent 1px),
+          linear-gradient(#00000006 1px, transparent 1px);
+        background-size: 16px 16px;
+      }
+
+      .fixed .cell-stage {
+        background:
+          linear-gradient(90deg, #ffffff08 1px, transparent 1px),
+          linear-gradient(#ffffff08 1px, transparent 1px);
+        background-size: 16px 16px;
+      }
+
+      .cell-info {
+        min-height: 54px;
+        padding: 9px 10px 10px;
+        border-top: 1px solid var(--soft-line);
+      }
+
+      .fixed .cell-info {
+        border-top-color: #ffffff14;
+      }
+
+      .size-name {
+        font-size: 11px;
+        line-height: 1.25;
+        font-weight: 900;
+      }
+
+      .node-id {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+
+      .fixed .node-id {
+        color: #ffffff80;
+      }
+
+      .text-button-info .node-id {
+        word-break: break-word;
+      }
+
+      .avatar {
+        position: relative;
+        width: var(--root);
+        height: var(--root);
+        flex: 0 0 var(--root);
+      }
+
+      .avatar::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px dashed transparent;
+        border-radius: 8px;
+        pointer-events: none;
+      }
+
+      .guide-on .avatar::before {
+        border-color: var(--guide);
+      }
+
+      .image-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--image);
+        height: var(--image);
+        transform: translate(-50%, -50%);
+      }
+
+      .image-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid var(--image-stroke);
+        border-radius: inherit;
+        pointer-events: none;
+      }
+
+      .avatar-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+      }
+
+      .circle .image-wrap,
+      .circle .avatar-img {
+        border-radius: 50%;
+      }
+
+      .squircle .image-wrap,
+      .squircle .avatar-img {
+        border-radius: 0;
+        -webkit-mask: var(--squircle-mask) center / 100% 100% no-repeat;
+        mask: var(--squircle-mask) center / 100% 100% no-repeat;
+      }
+
+      .ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: var(--ring-paint);
+        -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--ring-width) - 0.5px), #000 calc(100% - var(--ring-width)));
+        mask: radial-gradient(farthest-side, transparent calc(100% - var(--ring-width) - 0.5px), #000 calc(100% - var(--ring-width)));
+        pointer-events: none;
+      }
+
+      .hat {
+        position: absolute;
+        top: -1px;
+        right: 0;
+        display: block;
+        width: var(--hat);
+        height: var(--hat);
+        object-fit: contain;
+        pointer-events: none;
+      }
+
+      .emoji {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: grid;
+        width: var(--emoji);
+        height: var(--emoji);
+        place-items: center;
+        border-radius: 50%;
+        background: var(--emoji-bg);
+        box-shadow: 0 6px 18px #0000001a;
+        font-size: max(7px, calc(var(--emoji) * 0.48));
+        line-height: 1;
+      }
+
+      .host {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: grid;
+        width: var(--host);
+        height: var(--host);
+        place-items: center;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+
+      .host-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .host-img {
+        position: relative;
+        z-index: 1;
+        width: var(--host-img);
+        height: var(--host-img);
+        border-radius: 50%;
+      }
+
+      .badge-dot {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: var(--dot);
+        height: var(--dot);
+        border: var(--dot-border) solid var(--dot-stroke);
+        border-radius: 50%;
+        background: var(--danger);
+      }
+
+      .controls-off .hat,
+      .controls-off .emoji,
+      .controls-off .host,
+      .controls-off .badge-dot {
+        display: none;
+      }
+
+      .ring-off .ring {
+        display: none;
+      }
+
+      .rules {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      .rule-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 14px 16px;
+      }
+
+      .rule-card h3 {
+        font-size: 13px;
+        line-height: 1.3;
+      }
+
+      .rule-card ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .component-block {
+        scroll-margin-top: 24px;
+      }
+
+      .component-block + .component-block {
+        margin-top: 28px;
+      }
+
+      #checkbox {
+        margin-top: 80px;
+      }
+
+      #radio {
+        margin-top: 80px;
+      }
+
+      #text-button {
+        margin-top: 80px;
+      }
+
+      .checkbox-board {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(98px, 1fr));
+        border-top: 1px solid var(--soft-line);
+      }
+
+      .fixed .checkbox-grid {
+        border-top-color: #ffffff14;
+      }
+
+      .checkbox-card {
+        position: relative;
+        display: grid;
+        grid-template-rows: 92px auto;
+        border-right: 1px solid var(--soft-line);
+        border-bottom: 1px solid var(--soft-line);
+      }
+
+      .checkbox-card:nth-child(6n) {
+        border-right: 0;
+      }
+
+      .fixed .checkbox-card {
+        border-color: #ffffff14;
+      }
+
+      .checkbox-stage {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 92px;
+        background:
+          linear-gradient(90deg, #00000006 1px, transparent 1px),
+          linear-gradient(#00000006 1px, transparent 1px);
+        background-size: 16px 16px;
+      }
+
+      .fixed .checkbox-stage {
+        background:
+          linear-gradient(90deg, #ffffff08 1px, transparent 1px),
+          linear-gradient(#ffffff08 1px, transparent 1px);
+        background-size: 16px 16px;
+      }
+
+      .checkbox-info {
+        min-height: 54px;
+        padding: 9px 10px 10px;
+        border-top: 1px solid var(--soft-line);
+      }
+
+      .fixed .checkbox-info {
+        border-top-color: #ffffff14;
+      }
+
+      .checkbox {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        --checkbox-stroke: var(--outline-default-200a);
+        --checkbox-bg: transparent;
+        --check-color: var(--icon-default-reverse);
+        --radius: 50%;
+      }
+
+      .checkbox.square {
+        --radius: 6px;
+      }
+
+      .checkbox.fixed {
+        --checkbox-stroke: var(--outline-fixed-200a);
+        --check-color: var(--icon-fixed-reverse);
+      }
+
+      .checkbox.enabled.default {
+        --checkbox-bg: var(--primary);
+        --checkbox-stroke: var(--primary);
+      }
+
+      .checkbox.enabled.fixed {
+        --checkbox-bg: var(--primary-fixed);
+        --checkbox-stroke: var(--primary-fixed);
+      }
+
+      .checkbox.disabled.default {
+        --checkbox-bg: var(--surface-reverse-100a);
+        --checkbox-stroke: var(--outline-default-200a);
+        --check-color: var(--icon-default-200a);
+      }
+
+      .checkbox.disabled.fixed {
+        --checkbox-bg: var(--surface-fixed-reverse-100a);
+        --checkbox-stroke: var(--outline-fixed-200a);
+        --check-color: var(--icon-fixed-200a);
+      }
+
+      .checkbox-box {
+        position: absolute;
+        inset: 1px;
+        border: 1px solid var(--checkbox-stroke);
+        border-radius: var(--radius);
+        background: var(--checkbox-bg);
+      }
+
+      .checkbox-check {
+        position: absolute;
+        inset: 4px;
+        width: 16px;
+        height: 16px;
+        color: var(--check-color);
+      }
+
+      .checkbox-check::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: currentColor;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.25 4.75L6.75 11.25L3.25 7.75' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+        mask: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.25 4.75L6.75 11.25L3.25 7.75' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+      }
+
+      .checkbox.default-state .checkbox-check {
+        display: none;
+      }
+
+      .radio-board {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .radio-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(98px, 1fr));
+        border-top: 1px solid var(--soft-line);
+      }
+
+      .fixed .radio-grid {
+        border-top-color: #ffffff14;
+      }
+
+      .radio-card {
+        position: relative;
+        display: grid;
+        grid-template-rows: 92px auto;
+        border-right: 1px solid var(--soft-line);
+        border-bottom: 1px solid var(--soft-line);
+      }
+
+      .radio-card:nth-child(6n) {
+        border-right: 0;
+      }
+
+      .fixed .radio-card {
+        border-color: #ffffff14;
+      }
+
+      .radio-stage {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 92px;
+        background:
+          linear-gradient(90deg, #00000006 1px, transparent 1px),
+          linear-gradient(#00000006 1px, transparent 1px);
+        background-size: 16px 16px;
+      }
+
+      .fixed .radio-stage {
+        background:
+          linear-gradient(90deg, #ffffff08 1px, transparent 1px),
+          linear-gradient(#ffffff08 1px, transparent 1px);
+        background-size: 16px 16px;
+      }
+
+      .radio-info {
+        min-height: 54px;
+        padding: 9px 10px 10px;
+        border-top: 1px solid var(--soft-line);
+      }
+
+      .fixed .radio-info {
+        border-top-color: #ffffff14;
+      }
+
+      .radio {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        --radio-stroke: var(--outline-default-200a);
+        --radio-bg: transparent;
+        --radio-inner: transparent;
+      }
+
+      .radio.fixed {
+        --radio-stroke: var(--outline-fixed-200a);
+      }
+
+      .radio.enabled.default {
+        --radio-bg: var(--primary);
+        --radio-stroke: var(--primary);
+        --radio-inner: var(--default-surface);
+      }
+
+      .radio.enabled.fixed {
+        --radio-bg: var(--primary-fixed);
+        --radio-stroke: var(--primary-fixed);
+        --radio-inner: var(--fixed-surface);
+      }
+
+      .radio.disabled.default {
+        --radio-bg: var(--surface-reverse-100a);
+        --radio-stroke: var(--outline-default-200a);
+        --radio-inner: var(--surface-reverse-200a);
+      }
+
+      .radio.disabled.fixed {
+        --radio-bg: var(--surface-fixed-reverse-100a);
+        --radio-stroke: var(--outline-fixed-200a);
+        --radio-inner: var(--surface-fixed-reverse-200a);
+      }
+
+      .radio-outline {
+        position: absolute;
+        inset: 1px;
+        border: 1px solid var(--radio-stroke);
+        border-radius: 50%;
+        background: var(--radio-bg);
+      }
+
+      .radio-inner {
+        position: absolute;
+        inset: 8px;
+        border-radius: 50%;
+        background: var(--radio-inner);
+      }
+
+      .radio.default-state .radio-inner {
+        display: none;
+      }
+
+      .text-button-board {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .text-button-tabs-panel,
+      .component-tabs-panel {
+        overflow: visible;
+      }
+
+      .text-button-tabs,
+      .component-tabs {
+        display: grid;
+        gap: 12px;
+        padding: 14px 16px 16px;
+      }
+
+      .text-button-tab-group,
+      .component-tab-group {
+        display: grid;
+        gap: 6px;
+      }
+
+      .text-button-tab-label,
+      .component-tab-label {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .text-button-tab-row,
+      .component-tab-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .text-button-tab,
+      .component-tab {
+        min-height: 32px;
+        padding: 0 12px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #ffffff;
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .text-button-tab:hover,
+      .component-tab:hover {
+        border-color: #b8c2ce;
+        background: #f8fafc;
+      }
+
+      .text-button-tab.active,
+      .component-tab.active {
+        border-color: var(--primary);
+        background: var(--primary);
+        color: #ffffff;
+      }
+
+      .text-button-tab:focus-visible,
+      .component-tab:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+      }
+
+      .text-button-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(96px, 1fr));
+        border-top: 1px solid var(--soft-line);
+      }
+
+      .fixed .text-button-grid {
+        border-top-color: #ffffff14;
+      }
+
+      .text-button-card {
+        position: relative;
+        display: grid;
+        grid-template-rows: 86px auto;
+        border-right: 1px solid var(--soft-line);
+        border-bottom: 1px solid var(--soft-line);
+      }
+
+      .text-button-card:nth-child(6n) {
+        border-right: 0;
+      }
+
+      .fixed .text-button-card {
+        border-color: #ffffff14;
+      }
+
+      .text-button-stage {
+        position: relative;
+        display: grid;
+        min-height: 86px;
+        place-items: center;
+        padding: 12px;
+        background:
+          linear-gradient(90deg, #00000006 1px, transparent 1px),
+          linear-gradient(#00000006 1px, transparent 1px);
+        background-size: 16px 16px;
+      }
+
+      .fixed .text-button-stage {
+        background:
+          linear-gradient(90deg, #ffffff08 1px, transparent 1px),
+          linear-gradient(#ffffff08 1px, transparent 1px);
+        background-size: 16px 16px;
+      }
+
+      .text-button-info {
+        min-height: 58px;
+        padding: 9px 10px 10px;
+        border-top: 1px solid var(--soft-line);
+      }
+
+      .fixed .text-button-info {
+        border-top-color: #ffffff14;
+      }
+
+      .text-button {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        height: var(--button-height);
+        min-width: var(--button-min);
+        padding: 0 var(--button-pad-x);
+        border: 1px solid transparent;
+        border-radius: var(--button-radius);
+        background: var(--button-bg);
+        color: var(--button-text);
+        font-size: var(--button-font-size);
+        font-weight: var(--button-weight, 700);
+        line-height: var(--button-line-height);
+        white-space: nowrap;
+        user-select: none;
+      }
+
+      .text-button-icon {
+        display: block;
+        flex: 0 0 auto;
+        width: var(--button-icon-size);
+        height: var(--button-icon-size);
+      }
+
+      .text-button-icon.leading {
+        margin-right: var(--button-leading-gap);
+      }
+
+      .text-button-icon.trailing {
+        width: var(--button-trailing-icon-width);
+        height: var(--button-trailing-icon-height);
+      }
+
+      .text-button-label + .text-button-icon.trailing,
+      .text-button-label + .text-button-trailing-text {
+        margin-left: var(--button-trailing-gap);
+      }
+
+      .text-button-trailing-text {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+
+      .text-button.radius-on {
+        --button-radius: 100px;
+      }
+
+      .text-button.type-filled.color-default.mode-default {
+        --button-bg: var(--primary);
+        --button-text: #ffffff;
+      }
+
+      .text-button.type-filled.color-black.mode-default {
+        --button-bg: var(--button-black);
+        --button-text: #ffffff;
+      }
+
+      .text-button.type-filled.color-default.mode-fixed {
+        --button-bg: var(--primary-fixed);
+        --button-text: #000000;
+      }
+
+      .text-button.type-filled.color-black.mode-fixed {
+        --button-bg: #ffffff;
+        --button-text: #000000;
+      }
+
+      .text-button.type-outlined-color {
+        --button-bg: transparent;
+        --button-stroke: var(--primary);
+        --button-text: var(--primary);
+        border-color: var(--button-stroke);
+      }
+
+      .text-button.type-outlined-color.color-black.mode-default {
+        --button-stroke: var(--button-black);
+        --button-text: var(--button-black);
+      }
+
+      .text-button.type-outlined-color.mode-fixed {
+        --button-stroke: var(--primary-fixed);
+        --button-text: var(--primary-fixed);
+      }
+
+      .text-button.type-outlined-color.color-black.mode-fixed {
+        --button-stroke: #ffffff;
+        --button-text: #ffffff;
+      }
+
+      .text-button.type-outlined-gray {
+        --button-bg: transparent;
+        --button-stroke: var(--button-outline-gray);
+        --button-text: var(--ink);
+        border-color: var(--button-stroke);
+      }
+
+      .text-button.type-outlined-gray.mode-fixed {
+        --button-stroke: var(--button-fixed-outline-gray);
+        --button-text: #ffffff;
+      }
+
+      .text-button.type-ghost {
+        --button-bg: transparent;
+        --button-text: var(--button-gray-text);
+        --button-weight: 500;
+      }
+
+      .text-button.type-ghost.mode-fixed {
+        --button-text: #ffffffcc;
+      }
+
+      .text-button.status-hover::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: var(--button-hover-overlay);
+      }
+
+      .text-button.status-hover.mode-fixed::after {
+        background: var(--button-fixed-hover-overlay);
+      }
+
+      .text-button.status-disabled {
+        pointer-events: none;
+      }
+
+      .text-button.type-filled.status-disabled.color-default,
+      .text-button.type-filled.status-disabled.color-black {
+        --button-bg: var(--button-disabled);
+        --button-text: var(--button-disabled-text);
+      }
+
+      .text-button.type-filled.status-disabled.mode-fixed.color-default,
+      .text-button.type-filled.status-disabled.mode-fixed.color-black {
+        --button-bg: var(--button-fixed-disabled);
+        --button-text: var(--button-fixed-disabled-text);
+      }
+
+      .text-button.type-outlined-color.status-disabled.color-default,
+      .text-button.type-outlined-color.status-disabled.color-black,
+      .text-button.type-outlined-gray.status-disabled.color-default {
+        --button-stroke: var(--button-disabled-text);
+        --button-text: var(--button-disabled-text);
+      }
+
+      .text-button.type-outlined-color.status-disabled.mode-fixed.color-default,
+      .text-button.type-outlined-color.status-disabled.mode-fixed.color-black,
+      .text-button.type-outlined-gray.status-disabled.mode-fixed.color-default {
+        --button-stroke: var(--button-fixed-disabled-text);
+        --button-text: var(--button-fixed-disabled-text);
+      }
+
+      .text-button.status-disabled.type-ghost {
+        --button-text: var(--button-disabled-text);
+      }
+
+      .text-button.status-disabled.type-ghost.mode-fixed {
+        --button-text: var(--button-fixed-disabled-text);
+      }
+
+      .text-button.type-filled.status-loading {
+        --button-loading-color: currentColor;
+      }
+
+      .text-button:not(.type-filled).status-loading {
+        --button-loading-color: var(--primary);
+      }
+
+      .text-button.mode-fixed:not(.type-filled).status-loading {
+        --button-loading-color: var(--primary-fixed);
+      }
+
+      .text-button-loader {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--loader-gap);
+        width: var(--loader-size);
+        height: var(--loader-size);
+        color: var(--button-loading-color);
+      }
+
+      .text-button-loader-dot {
+        display: block;
+        width: var(--loader-dot);
+        height: var(--loader-dot);
+        border-radius: 999px;
+        background: currentColor;
+      }
+
+      @media (max-width: 980px) {
+        body {
+          display: block;
+        }
+
+        .lnb {
+          position: static;
+          height: auto;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        main {
+          width: min(100% - 24px, 1360px);
+          margin: 0 auto;
+          padding: 24px 0 40px;
+        }
+
+        .masthead,
+        .board,
+        .rules,
+        .checkbox-board,
+        .radio-board,
+        .text-button-board {
+          grid-template-columns: 1fr;
+        }
+
+        .meta {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="lnb" aria-label="Component navigation">
+      <div class="lnb-title">
+        <strong>Chord DS</strong>
+        <span>Component Test</span>
+      </div>
+      <nav class="lnb-nav">
+        <a class="lnb-link" href="#avatar">Avatar <span>44</span></a>
+        <a class="lnb-link" href="#text-button">Text Button <span>576</span></a>
+        <a class="lnb-link" href="#checkbox">Checkbox <span>12</span></a>
+        <a class="lnb-link" href="#radio">Radio <span>6</span></a>
+      </nav>
+    </aside>
+    <main>
+      <div class="masthead component-block" id="avatar">
+        <div>
+          <h1>[V2] Avatar Component Set</h1>
+          <p class="lead">
+            Figma node 62973:7556. Description의 Mode / Type / Size 축과 layout size를 기준으로 44개 조합을
+            정적 HTML/CSS variant board로 재구성했습니다.
+          </p>
+        </div>
+        <div class="chip">index_4 · 44 variants</div>
+      </div>
+
+      <div class="toolbar">
+        <label class="toggle">
+          <input id="guideToggle" type="checkbox" />
+          Show guides
+        </label>
+        <label class="toggle">
+          <input id="controlToggle" type="checkbox" checked />
+          Show badges
+        </label>
+        <label class="toggle">
+          <input id="ringToggle" type="checkbox" checked />
+          Show ring
+        </label>
+        <label class="toggle">
+          Ring case
+          <select id="ringCaseSelect">
+            <option value="Membership Only" selected>Membership Only</option>
+            <option value="Unread">Unread</option>
+            <option value="Read">Read</option>
+            <option value="Default">Default</option>
+          </select>
+        </label>
+        <div class="meta">Mode(2) × Type(2) × Size(11), all combinations valid</div>
+      </div>
+
+      <div class="board" id="board"></div>
+
+      <section class="rules">
+        <div class="rule-card">
+          <h3>Do</h3>
+          <ul>
+            <li>개인 프로필이나 사용자 정체성 표현에는 Circle Avatar를 사용합니다.</li>
+            <li>그룹, 솔로 아티스트, 공식 커뮤니티 대표 이미지에는 Squircle Avatar를 사용합니다.</li>
+            <li>같은 리스트나 동일 계층 안에서는 동일한 Avatar size를 사용합니다.</li>
+          </ul>
+        </div>
+        <div class="rule-card">
+          <h3>Don't</h3>
+          <ul>
+            <li>콘텐츠 목적이 다른 Avatar type을 임의로 혼용하지 않습니다.</li>
+            <li>동일한 정보 계층 안에서 Avatar size를 섞어 레이아웃이 흔들리게 하지 않습니다.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="component-block" id="text-button">
+        <div class="masthead">
+          <div>
+            <h1>[V2] Text Button Component Set</h1>
+            <p class="lead">
+              Figma node 52753:39618. Mode / Type / Size / Button Color / Status / Radius 축과 valid color 제약을
+              기준으로 576개 조합과 slot/content prop 샘플을 정적 HTML/CSS variant board로 추가했습니다.
+            </p>
+          </div>
+          <div class="chip">Text Button · 576 variants</div>
+        </div>
+
+        <div class="text-button-board" id="textButtonBoard"></div>
+
+        <section class="rules">
+          <div class="rule-card">
+            <h3>Do</h3>
+            <ul>
+              <li>Primary action에는 Filled 타입과 Primary Mint 컬러를 우선 사용합니다.</li>
+              <li>Secondary action에는 Outlined_gray 타입을 사용해 시각 위계를 낮춥니다.</li>
+              <li>버튼 크기별 label spec, padding, height를 그대로 유지합니다.</li>
+            </ul>
+          </div>
+          <div class="rule-card">
+            <h3>Don't</h3>
+            <ul>
+              <li>Outlined_gray와 Ghost 타입에 Black button color를 임의로 추가하지 않습니다.</li>
+              <li>Loading 상태에서 중복 요청이 가능하도록 두지 않습니다.</li>
+              <li>긴 label을 말줄임으로 핵심 action이 사라지게 만들지 않습니다.</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section class="component-block" id="checkbox">
+        <div class="masthead">
+          <div>
+            <h1>[V2] Checkbox Component Set</h1>
+            <p class="lead">
+              Figma node 60365:40276. Description의 Mode / Type / Status 축과 token names를 기준으로 12개 조합을
+              정적 HTML/CSS variant board로 추가했습니다.
+            </p>
+          </div>
+          <div class="chip">Checkbox · 12 variants</div>
+        </div>
+
+        <div class="checkbox-board" id="checkboxBoard"></div>
+
+        <section class="rules">
+          <div class="rule-card">
+            <h3>Do</h3>
+            <ul>
+              <li>여러 항목을 0개부터 전체까지 선택할 수 있을 때 Check Box를 사용합니다.</li>
+              <li>단일 항목의 동의, 승인, 확인에는 Check Box를 사용합니다.</li>
+              <li>기본 Check Box는 Circle 타입을 사용합니다.</li>
+            </ul>
+          </div>
+          <div class="rule-card">
+            <h3>Don't</h3>
+            <ul>
+              <li>여러 옵션 중 하나만 고르는 선택에 Check Box를 사용하지 않습니다.</li>
+              <li>Square와 Circle을 같은 선택 그룹 안에서 임의로 혼용하지 않습니다.</li>
+              <li>Default 상태에 회색 check icon을 노출하지 않습니다.</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section class="component-block" id="radio">
+        <div class="masthead">
+          <div>
+            <h1>[V2] Radio Component Set</h1>
+            <p class="lead">
+              Figma node 59215:200965. Figma에서 확인한 Mode / Status 축과 24px geometry를 기준으로 6개 조합을
+              정적 HTML/CSS variant board로 추가했습니다.
+            </p>
+          </div>
+          <div class="chip">Radio · 6 variants</div>
+        </div>
+
+        <div class="radio-board" id="radioBoard"></div>
+
+        <section class="rules">
+          <div class="rule-card">
+            <h3>Do</h3>
+            <ul>
+              <li>여러 항목 중 하나만 선택해야 할 때 Radio를 사용합니다.</li>
+              <li>같은 선택 그룹 안에서는 동일한 control 타입을 사용합니다.</li>
+              <li>선택 전 상태는 채워지지 않은 빈 원으로 표시합니다.</li>
+            </ul>
+          </div>
+          <div class="rule-card">
+            <h3>Don't</h3>
+            <ul>
+              <li>복수 선택 가능한 옵션에 Radio를 사용하지 않습니다.</li>
+              <li>Radio와 Check Box를 같은 선택 그룹 안에서 함께 사용하지 않습니다.</li>
+              <li>선택 전 상태에 dot을 표시하지 않습니다.</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      const sizes = [
+        ["XXXXLarge", 140],
+        ["XXXLarge", 108],
+        ["XXLarge", 84],
+        ["XLarge", 72],
+        ["Large", 64],
+        ["Medium", 56],
+        ["Small", 46],
+        ["XSmall", 38],
+        ["XXSmall", 30],
+        ["XXXSmall", 26],
+        ["Tiny", 22],
+      ];
+
+      const nodeIds = {
+        "Default-Circle": ["62973:7557", "62973:7562", "62973:7567", "62973:7575", "62973:7583", "62973:7591", "62973:7599", "62973:7604", "62973:7609", "62973:7614", "62973:7619"],
+        "Default-Squircle": ["62973:7624", "62973:7628", "62973:7632", "62973:7639", "62973:7646", "62973:7653", "62973:7660", "62973:7664", "62973:7668", "62973:7672", "62973:7676"],
+        "Fixed-Circle": ["62973:7681", "62973:7686", "62973:7691", "62973:7699", "62973:7707", "62973:7715", "62973:7723", "62973:7728", "62973:7733", "62973:7738", "62973:7743"],
+        "Fixed-Squircle": ["62973:7748", "62973:7752", "62973:7756", "62973:7763", "62973:7770", "62973:7777", "62973:7784", "62973:7788", "62973:7792", "62973:7796", "62973:7800"],
+      };
+
+      const board = document.querySelector("#board");
+      const groups = [
+        ["Default", "Circle", "OS theme color, personal profile"],
+        ["Default", "Squircle", "OS theme color, group or official identity"],
+        ["Fixed", "Circle", "Fixed dark token set, personal profile"],
+        ["Fixed", "Squircle", "Fixed dark token set, group or official identity"],
+      ];
+
+      const metricBySize = {
+        XXXXLarge: { image: 128, hat: 40, emoji: 38, ringWidth: 3, host: 46, hostImg: 40, dot: 32, dotBorder: 4 },
+        XXXLarge: { image: 96, hat: 32, emoji: 32, ringWidth: 3, host: 38, hostImg: 32, dot: 30, dotBorder: 4 },
+        XXLarge: { image: 72, hat: 24, emoji: 24, ringWidth: 3, host: 30, hostImg: 24, dot: 24, dotBorder: 4 },
+        XLarge: { image: 64, hat: 24, emoji: 24, ringWidth: 3, host: 30, hostImg: 24, dot: 20, dotBorder: 4 },
+        Large: { image: 56, hat: 24, emoji: 24, ringWidth: 3, host: 30, hostImg: 24, dot: 18, dotBorder: 3 },
+        Medium: { image: 48, hat: 20, emoji: 24, ringWidth: 3, host: 30, hostImg: 24, dot: 18, dotBorder: 3 },
+        Small: { image: 40, hat: 20, emoji: 0, ringWidth: 2, host: 0, hostImg: 0, dot: 12, dotBorder: 2 },
+        XSmall: { image: 32, hat: 16, emoji: 0, ringWidth: 2, host: 0, hostImg: 0, dot: 12, dotBorder: 2 },
+        XXSmall: { image: 24, hat: 12, emoji: 0, ringWidth: 2, host: 0, hostImg: 0, dot: 10, dotBorder: 2 },
+        XXXSmall: { image: 20, hat: 10, emoji: 0, ringWidth: 2, host: 0, hostImg: 0, dot: 10, dotBorder: 2 },
+        Tiny: { image: 16, hat: 10, emoji: 0, ringWidth: 2, host: 0, hostImg: 0, dot: 8, dotBorder: 2 },
+      };
+
+      let selectedRingCase = "Membership Only";
+
+      function getMetrics(name, type) {
+        const metrics = metricBySize[name];
+        return {
+          ...metrics,
+          host: type === "Squircle" ? metrics.host : 0,
+          hostImg: type === "Squircle" ? metrics.hostImg : 0,
+          dot: type === "Squircle" ? metrics.dot : 0,
+          dotBorder: type === "Squircle" ? metrics.dotBorder : 0,
+          emoji: type === "Circle" ? metrics.emoji : 0,
+          hat: type === "Circle" ? metrics.hat : 0,
+        };
+      }
+
+      function getRingPaint(mode, ringCase) {
+        if (ringCase === "Read") return mode === "Fixed" ? "var(--outline-fixed-200a)" : "var(--line)";
+        if (ringCase === "Unread") return mode === "Fixed" ? "var(--primary-fixed)" : "var(--primary)";
+        if (ringCase === "Membership Only") return "linear-gradient(354deg, #08c58a 0%, #4587ff 43%, #b28cff 77%)";
+        return "transparent";
+      }
+
+      function renderAvatar(mode, type, name, size, nodeId) {
+        const m = getMetrics(name, type);
+        const isFixed = mode === "Fixed";
+        const isSquircle = type === "Squircle";
+        const style = [
+          `--root:${size}px`,
+          `--image:${m.image}px`,
+          `--hat:${m.hat}px`,
+          `--emoji:${m.emoji}px`,
+          `--host:${m.host}px`,
+          `--host-img:${m.hostImg}px`,
+          `--dot:${m.dot}px`,
+          `--dot-border:${m.dotBorder}px`,
+          `--ring-width:${m.ringWidth}px`,
+          `--ring-paint:${getRingPaint(mode, selectedRingCase)}`,
+          `--image-stroke:${isFixed ? "#ffffff1a" : "#0000000a"}`,
+          `--emoji-bg:${isFixed ? "#282828" : "var(--default-surface)"}`,
+          `--dot-stroke:${isFixed ? "var(--fixed-badge-stroke)" : "#ffffff"}`,
+        ].join(";");
+
+        const mainSrc = isSquircle ? "assets/avatar-main.png" : "assets/avatar-circle.png";
+        const ring = !isSquircle && selectedRingCase !== "Default" ? '<span class="ring" aria-hidden="true"></span>' : "";
+        const hat = !isSquircle ? '<img class="hat" src="assets/avatar-birthday-hat.svg" alt="" aria-hidden="true" />' : "";
+        const emoji = !isSquircle && m.emoji > 0 ? '<span class="emoji" aria-hidden="true">🏕</span>' : "";
+        const host = isSquircle && m.host > 0
+          ? '<span class="host" aria-hidden="true"><img class="host-bg" src="assets/avatar-host-bg.svg" alt="" /><img class="host-img" src="assets/avatar-host.png" alt="" /></span>'
+          : "";
+        const dot = isSquircle && m.dot > 0 ? '<span class="badge-dot" aria-hidden="true"></span>' : "";
+
+        return `
+          <div class="avatar ${type.toLowerCase()} ${mode.toLowerCase()}" style="${style}" role="img" aria-label="${mode} ${type} ${name} avatar" data-node-id="${nodeId}">
+            ${ring}
+            <span class="image-wrap"><img class="avatar-img" src="${mainSrc}" alt="" /></span>
+            ${hat}
+            ${emoji}
+            ${host}
+            ${dot}
+          </div>
+        `;
+      }
+
+      function renderComponentTabButton(group, value, label, active) {
+        return `
+          <button
+            class="component-tab ${active ? "active" : ""}"
+            type="button"
+            role="tab"
+            aria-selected="${active}"
+            data-tab-group="${group}"
+            data-tab-value="${value}"
+          >${label}</button>
+        `;
+      }
+
+      function renderGroup(mode, type, note) {
+        const key = `${mode}-${type}`;
+        const cards = sizes.map(([name, size], index) => {
+          const nodeId = nodeIds[key][index];
+          return `
+            <article class="variant-card">
+              <div class="cell-stage">
+                ${renderAvatar(mode, type, name, size, nodeId)}
+              </div>
+              <div class="cell-info">
+                <div class="size-name">${name}</div>
+                <div class="node-id">${nodeId} · ${size}px</div>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        return `
+          <section class="mode-panel ${mode.toLowerCase()}">
+            <div class="panel-head">
+              <div>
+                <h2>${mode} / ${type}</h2>
+                <p class="panel-note">${note}</p>
+              </div>
+              <div class="count">11 variants</div>
+            </div>
+            <div class="variants">${cards}</div>
+          </section>
+        `;
+      }
+
+      const avatarTabState = {
+        mode: "Default",
+        type: "Circle",
+      };
+
+      function getAvatarGroupNote(mode, type) {
+        const group = groups.find(([groupMode, groupType]) => groupMode === mode && groupType === type);
+        return group ? group[2] : "";
+      }
+
+      function renderAvatarTabs() {
+        const note = getAvatarGroupNote(avatarTabState.mode, avatarTabState.type);
+        return `
+          <section class="mode-panel component-tabs-panel">
+            <div class="panel-head">
+              <div>
+                <h2>Avatar Variant Tabs</h2>
+                <p class="panel-note">${avatarTabState.mode} / ${avatarTabState.type} 조합을 표시 중입니다.</p>
+              </div>
+              <div class="count">11 visible / 44 total</div>
+            </div>
+            <div class="component-tabs">
+              <div class="component-tab-group">
+                <div class="component-tab-label">Mode</div>
+                <div class="component-tab-row" role="tablist" aria-label="Avatar Mode">
+                  ${["Default", "Fixed"].map((mode) => renderComponentTabButton("avatar-mode", mode, mode, avatarTabState.mode === mode)).join("")}
+                </div>
+              </div>
+              <div class="component-tab-group">
+                <div class="component-tab-label">Type</div>
+                <div class="component-tab-row" role="tablist" aria-label="Avatar Type">
+                  ${["Circle", "Squircle"].map((type) => renderComponentTabButton("avatar-type", type, type, avatarTabState.type === type)).join("")}
+                </div>
+              </div>
+            </div>
+          </section>
+          ${renderGroup(avatarTabState.mode, avatarTabState.type, note)}
+        `;
+      }
+
+      function renderBoard() {
+        board.innerHTML = renderAvatarTabs();
+      }
+
+      renderBoard();
+
+      board.addEventListener("click", (event) => {
+        const tab = event.target.closest(".component-tab");
+        if (!tab) return;
+
+        if (tab.dataset.tabGroup === "avatar-mode") {
+          avatarTabState.mode = tab.dataset.tabValue;
+        } else if (tab.dataset.tabGroup === "avatar-type") {
+          avatarTabState.type = tab.dataset.tabValue;
+        }
+
+        renderBoard();
+      });
+
+      const textButtonBoard = document.querySelector("#textButtonBoard");
+      const iconPath = "../../design-cds-docs/01_chord-ds/icons";
+      const textButtonSlotSpacing = {
+        leadingToLabel: 4,
+        labelToTrailingDefault: 6,
+        labelToTrailingCompact: 4,
+        compactTrailingGapSizes: new Set(["XSmall", "XXSmall"]),
+      };
+      const textButtonSizes = [
+        { name: "XLarge", figmaName: "XLarge(52)", height: 52, padX: 24, min: 68, fontSize: 16, lineHeight: 24, radius: 8, iconSize: 20, iconSrc: `${iconPath}/24px/ic_null.svg`, trailingIconWidth: 8, trailingIconHeight: 16, loaderSize: 20, loaderDot: 3, loaderGap: 4 },
+        { name: "Large", figmaName: "Large(44)", height: 44, padX: 20, min: 60, fontSize: 14, lineHeight: 20, radius: 8, iconSize: 20, iconSrc: `${iconPath}/24px/ic_null.svg`, trailingIconWidth: 8, trailingIconHeight: 16, loaderSize: 20, loaderDot: 3, loaderGap: 4 },
+        { name: "Medium", figmaName: "Medium(40)", height: 40, padX: 16, min: 52, fontSize: 13, lineHeight: 18, radius: 8, iconSize: 20, iconSrc: `${iconPath}/24px/ic_null.svg`, trailingIconWidth: 6, trailingIconHeight: 12, loaderSize: 16, loaderDot: 3, loaderGap: 3 },
+        { name: "Small", figmaName: "Small(36)", height: 36, padX: 16, min: 50, fontSize: 12, lineHeight: 16, radius: 6, iconSize: 16, iconSrc: `${iconPath}/16px/ic_null.svg`, trailingIconWidth: 6, trailingIconHeight: 12, loaderSize: 16, loaderDot: 3, loaderGap: 3 },
+        { name: "XSmall", figmaName: "XSmall(32)", height: 32, padX: 12, min: 44, fontSize: 11, lineHeight: 14, radius: 6, iconSize: 16, iconSrc: `${iconPath}/16px/ic_null.svg`, trailingIconWidth: 6, trailingIconHeight: 12, loaderSize: 16, loaderDot: 3, loaderGap: 3 },
+        { name: "XXSmall", figmaName: "XXSmall(24)", height: 24, padX: 8, min: 36, fontSize: 10, lineHeight: 12, radius: 6, iconSize: 16, iconSrc: `${iconPath}/16px/ic_null.svg`, trailingIconWidth: 5, trailingIconHeight: 10, loaderSize: 12, loaderDot: 2, loaderGap: 2 },
+      ];
+      const textButtonStatuses = ["Default", "Hover", "Disabled", "Loading"];
+      const textButtonTypes = [
+        { name: "Filled", className: "filled", colors: ["Default", "Black"] },
+        { name: "Outlined_color", className: "outlined-color", colors: ["Default", "Black"] },
+        { name: "Outlined_gray", className: "outlined-gray", colors: ["Default"] },
+        { name: "Ghost", className: "ghost", colors: ["Default"] },
+      ];
+      const textButtonModes = ["Default", "Fixed"];
+      const textButtonRadii = ["off", "on"];
+      const textButtonTypeTabs = textButtonTypes.flatMap((type) => {
+        return type.colors.map((color) => ({ type, color }));
+      });
+      const textButtonTabState = {
+        mode: "Default",
+        typeName: "Filled",
+        color: "Default",
+        radius: "off",
+      };
+      const textButtonContentState = {
+        label: "Text",
+        leading: false,
+        trailing: false,
+        trailingKind: "icon",
+        trailingText: "12",
+      };
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, (char) => {
+          return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+          }[char];
+        });
+      }
+
+      function getTextButtonVariant(mode, type, size, color, status, radius) {
+        return [mode, type, size.figmaName, color, status, `Radius=${radius}`].join(" / ");
+      }
+
+      function renderTextButton(mode, type, size, color, status, radius, options = {}) {
+        const {
+          label = "Text",
+          leading = false,
+          trailing = false,
+          trailingKind = "icon",
+          trailingText = "12",
+        } = options;
+        const modeClass = mode.toLowerCase();
+        const colorClass = color.toLowerCase();
+        const statusClass = status.toLowerCase();
+        const radiusClass = radius === "on" ? "radius-on" : "radius-off";
+        const buttonRadius = radius === "on" ? 100 : size.radius;
+        const labelToTrailingGap = textButtonSlotSpacing.compactTrailingGapSizes.has(size.name)
+          ? textButtonSlotSpacing.labelToTrailingCompact
+          : textButtonSlotSpacing.labelToTrailingDefault;
+        const style = [
+          `--button-height:${size.height}px`,
+          `--button-pad-x:${size.padX}px`,
+          `--button-min:${size.min}px`,
+          `--button-font-size:${size.fontSize}px`,
+          `--button-line-height:${size.lineHeight}px`,
+          `--button-radius:${buttonRadius}px`,
+          `--button-leading-gap:${textButtonSlotSpacing.leadingToLabel}px`,
+          `--button-trailing-gap:${labelToTrailingGap}px`,
+          `--button-icon-size:${size.iconSize}px`,
+          `--button-trailing-icon-width:${size.trailingIconWidth}px`,
+          `--button-trailing-icon-height:${size.trailingIconHeight}px`,
+          `--loader-size:${size.loaderSize}px`,
+          `--loader-dot:${size.loaderDot}px`,
+          `--loader-gap:${size.loaderGap}px`,
+        ].join(";");
+        const variant = getTextButtonVariant(mode, type.name, size, color, status, radius);
+        const safeLabel = escapeHtml(label);
+        const safeTrailingText = escapeHtml(trailingText);
+        const leadingIcon = leading
+          ? `<img class="text-button-icon leading" src="${size.iconSrc}" alt="" aria-hidden="true" />`
+          : "";
+        const trailingContent = trailing
+          ? trailingKind === "text"
+            ? `<span class="text-button-trailing-text">${safeTrailingText}</span>`
+            : `<img class="text-button-icon trailing" src="${iconPath}/24px/ic_null_en.svg" alt="" aria-hidden="true" />`
+          : "";
+        const content =
+          status === "Loading"
+            ? `<span class="text-button-loader" aria-hidden="true"><span class="text-button-loader-dot"></span><span class="text-button-loader-dot"></span><span class="text-button-loader-dot"></span></span>`
+            : `${leadingIcon}<span class="text-button-label">${safeLabel}</span>${trailingContent}`;
+
+        return `
+          <button
+            class="text-button mode-${modeClass} type-${type.className} color-${colorClass} status-${statusClass} ${radiusClass}"
+            style="${style}"
+            type="button"
+            ${status === "Disabled" || status === "Loading" ? "disabled" : ""}
+            aria-label="${mode} ${type.name} ${size.figmaName} ${color} ${status} radius ${radius}"
+            data-node-id="52753:39618"
+            data-variant="${variant}"
+          >
+            ${content}
+          </button>
+        `;
+      }
+
+      function renderTextButtonPanel(mode, type, color, radius) {
+        const cards = textButtonStatuses.flatMap((status) => {
+          return textButtonSizes.map((size) => {
+            const variant = getTextButtonVariant(mode, type.name, size, color, status, radius);
+            return `
+              <article class="text-button-card">
+                <div class="text-button-stage">${renderTextButton(mode, type, size, color, status, radius, textButtonContentState)}</div>
+                <div class="text-button-info">
+                  <div class="size-name">${status} / ${size.name}</div>
+                  <div class="node-id">52753:39618 · ${variant}</div>
+                </div>
+              </article>
+            `;
+          }).join("");
+        }).join("");
+        const colorNote = color === "Black" ? "Black color token, Filled/Outlined_color only" : "Default Primary Mint or single gray/ghost token";
+        const modeNote = mode === "Default" ? "OS theme color token set" : "Fixed dark token set";
+
+        return `
+          <section class="mode-panel ${mode.toLowerCase()}">
+            <div class="panel-head">
+              <div>
+                <h2>${mode} / ${type.name} / ${color} / Radius ${radius}</h2>
+                <p class="panel-note">${modeNote} · ${colorNote}</p>
+              </div>
+              <div class="count">24 variants</div>
+            </div>
+            <div class="text-button-grid">${cards}</div>
+          </section>
+        `;
+      }
+
+      function renderTextButtonTabButton(group, value, label, active, extraAttrs = "") {
+        return `
+          <button
+            class="text-button-tab ${active ? "active" : ""}"
+            type="button"
+            role="tab"
+            aria-selected="${active}"
+            data-tab-group="${group}"
+            data-tab-value="${value}"
+            ${extraAttrs}
+          >${label}</button>
+        `;
+      }
+
+      function renderTextButtonTabs() {
+        const activeType = textButtonTypeTabs.find(({ type, color }) => {
+          return type.name === textButtonTabState.typeName && color === textButtonTabState.color;
+        }) || textButtonTypeTabs[0];
+        const activePanelTitle = `${textButtonTabState.mode} / ${activeType.type.name} / ${activeType.color} / Radius ${textButtonTabState.radius}`;
+
+        return `
+          <section class="mode-panel text-button-tabs-panel">
+            <div class="panel-head">
+              <div>
+                <h2>Text Button Variant Tabs</h2>
+                <p class="panel-note">${activePanelTitle} 조합을 표시 중입니다.</p>
+              </div>
+              <div class="count">24 visible / 576 total</div>
+            </div>
+            <div class="text-button-tabs">
+              <div class="text-button-tab-group">
+                <div class="text-button-tab-label">Mode</div>
+                <div class="text-button-tab-row" role="tablist" aria-label="Text Button Mode">
+                  ${textButtonModes.map((mode) => renderTextButtonTabButton("mode", mode, mode, textButtonTabState.mode === mode)).join("")}
+                </div>
+              </div>
+              <div class="text-button-tab-group">
+                <div class="text-button-tab-label">Type / Color</div>
+                <div class="text-button-tab-row" role="tablist" aria-label="Text Button Type and Color">
+                  ${textButtonTypeTabs.map(({ type, color }) => {
+                    const active = textButtonTabState.typeName === type.name && textButtonTabState.color === color;
+                    return renderTextButtonTabButton(
+                      "type",
+                      `${type.name}:${color}`,
+                      color === "Default" ? type.name : `${type.name} / Black`,
+                      active,
+                      `data-type-name="${type.name}" data-color="${color}"`
+                    );
+                  }).join("")}
+                </div>
+              </div>
+              <div class="text-button-tab-group">
+                <div class="text-button-tab-label">Radius</div>
+                <div class="text-button-tab-row" role="tablist" aria-label="Text Button Radius">
+                  ${textButtonRadii.map((radius) => renderTextButtonTabButton("radius", radius, `Radius ${radius}`, textButtonTabState.radius === radius)).join("")}
+                </div>
+              </div>
+              <div class="text-button-tab-group">
+                <div class="text-button-tab-label">Content Props</div>
+                <div class="text-button-tab-row">
+                  <label class="toggle">
+                    Button Text
+                    <input type="text" value="${escapeHtml(textButtonContentState.label)}" data-content-control="label" />
+                  </label>
+                  <label class="toggle">
+                    <input type="checkbox" data-content-control="leading" ${textButtonContentState.leading ? "checked" : ""} />
+                    Leading
+                  </label>
+                  <label class="toggle">
+                    <input type="checkbox" data-content-control="trailing" ${textButtonContentState.trailing ? "checked" : ""} />
+                    Trailing
+                  </label>
+                  <label class="toggle">
+                    Trailing Type
+                    <select data-content-control="trailingKind">
+                      <option value="icon" ${textButtonContentState.trailingKind === "icon" ? "selected" : ""}>Icon</option>
+                      <option value="text" ${textButtonContentState.trailingKind === "text" ? "selected" : ""}>Text</option>
+                    </select>
+                  </label>
+                  <label class="toggle">
+                    Trailing Text
+                    <input type="text" value="${escapeHtml(textButtonContentState.trailingText)}" data-content-control="trailingText" />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+          ${renderTextButtonPanel(textButtonTabState.mode, activeType.type, activeType.color, textButtonTabState.radius)}
+        `;
+      }
+
+      function renderTextButtonBoard() {
+        textButtonBoard.innerHTML = renderTextButtonTabs();
+      }
+
+      renderTextButtonBoard();
+
+      textButtonBoard.addEventListener("click", (event) => {
+        const tab = event.target.closest(".text-button-tab");
+        if (!tab) return;
+
+        const group = tab.dataset.tabGroup;
+        if (group === "mode") {
+          textButtonTabState.mode = tab.dataset.tabValue;
+        } else if (group === "type") {
+          textButtonTabState.typeName = tab.dataset.typeName;
+          textButtonTabState.color = tab.dataset.color;
+        } else if (group === "radius") {
+          textButtonTabState.radius = tab.dataset.tabValue;
+        }
+
+        renderTextButtonBoard();
+      });
+
+      textButtonBoard.addEventListener("change", (event) => {
+        const control = event.target.closest("[data-content-control]");
+        if (!control) return;
+
+        const key = control.dataset.contentControl;
+        if (control.type === "checkbox") {
+          textButtonContentState[key] = control.checked;
+        } else {
+          textButtonContentState[key] = control.value;
+        }
+
+        renderTextButtonBoard();
+      });
+
+      const checkboxBoard = document.querySelector("#checkboxBoard");
+      const checkboxNodeIds = {
+        "Default-Square-Default": "60365:40277",
+        "Default-Circle-Default": "60365:40279",
+        "Default-Square-Enabled": "60365:40287",
+        "Default-Circle-Enabled": "60365:40289",
+        "Default-Square-Disabled": "60365:40297",
+        "Default-Circle-Disabled": "60365:40299",
+        "Fixed-Square-Default": "60365:40307",
+        "Fixed-Circle-Default": "60365:40309",
+        "Fixed-Square-Enabled": "60365:40317",
+        "Fixed-Circle-Enabled": "60365:40319",
+        "Fixed-Square-Disabled": "60365:40327",
+        "Fixed-Circle-Disabled": "60365:40329",
+      };
+
+      function renderCheckbox(mode, type, status, nodeId) {
+        const typeClass = type.toLowerCase();
+        const modeClass = mode.toLowerCase();
+        const statusClass = status.toLowerCase();
+        const defaultState = status === "Default" ? "default-state" : "";
+        return `
+          <div class="checkbox ${typeClass} ${modeClass} ${statusClass} ${defaultState}" role="img" aria-label="${mode} ${type} checkbox ${status}" data-node-id="${nodeId}">
+            <span class="checkbox-box"></span>
+            <span class="checkbox-check"></span>
+          </div>
+        `;
+      }
+
+      function renderCheckboxGroup(mode) {
+        const modeNote = mode === "Default" ? "OS theme color token set" : "Fixed dark token set";
+        const cards = ["Square", "Circle"].flatMap((type) => {
+          return ["Default", "Enabled", "Disabled"].map((status) => {
+            const key = `${mode}-${type}-${status}`;
+            const nodeId = checkboxNodeIds[key];
+            return `
+              <article class="checkbox-card">
+                <div class="checkbox-stage">${renderCheckbox(mode, type, status, nodeId)}</div>
+                <div class="checkbox-info">
+                  <div class="size-name">${type} / ${status}</div>
+                  <div class="node-id">${nodeId} · 24px</div>
+                </div>
+              </article>
+            `;
+          }).join("");
+        }).join("");
+
+        return `
+          <section class="mode-panel ${mode.toLowerCase()}">
+            <div class="panel-head">
+              <div>
+                <h2>${mode}</h2>
+                <p class="panel-note">${modeNote}</p>
+              </div>
+              <div class="count">6 variants</div>
+            </div>
+            <div class="checkbox-grid">${cards}</div>
+          </section>
+        `;
+      }
+
+      const checkboxTabState = {
+        mode: "Default",
+      };
+
+      function renderCheckboxTabs() {
+        return `
+          <section class="mode-panel component-tabs-panel">
+            <div class="panel-head">
+              <div>
+                <h2>Checkbox Variant Tabs</h2>
+                <p class="panel-note">${checkboxTabState.mode} 조합을 표시 중입니다.</p>
+              </div>
+              <div class="count">6 visible / 12 total</div>
+            </div>
+            <div class="component-tabs">
+              <div class="component-tab-group">
+                <div class="component-tab-label">Mode</div>
+                <div class="component-tab-row" role="tablist" aria-label="Checkbox Mode">
+                  ${["Default", "Fixed"].map((mode) => renderComponentTabButton("checkbox-mode", mode, mode, checkboxTabState.mode === mode)).join("")}
+                </div>
+              </div>
+            </div>
+          </section>
+          ${renderCheckboxGroup(checkboxTabState.mode)}
+        `;
+      }
+
+      function renderCheckboxBoard() {
+        checkboxBoard.innerHTML = renderCheckboxTabs();
+      }
+
+      renderCheckboxBoard();
+
+      checkboxBoard.addEventListener("click", (event) => {
+        const tab = event.target.closest(".component-tab");
+        if (!tab || tab.dataset.tabGroup !== "checkbox-mode") return;
+        checkboxTabState.mode = tab.dataset.tabValue;
+        renderCheckboxBoard();
+      });
+
+      const radioBoard = document.querySelector("#radioBoard");
+      const radioNodeIds = {
+        "Default-Default": "59215:200966",
+        "Default-Enabled": "59215:200968",
+        "Default-Disabled": "59215:200970",
+        "Fixed-Default": "59215:200972",
+        "Fixed-Enabled": "59215:200974",
+        "Fixed-Disabled": "59215:200976",
+      };
+
+      function renderRadio(mode, status, nodeId) {
+        const modeClass = mode.toLowerCase();
+        const statusClass = status.toLowerCase();
+        const defaultState = status === "Default" ? "default-state" : "";
+        return `
+          <div class="radio ${modeClass} ${statusClass} ${defaultState}" role="img" aria-label="${mode} radio ${status}" data-node-id="${nodeId}">
+            <span class="radio-outline"></span>
+            <span class="radio-inner"></span>
+          </div>
+        `;
+      }
+
+      function renderRadioGroup(mode) {
+        const modeNote = mode === "Default" ? "OS theme color token set" : "Fixed dark token set";
+        const cards = ["Default", "Enabled", "Disabled"].map((status) => {
+          const key = `${mode}-${status}`;
+          const nodeId = radioNodeIds[key];
+          return `
+            <article class="radio-card">
+              <div class="radio-stage">${renderRadio(mode, status, nodeId)}</div>
+              <div class="radio-info">
+                <div class="size-name">${status}</div>
+                <div class="node-id">${nodeId} · 24px</div>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        return `
+          <section class="mode-panel ${mode.toLowerCase()}">
+            <div class="panel-head">
+              <div>
+                <h2>${mode}</h2>
+                <p class="panel-note">${modeNote}</p>
+              </div>
+              <div class="count">3 variants</div>
+            </div>
+            <div class="radio-grid">${cards}</div>
+          </section>
+        `;
+      }
+
+      const radioTabState = {
+        mode: "Default",
+      };
+
+      function renderRadioTabs() {
+        return `
+          <section class="mode-panel component-tabs-panel">
+            <div class="panel-head">
+              <div>
+                <h2>Radio Variant Tabs</h2>
+                <p class="panel-note">${radioTabState.mode} 조합을 표시 중입니다.</p>
+              </div>
+              <div class="count">3 visible / 6 total</div>
+            </div>
+            <div class="component-tabs">
+              <div class="component-tab-group">
+                <div class="component-tab-label">Mode</div>
+                <div class="component-tab-row" role="tablist" aria-label="Radio Mode">
+                  ${["Default", "Fixed"].map((mode) => renderComponentTabButton("radio-mode", mode, mode, radioTabState.mode === mode)).join("")}
+                </div>
+              </div>
+            </div>
+          </section>
+          ${renderRadioGroup(radioTabState.mode)}
+        `;
+      }
+
+      function renderRadioBoard() {
+        radioBoard.innerHTML = renderRadioTabs();
+      }
+
+      renderRadioBoard();
+
+      radioBoard.addEventListener("click", (event) => {
+        const tab = event.target.closest(".component-tab");
+        if (!tab || tab.dataset.tabGroup !== "radio-mode") return;
+        radioTabState.mode = tab.dataset.tabValue;
+        renderRadioBoard();
+      });
+
+      const guideToggle = document.querySelector("#guideToggle");
+      const controlToggle = document.querySelector("#controlToggle");
+      const ringToggle = document.querySelector("#ringToggle");
+      const ringCaseSelect = document.querySelector("#ringCaseSelect");
+
+      guideToggle.addEventListener("change", () => {
+        document.body.classList.toggle("guide-on", guideToggle.checked);
+      });
+
+      controlToggle.addEventListener("change", () => {
+        document.body.classList.toggle("controls-off", !controlToggle.checked);
+      });
+
+      ringToggle.addEventListener("change", () => {
+        document.body.classList.toggle("ring-off", !ringToggle.checked);
+      });
+
+      ringCaseSelect.addEventListener("change", () => {
+        selectedRingCase = ringCaseSelect.value;
+        renderBoard();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,329 @@
+component:
+  name: "Bottom Navigation"
+  figma_name: "App Bar"
+  description: "앱의 주요 목적지 3-5개를 화면 하단에서 빠르게 전환하는 고정 탐색 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "13361:20295"
+  component_set_key: "74f34090918c78b52ca4c2c667494cb72db876ae"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  OS: ["iOS", "AOS"]
+  focus: ["1_Home", "2_Shop", "3_DM", "4_More"]
+
+variants:
+  count: 16
+  formula: "Mode(2) x OS(2) x focus(4)"
+  constraints:
+    - "All Mode, OS, and focus combinations are valid."
+    - "Show_System is a boolean property, not a variant axis."
+  registry:
+    - { variant: "Mode=Fixed, OS=iOS, focus=1_Home", node_id: "13361:20296", key: "001b12ef92c715f4a04e732784845920da9d8346" }
+    - { variant: "Mode=Fixed, OS=iOS, focus=2_Shop", node_id: "13361:20304", key: "8475b5a4eef88eec0f320d97e9cc465eccdfafee" }
+    - { variant: "Mode=Fixed, OS=iOS, focus=3_DM", node_id: "13361:20312", key: "bc7d5d152451b7474d574f932d2036bfab1013db" }
+    - { variant: "Mode=Fixed, OS=iOS, focus=4_More", node_id: "13361:20328", key: "cb2e24a25e39a4bba30c6f26e53cfa20c757a914" }
+    - { variant: "Mode=Fixed, OS=AOS, focus=1_Home", node_id: "13361:20336", key: "eceb50840085378ad6e96b6a0bed752f837d5acb" }
+    - { variant: "Mode=Fixed, OS=AOS, focus=2_Shop", node_id: "13361:20344", key: "eeb4103c936e77a0bfcccbcb7d07769213b0210a" }
+    - { variant: "Mode=Fixed, OS=AOS, focus=3_DM", node_id: "13361:20352", key: "bfed5ea688bbd3c6e7e239d80beddc8c99276481" }
+    - { variant: "Mode=Fixed, OS=AOS, focus=4_More", node_id: "13361:20368", key: "6ac7ef2419921febacde234d958bf46ba755fed9" }
+    - { variant: "Mode=Default, OS=iOS, focus=1_Home", node_id: "13361:20400", key: "6742945c8c0d560c140240edccfe3af140b14ff9" }
+    - { variant: "Mode=Default, OS=iOS, focus=2_Shop", node_id: "13361:20384", key: "1ccdf295789c03cec38cb7347e4eaebd9958b06e" }
+    - { variant: "Mode=Default, OS=iOS, focus=3_DM", node_id: "13361:20392", key: "b7872b7ebf558f0e1721ab2441f78b92eef90d1f" }
+    - { variant: "Mode=Default, OS=iOS, focus=4_More", node_id: "13361:20408", key: "d926d6cf6943777594ba5b9b721b12a654c261a9" }
+    - { variant: "Mode=Default, OS=AOS, focus=1_Home", node_id: "13361:20416", key: "efeaa8edc1e5651a0ff0dcbf2a1225e74438ffe8" }
+    - { variant: "Mode=Default, OS=AOS, focus=2_Shop", node_id: "13361:20424", key: "c29393a398b45e3c862cbbbc79856224fcf7b393" }
+    - { variant: "Mode=Default, OS=AOS, focus=3_DM", node_id: "13361:20432", key: "a1c1e732daa19af37800d23c5c8b6c314e0eb974" }
+    - { variant: "Mode=Default, OS=AOS, focus=4_More", node_id: "13361:20448", key: "cc3f47eb5089b25ff4c47943660d52987a298c31" }
+
+props:
+  Show_System:
+    type: "boolean"
+    default: "true"
+    description: "OS home indicator or navigation bar area visibility"
+  item_count:
+    type: "4"
+    default: "4"
+    description: "Home, Shop, DM, More are fixed top-level destinations in this component set."
+  tab_status:
+    type: '"Enabled" | "Default"'
+    default: '"Default"'
+    description: "Derived per tab from the focus axis. The focused tab is Enabled; the other tabs are Default."
+  tab_os:
+    type: '"SF" | "Roboto"'
+    default: '"SF"'
+    description: "Nested tab item typography/icon variant derived from OS=iOS or OS=AOS."
+
+tokens:
+  container_surface_default:
+    part: "component"
+    role: "fill"
+    applies_to: "Mode=Default"
+    default: "system/color/surface/default"
+    fixed: "system/fixed_color/surface/default"
+  container_surface_fixed:
+    part: "component"
+    role: "fill"
+    applies_to: "Mode=Fixed"
+    default: "system/color/surface/default-reverse"
+    fixed: "system/fixed_color/surface/default"
+  gnb_divider_default:
+    part: "GNB"
+    role: "stroke"
+    applies_to: "Mode=Default"
+    default: "system/color/divide/default-50a"
+    fixed: "system/fixed_color/outline/default-reverse-50a"
+  gnb_divider_fixed:
+    part: "GNB"
+    role: "stroke"
+    applies_to: "Mode=Fixed"
+    default: "system/color/divide/default-50a-2"
+    fixed: "system/fixed_color/outline/default-100a"
+  icon_enabled_default:
+    part: "tab icon"
+    role: "fill | stroke"
+    applies_to: "Mode=Default, focused tab"
+    default: "system/color/icon/gray-800"
+    fixed: "system/fixed_color/icon/gray-800"
+  icon_enabled_fixed:
+    part: "tab icon"
+    role: "fill | stroke"
+    applies_to: "Mode=Fixed, focused tab"
+    default: "system/color/icon/gray-800"
+    fixed: "system/fixed_color/icon/gray-800"
+  icon_default:
+    part: "tab icon"
+    role: "fill | stroke"
+    applies_to: "unfocused tab"
+    default: "system/color/icon/gray-800"
+    fixed: "system/fixed_color/icon/gray-800"
+  text_enabled_default:
+    part: "tab label"
+    role: "fill"
+    applies_to: "Mode=Default, focused tab"
+    default: "system/color/text/gray-800"
+    fixed: "system/fixed_color/text/gray-800"
+  text_enabled_fixed:
+    part: "tab label"
+    role: "fill"
+    applies_to: "Mode=Fixed, focused tab"
+    default: "system/color/text/gray-800"
+    fixed: "system/fixed_color/text/gray-800"
+  text_default:
+    part: "tab label"
+    role: "fill"
+    applies_to: "unfocused tab"
+    default: "system/color/text/gray-800"
+    fixed: "system/fixed_color/text/gray-800"
+  home_indicator_ios_light:
+    part: "Home Indicator / Base"
+    role: "fill"
+    applies_to: "OS=iOS, Mode=Default"
+    default: "system/color/surface/default-reverse"
+    fixed: "system/fixed_color/surface/default-reverse"
+  home_indicator_aos_light:
+    part: "Home Indicator"
+    role: "fill"
+    applies_to: "OS=AOS, Mode=Default"
+    default: "system/color/surface/gray-100-2"
+    fixed: "system/color/surface/gray-100-2"
+  label_gap:
+    part: "tab item"
+    role: "spacing"
+    applies_to: "icon to label"
+    token: "system/size/padding/box/25"
+    value: "2px"
+  tab_label_typography_ios:
+    part: "tab label"
+    role: "typography"
+    applies_to: "OS=iOS"
+    default: "caption-xs/system-500 | caption-xs/system-700"
+    fixed: "caption-xs/system-500 | caption-xs/system-700"
+  tab_label_typography_aos:
+    part: "tab label"
+    role: "typography"
+    applies_to: "OS=AOS"
+    default: "caption-xs/system-500 | caption-xs/system-700"
+    fixed: "caption-xs/system-500 | caption-xs/system-700"
+
+
+typography:
+  caption_xs_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-xs/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 8 text nodes."
+  sf_pro_text_bold_unstyled:
+    font_family: "SF Pro Text"
+    classification: "actual-font"
+    system_fallback: "SF Pro Text / iOS system sans-serif"
+    token_fallback: "none"
+    note: "SF Pro Text is a real iOS/system font family observed in live Figma. Live typography-only audit 2026-05-09; Figma font style Bold; 33 text nodes."
+  caption_xs_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-xs/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 25 text nodes."
+  sf_pro_text_regular_unstyled:
+    font_family: "SF Pro Text"
+    classification: "actual-font"
+    system_fallback: "SF Pro Text / iOS system sans-serif"
+    token_fallback: "none"
+    note: "SF Pro Text is a real iOS/system font family observed in live Figma. Live typography-only audit 2026-05-09; Figma font style Regular; 8 text nodes."
+  roboto_caption_xs_system_700:
+    font_family: "Roboto"
+    classification: "actual-font"
+    system_fallback: "Roboto / Android system sans-serif"
+    token_fallback: "caption-xs/system-700"
+    note: "Roboto is a real Android/system font family observed in live Figma. Live typography-only audit 2026-05-09; Figma font style Bold; 40 text nodes."
+  roboto_caption_xs_system_500:
+    font_family: "Roboto"
+    classification: "actual-font"
+    system_fallback: "Roboto / Android system sans-serif"
+    token_fallback: "caption-xs/system-500"
+    note: "Roboto is a real Android/system font family observed in live Figma. Live typography-only audit 2026-05-09; Figma font style Medium; 24 text nodes."
+
+assets:
+  home_icon:
+    part: "Home tab icon"
+    role: "icon"
+    source: "24/em/ic_gnb_home_enabled_medium | 24/em/ic_gnb_home_disabled_medium"
+    applies_to: "focus=1_Home and non-focused Home tab"
+    size: "24x24px"
+    tint:
+      default: "system/color/icon/gray-800"
+      fixed: "system/fixed_color/icon/gray-800"
+    implementation: "Use existing DS icon asset/component. Do not redraw with CSS."
+    semantic_rule: "Icon must remain an icon asset even when its vector shape is simple."
+  shop_icon:
+    part: "Shop tab icon"
+    role: "icon"
+    source: "24/em/ic_gnb_shop_enabled_medium | 24/em/ic_gnb_shop_disabled_medium"
+    applies_to: "focus=2_Shop and non-focused Shop tab"
+    size: "24x24px"
+    tint:
+      default: "system/color/icon/gray-800"
+      fixed: "system/fixed_color/icon/gray-800"
+    implementation: "Use existing DS icon asset/component. Do not redraw with CSS."
+    semantic_rule: "Icon must remain an icon asset even when its vector shape is simple."
+  dm_icon:
+    part: "DM tab icon"
+    role: "icon"
+    source: "24/em/ic_gnb_dm_enabled_medium | 24/em/ic_gnb_dm_disabled_medium"
+    applies_to: "focus=3_DM and non-focused DM tab"
+    size: "24x24px"
+    tint:
+      default: "system/color/icon/gray-800"
+      fixed: "system/fixed_color/icon/gray-800"
+    implementation: "Use existing DS icon asset/component. Do not redraw with CSS."
+    semantic_rule: "Icon must remain an icon asset even when its vector shape is simple."
+  more_icon:
+    part: "More tab icon"
+    role: "icon"
+    source: "24/em/ic_gnb_more_enabled_medium | 24/em/ic_gnb_more_disabled_medium"
+    applies_to: "focus=4_More and non-focused More tab"
+    size: "24x24px"
+    tint:
+      default: "system/color/icon/gray-800"
+      fixed: "system/fixed_color/icon/gray-800"
+    implementation: "Use existing DS icon asset/component. Do not redraw with CSS."
+    semantic_rule: "The three-dot More mark must remain an icon asset, not text content."
+  system_home_indicator:
+    part: "Home Indicator"
+    role: "asset"
+    source: "Home Indicator component set"
+    applies_to: "Show_System=true"
+    size: "iOS bar 134x5px; AOS system controls 100px groups"
+    tint:
+      default: "system/color/surface/default-reverse | system/color/icon/gray-500"
+      fixed: "system/fixed_color/surface/default-reverse | system/color/icon/gray-500"
+    implementation: "Use platform system area representation from the DS component."
+    semantic_rule: "System indicator visuals are not navigation tabs and should not be treated as tab content."
+
+layout:
+  component_size: "393x84px for iOS with system indicator; 393x100px for AOS with system indicator"
+  board_size: "1360x1560px"
+  gnb:
+    height: "50px"
+    width: "fill"
+    padding_y: "7px"
+    border_top: "1px"
+  tab_item:
+    count: 4
+    min_width: "56px"
+    width_behavior: "flex equally across available width"
+    height: "50px"
+    icon_size: "24x24px"
+    label_line_height:
+      ios: "13px"
+      aos: "12px"
+    label_text_size:
+      ios: "10px"
+      aos: "9px"
+  home_indicator:
+    ios:
+      height: "34px"
+      padding: "13px 0px 8px"
+      bar_size: "134x5px"
+      bar_radius: "10px"
+    aos:
+      height: "50px"
+      padding: "8px 30px"
+      system_button_width: "100px"
+      system_button_height: "34px"
+  part_spacing:
+    "Icon__to__Label":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "system/size/padding/box/25"
+        value: "2px"
+      variants: []
+
+implementation_order:
+  - "Resolve OS first because iOS and AOS differ in typography size, line height, and system indicator structure."
+  - "Resolve Mode next because Default and Fixed determine surface, divider, and fixed color token families."
+  - "Resolve focus after Mode and OS; the focused tab receives Enabled icon and Bold label treatment."
+  - "Apply Show_System last because it only controls the system indicator area, not the GNB tab layout."
+  - "Preserve icon assets and do not replace them with text or CSS primitives."
+
+implementation_coverage:
+  axes: "Implement all 16 Mode x OS x focus combinations."
+  props: "Expose Show_System as a boolean control; tab item status is derived from focus."
+  assets: "Home, Shop, DM, More icons and system indicator visuals must remain asset/component-backed."
+  layout: "Reflect 50px GNB height, 4 flexible tab items, 24px icons, 2px icon-label gap, and OS-specific system indicator area."
+  exclusions: "Do not add temporary campaign tabs or arbitrary item counts outside this component contract."
+
+rules:
+  do:
+    - "Use Bottom Navigation for 3-5 top-level destinations that need repeated access."
+    - "Keep tab order and position consistent across screens."
+    - "Use icon and label together for each navigation option."
+    - "Make the active tab visually distinct with Enabled icon treatment and Bold label."
+    - "Keep Shop in its fixed service display mode when that service condition applies."
+    - "Let each tab area stretch horizontally instead of using a fixed screen-specific tab width."
+    - "Use Badge only in the defined position and style when notification state is required."
+  dont:
+    - "Do not add temporary menus or campaign links as tabs."
+    - "Do not show icons without labels."
+    - "Do not truncate, wrap, or ellipsize tab labels."
+    - "Do not use the same icon style and label weight for active and inactive tabs."
+    - "Do not switch Shop Bottom Navigation to dark colors when the service condition requires fixed light display."
+    - "Do not manually change Badge position or color."
+
+spec_notes:
+  source:
+    markitdown: "refs/markitdown-output/markitdown-bottom-navigation.md"
+    figma_context: "get_design_context, get_context_for_code_connect, get_variable_defs, Framelink, Desktop Bridge deep extraction"
+  usage:
+    - "Bottom Navigation is for major app areas that are repeatedly accessed."
+    - "It is not for one-off actions or secondary movement inside a page."
+    - "Badge usage is allowed only for notification or update meaning."
+
+source_gaps:
+  - part: "Badge / number"
+    reason: "The component contains hidden number frames and Usage mentions Badge, but the selected visible variants do not expose a concrete Badge visual position/style in the extracted tree."

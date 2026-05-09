@@ -1,0 +1,152 @@
+.chord-avatar {
+  --avatar-badge-dot-size: 24px;
+  --avatar-badge-frame-size: 32px;
+  --avatar-badge-stroke: 4px;
+  --avatar-birthday-hat-size: 40px;
+  --avatar-component-size: 140px;
+  --avatar-emoji-size: 38px;
+  --avatar-host-size: 40px;
+  --avatar-image-offset: 6px;
+  --avatar-image-size: 128px;
+  --avatar-ring-stroke: 3px;
+  --avatar-image-outline: var(--cds-system-color-outline-default-50a-2, #0000000a);
+  --avatar-ring: var(--cds-system-color-roles-primary, #00cbd5);
+  --avatar-emoji-bg: var(--cds-system-color-surface-default-4, #ffffff);
+  --avatar-badge-fill: var(--cds-system-color-status-danger-red, #fe5b58);
+  --avatar-badge-outline: var(--cds-system-color-outline-default-reverse, #ffffff);
+  --avatar-host-bg: var(--cds-system-color-surface-default, #ffffff);
+
+  block-size: var(--avatar-component-size);
+  box-sizing: border-box;
+  display: inline-block;
+  flex: 0 0 auto;
+  inline-size: var(--avatar-component-size);
+  overflow: visible;
+  position: relative;
+}
+
+.chord-avatar[data-mode="fixed"] {
+  --avatar-image-outline: var(--cds-system-fixed-color-outline-default-100a, #ffffff1a);
+  --avatar-ring: var(--cds-system-fixed-color-roles-primary, #01d5df);
+  --avatar-emoji-bg: var(--cds-system-fixed-color-surface-default-4, #1f1f1f);
+  --avatar-badge-fill: var(--cds-system-fixed-color-status-danger-red, #fe5b58);
+  --avatar-badge-outline: var(--cds-system-fixed-color-outline-default-reverse, #ffffff);
+  --avatar-host-bg: var(--cds-system-fixed-color-surface-default, #000000);
+}
+
+.chord-avatar__ring {
+  block-size: 100%;
+  border: var(--avatar-ring-stroke) solid var(--avatar-ring);
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  inline-size: 100%;
+  inset: 0;
+  position: absolute;
+}
+
+.chord-avatar__media {
+  align-items: center;
+  block-size: var(--avatar-image-size);
+  box-shadow: inset 0 0 0 1px var(--avatar-image-outline);
+  box-sizing: border-box;
+  display: inline-flex;
+  inline-size: var(--avatar-image-size);
+  inset-block-start: var(--avatar-image-offset);
+  inset-inline-start: var(--avatar-image-offset);
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+}
+
+.chord-avatar[data-type="circle"] .chord-avatar__media {
+  border-radius: 999px;
+}
+
+.chord-avatar[data-type="squircle"] .chord-avatar__media {
+  -webkit-mask-image: url("../../assets/avatar/squircle-mask.svg");
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: url("../../assets/avatar/squircle-mask.svg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.chord-avatar__image {
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.chord-avatar__placeholder {
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.chord-avatar__birthday-hat {
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  position: absolute;
+}
+
+.chord-avatar__emoji {
+  align-items: center;
+  background: var(--avatar-emoji-bg);
+  block-size: var(--avatar-emoji-size);
+  border-radius: 999px;
+  box-shadow: 0 6px 28px #0000001a;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  font-size: calc(var(--avatar-emoji-size) * 0.54);
+  inline-size: var(--avatar-emoji-size);
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+}
+
+.chord-avatar__badge-dot {
+  background: var(--avatar-badge-fill);
+  block-size: var(--avatar-badge-frame-size);
+  border: var(--avatar-badge-stroke) solid var(--avatar-badge-outline);
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  inline-size: var(--avatar-badge-frame-size);
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  position: absolute;
+}
+
+.chord-avatar__host {
+  block-size: var(--avatar-host-size);
+  display: block;
+  inline-size: var(--avatar-host-size);
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.chord-avatar__host-bg {
+  background: var(--avatar-host-bg);
+  block-size: 100%;
+  border-radius: 999px;
+  display: block;
+  inline-size: 100%;
+  inset: 0;
+  position: absolute;
+}
+
+.chord-avatar__host > .chord-avatar {
+  inset: 0;
+  position: absolute;
+}

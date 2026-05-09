@@ -1,0 +1,25 @@
+.chord-loading-circular {
+  display: inline-block;
+  inline-size: 20px;
+  block-size: 20px;
+  border: 2px solid var(--cds-system-color-status-background-disabled, #f2f3f7);
+  border-block-start-color: var(--cds-system-color-button-default, #00cbd5);
+  border-radius: 999px;
+  animation: chord-loading-circular-spin 0.85s linear infinite;
+}
+
+.chord-loading-circular[data-mode="fixed"] {
+  border-block-start-color: var(--cds-system-fixed-color-button-default, var(--cds-system-color-button-default, #00cbd5));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chord-loading-circular {
+    animation: none;
+  }
+}
+
+@keyframes chord-loading-circular-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

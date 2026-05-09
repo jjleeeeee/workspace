@@ -1,0 +1,13 @@
+{
+  "name": "cds-ds",
+  "version": "0.10.5",
+  "description": "cds-catalogs 레포의 DS Token · Component 카탈로그를 Claude Code 에이전트에 제공하는 MCP 서버. Figma URL → DS DSL 변환(/figma-to-dsl), DSL 토큰 lint(/ds-token-lint), 플랫폼별 컴포넌트 구현 샘플(samples/), DS 모듈 매니페스트 생성·업데이트(/ds-manifest), DSL → 플랫폼 코드 자동 변환·검증(dsl-to-code skill) 지원.",
+  "author": {
+    "name": "Weverse Design Systems",
+    "email": "jh.han@weversecompany.com"
+  },
+  "homepage": "https://github.com/weversecompany/claude-plugins/tree/main/plugins/cds-ds",
+  "repository": "https://github.com/weversecompany/claude-plugins",
+  "license": "MIT",
+  "keywords": ["design-system", "cds-catalogs", "mcp", "weverse"]
+}

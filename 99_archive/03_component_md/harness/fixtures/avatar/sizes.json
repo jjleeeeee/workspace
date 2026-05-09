@@ -1,0 +1,46 @@
+{
+  "XXXXLarge": {
+    "image": 128,
+    "touch": 140
+  },
+  "XXXLarge": {
+    "image": 96,
+    "touch": 108
+  },
+  "XXLarge": {
+    "image": 72,
+    "touch": 84
+  },
+  "XLarge": {
+    "image": 64,
+    "touch": 72
+  },
+  "Large": {
+    "image": 56,
+    "touch": 64
+  },
+  "Medium": {
+    "image": 48,
+    "touch": 56
+  },
+  "Small": {
+    "image": 40,
+    "touch": 46
+  },
+  "XSmall": {
+    "image": 32,
+    "touch": 38
+  },
+  "XXSmall": {
+    "image": 24,
+    "touch": 30
+  },
+  "XXXSmall": {
+    "image": 21.67,
+    "touch": 26
+  },
+  "Tiny": {
+    "image": 16,
+    "touch": 22
+  }
+}

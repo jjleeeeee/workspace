@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# * 사용방법
+# ```
+# $ ./update-figma-res
+# # 강제업데이트
+# $ ./update-figma-res --force
+# # 특정 아이콘만 업데이트
+# $ ./update-figma-res ic_light_theme_medium ic_dark_theme_medium
+# ```
+
+SCRIPT_PATH=$(dirname "$0")
+
+install_python_module() {
+    module_name=$1
+
+    if pip3 show $module_name >/dev/null 2>&1; then
+        echo "$module_name is already installed"
+    else
+        pip3 install $module_name
+
+        if [ $? -eq 0 ]; then
+            echo "Successfully installed $module_name"
+        else
+            echo "Failed $module_name"
+        fi
+    fi
+}
+
+install_python_module requests
+
+case "$1" in
+    -f|--force)
+        shift
+        python3 "$SCRIPT_PATH/update-figma-res.py" --force "$@"
+        ;;
+    *)
+        python3 "$SCRIPT_PATH/update-figma-res.py" "$@"
+        ;;
+esac

@@ -1,0 +1,40 @@
+.chord-toast {
+  --toast-bg: var(--cds-system-color-surface-default-reverse-600a-unequal, #000000cc);
+  --toast-max-inline-size: 410px;
+  --toast-text: var(--cds-system-fixed-color-text-default, #ffffff);
+
+  align-items: center;
+  background: var(--toast-bg);
+  border-radius: var(--cds-system-size-radius-box-100, 8px);
+  box-sizing: border-box;
+  color: var(--toast-text);
+  display: inline-flex;
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--cds-typography-default-base-text-size-text-150, 14px);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400, 400);
+  inline-size: fit-content;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150, 18px);
+  max-inline-size: min(var(--toast-max-inline-size), calc(100vw - 20px));
+  min-inline-size: 0;
+  padding: 12px 16px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.chord-toast[data-mode="fixed"] {
+  --toast-bg: var(--cds-system-fixed-color-surface-gray-200, #333333);
+}
+
+.chord-toast__label {
+  display: -webkit-box;
+  min-inline-size: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+}

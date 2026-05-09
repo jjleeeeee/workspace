@@ -1,0 +1,60 @@
+.chord-snackbar {
+  --snackbar-bg: var(--cds-system-color-surface-default-reverse-600a-unequal, #000000cc);
+  --snackbar-default-sample-block-size: 44px;
+  --snackbar-max-inline-size: 410px;
+  --snackbar-sample-inline-size: 373px;
+  --snackbar-text: var(--cds-system-fixed-color-text-default, #ffffff);
+
+  align-items: center;
+  background: var(--snackbar-bg);
+  border-radius: var(--cds-system-size-radius-box-100, 8px);
+  box-sizing: border-box;
+  color: var(--snackbar-text);
+  display: inline-flex;
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--cds-typography-default-base-text-size-text-150, 14px);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400, 400);
+  gap: 8px;
+  inline-size: min(var(--snackbar-sample-inline-size), calc(100vw - 20px));
+  justify-content: flex-start;
+  letter-spacing: 0;
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150, 18px);
+  max-inline-size: min(var(--snackbar-max-inline-size), calc(100vw - 20px));
+  min-block-size: var(--snackbar-default-sample-block-size);
+  padding: 12px 16px;
+  text-align: start;
+  vertical-align: middle;
+}
+
+.chord-snackbar[data-mode="fixed"] {
+  --snackbar-bg: var(--cds-system-fixed-color-surface-gray-200, #333333);
+  --snackbar-default-sample-block-size: 42px;
+}
+
+.chord-snackbar__icon {
+  align-items: center;
+  block-size: 24px;
+  color: var(--cds-system-fixed-color-icon-default, #ffffff);
+  display: inline-flex;
+  flex: 0 0 24px;
+  inline-size: 24px;
+  justify-content: center;
+}
+
+.chord-snackbar__label {
+  display: -webkit-box;
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: normal;
+}
+
+.chord-snackbar__action {
+  color: var(--cds-system-fixed-color-text-primary, #01d5df);
+  flex: 0 0 auto;
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500, 500);
+}

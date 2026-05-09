@@ -1,0 +1,153 @@
+component:
+  name: "[V2] Toast"
+  description: "사용자 작업에 대한 짧은 시스템 상태 피드백을 자동으로 사라지는 하단 메시지로 전달하는 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "63694:4595"
+  component_set_key: "c582282238f4497a69ce1f3a82bd4c59723de883"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+
+variants:
+  count: 2
+  formula: "Mode(2)"
+  constraints:
+    - "Both Mode variants are present in live Figma."
+    - "Toast has no consumer-facing icon or action axis in this component set."
+  registry:
+    - { variant: "Mode=Default", node_id: "63694:4596", key: "740f01902623d372c3bfa2070f7eb22f79cf74a8" }
+    - { variant: "Mode=Fixed", node_id: "63694:4601", key: "b068014c9d1c7f981b74bad1ff8862ac0b579bab" }
+
+props:
+  Label:
+    figma_property: "Label#7943:0"
+    type: "text"
+    default: "Translate it into the following language."
+    description: "Toast status message text; usage guidance limits it to two lines."
+
+tokens:
+  container_default:
+    part: "Toast"
+    role: "fill"
+    applies_to: "Mode=Default"
+    token: "system/color/surface/default-reverse-600a-unequal"
+    opacity: 0.8
+  container_fixed:
+    part: "Toast"
+    role: "fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/surface/gray-200"
+  label_text:
+    part: "Label"
+    role: "text fill"
+    applies_to: "All Mode values"
+    token: "system/fixed_color/text/default"
+  label_typography:
+    part: "Label"
+    role: "text style"
+    applies_to: "All Mode values"
+    token: "body-xs/system-400"
+
+
+typography:
+  body_xs_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 2 text nodes."
+
+layout:
+  component_size: "Live samples are 293x42px for both Mode variants."
+  placement: "Display at the bottom and keep 20px spacing from bottom UI."
+  screen_margin: "10px left and right on mobile"
+  max_width: "410px on tablet and PC"
+  container:
+    layout: "vertical"
+    width_behavior: "hug content until max width"
+    height_behavior: "hug content"
+    padding: "12px top, 16px right, 12px bottom, 16px left"
+    gap: "8px"
+    radius: "8px"
+  text_frame:
+    layout: "horizontal"
+    alignment: "center"
+    sample_size: "261x18px"
+  label:
+    sample_width: "261px"
+    line_height: "18px"
+    max_lines: 2
+    alignment: "center"
+  part_spacing:
+    "Toast__to__bottom_ui":
+      variation_checked_by:
+        axes: false
+        props: false
+        states: false
+      default:
+        token: "usage guidance"
+        value: "20px"
+      variants: []
+
+interaction:
+  lifecycle:
+    behavior: "Toast should disappear automatically after a short duration."
+  blocking:
+    behavior: "Toast must not block user actions or require a decision."
+
+implementation_order:
+  - "Resolve Mode first because it changes the container surface token and opacity."
+  - "Apply the 12px vertical and 16px horizontal padding, 8px radius, and centered vertical layout."
+  - "Bind Label with body-xs/system-400 and center alignment."
+  - "Allow wrapping only up to two lines when the max width is reached."
+  - "Place Toast at the bottom with 20px spacing from bottom UI, 10px mobile margins, and a 410px max width."
+
+implementation_coverage:
+  axes: "Implement both Mode variants."
+  props: "Expose Label from live Figma."
+  assets: "No consumer-facing Toast assets are included; hidden checkbox and icon internals are excluded from the usage contract."
+  layout: "Live sample size, padding, radius, text alignment, max lines, and responsive max-width guidance are reflected."
+  exclusions: "Do not add icon, button, action, or blocking behavior to Toast."
+
+rules:
+  do:
+    - "Use Toast for brief system status feedback such as error, completion, or progress updates."
+    - "Keep the message concise."
+    - "Let Toast disappear automatically after a short duration."
+    - "Place Toast at the bottom with 20px spacing from bottom UI."
+    - "Limit text to two lines."
+    - "Center-align Toast text."
+    - "Respect 10px mobile side margins and a 410px maximum width on larger screens."
+  dont:
+    - "Do not use Toast like a popup that blocks user flow."
+    - "Do not use Toast for content that requires user choice or follow-up action."
+    - "Do not put long explanations or multiple sentences into Toast."
+    - "Do not add icons or buttons inside Toast."
+    - "Do not force line breaks before the maximum width is reached."
+    - "Do not stretch Toast to full screen width on large screens."
+    - "Do not left-align or right-align Toast text."
+
+spec_notes:
+  source:
+    variant_registry: "refs/figma-component-keys/variant-keys/toast.md"
+    markitdown: "refs/markitdown-output/markitdown-toast.md"
+    figma_live_read: "use_figma read-only extraction on 2026-05-04"
+  usage:
+    - "Toast is for short non-blocking feedback."
+    - "Use Snackbar instead when the user needs an optional follow-up action."
+    - "Use Dialog instead when the user must make a decision."
+
+source_gaps:
+  - part: "Hidden checkbox and icon_area internals"
+    field: "composition"
+    reason: "Live Figma contains hidden [V1] Checkbox and icon_area descendants, but usage explicitly defines Toast as text-only without icons or buttons, so those descendants are excluded from composition.uses."
+  - part: "Runtime width"
+    field: "responsive layout"
+    reason: "Live component variants are 293px hug-content samples while usage guidance defines mobile side margins and a 410px maximum width."
+
+verification:
+  figma_live_read:
+    - "Component set key and both variant keys were confirmed by read-only use_figma extraction."
+    - "Component properties Label and Mode were confirmed from live componentPropertyDefinitions."
+    - "Container fills, label fill, text style, padding, radius, alignment, and hidden non-contract descendants were read from live Figma."

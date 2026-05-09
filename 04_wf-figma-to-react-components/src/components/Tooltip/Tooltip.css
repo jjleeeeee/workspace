@@ -1,0 +1,166 @@
+.chord-tooltip {
+  --tooltip-bg: var(--cds-system-color-surface-default-reverse-600a-unequal, #000000cc);
+  --tooltip-text: var(--cds-system-fixed-color-text-default, #ffffff);
+  --tooltip-padding-y: var(--cds-system-size-padding-box-100, 8px);
+  --tooltip-padding-x: var(--cds-system-size-padding-box-150, 12px);
+  --tooltip-font-size: var(--cds-typography-default-base-text-size-text-150, 14px);
+  --tooltip-line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150, 18px);
+  --tooltip-font-weight: var(--cds-typography-default-base-text-weight-text-weight-500, 500);
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  inline-size: max-content;
+  color: var(--tooltip-text);
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+
+.chord-tooltip__bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--cds-system-size-padding-box-50, 4px);
+  inline-size: fit-content;
+  max-inline-size: 240px;
+  min-block-size: 34px;
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  border-radius: var(--cds-system-size-radius-box-100, 8px);
+  background: var(--tooltip-bg);
+  box-sizing: border-box;
+}
+
+.chord-tooltip__label {
+  display: -webkit-box;
+  min-inline-size: 0;
+  overflow: hidden;
+  max-inline-size: var(--tooltip-label-max-width, 196px);
+  color: inherit;
+  font-size: var(--tooltip-font-size);
+  font-weight: var(--tooltip-font-weight);
+  line-height: var(--tooltip-line-height);
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  white-space: normal;
+}
+
+.chord-tooltip__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 16px;
+  block-size: 16px;
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+}
+
+.chord-tooltip__caret {
+  display: block;
+  inline-size: 14px;
+  block-size: 7px;
+  color: var(--tooltip-bg);
+}
+
+.chord-tooltip__caret::before {
+  display: block;
+  inline-size: 0;
+  block-size: 0;
+  margin-inline: auto;
+  border-inline: 7px solid transparent;
+  border-block-start: 7px solid currentColor;
+  content: "";
+}
+
+.chord-tooltip[data-size="medium"] {
+  --tooltip-padding-y: var(--cds-system-size-padding-box-75, 6px);
+  --tooltip-padding-x: var(--cds-system-size-padding-box-100, 8px);
+  --tooltip-font-size: var(--cds-typography-default-base-text-size-text-75, 12px);
+  --tooltip-line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75, 16px);
+}
+
+.chord-tooltip[data-size="medium"] .chord-tooltip__bubble {
+  min-block-size: 28px;
+}
+
+.chord-tooltip[data-button-close="false"] {
+  --tooltip-label-max-width: 216px;
+}
+
+.chord-tooltip[data-color="white-fixed"] {
+  --tooltip-bg: var(--cds-system-fixed-color-surface-default-reverse, #ffffff);
+  --tooltip-text: var(--cds-system-fixed-color-text-default-reverse, #000000);
+}
+
+.chord-tooltip[data-color="tint"] {
+  --tooltip-bg: var(--cds-system-color-roles-accent-blue, #5989fe);
+  --tooltip-text: var(--cds-system-fixed-color-text-default, #ffffff);
+}
+
+.chord-tooltip[data-mode="fixed"][data-color="black"] {
+  --tooltip-bg: var(--cds-system-fixed-color-surface-gray-200, #333333);
+  --tooltip-text: var(--cds-system-fixed-color-text-default, #ffffff);
+}
+
+.chord-tooltip[data-mode="fixed"][data-color="tint"] {
+  --tooltip-bg: var(--cds-system-fixed-color-surface-primary-100, #006166);
+}
+
+.chord-tooltip[data-mode="fixed"][data-color="tint"][data-position="bottom-center"] {
+  --tooltip-bg: var(--cds-system-fixed-color-roles-secondary-blue, #5989fe);
+}
+
+.chord-tooltip[data-color="white-fixed"] .chord-tooltip__bubble {
+  box-shadow: 0 6px 28px #0000001a;
+}
+
+.chord-tooltip[data-position^="top"] {
+  flex-direction: column-reverse;
+}
+
+.chord-tooltip[data-position^="top"] .chord-tooltip__caret::before {
+  border-block-start: 0;
+  border-block-end: 7px solid currentColor;
+}
+
+.chord-tooltip[data-position$="left"] {
+  align-items: flex-start;
+}
+
+.chord-tooltip[data-position$="right"] {
+  align-items: flex-end;
+}
+
+.chord-tooltip[data-position="left-center"],
+.chord-tooltip[data-position="right-center"] {
+  flex-direction: row;
+  align-items: center;
+}
+
+.chord-tooltip[data-position="left-center"] {
+  flex-direction: row-reverse;
+}
+
+.chord-tooltip[data-position="left-center"] .chord-tooltip__caret,
+.chord-tooltip[data-position="right-center"] .chord-tooltip__caret {
+  inline-size: 7px;
+  block-size: 14px;
+}
+
+.chord-tooltip[data-position="right-center"] .chord-tooltip__caret::before {
+  border-block: 7px solid transparent;
+  border-inline-start: 7px solid currentColor;
+  border-inline-end: 0;
+}
+
+.chord-tooltip[data-position="left-center"] .chord-tooltip__caret::before {
+  border-block: 7px solid transparent;
+  border-inline-start: 0;
+  border-inline-end: 7px solid currentColor;
+}

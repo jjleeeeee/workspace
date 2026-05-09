@@ -1,0 +1,53 @@
+{
+  "description": "예시 hooks 설정입니다. 실제 플러그인에서는 필요한 이벤트만 남기세요.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/pretooluse.py",
+            "timeout": 10,
+            "description": "Tool 사용 전 실행"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/posttooluse.py",
+            "timeout": 10,
+            "description": "Tool 사용 후 실행"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/sessionstart.py",
+            "timeout": 5,
+            "description": "세션 시작 시 초기 설정"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/sessionend.py",
+            "timeout": 5,
+            "description": "세션 종료 시 정리"
+          }
+        ]
+      }
+    ]
+  }
+}

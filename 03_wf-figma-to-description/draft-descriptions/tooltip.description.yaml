@@ -1,0 +1,240 @@
+component:
+  name: "Tooltip"
+  description: "특정 객체와 연결해 짧은 안내나 강조 내용을 표시하는 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "7891:6903"
+  component_set_key: "51e3f2d3c3ea2ece4c8b084477cee852a10eb2da"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Size: ["Large", "Medium"]
+  Color: ["Black", "White_fixed", "Tint"]
+  Position: ["Bottom Center", "Bottom Left", "Bottom Right", "Left Center", "Right Center", "Top Center", "Top Left", "Top Right"]
+
+variants:
+  count: 96
+  formula: "Mode(2) x Size(2) x Color(3) x Position(8)"
+  constraints:
+    - "All Mode, Size, Color, and Position combinations are present in live Figma."
+    - "The live Figma variant option for Fixed contains a control character; YAML stores it as Fixed after stripping control characters."
+    - "Use registry_policy instead of listing all 96 variant keys inline."
+  registry_policy:
+    component_set_key: "51e3f2d3c3ea2ece4c8b084477cee852a10eb2da"
+    verified_count: 96
+    storage: "96 variant node IDs and keys were verified from Figma and local variant registry; full registry is summarized for readability."
+    sample:
+      - { variant: "Mode=Default, Size=Large, Color=Black, Position=Bottom Center", node_id: "46332:10856", key: "bf74393bf6a63586a1924066de9505280c3a6a13" }
+      - { variant: "Mode=Default, Size=Large, Color=Black, Position=Left Center", node_id: "46325:10820", key: "f9efb0ea0bd6bebf12022b16d2b2a9d454f0fb1c" }
+      - { variant: "Mode=Default, Size=Large, Color=Black, Position=Right Center", node_id: "46325:10844", key: "23095d1fa904c4bff9ae323e3944f6906746ce7d" }
+      - { variant: "Mode=Default, Size=Large, Color=Black, Position=Top Right", node_id: "40197:5097", key: "b1e5193ceecab0929bdc7234b815f0eb314844f9" }
+      - { variant: "Mode=Fixed, Size=Large, Color=Black, Position=Bottom Center", node_id: "46360:11959", key: "284c945cc083a7df3e6fe5b4d5c970f6eaa5284e" }
+      - { variant: "Mode=Fixed, Size=Large, Color=Black, Position=Left Center", node_id: "46360:11965", key: "35417c4678c3ff6e843c7cb3e002bb92fb8be643" }
+      - { variant: "Mode=Fixed, Size=Medium, Color=Tint, Position=Right Center", node_id: "46405:12929", key: "74602355cd648766cd2313b36c6e578439d086cf" }
+      - { variant: "Mode=Fixed, Size=Medium, Color=Tint, Position=Top Center", node_id: "46405:12875", key: "48062ce99340d00d26c3e9ac5299ebac03ed480c" }
+
+props:
+  Button_Close:
+    figma_property: "Button - Close"
+    type: "boolean"
+    default: "true"
+    description: "Shows or hides the close button area."
+  Label:
+    type: "string"
+    default: "가로 최대 240, 글자수 최대 8줄"
+    description: "Visible tooltip copy; keep content short and within the line limit."
+
+tokens:
+  contents_black_default:
+    part: "Contents"
+    role: "fill"
+    applies_to: "Mode=Default, Color=Black"
+    token: "system/color/surface/default-reverse-600a-unequal"
+    opacity: 0.8
+  contents_black_fixed:
+    part: "Contents"
+    role: "fill"
+    applies_to: "Mode=Fixed, Color=Black"
+    token: "system/fixed_color/surface/gray-200"
+  contents_white_fixed:
+    part: "Contents"
+    role: "fill"
+    applies_to: "Color=White_fixed"
+    token: "system/fixed_color/surface/default-reverse"
+  contents_tint_default:
+    part: "Contents"
+    role: "fill"
+    applies_to: "Mode=Default, Color=Tint"
+    token: "system/color/roles/accent-blue"
+  contents_tint_fixed_bottom_center:
+    part: "Contents"
+    role: "fill"
+    applies_to: "Mode=Fixed, Color=Tint, Position=Bottom Center"
+    token: "system/fixed_color/roles/secondary-blue"
+  contents_tint_fixed_other_positions:
+    part: "Contents"
+    role: "fill"
+    applies_to: "Mode=Fixed, Color=Tint, Position not Bottom Center"
+    token: "system/fixed_color/surface/primary-100"
+  label_on_dark_or_tint:
+    part: "Label"
+    role: "text fill"
+    applies_to: "Color=Black or Tint"
+    token: "system/fixed_color/text/default"
+  label_on_white_fixed:
+    part: "Label"
+    role: "text fill"
+    applies_to: "Color=White_fixed"
+    token: "system/fixed_color/text/default-reverse"
+  close_icon_on_dark_or_tint:
+    part: "Button - Close"
+    role: "icon fill"
+    applies_to: "Color=Black or Tint"
+    token: "system/fixed_color/icon/default"
+  close_icon_on_white_fixed:
+    part: "Button - Close"
+    role: "icon fill"
+    applies_to: "Color=White_fixed"
+    token: "system/fixed_color/icon/default-reverse"
+  caret_fill:
+    part: "element / caret item"
+    role: "fill"
+    applies_to: "All Color values"
+    token: "mirrors Contents fill token"
+  typography_large:
+    part: "Label"
+    role: "text style"
+    applies_to: "Size=Large"
+    token: "body-xs/system-500"
+  typography_medium:
+    part: "Label"
+    role: "text style"
+    applies_to: "Size=Medium"
+    token: "caption-s/system-500"
+  white_fixed_shadow:
+    part: "Tooltip"
+    role: "effect"
+    applies_to: "Color=White_fixed"
+    token: "shadow-lg"
+
+
+typography:
+  body_xs_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 48 text nodes."
+  caption_s_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-s/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 48 text nodes."
+
+assets:
+  close_button:
+    part: "Button - Close"
+    role: "icon"
+    source: "24/em/ic_close_medium"
+    component_key: "37692bb703c0622fcdbdf7a16450751ff6eb3cf9"
+    applies_to: "Button_Close=true"
+    size: "16x16px button frame, 12x12px icon"
+    semantic_rule: "Use the DS close icon asset; do not replace the close icon with text."
+  caret:
+    part: "element / caret item"
+    role: "pointer"
+    source: "element / caret item, Color=Alpha"
+    component_key: "5805f74fa041391dde72ab340e82b29c5d83465d"
+    applies_to: "All Position variants"
+    size: "14x7px visual caret; centered or padded per Position"
+    semantic_rule: "Render as the Tooltip pointer connected to the target object, not as decorative text."
+
+layout:
+  component_size: "hug content; max content width is 240px"
+  contents:
+    Large:
+      padding: "8px top, 12px right, 8px bottom, 12px left"
+      gap: "4px"
+      radius: "8px"
+      sample_size: "225x34px"
+      label_sample: "181x18px"
+    Medium:
+      padding: "6px top, 8px right, 6px bottom, 8px left"
+      gap: "4px"
+      radius: "8px"
+      sample_size: "192x28px"
+      label_sample: "156x16px"
+  close_button:
+    frame: "16x16px"
+    padding: "2px"
+  caret:
+    default_size: "14x7px"
+    padded_bottom_center_sample: "54x7px with 20px horizontal padding"
+  position:
+    values: ["Bottom Center", "Bottom Left", "Bottom Right", "Left Center", "Right Center", "Top Center", "Top Left", "Top Right"]
+    rule: "Position controls caret placement relative to Contents and target object."
+  part_spacing:
+    "Contents__to__caret":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "component geometry"
+        value: "0px internal attachment"
+      variants: []
+    "caret__to__target":
+      variation_checked_by:
+        axes: true
+        props: false
+        states: false
+      default:
+        token: "usage guidance"
+        value: "6px"
+      variants: []
+
+interaction:
+  dismissal:
+    behavior: "Use Button_Close=true when the user must manually dismiss the tooltip; use false for auto-dismiss guidance."
+  anchoring:
+    behavior: "Tooltip must remain visually connected to the object it explains."
+
+implementation_order:
+  - "Select Mode, Size, Color, and Position variant."
+  - "Apply Size-specific content padding and typography."
+  - "Apply Color-specific Contents, Label, close icon, and caret tokens."
+  - "Place the caret according to Position and keep it connected to the target."
+  - "Apply Button_Close visibility after layout so text width and close affordance remain stable."
+  - "Apply White_fixed shadow treatment after color tokens."
+
+implementation_coverage:
+  axes: "All 96 Mode, Size, Color, and Position variants were live-read from Figma."
+  props: "Button_Close and Label component properties are included."
+  assets: "Close icon and caret item are captured as DS asset-backed visuals."
+  layout: "Large and Medium padding, typography, caret size, and max width guidance are reflected."
+  exclusions: "Full 96-row variant registry is summarized with registry_policy; no derived tooltip.md file is generated."
+
+rules:
+  do:
+    - "Use Tooltip for guidance that is less critical than a Dialog and tied to a specific object."
+    - "Keep copy concise: Single line uses one line; Multi lines use at least two and at most eight lines."
+    - "Use a maximum width of 240px."
+    - "Choose close button or auto-dismiss behavior according to the message purpose."
+    - "Keep margin from screen edges so the tooltip remains readable."
+  dont:
+    - "Do not use Tooltip for standalone announcements or long guidance."
+    - "Do not exceed eight lines of text."
+    - "Do not stretch Tooltip width across the screen."
+    - "Do not use Top caret positions when the target is near the top edge and would cause clipping."
+    - "Do not allow Tooltip to overlap a header layer while scrolling."
+
+source_gaps:
+  - part: "Hidden guide rectangles inside caret/null icon internals"
+    issue: "Full traversal found 168 hidden #D9D9D9 fills without variable binding."
+    decision: "Visible paint extraction found zero unbound paints, so hidden guide internals are excluded from Tooltip token mapping."
+
+verification:
+  figma_live_read:
+    - "Figma Desktop Bridge connected to Chord Design System file DWEduE6GfxYMlyxKPNJ8jA."
+    - "Framelink and use_figma read-only traversal checked 96 variants, variant keys, paint variables, component props, assets, and layout groups."

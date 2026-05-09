@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WDSBottomPopup — Chord Design System</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f0f0; }
+
+  /* ── Tokens ───────────────────────────────────────────────── */
+  :root {
+    --clr-surface:        #ffffff;
+    --clr-scrim:          rgba(0,0,0,0.5);
+    --clr-line-default:   #e0e0e0;
+    --clr-btn-default:    #00cbd5;
+    --clr-text-default:   #000000;
+    --clr-text-reverse:   #ffffff;
+    --clr-text-hint:      rgba(0,0,0,0.3);
+    --clr-text-sub:       rgba(0,0,0,0.5);
+    --clr-error:          #f44336;
+
+    --radius-sheet:   16px;   /* top-left, top-right only */
+    --radius-input:   8px;
+    --h-nav:          48px;
+    --h-button:       52px;   /* XLarge — 버튼은 항상 52px */
+    --w-mobile:       373px;
+    --w-tablet-pc:    410px;
+  }
+
+  /* ── Demo Page Layout ────────────────────────────────────── */
+  .demo-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 32px 16px;
+  }
+  .demo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+  .demo-btn {
+    padding: 10px 20px;
+    background: var(--clr-btn-default);
+    color: var(--clr-text-reverse);
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .demo-section { text-align: center; }
+  .demo-section h3 { font-size: 13px; color: #666; margin-bottom: 8px; font-weight: 600; }
+
+  /* ── Scrim ────────────────────────────────────────────────── */
+  .wds-scrim {
+    position: fixed;
+    inset: 0;
+    background: var(--clr-scrim);
+    display: none;
+    z-index: 100;
+    animation: scrim-in 0.2s ease;
+  }
+  .wds-scrim--visible { display: block; }
+  @keyframes scrim-in { from { opacity: 0; } to { opacity: 1; } }
+
+  /* ── Bottom Popup Sheet ──────────────────────────────────── */
+  .wds-bottom-popup {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: min(var(--w-mobile), calc(100vw - 20px));
+    max-height: 70vh;
+    min-height: 200px;
+    background: var(--clr-surface);
+    border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 101;
+    box-shadow: 0 -4px 32px rgba(0,0,0,0.12);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    overflow: hidden;
+  }
+  .wds-bottom-popup--open {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* PC/Tablet: 410px 이상에서 중앙 팝업 */
+  @media (min-width: 674px) {
+    .wds-bottom-popup {
+      width: var(--w-tablet-pc);
+      max-height: min(70vh, 640px);
+    }
+  }
+
+  /* ── Handlebar ────────────────────────────────────────────── */
+  .wds-popup__handlebar-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 4px;
+    flex-shrink: 0;
+  }
+  .wds-popup__handlebar {
+    width: 40px;
+    height: 4px;
+    background: var(--clr-line-default);
+    border-radius: 999px;
+  }
+
+  /* ── Close Button Row (Figma: TopNavigation 상단 별도 행) ─── */
+  .wds-popup__close-row {
+    display: flex;
+    justify-content: flex-end;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+  }
+  .wds-popup__close-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--clr-text-default);
+  }
+  .wds-popup__close-btn:hover { background: rgba(0,0,0,0.06); border-radius: 8px; }
+
+  /* ── TopNavigation (타이틀만, 닫기 버튼 없음) ─────────────── */
+  .wds-topnav {
+    display: flex;
+    align-items: center;
+    height: var(--h-nav);
+    padding: 0 8px;
+    flex-shrink: 0;
+    gap: 8px;
+  }
+  .wds-topnav__title {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--clr-text-default);
+    text-align: left;
+    padding-left: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ── Content Area ─────────────────────────────────────────── */
+  .wds-popup__content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scrollbar-width: thin;
+  }
+  .wds-popup__content::-webkit-scrollbar { width: 4px; }
+  .wds-popup__content::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 2px; }
+
+  /* ── TextField (inline) ───────────────────────────────────── */
+  .wds-textfield {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  /* counter는 타이틀과 같은 행 우측 — Figma 명세 */
+  .wds-textfield__title-row { display: flex; align-items: center; justify-content: space-between; }
+  .wds-textfield__title-left { display: flex; align-items: center; gap: 2px; }
+  .wds-textfield__title { font-size: 13px; font-weight: 500; color: var(--clr-text-default); }
+  .wds-textfield__input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 12px;
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-line-default);
+    border-radius: var(--radius-input);
+    transition: border-color 0.15s;
+  }
+  .wds-textfield__input-row:focus-within { border-color: var(--clr-btn-default); }
+  .wds-textfield__input {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--clr-text-default);
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  .wds-textfield__input::placeholder { color: var(--clr-text-hint); }
+  .wds-textfield__clear {
+    display: none;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--clr-text-hint);
+    flex-shrink: 0;
+    padding: 0;
+  }
+  .wds-textfield__footer { display: flex; justify-content: flex-end; }
+  .wds-textfield__counter { font-size: 11px; color: var(--clr-text-sub); }
+
+  /* ── Overlay Buttons ──────────────────────────────────────── */
+  .wds-popup__overlay-buttons {
+    flex-shrink: 0;
+    position: relative;
+    padding: 0 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;  /* Figma: var(--system/size/padding/box/75,6px) */
+  }
+
+  .wds-checkbox-row {
+    height: 56px;  /* Figma: Agree row h-[56px] */
+  }
+
+  /* Gradient fade */
+  .wds-popup__gradient {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background: linear-gradient(to bottom, transparent, var(--clr-surface));
+    pointer-events: none;
+  }
+
+  /* ── Checkbox (inline) ────────────────────────────────────── */
+  .wds-checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .wds-checkbox-input { position: absolute; opacity: 0; pointer-events: none; }
+  .wds-checkbox-box {
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;   /* circle type */
+    border: 1.5px solid var(--clr-line-default);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+  }
+  .wds-checkbox-input:checked + .wds-checkbox-box {
+    background: var(--clr-btn-default);
+    border-color: var(--clr-btn-default);
+  }
+  .wds-checkbox-input:checked + .wds-checkbox-box .check { display: block; }
+  .check { display: none; }
+  .wds-checkbox-label { font-size: 15px; font-weight: 400; color: var(--clr-text-sub); }
+
+  /* ── Confirm Button ───────────────────────────────────────── */
+  .wds-popup__confirm-btn {
+    height: var(--h-button);
+    width: 100%;
+    background: var(--clr-btn-default);
+    color: var(--clr-text-reverse);
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .wds-popup__confirm-btn:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+  }
+  .wds-popup__confirm-btn:not(:disabled):hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<div class="demo-page">
+  <h1 style="font-size:16px; font-weight:700; color:#333;">WDSBottomPopup — 인터랙티브 데모</h1>
+
+  <div class="demo-row">
+    <!-- Overflow O / Checkbox O -->
+    <div class="demo-section">
+      <h3>Overflow O / Checkbox O</h3>
+      <button class="demo-btn" onclick="openPopup('popup-overflow-check')">열기</button>
+    </div>
+    <!-- Overflow O / Checkbox X -->
+    <div class="demo-section">
+      <h3>Overflow O / Checkbox X</h3>
+      <button class="demo-btn" onclick="openPopup('popup-overflow-nocheck')">열기</button>
+    </div>
+    <!-- Overflow X / Checkbox O -->
+    <div class="demo-section">
+      <h3>Overflow X / Checkbox O</h3>
+      <button class="demo-btn" onclick="openPopup('popup-nooverflow-check')">열기</button>
+    </div>
+    <!-- No Buttons -->
+    <div class="demo-section">
+      <h3>showButtons=false</h3>
+      <button class="demo-btn" onclick="openPopup('popup-nobuttons')">열기</button>
+    </div>
+  </div>
+</div>
+
+<!-- Scrim -->
+<div class="wds-scrim" id="scrim" onclick="closeAll()"></div>
+
+<!-- ── Popup 1: Overflow O / Checkbox O ───────────────────── -->
+<div class="wds-bottom-popup" id="popup-overflow-check" role="dialog" aria-modal="true" aria-label="바텀 팝업">
+  <div class="wds-popup__close-row">
+    <button class="wds-popup__close-btn" onclick="closeAll()" aria-label="닫기">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <header class="wds-topnav">
+    <h2 class="wds-topnav__title">Title</h2>
+  </header>
+  <div class="wds-popup__content">
+    <div class="wds-textfield">
+      <div class="wds-textfield__title-row">
+        <div class="wds-textfield__title-left"><span class="wds-textfield__title">입력 필드</span></div>
+        <span class="wds-textfield__counter" id="counter1a">0/200</span>
+      </div>
+      <div class="wds-textfield__input-row">
+        <input class="wds-textfield__input" type="text" placeholder="입력해주세요" maxlength="200"
+               data-maxlength="200" data-counter="counter1a" oninput="tfInput(this)">
+        <button class="wds-textfield__clear" aria-label="지우기" onclick="tfClear(this)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8" fill="currentColor" opacity="0.2"/>
+            <path d="M7 7l6 6M13 7l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="wds-textfield">
+      <div class="wds-textfield__title-row">
+        <div class="wds-textfield__title-left"><span class="wds-textfield__title">입력 필드</span></div>
+        <span class="wds-textfield__counter" id="counter1b">0/200</span>
+      </div>
+      <div class="wds-textfield__input-row">
+        <input class="wds-textfield__input" type="text" placeholder="입력해주세요" maxlength="200"
+               data-maxlength="200" data-counter="counter1b" oninput="tfInput(this)">
+        <button class="wds-textfield__clear" aria-label="지우기" onclick="tfClear(this)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8" fill="currentColor" opacity="0.2"/>
+            <path d="M7 7l6 6M13 7l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Extra content to force overflow -->
+    <p style="font-size:14px; color:rgba(0,0,0,0.5); line-height:1.6;">추가 내용 영역입니다. 스크롤을 테스트하기 위한 더미 텍스트입니다. 스크롤이 발생하면 버튼 영역이 고정됩니다.</p>
+    <p style="font-size:14px; color:rgba(0,0,0,0.5); line-height:1.6;">더 많은 내용이 여기에 들어갑니다.</p>
+  </div>
+  <div class="wds-popup__overlay-buttons">
+    <div class="wds-popup__gradient"></div>
+    <label class="wds-checkbox-row">
+      <input class="wds-checkbox-input" type="checkbox" id="chk1">
+      <span class="wds-checkbox-box">
+        <svg class="check" width="14" height="10" viewBox="0 0 14 10" fill="none">
+          <path d="M1.5 5L5.5 9L12.5 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="wds-checkbox-label">텍스트를 입력해주세요</span>
+    </label>
+    <button class="wds-popup__confirm-btn" onclick="closeAll()">확인</button>
+  </div>
+</div>
+
+<!-- ── Popup 2: Overflow O / Checkbox X ───────────────────── -->
+<div class="wds-bottom-popup" id="popup-overflow-nocheck" role="dialog" aria-modal="true" aria-label="바텀 팝업">
+  <div class="wds-popup__close-row">
+    <button class="wds-popup__close-btn" onclick="closeAll()" aria-label="닫기">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <header class="wds-topnav">
+    <h2 class="wds-topnav__title">Title</h2>
+  </header>
+  <div class="wds-popup__content">
+    <div class="wds-textfield">
+      <div class="wds-textfield__title-row">
+        <div class="wds-textfield__title-left"><span class="wds-textfield__title">입력 필드</span></div>
+        <span class="wds-textfield__counter" id="counter2a">0/200</span>
+      </div>
+      <div class="wds-textfield__input-row">
+        <input class="wds-textfield__input" type="text" placeholder="입력해주세요" maxlength="200"
+               data-maxlength="200" data-counter="counter2a" oninput="tfInput(this)">
+      </div>
+    </div>
+    <p style="font-size:14px; color:rgba(0,0,0,0.5); line-height:1.6;">추가 내용 영역 (overflow, 체크박스 없음)</p>
+    <p style="font-size:14px; color:rgba(0,0,0,0.5); line-height:1.6;">더 많은 내용이 여기에 들어갑니다.</p>
+    <p style="font-size:14px; color:rgba(0,0,0,0.5); line-height:1.6;">스크롤을 확인할 수 있는 더미 콘텐츠입니다.</p>
+  </div>
+  <div class="wds-popup__overlay-buttons">
+    <div class="wds-popup__gradient"></div>
+    <button class="wds-popup__confirm-btn" onclick="closeAll()">확인</button>
+  </div>
+</div>
+
+<!-- ── Popup 3: Overflow X / Checkbox O ───────────────────── -->
+<div class="wds-bottom-popup" id="popup-nooverflow-check" role="dialog" aria-modal="true" aria-label="바텀 팝업">
+  <div class="wds-popup__close-row">
+    <button class="wds-popup__close-btn" onclick="closeAll()" aria-label="닫기">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <header class="wds-topnav">
+    <h2 class="wds-topnav__title">Title</h2>
+  </header>
+  <div class="wds-popup__content" style="overflow-y: hidden;">
+    <div class="wds-textfield">
+      <div class="wds-textfield__title-row">
+        <div class="wds-textfield__title-left"><span class="wds-textfield__title">입력 필드</span></div>
+      </div>
+      <div class="wds-textfield__input-row">
+        <input class="wds-textfield__input" type="text" placeholder="입력해주세요" maxlength="200">
+      </div>
+    </div>
+  </div>
+  <div class="wds-popup__overlay-buttons">
+    <label class="wds-checkbox-row">
+      <input class="wds-checkbox-input" type="checkbox" id="chk3">
+      <span class="wds-checkbox-box">
+        <svg class="check" width="14" height="10" viewBox="0 0 14 10" fill="none">
+          <path d="M1.5 5L5.5 9L12.5 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="wds-checkbox-label">텍스트를 입력해주세요</span>
+    </label>
+    <button class="wds-popup__confirm-btn" onclick="closeAll()">확인</button>
+  </div>
+</div>
+
+<!-- ── Popup 4: showButtons=false ─────────────────────────── -->
+<div class="wds-bottom-popup" id="popup-nobuttons" role="dialog" aria-modal="true" aria-label="바텀 팝업">
+  <div class="wds-popup__close-row">
+    <button class="wds-popup__close-btn" onclick="closeAll()" aria-label="닫기">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <header class="wds-topnav">
+    <h2 class="wds-topnav__title">Title</h2>
+  </header>
+  <div class="wds-popup__content">
+    <p style="font-size:15px; color:#333; line-height:1.6;">버튼 없는 컨텐츠 영역입니다. 닫기 버튼 또는 스크림 탭으로만 닫을 수 있습니다.</p>
+    <p style="font-size:14px; color:rgba(0,0,0,0.5); line-height:1.6;">BottomPopup은 depth(중첩)을 지원하지 않습니다.</p>
+  </div>
+</div>
+
+<script>
+  function openPopup(id) {
+    document.getElementById('scrim').classList.add('wds-scrim--visible');
+    document.getElementById(id).classList.add('wds-bottom-popup--open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAll() {
+    document.querySelectorAll('.wds-bottom-popup').forEach(p => p.classList.remove('wds-bottom-popup--open'));
+    document.getElementById('scrim').classList.remove('wds-scrim--visible');
+    document.body.style.overflow = '';
+  }
+
+  function tfInput(input) {
+    const maxlen = input.dataset.maxlength;
+    const counterId = input.dataset.counter;
+    if (counterId) document.getElementById(counterId).textContent = `${input.value.length}/${maxlen}`;
+    const clearBtn = input.parentElement.querySelector('.wds-textfield__clear');
+    if (clearBtn) clearBtn.style.display = input.value.length > 0 ? 'block' : 'none';
+  }
+
+  function tfClear(btn) {
+    const input = btn.parentElement.querySelector('.wds-textfield__input');
+    input.value = '';
+    tfInput(input);
+    input.focus();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+component:
+  name: "Circular Progress Indicator"
+  figma_name: "Circular_Progress_Indicator"
+  description: "컴포넌트 내부 처리 중 상태를 원형 진행 표시로 보여주는 인디케이터"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "9003:21751"
+  component_set_key: "52969b5595e5042dda34b6a45dbb86939887af5c"
+  last_synced: "2026-05-04"
+
+axes:
+  Mode: ["Default", "Fixed"]
+
+variants:
+  count: 2
+  formula: "Mode(2)"
+  constraints:
+    - "Mode=Default and Mode=Fixed are both implemented."
+    - "Button is a boolean component property, not a variant axis."
+  registry:
+    - { variant: "Mode=Default", node_id: "8998:21680", key: "719d2ddce274ffd181cba331ac4c2f3cd26fc6ea" }
+    - { variant: "Mode=Fixed", node_id: "9003:21728", key: "d580be5f3a291c6819c9d1d44942a7c7385bc69c" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Both variants use fixed color tokens in the live component; Mode remains the public variant axis."
+  Button:
+    type: "boolean"
+    default: "true"
+    description: "Controls visibility of the nested cancel button instance."
+
+tokens:
+  background:
+    part: "BG"
+    role: "fill"
+    applies_to: "All variants"
+    token: "system/fixed_color/surface/black-600a-same"
+  cancel_icon:
+    part: "Vector 73 and Vector 74"
+    role: "stroke"
+    applies_to: "Button=true"
+    token: "system/fixed_color/icon/default"
+  progress_track:
+    part: "Progress bar_bg"
+    role: "stroke"
+    applies_to: "All variants"
+    token: "system/fixed_color/surface/white-100a-same"
+  progress_value:
+    part: "Progress bar"
+    role: "stroke"
+    applies_to: "All variants"
+    token: "system/fixed_color/outline/default"
+  stroke_width:
+    part: "Progress bar and Progress bar_bg"
+    role: "stroke width"
+    applies_to: "All variants"
+    value: "2px"
+
+assets:
+  cancel_button:
+    part: "btn"
+    role: "button icon"
+    source: "공통요소 / 인디케이터 / btn_circle_indicator_cancel"
+    applies_to: "Button=true"
+    size: "16x16px"
+    tint:
+      fixed: "system/fixed_color/icon/default"
+    semantic_rule: "The cancel control is a nested DS component and must not be replaced with text or a redrawn vector."
+
+layout:
+  component_size: "56x56px"
+  bg:
+    size: "56x56px"
+    radius: 100
+    padding: "20px"
+  progress_bar_bg:
+    size: "44x44px"
+    stroke_weight: "2px"
+    position: "absolute x=6, y=6"
+  progress_bar:
+    size: "41x44px"
+    stroke_weight: "2px"
+    position: "absolute x=9, y=6"
+  cancel_button:
+    size: "16x16px"
+    icon_vectors: "10x10px, 1.5px stroke"
+  part_spacing:
+    "BG__to__Progress bar":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "absolute positioning"
+        value: "Progress bar at x=9, y=6 inside 56x56 BG"
+      variants: []
+
+implementation_order:
+  - "Resolve Mode variant first."
+  - "Render a 56x56 circular background."
+  - "Render the 44x44 progress track and 41x44 progress value with 2px strokes."
+  - "Apply fixed color tokens from the live component."
+  - "Render the cancel button only when Button=true."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+  props:
+    - "Button"
+  assets:
+    - "cancel_button"
+  layout:
+    - "56x56 circular background"
+    - "44x44 track"
+    - "41x44 progress value"
+    - "16x16 cancel button"
+  exclusions:
+    - "No additional Size or State axes are present in the live component set."
+    - "This workflow does not create a derived circular-progress-indicator.md file."
+
+rules:
+  do:
+    - "Use Circular Loading only when Dot Loading cannot be used inside a component."
+    - "Keep Circular Loading inside component-level contexts."
+    - "Use the live fixed tokens for background, track, progress, and cancel icon."
+  dont:
+    - "Do not use Circular Loading for full-screen page transitions."
+    - "Do not use Circular Loading when Dot Loading is the available pattern."
+    - "Do not replace the cancel button asset with text or a custom vector."
+
+spec_notes:
+  source:
+    - "Framelink full extraction for node 9003:21751."
+    - "Official Figma Plugin API read-only extraction for both variants, Button property, nested btn instance, and bound tokens."
+    - "Code Connect context for Button boolean visibility reference."
+    - "Registry reference: refs/figma-component-keys/variant-keys/circular-progress-indicator.md."
+    - "Usage reference: refs/markitdown-output/markitdown-loading.md."

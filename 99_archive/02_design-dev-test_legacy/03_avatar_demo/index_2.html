@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Radio Component Test 2</title>
+    <style>
+      :root {
+        --page: #f2f3f7;
+        --ink: #0f1117;
+        --muted: #626878;
+        --panel: #ffffff;
+        --panel-line: #dfe2ea;
+        --guide: #5989fe;
+
+        --radio-box-size: 24px;
+        --visible-radio-size: 22px;
+        --inner-circle-size: 8px;
+        --radio-label-gap: 6px;
+
+        --default-outline-light: #00000033;
+        --default-outline-dark: #ffffff33;
+        --default-active-light: #00cbd5;
+        --default-active-dark: #01d5df;
+        --default-inner-light: #ffffff;
+        --default-inner-dark: #000000;
+        --default-disabled-bg-light: #0000001a;
+        --default-disabled-bg-dark: #ffffff1a;
+        --default-disabled-inner-light: #00000033;
+        --default-disabled-inner-dark: #ffffff33;
+
+        --fixed-outline: #ffffff33;
+        --fixed-active: #01d5df;
+        --fixed-inner: #ffffff;
+        --fixed-disabled-outline: #00000033;
+        --fixed-disabled-bg: #0000001a;
+        --fixed-disabled-inner: #ffffff33;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--page);
+        color: var(--ink);
+        font-family: "Avenir Next", Pretendard, sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        width: min(1160px, calc(100vw - 28px));
+        margin: 0 auto;
+        padding: 28px 0;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 30px;
+        line-height: 1.1;
+      }
+
+      .lead {
+        margin: 8px 0 0;
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .test-id {
+        min-width: max-content;
+        padding: 8px 10px;
+        border: 1px solid var(--panel-line);
+        border-radius: 6px;
+        background: var(--panel);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 380px;
+        gap: 16px;
+      }
+
+      .card {
+        border: 1px solid var(--panel-line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .card-header {
+        padding: 16px 18px 12px;
+        border-bottom: 1px solid var(--panel-line);
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.25;
+      }
+
+      .note {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .variant-board {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 16px;
+      }
+
+      .mode {
+        min-width: 0;
+        border: 1px solid var(--panel-line);
+        border-radius: 8px;
+        background: #ffffff;
+        overflow: hidden;
+      }
+
+      .mode.fixed {
+        border-color: #ffffff26;
+        background: #101114;
+        color: #f4f4f4;
+      }
+
+      .mode-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 12px 10px;
+        border-bottom: 1px solid var(--panel-line);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .fixed .mode-title {
+        border-bottom-color: #ffffff1a;
+      }
+
+      .mode-title code {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .fixed .mode-title code {
+        color: #ffffff99;
+      }
+
+      .rows {
+        display: grid;
+        gap: 0;
+      }
+
+      .radio-row {
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr) 120px;
+        align-items: center;
+        gap: 12px;
+        min-height: 56px;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--panel-line);
+      }
+
+      .radio-row:last-child {
+        border-bottom: 0;
+      }
+
+      .fixed .radio-row {
+        border-bottom-color: #ffffff1a;
+      }
+
+      .state-label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .fixed .state-label {
+        color: #ffffff99;
+      }
+
+      .radio-item {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--radio-label-gap);
+        min-width: 0;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      .radio-item.is-disabled {
+        cursor: not-allowed;
+        opacity: 0.82;
+      }
+
+      .radio-item input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .radio-box {
+        display: grid;
+        place-items: center;
+        flex: 0 0 var(--radio-box-size);
+        width: var(--radio-box-size);
+        height: var(--radio-box-size);
+        outline: 1px dashed transparent;
+        outline-offset: -1px;
+      }
+
+      .show-slot .radio-box {
+        outline-color: var(--guide);
+      }
+
+      .visible-radio {
+        position: relative;
+        display: block;
+        width: var(--visible-radio-size);
+        height: var(--visible-radio-size);
+        border: 1px solid var(--default-outline-light);
+        border-radius: 999px;
+        background: transparent;
+      }
+
+      .visible-radio::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--inner-circle-size);
+        height: var(--inner-circle-size);
+        border-radius: 999px;
+        background: transparent;
+        transform: translate(-50%, -50%);
+      }
+
+      input:focus-visible + .radio-box {
+        outline-color: var(--guide);
+        outline-style: solid;
+        outline-offset: 2px;
+        border-radius: 999px;
+      }
+
+      input:checked + .radio-box .visible-radio {
+        border-color: var(--default-active-light);
+        background: var(--default-active-light);
+      }
+
+      input:checked + .radio-box .visible-radio::after {
+        background: var(--default-inner-light);
+      }
+
+      .is-disabled .visible-radio {
+        border-color: var(--default-outline-light);
+        background: var(--default-disabled-bg-light);
+      }
+
+      .is-disabled .visible-radio::after {
+        background: var(--default-disabled-inner-light);
+      }
+
+      .fixed .visible-radio {
+        border-color: var(--fixed-outline);
+      }
+
+      .fixed input:checked + .radio-box .visible-radio {
+        border-color: var(--fixed-active);
+        background: var(--fixed-active);
+      }
+
+      .fixed input:checked + .radio-box .visible-radio::after {
+        background: var(--fixed-inner);
+      }
+
+      .fixed .is-disabled .visible-radio {
+        border-color: var(--fixed-disabled-outline);
+        background: var(--fixed-disabled-bg);
+      }
+
+      .fixed .is-disabled .visible-radio::after {
+        background: var(--fixed-disabled-inner);
+      }
+
+      .label {
+        min-width: 0;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .measure {
+        display: grid;
+        gap: 2px;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.35;
+      }
+
+      .fixed .measure {
+        color: #ffffff99;
+      }
+
+      .structure {
+        padding: 16px 18px;
+      }
+
+      pre {
+        margin: 0;
+        padding: 14px;
+        overflow: auto;
+        border: 1px solid var(--panel-line);
+        border-radius: 6px;
+        background: #f7f8fa;
+        font-family: "SFMono-Regular", Consolas, monospace;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .token-list {
+        display: grid;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .token {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: center;
+        padding: 9px 0;
+        border-bottom: 1px solid var(--panel-line);
+      }
+
+      .token:last-child {
+        border-bottom: 0;
+      }
+
+      .token code {
+        display: block;
+        overflow-wrap: anywhere;
+        color: #343844;
+        font-family: "SFMono-Regular", Consolas, monospace;
+        font-size: 11px;
+      }
+
+      .swatches {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+
+      .swatch {
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--panel-line);
+        border-radius: 4px;
+      }
+
+      .value {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      @media (max-width: 920px) {
+        .topbar,
+        .grid,
+        .variant-board,
+        .radio-row {
+          grid-template-columns: 1fr;
+        }
+
+        .radio-row {
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="topbar">
+        <div>
+          <h1>Radio HTML Test</h1>
+          <p class="lead">
+            Source: <code>components/radio.md</code>. This test makes the 24x24 layout slot and the 22x22 visible radio explicit.
+          </p>
+        </div>
+        <div class="test-id">test_2 / index_2.html</div>
+      </div>
+
+      <div class="grid">
+        <section class="card" aria-labelledby="variants-title">
+          <div class="card-header">
+            <h2 id="variants-title">Six Variants</h2>
+            <p class="note">The dashed blue square is the 24x24 Radio Box. The painted circle inside is the 22x22 Visible Radio.</p>
+          </div>
+
+          <div class="variant-board show-slot">
+            <div class="mode">
+              <div class="mode-title">
+                <span>Mode=Default</span>
+                <code>system/color/*</code>
+              </div>
+              <div class="rows" role="radiogroup" aria-label="Default mode radio variants">
+                <div class="radio-row">
+                  <div class="state-label">Default</div>
+                  <label class="radio-item">
+                    <input type="radio" name="radio-default" />
+                    <span class="radio-box"><span class="visible-radio"></span></span>
+                    <span class="label">미선택 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>box 24x24</span>
+                    <span>visible 22x22</span>
+                  </div>
+                </div>
+
+                <div class="radio-row">
+                  <div class="state-label">Enabled</div>
+                  <label class="radio-item">
+                    <input type="radio" name="radio-default" checked />
+                    <span class="radio-box"><span class="visible-radio"></span></span>
+                    <span class="label">선택된 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>shape #00CBD5</span>
+                    <span>inner 8x8</span>
+                  </div>
+                </div>
+
+                <div class="radio-row">
+                  <div class="state-label">Disabled</div>
+                  <label class="radio-item is-disabled">
+                    <input type="radio" name="radio-default-disabled" disabled />
+                    <span class="radio-box"><span class="visible-radio"></span></span>
+                    <span class="label">비활성 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>bg #0000001A</span>
+                    <span>inner #00000033</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mode fixed">
+              <div class="mode-title">
+                <span>Mode=Fixed</span>
+                <code>system/fixed_color/*</code>
+              </div>
+              <div class="rows" role="radiogroup" aria-label="Fixed mode radio variants">
+                <div class="radio-row">
+                  <div class="state-label">Default</div>
+                  <label class="radio-item">
+                    <input type="radio" name="radio-fixed" />
+                    <span class="radio-box"><span class="visible-radio"></span></span>
+                    <span class="label">미선택 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>box 24x24</span>
+                    <span>visible 22x22</span>
+                  </div>
+                </div>
+
+                <div class="radio-row">
+                  <div class="state-label">Enabled</div>
+                  <label class="radio-item">
+                    <input type="radio" name="radio-fixed" checked />
+                    <span class="radio-box"><span class="visible-radio"></span></span>
+                    <span class="label">선택된 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>shape #01D5DF</span>
+                    <span>inner 8x8</span>
+                  </div>
+                </div>
+
+                <div class="radio-row">
+                  <div class="state-label">Disabled</div>
+                  <label class="radio-item is-disabled">
+                    <input type="radio" name="radio-fixed-disabled" disabled />
+                    <span class="radio-box"><span class="visible-radio"></span></span>
+                    <span class="label">비활성 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>bg #0000001A</span>
+                    <span>inner #FFFFFF33</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="card" aria-labelledby="structure-title">
+          <div class="card-header">
+            <h2 id="structure-title">Structure Contract</h2>
+            <p class="note">Copied from the updated Radio spec, with resolved token values below.</p>
+          </div>
+
+          <div class="structure">
+            <pre>Radio Item
+├─ Radio Box / layout slot 24x24
+│  └─ Visible Radio / 22x22, centered
+│     ├─ Outline / 22px circle, 1px stroke
+│     ├─ Shape / selected fill
+│     └─ Inner circle / 8px
+└─ Label / optional, 6px gap</pre>
+
+            <div class="token-list" aria-label="Resolved token list">
+              <div class="token">
+                <div>
+                  <code>system/color/outline/default-200a</code>
+                  <span class="value">Light #00000033 / Dark #FFFFFF33</span>
+                </div>
+                <div class="swatches">
+                  <span class="swatch" style="background:#00000033"></span>
+                  <span class="swatch" style="background:#ffffff33"></span>
+                </div>
+              </div>
+              <div class="token">
+                <div>
+                  <code>system/color/status/active-primary</code>
+                  <span class="value">Light #00CBD5 / Dark #01D5DF</span>
+                </div>
+                <div class="swatches">
+                  <span class="swatch" style="background:#00cbd5"></span>
+                  <span class="swatch" style="background:#01d5df"></span>
+                </div>
+              </div>
+              <div class="token">
+                <div>
+                  <code>system/fixed_color/status/active-primary</code>
+                  <span class="value">Light #01D5DF / Dark #01D5DF</span>
+                </div>
+                <div class="swatches">
+                  <span class="swatch" style="background:#01d5df"></span>
+                  <span class="swatch" style="background:#01d5df"></span>
+                </div>
+              </div>
+              <div class="token">
+                <div>
+                  <code>system/size/padding/box/75</code>
+                  <span class="value">Light 6px / Dark 6px</span>
+                </div>
+                <div class="value">gap 6px</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+{
+  "Small": {"image": 32, "touch": 32},
+  "Medium": {"image": 36, "touch": 36}
+}

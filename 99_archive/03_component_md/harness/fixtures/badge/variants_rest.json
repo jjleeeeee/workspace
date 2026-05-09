@@ -1,0 +1,14 @@
+{
+  "axes": {
+    "Mode": ["Default", "Fixed"],
+    "Size": ["Small", "Medium", "Large"],
+    "Outline": ["ON", "OFF"],
+    "Type": ["Number", "New"]
+  },
+  "variantCount": 16,
+  "_source": {
+    "tool": "Figma REST /v1/files/DWEduE6GfxYMlyxKPNJ8jA/components",
+    "componentSet": "Badge"
+  }
+}
+

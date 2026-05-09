@@ -1,0 +1,159 @@
+component:
+  name: "Loading Dot"
+  figma_name: "Loading_Dot"
+  description: "화면 이동이나 컴포넌트 내부 처리 중 상태를 점 애니메이션으로 알려주는 로딩 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "10384:29778"
+  component_set_key: "b1ecfc5a18468daceeaaa41142ef26f896c0f67f"
+  last_synced: "2026-05-04"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Size: ["Medium", "Small"]
+  Color: ["Primary", "White"]
+
+variants:
+  count: 6
+  formula: "Mode(2) x valid Size/Color combinations(3)"
+  constraints:
+    - "Medium is available only with Color=Primary."
+    - "Small is available with Color=Primary or Color=White."
+  registry:
+    - { variant: "Mode=Default, Size=Medium, Color=Primary", node_id: "10384:29779", key: "36630c8bc6130e92f8274f4cf4b7fff2ecd8884d" }
+    - { variant: "Mode=Default, Size=Small, Color=White", node_id: "10384:29783", key: "af82a7c336142618ffbf202b2b0147c6ce947eea" }
+    - { variant: "Mode=Default, Size=Small, Color=Primary", node_id: "48790:15617", key: "6c98fb7942379c1d5ef794629abcebecb3051433" }
+    - { variant: "Mode=Fixed, Size=Medium, Color=Primary", node_id: "10384:29787", key: "01eebbced9d1d3936cb93c443b17aedab6be6d8d" }
+    - { variant: "Mode=Fixed, Size=Small, Color=White", node_id: "10384:29791", key: "da70f15eef9b2fcf958a577165ef445bc5b400d8" }
+    - { variant: "Mode=Fixed, Size=Small, Color=Primary", node_id: "48790:15621", key: "b05825685a98f6ede9410348cc33f6f7fb237f3c" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default uses system color tokens; Fixed uses fixed-mode color tokens where present in Figma."
+  Size:
+    type: '"Medium" | "Small"'
+    default: '"Medium"'
+    description: "Medium is for screen-level loading; Small is for component-internal loading."
+  Color:
+    type: '"Primary" | "White"'
+    default: '"Primary"'
+    description: "Primary is the default brand loading color; White is for inverse component contexts."
+
+tokens:
+  medium_primary_default:
+    part: "Ellipse 2181, Ellipse 2180, Ellipse 2179"
+    role: "fill"
+    applies_to: "Mode=Default, Size=Medium, Color=Primary"
+    token: "system/color/roles/primary"
+  medium_primary_fixed:
+    part: "Ellipse 2181, Ellipse 2180, Ellipse 2179"
+    role: "fill"
+    applies_to: "Mode=Fixed, Size=Medium, Color=Primary"
+    token: "system/fixed_color/roles/primary"
+  small_primary:
+    part: "Ellipse 2181, Ellipse 2180, Ellipse 2179"
+    role: "fill"
+    applies_to: "Size=Small, Color=Primary"
+    token: "system/color/icon/primary"
+  small_white:
+    part: "Ellipse 2181, Ellipse 2180, Ellipse 2179"
+    role: "fill"
+    applies_to: "Size=Small, Color=White"
+    token: "system/color/icon/default-reverse"
+  medium_dot_gap:
+    part: "component"
+    role: "spacing"
+    applies_to: "Size=Medium"
+    token: "system/size/padding/box/100"
+    value: "8px"
+  small_dot_gap:
+    part: "component"
+    role: "spacing"
+    applies_to: "Size=Small"
+    token: "system/size/padding/box/50"
+    value: "4px"
+  dot_opacity_sequence:
+    part: "Ellipse 2181, Ellipse 2180, Ellipse 2179"
+    role: "opacity"
+    applies_to: "All variants"
+    values: "0.2, 0.5, 1"
+
+assets:
+  loading_dot_motion:
+    part: "three dot sequence"
+    role: "loading animation"
+    source: "Loading_Dot component geometry; loading usage reference says Loading uses Lottie Animation"
+    applies_to: "All variants"
+    size: "60x60 for Medium; 20x20 for Small"
+    semantic_rule: "The loading dots represent an animated loading asset/component, not textual ellipsis content."
+
+layout:
+  component_size: "60x60 Medium; 20x20 Small"
+  medium_dot_size: "8x8"
+  small_dot_size: "4x4"
+  medium_gap: "8px"
+  small_gap: "4px"
+  part_spacing:
+    dot__to__dot:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "system/size/padding/box/100"
+        value: "8px for Medium"
+      variants:
+        - when: "Size=Small"
+          token: "system/size/padding/box/50"
+          value: "4px"
+
+implementation_order:
+  - "Resolve Size first because it controls component size, dot size, and dot spacing."
+  - "Resolve Color next within the valid Size and Color combinations."
+  - "Apply Mode-specific token only where the live Figma variant uses a fixed token."
+  - "Preserve the three-dot loading sequence and opacity staging."
+  - "Use the existing loading animation asset when available instead of rendering text ellipsis."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+    - "Size"
+    - "Color"
+  props:
+    - "Mode"
+    - "Size"
+    - "Color"
+  assets:
+    - "loading_dot_motion"
+  layout:
+    - "60x60 Medium component"
+    - "20x20 Small component"
+    - "8x8 Medium dots"
+    - "4x4 Small dots"
+    - "8px and 4px tokenized gaps"
+  exclusions:
+    - "This workflow does not create a derived loading-dot.md file."
+
+rules:
+  do:
+    - "Use Medium Dot Loading for full-screen movement or screen transition loading."
+    - "Use Small Dot Loading for component-internal loading."
+    - "Use Primary or White loading colors according to the component context."
+    - "Use Loading for in-progress states only."
+  dont:
+    - "Do not use Medium Dot Loading inside dense components."
+    - "Do not use Loading to communicate errors or completion messages."
+    - "Do not change loading colors to community colors."
+    - "Do not replace the loading asset with plain text ellipsis."
+
+source_gaps:
+  - field: "assets.loading_dot_motion.source"
+    reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
+    impact: "Implementation should use the existing product loading animation asset if the platform has one, or ask design for the Lottie asset key before shipping a new asset."
+
+spec_notes:
+  source:
+    - "Figma live read via Framelink and read-only Plugin API extraction from node 10384:29778."
+    - "Variant key reference: refs/figma-component-keys/variant-keys/loading-dot.md."
+    - "Usage reference: refs/markitdown-output/markitdown-loading.md."

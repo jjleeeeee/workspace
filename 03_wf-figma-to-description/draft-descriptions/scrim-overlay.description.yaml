@@ -1,0 +1,77 @@
+component:
+  name: "Scrim Overlay"
+  figma_name: "Scrim_Overlay"
+  component_type: "COMPONENT"
+  description: "배경 콘텐츠 위에 반투명 레이어를 덮어 전면 UI와 배경 사이의 위계를 만드는 오버레이"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "10482:75325"
+  component_set_key: "82556da89c0795003b5b07261ac8dc65fb09da1c"
+  last_synced: "2026-05-04"
+
+axes:
+  Variant: ["Default"]
+
+variants:
+  count: 1
+  formula: "Single component"
+  constraints:
+    - "Scrim_Overlay has no variant axes in Figma."
+  registry:
+    - { variant: "Scrim_Overlay", node_id: "10482:75325", key: "82556da89c0795003b5b07261ac8dc65fb09da1c" }
+
+props:
+  opacity:
+    type: '"50%"'
+    default: '"50%"'
+    description: "Scrim opacity is fixed by the component and must not be changed per use."
+
+tokens:
+  scrim_fill:
+    part: "Scrim_Overlay"
+    role: "fill"
+    applies_to: "Variant=Default"
+    token: "system/fixed_color/surface/default-400a"
+    opacity: "50%"
+
+layout:
+  component_size: "393x852"
+  resizing:
+    horizontal: "fixed in source; scale to cover the target viewport when implemented as an overlay"
+    vertical: "fixed in source; scale to cover the target viewport when implemented as an overlay"
+  opacity: "50%"
+
+implementation_order:
+  - "Render Scrim Overlay above background content and below the active modal or overlay surface."
+  - "Apply the fixed surface token with 50% opacity."
+  - "Stretch or size the overlay to fully cover the target viewport or container."
+  - "Preserve the overlay as a visual hierarchy layer, not as an interactive content surface."
+
+implementation_coverage:
+  axes:
+    - "Variant"
+  props:
+    - "opacity"
+  assets:
+    - "No asset-backed visual is used."
+  layout:
+    - "393x852 source frame"
+    - "Full-cover overlay behavior"
+    - "50% opacity"
+  exclusions:
+    - "This workflow does not create a derived scrim-overlay.md file."
+    - "Figma Description writeback is intentionally skipped for this worker task."
+
+rules:
+  do:
+    - "Use Scrim Overlay to separate foreground overlays from background content."
+    - "Use 50% opacity for Scrim Overlay."
+    - "Place Scrim Overlay behind Dialog or other blocking overlay surfaces."
+  dont:
+    - "Do not change Scrim Overlay opacity arbitrarily."
+    - "Do not use Scrim Overlay as content or decoration without a foreground overlay."
+    - "Do not let background content visually compete with the active foreground surface."
+
+spec_notes:
+  source:
+    - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 10482:75325."
+    - "Supplemental usage reference: refs/markitdown-output/markitdown-dialog.md Scrim Overlay section."

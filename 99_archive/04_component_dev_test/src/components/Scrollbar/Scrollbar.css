@@ -1,0 +1,30 @@
+.chord-scrollbar {
+  position: relative;
+  display: inline-block;
+  inline-size: 8px;
+  block-size: 120px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.chord-scrollbar > span {
+  position: absolute;
+  inset-inline: 2px;
+  inset-block-start: var(--scrollbar-value);
+  block-size: 36px;
+  border-radius: 999px;
+  background: var(--scrollbar-color);
+  transform: translateY(-50%);
+}
+
+.chord-scrollbar[data-state="default"] {
+  --scrollbar-color: var(--cds-system-color-surface-default-reverse-200a, #00000033);
+}
+
+.chord-scrollbar[data-state="hover"] {
+  --scrollbar-color: var(--cds-system-color-surface-default-reverse-300a, #0000004d);
+}
+
+.chord-scrollbar[data-state="dragging"] {
+  --scrollbar-color: var(--cds-system-color-surface-default-reverse-600a-unequal, #000000cc);
+}

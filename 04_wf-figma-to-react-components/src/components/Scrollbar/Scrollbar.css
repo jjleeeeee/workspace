@@ -1,0 +1,26 @@
+.chord-scrollbar {
+  --scrollbar-thumb: var(--cds-system-color-surface-default-reverse-200a, #00000033);
+  display: inline-flex;
+  justify-content: center;
+  inline-size: 10px;
+  block-size: 100px;
+  padding: var(--cds-system-size-padding-box-50, 4px) var(--cds-system-size-padding-box-25, 2px);
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+.chord-scrollbar__thumb {
+  display: block;
+  inline-size: 6px;
+  block-size: 60px;
+  border-radius: 3px;
+  background: var(--scrollbar-thumb);
+}
+
+.chord-scrollbar[data-mode="fixed-white"] {
+  --scrollbar-thumb: var(--cds-system-fixed-color-surface-default-reverse-200a, #ffffff33);
+}
+
+.chord-scrollbar[data-mode="fixed-black"] {
+  --scrollbar-thumb: var(--cds-system-fixed-color-surface-default-200a, #00000033);
+}

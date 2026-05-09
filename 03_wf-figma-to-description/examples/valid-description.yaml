@@ -1,0 +1,66 @@
+component:
+  name: "Button"
+  description: "Primary action component"
+  figma_file: "FILE_KEY"
+  node_id: "1:2"
+  component_set_key: "COMPONENT_SET_KEY"
+  last_synced: "2026-05-04"
+
+axes:
+  Size: ["Small", "Medium"]
+  Status: ["Default", "Disabled"]
+
+variants:
+  count: 4
+  formula: "Size(2) x Status(2)"
+  constraints:
+    - "All combinations are valid."
+  registry:
+    - { variant: "Size=Small, Status=Default", node_id: "1:3", key: "KEY_1" }
+
+props:
+  Label:
+    type: "string"
+    default: "Button"
+    description: "Visible label text"
+
+tokens:
+  container_fill:
+    part: "Container"
+    role: "fill"
+    applies_to: "Status=Default"
+    default: "system/color/action/primary"
+  label_gap:
+    token: "system/size/gap/s"
+    value: "8px"
+
+layout:
+  component_size: "120x40px"
+  part_spacing:
+    "Container__to__Label":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "system/size/gap/s"
+        value: "8px"
+      variants: []
+
+implementation_order:
+  - "Resolve size and layout metrics first."
+  - "Resolve mode/type/color visual tokens next."
+  - "Apply status overrides after visual tokens."
+
+implementation_coverage:
+  axes: "Variant board covers all valid combinations."
+  props: "Label prop is verified by a text sample."
+  assets: "No asset-backed visuals."
+  layout: "Size and gap values are reflected."
+  exclusions: "No exclusions."
+
+rules:
+  do:
+    - "Use for primary actions."
+  dont:
+    - "Do not use for destructive actions."

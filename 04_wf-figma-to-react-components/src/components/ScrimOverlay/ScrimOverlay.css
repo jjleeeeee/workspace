@@ -1,0 +1,13 @@
+.chord-scrim-overlay {
+  display: block;
+  inline-size: 393px;
+  block-size: 852px;
+  background: var(--cds-system-fixed-color-surface-default-400a, #00000080);
+}
+
+.chord-scrim-overlay[data-full-cover="true"] {
+  position: absolute;
+  inset: 0;
+  inline-size: auto;
+  block-size: auto;
+}

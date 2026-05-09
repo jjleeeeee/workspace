@@ -1,0 +1,74 @@
+.chord-checkbox {
+  --checkbox-stroke: var(--cds-system-color-outline-default-200a, #00000033);
+  --checkbox-bg: transparent;
+  --checkbox-icon: var(--cds-system-color-icon-default-reverse, #ffffff);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 24px;
+  block-size: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--checkbox-icon);
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.chord-checkbox:focus-visible {
+  outline: 2px solid var(--cds-system-color-outline-default, #000000);
+  outline-offset: 2px;
+}
+
+.chord-checkbox:disabled {
+  cursor: not-allowed;
+}
+
+.chord-checkbox__box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 22px;
+  block-size: 22px;
+  border: 1px solid var(--checkbox-stroke);
+  border-radius: 999px;
+  background: var(--checkbox-bg);
+}
+
+.chord-checkbox[data-type="square"] .chord-checkbox__box {
+  border-radius: 6px;
+}
+
+.chord-checkbox__icon {
+  inline-size: 16px;
+  block-size: 16px;
+  color: var(--checkbox-icon);
+}
+
+.chord-checkbox[data-mode="fixed"] {
+  --checkbox-stroke: var(--cds-system-fixed-color-outline-default-200a, #ffffff33);
+}
+
+.chord-checkbox[data-status="enabled"] {
+  --checkbox-bg: var(--cds-system-color-roles-primary, #00cbd5);
+  --checkbox-stroke: var(--checkbox-bg);
+  --checkbox-icon: var(--cds-system-color-icon-default-reverse, #ffffff);
+}
+
+.chord-checkbox[data-mode="fixed"][data-status="enabled"] {
+  --checkbox-bg: var(--cds-system-fixed-color-roles-primary, #01d5df);
+  --checkbox-icon: var(--cds-system-fixed-color-icon-default-reverse, #000000);
+}
+
+.chord-checkbox[data-status="disabled"] {
+  --checkbox-bg: var(--cds-system-color-surface-default-reverse-100a, #0000001a);
+  --checkbox-stroke: transparent;
+  --checkbox-icon: var(--cds-system-color-icon-200a, #00000033);
+}
+
+.chord-checkbox[data-mode="fixed"][data-status="disabled"] {
+  --checkbox-bg: var(--cds-system-fixed-color-surface-default-reverse-100a, #ffffff1a);
+  --checkbox-icon: var(--cds-system-fixed-color-icon-200a, #ffffff33);
+}

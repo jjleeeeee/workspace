@@ -1,0 +1,203 @@
+component:
+  name: "Skeleton"
+  figma_name: "Skeleton"
+  description: "콘텐츠 로딩 중 실제 콘텐츠 영역의 형태를 미리 보여주는 플레이스홀더 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "12447:42302"
+  component_set_key: "646e648144ff6565de0d221e746dce3d4883ac5a"
+  last_synced: "2026-05-04"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Type: ["Rectangle", "Line", "Circle"]
+  Size: ["Large", "Medium"]
+
+variants:
+  count: 12
+  formula: "Mode(2) x Type(3) x Size(2)"
+  constraints:
+    - "All Mode, Type, and Size combinations are valid."
+    - "Rectangle and Line variants use a clipped rectangular component with a Gradient child."
+    - "Circle variants use an ellipse Skeleton child and a Gradient child clipped by the component."
+  registry:
+    - { variant: "Mode=Default, Type=Rectangle, Size=Large", node_id: "12447:42333", key: "31e553683c04e68fa28dd52cb7ccdbb3d84adc60" }
+    - { variant: "Mode=Default, Type=Line, Size=Large", node_id: "12447:42331", key: "cc6f22e9d4a22bbeefec8b97d25ef84acd7f13b3" }
+    - { variant: "Mode=Default, Type=Rectangle, Size=Medium", node_id: "12447:42335", key: "1d8bec0c536ebc10e22d454c899685226bec009b" }
+    - { variant: "Mode=Default, Type=Line, Size=Medium", node_id: "12447:42337", key: "a58d29c329d98e9517959caee44f88c198c4d487" }
+    - { variant: "Mode=Default, Type=Circle, Size=Large", node_id: "12447:42339", key: "6768c658d164072de807f865c489205ac4ae6024" }
+    - { variant: "Mode=Default, Type=Circle, Size=Medium", node_id: "12447:42341", key: "548b2246f419ebbe1116932a783fbfa02e6d1ccb" }
+    - { variant: "Mode=Fixed, Type=Rectangle, Size=Large", node_id: "12447:42283", key: "4b5e097282290a6b19c30ee0cb8b8e3e228cd0c2" }
+    - { variant: "Mode=Fixed, Type=Line, Size=Large", node_id: "12447:42298", key: "39be8bd13c3f464218a730d3ac19b28533732e76" }
+    - { variant: "Mode=Fixed, Type=Rectangle, Size=Medium", node_id: "12447:42299", key: "83b6dd6a202922ee113bd2a701b23cc25d4d143e" }
+    - { variant: "Mode=Fixed, Type=Line, Size=Medium", node_id: "12447:42300", key: "e4276c0e0b1916a65b9a9183d010956ddc9233c3" }
+    - { variant: "Mode=Fixed, Type=Circle, Size=Large", node_id: "12447:42301", key: "506d19855923dbf08813b361fc98c707298fcd55" }
+    - { variant: "Mode=Fixed, Type=Circle, Size=Medium", node_id: "12447:42303", key: "5f91483a568d3a4ae0fd79651772b5134637009c" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default uses adaptive surface tokens; Fixed uses fixed gray surface and low-opacity fixed reverse gradient tokens."
+  Type:
+    type: '"Rectangle" | "Line" | "Circle"'
+    default: '"Rectangle"'
+    description: "Controls the placeholder shape."
+  Size:
+    type: '"Large" | "Medium"'
+    default: '"Large"'
+    description: "Controls source component dimensions for each Type."
+
+tokens:
+  base_fill_default:
+    part: "Skeleton"
+    role: "fill"
+    applies_to: "Mode=Default"
+    token: "system/color/surface/default-gray-50"
+  base_fill_fixed:
+    part: "Skeleton"
+    role: "fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/surface/gray-100"
+  rectangle_radius:
+    part: "Skeleton"
+    role: "corner radius"
+    applies_to: "Type=Rectangle"
+    token: "system/size/radius/box/100"
+    value: "8px"
+  line_radius:
+    part: "Skeleton"
+    role: "corner radius"
+    applies_to: "Type=Line"
+    token: "system/size/radius/box/50"
+    value: "4px"
+  rectangle_line_horizontal_padding:
+    part: "Skeleton"
+    role: "padding left/right"
+    applies_to: "Type=Rectangle or Line"
+    token: "system/size/padding/box/250"
+    value: "20px"
+  set_item_spacing:
+    part: "Component set"
+    role: "variant board spacing"
+    token: "system/size/padding/box/500"
+    value: "40px"
+  gradient_default_start_end:
+    part: "Gradient"
+    role: "gradient stop"
+    applies_to: "Mode=Default, positions=0% and 100%"
+    token: "system/color/surface/default-0a"
+  gradient_default_middle:
+    part: "Gradient"
+    role: "gradient stop"
+    applies_to: "Mode=Default, position=50.5%"
+    token: "system/color/surface/default-600a-unequal"
+    alpha: "0.8"
+  gradient_fixed_start:
+    part: "Gradient"
+    role: "gradient stop"
+    applies_to: "Mode=Fixed, position=0%"
+    token: "system/fixed_color/surface/default-reverse-0a"
+  gradient_fixed_middle:
+    part: "Gradient"
+    role: "gradient stop"
+    applies_to: "Mode=Fixed, position=50.5%"
+    token: "system/fixed_color/surface/default-reverse-50a"
+    alpha: "0.05"
+  gradient_fixed_end:
+    part: "Gradient"
+    role: "gradient stop"
+    applies_to: "Mode=Fixed, position=100%"
+    token: "system/color/surface/default-0a"
+
+layout:
+  component_size:
+    Rectangle_Large: "355x200"
+    Rectangle_Medium: "168x94"
+    Line_Large: "355x20"
+    Line_Medium: "168x16"
+    Circle_Large: "48x48"
+    Circle_Medium: "32x32"
+  gradient_size:
+    Default_Rectangle_Large: "177.5x200"
+    Default_Line_Large: "177.5x20"
+    Default_Rectangle_Medium: "84x94"
+    Default_Line_Medium: "84x16"
+    Fixed_Rectangle_Large: "160x200"
+    Fixed_Line_Large: "160x20"
+    Fixed_Rectangle_Medium: "67.2x94"
+    Fixed_Line_Medium: "67.2x16"
+    Circle_Large: "24x48"
+    Circle_Medium: "16x32"
+  radius:
+    Rectangle: "8px"
+    Line: "4px"
+    Circle: "200px source component clip"
+  padding:
+    Rectangle: "20px left/right"
+    Line: "20px left/right"
+    Circle: "0px"
+  part_spacing:
+    skeleton__to__gradient:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "center aligned overlay"
+        value: "0px gap; Gradient is centered within the clipped Skeleton shape"
+      variants: []
+
+implementation_order:
+  - "Select Mode, Type, and Size variant."
+  - "Render the base Skeleton shape at the source dimensions for the selected Type and Size."
+  - "Apply the mode-specific base fill token."
+  - "Apply Type-specific radius or circle clipping."
+  - "Render the Gradient child above the base shape and clip it to the Skeleton boundary."
+  - "Apply the mode-specific gradient stop tokens and preserve the stop positions."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+    - "Type"
+    - "Size"
+  props:
+    - "Mode"
+    - "Type"
+    - "Size"
+  assets:
+    - "No asset-backed visual is used."
+  layout:
+    - "Rectangle Large 355x200"
+    - "Rectangle Medium 168x94"
+    - "Line Large 355x20"
+    - "Line Medium 168x16"
+    - "Circle Large 48x48"
+    - "Circle Medium 32x32"
+    - "Gradient widths vary by Mode, Type, and Size"
+  exclusions:
+    - "This workflow does not create a derived skeleton.md file."
+    - "Figma Description writeback is intentionally skipped for this worker task."
+
+rules:
+  do:
+    - "Use Skeleton to reserve space while real content is loading."
+    - "Match Skeleton Type and Size to the expected content shape."
+    - "Keep the Gradient clipped inside the Skeleton shape."
+    - "Use Fixed mode when the Skeleton must stay stable on fixed dark surfaces."
+  dont:
+    - "Do not use Skeleton as final content."
+    - "Do not change the gradient stop positions or alpha values without a design update."
+    - "Do not use Line or Rectangle when the target content is circular."
+    - "Do not expose loading text inside the Skeleton shape."
+
+spec_notes:
+  source:
+    - "Figma live read: Framelink extraction, Desktop Bridge deep extraction, and read-only use_figma targeted extraction from node 12447:42302."
+  description_readback:
+    - "Existing Figma description contains: tag : 스켈레톤."
+
+source_gaps:
+  - part: "Circle radius token"
+    reason: "Circle variants use a 200px clipped component and ellipse Skeleton child, but no bound radius token was present in live extraction."
+  - part: "Skeleton usage guidance"
+    reason: "No dedicated refs/markitdown-output/markitdown-skeleton.md file exists; rules are limited to Figma live data and conservative DS usage."

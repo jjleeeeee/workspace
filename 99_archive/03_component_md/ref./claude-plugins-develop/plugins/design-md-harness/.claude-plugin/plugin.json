@@ -1,0 +1,11 @@
+{
+  "name": "design-md-harness",
+  "version": "0.1.0",
+  "description": "Figma URL을 입력받아 design.md를 자동 생성하고 생성-평가 반복 루프로 품질 고도화. Figma 커버리지 정적 검사·CDS 토큰 검사·pixel diff 시각 비교를 통해 최대 5회 루프 후 최종 design.md를 산출.",
+  "author": {
+    "name": "kyungtaek.lim",
+    "email": "kyungtaek.lim@weversecompany.com"
+  },
+  "license": "MIT",
+  "keywords": ["design-md", "figma", "design-tokens", "harness", "pixel-diff"]
+}

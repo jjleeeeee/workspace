@@ -1,0 +1,12 @@
+{
+  "source": "figma-console/analyze_component_set",
+  "nodeId": "60365:40276",
+  "componentSetName": "[V2] Checkbox",
+  "variantCount": 12,
+  "axes": {
+    "Mode": ["Default", "Fixed"],
+    "Type": ["Circle", "Square"],
+    "Status": ["Default", "Disabled", "Enabled"]
+  },
+  "componentProps": {}
+}

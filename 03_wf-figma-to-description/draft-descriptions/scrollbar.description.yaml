@@ -1,0 +1,119 @@
+component:
+  name: "Scrollbar"
+  figma_name: "Scrollbar"
+  description: "스크롤 가능한 콘텐츠의 현재 위치와 이동 가능성을 보여주는 스크롤 컨트롤"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "27782:8837"
+  component_set_key: "ec2d17107a68bb443f80245ab791fb69380f0a50"
+  last_synced: "2026-05-04"
+
+axes:
+  Mode: ["Default", "Fixed - White", "Fixed - Black"]
+
+variants:
+  count: 3
+  formula: "Mode(3)"
+  constraints:
+    - "All Mode values are valid."
+  registry:
+    - { variant: "Mode=Default", node_id: "27782:8384", key: "09590ca5297b2a812847b36c87c18816a94245b1" }
+    - { variant: "Mode=Fixed - White", node_id: "27782:8838", key: "ce5a00b540e94f2c582f33aea77ef29c8edbc71d" }
+    - { variant: "Mode=Fixed - Black", node_id: "35115:16747", key: "27a9e0c90ffb9baa2a9833f6c73707f760161157" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed - White" | "Fixed - Black"'
+    default: '"Default"'
+    description: "Default adapts to the default surface; fixed modes keep contrast on white or black fixed backgrounds."
+
+tokens:
+  thumb_fill_default:
+    part: "thumb"
+    role: "fill"
+    applies_to: "Mode=Default"
+    token: "system/color/surface/default-reverse-200a"
+    opacity: "20%"
+  thumb_fill_fixed_white:
+    part: "thumb"
+    role: "fill"
+    applies_to: "Mode=Fixed - White"
+    token: "system/fixed_color/surface/default-reverse-200a"
+    opacity: "20%"
+  thumb_fill_fixed_black:
+    part: "thumb"
+    role: "fill"
+    applies_to: "Mode=Fixed - Black"
+    token: "system/fixed_color/surface/default-200a"
+    opacity: "20%"
+  horizontal_padding:
+    part: "Scrollbar"
+    role: "padding left/right"
+    token: "system/size/padding/box/25"
+    value: "2px"
+  vertical_padding:
+    part: "Scrollbar"
+    role: "padding top/bottom"
+    token: "system/size/padding/box/50"
+    value: "4px"
+
+layout:
+  component_size: "10x100"
+  thumb_size: "6x60"
+  padding:
+    left: "2px"
+    right: "2px"
+    top: "4px"
+    bottom: "4px"
+  radius:
+    component: "5px"
+    thumb: "3px"
+  part_spacing:
+    container__to__thumb:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "system/size/padding/box/25 and system/size/padding/box/50"
+        value: "2px horizontal padding, 4px vertical padding"
+      variants: []
+
+implementation_order:
+  - "Select the Mode variant for the background context."
+  - "Render a 10x100 scrollbar container with 2px horizontal and 4px vertical padding."
+  - "Render the thumb as a 6x60 rounded rectangle."
+  - "Apply the mode-specific thumb fill token and preserve 20% opacity."
+  - "Keep the scrollbar separate from content so it does not obscure readable content."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+  props:
+    - "Mode"
+  assets:
+    - "No asset-backed visual is used."
+  layout:
+    - "10x100 component"
+    - "6x60 thumb"
+    - "2px horizontal padding"
+    - "4px vertical padding"
+    - "3px thumb radius"
+  exclusions:
+    - "This workflow does not create a derived scrollbar.md file."
+    - "Figma Description writeback is intentionally skipped for this worker task."
+
+rules:
+  do:
+    - "Use Scrollbar when content is longer or wider than the visible area."
+    - "Expose Scrollbar separately from the content area."
+    - "Use Scrollbar to communicate current content position and scroll affordance."
+    - "On PC, keep the scroll track area distinguishable from the content area."
+  dont:
+    - "Do not overlap Scrollbar on top of content in a way that harms readability."
+    - "Do not hide the scroll track on PC when users need to understand the control position."
+    - "Do not use Scrollbar as a static decorative graphic."
+
+spec_notes:
+  source:
+    - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 27782:8837."
+    - "Local usage reference: refs/markitdown-output/markitdown-scroll-bar.md."

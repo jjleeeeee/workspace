@@ -1,0 +1,355 @@
+component:
+  name: "Text Button"
+  figma_name: "Text Button"
+  description: "사용자가 선택이나 행동을 실행할 수 있게 하는 텍스트 중심 버튼 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "52753:39618"
+  component_set_key: "70d2a20bcdfe3ac7a3c3190410d9a255d8783e1d"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Type: ["Filled", "Outlined_color", "Outlined_gray", "Ghost"]
+  Size: ["XLarge(52)", "Large(44)", "Medium(40)", "Small(36)", "XSmall(32)", "XXSmall(24)"]
+  Button_Color: ["Default (Gray Ghost 단일컬러)", "Black(Gray Ghost 미적용)"]
+  Status: ["Default", "Hover", "Loading", "Disabled"]
+  Radius: ["off", "on"]
+
+variants:
+  count: 576
+  formula: "Mode(2) x Type(4) x Size(6) x valid Button_Color combinations x Status(4) x Radius(2)"
+  constraints:
+    - "Filled and Outlined_color support both Default and Black Button_Color."
+    - "Outlined_gray and Ghost support only Default Button_Color."
+    - "The Button_Color constraint produces 576 implemented variants."
+    - "Full 576 variant registry is intentionally summarized to keep Description readable."
+  registry_policy:
+    component_set_key: "70d2a20bcdfe3ac7a3c3190410d9a255d8783e1d"
+    sample:
+      - { variant: "Mode=Default, Type=Filled, Size=XLarge(52), Button Color=Default (Gray Ghost 단일컬러), Status=Default, Radius=off", node_id: "52753:39619", key: "2f07af62d4a62ca3a0a91240322c8c5ef51c4d99" }
+      - { variant: "Mode=Default, Type=Filled, Size=XLarge(52), Button Color=Black(Gray Ghost 미적용), Status=Default, Radius=off", node_id: "69875:19918", key: "1baf8e17d81cf9c38fcb4fb77045241ff36a1b09" }
+      - { variant: "Mode=Fixed, Type=Ghost, Size=XXSmall(24), Button Color=Default (Gray Ghost 단일컬러), Status=Disabled, Radius=on", node_id: "52753:45000", key: "ceb3cd29eabeb3efbb98b1ee80074e032bd1cfcb" }
+      - { variant: "Mode=Fixed, Type=Ghost, Size=XXSmall(24), Button Color=Default (Gray Ghost 단일컬러), Status=Loading, Radius=on", node_id: "52753:45011", key: "5eb8f2c5f3b6476153de816e89d593c3d79bed9a" }
+
+props:
+  Option_Leading:
+    type: "boolean"
+    default: "false"
+    description: "Shows or hides leading content."
+  Option_Trailing:
+    type: "boolean"
+    default: "false"
+    description: "Shows or hides trailing content."
+  Button_Text:
+    type: "text"
+    default: "Text"
+    description: "Button label text."
+  Trailing_Icon:
+    type: "boolean"
+    default: "true"
+    description: "Shows trailing icon option when trailing content is enabled."
+  Trailing_Text:
+    type: "boolean"
+    default: "false"
+    description: "Shows trailing text option when trailing content is enabled."
+
+tokens:
+  height_xlarge:
+    part: "button container"
+    role: "height"
+    applies_to: "Size=XLarge(52)"
+    token: "system/size/button-height/xlarge"
+  height_large:
+    part: "button container"
+    role: "height"
+    applies_to: "Size=Large(44)"
+    token: "system/size/button-height/large"
+  height_medium:
+    part: "button container"
+    role: "height"
+    applies_to: "Size=Medium(40)"
+    token: "system/size/button-height/medium"
+  height_small:
+    part: "button container"
+    role: "height"
+    applies_to: "Size=Small(36)"
+    token: "system/size/button-height/small"
+  height_xsmall:
+    part: "button container"
+    role: "height"
+    applies_to: "Size=XSmall(32)"
+    token: "system/size/button-height/xsmall"
+  height_xxsmall:
+    part: "button container"
+    role: "height"
+    applies_to: "Size=XXSmall(24)"
+    token: "system/size/button-height/xxsmall"
+  filled_default:
+    part: "button container"
+    role: "fill"
+    applies_to: "Type=Filled, Button_Color=Default"
+    default: "system/color/button/default"
+    fixed: "system/fixed_color/button/default"
+  filled_black:
+    part: "button container"
+    role: "fill"
+    applies_to: "Type=Filled, Button_Color=Black"
+    default: "system/color/button/black"
+    fixed: "system/fixed_color/button/white"
+  outlined_gray:
+    part: "button container"
+    role: "stroke"
+    applies_to: "Type=Outlined_gray"
+    default: "system/color/button/outlined_gray"
+    fixed: "system/fixed_color/button/outlined_gray"
+  ghost:
+    part: "button container"
+    role: "fill"
+    applies_to: "Type=Ghost"
+    token: "system/color/button/ghost"
+  disabled:
+    part: "button container"
+    role: "fill or stroke"
+    applies_to: "Status=Disabled"
+    default: "system/color/button/disabled"
+    fixed: "system/fixed_color/button/disabled"
+  label_default:
+    part: "Button Text"
+    role: "text fill"
+    default: "system/color/text/default"
+    fixed: "system/fixed_color/text/default"
+  label_reverse:
+    part: "Button Text"
+    role: "reverse text fill"
+    default: "system/color/text/default-reverse"
+    fixed: "system/fixed_color/text/default-reverse"
+  label_disabled:
+    part: "Button Text"
+    role: "disabled text fill"
+    default: "system/color/text/200a"
+    fixed: "system/fixed_color/text/200a"
+  radius_off:
+    part: "button container"
+    role: "corner radius"
+    applies_to: "Radius=off"
+    token: "system/size/radius/box/100"
+  radius_on:
+    part: "button container"
+    role: "corner radius"
+    applies_to: "Radius=on"
+    value: 100
+
+
+typography:
+  body_lg_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-lg/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 80 text nodes."
+  caption_s_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-s/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 657 text nodes."
+  body_m_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-m/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 102 text nodes."
+  body_s_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-s/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 80 text nodes."
+  body_xs_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 104 text nodes."
+  caption_m_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-m/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 37 text nodes."
+  body_lg_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-lg/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 12 text nodes."
+  body_lg_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-lg/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 4 text nodes."
+  body_m_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-m/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 12 text nodes."
+  body_m_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-m/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 8 text nodes."
+  body_s_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-s/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 12 text nodes."
+  body_xs_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 12 text nodes."
+  body_s_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-s/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 4 text nodes."
+  caption_m_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-m/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 11 text nodes."
+  body_xs_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 4 text nodes."
+  caption_s_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-s/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 11 text nodes."
+  caption_s_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-s/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 4 text nodes."
+
+assets:
+  leading_icon:
+    part: "Option-Leading"
+    source_node: "Options"
+    semantic_rule: "Rendered before the label when Option_Leading=true."
+  trailing_icon:
+    part: "Option-Trailing"
+    source_node: "Options"
+    semantic_rule: "Rendered after the label when Option_Trailing=true and Trailing_Icon=true."
+  loading_indicator:
+    part: "Loading"
+    source_node: "Options"
+    semantic_rule: "Rendered instead of normal text/icon content for Status=Loading."
+
+layout:
+  sizing:
+    width: "hug or fill depending on parent container"
+    alignment: "center the full content group, not the label alone"
+  heights:
+    XLarge: 52
+    Large: 44
+    Medium: 40
+    Small: 36
+    XSmall: 32
+    XXSmall: 24
+  horizontal_padding:
+    XLarge: "system/size/padding/box/300"
+    Large: "system/size/padding/box/250"
+    Medium: "system/size/padding/box/200"
+    Small: "system/size/padding/box/200"
+    XSmall: "system/size/padding/box/150"
+    XXSmall: "system/size/padding/box/100"
+  inner_gap:
+    default: "system/size/padding/box/50"
+    expanded: "system/size/padding/box/75"
+  radius:
+    off: 8
+    on: 100
+
+interaction:
+  press_hover:
+    behavior: "Hover and press use overlay layers without replacing base fill, stroke, or label colors."
+  loading:
+    behavior: "Loading prevents duplicate requests and replaces normal content with loading indication."
+  disabled:
+    behavior: "Disabled state must not trigger actions."
+
+implementation_order:
+  - "Select variant by Mode, Type, Size, Button_Color, Status, and Radius."
+  - "Reject Black Button_Color for Outlined_gray and Ghost types."
+  - "Apply Size height and horizontal padding tokens."
+  - "Render centered content group with optional leading and trailing content."
+  - "Apply Type and Button_Color visual tokens."
+  - "Apply Status visual behavior for Hover, Loading, and Disabled."
+  - "Use Radius=on as pill and Radius=off as 8px radius."
+  - "For bottom speciality buttons, use XLarge and let the parent content area define width."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+    - "Type"
+    - "Size"
+    - "Button_Color"
+    - "Status"
+    - "Radius"
+  props:
+    - "Option_Leading"
+    - "Option_Trailing"
+    - "Button_Text"
+    - "Trailing_Icon"
+    - "Trailing_Text"
+  assets:
+    - "leading_icon"
+    - "trailing_icon"
+    - "loading_indicator"
+  layout:
+    - "6 button heights"
+    - "size-based padding"
+    - "centered content group"
+    - "hug or fill width"
+  exclusions:
+    - "Full 576 variant registry is summarized, not expanded."
+    - "This workflow does not create a derived text-button.md file."
+
+rules:
+  do:
+    - "Use Primary Mint as the default button color."
+    - "Use community color only when the service or community context is explicit."
+    - "Preserve label typography by button size."
+    - "Use Horizontal layout for short labels and Vertical layout for long or multilingual labels."
+    - "Place the primary action on the right in horizontal dual-button groups."
+    - "Use Triple Button only in vertical layout."
+    - "Enable primary buttons only after required information is complete."
+  dont:
+    - "Do not apply arbitrary colors without a clear reason."
+    - "Do not treat colors outside WDS button color properties as common WDS variants."
+    - "Do not override label size or weight."
+    - "Do not force long labels into a horizontal layout."
+    - "Do not place three buttons in a horizontal group."
+    - "Do not allow duplicate requests during Loading."
+
+spec_notes:
+  source:
+    - "Figma component metadata and compact Plugin API extraction from node 52753:39618."
+    - "Local usage reference: refs/markitdown-output/markitdown-button.md."
+  speciality_button:
+    size: "XLarge(52)"
+    width_rule: "Fill the parent content area; the button component does not define screen margins."
+    bottom_gap: "system/size/padding/box/200 from safe-area or navigation area."

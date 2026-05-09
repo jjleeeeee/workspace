@@ -1,0 +1,213 @@
+component:
+  name: "[V2] Snackbar"
+  description: "작업 결과를 알려주고 필요한 경우 선택적 후속 조치를 제공하는 하단 피드백 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "63694:5774"
+  component_set_key: "1d2be6f3586d1004dcb93f999e630377fe2a18c7"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+
+variants:
+  count: 2
+  formula: "Mode(2)"
+  constraints:
+    - "Both Mode variants are present in live Figma."
+    - "Icon is a boolean component property, not a variant axis."
+  registry:
+    - { variant: "Mode=Fixed", node_id: "63694:5775", key: "0bcedf9e6e0bbba92f64d166a22ba9d2fe613728" }
+    - { variant: "Mode=Default", node_id: "63694:5789", key: "a2d012aacb80f917c45d67b497f21e357391e628" }
+
+props:
+  Label:
+    figma_property: "Label#7943:0"
+    type: "text"
+    default: "Translate it into the following language."
+    description: "Snackbar message text; usage guidance limits it to three lines."
+  Icon:
+    figma_property: "Icon#32952:18"
+    type: "boolean"
+    default: "false"
+    description: "Shows the optional leading status icon when message emphasis is needed."
+  Action:
+    type: "static text"
+    default: "Retry"
+    description: "Live Figma exposes a visible Retry label and hidden Cancel label, but no component property for action text or visibility."
+
+tokens:
+  container_default:
+    part: "Snackbar"
+    role: "fill"
+    applies_to: "Mode=Default"
+    token: "system/color/surface/default-reverse-600a-unequal"
+    opacity: 0.8
+  container_fixed:
+    part: "Snackbar"
+    role: "fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/surface/gray-200"
+  label_text:
+    part: "Label"
+    role: "text fill"
+    applies_to: "All Mode values"
+    token: "system/fixed_color/text/default"
+  label_typography:
+    part: "Label"
+    role: "text style"
+    applies_to: "All Mode values"
+    token: "body-xs/system-400"
+  action_primary_text:
+    part: "Retry"
+    role: "text fill"
+    applies_to: "Visible action label"
+    token: "system/fixed_color/text/primary"
+  action_primary_typography:
+    part: "Retry"
+    role: "text style"
+    applies_to: "Visible action label"
+    token: "body-xs/system-500"
+  action_secondary_text:
+    part: "Cancel"
+    role: "text fill"
+    applies_to: "Hidden secondary action label in live Figma"
+    token: "system/fixed_color/text/gray-700"
+  optional_icon:
+    part: "icon_area"
+    role: "icon fill"
+    applies_to: "Icon=true"
+    token: "system/fixed_color/icon/default"
+
+
+typography:
+  body_xs_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 4 text nodes."
+  body_xs_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 2 text nodes."
+
+assets:
+  optional_status_icon:
+    part: "icon_area"
+    role: "icon"
+    source: "icon_area, size=medium(24), em=On"
+    component_key: "e11540b094ed814080d06bbfff493e06aca6575b"
+    component_set_key: "0befc61ab89f810594677109814548f8cde49928"
+    nested_asset: "24/em/ic_question_mark_medium"
+    nested_asset_key: "00ac1ac49846a35d0c3286724d94ff043a23ebf6"
+    applies_to: "Icon=true"
+    size: "24x24px"
+    semantic_rule: "Use the DS icon asset when the Icon property is enabled; do not redraw the icon."
+
+layout:
+  component_size: "Live samples are 373x44px for Mode=Default and 373x42px for Mode=Fixed."
+  placement: "Display above Home Indicator, GNB, or CTA Button on the y-axis."
+  screen_margin: "10px left and right"
+  max_width: "410px"
+  container:
+    layout: "horizontal"
+    width_behavior: "fixed sample width; runtime should respect screen fill with max width"
+    height_behavior: "hug content"
+    padding: "12px top, 16px right, 12px bottom, 16px left"
+    gap: "8px"
+    radius: "8px"
+  icon_area:
+    size: "24x24px"
+    default_visibility: "false"
+  label:
+    sample_width: "296px"
+    line_height: "18px"
+    max_lines: 3
+    alignment: "left"
+  action:
+    visible_label: "Retry"
+    hidden_label: "Cancel"
+    gap_between_action_labels: "12px"
+  part_spacing:
+    "icon_area__to__Label":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: false
+      default:
+        token: "component geometry"
+        value: "8px"
+      variants: []
+    "Label__to__Action":
+      variation_checked_by:
+        axes: true
+        props: false
+        states: false
+      default:
+        token: "component geometry"
+        value: "8px parent gap"
+      variants: []
+
+interaction:
+  lifecycle:
+    behavior: "A Snackbar should appear temporarily and dismiss automatically after a short duration."
+  dismissal:
+    behavior: "Allow immediate dismissal by downward swipe when supported by the platform."
+  concurrency:
+    behavior: "Show only one Snackbar at a time."
+
+implementation_order:
+  - "Resolve Mode first because it changes the container surface token and opacity."
+  - "Apply the fixed 12px vertical and 16px horizontal padding, 8px gap, and 8px radius."
+  - "Bind Label text with body-xs/system-400 and allow wrapping up to three lines."
+  - "Enable icon_area only when Icon=true and keep the icon as the nested DS icon_area component."
+  - "Render the optional Retry action with lower emphasis than a filled button."
+  - "Place the Snackbar above bottom UI with 10px screen margins and a 410px maximum width."
+
+implementation_coverage:
+  axes: "Implement both Mode variants."
+  props: "Expose Label and Icon from live Figma; Action is documented as static live text because no action prop is exposed."
+  assets: "Optional leading icon_area and its question-mark icon asset are recorded as nested DS-backed assets."
+  layout: "Live sample sizes, padding, gap, radius, text width, max lines, and placement rules are reflected."
+  exclusions: "Do not introduce multiple simultaneous Snackbars or high-emphasis filled buttons inside Snackbar."
+
+rules:
+  do:
+    - "Use Snackbar to keep the user's flow while showing a task result and optional follow-up action."
+    - "Keep the message short and clear."
+    - "Provide an Action only when the follow-up is optional."
+    - "Limit text to three lines."
+    - "Place Snackbar above Home Indicator, GNB, or CTA Button."
+    - "Show only one Snackbar at a time."
+  dont:
+    - "Do not put long multi-topic copy into Snackbar."
+    - "Do not use Snackbar for required confirmation or important decisions."
+    - "Do not exceed three lines of text."
+    - "Do not overlap the primary CTA in a way that blocks operation."
+    - "Do not use Snackbar like a blocking popup."
+    - "Do not use a high-emphasis Filled Button inside Snackbar."
+
+spec_notes:
+  source:
+    variant_registry: "refs/figma-component-keys/variant-keys/snackbar.md"
+    markitdown: "refs/markitdown-output/markitdown-snackbar.md"
+    figma_live_read: "use_figma read-only extraction on 2026-05-04"
+  usage:
+    - "Snackbar is for feedback with optional follow-up action."
+    - "It is more action-oriented than Toast but should not block the flow like Dialog."
+
+source_gaps:
+  - part: "Action"
+    field: "component properties"
+    reason: "Live Figma readback exposes Label and Icon properties only; Retry is visible static text and Cancel is hidden static text."
+  - part: "Runtime width"
+    field: "responsive layout"
+    reason: "Live component variants are fixed 373px samples while usage guidance defines 10px screen margins and a 410px maximum width."
+
+verification:
+  figma_live_read:
+    - "Component set key and both variant keys were confirmed by read-only use_figma extraction."
+    - "Component properties Label, Icon, and Mode were confirmed from live componentPropertyDefinitions."
+    - "Container fills, text fills, text styles, padding, gap, radius, and optional icon_area reference were read from live Figma."

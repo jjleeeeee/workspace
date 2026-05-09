@@ -1,0 +1,246 @@
+.chord-tabs {
+  box-sizing: border-box;
+  display: block;
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  position: relative;
+  width: 393px;
+
+  --tabs-selected-text: var(--cds-system-color-text-default, #000000);
+  --tabs-unselected-text: var(--cds-system-color-text-gray-700, #484848);
+  --tabs-indicator: var(--cds-system-color-outline-default, #000000);
+  --tabs-bottom-line: var(--cds-system-color-outline-default-100a, rgba(0, 0, 0, 0.1));
+  --tabs-scroll-more-bg: var(--cds-system-color-surface-default-4, rgba(255, 255, 255, 0.8));
+  --tabs-scroll-more-stroke: var(--cds-system-color-outline-default-50a-2, rgba(0, 0, 0, 0.1));
+  --tabs-expand-bg: var(--cds-system-color-surface-default-2, rgba(0, 0, 0, 0.04));
+  --tabs-gradient: var(--cds-system-color-surface-default, #ffffff);
+}
+
+.chord-tabs[data-mode="fixed"] {
+  --tabs-selected-text: var(--cds-system-fixed-color-text-default, #ffffff);
+  --tabs-unselected-text: var(--cds-system-fixed-color-text-gray-700, rgba(255, 255, 255, 0.7));
+  --tabs-indicator: var(--cds-system-fixed-color-outline-default, #ffffff);
+  --tabs-bottom-line: var(--cds-system-fixed-color-outline-default-100a, rgba(255, 255, 255, 0.1));
+  --tabs-scroll-more-bg: var(--cds-system-fixed-color-surface-default-reverse-100a, rgba(255, 255, 255, 0.1));
+  --tabs-scroll-more-stroke: var(--cds-system-fixed-color-outline-default-50a, rgba(255, 255, 255, 0.2));
+  --tabs-expand-bg: var(--cds-system-fixed-color-surface-default-gray-50, rgba(255, 255, 255, 0.05));
+  --tabs-gradient: var(--cds-system-fixed-color-surface-default, transparent);
+}
+
+/* === BAR STYLE === */
+
+.chord-tabs[data-style="bar"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.chord-tabs__bar-items {
+  align-items: flex-end;
+  box-sizing: border-box;
+  display: flex;
+  height: 44px;
+  padding-inline: 16px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  margin-bottom: -1px;
+}
+
+.chord-tabs[data-type="scrollable"] .chord-tabs__bar-items {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chord-tabs[data-type="scrollable"] .chord-tabs__bar-items::-webkit-scrollbar {
+  display: none;
+}
+
+/* scrollable bar: items take natural content width, don't stretch or shrink */
+.chord-tabs[data-type="scrollable"] .chord-tabs__bar-item {
+  flex: none;
+  max-width: none;
+  min-width: max-content;
+  padding-inline: 8px;
+}
+
+.chord-tabs__bar-item {
+  align-items: center;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  height: 44px;
+  justify-content: center;
+  max-width: 92px;
+  min-width: 1px;
+  padding: 0;
+  position: relative;
+}
+
+.chord-tabs__bar-label {
+  color: var(--tabs-unselected-text);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 21px;
+  min-width: 0;
+  overflow: visible;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.chord-tabs__bar-badge {
+  display: inline-flex;
+  inset-block-start: 8px;
+  inset-inline-end: 8px;
+  position: absolute;
+}
+
+.chord-tabs__bar-item[data-selected="true"] .chord-tabs__bar-label {
+  color: var(--tabs-selected-text);
+}
+
+.chord-tabs__bar-indicator {
+  background-color: var(--tabs-indicator);
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.chord-tabs__bar-line {
+  background-color: var(--tabs-bottom-line);
+  height: 1px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+/* === CHIP STYLE === */
+
+/* chip-row: the flex row containing chip items + optional more button */
+.chord-tabs__chip-row {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+/* Size: min-height for fixed/scrollable chip row */
+.chord-tabs[data-size="medium"] .chord-tabs__chip-row {
+  min-height: 52px;
+}
+
+.chord-tabs[data-size="small-only-chips"] .chord-tabs__chip-row,
+.chord-tabs[data-size="small"] .chord-tabs__chip-row {
+  min-height: 48px;
+}
+
+/* chip-scroll: scrollable overflow wrapper (flex:1, clips to ~321px) */
+.chord-tabs__chip-scroll {
+  flex: 1 0 0;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chord-tabs__chip-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* chip-col: expand column wrapper (flex:1, wraps chips vertically) */
+.chord-tabs__chip-col {
+  align-self: stretch;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* chip-items: inline flex row of chip atoms */
+.chord-tabs__chip-items {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+/* fixed: no-wrap, fill full available width (361px = 393 - 2*16) */
+.chord-tabs[data-style="chip"][data-type="fixed"] .chord-tabs__chip-items {
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+/* scrollable: items don't shrink so they extend beyond scroll viewport */
+.chord-tabs[data-style="chip"][data-type="scrollable"] .chord-tabs__chip-items {
+  flex-shrink: 0;
+}
+
+/* expand: wrap chips and add bottom padding for gradient clearance */
+.chord-tabs[data-style="chip"][data-type="expand"] .chord-tabs__chip-items {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.chord-tabs__chip-item {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+/* Expand container: bg, bottom radius, shadow, clip */
+.chord-tabs[data-type="expand"] {
+  background-color: var(--tabs-expand-bg);
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+  overflow: clip;
+}
+
+.chord-tabs[data-type="expand"] .chord-tabs__chip-row {
+  align-items: flex-start;
+  max-height: 308px;
+  min-height: auto;
+}
+
+/* Scroll more / Expand button */
+.chord-tabs__expand-btn,
+.chord-tabs__scroll-btn {
+  align-items: center;
+  background-color: var(--tabs-scroll-more-bg);
+  border: 1px solid var(--tabs-scroll-more-stroke);
+  border-radius: 50%;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  color: var(--tabs-selected-text);
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 32px;
+  justify-content: center;
+  padding: 0;
+  width: 32px;
+}
+
+.chord-tabs__expand-btn[data-scroll-more-size="medium"],
+.chord-tabs__scroll-btn[data-scroll-more-size="medium"] {
+  height: 40px;
+  width: 40px;
+}
+
+/* Expand gradient overlay */
+.chord-tabs__expand-gradient {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--tabs-gradient));
+  bottom: 0;
+  display: block;
+  height: 40px;
+  left: 16px;
+  pointer-events: none;
+  position: absolute;
+  width: 321px;
+}
+
+.chord-tabs__expand-gradient[data-state="spread"] {
+  display: none;
+}

@@ -1,0 +1,87 @@
+.chord-loading-dot {
+  --loading-dot-color: var(--cds-system-color-roles-primary, #00cbd5);
+  --loading-dot-size: 8px;
+  --loading-dot-gap: var(--cds-system-size-padding-box-100, 8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 60px;
+  block-size: 60px;
+  gap: var(--loading-dot-gap);
+  color: var(--loading-dot-color);
+  vertical-align: middle;
+}
+
+.chord-loading-dot span {
+  inline-size: var(--loading-dot-size);
+  block-size: var(--loading-dot-size);
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.chord-loading-dot span:nth-child(1) {
+  opacity: 0.2;
+}
+
+.chord-loading-dot span:nth-child(2) {
+  opacity: 0.5;
+}
+
+.chord-loading-dot span:nth-child(3) {
+  opacity: 1;
+}
+
+.chord-loading-dot[data-mode="fixed"][data-color="primary"] {
+  --loading-dot-color: var(--cds-system-fixed-color-roles-primary, #01d5df);
+}
+
+.chord-loading-dot[data-size="small"] {
+  --loading-dot-size: 4px;
+  --loading-dot-gap: var(--cds-system-size-padding-box-50, 4px);
+  inline-size: 20px;
+  block-size: 20px;
+}
+
+.chord-loading-dot[data-size="small"][data-color="primary"] {
+  --loading-dot-color: var(--cds-system-color-icon-primary, #00b8c1);
+}
+
+.chord-loading-dot[data-size="small"][data-mode="fixed"][data-color="primary"] {
+  --loading-dot-color: var(--cds-system-fixed-color-icon-primary, #01d5df);
+}
+
+.chord-loading-dot[data-size="small"][data-color="white"] {
+  --loading-dot-color: var(--cds-system-color-icon-default-reverse, #ffffff);
+}
+
+.chord-loading-dot[data-size="small"][data-mode="fixed"][data-color="white"] {
+  --loading-dot-color: var(--cds-system-fixed-color-icon-default-reverse, #000000);
+}
+
+.chord-loading-dot[data-animated="true"] span {
+  animation: chord-loading-dot-pulse 900ms ease-in-out infinite;
+}
+
+.chord-loading-dot[data-animated="true"] span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.chord-loading-dot[data-animated="true"] span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chord-loading-dot[data-animated="true"] span {
+    animation: none;
+  }
+}
+
+@keyframes chord-loading-dot-pulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}

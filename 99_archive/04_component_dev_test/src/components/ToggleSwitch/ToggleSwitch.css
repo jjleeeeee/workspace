@@ -1,0 +1,102 @@
+.chord-toggle-switch {
+  --toggle-track-bg: var(--cds-system-color-outline-default-200a, #00000033);
+  --toggle-thumb-bg: var(--cds-system-color-text-white-same, #ffffff);
+  --toggle-track-width: 44px;
+  --toggle-track-height: 26px;
+  --toggle-thumb-size: 22px;
+  --toggle-padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cds-system-color-text-default, #000000);
+  font-family: var(--cds-typography-default-font-family-body, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--cds-typography-default-base-text-size-text-150, 14px);
+  line-height: 1.2;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.chord-toggle-switch:focus-visible {
+  outline: 2px solid var(--cds-system-color-outline-default, #000000);
+  outline-offset: 4px;
+}
+
+.chord-toggle-switch:disabled {
+  cursor: not-allowed;
+}
+
+.chord-toggle-switch__track {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  inline-size: var(--toggle-track-width);
+  block-size: var(--toggle-track-height);
+  border-radius: var(--toggle-track-radius);
+  background: var(--toggle-track-bg);
+  transition: background-color 0.16s ease;
+}
+
+.chord-toggle-switch__thumb {
+  position: absolute;
+  inset-block-start: var(--toggle-padding);
+  inset-inline-start: var(--toggle-padding);
+  inline-size: var(--toggle-thumb-size);
+  block-size: var(--toggle-thumb-size);
+  border-radius: var(--toggle-thumb-radius);
+  background: var(--toggle-thumb-bg);
+  box-shadow: 0 1px 3px #00000033;
+  transform: translateX(var(--toggle-thumb-offset, 0));
+  transition: transform 0.16s ease;
+}
+
+.chord-toggle-switch__label {
+  min-inline-size: 0;
+}
+
+.chord-toggle-switch[data-size="small"] {
+  --toggle-track-width: 36px;
+  --toggle-track-height: 22px;
+  --toggle-thumb-size: 18px;
+}
+
+.chord-toggle-switch[data-size="medium"] {
+  --toggle-track-width: 44px;
+  --toggle-track-height: 26px;
+  --toggle-thumb-size: 22px;
+}
+
+.chord-toggle-switch[data-os="ios"] {
+  --toggle-track-radius: 999px;
+  --toggle-thumb-radius: 999px;
+}
+
+.chord-toggle-switch[data-os="aos"] {
+  --toggle-track-radius: var(--cds-system-size-radius-box-50, 4px);
+  --toggle-thumb-radius: var(--cds-system-size-radius-box-25, 2px);
+}
+
+.chord-toggle-switch[data-status="on"],
+.chord-toggle-switch[aria-checked="true"] {
+  --toggle-track-bg: var(--cds-system-color-button-default, #00cbd5);
+  --toggle-thumb-offset: calc(var(--toggle-track-width) - var(--toggle-thumb-size) - (var(--toggle-padding) * 2));
+}
+
+.chord-toggle-switch[data-status="disabled"] {
+  --toggle-track-bg: var(--cds-system-color-button-disabled, #0000001a);
+  --toggle-thumb-bg: var(--cds-system-color-text-300a, #0000004d);
+  color: var(--cds-system-color-text-300a, #0000004d);
+}
+
+.chord-toggle-switch[data-mode="fixed"][data-status="on"] {
+  --toggle-track-bg: var(--cds-system-fixed-color-button-default, var(--cds-system-color-button-default, #00cbd5));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chord-toggle-switch__thumb,
+  .chord-toggle-switch__track {
+    transition: none;
+  }
+}

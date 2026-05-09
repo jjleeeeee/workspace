@@ -1,0 +1,279 @@
+component:
+  name: "Pagination List"
+  figma_name: "Pagination_List(v2)"
+  description: "정확한 페이지 번호와 이전/다음 이동을 제공하는 숫자형 페이지네이션"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "61753:7839"
+  component_set_key: "cf936b6328942bcd5428cadb0d709f3e471091c4"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Size: ["Large", "Small"]
+  Pages: ["2", "3", "4", "5", "6", "7", "8+"]
+
+variants:
+  count: 28
+  formula: "Mode(2) x Size(2) x Pages(7)"
+  constraints:
+    - "All Mode, Size, and Pages combinations are valid."
+    - "Pages=8+ uses an ellipsis slot and keeps 9 visible slots including prev and next controls."
+  registry:
+    - { variant: "Mode=Default, Size=Large, Pages=2", node_id: "61753:7838", key: "4e88d904f3a9cce878b8f533ab4d5fbafeb315a4" }
+    - { variant: "Mode=Default, Size=Small, Pages=2", node_id: "62139:8297", key: "87bfeb5c3f0475474df943552ce6f70c0c4564e6" }
+    - { variant: "Mode=Fixed, Size=Large, Pages=2", node_id: "62110:12659", key: "e1ed92c1e049bf2e4b539bbe3232d7ba332b0e90" }
+    - { variant: "Mode=Fixed, Size=Small, Pages=2", node_id: "62139:10987", key: "af2e2452fcba70679ae9e3db6e50d14257bd600f" }
+    - { variant: "Mode=Default, Size=Large, Pages=8+", node_id: "61753:8729", key: "bac074b9fcd5f5752453c704239db8cb18201bd6" }
+    - { variant: "Mode=Default, Size=Small, Pages=8+", node_id: "62139:9387", key: "8592047246fb8b6b2c392d90e8ea6b106c4a617f" }
+    - { variant: "Mode=Fixed, Size=Large, Pages=8+", node_id: "62110:14584", key: "9b567e1d53f27373666ed0f232d9d2b304ebac2c" }
+    - { variant: "Mode=Fixed, Size=Small, Pages=8+", node_id: "62139:11201", key: "c108dd9b73ff5460c1942ae5a55ee912b255267a" }
+  registry_policy:
+    mode: "sample"
+    full_reference: "refs/figma-component-keys/variant-keys/pagination-list-v2.md"
+    live_check: "Figma live read confirmed 28 variant names, ids, keys, sizes, and child slot counts on node 61753:7839."
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default uses system color tokens; Fixed uses fixed color tokens."
+  Size:
+    type: '"Large" | "Small"'
+    default: '"Large"'
+    description: "Large uses 40x40 slots; Small uses 32x32 slots."
+  Pages:
+    type: '"2" | "3" | "4" | "5" | "6" | "7" | "8+"'
+    default: '"2"'
+    description: "Controls the visible page slot pattern. 8+ compresses the range with an ellipsis."
+
+tokens:
+  selected_page_text_default:
+    part: "slot_number selected text"
+    role: "fill"
+    applies_to: "Mode=Default, selected page"
+    token: "system/color/text/default"
+  unselected_page_text_default:
+    part: "slot_number unselected text"
+    role: "fill"
+    applies_to: "Mode=Default, unselected page"
+    token: "system/color/text/400a"
+    opacity: 0.5
+  selected_page_text_fixed:
+    part: "number_fixed selected text"
+    role: "fill"
+    applies_to: "Mode=Fixed, selected page"
+    token: "system/fixed_color/text/default"
+  unselected_page_text_fixed:
+    part: "number_fixed unselected text"
+    role: "fill"
+    applies_to: "Mode=Fixed, unselected page"
+    token: "system/fixed_color/text/400a"
+    opacity: 0.5
+  prev_unactive_icon_default:
+    part: "Prev icon"
+    role: "icon fill"
+    applies_to: "Mode=Default, previous control inactive"
+    token: "system/color/icon/200a"
+    opacity: 0.2
+  next_active_icon_default:
+    part: "Next icon"
+    role: "icon fill"
+    applies_to: "Mode=Default, next control active"
+    token: "system/color/icon/default"
+  prev_unactive_icon_fixed:
+    part: "Prev icon"
+    role: "icon fill"
+    applies_to: "Mode=Fixed, previous control inactive"
+    token: "system/fixed_color/icon/200a"
+    opacity: 0.2
+  next_active_icon_fixed:
+    part: "Next icon"
+    role: "icon fill"
+    applies_to: "Mode=Fixed, next control active"
+    token: "system/fixed_color/icon/default"
+  ellipsis_dot_default:
+    part: "ellipsis dots"
+    role: "fill"
+    applies_to: "Mode=Default, Pages=8+"
+    token: "system/color/text/400a"
+    opacity: 0.5
+  ellipsis_dot_fixed:
+    part: "ellipsis dots"
+    role: "fill"
+    applies_to: "Mode=Fixed, Pages=8+"
+    token: "system/fixed_color/icon/400a"
+    opacity: 0.5
+  vertical_padding:
+    part: "component"
+    role: "padding"
+    token: "system/size/padding/box/200"
+    value: "16px top and bottom"
+  icon_area_size:
+    part: "icon_area"
+    role: "size"
+    token: "system/size/icon/16"
+    value: "16x16"
+  ellipsis_gap:
+    part: "ellipsis dot group"
+    role: "spacing"
+    token: "system/size/padding/box/25"
+    value: "2px"
+
+
+typography:
+  body_xs_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 28 text nodes."
+  body_xs_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 104 text nodes."
+
+assets:
+  prev_arrow:
+    part: "slot_btn / slot_btn_fixed"
+    role: "icon"
+    source: "24/em/ic_arrow_left_medium"
+    applies_to: "Previous page control"
+    size: "16x16 icon_area inside 40x40 or 32x32 slot"
+    tint:
+      default: "system/color/icon/200a"
+      fixed: "system/fixed_color/icon/200a"
+    semantic_rule: "Use the existing arrow icon asset; do not redraw it as CSS or text."
+  next_arrow:
+    part: "slot_btn / slot_btn_fixed"
+    role: "icon"
+    source: "24/em/ic_arrow_right_medium"
+    applies_to: "Next page control"
+    size: "16x16 icon_area inside 40x40 or 32x32 slot"
+    tint:
+      default: "system/color/icon/default"
+      fixed: "system/fixed_color/icon/default"
+    semantic_rule: "Use the existing arrow icon asset; do not redraw it as CSS or text."
+  ellipsis:
+    part: "slot_number / number_fixed"
+    role: "pagination compression indicator"
+    source: "Status=Ellipsis variant of nested number slot"
+    applies_to: "Pages=8+"
+    size: "Three 2x2 dots with 2px gap"
+    semantic_rule: "The ellipsis is a nested component state, not a text string replacement."
+
+composition:
+  uses:
+    - component: "slot_btn"
+      node_id: "61527:15383"
+      component_set_key: "8eda91cbd005a0d5e8b1ef31c30e080b254dd51e"
+      role: "Default mode previous and next controls"
+      usage_condition: "Mode=Default"
+      spec_owner: "slot_btn component set"
+    - component: "slot_btn_fixed"
+      node_id: "61527:16479"
+      component_set_key: "7f0046f2d8f8220efb99d9c4848d856d09b001dd"
+      role: "Fixed mode previous and next controls"
+      usage_condition: "Mode=Fixed"
+      spec_owner: "slot_btn_fixed component set"
+    - component: "slot_number"
+      node_id: "61527:15257"
+      component_set_key: "bc964bb28763799736add4fd603a6c294daab623"
+      role: "Default mode page number and ellipsis slots"
+      usage_condition: "Mode=Default"
+      spec_owner: "slot_number component set"
+    - component: "number_fixed"
+      node_id: "61527:16467"
+      component_set_key: "658fa15cba79b59bd7006ef15db4e4f3eb02dda3"
+      role: "Fixed mode page number and ellipsis slots"
+      usage_condition: "Mode=Fixed"
+      spec_owner: "number_fixed component set"
+    - component: "icon_area"
+      node_id: "10219:79404"
+      component_set_key: "0befc61ab89f810594677109814548f8cde49928"
+      role: "Arrow icon sizing wrapper"
+      usage_condition: "Prev and Next controls"
+      spec_owner: "icon_area component set"
+
+layout:
+  component_size: "Large: 160x72 to 360x72; Small: 128x64 to 288x64"
+  large_slot_size: "40x40"
+  small_slot_size: "32x32"
+  vertical_padding: "16px"
+  item_spacing: "0px between slots"
+  pages_2_slots: "4 slots: Prev, 1, 2, Next"
+  pages_3_to_7_slots: "Pages value + 2 slots"
+  pages_8_plus_slots: "9 slots: Prev, 1, 2, 3, 4, 5, Ellipsis, 8, Next"
+  part_spacing:
+    slot__to__slot:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "not bound"
+        value: "0px"
+      variants: []
+    ellipsis_dot__to__ellipsis_dot:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "system/size/padding/box/25"
+        value: "2px"
+      variants: []
+
+implementation_order:
+  - "Resolve Mode, Size, and Pages first."
+  - "Choose the 40x40 Large slot or 32x32 Small slot pattern."
+  - "Render previous control, page number slots, optional ellipsis slot, and next control in order."
+  - "Apply selected and unselected page text tokens."
+  - "Apply inactive previous and active next icon tokens after Mode is resolved."
+  - "Use the nested slot components and icon assets instead of copying child internals into the parent."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+    - "Size"
+    - "Pages"
+  props:
+    - "Mode"
+    - "Size"
+    - "Pages"
+    - "Page labels supplied through nested Label(Pages) properties"
+  assets:
+    - "prev_arrow"
+    - "next_arrow"
+    - "ellipsis"
+  layout:
+    - "Large 40x40 slots"
+    - "Small 32x32 slots"
+    - "16px vertical padding"
+    - "0px slot spacing"
+    - "Pages=8+ ellipsis compression"
+  exclusions:
+    - "This workflow does not create a derived pagination-list-v2.md file."
+
+rules:
+  do:
+    - "Use List Pagination when users need clear numeric page position and movement control."
+    - "Use List Pagination for web lists where exact current page awareness is needed."
+    - "Use an ellipsis slot when 8 or more pages are represented."
+    - "Place List Pagination below the list."
+  dont:
+    - "Do not use Dot Pagination alone when exact page movement is required."
+    - "Do not expose every page number in a long uncompressed row."
+    - "Do not place List Pagination at the top of the page."
+    - "Do not force Large size in narrow layouts where it crowds content."
+
+spec_notes:
+  pagination_usage:
+    - "Local markitdown reference says List Pagination is recommended for web contexts."
+    - "Local markitdown reference says 8 or more pages should use Slot and Ellipsis compression."
+    - "Local markitdown reference says page count can be exposed up to 999, but the Figma component axis represents Pages=8+ as the compressed visual pattern."
+  source:
+    - "Figma live read via Framelink and read-only Plugin API extraction from node 61753:7839."
+    - "Variant key reference: refs/figma-component-keys/variant-keys/pagination-list-v2.md."
+    - "Usage reference: refs/markitdown-output/markitdown-pagination.md."

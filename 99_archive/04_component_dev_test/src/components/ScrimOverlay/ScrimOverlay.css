@@ -1,0 +1,9 @@
+.chord-scrim-overlay {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  min-inline-size: 160px;
+  min-block-size: 96px;
+  border-radius: var(--cds-system-size-radius-box-150, 8px);
+  background: var(--cds-system-color-surface-black-same, #000000);
+}

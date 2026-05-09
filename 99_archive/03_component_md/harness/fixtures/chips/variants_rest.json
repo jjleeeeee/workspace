@@ -1,0 +1,11 @@
+{
+  "source": "figma-rest/v1/files/components",
+  "variantCount": 100,
+  "axes": {
+    "Mode": ["Default", "Fixed"],
+    "Size": ["Medium", "Small"],
+    "Type": ["Icon", "Image (Only Medium)", "Text"],
+    "State": ["Default", "Filled_Disabled", "Filled_Selected", "Outlined_Disabled", "Outlined_Selected"],
+    "Radius": ["OFF", "ON"]
+  }
+}

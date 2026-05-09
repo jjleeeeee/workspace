@@ -1,0 +1,119 @@
+.chord-icon-button {
+  --icon-button-main: var(--cds-system-color-button-default, #00cbd5);
+  --icon-button-bg: var(--icon-button-main);
+  --icon-button-border: var(--icon-button-main);
+  --icon-button-color: var(--cds-system-color-icon-default-reverse, #ffffff);
+  --icon-button-overlay: transparent;
+  --icon-button-stroke-width: 0;
+  --icon-button-size: var(--cds-system-size-button-height-xlarge, 52px);
+  --icon-button-icon-size: 20px;
+  --icon-button-radius: var(--cds-system-size-radius-box-100, 8px);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--icon-button-size);
+  block-size: var(--icon-button-size);
+  padding: 0;
+  border: 0;
+  border-radius: var(--icon-button-radius);
+  background:
+    linear-gradient(var(--icon-button-overlay), var(--icon-button-overlay)),
+    var(--icon-button-bg);
+  box-shadow: inset 0 0 0 var(--icon-button-stroke-width) var(--icon-button-border);
+  color: var(--icon-button-color);
+  cursor: pointer;
+  appearance: none;
+}
+
+.chord-icon-button:focus-visible {
+  outline: 2px solid var(--cds-system-color-outline-default, #000000);
+  outline-offset: 2px;
+}
+
+.chord-icon-button:disabled {
+  cursor: not-allowed;
+}
+
+.chord-icon-button[data-mode="fixed"] {
+  --icon-button-main: var(--cds-system-fixed-color-button-default, #01d5df);
+}
+
+.chord-icon-button[data-button-color="black"] {
+  --icon-button-main: var(--cds-system-color-button-black, #000000);
+}
+
+.chord-icon-button[data-mode="fixed"][data-button-color="black"] {
+  --icon-button-main: var(--cds-system-fixed-color-button-white, #ffffff);
+}
+
+.chord-icon-button[data-button-type="outlined"] {
+  --icon-button-bg: transparent;
+  --icon-button-border: var(--icon-button-main);
+  --icon-button-color: var(--icon-button-main);
+  --icon-button-stroke-width: 1px;
+}
+
+.chord-icon-button[data-button-type="filled"] {
+  --icon-button-bg: var(--icon-button-main);
+  --icon-button-border: var(--icon-button-main);
+  --icon-button-color: var(--cds-system-color-icon-default-reverse, #ffffff);
+}
+
+.chord-icon-button[data-mode="fixed"][data-button-type="filled"] {
+  --icon-button-color: var(--cds-system-fixed-color-icon-default-reverse, #000000);
+}
+
+.chord-icon-button[data-status="hover"],
+.chord-icon-button:not(:disabled):hover {
+  --icon-button-overlay: var(--cds-system-color-button-hover, #0000000a);
+}
+
+.chord-icon-button[data-mode="fixed"][data-status="hover"],
+.chord-icon-button[data-mode="fixed"]:not(:disabled):hover {
+  --icon-button-overlay: var(--cds-system-fixed-color-button-hover, #ffffff0d);
+}
+
+.chord-icon-button[data-status="disabled"] {
+  --icon-button-bg: var(--cds-system-color-button-disabled, #0000001a);
+  --icon-button-border: var(--cds-system-color-button-disabled, #0000001a);
+  --icon-button-color: var(--cds-system-color-icon-200a, #00000033);
+}
+
+.chord-icon-button[data-mode="fixed"][data-status="disabled"] {
+  --icon-button-bg: var(--cds-system-fixed-color-button-disabled, #ffffff1a);
+  --icon-button-border: var(--cds-system-fixed-color-button-disabled, #ffffff1a);
+  --icon-button-color: var(--cds-system-fixed-color-icon-200a, #ffffff33);
+}
+
+.chord-icon-button[data-button-type="outlined"][data-status="disabled"] {
+  --icon-button-bg: transparent;
+}
+
+.chord-icon-button[data-radius="on"] {
+  --icon-button-radius: 999px;
+}
+
+.chord-icon-button[data-size="medium"] {
+  --icon-button-size: var(--cds-system-size-button-height-medium, 40px);
+  --icon-button-icon-size: 20px;
+}
+
+.chord-icon-button[data-size="small"] {
+  --icon-button-size: var(--cds-system-size-button-height-small, 36px);
+  --icon-button-icon-size: 18px;
+}
+
+.chord-icon-button[data-size="xxsmall"] {
+  --icon-button-size: var(--cds-system-size-button-height-xxsmall, 24px);
+  --icon-button-icon-size: 16px;
+}
+
+.chord-icon-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--icon-button-icon-size);
+  block-size: var(--icon-button-icon-size);
+  color: inherit;
+}

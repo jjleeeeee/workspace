@@ -1,0 +1,26 @@
+{
+  "axes": {
+    "Mode": ["Default", "Fixed"],
+    "Type": ["Circle", "Squircle"],
+    "Size": [
+      "Tiny",
+      "XXXSmall",
+      "XXSmall",
+      "XSmall",
+      "Small",
+      "Medium",
+      "Large",
+      "XLarge",
+      "XXLarge",
+      "XXXLarge",
+      "XXXXLarge"
+    ]
+  },
+  "variantCount": 44,
+  "_source": {
+    "tool": "Figma REST /v1/files/DWEduE6GfxYMlyxKPNJ8jA/components",
+    "filter": "node_id starts with 62973:",
+    "normalization": "remove control backspace characters and Korean explanatory parentheses only"
+  }
+}
+

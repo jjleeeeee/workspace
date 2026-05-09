@@ -1,0 +1,11 @@
+{
+  "source": "figma-rest/files/{fileKey}/components",
+  "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
+  "containingFrame": "CheckBox",
+  "variantCount": 12,
+  "axes": {
+    "Mode": ["Default", "Fixed"],
+    "Status": ["Default", "Disabled", "Enabled"],
+    "Type": ["Circle", "Square"]
+  }
+}

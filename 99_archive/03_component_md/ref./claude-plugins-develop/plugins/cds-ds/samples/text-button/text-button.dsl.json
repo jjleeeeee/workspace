@@ -1,0 +1,98 @@
+{
+  "$schema": "cds-ds/dsl/v2",
+  "schemaVersion": "2.0.0",
+  "metadata": {
+    "generatedAt": "2026-04-28T00:00:00+09:00",
+    "generator": "cds-ds@2.0.0",
+    "sourceFile": {
+      "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
+      "fileName": "Chord-Design-System",
+      "nodeId": "10379:33933"
+    }
+  },
+  "coordinateSystem": { "unit": "px", "origin": "topLeft", "scope": "relativeToParent", "scale": 1.0 },
+  "themes": ["light", "dark"],
+  "platform": "ios",
+  "dsManifest": {
+    "platform": "ios",
+    "tokens": ["tokens.color.v1.0", "tokens.size.v1.0", "tokens.typography.v1.0"],
+    "components": ["textbutton"]
+  },
+  "nodes": [
+    {
+      "id": "text-button",
+      "type": "component",
+      "name": "text-button",
+      "source": { "figmaNodeId": "10379:33933" },
+      "catalog": {
+        "id": "textbutton",
+        "componentId": "component:text-button",
+        "variant": {
+          "Mode": "Default",
+          "Type": "Filled",
+          "Size": "Medium(40)",
+          "Button Color": "Default (Gray Ghost 단일컬러)",
+          "Status": "Default",
+          "Radius": "off"
+        },
+        "props": {
+          "Button Text": "Text",
+          "Option-Leading": false,
+          "Option-Trailing": false,
+          "Trailing-Icon": false,
+          "Trailing-Text": false
+        },
+        "slots": {
+          "leading-icon": { "ref": "left-icon-area" },
+          "label": { "text": "Text" },
+          "trailing-icon": { "ref": "trailing-option-area" }
+        },
+        "state": "default"
+      },
+      "layout": {
+        "kind": "stack",
+        "axis": "horizontal",
+        "size": { "width": { "mode": "hug" }, "height": { "mode": "fixed", "value": 40 } },
+        "padding": { "top": 0, "right": 16, "bottom": 0, "left": 16 },
+        "spacing": 4,
+        "alignment": { "main": "center", "cross": "center" }
+      },
+      "style": {
+        "fills": [{ "type": "solid", "color": "token:system.color.button.default" }]
+      },
+      "children": [
+        {
+          "id": "left-icon-area",
+          "type": "icon",
+          "name": "left-icon-area",
+          "asset": { "kind": "icon", "ref": "icon/leading", "format": "svg", "tint": "token:system.color.text.default-reverse" },
+          "layout": {
+            "size": { "width": { "mode": "fixed", "value": 16 }, "height": { "mode": "fixed", "value": 16 } }
+          }
+        },
+        {
+          "id": "label",
+          "type": "text",
+          "name": "label",
+          "text": {
+            "value": "Text",
+            "textStyle": "textStyle:body-lg/system-700",
+            "color": "token:system.color.text.default-reverse",
+            "maxLines": 1,
+            "overflow": "ellipsis",
+            "textAlign": "center"
+          }
+        },
+        {
+          "id": "trailing-option-area",
+          "type": "icon",
+          "name": "trailing-option-area",
+          "asset": { "kind": "icon", "ref": "icon/trailing", "format": "svg", "tint": "token:system.color.text.default-reverse" },
+          "layout": {
+            "size": { "width": { "mode": "fixed", "value": 16 }, "height": { "mode": "fixed", "value": 16 } }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "axes": {
+    "Mode": ["Default", "Fixed"],
+    "Type": ["Filled", "Outlined", "Outlined_color", "Outlined_gray", "Ghost"],
+    "Size": ["XXSmall(24)", "XSmall(32)", "Small(36)", "Medium(40)", "Large(44)", "XLarge(52)"],
+    "Button Color": ["Default", "Black"],
+    "Status": ["Default", "Hover", "Disabled", "Loading"],
+    "Radius": ["on", "off"]
+  },
+  "variantCount": 768,
+  "_source": {
+    "tool": "Figma REST /v1/files/DWEduE6GfxYMlyxKPNJ8jA/components",
+    "componentSet": "Button_Type"
+  }
+}
+

@@ -1,0 +1,230 @@
+{
+  "$schema": "cds-ds/dsl/v1",
+  "screen": "[Spec] Common Slot Card",
+  "source": {
+    "figma_file": "PNCopTVjqi100eHucCW9bI",
+    "node_id": "15730:43568",
+    "component_name": "Common_Slot"
+  },
+  "meta": {
+    "name": "card",
+    "description": "섹션 헤더 + 카드(썸네일·아티스트 정보·본문·푸터)로 구성된 홈 피드 슬롯 컴포넌트"
+  },
+  "props": {
+    "sectionTitle": { "type": "string", "default": "놓치지 말아야 할 소식" },
+    "thumbnailSrc": { "type": "string", "note": "1:1 비율 이미지. 없으면 회색 박스 대체" },
+    "avatarSrc": { "type": "string", "note": "32px 원형 아바타 이미지" },
+    "artistName": { "type": "string", "default": "TOMMROW X TOGETHER" },
+    "artistSubtitle": { "type": "string", "default": "추천포스트" },
+    "bodyText": { "type": "string", "note": "멀티라인 본문. 마지막 줄 'More' truncation" },
+    "footerLabel": { "type": "string", "default": "MOA 멤버십 선예매 사전인증하기" }
+  },
+  "components": [
+    {
+      "type": "common-slot",
+      "name": "Common_Slot",
+      "layout": { "layout": "vertical", "gap": 4 },
+      "width": "fill",
+      "children": [
+        {
+          "type": "section-header",
+          "name": "Main Header",
+          "layout": { "layout": "horizontal", "alignItems": "center", "padding": [0, 16] },
+          "width": "fill",
+          "height": 48,
+          "tokens": {
+            "typography": "$headline-s/system-800",
+            "color": "$system/color/text/default"
+          },
+          "children": [
+            {
+              "type": "label",
+              "name": "section-title",
+              "text": "놓치지 말아야 할 소식",
+              "tokens": {
+                "typography": "$headline-s/system-800",
+                "color": "$system/color/text/default"
+              }
+            }
+          ]
+        },
+        {
+          "type": "card-wrapper",
+          "name": "Card",
+          "layout": { "layout": "horizontal", "padding": [0, 10] },
+          "width": "fill",
+          "children": [
+            {
+              "type": "card",
+              "name": "Card",
+              "layout": { "layout": "vertical", "gap": 0 },
+              "width": "fill",
+              "tokens": {
+                "fill": "$system/color/surface/default-3",
+                "radius": "$system/size/radius/box/200",
+                "shadow": "$shadow-lg"
+              },
+              "children": [
+                {
+                  "type": "thumbnail",
+                  "name": "[V2] Thumbnail",
+                  "width": "fill",
+                  "tokens": {
+                    "aspectRatio": "1/1",
+                    "maxWidth": 373,
+                    "maxHeight": 373
+                  },
+                  "note": "1:1 정사각형. 이미지 없으면 회색 박스 대체"
+                },
+                {
+                  "type": "card-header",
+                  "name": "Bottom Header",
+                  "layout": {
+                    "layout": "horizontal",
+                    "gap": 8,
+                    "padding": [8, 16],
+                    "alignItems": "center"
+                  },
+                  "width": "fill",
+                  "height": 48,
+                  "children": [
+                    {
+                      "type": "avatar",
+                      "name": "[V2] Avatar",
+                      "width": 32,
+                      "height": 32,
+                      "tokens": {
+                        "radius": 999,
+                        "fill": "$system/color/surface/default-3"
+                      },
+                      "note": "아티스트 프로필 이미지. 38px container, 32px image"
+                    },
+                    {
+                      "type": "text-stack",
+                      "name": "Text_Area",
+                      "layout": { "layout": "vertical", "gap": 0 },
+                      "children": [
+                        {
+                          "type": "label",
+                          "name": "artist-name",
+                          "text": "TOMMROW X TOGETHER",
+                          "tokens": {
+                            "typography": "$body-m/system-700",
+                            "color": "$system/color/text/default"
+                          }
+                        },
+                        {
+                          "type": "label",
+                          "name": "artist-subtitle",
+                          "text": "추천포스트",
+                          "tokens": {
+                            "typography": "$caption-m/system-400",
+                            "color": "$system/color/text/gray-500"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "card-body",
+                  "name": "Context",
+                  "layout": { "layout": "vertical", "padding": [0, 16, 16, 16] },
+                  "width": "fill",
+                  "children": [
+                    {
+                      "type": "label",
+                      "name": "body-text",
+                      "tokens": {
+                        "typography": "$body-s/system-400",
+                        "color": "$system/color/text/default"
+                      },
+                      "note": "멀티라인 truncation. 마지막 줄에 'More' 링크 인라인"
+                    },
+                    {
+                      "type": "label",
+                      "name": "more-link",
+                      "text": "More",
+                      "tokens": {
+                        "typography": "$body-s/system-700",
+                        "color": "$system/color/text/primary"
+                      },
+                      "note": "body-text 마지막 줄 우측에 인라인 배치"
+                    }
+                  ]
+                },
+                {
+                  "type": "card-footer",
+                  "name": "Footer",
+                  "layout": { "layout": "vertical" },
+                  "width": "fill",
+                  "height": 56,
+                  "children": [
+                    {
+                      "type": "divider",
+                      "name": "[V1] Divider",
+                      "tokens": {
+                        "fill": "$system/color/line/default",
+                        "thickness": 1
+                      }
+                    },
+                    {
+                      "type": "list-item",
+                      "name": "[V2] List_Item_Native",
+                      "layout": {
+                        "layout": "horizontal",
+                        "padding": [0, 16],
+                        "alignItems": "center",
+                        "justifyContent": "space-between"
+                      },
+                      "width": "fill",
+                      "height": 56,
+                      "tokens": {
+                        "typography": "$body-s/system-700",
+                        "color": "$system/color/text/default"
+                      },
+                      "note": "trailing: chevron-right icon (16px)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "color_tokens": [
+    { "token": "$system/color/text/default", "hex": "#000000", "usage": "섹션 타이틀·아티스트명·본문" },
+    { "token": "$system/color/text/gray-500", "hex": "#8e8e8e", "usage": "아티스트 서브타이틀" },
+    { "token": "$system/color/text/primary", "hex": "#00b8c1", "usage": "More 링크" },
+    { "token": "$system/color/surface/default-3", "hex": "#ffffff", "usage": "카드 배경" },
+    { "token": "$system/color/line/default", "hex": "#e0e0e0", "usage": "Footer 구분선" }
+  ],
+  "typography_tokens": [
+    { "token": "$headline-s/system-800", "size": 19, "weight": 800, "lineHeight": 25, "usage": "섹션 타이틀" },
+    { "token": "$body-m/system-700", "size": 16, "weight": 700, "lineHeight": 22, "usage": "아티스트명·푸터 텍스트" },
+    { "token": "$caption-m/system-400", "size": 13, "weight": 400, "lineHeight": 17, "usage": "아티스트 서브타이틀" },
+    { "token": "$body-s/system-400", "size": 15, "weight": 400, "lineHeight": 21, "usage": "본문 텍스트" },
+    { "token": "$body-s/system-700", "size": 15, "weight": 700, "lineHeight": 21, "usage": "More 링크" }
+  ],
+  "effect_tokens": [
+    { "token": "$shadow-lg", "type": "drop-shadow", "color": "rgba(0,0,0,0.1)", "offset": "0px 6px", "blur": 28, "spread": 0 }
+  ],
+  "sizing_tokens": [
+    { "element": "screen-margin", "value": 10 },
+    { "element": "card-radius", "value": 16 },
+    { "element": "thumbnail", "aspect": "1/1", "maxSize": 373 },
+    { "element": "avatar-container", "size": 38 },
+    { "element": "avatar-image", "size": 32 },
+    { "element": "bottom-header", "height": 48, "padding-x": 16, "padding-y": 8, "gap": 8 },
+    { "element": "context", "padding-x": 16, "padding-bottom": 16 },
+    { "element": "footer", "height": 56, "padding-x": 16 }
+  ],
+  "ai_notes": [
+    "썸네일은 1:1 정사각형 aspect-ratio 유지. 이미지 없으면 회색(#d0d0d0) 박스 대체",
+    "본문 'More' 링크는 마지막 줄 끝에 인라인 배치 (CSS line-clamp + inline More 패턴)",
+    "Footer 최상단에 1px Divider, 그 아래 ListItem (56px)",
+    "카드 외부 좌우 margin 10px (screen margin token)"
+  ]
+}

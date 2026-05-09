@@ -1,0 +1,159 @@
+{
+  "$schema": "cds-ds/dsl/v2",
+  "schemaVersion": "2.0.0",
+  "metadata": {
+    "generatedAt": "2026-04-28T00:00:00+09:00",
+    "generator": "cds-ds@2.0.0",
+    "sourceFile": {
+      "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
+      "fileName": "Chord-Design-System",
+      "nodeId": "11992:71718"
+    }
+  },
+  "coordinateSystem": { "unit": "px", "origin": "topLeft", "scope": "relativeToParent", "scale": 1.0 },
+  "themes": ["light", "dark"],
+  "platform": "ios",
+  "dsManifest": {
+    "platform": "ios",
+    "tokens": ["tokens.color.v1.0", "tokens.size.v1.0", "tokens.typography.v1.0"],
+    "components": ["textfield"]
+  },
+  "nodes": [
+    {
+      "id": "text-field",
+      "type": "component",
+      "name": "WDSTextField",
+      "catalog": {
+        "id": "textfield",
+        "props": {
+          "enabled": true,
+          "visibleTitle": true,
+          "title": "입력 필드",
+          "required": false,
+          "visibleCounter": true,
+          "maxLength": 200,
+          "hintText": "",
+          "visibleBottomMessage": false,
+          "guideMessage": "Guide Message",
+          "maxLines": 1
+        },
+        "state": "default"
+      },
+      "layout": {
+        "kind": "stack",
+        "axis": "vertical",
+        "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+        "spacing": 4
+      },
+      "children": [
+        {
+          "id": "title-row",
+          "type": "stack",
+          "name": "title-row",
+          "layout": {
+            "kind": "stack",
+            "axis": "horizontal",
+            "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+            "spacing": 2,
+            "alignment": { "main": "start", "cross": "center" }
+          },
+          "children": [
+            {
+              "id": "title-label",
+              "type": "text",
+              "name": "title-label",
+              "text": {
+                "value": "입력 필드",
+                "textStyle": "textStyle:body-sm/system-500",
+                "color": "token:system.color.text.default"
+              }
+            },
+            {
+              "id": "required-mark",
+              "type": "text",
+              "name": "required-mark",
+              "text": {
+                "value": "*",
+                "textStyle": "textStyle:body-sm/system-500",
+                "color": "token:system.color.semantic.error"
+              }
+            }
+          ]
+        },
+        {
+          "id": "input-row",
+          "type": "stack",
+          "name": "input-row",
+          "layout": {
+            "kind": "stack",
+            "axis": "horizontal",
+            "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 48 } },
+            "spacing": 8,
+            "padding": { "top": 0, "right": 12, "bottom": 0, "left": 12 },
+            "alignment": { "main": "start", "cross": "center" }
+          },
+          "style": {
+            "strokes": [{ "align": "inside", "thickness": 1, "color": "token:system.color.line.default" }],
+            "cornerRadius": 8
+          },
+          "children": [
+            {
+              "id": "hint-or-value",
+              "type": "text",
+              "name": "hint-or-value",
+              "layout": { "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } } },
+              "text": {
+                "value": "",
+                "textStyle": "textStyle:body-md/system-400",
+                "color": "token:system.color.text.default-30a"
+              }
+            },
+            {
+              "id": "clear-button",
+              "type": "icon",
+              "name": "clear-button",
+              "asset": { "kind": "icon", "ref": "icon/clear", "format": "svg", "tint": "token:system.color.text.default" },
+              "layout": {
+                "size": { "width": { "mode": "fixed", "value": 20 }, "height": { "mode": "fixed", "value": 20 } }
+              }
+            }
+          ]
+        },
+        {
+          "id": "footer-row",
+          "type": "stack",
+          "name": "footer-row",
+          "layout": {
+            "kind": "stack",
+            "axis": "horizontal",
+            "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+            "alignment": { "main": "spaceBetween", "cross": "center" }
+          },
+          "children": [
+            {
+              "id": "guide-message",
+              "type": "text",
+              "name": "guide-message",
+              "text": {
+                "value": "Guide Message",
+                "textStyle": "textStyle:body-xs/system-400",
+                "color": "token:system.color.text.default-50a"
+              }
+            },
+            {
+              "id": "counter",
+              "type": "text",
+              "name": "counter",
+              "text": {
+                "value": "0/200",
+                "textStyle": "textStyle:body-xs/system-400",
+                "color": "token:system.color.text.default-50a",
+                "textAlign": "right"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

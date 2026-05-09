@@ -1,0 +1,47 @@
+.chord-badge-dot {
+  --badge-dot-fill: var(--cds-system-color-status-danger-red, #ff3b30);
+  --badge-dot-outline: var(--cds-system-color-outline-default-reverse, #ffffff);
+  --badge-dot-size: 6px;
+  --badge-dot-stroke: 0;
+  display: inline-block;
+  flex: 0 0 auto;
+  inline-size: var(--badge-dot-size);
+  block-size: var(--badge-dot-size);
+  border: var(--badge-dot-stroke) solid var(--badge-dot-outline);
+  border-radius: 999px;
+  background: var(--badge-dot-fill);
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.chord-badge-dot[data-mode="fixed"] {
+  --badge-dot-fill: var(--cds-system-fixed-color-status-danger-red, #ff453a);
+  --badge-dot-outline: var(--cds-system-fixed-color-outline-default-reverse, #ffffff);
+}
+
+.chord-badge-dot[data-size="small"][data-outline="off"] {
+  --badge-dot-size: 4px;
+}
+
+.chord-badge-dot[data-size="medium"][data-outline="off"] {
+  --badge-dot-size: 6px;
+}
+
+.chord-badge-dot[data-size="large"][data-outline="off"] {
+  --badge-dot-size: 8px;
+}
+
+.chord-badge-dot[data-size="small"][data-outline="on"] {
+  --badge-dot-size: 6px;
+  --badge-dot-stroke: 1px;
+}
+
+.chord-badge-dot[data-size="medium"][data-outline="on"] {
+  --badge-dot-size: 8px;
+  --badge-dot-stroke: 1px;
+}
+
+.chord-badge-dot[data-size="large"][data-outline="on"] {
+  --badge-dot-size: 12px;
+  --badge-dot-stroke: 2px;
+}

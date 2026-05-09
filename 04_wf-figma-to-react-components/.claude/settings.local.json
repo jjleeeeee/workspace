@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm list *)",
+      "mcp__figma-console__figma_get_component_image",
+      "Bash(npx vitest *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(python3 *)",
+      "Bash(npm test *)"
+    ]
+  }
+}

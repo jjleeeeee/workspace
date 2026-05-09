@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDS Text Button — Visual Test</title>
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --clr-btn-default:     #00cbd5;
+      --clr-btn-black:       #000000;
+      --clr-btn-outlined-gray: #dedede;
+      --clr-text-reverse:    #ffffff;
+      --clr-text-default:    #000000;
+      --clr-text-gray700:    #484848;
+
+      --h-xl: 52px;  --px-xl: 24px;  --fs-xl: 17px;  --lh-xl: 23px;
+      --h-lg: 44px;  --px-lg: 20px;  --fs-lg: 17px;  --lh-lg: 23px;
+      --h-md: 40px;  --px-md: 16px;  --fs-md: 15px;  --lh-md: 21px;
+      --h-sm: 36px;  --px-sm: 12px;  --fs-sm: 13px;  --lh-sm: 17px;
+      --h-xs: 32px;  --px-xs:  8px;  --fs-xs: 13px;  --lh-xs: 17px;
+      --h-2x: 24px;  --px-2x:  8px;  --fs-2x: 11px;  --lh-2x: 15px;
+
+      --radius-off: 10px;
+      --radius-on:  999px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      background: #f7f8fa;
+      padding: 40px;
+    }
+    h1 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+    h2 { font-size: 16px; color: #666; margin-bottom: 32px; }
+    h3 { font-size: 14px; font-weight: 600; color: #333; margin: 32px 0 12px; }
+
+    /* ── Grid Table ── */
+    .spec-table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      border: 1px solid #eceef3;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .spec-table th, .spec-table td {
+      border: 1px solid #eceef3;
+      padding: 8px 12px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .spec-table th {
+      background: #f7f8fa;
+      font-size: 13px;
+      color: #666;
+      font-weight: 500;
+    }
+    .spec-table td.row-label {
+      background: #f7f8fa;
+      font-size: 13px;
+      color: #666;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .cell { padding: 20px 16px; display: flex; align-items: center; justify-content: center; }
+
+    /* ── Base Button ── */
+    .wds-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      white-space: nowrap;
+      letter-spacing: 0;
+      transition: opacity 0.15s ease;
+      outline: none;
+    }
+    .wds-btn:focus-visible {
+      outline: 2px solid #005fcc;
+      outline-offset: 2px;
+    }
+
+    /* ── Type: Filled ── */
+    .wds-btn--filled {
+      background: var(--clr-btn-default);
+      color: var(--clr-text-reverse);
+      border: none;
+    }
+    .wds-btn--filled.wds-btn--black {
+      background: var(--clr-btn-black);
+    }
+    .wds-btn--filled:hover:not([disabled]):not(.wds-btn--loading) { opacity: 0.85; }
+
+    /* ── Type: Outlined Color ── */
+    .wds-btn--outlined-color {
+      background: transparent;
+      color: var(--clr-btn-default);
+      border: 1.5px solid var(--clr-btn-default);
+    }
+    .wds-btn--outlined-color.wds-btn--black {
+      color: var(--clr-btn-black);
+      border-color: var(--clr-btn-black);
+    }
+    .wds-btn--outlined-color:hover:not([disabled]):not(.wds-btn--loading) { opacity: 0.85; }
+
+    /* ── Type: Outlined Gray ── */
+    .wds-btn--outlined-gray {
+      background: transparent;
+      color: var(--clr-text-default);
+      border: 1px solid var(--clr-btn-outlined-gray);
+    }
+    .wds-btn--outlined-gray:hover:not([disabled]):not(.wds-btn--loading) { opacity: 0.85; }
+
+    /* ── Type: Ghost ── */
+    .wds-btn--ghost {
+      background: transparent;
+      color: var(--clr-text-gray700);
+      font-weight: 500;
+      border: none;
+    }
+    .wds-btn--ghost:hover:not([disabled]):not(.wds-btn--loading) { opacity: 0.75; }
+
+    /* ── Sizes ── */
+    .wds-btn--xl   { height: var(--h-xl); padding: 0 var(--px-xl); font-size: var(--fs-xl); line-height: var(--lh-xl); }
+    .wds-btn--lg   { height: var(--h-lg); padding: 0 var(--px-lg); font-size: var(--fs-lg); line-height: var(--lh-lg); }
+    .wds-btn--md   { height: var(--h-md); padding: 0 var(--px-md); font-size: var(--fs-md); line-height: var(--lh-md); }
+    .wds-btn--sm   { height: var(--h-sm); padding: 0 var(--px-sm); font-size: var(--fs-sm); line-height: var(--lh-sm); }
+    .wds-btn--xs   { height: var(--h-xs); padding: 0 var(--px-xs); font-size: var(--fs-xs); line-height: var(--lh-xs); }
+    .wds-btn--2xs  { height: var(--h-2x); padding: 0 var(--px-2x); font-size: var(--fs-2x); line-height: var(--lh-2x); }
+
+    /* ── Radius ── */
+    .wds-btn--radius-off { border-radius: var(--radius-off); }
+    .wds-btn--radius-on  { border-radius: var(--radius-on);  }
+
+    /* ── Status: Disabled ── */
+    .wds-btn[disabled], .wds-btn--disabled {
+      opacity: 0.38;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ── Status: Loading ── */
+    /* hidden text preserves button width; dots overlay center */
+    .wds-btn--loading {
+      position: relative;
+      pointer-events: none;
+    }
+    .wds-btn--loading .wds-btn__text-ghost {
+      visibility: hidden; /* takes up space, invisible */
+    }
+    .wds-btn__loading-dots {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .wds-btn__dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: currentColor;
+      animation: wds-bounce 1.2s infinite ease-in-out both;
+    }
+    .wds-btn__dot:nth-child(1) { animation-delay: 0s; }
+    .wds-btn__dot:nth-child(2) { animation-delay: 0.18s; }
+    .wds-btn__dot:nth-child(3) { animation-delay: 0.36s; }
+
+    @keyframes wds-bounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.55; }
+      30%            { transform: translateY(-5px); opacity: 1; }
+    }
+
+    /* ── Ghost: explicitly lighter weight vs Bold ── */
+    .wds-btn--ghost { font-weight: 500; letter-spacing: 0.01em; }
+
+    /* ── Misc ── */
+    .section { margin-bottom: 40px; }
+    .dark-bg { background: #1a1a1a; border-radius: 8px; padding: 20px; display: flex; gap: 12px; align-items: center; }
+    .note { font-size: 12px; color: #999; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1>WDS / Text Button</h1>
+  <h2>Visual test — Chord Design System · 576 variants · Mode × Type × Size × Color × Status × Radius</h2>
+
+  <!-- ── Core Variants Grid (matches Figma spec) ── -->
+  <div class="section">
+    <h3>Core Variants</h3>
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Size · State</th>
+          <th>Filled</th>
+          <th>Outlined_color</th>
+          <th>Outlined_gray</th>
+          <th>Ghost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Row 1: XLarge / off / default -->
+        <tr>
+          <td class="row-label">XLarge / off</td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--filled wds-btn--xl wds-btn--radius-off">Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-color wds-btn--xl wds-btn--radius-off">Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-gray wds-btn--xl wds-btn--radius-off">Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--ghost wds-btn--xl wds-btn--radius-off">Text</button>
+          </div></td>
+        </tr>
+        <!-- Row 2: Medium / off / disabled -->
+        <tr>
+          <td class="row-label">Medium / off · disabled</td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--filled wds-btn--md wds-btn--radius-off" disabled>Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-color wds-btn--md wds-btn--radius-off" disabled>Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-gray wds-btn--md wds-btn--radius-off" disabled>Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--ghost wds-btn--md wds-btn--radius-off" disabled>Text</button>
+          </div></td>
+        </tr>
+        <!-- Row 3: Small / on -->
+        <tr>
+          <td class="row-label">Small / on</td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--filled wds-btn--sm wds-btn--radius-on">Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-color wds-btn--sm wds-btn--radius-on">Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-gray wds-btn--sm wds-btn--radius-on">Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--ghost wds-btn--sm wds-btn--radius-on">Text</button>
+          </div></td>
+        </tr>
+        <!-- Row 4: XXSmall / on -->
+        <tr>
+          <td class="row-label">XXSmall / on</td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--filled wds-btn--2xs wds-btn--radius-on">Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-color wds-btn--2xs wds-btn--radius-on">Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-gray wds-btn--2xs wds-btn--radius-on">Text</button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--ghost wds-btn--2xs wds-btn--radius-on">Text</button>
+          </div></td>
+        </tr>
+        <!-- Row 5: Medium / loading — hidden text preserves width -->
+        <tr>
+          <td class="row-label">Medium / Loading</td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--filled wds-btn--md wds-btn--radius-off wds-btn--loading" aria-busy="true" aria-label="로딩 중">
+              <span class="wds-btn__text-ghost" aria-hidden="true">Text</span>
+              <span class="wds-btn__loading-dots" aria-hidden="true">
+                <span class="wds-btn__dot"></span>
+                <span class="wds-btn__dot"></span>
+                <span class="wds-btn__dot"></span>
+              </span>
+            </button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-color wds-btn--md wds-btn--radius-off wds-btn--loading" aria-busy="true" aria-label="로딩 중">
+              <span class="wds-btn__text-ghost" aria-hidden="true">Text</span>
+              <span class="wds-btn__loading-dots" aria-hidden="true">
+                <span class="wds-btn__dot"></span>
+                <span class="wds-btn__dot"></span>
+                <span class="wds-btn__dot"></span>
+              </span>
+            </button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--outlined-gray wds-btn--md wds-btn--radius-off wds-btn--loading" aria-busy="true" aria-label="로딩 중">
+              <span class="wds-btn__text-ghost" aria-hidden="true">Text</span>
+              <span class="wds-btn__loading-dots" aria-hidden="true">
+                <span class="wds-btn__dot"></span>
+                <span class="wds-btn__dot"></span>
+                <span class="wds-btn__dot"></span>
+              </span>
+            </button>
+          </div></td>
+          <td><div class="cell">
+            <button class="wds-btn wds-btn--ghost wds-btn--md wds-btn--radius-off wds-btn--loading" aria-busy="true" aria-label="로딩 중">
+              <span class="wds-btn__text-ghost" aria-hidden="true">Text</span>
+              <span class="wds-btn__loading-dots" aria-hidden="true">
+                <span class="wds-btn__dot"></span>
+                <span class="wds-btn__dot"></span>
+                <span class="wds-btn__dot"></span>
+              </span>
+            </button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── All Sizes (Filled/default) ── -->
+  <div class="section">
+    <h3>All Sizes — Filled · default color · radius off</h3>
+    <table class="spec-table">
+      <thead>
+        <tr><th>Size</th><th>Height</th><th>Button</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="row-label">XLarge</td><td class="row-label">52px</td>
+          <td><div class="cell"><button class="wds-btn wds-btn--filled wds-btn--xl wds-btn--radius-off">Text</button></div></td></tr>
+        <tr><td class="row-label">Large</td><td class="row-label">44px</td>
+          <td><div class="cell"><button class="wds-btn wds-btn--filled wds-btn--lg wds-btn--radius-off">Text</button></div></td></tr>
+        <tr><td class="row-label">Medium</td><td class="row-label">40px</td>
+          <td><div class="cell"><button class="wds-btn wds-btn--filled wds-btn--md wds-btn--radius-off">Text</button></div></td></tr>
+        <tr><td class="row-label">Small</td><td class="row-label">36px</td>
+          <td><div class="cell"><button class="wds-btn wds-btn--filled wds-btn--sm wds-btn--radius-off">Text</button></div></td></tr>
+        <tr><td class="row-label">XSmall</td><td class="row-label">32px</td>
+          <td><div class="cell"><button class="wds-btn wds-btn--filled wds-btn--xs wds-btn--radius-off">Text</button></div></td></tr>
+        <tr><td class="row-label">XXSmall</td><td class="row-label">24px</td>
+          <td><div class="cell"><button class="wds-btn wds-btn--filled wds-btn--2xs wds-btn--radius-off">Text</button></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Black Color ── -->
+  <div class="section">
+    <h3>Button Color: Black — Filled &amp; Outlined_color</h3>
+    <div style="display:flex; gap: 12px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #eceef3;">
+      <button class="wds-btn wds-btn--filled wds-btn--black wds-btn--xl wds-btn--radius-off">Text</button>
+      <button class="wds-btn wds-btn--outlined-color wds-btn--black wds-btn--xl wds-btn--radius-off">Text</button>
+    </div>
+  </div>
+
+  <!-- ── Fixed Mode (dark surface) ── -->
+  <div class="section">
+    <h3>Mode: Fixed — dark surface 문맥</h3>
+    <div class="dark-bg">
+      <button class="wds-btn wds-btn--filled wds-btn--xl wds-btn--radius-off">Text</button>
+      <button class="wds-btn wds-btn--outlined-color wds-btn--xl wds-btn--radius-off">Text</button>
+      <button class="wds-btn wds-btn--outlined-gray wds-btn--xl wds-btn--radius-off">Text</button>
+      <button class="wds-btn wds-btn--ghost wds-btn--xl wds-btn--radius-off">Text</button>
+    </div>
+    <p class="note">Fixed mode는 Dark surface에 올려지는 상황을 시뮬레이션합니다.</p>
+  </div>
+
+  <!-- ── Anatomy: Leading / Trailing ── -->
+  <div class="section">
+    <h3>Anatomy — Leading / Trailing Icon Slot</h3>
+    <div style="display:flex; gap: 12px; flex-wrap: wrap; background: white; padding: 20px; border-radius: 8px; border: 1px solid #eceef3; align-items: center;">
+      <!-- Base -->
+      <button class="wds-btn wds-btn--filled wds-btn--md wds-btn--radius-off">Base</button>
+      <!-- Leading icon -->
+      <button class="wds-btn wds-btn--filled wds-btn--md wds-btn--radius-off">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <circle cx="8" cy="8" r="6"/>
+        </svg>
+        Leading
+      </button>
+      <!-- Trailing icon -->
+      <button class="wds-btn wds-btn--filled wds-btn--md wds-btn--radius-off">
+        Go
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <!-- Both -->
+      <button class="wds-btn wds-btn--filled wds-btn--md wds-btn--radius-off">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <circle cx="8" cy="8" r="6"/>
+        </svg>
+        Text
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</body>
+</html>

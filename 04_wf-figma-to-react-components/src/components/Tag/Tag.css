@@ -1,0 +1,139 @@
+.chord-tag {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-primary);
+  --chord-tag-content: var(--chord-tag-main);
+  --chord-tag-fill-alpha: 85%;
+  --chord-tag-stroke-alpha: 40%;
+
+  align-items: center;
+  background: transparent;
+  block-size: 16px;
+  box-sizing: border-box;
+  color: var(--chord-tag-content);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--cds-typography-circular-base-text-size-text-25, 10px);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700, 700);
+  gap: 2px;
+  inline-size: fit-content;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: 13px;
+  min-inline-size: 0;
+  padding: 0 4px;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.chord-tag[data-size="medium"] {
+  block-size: 20px;
+  padding-inline: 6px;
+}
+
+.chord-tag[data-shape="squircle"][data-size="small"] {
+  border-radius: 4px;
+}
+
+.chord-tag[data-shape="squircle"][data-size="medium"] {
+  border-radius: 6px;
+}
+
+.chord-tag[data-shape="round"] {
+  border-radius: 24px;
+}
+
+.chord-tag[data-tag-type="line"] {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chord-tag-main) var(--chord-tag-stroke-alpha), transparent);
+}
+
+.chord-tag[data-tag-type="fill"] {
+  --chord-tag-content: var(--cds-system-fixed-color-text-default);
+
+  background: color-mix(in srgb, var(--chord-tag-main) var(--chord-tag-fill-alpha), transparent);
+}
+
+.chord-tag[data-color="primary"] {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-primary);
+}
+
+.chord-tag[data-color="secondary-blue"] {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-secondary-blue);
+}
+
+.chord-tag[data-color="secondary-green"] {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-secondary-green);
+}
+
+.chord-tag[data-color="secondary-purple"] {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-secondary-purple);
+}
+
+.chord-tag[data-color="secondary-pink"] {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-secondary-pink);
+}
+
+.chord-tag[data-color="gray"] {
+  --chord-tag-main: var(--cds-system-fixed-color-text-gray-500);
+}
+
+.chord-tag[data-color="white"] {
+  --chord-tag-main: var(--cds-system-fixed-color-text-default);
+}
+
+.chord-tag[data-color="red"],
+.chord-tag[data-color="live-red"] {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-negative);
+}
+
+.chord-tag[data-color="membership-malachite-green"] {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-membership-malachite-green);
+}
+
+.chord-tag[data-color="membership-lavender"] {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-membership-lavender);
+}
+
+.chord-tag[data-color="membership-cornflower-blue"] {
+  --chord-tag-main: var(--cds-system-fixed-color-roles-membership-cornflower-blue);
+}
+
+.chord-tag[data-color="live-red"] {
+  --chord-tag-fill-alpha: 100%;
+}
+
+.chord-tag__icon {
+  align-items: center;
+  block-size: 10px;
+  color: currentColor;
+  display: inline-flex;
+  flex: 0 0 10px;
+  inline-size: 10px;
+  justify-content: center;
+}
+
+.chord-tag__icon > svg {
+  block-size: 10px;
+  display: block;
+  inline-size: 10px;
+}
+
+.chord-tag__icon > .chord-icon {
+  block-size: 10px;
+  display: block;
+  inline-size: 10px;
+}
+
+.chord-tag__null-icon {
+  block-size: 10px;
+  color: var(--cds-system-fixed-color-roles-negative);
+  inline-size: 10px;
+}
+
+.chord-tag__label {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

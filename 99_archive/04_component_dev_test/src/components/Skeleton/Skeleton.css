@@ -1,0 +1,71 @@
+.chord-skeleton {
+  display: inline-block;
+  overflow: hidden;
+  inline-size: var(--skeleton-width, var(--skeleton-default-width));
+  block-size: var(--skeleton-height, var(--skeleton-default-height));
+  border-radius: var(--skeleton-radius);
+  background: var(--skeleton-base);
+  vertical-align: middle;
+}
+
+.chord-skeleton[data-mode="default"] {
+  --skeleton-base: var(--cds-system-color-status-background-disabled, #0000001a);
+  --skeleton-shine: rgb(255 255 255 / 42%);
+}
+
+.chord-skeleton[data-mode="fixed"] {
+  --skeleton-base: var(
+    --cds-system-fixed-color-status-background-disabled,
+    var(--cds-system-color-status-background-disabled, #0000001a)
+  );
+  --skeleton-shine: rgb(255 255 255 / 34%);
+}
+
+.chord-skeleton[data-size="small"] {
+  --skeleton-default-height: 12px;
+  --skeleton-default-width: 96px;
+}
+
+.chord-skeleton[data-size="medium"] {
+  --skeleton-default-height: 16px;
+  --skeleton-default-width: 144px;
+}
+
+.chord-skeleton[data-type="rectangle"] {
+  --skeleton-radius: var(--cds-system-size-radius-box-100, 6px);
+}
+
+.chord-skeleton[data-type="circle"] {
+  --skeleton-default-height: 40px;
+  --skeleton-default-width: 40px;
+  --skeleton-radius: 999px;
+  aspect-ratio: 1;
+}
+
+.chord-skeleton[data-type="text"] {
+  --skeleton-radius: 999px;
+}
+
+.chord-skeleton[data-animated="true"] {
+  background:
+    linear-gradient(90deg, transparent 0%, var(--skeleton-shine) 50%, transparent 100%),
+    var(--skeleton-base);
+  background-size: 220% 100%, 100% 100%;
+  animation: chord-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chord-skeleton[data-animated="true"] {
+    animation: none;
+  }
+}
+
+@keyframes chord-skeleton-shimmer {
+  from {
+    background-position: 220% 0, 0 0;
+  }
+
+  to {
+    background-position: -220% 0, 0 0;
+  }
+}

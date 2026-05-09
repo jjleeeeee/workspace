@@ -1,0 +1,15 @@
+.chord-circular-progress {
+  display: inline-block;
+  inline-size: 28px;
+  block-size: 28px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle closest-side, var(--cds-system-color-surface-default, #ffffff) 72%, transparent 74% 100%),
+    conic-gradient(var(--cds-system-color-button-default, #00cbd5) var(--circular-progress-value), var(--cds-system-color-status-background-disabled, #f2f3f7) 0);
+}
+
+.chord-circular-progress[data-mode="fixed"] {
+  background:
+    radial-gradient(circle closest-side, var(--cds-system-color-surface-default, #ffffff) 72%, transparent 74% 100%),
+    conic-gradient(var(--cds-system-fixed-color-button-default, var(--cds-system-color-button-default, #00cbd5)) var(--circular-progress-value), var(--cds-system-color-status-background-disabled, #f2f3f7) 0);
+}

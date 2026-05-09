@@ -1,0 +1,247 @@
+.chord-text-button {
+  --text-button-main: var(--cds-system-color-button-default, #00cbd5);
+  --text-button-bg: var(--text-button-main);
+  --text-button-border: var(--text-button-main);
+  --text-button-color: var(--cds-system-color-text-default-reverse, #ffffff);
+  --text-button-stroke-width: 0;
+  --text-button-height: var(--cds-system-size-button-height-medium, 40px);
+  --text-button-padding-x: var(--cds-system-size-padding-box-200, 16px);
+  --text-button-radius: var(--cds-system-size-radius-box-100, 8px);
+  --text-button-font-size: var(--cds-typography-circular-base-text-size-text-150, 15px);
+  --text-button-line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-150, 21px);
+  --text-button-font-weight: var(--cds-typography-default-base-text-weight-text-weight-700, 700);
+  --text-button-overlay: transparent;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: var(--text-button-height);
+  block-size: var(--text-button-height);
+  padding: 0 var(--text-button-padding-x);
+  border: 0;
+  border-radius: var(--text-button-radius);
+  background:
+    linear-gradient(var(--text-button-overlay), var(--text-button-overlay)),
+    var(--text-button-bg);
+  box-shadow: inset 0 0 0 var(--text-button-stroke-width) var(--text-button-border);
+  color: var(--text-button-color);
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--text-button-font-size);
+  font-weight: var(--text-button-font-weight);
+  line-height: var(--text-button-line-height);
+  letter-spacing: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  appearance: none;
+}
+
+.chord-text-button:focus-visible {
+  outline: 2px solid var(--cds-system-color-outline-default, #000000);
+  outline-offset: 2px;
+}
+
+.chord-text-button:disabled {
+  cursor: not-allowed;
+}
+
+.chord-text-button[data-mode="fixed"] {
+  --text-button-main: var(--cds-system-fixed-color-button-default, #01d5df);
+}
+
+.chord-text-button[data-button-color="black"] {
+  --text-button-main: var(--cds-system-color-button-black, #000000);
+}
+
+.chord-text-button[data-mode="fixed"][data-button-color="black"] {
+  --text-button-main: var(--cds-system-fixed-color-button-white, #ffffff);
+}
+
+.chord-text-button[data-button-type="filled"] {
+  --text-button-bg: var(--text-button-main);
+  --text-button-border: var(--text-button-main);
+  --text-button-color: var(--cds-system-color-text-default-reverse, #ffffff);
+}
+
+.chord-text-button[data-mode="fixed"][data-button-type="filled"] {
+  --text-button-color: var(--cds-system-fixed-color-text-default-reverse, #000000);
+}
+
+.chord-text-button[data-button-type="outlinedColor"] {
+  --text-button-bg: transparent;
+  --text-button-border: var(--text-button-main);
+  --text-button-color: var(--text-button-main);
+  --text-button-stroke-width: 1px;
+}
+
+.chord-text-button[data-button-type="outlinedGray"] {
+  --text-button-bg: transparent;
+  --text-button-border: var(--cds-system-color-button-outlined-gray, #dedede);
+  --text-button-color: var(--cds-system-color-text-default, #000000);
+  --text-button-stroke-width: 1px;
+}
+
+.chord-text-button[data-mode="fixed"][data-button-type="outlinedGray"] {
+  --text-button-border: var(--cds-system-fixed-color-button-outlined-gray, #333333);
+  --text-button-color: var(--cds-system-fixed-color-text-default, #ffffff);
+}
+
+.chord-text-button[data-button-type="ghost"] {
+  --text-button-bg: var(--cds-system-color-button-ghost, transparent);
+  --text-button-border: transparent;
+  --text-button-color: var(--cds-system-color-text-gray-700, #484848);
+  --text-button-font-weight: var(--cds-typography-default-base-text-weight-text-weight-500, 500);
+}
+
+.chord-text-button[data-mode="fixed"][data-button-type="ghost"] {
+  --text-button-color: var(--cds-system-fixed-color-text-gray-700, #bbbbbb);
+}
+
+.chord-text-button[data-status="hover"],
+.chord-text-button:not(:disabled):hover {
+  --text-button-overlay: var(--cds-system-color-button-hover, #0000000a);
+}
+
+.chord-text-button[data-mode="fixed"][data-status="hover"],
+.chord-text-button[data-mode="fixed"]:not(:disabled):hover {
+  --text-button-overlay: var(--cds-system-fixed-color-button-hover, #ffffff0d);
+}
+
+.chord-text-button[data-status="disabled"] {
+  --text-button-bg: var(--cds-system-color-button-disabled, #0000001a);
+  --text-button-border: var(--cds-system-color-button-disabled, #0000001a);
+  --text-button-color: var(--cds-system-color-text-200a, #00000033);
+}
+
+.chord-text-button[data-mode="fixed"][data-status="disabled"] {
+  --text-button-bg: var(--cds-system-fixed-color-button-disabled, #ffffff1a);
+  --text-button-border: var(--cds-system-fixed-color-button-disabled, #ffffff1a);
+  --text-button-color: var(--cds-system-fixed-color-text-200a, #ffffff33);
+}
+
+.chord-text-button[data-button-type="outlinedColor"][data-status="disabled"],
+.chord-text-button[data-button-type="outlinedGray"][data-status="disabled"],
+.chord-text-button[data-button-type="ghost"][data-status="disabled"] {
+  --text-button-bg: transparent;
+}
+
+.chord-text-button[data-radius="on"] {
+  --text-button-radius: 999px;
+}
+
+.chord-text-button[data-size="xlarge"] {
+  --text-button-height: var(--cds-system-size-button-height-xlarge, 52px);
+  --text-button-padding-x: var(--cds-system-size-padding-box-300, 24px);
+}
+
+.chord-text-button[data-size="large"] {
+  --text-button-height: var(--cds-system-size-button-height-large, 44px);
+  --text-button-padding-x: var(--cds-system-size-padding-box-250, 20px);
+}
+
+.chord-text-button[data-size="medium"] {
+  --text-button-height: var(--cds-system-size-button-height-medium, 40px);
+  --text-button-padding-x: var(--cds-system-size-padding-box-200, 16px);
+}
+
+.chord-text-button[data-size="small"] {
+  --text-button-height: var(--cds-system-size-button-height-small, 36px);
+  --text-button-padding-x: var(--cds-system-size-padding-box-200, 16px);
+  --text-button-font-size: var(--cds-typography-default-base-text-size-text-150, 14px);
+  --text-button-line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150, 18px);
+}
+
+.chord-text-button[data-size="xsmall"] {
+  --text-button-height: var(--cds-system-size-button-height-xsmall, 32px);
+  --text-button-padding-x: var(--cds-system-size-padding-box-150, 12px);
+  --text-button-font-size: var(--cds-typography-default-base-text-size-text-100, 13px);
+  --text-button-line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100, 17px);
+}
+
+.chord-text-button[data-size="xxsmall"] {
+  --text-button-height: var(--cds-system-size-button-height-xxsmall, 24px);
+  --text-button-padding-x: var(--cds-system-size-padding-box-100, 8px);
+  --text-button-font-size: var(--cds-typography-default-base-text-size-text-75, 12px);
+  --text-button-line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75, 16px);
+}
+
+.chord-text-button__content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 0;
+}
+
+.chord-text-button__label {
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.chord-text-button__leading {
+  display: inline-flex;
+  align-items: center;
+  padding-inline-end: var(--cds-system-size-padding-box-50, 4px);
+}
+
+.chord-text-button__trailing {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-50, 4px);
+  padding-inline-start: var(--cds-system-size-padding-box-75, 6px);
+}
+
+.chord-text-button__trailing-text {
+  font-size: var(--cds-typography-default-base-text-size-text-75, 12px);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50, 14px);
+}
+
+.chord-text-button__loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cds-system-size-padding-box-25, 2px);
+  inline-size: 20px;
+  block-size: 20px;
+}
+
+.chord-text-button__loading span {
+  inline-size: 3.333px;
+  block-size: 3.333px;
+  border-radius: 999px;
+  background: currentColor;
+  animation: chord-text-button-loading 0.9s ease-in-out infinite;
+}
+
+.chord-text-button__loading span:nth-child(1) {
+  opacity: 0.2;
+  animation-delay: 0s;
+}
+
+.chord-text-button__loading span:nth-child(2) {
+  opacity: 0.5;
+  animation-delay: 0.12s;
+}
+
+.chord-text-button__loading span:nth-child(3) {
+  opacity: 1;
+  animation-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chord-text-button__loading span {
+    animation: none;
+  }
+}
+
+@keyframes chord-text-button-loading {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}

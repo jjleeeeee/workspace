@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+
+# Editors
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Logs / temp
+*.log
+/tmp/
+.cache/
+plugins/cds-ds/.local
+
+# design-md-harness
+plugins/design-md-harness/servers/.deps_installed
+plugins/design-md-harness/tests/

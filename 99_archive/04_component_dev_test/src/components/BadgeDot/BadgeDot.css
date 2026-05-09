@@ -1,0 +1,41 @@
+.chord-badge-dot {
+  display: inline-block;
+  flex: 0 0 auto;
+  inline-size: var(--badge-dot-size);
+  block-size: var(--badge-dot-size);
+  border-radius: 999px;
+  background: var(--badge-dot-color);
+  box-shadow: var(--badge-dot-outline);
+  vertical-align: middle;
+}
+
+.chord-badge-dot[data-mode="default"] {
+  --badge-dot-color: var(--cds-system-color-status-danger-red, #ff3b30);
+}
+
+.chord-badge-dot[data-mode="fixed"] {
+  --badge-dot-color: var(
+    --cds-system-fixed-color-status-danger-red,
+    var(--cds-system-color-status-danger-red, #ff3b30)
+  );
+}
+
+.chord-badge-dot[data-size="small"] {
+  --badge-dot-size: 6px;
+}
+
+.chord-badge-dot[data-size="medium"] {
+  --badge-dot-size: 8px;
+}
+
+.chord-badge-dot[data-size="large"] {
+  --badge-dot-size: 10px;
+}
+
+.chord-badge-dot[data-outline="off"] {
+  --badge-dot-outline: none;
+}
+
+.chord-badge-dot[data-outline="on"] {
+  --badge-dot-outline: 0 0 0 2px var(--cds-system-color-background-100a, #ffffff);
+}

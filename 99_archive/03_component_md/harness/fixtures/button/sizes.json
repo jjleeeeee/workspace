@@ -1,0 +1,26 @@
+{
+  "XLarge(52)": {
+    "image": 52,
+    "touch": 52
+  },
+  "Large(44)": {
+    "image": 44,
+    "touch": 44
+  },
+  "Medium(40)": {
+    "image": 40,
+    "touch": 40
+  },
+  "Small(36)": {
+    "image": 36,
+    "touch": 36
+  },
+  "XSmall(32)": {
+    "image": 32,
+    "touch": 32
+  },
+  "XXSmall(24)": {
+    "image": 24,
+    "touch": 24
+  }
+}

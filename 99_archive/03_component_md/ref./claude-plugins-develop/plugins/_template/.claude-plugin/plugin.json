@@ -1,0 +1,13 @@
+{
+  "name": "template-plugin",
+  "version": "1.0.0",
+  "description": "플러그인 설명을 입력하세요",
+  "author": {
+    "name": "개발자 이름",
+    "email": "your.email@weversecompany.com"
+  },
+  "homepage": "https://github.com/weversecompany/claude-plugins/tree/main/plugins/template-plugin",
+  "repository": "https://github.com/weversecompany/claude-plugins",
+  "license": "MIT",
+  "keywords": ["placeholder", "template"]
+}

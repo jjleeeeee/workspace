@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Radio Component Test 3</title>
+    <style>
+      :root {
+        --canvas: #f2f3f7;
+        --panel: #ffffff;
+        --ink: #0f1117;
+        --muted: #686e7d;
+        --line: #dfe2ea;
+        --guide-root: #5989fe;
+        --guide-shape: #b864fa;
+
+        --radio-root-size: 24px;
+        --radio-shape-size: 22px;
+        --radio-inner-size: 8px;
+        --radio-label-gap: 6px;
+
+        --default-outline-light: #00000033;
+        --default-outline-dark: #ffffff33;
+        --default-active-light: #00cbd5;
+        --default-active-dark: #01d5df;
+        --default-inner-light: #ffffff;
+        --default-inner-dark: #000000;
+        --default-disabled-bg-light: #0000001a;
+        --default-disabled-bg-dark: #ffffff1a;
+        --default-disabled-inner-light: #00000033;
+        --default-disabled-inner-dark: #ffffff33;
+
+        --fixed-outline: #ffffff33;
+        --fixed-active: #01d5df;
+        --fixed-inner: #ffffff;
+        --fixed-disabled-outline: #00000033;
+        --fixed-disabled-bg: #0000001a;
+        --fixed-disabled-inner: #ffffff33;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--canvas);
+        color: var(--ink);
+        font-family: "Avenir Next", Pretendard, sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        width: min(1180px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 30px 0;
+      }
+
+      .masthead {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 20px;
+        align-items: end;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 32px;
+        line-height: 1.08;
+      }
+
+      .lead {
+        margin: 8px 0 0;
+        max-width: 760px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .test-chip {
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--panel);
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 390px;
+        gap: 16px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        overflow: hidden;
+      }
+
+      .panel-head {
+        padding: 16px 18px 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.25;
+      }
+
+      .caption {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .guide-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 800;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .guide-switch input {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        accent-color: var(--guide-root);
+      }
+
+      .guide-switch small {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .variant-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 16px;
+      }
+
+      .mode-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        overflow: hidden;
+      }
+
+      .mode-card.fixed {
+        border-color: #ffffff26;
+        background: #101114;
+        color: #f4f4f4;
+      }
+
+      .mode-title {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .fixed .mode-title {
+        border-bottom-color: #ffffff1a;
+      }
+
+      .mode-title code {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .fixed .mode-title code {
+        color: #ffffff99;
+      }
+
+      .variant-row {
+        display: grid;
+        grid-template-columns: 86px minmax(0, 1fr) 120px;
+        gap: 12px;
+        align-items: center;
+        min-height: 58px;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .variant-row:last-child {
+        border-bottom: 0;
+      }
+
+      .fixed .variant-row {
+        border-bottom-color: #ffffff1a;
+      }
+
+      .state {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .fixed .state,
+      .fixed .measure {
+        color: #ffffff99;
+      }
+
+      .radio-item {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--radio-label-gap);
+        min-width: 0;
+        cursor: pointer;
+      }
+
+      .radio-item.is-disabled {
+        cursor: not-allowed;
+      }
+
+      .radio-item input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .radio-root {
+        display: grid;
+        place-items: center;
+        flex: 0 0 var(--radio-root-size);
+        width: var(--radio-root-size);
+        height: var(--radio-root-size);
+      }
+
+      .radio-shape {
+        position: relative;
+        display: block;
+        width: var(--radio-shape-size);
+        height: var(--radio-shape-size);
+        box-sizing: border-box;
+        overflow: hidden;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+      }
+
+      .panel:has(#guide-toggle:checked) .radio-root {
+        outline: 1px dashed var(--guide-root);
+        outline-offset: -1px;
+      }
+
+      .panel:has(#guide-toggle:checked) .radio-shape {
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--guide-shape) 44%, transparent);
+      }
+
+      .radio-shape::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        box-sizing: border-box;
+        border-radius: inherit;
+        border: 1px solid var(--default-outline-light);
+        background: transparent;
+      }
+
+      .radio-shape::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--radio-inner-size);
+        height: var(--radio-inner-size);
+        border-radius: 999px;
+        background: transparent;
+        transform: translate(-50%, -50%);
+      }
+
+      input:focus-visible + .radio-root {
+        outline: 2px solid var(--guide-root);
+        outline-offset: 2px;
+        border-radius: 999px;
+      }
+
+      input:checked + .radio-root .radio-shape {
+        border: 0;
+      }
+
+      input:checked + .radio-root .radio-shape::before {
+        border: 0;
+        background: var(--default-active-light);
+      }
+
+      input:checked + .radio-root .radio-shape::after {
+        background: var(--default-inner-light);
+      }
+
+      .is-disabled .radio-shape {
+        border: 0;
+      }
+
+      .is-disabled .radio-shape::before {
+        border: 1px solid var(--default-outline-light);
+        background: var(--default-disabled-bg-light);
+      }
+
+      .is-disabled .radio-shape::after {
+        background: var(--default-disabled-inner-light);
+      }
+
+      .fixed .radio-shape {
+        border: 0;
+      }
+
+      .fixed .radio-shape::before {
+        border-color: var(--fixed-outline);
+      }
+
+      .fixed input:checked + .radio-root .radio-shape {
+        border: 0;
+      }
+
+      .fixed input:checked + .radio-root .radio-shape::before {
+        border: 0;
+        background: var(--fixed-active);
+      }
+
+      .fixed input:checked + .radio-root .radio-shape::after {
+        background: var(--fixed-inner);
+      }
+
+      .fixed .is-disabled .radio-shape {
+        border: 0;
+      }
+
+      .fixed .is-disabled .radio-shape::before {
+        border: 1px solid var(--fixed-disabled-outline);
+        background: var(--fixed-disabled-bg);
+      }
+
+      .fixed .is-disabled .radio-shape::after {
+        background: var(--fixed-disabled-inner);
+      }
+
+      .label {
+        min-width: 0;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .measure {
+        display: grid;
+        gap: 2px;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.35;
+      }
+
+      .contract {
+        padding: 16px 18px;
+      }
+
+      pre {
+        margin: 0;
+        padding: 14px;
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #f7f8fa;
+        font-family: "SFMono-Regular", Consolas, monospace;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .legend {
+        display: grid;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .legend-row {
+        display: grid;
+        grid-template-columns: 18px minmax(0, 1fr);
+        gap: 9px;
+        align-items: start;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .legend-row:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .marker {
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+      }
+
+      .marker.root {
+        border: 1px dashed var(--guide-root);
+      }
+
+      .marker.shape {
+        border: 1px solid var(--guide-shape);
+        border-radius: 999px;
+      }
+
+      .marker.fill {
+        background: var(--default-active-light);
+      }
+
+      .legend-row strong {
+        display: block;
+        font-size: 12px;
+      }
+
+      .legend-row span {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.45;
+      }
+
+      code {
+        font-family: "SFMono-Regular", Consolas, monospace;
+        font-size: 11px;
+      }
+
+      @media (max-width: 940px) {
+        .masthead,
+        .workspace,
+        .variant-grid,
+        .variant-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="masthead">
+        <div>
+          <h1>Radio Root + Shape Test</h1>
+          <p class="lead">
+            <code>components/radio.md</code> 기준으로 새로 작성한 세 번째 테스트입니다.
+            Radio Component root는 24x24이고, 그 안에 중앙 정렬되는 민트색 Radio Shape가 22x22입니다.
+          </p>
+        </div>
+        <div class="test-chip">test_3 / index_3.html</div>
+      </header>
+
+      <div class="workspace">
+        <section class="panel" aria-labelledby="variant-title">
+          <div class="panel-head">
+            <h2 id="variant-title">Variant Matrix</h2>
+            <p class="caption">Radio Component root는 24x24이고, 그 안의 실제 원형 Radio Shape는 22x22입니다.</p>
+            <label class="guide-switch" for="guide-toggle">
+              <input id="guide-toggle" type="checkbox" />
+              <span>계측 가이드 보기</span>
+              <small>root 24x24 / shape 22x22</small>
+            </label>
+          </div>
+
+          <div class="variant-grid">
+            <div class="mode-card">
+              <div class="mode-title">
+                <span>Mode=Default</span>
+                <code>system/color/*</code>
+              </div>
+
+              <div role="radiogroup" aria-label="Default mode radio variants">
+                <div class="variant-row">
+                  <div class="state">Default</div>
+                  <label class="radio-item">
+                    <input type="radio" name="default-mode" />
+                    <span class="radio-root"><span class="radio-shape"></span></span>
+                    <span class="label">미선택 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>root 24x24</span>
+                    <span>shape 22x22</span>
+                  </div>
+                </div>
+
+                <div class="variant-row">
+                  <div class="state">Enabled</div>
+                  <label class="radio-item">
+                    <input type="radio" name="default-mode" checked />
+                    <span class="radio-root"><span class="radio-shape"></span></span>
+                    <span class="label">선택된 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>fill #00CBD5</span>
+                    <span>inner 8x8</span>
+                  </div>
+                </div>
+
+                <div class="variant-row">
+                  <div class="state">Disabled</div>
+                  <label class="radio-item is-disabled">
+                    <input type="radio" name="default-disabled" disabled />
+                    <span class="radio-root"><span class="radio-shape"></span></span>
+                    <span class="label">비활성 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>bg #0000001A</span>
+                    <span>inner #00000033</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mode-card fixed">
+              <div class="mode-title">
+                <span>Mode=Fixed</span>
+                <code>system/fixed_color/*</code>
+              </div>
+
+              <div role="radiogroup" aria-label="Fixed mode radio variants">
+                <div class="variant-row">
+                  <div class="state">Default</div>
+                  <label class="radio-item">
+                    <input type="radio" name="fixed-mode" />
+                    <span class="radio-root"><span class="radio-shape"></span></span>
+                    <span class="label">미선택 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>root 24x24</span>
+                    <span>shape 22x22</span>
+                  </div>
+                </div>
+
+                <div class="variant-row">
+                  <div class="state">Enabled</div>
+                  <label class="radio-item">
+                    <input type="radio" name="fixed-mode" checked />
+                    <span class="radio-root"><span class="radio-shape"></span></span>
+                    <span class="label">선택된 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>fill #01D5DF</span>
+                    <span>inner 8x8</span>
+                  </div>
+                </div>
+
+                <div class="variant-row">
+                  <div class="state">Disabled</div>
+                  <label class="radio-item is-disabled">
+                    <input type="radio" name="fixed-disabled" disabled />
+                    <span class="radio-root"><span class="radio-shape"></span></span>
+                    <span class="label">비활성 옵션</span>
+                  </label>
+                  <div class="measure">
+                    <span>bg #0000001A</span>
+                    <span>inner #FFFFFF33</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel" aria-labelledby="contract-title">
+          <div class="panel-head">
+            <h2 id="contract-title">Structure Contract</h2>
+            <p class="caption">Root와 Shape의 크기 차이를 구현 명칭에 그대로 반영했습니다.</p>
+          </div>
+
+          <div class="contract">
+            <pre>Radio Item
+├─ Radio Component / root 24x24
+│  └─ Radio Shape / visual circle 22x22, centered
+│     ├─ Outline / 22px circle, 1px stroke
+│     ├─ Fill / 22x22 selected mint circle
+│     └─ Inner circle / 8x8, centered
+└─ Label / external, optional, 6px gap</pre>
+
+            <div class="legend" aria-label="Radio structure legend">
+              <div class="legend-row">
+                <span class="marker root"></span>
+                <div>
+                  <strong>Radio Component / root 24x24</strong>
+                  <span>CSS variable: <code>--radio-root-size: 24px</code></span>
+                </div>
+              </div>
+              <div class="legend-row">
+                <span class="marker shape"></span>
+                <div>
+                  <strong>Radio Shape / visual circle 22x22</strong>
+                  <span>CSS variable: <code>--radio-shape-size: 22px</code></span>
+                </div>
+              </div>
+              <div class="legend-row">
+                <span class="marker fill"></span>
+                <div>
+                  <strong>Fill / selected mint circle</strong>
+                  <span><code>system/color/status/active-primary</code> = #00CBD5, <code>system/fixed_color/status/active-primary</code> = #01D5DF</span>
+                </div>
+              </div>
+              <div class="legend-row">
+                <span class="marker shape"></span>
+                <div>
+                  <strong>Inner circle / 8x8</strong>
+                  <span>CSS variable: <code>--radio-inner-size: 8px</code>. Label gap: <code>system/size/padding/box/75</code> = 6px.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

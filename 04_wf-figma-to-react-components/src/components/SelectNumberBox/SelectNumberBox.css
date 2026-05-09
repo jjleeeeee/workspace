@@ -1,0 +1,62 @@
+.chord-select-number-box {
+  --select-number-bg: var(--cds-system-fixed-color-roles-accent-primary, #01d5df);
+  --select-number-color: var(--cds-system-color-text-default-reverse, #ffffff);
+  --select-number-stroke: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 24px;
+  block-size: 24px;
+  vertical-align: middle;
+}
+
+.chord-select-number-box__marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 22px;
+  block-size: 22px;
+  border: 0 solid var(--select-number-stroke);
+  border-radius: 100px;
+  background: var(--select-number-bg);
+  color: var(--select-number-color);
+}
+
+.chord-select-number-box__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 16px;
+  block-size: 16px;
+  font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--cds-typography-circular-base-text-size-text-50, 12px);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700, 700);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-50, 16px);
+  letter-spacing: 0;
+}
+
+.chord-select-number-box[data-mode="fixed"] {
+  --select-number-bg: var(--cds-system-fixed-color-status-active-primary, #01d5df);
+  --select-number-color: var(--cds-system-fixed-color-text-default-reverse, #000000);
+}
+
+.chord-select-number-box[data-state="selected-99-plus"] .chord-select-number-box__label {
+  min-inline-size: 20px;
+  block-size: 13px;
+  font-size: var(--cds-typography-circular-base-text-size-text-25, 10px);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-25, 13px);
+}
+
+.chord-select-number-box[data-state="unselected"] {
+  --select-number-bg: var(--cds-system-fixed-color-surface-default-200a, #00000033);
+  --select-number-stroke: var(--cds-system-fixed-color-outline-default-300a, #ffffff4d);
+}
+
+.chord-select-number-box[data-state="unselected"] .chord-select-number-box__marker {
+  border-width: 1.5px;
+}
+
+.chord-select-number-box[data-mode="fixed"][data-state="unselected"] {
+  --select-number-stroke: var(--cds-system-fixed-color-icon-300a, #ffffff4d);
+}

@@ -1,0 +1,368 @@
+component:
+  name: "Title Header"
+  description: "화면 안에서 현재 콘텐츠 묶음의 제목과 보조 정보를 표시하는 48px 높이의 헤더 패턴"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "64450:27844"
+  component_set_key: "33261ba4635ef136dd94de771e9ded865a98c6d4"
+  last_synced: "2026-05-09"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Align: ["Left", "Center"]
+
+variants:
+  count: 4
+  formula: "Mode(2) x Align(2)"
+  constraints:
+    - "All Mode and Align combinations are present in live Figma."
+    - "Slot and boolean controls are component properties, not variant axes."
+  registry:
+    - { variant: "Mode=Default, Align=Left", node_id: "64450:28044", key: "d58508050fa6843f5e234d0fe8fa929afe1beb46" }
+    - { variant: "Mode=Fixed, Align=Left", node_id: "68998:22347", key: "ccdadd57d18d51db17d2bbe7a28913ddfacd9a94" }
+    - { variant: "Mode=Default, Align=Center", node_id: "65513:23665", key: "2604a482e1d7a9947c6aa335056cd6dd05907169" }
+    - { variant: "Mode=Fixed, Align=Center", node_id: "65513:23700", key: "93d1df27e4c3ebf83da13fab48c626ae0767b9b6" }
+
+props:
+  Marquee:
+    figma_property: "Marquee#61750:0"
+    type: "boolean"
+    default: "false"
+    description: "Controls the marquee area for overflowing title content."
+  Leading:
+    figma_property: "Leading#65431:2"
+    type: "boolean"
+    default: "true"
+    description: "Shows the leading area. Left align uses avatar-group leading; Center align uses icon leading."
+  Trailing:
+    figma_property: "Trailing#68951:9"
+    type: "boolean"
+    default: "true"
+    description: "Shows the trailing text and icon area."
+  Title_Multiple:
+    figma_property: "[Title] Multiple #62347:0"
+    type: "boolean"
+    default: "false"
+    description: "Switches from a single title to the Multiple Title slot."
+  SubTitle:
+    figma_property: "[Sub] Title#65491:0"
+    type: "boolean"
+    default: "true"
+    description: "Shows the subtitle line when supporting information is needed."
+  SubTitle_Multiple:
+    figma_property: "[Sub] Multiple #62347:37"
+    type: "boolean"
+    default: "false"
+    description: "Switches from a single subtitle to the Multiple SubTitle slot."
+  Title_Badge:
+    figma_property: "[Title] Badge#65387:0"
+    type: "boolean"
+    default: "true"
+    description: "Shows the title badge group."
+  Badge_1:
+    figma_property: "Badge_1#62336:141"
+    type: "boolean"
+    default: "true"
+    description: "Shows the first title badge/icon slot."
+  Badge_2:
+    figma_property: "Badge_2#62336:170"
+    type: "boolean"
+    default: "true"
+    description: "Shows the second title badge/icon slot."
+  Sub_Badge:
+    figma_property: "[Sub] Badge#62336:199"
+    type: "boolean"
+    default: "true"
+    description: "Shows the subtitle badge/icon slot."
+  Multiple_Title:
+    figma_property: "Multiple Title#74501:0"
+    type: "slot"
+    default: "empty slot"
+    description: "Slot for replacing the title area when Title_Multiple is enabled."
+  Multiple_SubTitle:
+    figma_property: "Multiple SubTitle#74501:15"
+    type: "slot"
+    default: "empty slot"
+    description: "Slot for replacing the subtitle area when SubTitle_Multiple is enabled."
+  Multiple_Title2:
+    figma_property: "Multiple Title2#81815:0"
+    type: "slot"
+    default: "empty slot"
+    description: "Additional title slot exposed by the live component for updated multiple-title configurations."
+  Multiple:
+    figma_property: "Multiple#76618:10"
+    type: "slot"
+    default: "empty slot"
+    description: "Slot for multiple metadata/tag content."
+  Multiple2:
+    figma_property: "Multiple2#81815:5"
+    type: "slot"
+    default: "empty slot"
+    description: "Additional metadata/tag slot exposed by the live component for updated multiple-content configurations."
+  Multiple_Sub_Title:
+    figma_property: "[Multiple]Sub Title#76618:25"
+    type: "boolean"
+    default: "true"
+    description: "Shows subtitle content inside the Multiple area."
+  Multiple_Tag_Hide_From_Artist:
+    figma_property: "[Multiple][Tag] Hide From Artist#75459:0"
+    type: "boolean"
+    default: "true"
+    description: "Shows the Hide from artist tag in the Multiple area."
+  Multiple_Tag_CC:
+    figma_property: "[Multiple][Tag] CC#76618:0"
+    type: "boolean"
+    default: "true"
+    description: "Shows the CC tag in the Multiple area."
+  Multiple_Tag_SDH:
+    figma_property: "[Multiple][Tag] SDH#76618:5"
+    type: "boolean"
+    default: "true"
+    description: "Shows the SDH tag in the Multiple area."
+  Multiple_Tag_Membership:
+    figma_property: "[Multiple][Tag] Membership#76618:20"
+    type: "boolean"
+    default: "true"
+    description: "Shows the Membership tag in the Multiple area."
+
+tokens:
+  title_text_default:
+    part: "Title"
+    role: "text fill"
+    applies_to: "Mode=Default"
+    token: "system/color/text/default"
+  title_text_fixed:
+    part: "Title"
+    role: "text fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/text/default"
+  title_typography:
+    part: "Title"
+    role: "text style"
+    applies_to: "All Mode and Align values"
+    token: "body-m/system-700"
+  subtitle_text_default:
+    part: "SubTitle"
+    role: "text fill"
+    applies_to: "Mode=Default"
+    token: "system/color/text/gray-500"
+  subtitle_text_fixed:
+    part: "SubTitle"
+    role: "text fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/text/gray-500"
+  subtitle_typography:
+    part: "SubTitle"
+    role: "text style"
+    applies_to: "All Mode and Align values"
+    token: "caption-m/system-400"
+  trailing_detail_default:
+    part: "Trailing detail"
+    role: "text fill"
+    applies_to: "Mode=Default"
+    token: "system/color/text/default"
+  trailing_detail_fixed:
+    part: "Trailing detail"
+    role: "text fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/text/default"
+  trailing_detail_typography:
+    part: "Trailing detail"
+    role: "text style"
+    applies_to: "All Mode and Align values"
+    token: "body-xs/system-500"
+  live_badge_text:
+    part: "LIVE badge text"
+    role: "text fill"
+    applies_to: "Visible LIVE label in left variants"
+    token: "system/fixed_color/text/default"
+  metadata_tag_text:
+    part: "Multiple tags"
+    role: "text fill"
+    applies_to: "Hide from artist, CC, SDH tags in live samples"
+    token: "system/color/text/gray-500"
+  metadata_tag_typography:
+    part: "Multiple tags"
+    role: "text style"
+    applies_to: "Visible metadata tag labels"
+    token: "caption-xs/system-700"
+
+
+typography:
+  caption_xs_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-xs/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 2 text nodes."
+  body_m_system_700:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-m/system-700"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Bold; 10 text nodes."
+  caption_m_system_400:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "caption-m/system-400"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Regular; 4 text nodes."
+  body_xs_system_500:
+    font_family: "WeGothicSans"
+    classification: "system-alias"
+    system_fallback: "Apple SD Gothic Neo / SF Pro"
+    token_fallback: "body-xs/system-500"
+    note: "WeGothicSans is treated as a macOS rendering alias per workflow schema. Live typography-only audit 2026-05-09; Figma font style Medium; 4 text nodes."
+
+assets:
+  leading_avatar:
+    part: "Leading"
+    role: "avatar"
+    source: "[V2] Avatar through Avatar Group"
+    component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
+    applies_to: "Align=Left, Leading=true"
+    semantic_rule: "Use the nested Avatar component only when the leading area identifies a subject."
+  leading_center_icon:
+    part: "Leading"
+    role: "icon"
+    source: "icon_area through atoms / leading_Center"
+    component_set_key: "0befc61ab89f810594677109814548f8cde49928"
+    applies_to: "Align=Center, Leading=true"
+    semantic_rule: "Use the DS icon_area component for the center leading icon slot."
+  badge_icons:
+    part: "Title and subtitle badges"
+    role: "icon"
+    source: "icon_area, size=xxsmall(12), em=On"
+    component_set_key: "0befc61ab89f810594677109814548f8cde49928"
+    applies_to: "Badge_1, Badge_2, Title_Badge, and Sub_Badge controls"
+    semantic_rule: "Badge icon slots remain icon_area instances and should not be replaced by inline text."
+  metadata_tags:
+    part: "Multiple tags"
+    role: "tag"
+    source: "Tag and Tag / elements / Tint_Small"
+    component_set_key: "0da6722ea2b5a431721cd72b9bb00df3367edc1c"
+    applies_to: "Multiple tag boolean controls"
+    semantic_rule: "Use DS Tag components for metadata tags."
+
+composition:
+  uses:
+    - component_set: "Avatar Group (디자인 개별 사용금지)"
+      component_set_key: "6ad2e4b184997b01a86fa87e803387200dcca643"
+      purpose: "Leading avatar grouping for Align=Left."
+      consumer_contract: "Leading=true can expose avatar-based identification in left title headers."
+    - component_set: "[V2] Avatar"
+      component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
+      purpose: "Avatar visual inside the left leading area."
+      consumer_contract: "Avatar appearance is owned by the Avatar component."
+    - component_set: "Tag"
+      component_set_key: "0da6722ea2b5a431721cd72b9bb00df3367edc1c"
+      purpose: "Metadata tags in the Multiple area."
+      consumer_contract: "Multiple tag boolean controls show or hide DS Tag instances."
+    - component_set: "atoms / trailing"
+      component_set_key: "e347d6dfee99c5f46be383a6f2fe056bffb8c30f"
+      purpose: "Trailing text and icon group."
+      consumer_contract: "Trailing=true exposes the trailing group without copying its child spec into Title Header."
+
+layout:
+  component_size: "393x48px for all four live variants"
+  height: "48px fixed"
+  root:
+    layout: "horizontal"
+    vertical_alignment: "center"
+    background: "no root fill in live readback"
+  left_align:
+    padding: "0px top, 16px right, 0px bottom, 16px left"
+    root_gap: "12px"
+    content_frame: "Img+Text 361x48px"
+    content_gap: "8px"
+    leading_sample: "38x46px avatar-group area"
+    text_area: "243x48px vertical frame"
+    trailing_sample: "64x20px"
+    text_alignment: "left"
+  center_align:
+    padding: "0px top, 16px right, 0px bottom, 8px left"
+    root_gap: "8px"
+    leading_sample: "40x40px icon area"
+    text_area: "393x48px centered title frame"
+    trailing_sample: "64x20px"
+    title_alignment: "center for primary title; nested multiple title samples remain left-aligned"
+  title:
+    max_lines: 1
+    sample_size: "32x22px"
+  subtitle:
+    sample_size: "51x17px"
+  part_spacing:
+    "Leading__to__Text_Area":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: false
+      default:
+        token: "component geometry"
+        value: "8px in left content frame; center layout uses root positioning"
+      variants: []
+    "Text_Area__to__Trailing":
+      variation_checked_by:
+        axes: true
+        props: true
+        states: false
+      default:
+        token: "component geometry"
+        value: "12px root gap in left variants; 8px root gap in center variants"
+      variants: []
+
+implementation_order:
+  - "Resolve Mode first because text and detail tokens switch between semantic and fixed token families."
+  - "Resolve Align next because Left and Center use different padding, leading structure, and title alignment."
+  - "Apply the fixed 48px height before optional content so the header does not resize."
+  - "Apply Leading, Trailing, title, subtitle, badge, and Multiple controls as visibility or slot composition only."
+  - "Use nested Avatar, Tag, and trailing components without copying their child specs into Title Header."
+  - "Keep title content to one line and avoid navigation behavior."
+
+implementation_coverage:
+  axes: "Implement all four Mode x Align variants."
+  props: "Include live boolean and slot component properties for marquee, leading, trailing, badges, title/subtitle multiple states, and metadata tags."
+  assets: "Avatar, badge/icon slots, Tag metadata, and trailing group are captured as nested DS-backed visuals."
+  layout: "48px fixed height, 393px live width, align-specific padding, gaps, text alignment, and major child frame sizes are reflected."
+  exclusions: "Do not treat Title Header as Top Navigation, page navigation, multiline body copy, or a fixed screen header."
+
+rules:
+  do:
+    - "Use Title Header to show the current content group's title and supporting information inside a screen."
+    - "Choose Left or Center alignment based on the information hierarchy."
+    - "Keep the height fixed at 48px."
+    - "Keep short text titles to one line."
+    - "Use text button, dropdown, or trailing support only when a simple secondary action is needed."
+    - "Use avatar with text only when it helps identify a subject."
+  dont:
+    - "Do not mix Left and Center alignment arbitrarily in the same screen."
+    - "Do not put two or more title lines into Title Header."
+    - "Do not use Title Header for page navigation or complex navigation structure."
+    - "Do not add multiple complex actions that exceed the header role."
+    - "Do not use Title Header as a fixed top navigation area."
+    - "Do not add avatar decoration without identification meaning."
+
+spec_notes:
+  source:
+    variant_registry: "refs/figma-component-keys/variant-keys/title-header.md"
+    markitdown: "refs/markitdown-output/markitdown-title-header.md"
+    figma_live_read: "use_figma read-only extraction on 2026-05-08"
+  usage:
+    - "Title Header is a pattern for title and information inside the current screen."
+    - "It differs from Top Navigation because it does not provide page movement."
+
+source_gaps:
+  - part: "Membership and gradient mask internals"
+    field: "assets"
+    reason: "Live readback confirmed vector/img_integratedmembership_gradient and Gradient_Mask instances, but usage guidance does not define them as independent consumer-facing component contracts."
+  - part: "Fixed Left nested subtitle"
+    field: "tokens"
+    reason: "Live readback found both fixed_color and semantic gray-500 subtitle tokens inside the Fixed Left variant due to nested multiple-slot content; the main subtitle token mapping records the fixed token while this mixed nested content is noted here."
+  - part: "Multiple slots"
+    field: "slot content"
+    reason: "Live Figma exposes SLOT properties with empty preferredValues, so this draft records slot existence and confirmed visible sample content without inventing slot value constraints."
+
+verification:
+  figma_live_read:
+    - "Component set key and all four variant keys were confirmed by read-only use_figma extraction."
+    - "Mode and Align axes plus live boolean and slot component properties were confirmed from componentPropertyDefinitions, including Multiple Title2 and Multiple2 slot properties."
+    - "Variant sizes, padding, gaps, text styles, text tokens, major child frames, and nested DS component set references were read from live Figma."

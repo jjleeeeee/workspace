@@ -1,0 +1,16 @@
+@import "./generated/tokens.css";
+
+:root {
+  color-scheme: light;
+  background: var(--cds-system-color-background-100a, #ffffff);
+  color: var(--cds-system-color-text-default, #000000);
+  font-family: var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}

@@ -1,0 +1,139 @@
+component:
+  name: "Badge Dot"
+  figma_name: "Badge_Dot"
+  description: "탐색 항목이나 아이콘에 알림 또는 상태가 있음을 점 형태로 표시하는 배지 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "8451:112783"
+  component_set_key: "d1ea898a9e908e7470a7518abae5b45c18e0a58a"
+  last_synced: "2026-05-04"
+
+axes:
+  Mode: ["Default", "Fixed"]
+  Size: ["Small", "Medium", "Large"]
+  Outline: ["OFF", "ON"]
+
+variants:
+  count: 12
+  formula: "Mode(2) x Size(3) x Outline(2)"
+  constraints:
+    - "All Mode, Size, and Outline combinations are valid."
+  registry:
+    - { variant: "Mode=Default, Size=Small, Outline=OFF", node_id: "8451:112785", key: "217ddbac1640af249b0ef5ec3e152903ab7dfc9a" }
+    - { variant: "Mode=Default, Size=Small, Outline=ON", node_id: "8451:112788", key: "b9e39b0b98449f4dfe6e1e3ce0b3933e3b2020da" }
+    - { variant: "Mode=Default, Size=Medium, Outline=ON", node_id: "8451:112782", key: "acb52ad5a20fb5b5662345777797a318a8b430c7" }
+    - { variant: "Mode=Default, Size=Large, Outline=ON", node_id: "35125:15515", key: "580680cf5f39ab38287ec37c218b65b22cb522b6" }
+    - { variant: "Mode=Default, Size=Medium, Outline=OFF", node_id: "8451:112787", key: "ab084d235fb770a1e5d8c5a3ab63bb04bf984fbb" }
+    - { variant: "Mode=Default, Size=Large, Outline=OFF", node_id: "35125:15514", key: "26e4ca088e4f0265f1a5cc378d35a2fc0fc19550" }
+    - { variant: "Mode=Fixed, Size=Small, Outline=OFF", node_id: "8934:10557", key: "74e5596d13ef0b0f6cc868a532e5d47048551fbd" }
+    - { variant: "Mode=Fixed, Size=Small, Outline=ON", node_id: "8934:10559", key: "e37638e00c831b2eef05afe77b7413828f1d79a8" }
+    - { variant: "Mode=Fixed, Size=Medium, Outline=ON", node_id: "8934:10562", key: "b623f5ca7e392b7622a76b83c51e348225e14030" }
+    - { variant: "Mode=Fixed, Size=Medium, Outline=OFF", node_id: "8934:10563", key: "4fbc4fdc66b5e9cccbc26e363f3ca87c4564441d" }
+    - { variant: "Mode=Fixed, Size=Large, Outline=ON", node_id: "51377:4756", key: "1e2b63293342b0f6e659ec8518c9fb1132b23954" }
+    - { variant: "Mode=Fixed, Size=Large, Outline=OFF", node_id: "51377:4755", key: "8fc9d4b0a7627904d861afc06cf04c4291a2879d" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default adapts to OS theme; Fixed stays in fixed dark-theme colors."
+  Size:
+    type: '"Small" | "Medium" | "Large"'
+    default: '"Medium"'
+    description: "Controls Dot Badge diameter."
+  Outline:
+    type: '"OFF" | "ON"'
+    default: '"ON"'
+    description: "Controls whether the badge has a reverse outline stroke."
+
+tokens:
+  dot_fill_default:
+    part: "Badge_Dot"
+    role: "fill"
+    applies_to: "Mode=Default"
+    token: "system/color/status/danger-red"
+  dot_fill_fixed:
+    part: "Badge_Dot"
+    role: "fill"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/status/danger-red"
+  outline_default:
+    part: "Badge_Dot"
+    role: "stroke"
+    applies_to: "Mode=Default, Outline=ON"
+    token: "system/color/outline/default-reverse"
+  outline_fixed:
+    part: "Badge_Dot"
+    role: "stroke"
+    applies_to: "Mode=Fixed, Outline=ON"
+    token: "system/fixed_color/outline/default-reverse"
+  radius:
+    part: "Badge_Dot"
+    role: "corner radius"
+    token: "pill / 100"
+
+assets:
+  dot_shape:
+    part: "Badge_Dot"
+    source_node: "component root ellipse-like shape"
+    semantic_rule: "Render as a circular dot with pill radius; do not replace with text content."
+
+layout:
+  off_size:
+    Small: "4x4"
+    Medium: "6x6"
+    Large: "8x8"
+  on_size:
+    Small: "6x6"
+    Medium: "8x8"
+    Large: "12x12"
+  stroke_weight:
+    Small_ON: 1
+    Medium_ON: 1
+    Large_ON: 2
+  radius: 100
+
+interaction:
+  notification:
+    behavior: "Use Dot Badge when only presence of an update or status matters, not the exact count."
+
+implementation_order:
+  - "Select Mode, Size, and Outline variant."
+  - "Apply mode-specific danger-red fill token."
+  - "Use OFF sizes for badges without outline and ON sizes for badges with outline."
+  - "When Outline=ON, apply mode-specific default-reverse outline token."
+  - "Use 1px outline for Small and Medium; use 2px outline for Large."
+  - "Render as a circular shape with 100 radius."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+    - "Size"
+    - "Outline"
+  props:
+    - "Mode"
+    - "Size"
+    - "Outline"
+  assets:
+    - "dot_shape"
+  layout:
+    - "OFF sizes 4/6/8"
+    - "ON sizes 6/8/12"
+    - "1px and 2px outline rules"
+  exclusions:
+    - "This workflow does not create a derived badge-dot.md file."
+    - "Do/Don't product guidance is not present in markitdown-badge.md."
+
+rules:
+  do:
+    - "Use Dot Badge for notification or status presence on navigation items and icons."
+    - "Use Outline=ON when the badge needs separation from the background or icon surface."
+    - "Keep the badge circular and use the provided size variants."
+  dont:
+    - "Do not use Dot Badge when an exact count or New label is required."
+    - "Do not render Dot Badge as text."
+    - "Do not invent sizes outside Small, Medium, and Large."
+
+spec_notes:
+  source:
+    - "Figma component metadata and compact Plugin API extraction from node 8451:112783."
+    - "Local usage reference: refs/markitdown-output/markitdown-badge.md."

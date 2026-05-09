@@ -1,0 +1,302 @@
+{
+  "$schema": "cds-ds/dsl/v2",
+  "schemaVersion": "2.0.0",
+  "metadata": {
+    "generatedAt": "2026-04-28T00:00:00+09:00",
+    "generator": "cds-ds@2.0.0",
+    "sourceFile": {
+      "fileKey": "PNCopTVjqi100eHucCW9bI",
+      "fileName": "글로벌 홈",
+      "nodeId": "15730:43643"
+    }
+  },
+  "coordinateSystem": { "unit": "px", "origin": "topLeft", "scope": "relativeToParent", "scale": 1.0 },
+  "themes": ["light", "dark"],
+  "platform": "ios",
+  "dsManifest": {
+    "platform": "ios",
+    "tokens": ["tokens.color.v1.0", "tokens.size.v1.0", "tokens.typography.v1.0"],
+    "components": ["listItem", "avatar"]
+  },
+  "nodes": [
+    {
+      "id": "common-slot",
+      "type": "stack",
+      "name": "Common_Slot",
+      "source": { "figmaNodeId": "15730:43643" },
+      "layout": {
+        "kind": "stack",
+        "axis": "vertical",
+        "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+        "spacing": 4,
+        "alignment": { "main": "start", "cross": "center" }
+      },
+      "children": [
+        {
+          "id": "section-header",
+          "type": "stack",
+          "name": "Main Header",
+          "source": { "figmaNodeId": "I15730:43643;1202:87091" },
+          "layout": {
+            "kind": "stack",
+            "axis": "horizontal",
+            "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 48 } },
+            "padding": { "top": 0, "right": 16, "bottom": 0, "left": 16 },
+            "alignment": { "main": "start", "cross": "center" }
+          },
+          "children": [
+            {
+              "id": "section-title",
+              "type": "text",
+              "name": "section-title",
+              "source": { "figmaNodeId": "I15730:43643;1202:87095" },
+              "layout": { "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } } },
+              "text": {
+                "value": "놓치지 말아야 할 소식",
+                "textStyle": "textStyle:headline-s/system-800",
+                "color": "token:system.color.text.default",
+                "maxLines": 1,
+                "overflow": "ellipsis",
+                "textAlign": "left"
+              }
+            }
+          ]
+        },
+        {
+          "id": "card-wrapper",
+          "type": "stack",
+          "name": "Card Wrapper",
+          "source": { "figmaNodeId": "I15730:43643;1202:87111" },
+          "layout": {
+            "kind": "stack",
+            "axis": "horizontal",
+            "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+            "padding": { "top": 0, "right": 10, "bottom": 0, "left": 10 },
+            "alignment": { "main": "center", "cross": "stretch" }
+          },
+          "children": [
+            {
+              "id": "card",
+              "type": "stack",
+              "name": "Card",
+              "source": { "figmaNodeId": "I15730:43643;1202:87112" },
+              "layout": {
+                "kind": "stack",
+                "axis": "vertical",
+                "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+                "spacing": 0,
+                "overflow": "hidden"
+              },
+              "style": {
+                "fills": [{ "type": "solid", "color": "token:system.color.surface.default-3" }],
+                "cornerRadius": 16,
+                "effects": [
+                  {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "offset": { "x": 0, "y": 6 },
+                    "spread": 0,
+                    "blur": 28,
+                    "color": "hardcoded:rgba(0,0,0,0.1)"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "thumbnail",
+                  "type": "image",
+                  "name": "[V2] Thumbnail",
+                  "source": { "figmaNodeId": "I15730:43643;1202:87115;1202:75806" },
+                  "layout": {
+                    "kind": "box",
+                    "size": { "width": { "mode": "fill" }, "height": { "mode": "fill" } },
+                    "constraints": { "aspectRatio": 1.0, "maxWidth": 420, "maxHeight": 420 }
+                  },
+                  "asset": { "kind": "image", "alt": "아티스트 썸네일", "format": "jpg" }
+                },
+                {
+                  "id": "card-header",
+                  "type": "stack",
+                  "name": "Bottom Header",
+                  "source": { "figmaNodeId": "I15730:43643;1202:87116" },
+                  "layout": {
+                    "kind": "stack",
+                    "axis": "horizontal",
+                    "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 48 } },
+                    "spacing": 8,
+                    "padding": { "top": 8, "right": 16, "bottom": 8, "left": 16 },
+                    "alignment": { "main": "start", "cross": "center" }
+                  },
+                  "children": [
+                    {
+                      "id": "avatar",
+                      "type": "component",
+                      "name": "[V2] Avatar",
+                      "source": { "figmaNodeId": "I15730:43643;1202:87117;76502:9617;73675:33592;73587:6511" },
+                      "catalog": {
+                        "id": "avatar",
+                        "props": { "size": "small" },
+                        "state": "default"
+                      },
+                      "layout": {
+                        "size": { "width": { "mode": "fixed", "value": 32 }, "height": { "mode": "fixed", "value": 32 } }
+                      },
+                      "style": { "cornerRadius": 999 }
+                    },
+                    {
+                      "id": "text-stack",
+                      "type": "stack",
+                      "name": "Text_Area",
+                      "source": { "figmaNodeId": "I15730:43643;1202:87117;64450:28047" },
+                      "layout": {
+                        "kind": "stack",
+                        "axis": "vertical",
+                        "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+                        "spacing": 0
+                      },
+                      "children": [
+                        {
+                          "id": "artist-name",
+                          "type": "text",
+                          "name": "artist-name",
+                          "source": { "figmaNodeId": "I15730:43643;1202:87117;65403:49618" },
+                          "text": {
+                            "value": "TOMMROW X TOGETHER",
+                            "textStyle": "textStyle:body-m/system-700",
+                            "color": "token:system.color.text.default",
+                            "maxLines": 1,
+                            "overflow": "ellipsis"
+                          }
+                        },
+                        {
+                          "id": "artist-subtitle",
+                          "type": "text",
+                          "name": "artist-subtitle",
+                          "source": { "figmaNodeId": "I15730:43643;1202:87117;65403:49626" },
+                          "text": {
+                            "value": "추천포스트",
+                            "textStyle": "textStyle:caption-m/system-400",
+                            "color": "token:system.color.text.gray-500",
+                            "maxLines": 1,
+                            "overflow": "ellipsis"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "id": "more-icon",
+                      "type": "icon",
+                      "name": "more-button",
+                      "source": { "figmaNodeId": "I15730:43643;1202:87117;68998:22692" },
+                      "asset": {
+                        "kind": "icon",
+                        "name": "ic_more_vertical_medium",
+                        "ref": "icon/24/em/ic_more_vertical_medium",
+                        "format": "svg",
+                        "tint": "token:system.color.text.default"
+                      },
+                      "layout": {
+                        "size": { "width": { "mode": "fixed", "value": 20 }, "height": { "mode": "fixed", "value": 20 } }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "card-body",
+                  "type": "stack",
+                  "name": "Context",
+                  "source": { "figmaNodeId": "I15730:43643;1202:87118" },
+                  "layout": {
+                    "kind": "stack",
+                    "axis": "vertical",
+                    "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+                    "spacing": 0,
+                    "padding": { "top": 0, "right": 16, "bottom": 16, "left": 16 }
+                  },
+                  "children": [
+                    {
+                      "id": "body-text",
+                      "type": "text",
+                      "name": "body-text",
+                      "source": { "figmaNodeId": "I15730:43643;1202:87120" },
+                      "layout": { "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } } },
+                      "text": {
+                        "value": "",
+                        "textStyle": "textStyle:body-s/system-400",
+                        "color": "token:system.color.text.default",
+                        "overflow": "ellipsis"
+                      }
+                    },
+                    {
+                      "id": "more-link",
+                      "type": "text",
+                      "name": "more-link",
+                      "source": { "figmaNodeId": "I15730:43643;1202:87123" },
+                      "text": {
+                        "value": "More",
+                        "textStyle": "textStyle:body-s/system-700",
+                        "color": "token:system.color.text.primary",
+                        "textAlign": "right"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "card-footer",
+                  "type": "stack",
+                  "name": "Footer",
+                  "source": { "figmaNodeId": "I15730:43643;1202:87126" },
+                  "layout": {
+                    "kind": "stack",
+                    "axis": "vertical",
+                    "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 56 } },
+                    "overflow": "hidden"
+                  },
+                  "children": [
+                    {
+                      "id": "divider",
+                      "type": "shape",
+                      "name": "[V1] Divider",
+                      "source": { "figmaNodeId": "I15730:43643;1202:87126;166:42070" },
+                      "layout": {
+                        "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 1 } }
+                      },
+                      "style": {
+                        "fills": [{ "type": "solid", "color": "token:system.color.line.default" }]
+                      }
+                    },
+                    {
+                      "id": "list-item",
+                      "type": "component",
+                      "name": "[V2] List_Item_Native",
+                      "source": { "figmaNodeId": "I15730:43643;1202:87126;121:53455" },
+                      "catalog": {
+                        "id": "listItem",
+                        "variant": { "mode": "Default", "size": "Medium", "status": "Default" },
+                        "props": {
+                          "showSmallLeadingOptional": true,
+                          "showMediumLeadingOptional": false,
+                          "showDividerOptional": false,
+                          "showTrailingOptional": true
+                        },
+                        "slots": {
+                          "title": { "text": "MOA 멤버십 선예매 사전인증하기" },
+                          "trailing": { "ref": "chevron" }
+                        },
+                        "state": "default"
+                      },
+                      "layout": {
+                        "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 56 } },
+                        "padding": { "top": 0, "right": 16, "bottom": 0, "left": 16 }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

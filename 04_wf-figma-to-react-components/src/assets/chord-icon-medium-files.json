@@ -1,0 +1,1713 @@
+{
+  "source": "../design-cds-docs/01_chord-ds/icons/24px",
+  "target": "src/assets/icons",
+  "rule": "Only SVG assets whose target filename contains _medium are synced. Existing target files are preserved.",
+  "excludedSourceFiles": [
+    "ic_add_to_community_special_dark.svg",
+    "ic_add_to_community_special_light.svg"
+  ],
+  "count": 340,
+  "copiedCount": 328,
+  "files": [
+    {
+      "copied": true,
+      "sourceFileName": "ic_LP_heart.svg",
+      "targetFileName": "ic_LP_heart_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_LP_heart_disabled.svg",
+      "targetFileName": "ic_LP_heart_disabled_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_add.svg",
+      "targetFileName": "ic_add_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_add_circle.svg",
+      "targetFileName": "ic_add_circle_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_add_circle_fill_gray.svg",
+      "targetFileName": "ic_add_circle_fill_gray_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_add_member.svg",
+      "targetFileName": "ic_add_member_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_age19.svg",
+      "targetFileName": "ic_age19_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_ai.svg",
+      "targetFileName": "ic_ai_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_ai_fill.svg",
+      "targetFileName": "ic_ai_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_ai_special.svg",
+      "targetFileName": "ic_ai_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_airplay.svg",
+      "targetFileName": "ic_airplay_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_airplay_fill.svg",
+      "targetFileName": "ic_airplay_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_applemusic_medium_dark.svg",
+      "targetFileName": "ic_applemusic_medium_dark.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_applemusic_medium_light.svg",
+      "targetFileName": "ic_applemusic_medium_light.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_arrow_down.svg",
+      "targetFileName": "ic_arrow_down_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_arrow_down_fill.svg",
+      "targetFileName": "ic_arrow_down_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_arrow_down_fill_fold.svg",
+      "targetFileName": "ic_arrow_down_fill_fold_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_arrow_down_fold.svg",
+      "targetFileName": "ic_arrow_down_fold_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_arrow_en.svg",
+      "targetFileName": "ic_arrow_en_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_arrow_left.svg",
+      "targetFileName": "ic_arrow_left_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_arrow_left_shadow.svg",
+      "targetFileName": "ic_arrow_left_shadow_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_arrow_right.svg",
+      "targetFileName": "ic_arrow_right_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_arrow_right_en.svg",
+      "targetFileName": "ic_arrow_right_en_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_arrow_right_shadow.svg",
+      "targetFileName": "ic_arrow_right_shadow_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_artist_chat_medium.svg",
+      "targetFileName": "ic_artist_chat_medium_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_at_sign.svg",
+      "targetFileName": "ic_at_sign_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_attactedfile_fill.svg",
+      "targetFileName": "ic_attactedfile_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_auto_translate.svg",
+      "targetFileName": "ic_auto_translate_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_backward_fill.svg",
+      "targetFileName": "ic_backward_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_badge.svg",
+      "targetFileName": "ic_badge_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_badge_fc_membership.svg",
+      "targetFileName": "ic_badge_fc_membership_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_badge_media_lock_special.svg",
+      "targetFileName": "ic_badge_media_lock_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_badge_media_unlock_special.svg",
+      "targetFileName": "ic_badge_media_unlock_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_badge_special.svg",
+      "targetFileName": "ic_badge_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_benefit_fill.svg",
+      "targetFileName": "ic_benefit_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_birthdayhat.svg",
+      "targetFileName": "ic_birthdayhat_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_block.svg",
+      "targetFileName": "ic_block_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_bookmark.svg",
+      "targetFileName": "ic_bookmark_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_bookmark_fill.svg",
+      "targetFileName": "ic_bookmark_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_bookmark_fill_cancel.svg",
+      "targetFileName": "ic_bookmark_fill_cancel_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_bookmark_special.svg",
+      "targetFileName": "ic_bookmark_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_btn_list_light_stick.svg",
+      "targetFileName": "ic_btn_list_light_stick_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_btn_list_livechat.svg",
+      "targetFileName": "ic_btn_list_livechat_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_btn_list_livechat_fill.svg",
+      "targetFileName": "ic_btn_list_livechat_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_cake_fill.svg",
+      "targetFileName": "ic_cake_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_calendar.svg",
+      "targetFileName": "ic_calendar_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_calendar_fill.svg",
+      "targetFileName": "ic_calendar_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_camera.svg",
+      "targetFileName": "ic_camera_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_camera_fill.svg",
+      "targetFileName": "ic_camera_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_caption.svg",
+      "targetFileName": "ic_caption_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_caption_fill.svg",
+      "targetFileName": "ic_caption_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_cart.svg",
+      "targetFileName": "ic_cart_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_chain_link.svg",
+      "targetFileName": "ic_chain_link_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_chart.svg",
+      "targetFileName": "ic_chart_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_chat_add.svg",
+      "targetFileName": "ic_chat_add_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_chat_language.svg",
+      "targetFileName": "ic_chat_language_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_chat_off.svg",
+      "targetFileName": "ic_chat_off_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_check.svg",
+      "targetFileName": "ic_check_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_check_mark.svg",
+      "targetFileName": "ic_check_mark_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_check_mark_fill.svg",
+      "targetFileName": "ic_check_mark_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_chromecast.svg",
+      "targetFileName": "ic_chromecast_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_chromecast_fill.svg",
+      "targetFileName": "ic_chromecast_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_clap.svg",
+      "targetFileName": "ic_clap_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_close.svg",
+      "targetFileName": "ic_close_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_close_shadow.svg",
+      "targetFileName": "ic_close_shadow_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_club_benefit_unlimited.svg",
+      "targetFileName": "ic_club_benefit_unlimited_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_collection.svg",
+      "targetFileName": "ic_collection_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_collection_settings.svg",
+      "targetFileName": "ic_collection_settings_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_comment.svg",
+      "targetFileName": "ic_comment_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_concert.svg",
+      "targetFileName": "ic_concert_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_copy.svg",
+      "targetFileName": "ic_copy_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_coupon_box_special.svg",
+      "targetFileName": "ic_coupon_box_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_creditcard_fill.svg",
+      "targetFileName": "ic_creditcard_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_dark_theme.svg",
+      "targetFileName": "ic_dark_theme_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_delete.svg",
+      "targetFileName": "ic_delete_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_delete_fill_red.svg",
+      "targetFileName": "ic_delete_fill_red_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_delivery_box.svg",
+      "targetFileName": "ic_delivery_box_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_delivery_done.svg",
+      "targetFileName": "ic_delivery_done_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_digital_code_special.svg",
+      "targetFileName": "ic_digital_code_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_digital_membership_gr_circle.svg",
+      "targetFileName": "ic_digital_membership_gr_circle_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_discover.svg",
+      "targetFileName": "ic_discover_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_dolby_fill.svg",
+      "targetFileName": "ic_dolby_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_download.svg",
+      "targetFileName": "ic_download_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_download_shadow.svg",
+      "targetFileName": "ic_download_shadow_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_edit_fill.svg",
+      "targetFileName": "ic_edit_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_equalizer.svg",
+      "targetFileName": "ic_equalizer_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_event_application_details.svg",
+      "targetFileName": "ic_event_application_details_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_export.svg",
+      "targetFileName": "ic_export_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_face_id.svg",
+      "targetFileName": "ic_face_id_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_fanletter.svg",
+      "targetFileName": "ic_fanletter_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_fanletter_ticket.svg",
+      "targetFileName": "ic_fanletter_ticket_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_fanletter_ticket_fill.svg",
+      "targetFileName": "ic_fanletter_ticket_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_fanletter_translation.svg",
+      "targetFileName": "ic_fanletter_translation_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_fanletter_translation_alpha.svg",
+      "targetFileName": "ic_fanletter_translation_alpha_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_fanletter_translation_fill.svg",
+      "targetFileName": "ic_fanletter_translation_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_favorites.svg",
+      "targetFileName": "ic_favorites_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_favorites_fill.svg",
+      "targetFileName": "ic_favorites_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_favorites_fill_off.svg",
+      "targetFileName": "ic_favorites_fill_off_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_favorites_off.svg",
+      "targetFileName": "ic_favorites_off_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_fc_membership_core_gr_hexagon.svg",
+      "targetFileName": "ic_fc_membership_core_gr_hexagon_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_fc_membership_gr_hexagon.svg",
+      "targetFileName": "ic_fc_membership_gr_hexagon_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_feedback.svg",
+      "targetFileName": "ic_feedback_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_filtering.svg",
+      "targetFileName": "ic_filtering_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_flash_off_shadow.svg",
+      "targetFileName": "ic_flash_off_shadow_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_flash_shadow.svg",
+      "targetFileName": "ic_flash_shadow_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_floating_btn_fanletter_fill.svg",
+      "targetFileName": "ic_floating_btn_fanletter_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_floating_btn_momonets_fill.svg",
+      "targetFileName": "ic_floating_btn_momonets_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_floating_btn_startlive_fill.svg",
+      "targetFileName": "ic_floating_btn_startlive_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_forward_fill.svg",
+      "targetFileName": "ic_forward_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gift.svg",
+      "targetFileName": "ic_gift_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_global.svg",
+      "targetFileName": "ic_global_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_discover_disabled.svg",
+      "targetFileName": "ic_gnb_discover_disabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_discover_enabled.svg",
+      "targetFileName": "ic_gnb_discover_enabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_dm_disabled.svg",
+      "targetFileName": "ic_gnb_dm_disabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_dm_enabled.svg",
+      "targetFileName": "ic_gnb_dm_enabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_home_disabled.svg",
+      "targetFileName": "ic_gnb_home_disabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_home_enabled.svg",
+      "targetFileName": "ic_gnb_home_enabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_more_disabled.svg",
+      "targetFileName": "ic_gnb_more_disabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_more_enabled.svg",
+      "targetFileName": "ic_gnb_more_enabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_shop_disabled.svg",
+      "targetFileName": "ic_gnb_shop_disabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_gnb_shop_enabled.svg",
+      "targetFileName": "ic_gnb_shop_enabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_hashtag.svg",
+      "targetFileName": "ic_hashtag_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_black.svg",
+      "targetFileName": "ic_heart_black_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_blue.svg",
+      "targetFileName": "ic_heart_blue_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_green.svg",
+      "targetFileName": "ic_heart_green_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_hotpink.svg",
+      "targetFileName": "ic_heart_hotpink_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_mint.svg",
+      "targetFileName": "ic_heart_mint_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_orange.svg",
+      "targetFileName": "ic_heart_orange_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_pink.svg",
+      "targetFileName": "ic_heart_pink_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_purple.svg",
+      "targetFileName": "ic_heart_purple_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_red.svg",
+      "targetFileName": "ic_heart_red_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_heart_yellow.svg",
+      "targetFileName": "ic_heart_yellow_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_hidden.svg",
+      "targetFileName": "ic_hidden_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_hidden_fill.svg",
+      "targetFileName": "ic_hidden_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_home.svg",
+      "targetFileName": "ic_home_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_host_playlist.svg",
+      "targetFileName": "ic_host_playlist_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_hot.svg",
+      "targetFileName": "ic_hot_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_image_crop.svg",
+      "targetFileName": "ic_image_crop_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_image_edit.svg",
+      "targetFileName": "ic_image_edit_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_infomation_mark.svg",
+      "targetFileName": "ic_infomation_mark_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_infomation_mark_fill.svg",
+      "targetFileName": "ic_infomation_mark_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_item_move.svg",
+      "targetFileName": "ic_item_move_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_jelly_fill_default.svg",
+      "targetFileName": "ic_jelly_fill_default_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_jelly_fill_hover.svg",
+      "targetFileName": "ic_jelly_fill_hover_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_jelly_shop.svg",
+      "targetFileName": "ic_jelly_shop_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_labflask.svg",
+      "targetFileName": "ic_labflask_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_language_fill.svg",
+      "targetFileName": "ic_language_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_leave.svg",
+      "targetFileName": "ic_leave_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_lens.svg",
+      "targetFileName": "ic_lens_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_light_theme.svg",
+      "targetFileName": "ic_light_theme_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_like.svg",
+      "targetFileName": "ic_like_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_like_on.svg",
+      "targetFileName": "ic_like_on_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_like_special.svg",
+      "targetFileName": "ic_like_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_like_translation.svg",
+      "targetFileName": "ic_like_translation_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_like_translation_active.svg",
+      "targetFileName": "ic_like_translation_active_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_link.svg",
+      "targetFileName": "ic_link_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_list.svg",
+      "targetFileName": "ic_list_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_live_like.svg",
+      "targetFileName": "ic_live_like_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_live_notification.svg",
+      "targetFileName": "ic_live_notification_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_loaction_focus.svg",
+      "targetFileName": "ic_loaction_focus_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_loading_circle.svg",
+      "targetFileName": "ic_loading_circle_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_location.svg",
+      "targetFileName": "ic_location_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_location_fill.svg",
+      "targetFileName": "ic_location_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_lock.svg",
+      "targetFileName": "ic_lock_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_lock_fill.svg",
+      "targetFileName": "ic_lock_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_login.svg",
+      "targetFileName": "ic_login_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_logout.svg",
+      "targetFileName": "ic_logout_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_magazine_fill.svg",
+      "targetFileName": "ic_magazine_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_mail.svg",
+      "targetFileName": "ic_mail_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_mail_fill.svg",
+      "targetFileName": "ic_mail_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_media_count_fill.svg",
+      "targetFileName": "ic_media_count_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_media_purchase_history.svg",
+      "targetFileName": "ic_media_purchase_history_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_media_rating_12_special.svg",
+      "targetFileName": "ic_media_rating_12_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_media_rating_15_special.svg",
+      "targetFileName": "ic_media_rating_15_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_media_rating_19_special.svg",
+      "targetFileName": "ic_media_rating_19_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_media_rating_all_special.svg",
+      "targetFileName": "ic_media_rating_all_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_melon_medium__dark.svg",
+      "targetFileName": "ic_melon_medium__dark.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_melon_medium_light.svg",
+      "targetFileName": "ic_melon_medium_light.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_membership.svg",
+      "targetFileName": "ic_membership_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_membership_gr.svg",
+      "targetFileName": "ic_membership_gr_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_menu.svg",
+      "targetFileName": "ic_menu_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_message.svg",
+      "targetFileName": "ic_message_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_message_special.svg",
+      "targetFileName": "ic_message_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_mic_add.svg",
+      "targetFileName": "ic_mic_add_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_mic_add_fill.svg",
+      "targetFileName": "ic_mic_add_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_mic_mute.svg",
+      "targetFileName": "ic_mic_mute_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_mic_off.svg",
+      "targetFileName": "ic_mic_off_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_mic_on.svg",
+      "targetFileName": "ic_mic_on_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_more.svg",
+      "targetFileName": "ic_more_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_more_bookmark_cancel.svg",
+      "targetFileName": "ic_more_bookmark_cancel_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_more_horizon_line.svg",
+      "targetFileName": "ic_more_horizon_line_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_more_status.svg",
+      "targetFileName": "ic_more_status_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_more_vertical.svg",
+      "targetFileName": "ic_more_vertical_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_more_vertical_en.svg",
+      "targetFileName": "ic_more_vertical_en_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_more_vertical_shadow.svg",
+      "targetFileName": "ic_more_vertical_shadow_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_music.svg",
+      "targetFileName": "ic_music_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_music_sync.svg",
+      "targetFileName": "ic_music_sync_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_musical_note.svg",
+      "targetFileName": "ic_musical_note_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_musical_note_fill.svg",
+      "targetFileName": "ic_musical_note_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_network.svg",
+      "targetFileName": "ic_network_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_new.svg",
+      "targetFileName": "ic_new_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_next.svg",
+      "targetFileName": "ic_next_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_notice.svg",
+      "targetFileName": "ic_notice_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_notice_fill.svg",
+      "targetFileName": "ic_notice_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_notice_special.svg",
+      "targetFileName": "ic_notice_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_notification.svg",
+      "targetFileName": "ic_notification_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_notification_check.svg",
+      "targetFileName": "ic_notification_check_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_notification_off.svg",
+      "targetFileName": "ic_notification_off_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_notification_off_fill.svg",
+      "targetFileName": "ic_notification_off_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_notification_setting.svg",
+      "targetFileName": "ic_notification_setting_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_null.svg",
+      "targetFileName": "ic_null_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_null_en.svg",
+      "targetFileName": "ic_null_en_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_off.svg",
+      "targetFileName": "ic_off_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_officialbadge_fill.svg",
+      "targetFileName": "ic_officialbadge_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_order_history.svg",
+      "targetFileName": "ic_order_history_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_overseas.svg",
+      "targetFileName": "ic_overseas_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_overseas_fill.svg",
+      "targetFileName": "ic_overseas_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_party.svg",
+      "targetFileName": "ic_party_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_party_symbol.svg",
+      "targetFileName": "ic_party_symbol_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_party_wave.svg",
+      "targetFileName": "ic_party_wave_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_pause.svg",
+      "targetFileName": "ic_pause_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_pause_fill.svg",
+      "targetFileName": "ic_pause_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_person.svg",
+      "targetFileName": "ic_person_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_phone_call_fill.svg",
+      "targetFileName": "ic_phone_call_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_picture.svg",
+      "targetFileName": "ic_picture_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_picture_special.svg",
+      "targetFileName": "ic_picture_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_pin.svg",
+      "targetFileName": "ic_pin_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_pin_disabled.svg",
+      "targetFileName": "ic_pin_disabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_pin_on.svg",
+      "targetFileName": "ic_pin_on_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_pin_on_disabled.svg",
+      "targetFileName": "ic_pin_on_disabled_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_play.svg",
+      "targetFileName": "ic_play_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_play_fill.svg",
+      "targetFileName": "ic_play_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_play_stroke.svg",
+      "targetFileName": "ic_play_stroke_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_player_fullview.svg",
+      "targetFileName": "ic_player_fullview_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_player_fullview_exit.svg",
+      "targetFileName": "ic_player_fullview_exit_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_player_next.svg",
+      "targetFileName": "ic_player_next_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_player_popupplayer.svg",
+      "targetFileName": "ic_player_popupplayer_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_player_previous.svg",
+      "targetFileName": "ic_player_previous_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_post.svg",
+      "targetFileName": "ic_post_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_pre_order_fill.svg",
+      "targetFileName": "ic_pre_order_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_previous.svg",
+      "targetFileName": "ic_previous_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_profile_edit.svg",
+      "targetFileName": "ic_profile_edit_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_purchase.svg",
+      "targetFileName": "ic_purchase_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_purchase_fill.svg",
+      "targetFileName": "ic_purchase_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_qqmusic.svg",
+      "targetFileName": "ic_qqmusic_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_qr.svg",
+      "targetFileName": "ic_qr_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_qr_gradient.svg",
+      "targetFileName": "ic_qr_gradient_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_quality.svg",
+      "targetFileName": "ic_quality_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_question_mark.svg",
+      "targetFileName": "ic_question_mark_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_question_mark_fill.svg",
+      "targetFileName": "ic_question_mark_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_reaction.svg",
+      "targetFileName": "ic_reaction_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_realtime.svg",
+      "targetFileName": "ic_realtime_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_recent.svg",
+      "targetFileName": "ic_recent_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_recently_media.svg",
+      "targetFileName": "ic_recently_media_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_refresh.svg",
+      "targetFileName": "ic_refresh_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_reload_time.svg",
+      "targetFileName": "ic_reload_time_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_report.svg",
+      "targetFileName": "ic_report_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_rollback_fill.svg",
+      "targetFileName": "ic_rollback_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_saved_video.svg",
+      "targetFileName": "ic_saved_video_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_scroll_to_bottom.svg",
+      "targetFileName": "ic_scroll_to_bottom_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_scroll_to_top.svg",
+      "targetFileName": "ic_scroll_to_top_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_search.svg",
+      "targetFileName": "ic_search_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_search_circle_fill_gray.svg",
+      "targetFileName": "ic_search_circle_fill_gray_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_search_shadow.svg",
+      "targetFileName": "ic_search_shadow_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_send.svg",
+      "targetFileName": "ic_send_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_setting.svg",
+      "targetFileName": "ic_setting_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_setting_fill.svg",
+      "targetFileName": "ic_setting_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_setting_special.svg",
+      "targetFileName": "ic_setting_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_shake.svg",
+      "targetFileName": "ic_shake_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_share.svg",
+      "targetFileName": "ic_share_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_share_shadow.svg",
+      "targetFileName": "ic_share_shadow_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_shipping.svg",
+      "targetFileName": "ic_shipping_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_shop_fill.svg",
+      "targetFileName": "ic_shop_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_shop_fill_default.svg",
+      "targetFileName": "ic_shop_fill_default_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_shopping_bag.svg",
+      "targetFileName": "ic_shopping_bag_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_show.svg",
+      "targetFileName": "ic_show_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_show_fill.svg",
+      "targetFileName": "ic_show_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_shuffle.svg",
+      "targetFileName": "ic_shuffle_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_apple.svg",
+      "targetFileName": "ic_social_apple_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_facebook.svg",
+      "targetFileName": "ic_social_facebook_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_google.svg",
+      "targetFileName": "ic_social_google_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_instagram.svg",
+      "targetFileName": "ic_social_instagram_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_kakao_special.svg",
+      "targetFileName": "ic_social_kakao_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_line_special.svg",
+      "targetFileName": "ic_social_line_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_naver_special.svg",
+      "targetFileName": "ic_social_naver_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_tiktok.svg",
+      "targetFileName": "ic_social_tiktok_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_vlive.svg",
+      "targetFileName": "ic_social_vlive_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_weibo.svg",
+      "targetFileName": "ic_social_weibo_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_whatsapp_special.svg",
+      "targetFileName": "ic_social_whatsapp_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_x.svg",
+      "targetFileName": "ic_social_x_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_social_youtube.svg",
+      "targetFileName": "ic_social_youtube_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_speed.svg",
+      "targetFileName": "ic_speed_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_spot.svg",
+      "targetFileName": "ic_spot_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_spot_special.svg",
+      "targetFileName": "ic_spot_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_spotify_medium_dark.svg",
+      "targetFileName": "ic_spotify_medium_dark.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_spotify_medium_light.svg",
+      "targetFileName": "ic_spotify_medium_light.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_stop_fill_medium_fill.svg",
+      "targetFileName": "ic_stop_fill_medium_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_subtitle_fill.svg",
+      "targetFileName": "ic_subtitle_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_subtitle_size.svg",
+      "targetFileName": "ic_subtitle_size_medium.svg"
+    },
+    {
+      "copied": false,
+      "sourceFileName": "ic_subtract.svg",
+      "targetFileName": "ic_subtract_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_survey_fill.svg",
+      "targetFileName": "ic_survey_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_system_theme.svg",
+      "targetFileName": "ic_system_theme_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_text_special.svg",
+      "targetFileName": "ic_text_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_thumb_down.svg",
+      "targetFileName": "ic_thumb_down_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_thumb_down_fill.svg",
+      "targetFileName": "ic_thumb_down_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_thumb_up.svg",
+      "targetFileName": "ic_thumb_up_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_thumb_up_fill.svg",
+      "targetFileName": "ic_thumb_up_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_thumbnail.svg",
+      "targetFileName": "ic_thumbnail_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_thumbnail_outline.svg",
+      "targetFileName": "ic_thumbnail_outline_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_ticket.svg",
+      "targetFileName": "ic_ticket_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_ticket_fill.svg",
+      "targetFileName": "ic_ticket_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_ticket_special.svg",
+      "targetFileName": "ic_ticket_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_time.svg",
+      "targetFileName": "ic_time_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_translate.svg",
+      "targetFileName": "ic_translate_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_translation.svg",
+      "targetFileName": "ic_translation_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_trash_bucket_fill.svg",
+      "targetFileName": "ic_trash_bucket_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_unable_to_ship.svg",
+      "targetFileName": "ic_unable_to_ship_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_unlock_fill.svg",
+      "targetFileName": "ic_unlock_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_upcoming.svg",
+      "targetFileName": "ic_upcoming_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_user_guest.svg",
+      "targetFileName": "ic_user_guest_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_video.svg",
+      "targetFileName": "ic_video_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_video_special.svg",
+      "targetFileName": "ic_video_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_view.svg",
+      "targetFileName": "ic_view_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_volume_mute_fill.svg",
+      "targetFileName": "ic_volume_mute_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_volume_wave1_fill.svg",
+      "targetFileName": "ic_volume_wave1_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_volume_wave2_fill.svg",
+      "targetFileName": "ic_volume_wave2_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_warning_mark.svg",
+      "targetFileName": "ic_warning_mark_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_warning_mark_fill.svg",
+      "targetFileName": "ic_warning_mark_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_wev_ai.svg",
+      "targetFileName": "ic_wev_ai_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_wev_ai_special.svg",
+      "targetFileName": "ic_wev_ai_special_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_weverse.svg",
+      "targetFileName": "ic_weverse_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_weverse_fill.svg",
+      "targetFileName": "ic_weverse_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_weverse_symbol_fill.svg",
+      "targetFileName": "ic_weverse_symbol_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_weverse_symbol_navy.svg",
+      "targetFileName": "ic_weverse_symbol_navy_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_weverse_symbol_white.svg",
+      "targetFileName": "ic_weverse_symbol_white_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_weverseconcert_fill.svg",
+      "targetFileName": "ic_weverseconcert_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_wideview_fill.svg",
+      "targetFileName": "ic_wideview_fill_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_write_editorder.svg",
+      "targetFileName": "ic_write_editorder_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_zoom_in.svg",
+      "targetFileName": "ic_zoom_in_medium.svg"
+    },
+    {
+      "copied": true,
+      "sourceFileName": "ic_zoom_out.svg",
+      "targetFileName": "ic_zoom_out_medium.svg"
+    }
+  ]
+}

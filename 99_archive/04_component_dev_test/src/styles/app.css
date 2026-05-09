@@ -1,0 +1,50 @@
+.app-shell {
+  display: grid;
+  gap: 32px;
+  min-block-size: 100vh;
+  padding: 48px;
+  background: var(--cds-system-color-background-100a, #ffffff);
+}
+
+.app-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  padding-block-end: 28px;
+  border-bottom: 1px solid var(--cds-system-color-button-outlined-gray, #d9d9de);
+}
+
+.app-hero p {
+  margin: 0 0 8px;
+  color: var(--cds-system-color-text-primary, #00aeb7);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.app-hero h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.app-hero__preview {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--cds-system-color-button-outlined-gray, #d9d9de);
+  border-radius: var(--cds-system-size-radius-box-200, 12px);
+  max-inline-size: 560px;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 24px;
+  }
+
+  .app-hero {
+    grid-template-columns: 1fr;
+  }
+}

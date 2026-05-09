@@ -1,0 +1,100 @@
+.chord-icon-button {
+  --icon-button-fill: var(--cds-system-color-button-default, #00cbd5);
+  --icon-button-bg: var(--icon-button-fill);
+  --icon-button-border: var(--icon-button-fill);
+  --icon-button-color: var(--cds-system-color-text-white-same, #ffffff);
+  --icon-button-size: var(--cds-system-size-button-height-medium, 40px);
+  --icon-button-radius: var(--cds-system-size-radius-box-0, 0px);
+  display: inline-grid;
+  inline-size: var(--icon-button-size);
+  block-size: var(--icon-button-size);
+  place-items: center;
+  border: 1px solid var(--icon-button-border);
+  border-radius: var(--icon-button-radius);
+  background: var(--icon-button-bg);
+  color: var(--icon-button-color);
+  font-family: var(--cds-typography-default-font-family-body, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--icon-button-font-size);
+  line-height: 1;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition:
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease,
+    opacity 0.16s ease;
+}
+
+.chord-icon-button:focus-visible {
+  outline: 2px solid var(--cds-system-color-outline-default, #000000);
+  outline-offset: 2px;
+}
+
+.chord-icon-button:disabled {
+  cursor: not-allowed;
+}
+
+.chord-icon-button[data-mode="fixed"] {
+  --icon-button-fill: var(--cds-system-fixed-color-button-default, var(--cds-system-color-button-default, #00cbd5));
+}
+
+.chord-icon-button[data-button-color="black"] {
+  --icon-button-fill: var(--cds-system-color-button-black, #000000);
+}
+
+.chord-icon-button[data-mode="fixed"][data-button-color="black"] {
+  --icon-button-fill: var(--cds-system-fixed-color-button-black, var(--cds-system-color-button-black, #000000));
+}
+
+.chord-icon-button[data-variant="outlined"] {
+  --icon-button-bg: transparent;
+  --icon-button-border: var(--icon-button-fill);
+  --icon-button-color: var(--icon-button-fill);
+}
+
+.chord-icon-button[data-radius="on"] {
+  --icon-button-radius: var(--cds-system-size-radius-box-100, 8px);
+}
+
+.chord-icon-button[data-size="xlarge"] {
+  --icon-button-size: var(--cds-system-size-button-height-xlarge, 52px);
+  --icon-button-font-size: var(--cds-typography-default-base-text-size-text-400, 18px);
+}
+
+.chord-icon-button[data-size="medium"] {
+  --icon-button-size: var(--cds-system-size-button-height-medium, 40px);
+  --icon-button-font-size: var(--cds-typography-default-base-text-size-text-300, 16px);
+}
+
+.chord-icon-button[data-size="small"] {
+  --icon-button-size: var(--cds-system-size-button-height-small, 36px);
+  --icon-button-font-size: var(--cds-typography-default-base-text-size-text-150, 14px);
+}
+
+.chord-icon-button[data-size="xxsmall"] {
+  --icon-button-size: var(--cds-system-size-button-height-xxsmall, 24px);
+  --icon-button-font-size: var(--cds-typography-default-base-text-size-text-75, 12px);
+}
+
+.chord-icon-button[data-state="hover"],
+.chord-icon-button:not(:disabled):hover {
+  --icon-button-bg: var(--cds-system-color-button-hover, #0000000a);
+}
+
+.chord-icon-button[data-variant="filled"][data-state="hover"],
+.chord-icon-button[data-variant="filled"]:not(:disabled):hover {
+  opacity: 0.9;
+}
+
+.chord-icon-button[data-state="disabled"] {
+  --icon-button-bg: var(--cds-system-color-button-disabled, #0000001a);
+  --icon-button-border: transparent;
+  --icon-button-color: var(--cds-system-color-text-300a, #0000004d);
+}
+
+.chord-icon-button__glyph {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 1em;
+  block-size: 1em;
+}

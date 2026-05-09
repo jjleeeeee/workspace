@@ -1,0 +1,13 @@
+{
+  "name": "figma-impl",
+  "version": "1.0.0",
+  "description": "Figma → Multi-platform UI 생성 하네스. Web(React), iOS(SwiftUI), AOS(Compose) 지원. T0~T6 오케스트레이션으로 분석·구현·QA 자동화. DS 토큰 사전 준비(/impl-tokens) 포함.",
+  "author": {
+    "name": "Weverse Platform",
+    "email": "kyungtaek.lim@weversecompany.com"
+  },
+  "homepage": "https://github.com/weversecompany/claude-plugins/tree/main/plugins/figma-impl",
+  "repository": "https://github.com/weversecompany/claude-plugins",
+  "license": "MIT",
+  "keywords": ["figma", "figma-impl", "react", "ios", "android", "design-system", "harness"]
+}

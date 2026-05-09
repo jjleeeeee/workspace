@@ -1,0 +1,32 @@
+.chord-badge-number {
+  display: inline-grid;
+  min-inline-size: 18px;
+  block-size: 18px;
+  place-items: center;
+  padding-inline: 5px;
+  border-radius: 999px;
+  background: var(--badge-number-color);
+  color: var(--cds-system-color-text-white-same, #ffffff);
+  font-family: var(--cds-typography-default-font-family-body, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--cds-typography-default-base-text-size-text-50, 11px);
+  font-weight: var(--cds-typography-default-font-weight-bold, 700);
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.chord-badge-number[data-mode="default"] {
+  --badge-number-color: var(--cds-system-color-status-danger-red, #ff3b30);
+}
+
+.chord-badge-number[data-mode="fixed"] {
+  --badge-number-color: var(
+    --cds-system-fixed-color-status-danger-red,
+    var(--cds-system-color-status-danger-red, #ff3b30)
+  );
+}
+
+.chord-badge-number[data-type="new"] {
+  min-inline-size: 30px;
+  letter-spacing: 0;
+}

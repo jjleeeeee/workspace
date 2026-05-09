@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "cds-ds": {
+      "command": "bash",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/run.sh"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}",
+        "FIGMA_TOKEN": "${FIGMA_TOKEN}",
+        "CATALOG_BRANCH": "main"
+      }
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "$schema": "cds-ds/dsl/v2",
+  "schemaVersion": "2.0.0",
+  "metadata": {
+    "generatedAt": "2026-04-28T00:00:00+09:00",
+    "generator": "cds-ds@2.0.0",
+    "sourceFile": {
+      "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
+      "fileName": "Chord-Design-System",
+      "nodeId": "11992:71718"
+    }
+  },
+  "coordinateSystem": { "unit": "px", "origin": "topLeft", "scope": "relativeToParent", "scale": 1.0 },
+  "themes": ["light", "dark"],
+  "platform": "ios",
+  "dsManifest": {
+    "platform": "ios",
+    "tokens": ["tokens.color.v1.0", "tokens.size.v1.0", "tokens.typography.v1.0"],
+    "components": ["topnavigation", "textfield", "checkbox", "textbutton"]
+  },
+  "nodes": [
+    {
+      "id": "bottom-popup",
+      "type": "frame",
+      "name": "WDSBottomPopup",
+      "source": { "figmaNodeId": "11992:71718" },
+      "catalog": {
+        "id": "bottompopup",
+        "props": {
+          "showNavigation": true,
+          "showButtons": true,
+          "overflow": false,
+          "showCheckbox": true
+        },
+        "state": "default"
+      },
+      "layout": {
+        "kind": "stack",
+        "axis": "vertical",
+        "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+        "constraints": { "minWidth": 300, "maxWidth": 410, "minHeight": 413, "maxHeight": 640 },
+        "spacing": 0,
+        "alignment": { "main": "start", "cross": "stretch" },
+        "overflow": "hidden"
+      },
+      "style": {
+        "fills": [{ "type": "solid", "color": "token:system.color.surface.default-4" }],
+        "cornerRadius": { "topLeft": 16, "topRight": 16, "bottomLeft": 0, "bottomRight": 0 }
+      },
+      "children": [
+        {
+          "id": "drag-handle",
+          "type": "shape",
+          "name": "drag-handle",
+          "layout": {
+            "kind": "box",
+            "size": { "width": { "mode": "fixed", "value": 40 }, "height": { "mode": "fixed", "value": 4 } },
+            "positioning": "absolute",
+            "frame": { "x": 0, "y": 12 }
+          },
+          "style": {
+            "fills": [{ "type": "solid", "color": "token:system.color.line.default" }],
+            "cornerRadius": 999
+          }
+        },
+        {
+          "id": "navigation-header",
+          "type": "component",
+          "name": "navigation-header",
+          "catalog": {
+            "id": "topnavigation",
+            "props": { "title": "Title", "showClose": true, "leftContent": "none" },
+            "state": "default"
+          },
+          "layout": {
+            "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 48 } }
+          }
+        },
+        {
+          "id": "content",
+          "type": "stack",
+          "name": "content",
+          "layout": {
+            "kind": "stack",
+            "axis": "vertical",
+            "size": { "width": { "mode": "fill" }, "height": { "mode": "fill" } },
+            "spacing": 16,
+            "padding": { "top": 0, "right": 16, "bottom": 24, "left": 16 },
+            "overflow": "scroll"
+          },
+          "children": [
+            {
+              "id": "input-1",
+              "type": "component",
+              "name": "input-1",
+              "catalog": {
+                "id": "textfield",
+                "props": { "title": "입력 필드", "visibleCounter": true, "maxLength": 200 },
+                "state": "default"
+              }
+            },
+            {
+              "id": "input-2",
+              "type": "component",
+              "name": "input-2",
+              "catalog": {
+                "id": "textfield",
+                "props": { "title": "입력 필드", "visibleCounter": true, "maxLength": 200 },
+                "state": "default"
+              }
+            }
+          ]
+        },
+        {
+          "id": "button-area",
+          "type": "stack",
+          "name": "button-area",
+          "layout": {
+            "kind": "stack",
+            "axis": "vertical",
+            "size": { "width": { "mode": "fill" }, "height": { "mode": "hug" } },
+            "spacing": 0
+          },
+          "children": [
+            {
+              "id": "scroll-gradient",
+              "type": "shape",
+              "name": "scroll-gradient",
+              "layout": {
+                "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 24 } }
+              },
+              "style": {
+                "fills": [
+                  {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "angle": 180,
+                    "stops": [
+                      { "color": "hardcoded:rgba(255,255,255,0)", "position": 0 },
+                      { "color": "token:system.color.surface.default-4", "position": 1 }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "agree-checkbox",
+              "type": "component",
+              "name": "agree-checkbox",
+              "catalog": {
+                "id": "checkbox",
+                "variant": { "Type": "circle" },
+                "props": { "checked": false, "label": "텍스트를 입력해주세요", "enabled": true },
+                "slots": { "label": { "text": "텍스트를 입력해주세요" } },
+                "state": "default"
+              }
+            },
+            {
+              "id": "confirm-button",
+              "type": "component",
+              "name": "confirm-button",
+              "catalog": {
+                "id": "textbutton",
+                "variant": {
+                  "Mode": "Default",
+                  "Type": "Filled",
+                  "Size": "XLarge(52)",
+                  "Button Color": "Default (Gray Ghost 단일컬러)",
+                  "Status": "Default",
+                  "Radius": "off"
+                },
+                "props": { "Button Text": "확인", "Option-Leading": false, "Option-Trailing": false },
+                "slots": { "label": { "text": "확인" } },
+                "state": "default"
+              },
+              "layout": {
+                "size": { "width": { "mode": "fill" }, "height": { "mode": "fixed", "value": 52 } },
+                "padding": { "top": 0, "right": 16, "bottom": 0, "left": 16 }
+              },
+              "style": {
+                "fills": [{ "type": "solid", "color": "token:system.color.button.default" }]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

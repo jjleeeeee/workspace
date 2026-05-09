@@ -1,0 +1,95 @@
+# AI Rules - Figma Description Workflow
+
+This is the canonical shared rule source for all AI coding tools in this
+project. Read and follow this file before doing any project work.
+
+If this file conflicts with a tool-specific adapter such as `AGENTS.md` or
+`CLAUDE.md`, the adapter controls tool startup behavior, but shared project
+rules live here.
+
+## Mission
+
+This folder is only for updating and validating Figma Component Description YAML.
+
+Figma Component Description is the source of truth. Do not create derived
+component Markdown output from this workflow.
+
+## Read Order
+
+1. Read `README.md` if it exists.
+2. Read `PLAYBOOK.md`.
+3. Read `workflow/README.md`.
+4. Read the step-specific `workflow/*.md` files linked from
+   `workflow/README.md` before doing that step.
+5. Read `refs/figma-component-keys/index.md` and
+   `refs/figma-component-keys/variant-keys/<component>.md` only when component
+   set or variant keys are needed for the target component.
+6. Read `refs/markitdown-output/<component>.md` only when the target component has
+   a matching reference file.
+7. After changes, record the reason in `history/figma-description-history.md` if
+   that file exists.
+
+## Workflow Gate
+
+- Treat `docs/AI_RULES.md` as the canonical shared routing contract.
+- Treat `PLAYBOOK.md` as the short contract and `workflow/` as the
+  detailed procedure.
+- Do not skip the validator, Figma Description readback, or history gate when a
+  decision or behavior changed.
+- If a step-specific detail is unclear, read the linked `workflow/*.md` file
+  before acting.
+
+## Allowed
+
+- Update Figma Component Description YAML.
+- Verify Figma Description readback.
+- Run the local Description validator when available.
+- Record decision and change history.
+- Use `refs/markitdown-output/` as optional supplemental input.
+- Use `refs/figma-component-keys/` as optional key registry reference.
+- Record confirmed nested DS component relationships in `composition.uses` for
+  composite components.
+- Record the previous legacy `descriptionMarkdown` length, then clear it before
+  writing the target component plain Description.
+- Use subagents only for local reference inspection, draft YAML authoring, and
+  validator work.
+
+## Forbidden
+
+- Do not create `{component}.md` as a derived workflow output.
+- Do not create or update `draft-descriptions/<component>.description.yaml`
+  when Desktop Bridge or required MCP preflight fails.
+- Do not use `descriptionMarkdown` for YAML storage.
+- Do not run bulk cleanup whose only purpose is clearing `descriptionMarkdown`.
+- Do not infer unknown values that are not confirmed by Figma data, user input,
+  or reference files.
+- Do not copy child component axes, tokens, or layout details into the parent
+  Description; reference the child component relationship instead.
+- Do not treat `refs/figma-component-keys/` as the latest SoT without live Figma
+  readback for the target component set.
+- Do not use REST API, Variables API, or fallback MCP write paths without explicit
+  user approval.
+- Do not run a cloud-only draft flow unless the user explicitly approves that
+  degraded mode for the current component.
+- Do not let subagents use Figma Console MCP, Desktop Bridge, or official
+  `use_figma` live read/write tools. The parent agent owns all live Figma
+  read/write operations serially.
+
+## Source Priority
+
+1. User-provided Do/Don't and intent.
+2. Actual Figma component data.
+3. `refs/figma-component-keys/` key registry snapshot.
+4. `refs/markitdown-output/` supplemental data.
+5. Existing history.
+6. LLM inference.
+
+If a value is not confirmed, leave it out or record it in `source_gaps`.
+
+## Done Criteria
+
+- Figma Description YAML is saved.
+- Description readback is decoded from HTML entities and checked.
+- Legacy `descriptionMarkdown` is confirmed empty after the write.
+- Validator passes, or warnings are recorded.
+- History is updated when a decision or behavior changed.

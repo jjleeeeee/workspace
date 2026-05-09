@@ -1,0 +1,17 @@
+{
+  "source": "figma-console/analyze_component_set",
+  "nodeId": "59869:78921",
+  "variantCount": 100,
+  "axes": {
+    "Mode": ["Default", "Fixed"],
+    "Size": ["Small", "Medium"],
+    "Type": ["Text", "Icon", "Image (Only Medium)"],
+    "State": ["Default", "Filled_Disabled", "Filled_Selected", "Outlined_Disabled", "Outlined_Selected"],
+    "Radius": ["OFF", "ON"]
+  },
+  "componentProps": {
+    "Marquee": {"type": "boolean", "defaultValue": false},
+    "Badge": {"type": "boolean", "defaultValue": false},
+    "Badge_Number": {"type": "boolean", "defaultValue": false}
+  }
+}

@@ -1,0 +1,25 @@
+component:
+  name: "Button"
+  description: "Primary action component"
+
+axes:
+  Size: ["Small", "Medium"]
+
+variants:
+  count: 2
+
+tokens:
+  container_fill:
+    part: "Container"
+    role: "fill"
+    token: null
+
+layout:
+  component_size: "120x40px"
+
+implementation_order:
+  - "Resolve size and layout metrics first."
+
+rules:
+  do:
+    - "Use for primary actions."

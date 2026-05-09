@@ -1,0 +1,13 @@
+{
+  "name": "persona",
+  "version": "3.5.0",
+  "description": "사용자 인터뷰를 위한 페르소나 에이전트 플러그인. 다양한 사용자 프로필을 시뮬레이션하여 제품/서비스 UX 테스트 및 사용자 피드백을 수집합니다.",
+  "author": {
+    "name": "Weverse UX Research Team",
+    "email": "ux-research@weversecompany.com"
+  },
+  "homepage": "https://github.com/weversecompany/claude-plugins/tree/main/plugins/persona",
+  "repository": "https://github.com/weversecompany/claude-plugins",
+  "license": "MIT",
+  "keywords": ["user-research", "persona", "ux-testing", "user-interview", "usability"]
+}

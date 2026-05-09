@@ -1,0 +1,90 @@
+.chord-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-inline-size: 20px;
+  min-block-size: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cds-system-color-text-default, #000000);
+  font-family: var(--cds-typography-default-font-family-body, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--cds-typography-default-base-text-size-text-150, 14px);
+  line-height: 1.2;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.chord-checkbox:focus-visible {
+  outline: 2px solid var(--cds-system-color-outline-default, #000000);
+  outline-offset: 4px;
+}
+
+.chord-checkbox:disabled {
+  cursor: not-allowed;
+}
+
+.chord-checkbox__control {
+  position: relative;
+  display: inline-grid;
+  flex: 0 0 auto;
+  inline-size: 20px;
+  block-size: 20px;
+  place-items: center;
+  border: 2px solid var(--checkbox-border);
+  border-radius: var(--checkbox-radius);
+  background: var(--checkbox-bg);
+}
+
+.chord-checkbox__control::after {
+  content: "";
+  display: block;
+  inline-size: 6px;
+  block-size: 10px;
+  border: solid var(--cds-system-color-text-white-same, #ffffff);
+  border-width: 0 2px 2px 0;
+  opacity: 0;
+  transform: translateY(-1px) rotate(45deg);
+}
+
+.chord-checkbox__label {
+  min-inline-size: 0;
+}
+
+.chord-checkbox[data-shape="circle"] {
+  --checkbox-radius: 999px;
+}
+
+.chord-checkbox[data-shape="square"] {
+  --checkbox-radius: var(--cds-system-size-radius-box-50, 4px);
+}
+
+.chord-checkbox[data-status="default"] {
+  --checkbox-bg: var(--cds-system-color-surface-default, #ffffff);
+  --checkbox-border: var(--cds-system-color-outline-gray-400, #aeb1b8);
+}
+
+.chord-checkbox[data-status="enabled"] {
+  --checkbox-bg: var(--cds-system-color-button-default, #00cbd5);
+  --checkbox-border: var(--cds-system-color-button-default, #00cbd5);
+}
+
+.chord-checkbox[data-status="enabled"] .chord-checkbox__control::after,
+.chord-checkbox[aria-checked="true"] .chord-checkbox__control::after {
+  opacity: 1;
+}
+
+.chord-checkbox[data-status="disabled"] {
+  --checkbox-bg: var(--cds-system-color-button-disabled, #0000001a);
+  --checkbox-border: var(--cds-system-color-outline-default-100a, #0000001a);
+  color: var(--cds-system-color-text-300a, #0000004d);
+}
+
+.chord-checkbox[data-status="disabled"] .chord-checkbox__control::after {
+  border-color: var(--cds-system-color-text-300a, #0000004d);
+}
+
+.chord-checkbox[data-mode="fixed"][data-status="enabled"] {
+  --checkbox-bg: var(--cds-system-fixed-color-button-default, var(--cds-system-color-button-default, #00cbd5));
+  --checkbox-border: var(--checkbox-bg);
+}

@@ -1,0 +1,36 @@
+.chord-linear-progress {
+  overflow: hidden;
+  inline-size: min(100%, 240px);
+  block-size: var(--linear-progress-height);
+  border-radius: var(--linear-progress-radius);
+  background: var(--cds-system-color-status-background-disabled, #f2f3f7);
+}
+
+.chord-linear-progress > span {
+  display: block;
+  inline-size: var(--linear-progress-value);
+  block-size: 100%;
+  border-radius: inherit;
+  background: var(--cds-system-color-button-default, #00cbd5);
+  transition: inline-size 160ms ease;
+}
+
+.chord-linear-progress[data-mode="fixed"] > span {
+  background: var(--cds-system-fixed-color-button-default, var(--cds-system-color-button-default, #00cbd5));
+}
+
+.chord-linear-progress[data-height="2"] {
+  --linear-progress-height: 2px;
+}
+
+.chord-linear-progress[data-height="4"] {
+  --linear-progress-height: 4px;
+}
+
+.chord-linear-progress[data-rounded="on"] {
+  --linear-progress-radius: 999px;
+}
+
+.chord-linear-progress[data-rounded="off"] {
+  --linear-progress-radius: 0;
+}

@@ -1,0 +1,26 @@
+node_modules/
+dist/
+build/
+.DS_Store
+*.log
+.env
+.env.local
+.env.*.local
+storybook-static/
+.serena/
+.omc/
+.playwright-cli/
+.playwright-mcp/
+
+.venv/
+__pycache__/
+*.pyc
+
+# Codex 런타임 symlink (node_modules → ~/.cache/codex-runtimes)
+08_presentation_docs/node_modules
+
+# 독립 git repo (nested) — workspace git이 추적하지 않음
+cds-catalogs/
+design-cds-docs/
+01_second-brain/
+08_presentation_docs/vendor/frontend-slides/

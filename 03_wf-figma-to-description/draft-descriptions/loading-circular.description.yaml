@@ -1,0 +1,116 @@
+component:
+  name: "Loading Circular"
+  figma_name: "Loading_Circular"
+  description: "Dot Loading을 사용할 수 없는 컴포넌트 내부 상황에서 사용하는 원형 로딩 컴포넌트"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  node_id: "10384:29888"
+  component_set_key: "b24a5889bca4523ee97a36936574bf3abbee155c"
+  last_synced: "2026-05-04"
+
+axes:
+  Mode: ["Default", "Fixed"]
+
+variants:
+  count: 2
+  formula: "Mode(2)"
+  constraints:
+    - "Mode values are read from a Figma axis whose raw name contains a control character; YAML stores the stripped axis name as Mode."
+  registry:
+    - { variant: "Mode=Default", node_id: "10384:29889", key: "21b198a63bc480fd5f7a519c8fbb6b08b98a1c92" }
+    - { variant: "Mode=Fixed", node_id: "10384:29892", key: "4a7a8cd392a8bb8b6c9f9702cd14f25650d70b5a" }
+
+props:
+  Mode:
+    type: '"Default" | "Fixed"'
+    default: '"Default"'
+    description: "Default uses default-mode outline token on the track; Fixed uses fixed-mode divide token on the track."
+
+tokens:
+  track_stroke_default:
+    part: "circle_line"
+    role: "stroke"
+    applies_to: "Mode=Default"
+    token: "system/color/outline/default-reverse-300a"
+    opacity: 0.3
+  track_stroke_fixed:
+    part: "circle_line"
+    role: "stroke"
+    applies_to: "Mode=Fixed"
+    token: "system/fixed_color/divide/white-300a-same"
+    opacity: 0.3
+  active_arc_stroke:
+    part: "line"
+    role: "stroke"
+    applies_to: "Mode=Default and Mode=Fixed"
+    token: "system/fixed_color/outline/default"
+
+assets:
+  circular_loading_motion:
+    part: "circle_line and line"
+    role: "loading animation"
+    source: "Loading_Circular component geometry; loading usage reference says Loading uses Lottie Animation"
+    applies_to: "All variants"
+    size: "20x20"
+    semantic_rule: "The circular loader is a loading animation/component, not a static decorative ring."
+
+layout:
+  component_size: "20x20"
+  track_size: "16x16"
+  active_arc_size: "5.47x5.47"
+  stroke_weight: "2px"
+  part_spacing:
+    circle_line__to__line:
+      variation_checked_by:
+        axes: true
+        props: true
+        states: true
+      default:
+        token: "not bound"
+        value: "line positioned at x=12.22, y=2.31 within 20x20 component"
+      variants: []
+
+implementation_order:
+  - "Strip the raw control character from the Figma Mode axis before mapping props."
+  - "Render a 20x20 circular loading area."
+  - "Render the 16x16 track with 2px stroke."
+  - "Render the active arc with 2px stroke above the track."
+  - "Apply Mode-specific track token and shared active arc token."
+
+implementation_coverage:
+  axes:
+    - "Mode"
+  props:
+    - "Mode"
+  assets:
+    - "circular_loading_motion"
+  layout:
+    - "20x20 component"
+    - "16x16 circle_line"
+    - "5.47x5.47 active arc"
+    - "2px stroke weight"
+  exclusions:
+    - "This workflow does not create a derived loading-circular.md file."
+
+rules:
+  do:
+    - "Use Circular Loading only when Dot Loading cannot be used."
+    - "Use Circular Loading inside components, not as the primary full-screen loading indicator."
+    - "Use Loading only for in-progress states."
+  dont:
+    - "Do not use Circular Loading when Dot Loading is available."
+    - "Do not use Circular Loading for screen-level movement loading."
+    - "Do not use Loading to communicate errors or completion messages."
+
+source_gaps:
+  - field: "assets.circular_loading_motion.source"
+    reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
+    impact: "Implementation should use the existing product loading animation asset if available, or ask design for the Lottie asset key before shipping a new asset."
+  - field: "motion.rotation_timing"
+    reason: "Live Figma extraction confirms geometry and tokens but does not expose animation timing."
+    impact: "Do not invent timing values in implementation without a motion spec or asset handoff."
+
+spec_notes:
+  source:
+    - "Figma live read via Framelink and read-only Plugin API extraction from node 10384:29888."
+    - "Variant key reference: refs/figma-component-keys/variant-keys/loading-circular.md."
+    - "Usage reference: refs/markitdown-output/markitdown-loading.md."
