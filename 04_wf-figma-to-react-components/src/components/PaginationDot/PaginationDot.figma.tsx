@@ -8,9 +8,10 @@ figma.connect(
     props: {
       mode: figma.enum("Mode", { Fixed: "fixed", Default: "default" }),
       dots: figma.enum("Dots", { "2": "2", "3": "3", "4": "4", "5": "5", "6+": "6+" }),
+      selection: figma.enum("Selection", { "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6 }),
     },
-    example: ({ mode, dots }) => (
-      <PaginationDot mode={mode} dots={dots} selection={1} />
+    example: ({ mode, dots, selection }) => (
+      <PaginationDot mode={mode} dots={dots} selection={selection} />
     ),
   }
 );

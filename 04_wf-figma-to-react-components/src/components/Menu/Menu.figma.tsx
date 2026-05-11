@@ -9,7 +9,7 @@ figma.connect(
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
     },
     example: ({ mode }) => (
-      <Menu mode={mode} items={[{ label: "항목 1" }, { label: "항목 2" }]} />
+      <Menu mode={mode} items={[{ title: "항목 1" }, { title: "항목 2" }]} />
     ),
   }
 );

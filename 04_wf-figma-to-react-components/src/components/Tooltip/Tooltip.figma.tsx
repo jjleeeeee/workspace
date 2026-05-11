@@ -19,9 +19,11 @@ figma.connect(
         "Top Left": "top-left",
         "Top Right": "top-right",
       }),
+      buttonClose: figma.boolean("Button - Close"),
+      label: figma.string("Label"),
     },
-    example: ({ mode, size, color, position }) => (
-      <Tooltip mode={mode} size={size} color={color} position={position} label="툴팁 텍스트" />
+    example: ({ mode, size, color, position, buttonClose, label }) => (
+      <Tooltip mode={mode} size={size} color={color} position={position} label={label} {...{ buttonClose }} />
     ),
   }
 );

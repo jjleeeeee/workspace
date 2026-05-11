@@ -42,6 +42,10 @@ component Markdown output from this workflow.
 ## Allowed
 
 - Update Figma Component Description YAML.
+- Create or update `bridge-descriptions/*.bridge.yaml` as platform-neutral
+  implementation bridge files. Keep common Figma-derived facts in
+  `component_contract`, and platform-specific mappings under
+  `platform_bindings.<platform>`. These files are not written back to Figma.
 - Verify Figma Description readback.
 - Run the local Description validator when available.
 - Record decision and change history.

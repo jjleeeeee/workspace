@@ -7,10 +7,11 @@ figma.connect(
   {
     props: {
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
+      skeletonType: figma.enum("Type", { Rectangle: "rectangle", Circle: "circle", Line: "line" }),
       size: figma.enum("Size", { Large: "large", Medium: "medium" }),
     },
-    example: ({ mode, size }) => (
-      <Skeleton mode={mode} size={size} />
+    example: ({ mode, skeletonType, size }) => (
+      <Skeleton mode={mode} skeletonType={skeletonType} size={size} />
     ),
   }
 );

@@ -6,5 +6,10 @@
       "mcp__figma-console__figma_execute",
       "mcp__figma-console__figma_set_description"
     ]
+  },
+  "skillOverrides": {
+    "component-md-extract": "off",
+    "figma-ai-proxy-spec": "off",
+    "record-log": "off"
   }
 }

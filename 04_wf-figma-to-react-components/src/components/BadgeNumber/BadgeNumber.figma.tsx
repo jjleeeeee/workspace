@@ -8,9 +8,10 @@ figma.connect(
     props: {
       badgeType: figma.enum("Type", { Number: "number", New: "new" }),
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
+      label: figma.string("Label"),
     },
-    example: ({ badgeType, mode }) => (
-      <BadgeNumber badgeType={badgeType} mode={mode} label={99} />
+    example: ({ badgeType, mode, label }) => (
+      <BadgeNumber badgeType={badgeType} mode={mode} label={label} />
     ),
   }
 );

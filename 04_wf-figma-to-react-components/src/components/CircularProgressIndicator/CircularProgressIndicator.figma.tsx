@@ -7,9 +7,10 @@ figma.connect(
   {
     props: {
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
+      button: figma.boolean("Button"),
     },
-    example: ({ mode }) => (
-      <CircularProgressIndicator mode={mode} value={70} />
+    example: ({ mode, button }) => (
+      <CircularProgressIndicator mode={mode} progress={0.7} {...{ button }} />
     ),
   }
 );

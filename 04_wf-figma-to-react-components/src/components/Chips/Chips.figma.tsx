@@ -8,18 +8,21 @@ figma.connect(
     props: {
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
       size: figma.enum("Size", { Small: "small", Medium: "medium" }),
-      type: figma.enum("Type", { Text: "text", Icon: "icon", Image: "image" }),
+      type: figma.enum("Type", { Text: "text", Icon: "icon", "Image (Only Medium)": "image" }),
       state: figma.enum("State", {
         Default: "default",
-        "Filled-Selected": "filled-selected",
-        "Outlined-Selected": "outlined-selected",
-        "Filled-Disabled": "filled-disabled",
-        "Outlined-Disabled": "outlined-disabled",
+        Filled_Selected: "filled-selected",
+        Outlined_Selected: "outlined-selected",
+        Filled_Disabled: "filled-disabled",
+        Outlined_Disabled: "outlined-disabled",
       }),
       radius: figma.enum("Radius", { ON: "on", OFF: "off" }),
+      marquee: figma.boolean("Marquee"),
+      badge: figma.boolean("Badge"),
+      badgeNumber: figma.boolean("Badge_Number"),
     },
-    example: ({ mode, size, type, state, radius }) => (
-      <Chips mode={mode} size={size} type={type} state={state} radius={radius} label="텍스트" />
+    example: ({ mode, size, type, state, radius, marquee, badge, badgeNumber }) => (
+      <Chips mode={mode} size={size} type={type} state={state} radius={radius} label="텍스트" {...{ marquee, badge, badgeNumber }} />
     ),
   }
 );

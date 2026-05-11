@@ -10,7 +10,7 @@ figma.connect(
       state: figma.enum("State", { Selected: "selected", "Selected-99+": "selected-99-plus", Unselected: "unselected" }),
     },
     example: ({ mode, state }) => (
-      <SelectNumberBox mode={mode} state={state} count={1} />
+      <SelectNumberBox mode={mode} state={state} value={1} />
     ),
   }
 );

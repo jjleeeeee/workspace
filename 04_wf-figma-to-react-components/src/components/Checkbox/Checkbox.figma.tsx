@@ -7,11 +7,11 @@ figma.connect(
   {
     props: {
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
-      type: figma.enum("Type", { Circle: "circle", Square: "square" }),
+      checkboxType: figma.enum("Type", { Circle: "circle", Square: "square" }),
       status: figma.enum("Status", { Default: "default", Enabled: "enabled", Disabled: "disabled" }),
     },
-    example: ({ mode, type, status }) => (
-      <Checkbox mode={mode} type={type} status={status} />
+    example: ({ mode, checkboxType, status }) => (
+      <Checkbox mode={mode} checkboxType={checkboxType} status={status} />
     ),
   }
 );

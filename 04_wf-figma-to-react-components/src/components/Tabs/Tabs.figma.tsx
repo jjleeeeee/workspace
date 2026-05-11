@@ -18,9 +18,9 @@ figma.connect(
         style={style}
         type={type}
         size={size}
-        showExpandButton={showExpandButton}
-        items={[{ label: "탭 1" }, { label: "탭 2" }, { label: "탭 3" }]}
-        activeIndex={0}
+        tabItems={["탭 1", "탭 2", "탭 3"]}
+        selectedIndex={0}
+        {...{ showExpandButton }}
       />
     ),
   }

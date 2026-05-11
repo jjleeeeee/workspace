@@ -30,15 +30,8 @@ figma.connect(
       <TopNavigation
         mode={mode}
         textType={textType}
-        scrollBg={scrollBg}
-        title="타이틀"
-        showLeading={showLeading}
-        showTrailing={showTrailing}
-        showImage={showImage}
-        showOfficialBadge={showOfficialBadge}
-        showSubTitle={showSubTitle}
-        showSubTitleIcon={showSubTitleIcon}
-        marquee={marquee}
+        titleLabel="타이틀"
+        {...{ scrollBg, showLeading, showTrailing, showImage, showOfficialBadge, showSubTitle, showSubTitleIcon, marquee }}
       />
     ),
   }

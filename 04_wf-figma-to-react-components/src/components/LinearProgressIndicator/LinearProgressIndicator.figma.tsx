@@ -8,10 +8,10 @@ figma.connect(
     props: {
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
       rounded: figma.enum("Rounded", { OFF: "off", ON: "on" }),
-      height: figma.enum("Height", { Default: "default", "4": "4" }),
+      indicatorHeight: figma.enum("Height", { "Default (2)": "default", "4": "4" }),
     },
-    example: ({ mode, rounded, height }) => (
-      <LinearProgressIndicator mode={mode} rounded={rounded} height={height} value={60} />
+    example: ({ mode, rounded, indicatorHeight }) => (
+      <LinearProgressIndicator mode={mode} rounded={rounded} indicatorHeight={indicatorHeight} progress={0.6} />
     ),
   }
 );

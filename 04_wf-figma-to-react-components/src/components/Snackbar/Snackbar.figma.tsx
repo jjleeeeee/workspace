@@ -8,9 +8,10 @@ figma.connect(
     props: {
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
       label: figma.string("Label"),
+      icon: figma.boolean("Icon"),
     },
-    example: ({ mode, label }) => (
-      <Snackbar mode={mode} label={label} />
+    example: ({ mode, label, icon }) => (
+      <Snackbar mode={mode} label={label} {...{ icon }} />
     ),
   }
 );

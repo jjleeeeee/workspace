@@ -7,7 +7,12 @@ figma.connect(
   {
     props: {
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
-      type: figma.enum("Type", { Circle: "circle", Squircle: "squircle" }),
+      avatarType: figma.enum("Type", { Circle: "circle", Squircle: "squircle" }),
+      badgeDot: figma.boolean("Badge_Dot"),
+      birthdayHat: figma.boolean("Birthday_Hat"),
+      emoji: figma.boolean("Emoji"),
+      host: figma.boolean("Host"),
+      ring: figma.boolean("Ring"),
       size: figma.enum("Size", {
         "\bXXXXLarge": "xxxxlarge",
         XXXXLarge: "xxxxlarge",
@@ -23,8 +28,13 @@ figma.connect(
         "\bTiny": "tiny",
       }),
     },
-    example: ({ mode, type, size }) => (
-      <Avatar mode={mode} type={type} size={size} />
+    example: ({ mode, avatarType, badgeDot, birthdayHat, emoji, host, ring, size }) => (
+      <Avatar
+        mode={mode}
+        avatarType={avatarType}
+        size={size}
+        {...{ badgeDot, birthdayHat, emoji, host, ring }}
+      />
     ),
   }
 );

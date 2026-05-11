@@ -8,7 +8,8 @@ figma.connect(
     props: {
       height: figma.enum("Height", { "1": "1", "2": "2", "8": "8" }),
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
+      dividerStyle: figma.enum("Style", { "Default-50a": "default-50a", "Default-50a-2": "default-50a-2" }),
     },
-    example: ({ height, mode }) => <Divider height={height} mode={mode} />,
+    example: ({ height, mode, dividerStyle }) => <Divider height={height} mode={mode} dividerStyle={dividerStyle} />,
   }
 );

@@ -8,9 +8,10 @@ figma.connect(
     props: {
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
       state: figma.enum("State", { Default: "default", Enabled: "enabled", Completed: "completed" }),
+      label: figma.string("Label"),
     },
-    example: ({ mode, state }) => (
-      <Search mode={mode} state={state} placeholder="검색어를 입력하세요" />
+    example: ({ mode, state, label }) => (
+      <Search mode={mode} state={state} label={label} />
     ),
   }
 );

@@ -7,7 +7,7 @@ figma.connect(
   {
     props: {
       mode: figma.enum("Mode", { Default: "default", Fixed: "fixed" }),
-      type: figma.enum("Type", { Filled: "filled", Outlined: "outlined" }),
+      buttonType: figma.enum("Type", { Filled: "filled", Outlined: "outlined" }),
       size: figma.enum("Size", {
         "XLarge(52)": "xlarge",
         "Medium(40)": "medium",
@@ -16,10 +16,17 @@ figma.connect(
       }),
       status: figma.enum("State", { Default: "default", Hover: "hover", Disabled: "disabled" }),
       radius: figma.enum("Radius", { on: "on", off: "off" }),
-      color: figma.enum("Button Color", { Default: "default", Black: "black" }),
+      buttonColor: figma.enum("Button Color", { Default: "default", Black: "black" }),
     },
-    example: ({ mode, type, size, status, radius, color }) => (
-      <IconButton mode={mode} type={type} size={size} status={status} radius={radius} color={color} iconName="ic_add" />
+    example: ({ mode, buttonType, size, status, radius, buttonColor }) => (
+      <IconButton
+        mode={mode}
+        buttonType={buttonType}
+        size={size}
+        status={status}
+        radius={radius}
+        buttonColor={buttonColor}
+      />
     ),
   }
 );

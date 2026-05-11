@@ -11,7 +11,7 @@ figma.connect(
       pages: figma.enum("Pages", { "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8+": "8+" }),
     },
     example: ({ mode, size, pages }) => (
-      <PaginationList mode={mode} size={size} pages={pages} currentPage={1} />
+      <PaginationList mode={mode} size={size} pages={pages} selectedPage={1} />
     ),
   }
 );

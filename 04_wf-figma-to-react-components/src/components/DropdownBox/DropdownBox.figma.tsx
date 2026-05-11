@@ -17,19 +17,21 @@ figma.connect(
         Disabled: "disabled",
       }),
       showTitle: figma.boolean("Show Title"),
+      titleLabel: figma.string("Label_Title"),
       showGuide: figma.boolean("Show Guide"),
+      guideLabel: figma.string("Label_Guide"),
+      textLabel: figma.string("Label_Text"),
       showScrollbar: figma.boolean("Show Scrollbar"),
       showBadgeDot: figma.boolean("Show Badge_Dot"),
     },
-    example: ({ mode, state, showTitle, showGuide, showScrollbar, showBadgeDot }) => (
+    example: ({ mode, state, showTitle, titleLabel, showGuide, guideLabel, textLabel, showScrollbar, showBadgeDot }) => (
       <DropdownBox
         mode={mode}
         state={state}
-        label="선택"
-        showTitle={showTitle}
-        showGuide={showGuide}
-        showScrollbar={showScrollbar}
-        showBadgeDot={showBadgeDot}
+        titleLabel={titleLabel}
+        guideLabel={guideLabel}
+        textLabel={textLabel}
+        {...{ showTitle, showGuide, showScrollbar, showBadgeDot }}
       />
     ),
   }

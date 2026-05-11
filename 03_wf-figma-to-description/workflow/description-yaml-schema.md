@@ -10,6 +10,10 @@ updated: 2026-05-05
 이 문서는 Figma Component Description에 저장하는 YAML 구조와 section 규칙을
 정의한다. YAML은 plain `description`에만 저장한다.
 
+`bridge-descriptions/*.bridge.yaml`은 별도 산출물이다. 이 파일은 Figma
+Description에 저장하지 않고, 플랫폼 중립 `component_contract`와
+React/Swift/Kotlin 같은 플랫폼별 구현 검증을 연결하는 중간 계약으로만 사용한다.
+
 ## Required Shape
 
 ```yaml
@@ -190,6 +194,111 @@ validator는 최소한 다음 top-level section을 기대한다.
   필요할 때 추가한다. 단순 컴포넌트도 source/verification note는 허용한다.
 - `source_gaps`는 확인하지 못한 값이 있을 때만 추가한다. `token: null`을
   직접 저장하지 않고 gap 이유를 적는다.
+
+## Bridge YAML Shape
+
+Bridge YAML은 `bridge-descriptions/<component>.bridge.yaml`에 둔다.
+`draft-descriptions/*.description.yaml`와 같은 Figma write/readback 흐름에 넣지
+않는다.
+
+```yaml
+bridge:
+  component: "<ComponentName>"
+  purpose: "Platform-neutral component contract plus platform-specific implementation bindings."
+  source_draft: "draft-descriptions/<component>.description.yaml"
+  status: "ready | partial | structure-only | needs-live-read"
+  updated: "<YYYY-MM-DD>"
+
+component_contract:
+  figma:
+    file_key: "<figma_file_key>"
+    node_id: "<component_set_node_id>"
+    component_set_key: "<component_set_key>"
+  figma_read_evidence:
+    provenance: "live_figma_read"
+    source_summary:
+      - "<MCP or screenshot evidence>"
+    representative_nodes:
+      - { id: "<node_id>", label: "<variant label>" }
+  axes:
+    <FigmaAxis>: ["<Figma value>"]
+  props:
+    <FigmaProperty>: { type: "<type>", default: "<value>", semantic: "<meaning>" }
+  composition:
+    nested_controls:
+      - { name: "<control>", values: ["<value>"] }
+  validation_scope:
+    comparison_scope: "full-parity | structure-only | shell-only"
+    rationale: "<why this parity scope is claimed>"
+
+platform_bindings:
+  react:
+    source_note:
+      provenance: "04_source_note"
+      path: "../04_wf-figma-to-react-components/src/figma/<component>.source.md"
+      sections:
+        - "<source note section name>"
+    props:
+      axes:
+        <FigmaAxis>: { prop: "<reactProp>", values: ["<value>"], storybook_control: true }
+      properties:
+        <FigmaProperty>: { prop: "<reactProp>", type: "<type>", default: "<value>", storybook_control: true }
+      runtime_hidden:
+        - { prop: "<reactProp>", reason: "<why hidden from Storybook Controls>" }
+    visual_validation:
+      provenance: "04_visual_registry"
+      registry_path: "../04_wf-figma-to-react-components/src/figma/visual-registry.json"
+      registry_id: "<visual-registry id>"
+      component: "<ReactComponentName>"
+      story_id: "<storybook story id>"
+      selector: "<css selector captured by visual-diff>"
+      comparison_scope: "full-parity | structure-only | shell-only"
+      is_parity_gate: true
+      expected_size: "<WxH>"
+      layout_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/<baseline>.png"
+      visual_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/<baseline>@3x.png"
+    implementation_bridge:
+      provenance: "04_source_note"
+      findings:
+        - "<React/CSS/Storybook implementation decision with source-note provenance>"
+      known_gaps:
+        - "<known limitation or non-parity scope>"
+  swift:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract as the source model."
+  kotlin:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract as the source model."
+
+validation:
+  commands:
+    - "node tools/validate-component-description.mjs --mode=bridge bridge-descriptions/<component>.bridge.yaml"
+    - "cd ../04_wf-figma-to-react-components && npm run visual:diff"
+```
+
+Bridge validator는 `--mode=bridge`에서 `bridge`, `component_contract`,
+`platform_bindings`, `validation` section을 확인한다. React 검증은
+`platform_bindings.react` 아래의 `source_note`, `visual_validation`,
+`implementation_bridge`를 확인한다.
+
+`platform_bindings.react.visual_validation.registry_path`가 존재하면
+`registry_id` entry를 읽어
+`component`, `story_id`, `selector`, `comparison_scope`, `is_parity_gate`,
+`expected_size`, baseline path가 실제 visual registry와 일치하는지도 확인한다.
+
+`comparison_scope`는 다음 값만 사용한다.
+
+- `full-parity`: visual diff 결과를 pass/fail gate로 사용할 수 있다.
+- `structure-only`: size/layout 구조 비교만 하고 full parity로 보고하지 않는다.
+- `shell-only`: outer shell 범위만 비교한다.
+
+`component_contract`에는 Figma에서 확인한 플랫폼 중립 facts만 둔다.
+React, Swift, Kotlin 이름/타입/API 차이는 각 `platform_bindings` 아래에 둔다.
+`implementation_bridge`에는 Figma 원천값이 아니라 플랫폼 구현/검증 과정에서
+확인한 결정을 넣는다. 반드시 `provenance`를 남겨 Figma Description YAML과
+구현 학습을 섞어 쓰지 않는다.
 
 ## Asset Policy
 

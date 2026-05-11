@@ -19,11 +19,8 @@ figma.connect(
         mode={mode}
         size={size}
         states={states}
-        label="리스트 항목"
-        showTrailing={showTrailing}
-        showDivider={showDivider}
-        showMediumLeading={showMediumLeading}
-        showSmallLeading={showSmallLeading}
+        titleLabel="리스트 항목"
+        {...{ showTrailing, showDivider, showMediumLeading, showSmallLeading }}
       />
     ),
   }

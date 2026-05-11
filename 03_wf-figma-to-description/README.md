@@ -48,6 +48,7 @@ node tools/validate-component-description.mjs draft-descriptions/<component>.des
 | `PLAYBOOK.md` | 짧은 workflow 계약서와 진입점 |
 | `workflow/` | 실행 순서, YAML schema, write/readback, 검증, 예외 대응 상세 문서 |
 | `draft-descriptions/` | Figma에 쓰기 전 검증하는 임시 Description YAML |
+| `bridge-descriptions/` | 플랫폼 중립 계약과 플랫폼별 구현 검증용 bridge YAML. Figma에 쓰지 않음 |
 | `refs/` | 외부/과거 추출 reference 묶음 |
 | `refs/figma-component-keys/` | component set key와 variant component key 스냅샷 |
 | `refs/markitdown-output/` | Figma 스펙 프레임에서 추출한 보충 입력 |
@@ -65,9 +66,26 @@ node tools/validate-component-description.mjs draft-descriptions/<component>.des
 - draft 파일은 SoT가 아니다. 최신 스펙 SoT는 항상 Figma Component Description이다.
 - 작업 완료 후 draft 파일은 참고용이며 최신성은 보장하지 않는다.
 
+## Bridge Policy
+
+`bridge-descriptions/`는 `draft-descriptions/`와 분리된 구현 검증용 YAML을 둔다.
+
+- 파일명은 `<component>.bridge.yaml` 형식을 쓴다.
+- bridge YAML은 Figma plain Description에 쓰지 않는다.
+- bridge YAML은 source draft, Figma node identity, 플랫폼 중립
+  `component_contract`, 플랫폼별 `platform_bindings`를 연결한다.
+- React는 `platform_bindings.react` 아래에 04 source note mapping, visual
+  registry mapping, parity scope를 둔다.
+- Swift/Kotlin은 같은 `component_contract`를 재사용하고, 구현 전
+  `platform_bindings.swift` / `platform_bindings.kotlin`에 별도 binding을
+  추가한다.
+- bridge YAML 검증은 `node tools/validate-component-description.mjs --mode=bridge
+  bridge-descriptions/<component>.bridge.yaml`로 실행한다.
+
 ## Outputs
 
 - Figma Component Description YAML
+- Platform-neutral implementation bridge YAML
 - Description readback 검증 결과
 - history 기록 (결정 또는 동작 변경이 있을 때)
 

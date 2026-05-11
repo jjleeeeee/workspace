@@ -33,7 +33,8 @@ updated: 2026-05-08
 | 3 | source note 작성 | `src/figma/<component>.source.md` | `source-note-contract.md`, `icon-asset-registry.md`, `../rules/*.md` |
 | 4 | tests, component, CSS, Storybook 구현 | `src/components/<Component>/` | `component-build-loop.md`, `../rules/*.md` |
 | 5 | test/type/build/browser smoke/visual review | 검증 결과와 gaps | `validation-checklist.md`, `../rules/storybook-validation.md` |
-| 6 | 결정/회고/학습 기록 | `history/`, `retrospectives/`, `knowledge/` | 이 문서, `../knowledge/README.md` |
+| 6 | React Code Connect 검증/발행 | Dev Mode snippet | `code-connect.md` |
+| 7 | 결정/회고/학습 기록 | `history/`, `retrospectives/`, `knowledge/` | 이 문서, `../knowledge/README.md` |
 
 ## Step 1. Target Component 확인
 
