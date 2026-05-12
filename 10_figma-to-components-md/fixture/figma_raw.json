@@ -1,0 +1,22 @@
+{
+  "id": "62973:7556",
+  "name": "[V2] Avatar",
+  "type": "COMPONENT_SET",
+  "children": [
+    {
+      "id": "62973:7591",
+      "name": "Mode=Default, Type=Circle, Size=Medium",
+      "type": "COMPONENT",
+      "absoluteBoundingBox": { "x": 0, "y": 0, "width": 56, "height": 56 },
+      "children": [
+        {
+          "id": "62973:7607",
+          "name": "[V2] Avatar image",
+          "type": "FRAME",
+          "fills": [{ "type": "IMAGE" }],
+          "absoluteBoundingBox": { "x": 4, "y": 4, "width": 48, "height": 48 }
+        }
+      ]
+    }
+  ]
+}

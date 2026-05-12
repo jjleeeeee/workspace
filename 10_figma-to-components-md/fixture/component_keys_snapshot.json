@@ -1,0 +1,10 @@
+{
+  "index": {
+    "file": "src/figma-component-keys/index.md",
+    "sha256": "5f6b1f6f72610391358eb158c0b31f35978516a8fa14a8841d837f0467aa1b8b"
+  },
+  "variant_keys": {
+    "file": "src/figma-component-keys/variant-keys/avatar.md",
+    "sha256": "c143dabd528048ad4750eac498c3f1e8f081c0fcf6563da84c53c3fb892e832f"
+  }
+}

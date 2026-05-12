@@ -1,0 +1,16 @@
+{
+  "schema_version": "v2-representative",
+  "component": {
+    "name": "avatar",
+    "figma_name": "[V2] Avatar",
+    "figma_file": "DWEduE6GfxYMlyxKPNJ8jA",
+    "node_id": "62973:7556",
+    "component_set_key": "33d955018e09fb10ab89cefc8f00f2662a2b0e39",
+    "level": "Atom"
+  },
+  "figma_screenshot": {
+    "kind": "representative_variant",
+    "node_id": "62973:7591",
+    "captured_at": "2026-05-11T22:54:11Z"
+  }
+}

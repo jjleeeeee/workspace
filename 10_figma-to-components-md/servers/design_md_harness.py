@@ -383,17 +383,32 @@ def check_token_colors(meta: dict, token_map: dict) -> dict:
 
 
 def check_token_typography(meta: dict) -> dict:
+    # primitive 필드 중 토큰 참조여야 하는 것들
+    _TOKEN_FIELDS = ("font_size", "line_height", "font_weight")
+
     issues = []
     for key, val in (meta.get("typography") or {}).items():
-        if isinstance(val, dict) and not val.get("fromCds"):
+        if not isinstance(val, dict):
+            continue
+        if not val.get("fromCds"):
             issues.append(fh.hint(
                 "token-typography",
                 f"typography.{key} — fromCds 필드 없음. fromCds: 'typography.xxx.yyy' 형태로 추가 필요"
             ))
+        for field in _TOKEN_FIELDS:
+            v = val.get(field)
+            if v is None:
+                continue
+            # 숫자 또는 token: 접두사 없는 문자열은 하드코딩으로 간주
+            if isinstance(v, (int, float)) or (isinstance(v, str) and not v.startswith("token:")):
+                issues.append(fh.hint(
+                    "token-typography",
+                    f"typography.{key}.{field} = {v!r} — raw 값 금지. token:<id> 형식으로 교체 필요"
+                ))
 
     if not issues:
-        return fh.pass_result("token-typography", "모든 타이포그래피에 fromCds 필드 있음")
-    return fh.fail_result("token-typography", f"fromCds 누락 {len(issues)}건", issues)
+        return fh.pass_result("token-typography", "모든 타이포그래피에 fromCds + token 참조 있음")
+    return fh.fail_result("token-typography", f"typography 토큰 참조 오류 {len(issues)}건", issues)
 
 
 def check_broken_ref(meta: dict) -> dict:
@@ -573,19 +588,21 @@ def check_fixture_schema_version(fixture_meta_path: str | None) -> dict:
     screenshot = fixture_meta.get("figma_screenshot") or {}
     screenshot_kind = screenshot.get("kind") if isinstance(screenshot, dict) else None
 
-    if schema_version != "v2-representative":
+    valid_schema_versions = {"v2-representative", "v3-capture-contract"}
+    if schema_version not in valid_schema_versions:
         issues.append(hint(
             check_id,
-            f"schema_version='{schema_version}' — 'v2-representative'로 fixture 재캡처 필요"
+            f"schema_version='{schema_version}' — {valid_schema_versions} 중 하나로 fixture 재캡처 필요"
         ))
-    if screenshot_kind != "representative_variant":
+    # v2: kind 필드로 검증. v3: source 필드 사용 (kind 없어도 됨)
+    if schema_version == "v2-representative" and screenshot_kind != "representative_variant":
         issues.append(hint(
             check_id,
             f"figma_screenshot.kind='{screenshot_kind}' — representative_variant 스크린샷으로 재캡처 필요"
         ))
 
     if not issues:
-        return pass_result(check_id, "fixture.meta.json schema/version 정상")
+        return pass_result(check_id, f"fixture.meta.json schema={schema_version} 정상")
     return fail_result(check_id, f"fixture schema 불일치 {len(issues)}건", issues)
 
 
@@ -617,6 +634,108 @@ def check_representative_screenshot_matches_spec(meta: dict, fixture_meta_path: 
             f"variants.representative.node_id='{spec_node_id}'로 fixture 재캡처 필요"
         )
     ])
+
+
+def check_representative_screenshot_scale(fixture_meta_path: str | None) -> dict:
+    check_id = "representative-screenshot-scale"
+    fixture_meta, error = _load_json(fixture_meta_path)
+    if fixture_meta is None:
+        return warning_result(check_id, "fixture.meta.json 없음 — 스킵", [
+            hint(check_id, f"fixture.meta.json 없음 ({error})")
+        ])
+    schema = fixture_meta.get("schema_version", "")
+    is_v2 = schema == "v2-representative"
+    screenshot = fixture_meta.get("figma_screenshot") or {}
+    scale = screenshot.get("scale")
+    if scale == 3:
+        return pass_result(check_id, "figma_screenshot.scale == 3")
+    if scale is None:
+        if is_v2:
+            return warning_result(check_id, "v2 fixture: scale 미설정 — FIGMA_API_TOKEN 확보 후 v3로 업그레이드 권장", [
+                hint(check_id, "scripts/refresh_fixture.py --force --scale 3 --require-figma-api 로 v3 재생성 권장")
+            ])
+        return fail_result(check_id, "v3 fixture인데 scale 미설정 — fixture 손상 의심", [
+            hint(check_id, "scripts/refresh_fixture.py --force --scale 3 --require-figma-api 로 v3 재생성 필요")
+        ])
+    return fail_result(check_id, f"figma_screenshot.scale={scale} (3이어야 함)", [
+        hint(check_id, "scripts/refresh_fixture.py --force --scale 3 으로 재생성 필요")
+    ])
+
+
+def check_representative_screenshot_raster_matches(fixture_meta_path: str | None) -> dict:
+    check_id = "representative-screenshot-raster-matches"
+    fixture_meta, error = _load_json(fixture_meta_path)
+    if fixture_meta is None:
+        return warning_result(check_id, "fixture.meta.json 없음 — 스킵", [
+            hint(check_id, f"fixture.meta.json 없음 ({error})")
+        ])
+    schema = fixture_meta.get("schema_version", "")
+    is_v2 = schema == "v2-representative"
+    screenshot = fixture_meta.get("figma_screenshot") or {}
+    raster_w = screenshot.get("raster_width")
+    raster_h = screenshot.get("raster_height")
+    if raster_w is None or raster_h is None:
+        if is_v2:
+            return warning_result(check_id, "v2 fixture: raster_width/height 미설정 — PNG 크기 검증 스킵", [
+                hint(check_id, "scripts/refresh_fixture.py --force --scale 3 --require-figma-api 로 v3 재생성 권장")
+            ])
+        return fail_result(check_id, "v3 fixture인데 raster_width/height 미설정 — fixture 손상 의심", [
+            hint(check_id, "scripts/refresh_fixture.py --force --scale 3 --require-figma-api 로 v3 재생성 필요")
+        ])
+
+    # 실제 PNG 크기 확인
+    screenshot_path = Path(fixture_meta_path).parent / "figma_screenshot.png" if fixture_meta_path else None
+    if not screenshot_path or not screenshot_path.exists():
+        return warning_result(check_id, "figma_screenshot.png 없음 — 스킵", [
+            hint(check_id, "fixture/figma_screenshot.png 캡처 필요")
+        ])
+
+    try:
+        from PIL import Image
+        with Image.open(str(screenshot_path)) as img:
+            actual_w, actual_h = img.size
+    except Exception as e:
+        return fail_result(check_id, f"PNG 크기 확인 실패: {e}", [
+            hint(check_id, "fixture/figma_screenshot.png 파일 손상 가능성")
+        ])
+
+    if actual_w == raster_w and actual_h == raster_h:
+        return pass_result(check_id, f"PNG 실측 {actual_w}×{actual_h} == meta({raster_w}×{raster_h})")
+    return fail_result(
+        check_id,
+        f"PNG 실측 {actual_w}×{actual_h} ≠ meta raster({raster_w}×{raster_h})",
+        [hint(check_id, "scripts/refresh_fixture.py --force 로 재생성 필요")]
+    )
+
+
+def check_representative_screenshot_css_defined(fixture_meta_path: str | None) -> dict:
+    check_id = "representative-screenshot-css-defined"
+    fixture_meta, error = _load_json(fixture_meta_path)
+    if fixture_meta is None:
+        return warning_result(check_id, "fixture.meta.json 없음 — 스킵", [
+            hint(check_id, f"fixture.meta.json 없음 ({error})")
+        ])
+    schema = fixture_meta.get("schema_version", "")
+    is_v2 = schema == "v2-representative"
+    screenshot = fixture_meta.get("figma_screenshot") or {}
+    css_w = screenshot.get("css_width")
+    css_h = screenshot.get("css_height")
+    if css_w is None or css_h is None:
+        if is_v2:
+            return warning_result(check_id, "v2 fixture: css_width/css_height 미설정 — mask 좌표 변환 스킵", [
+                hint(check_id, "scripts/refresh_fixture.py --force --scale 3 --require-figma-api 로 v3 재생성 권장")
+            ])
+        return fail_result(check_id, "v3 fixture인데 css_width/css_height 미설정 — fixture 손상 의심", [
+            hint(check_id, "scripts/refresh_fixture.py --force --scale 3 --require-figma-api 로 v3 재생성 필요")
+        ])
+    issues = []
+    if not isinstance(css_w, int) or css_w <= 0:
+        issues.append(hint(check_id, f"css_width={css_w} — 양의 정수여야 함"))
+    if not isinstance(css_h, int) or css_h <= 0:
+        issues.append(hint(check_id, f"css_height={css_h} — 양의 정수여야 함"))
+    if not issues:
+        return pass_result(check_id, f"css_width={css_w}, css_height={css_h} 정상")
+    return fail_result(check_id, f"css 크기 오류 {len(issues)}건", issues)
 
 
 def check_tokens_id_resolves(meta: dict) -> dict:
@@ -833,6 +952,87 @@ def check_section_order_v2(body: str) -> dict:
     return fail_result("section-order", f"v2 섹션 순서 위반 {len(issues)}건", issues)
 
 
+def _load_asset_manifest(meta: dict) -> dict | None:
+    """src/icons/manifest.json 로드 (없으면 None)."""
+    repo_root = Path(__file__).parent.parent
+    manifest_path = repo_root / "src" / "icons" / "manifest.json"
+    if not manifest_path.exists():
+        return None
+    try:
+        return json.loads(manifest_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def check_assets_ref_resolves(meta: dict) -> dict:
+    check_id = "assets-ref-resolves"
+    assets = meta.get("assets") or {}
+    if not assets:
+        return pass_result(check_id, "assets 없음 — 스킵")
+
+    manifest = _load_asset_manifest(meta)
+    if manifest is None:
+        return warning_result(check_id, "src/icons/manifest.json 없음 — 스킵", [
+            hint(check_id, "src/icons/manifest.json 생성 필요 (renderer-asset-manifest/v1)")
+        ])
+
+    manifest_icons = manifest.get("icons") or {}
+    issues = []
+    for key, asset in assets.items():
+        if not isinstance(asset, dict):
+            continue
+        ref = asset.get("asset_ref")
+        if ref is None:
+            continue
+        if ref not in manifest_icons:
+            issues.append(hint(
+                check_id,
+                f"assets.{key}.asset_ref='{ref}' — manifest에 없음. src/icons/manifest.json에 등록 필요"
+            ))
+
+    if not issues:
+        return pass_result(check_id, "모든 asset_ref가 manifest에 등록됨")
+    return fail_result(check_id, f"asset_ref 미등록 {len(issues)}건", issues)
+
+
+def check_assets_ref_file_exists(meta: dict) -> dict:
+    check_id = "assets-ref-file-exists"
+    assets = meta.get("assets") or {}
+    if not assets:
+        return pass_result(check_id, "assets 없음 — 스킵")
+
+    manifest = _load_asset_manifest(meta)
+    if manifest is None:
+        return warning_result(check_id, "src/icons/manifest.json 없음 — 스킵", [
+            hint(check_id, "src/icons/manifest.json 생성 필요")
+        ])
+
+    manifest_icons = manifest.get("icons") or {}
+    repo_root = Path(__file__).parent.parent
+    icons_dir = repo_root / "src" / "icons"
+    issues = []
+
+    for key, asset in assets.items():
+        if not isinstance(asset, dict):
+            continue
+        ref = asset.get("asset_ref")
+        if ref is None or ref not in manifest_icons:
+            continue
+        file_name = manifest_icons[ref].get("file", "")
+        if not file_name:
+            issues.append(hint(check_id, f"manifest.icons.{ref}.file 비어있음"))
+            continue
+        if not (icons_dir / file_name).exists():
+            issues.append(hint(
+                check_id,
+                f"manifest.icons.{ref}.file='{file_name}' — src/icons/에 파일 없음"
+            ))
+
+    if not issues:
+        return pass_result(check_id, "모든 asset manifest 파일 존재 확인")
+    return fail_result(check_id, f"asset 파일 미존재 {len(issues)}건", issues)
+
+
 def check_unmapped_figma_token(token_map: dict) -> dict:
     unmapped = token_map.get("unmapped") or []
     if not unmapped:
@@ -899,11 +1099,16 @@ def main() -> None:
         check_representative_variant_defined(meta),
         check_fixture_schema_version(args.fixture_meta),
         check_representative_screenshot_matches_spec(meta, args.fixture_meta),
+        check_representative_screenshot_scale(args.fixture_meta),
+        check_representative_screenshot_raster_matches(args.fixture_meta),
+        check_representative_screenshot_css_defined(args.fixture_meta),
         check_tokens_id_resolves(meta),
         check_tokens_id_has_mode_value(meta),
         check_tokens_name_not_ambiguous(meta),
         check_token_catalog_sha256(args.token_snapshot),
         check_component_keys_sha256(args.comp_keys_snapshot, comp_name),
+        check_assets_ref_resolves(meta),
+        check_assets_ref_file_exists(meta),
         check_unmapped_figma_token(token_map),
     ]
 

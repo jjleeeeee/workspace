@@ -55,37 +55,40 @@ fixture 파일은 항상 `fixture/` 에 위치. `_workspace/` 와 절대 혼재 
 | `component-coverage` | Figma INSTANCE가 YAML composition에 정의됐는지 |
 | `layout-coverage` | Figma auto-layout이 layout axis에 반영됐는지 |
 | `token-colors` | raw hex 미사용, id/cds 토큰 참조하는지 |
-| `token-typography` | typography 항목에 `token_fallback` 있는지 |
+| `token-typography` | typography 항목에 `fromCds` 있는지 |
 | `broken-ref` | `{colors.xxx}`, `{spacing.xxx}` 참조가 유효한지 |
-| `missing-sections` | 11개 필수 섹션 존재 여부 |
+| `missing-sections` | 필수 섹션 존재 여부 |
 | `section-order` | 섹션 순서 준수 여부 |
 | `variants-registry-matches-source-of-truth` | variants.registry ↔ variant-keys SoT 정합 |
 | `component-identity-matches-index` | frontmatter 식별자 ↔ index.md 정합 |
 | `representative-variant-defined` | variants.representative.variant + node_id 존재 |
-| `fixture-schema-version` | fixture.meta.json schema_version = "v2-representative" |
+| `fixture-schema-version` | fixture.meta.json schema_version = v2-representative 또는 v3-capture-contract |
 | `representative-screenshot-matches-spec` | fixture screenshot node_id = spec representative node_id |
+| `representative-screenshot-scale` | fixture.meta.figma_screenshot.scale == 3 |
+| `representative-screenshot-raster-matches` | PNG 실측 크기 == (raster_width, raster_height) |
+| `representative-screenshot-css-defined` | css_width/css_height 정수 + 양수 |
 | `tokens-id-resolves` | tokens 참조 id가 src/tokens/*.json에 존재 |
 | `tokens-id-has-mode-value` | id가 render_mode에서 값 있음 |
 | `tokens-name-not-ambiguous` | {cds: name}이 단일 id에만 매핑 |
 | `token-catalog-sha256-matches` | src/tokens/*.json sha256 = snapshot 핀 |
-| `typography-id-resolves` | typography token_fallback id 존재 |
-| `composition-matches-bridge` | composition.uses ↔ 03 bridge yaml 정합 |
 | `component-keys-sha256-matches` | index.md/variant-keys sha256 = snapshot 핀 |
-| `implementation-coverage-fields` | implementation_coverage 필드 비어있지 않음 |
-| `rules-non-empty` | rules.do + dont 각 1개 이상 |
-| `composition-uses-blacklist` | composition.uses에 vector/icon_area 미등록 |
+| `assets-ref-resolves` | asset_ref가 src/icons/manifest.json에 등록 |
+| `assets-ref-file-exists` | manifest file이 src/icons/에 실제 존재 |
 
-시각 게이트: SSIM ≥ 0.85 (`servers/pixel_compare.py`, representative variant만)
+시각 게이트: `pixel_sim_effective ≥ 0.85` (`servers/pixel_compare.py`, representative variant만)
+SSIM은 참고값으로만 JSON에 포함 (`score_ssim_naive`)
 
 ---
 
 ## 통과 판정
 
 ```
-PASS = 정적 all_pass AND pixel_compare.pass (SSIM ≥ 0.85)
+PASS = 정적 all_pass AND pixel_compare.pass (pixel_sim_effective ≥ 0.85)
 ```
 
-정적 PASS 후에도 SSIM 미달이면 루프를 계속 진행한다.
+- `pixel_sim_effective`: mask 영역 제외 후 실제 diff 픽셀 비율 기반 게이트 수치
+- `score_ssim_naive`: 마스크 미적용 SSIM, 참고값으로만 JSON에 포함
+- 정적 PASS 후에도 pixel_sim_effective 미달이면 루프를 계속 진행한다
 
 ---
 
