@@ -24,3 +24,12 @@ cds-catalogs/
 design-cds-docs/
 01_second-brain/
 08_presentation_docs/vendor/frontend-slides/
+
+# 임시/실험 산출물 — Codex 리뷰 노이즈 제거
+.tmp/
+**/.tmp/
+**/_workspace/
+
+# 세션/플랜 메타 (사람이 읽는 일회성 산출물)
+**/.claude/plans/
+**/log/session-*.md
