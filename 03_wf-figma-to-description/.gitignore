@@ -1,3 +1,7 @@
 # 상위 workspace gitignore의 **/_workspace/ 패턴을 이 프로젝트에서 예외 처리
 !_workspace/
 !_workspace/**
+
+# 상위 workspace gitignore의 **/.claude/plans/ 패턴을 이 프로젝트에서 예외 처리
+!.claude/plans/
+!.claude/plans/**
