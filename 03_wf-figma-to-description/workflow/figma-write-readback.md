@@ -1,9 +1,15 @@
 ---
 type: WorkflowReference
-status: Draft
+status: Deprecated
+deprecated: 2026-05-12
+reason: "Figma plain description write 폐기. draft-descriptions/*.description.yaml이 SoT."
 version: 1.0
 updated: 2026-05-05
 ---
+
+> ⚠️ **폐기됨 (2026-05-12)** — Figma write/readback 단계는 제거됐다.
+> `draft-descriptions/*.description.yaml`이 SoT이며, Figma 쓰기는 수행하지 않는다.
+> 이 문서는 이력 참고용으로만 보관한다.
 
 # Figma Write And Readback
 

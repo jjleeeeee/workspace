@@ -26,6 +26,22 @@
 
 ## History
 
+### 2026-05-12 / workflow-sot-migration
+
+- 변경: SoT를 Figma plain `description` 필드에서 `draft-descriptions/*.description.yaml`로 전환했다. Figma write/readback 단계(Step 5)를 워크플로우에서 완전 제거했다. bridge YAML(`bridge-descriptions/*.bridge.yaml`)을 폐기했다. `scripts/`(enrich_tokens, enrich_typography, fix_baselines, pick_baseline_node)를 공식 워크플로우 Step 3.5로 편입했다.
+- 이유: Figma plain description 필드는 편집 UI가 제한적이고 readback 검증 비용이 높다. 로컬 YAML이 스키마·validator·스크립트로 더 엄격하게 관리된다. bridge YAML은 활성 소비자가 없는 상태로 유지 부담만 증가했다.
+- 제외: 기존 YAML 내용 재작성, validator `--mode=bridge` 코드 즉시 제거(참고용 보관).
+- 검증: `docs/AI_RULES.md`, `PLAYBOOK.md`, `README.md`, `workflow/README.md`, `workflow/validation-checklist.md` 동시 갱신. `workflow/figma-write-readback.md` deprecated 표시. 로컬 validator PASS 여부는 개별 컴포넌트 작업 시 확인.
+- 재검토: 외부 시스템이 Figma Description을 읽어야 하는 요구가 생길 때.
+
+### 2026-05-12 / bridge-yaml-deprecation
+
+- 변경: `bridge-descriptions/*.bridge.yaml` 6개(avatar, checkbox, list-item-native, radio, text-button, text-fields)를 git에서 삭제했다.
+- 이유: bridge YAML의 활성 소비자(React Code Connect 등)가 확정되지 않은 상태에서 워크플로우 부담만 발생했다. 필요 시 draft YAML에서 재생성 가능하다.
+- 제외: draft YAML 내용, validator `--mode=bridge` 코드(참고용 보관), history 기록.
+- 검증: git rm으로 삭제 커밋. 관련 문서(AI_RULES, README, PLAYBOOK) 동시 갱신.
+- 재검토: React Code Connect 또는 플랫폼별 구현 검증 파이프라인이 bridge 계약을 실제로 소비할 때.
+
 ### 2026-05-12 / figma-description-bulk-clear
 
 - 변경: draft 기준 37개 Figma component/component set의 plain `description`과 legacy `descriptionMarkdown`을 모두 빈 문자열로 clear했다.

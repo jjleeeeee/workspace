@@ -11,8 +11,8 @@ rules live here.
 
 This folder is only for updating and validating Figma Component Description YAML.
 
-Figma Component Description is the source of truth. Do not create derived
-component Markdown output from this workflow.
+`draft-descriptions/*.description.yaml` is the source of truth. Do not create
+derived component Markdown output from this workflow.
 
 ## Read Order
 
@@ -34,50 +34,41 @@ component Markdown output from this workflow.
 - Treat `docs/AI_RULES.md` as the canonical shared routing contract.
 - Treat `PLAYBOOK.md` as the short contract and `workflow/` as the
   detailed procedure.
-- Do not skip the validator, Figma Description readback, or history gate when a
-  decision or behavior changed.
+- Do not skip the validator or history gate when a decision or behavior changed.
 - If a step-specific detail is unclear, read the linked `workflow/*.md` file
   before acting.
 
 ## Allowed
 
-- Update Figma Component Description YAML.
-- Create or update `bridge-descriptions/*.bridge.yaml` as platform-neutral
-  implementation bridge files. Keep common Figma-derived facts in
-  `component_contract`, and platform-specific mappings under
-  `platform_bindings.<platform>`. These files are not written back to Figma.
-- Verify Figma Description readback.
+- Update `draft-descriptions/*.description.yaml`.
 - Run the local Description validator when available.
+- Run `scripts/enrich_tokens.py` and `scripts/enrich_typography.py` to backfill
+  resolved token values from catalogs.
 - Record decision and change history.
 - Use `refs/markitdown-output/` as optional supplemental input.
 - Use `refs/figma-component-keys/` as optional key registry reference.
 - Record confirmed nested DS component relationships in `composition.uses` for
   composite components.
-- Record the previous legacy `descriptionMarkdown` length, then clear it before
-  writing the target component plain Description.
 - Use subagents only for local reference inspection, draft YAML authoring, and
   validator work.
 
 ## Forbidden
 
 - Do not create `{component}.md` as a derived workflow output.
-- Do not create or update `draft-descriptions/<component>.description.yaml`
-  when Desktop Bridge or required MCP preflight fails.
-- Do not use `descriptionMarkdown` for YAML storage.
-- Do not run bulk cleanup whose only purpose is clearing `descriptionMarkdown`.
+- Do not create or update `bridge-descriptions/*.bridge.yaml`. Bridge YAML is
+  deprecated as of 2026-05-12.
+- Do not write Description YAML to Figma's plain `description` field or
+  `descriptionMarkdown`. Figma write is deprecated as of 2026-05-12; the local
+  YAML file is SoT.
 - Do not infer unknown values that are not confirmed by Figma data, user input,
   or reference files.
 - Do not copy child component axes, tokens, or layout details into the parent
   Description; reference the child component relationship instead.
 - Do not treat `refs/figma-component-keys/` as the latest SoT without live Figma
   readback for the target component set.
-- Do not use REST API, Variables API, or fallback MCP write paths without explicit
-  user approval.
-- Do not run a cloud-only draft flow unless the user explicitly approves that
-  degraded mode for the current component.
 - Do not let subagents use Figma Console MCP, Desktop Bridge, or official
   `use_figma` live read/write tools. The parent agent owns all live Figma
-  read/write operations serially.
+  read operations serially.
 
 ## Source Priority
 
@@ -92,8 +83,6 @@ If a value is not confirmed, leave it out or record it in `source_gaps`.
 
 ## Done Criteria
 
-- Figma Description YAML is saved.
-- Description readback is decoded from HTML entities and checked.
-- Legacy `descriptionMarkdown` is confirmed empty after the write.
+- `draft-descriptions/<component>.description.yaml` is saved.
 - Validator passes, or warnings are recorded.
 - History is updated when a decision or behavior changed.

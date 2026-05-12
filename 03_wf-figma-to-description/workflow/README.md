@@ -1,13 +1,13 @@
 ---
 type: WorkflowGuide
-status: Draft
-version: 1.0
-updated: 2026-05-05
+status: Active
+version: 1.1
+updated: 2026-05-12
 ---
 
 # Workflow Guide
 
-이 문서는 Figma Component Description YAML을 최신화할 때 실제로 따라가는
+이 문서는 Figma Component Description YAML을 작성할 때 실제로 따라가는
 실행 순서다. 루트 `PLAYBOOK.md`는 계약서이고, 이 문서는
 작업 순서와 참조 문서의 허브다.
 
@@ -15,29 +15,28 @@ updated: 2026-05-05
 
 - `AGENTS.md`와 루트 `PLAYBOOK.md`를 먼저 읽는다.
 - 단계별 상세 문서를 필요한 시점에 읽는다.
-- validation, Figma readback, history gate는 생략하지 않는다.
+- validator와 history gate는 생략하지 않는다.
 - 확인되지 않은 값은 추측하지 않고 `source_gaps`에 기록한다.
-- REST API, Variables API, fallback write, cloud-only draft는 사용자 승인 없이
-  자동으로 실행하지 않는다.
+- Figma plain `description` 쓰기, bridge YAML 생성은 폐기됐다(2026-05-12).
 
 ## Step Table
 
 | Step | Action | Output | Required detail |
 | --- | --- | --- | --- |
 | 1 | Preflight로 MCP/Bridge/file 일치 확인 | 진행 가능 여부 | `exceptions.md` |
-| 2 | Framelink/Figma MCP로 component set 구조 읽기 | axes, variant, node/key, layout, typography | `exceptions.md` |
+| 2 | Framelink MCP로 component set 구조 읽기 | axes, variant, node/key, layout, typography | `exceptions.md` |
 | 2.25 | key registry snapshot 대조 | key 대조 결과 | 이 문서 |
 | 2.5 | markitdown reference 보충 | `spec_notes` 또는 rules 후보 | 이 문서 |
 | 2.75 | Unpromoted nested instance swap 발견 | `composition.uses` slot 타입 목록 | 이 문서 |
 | 3 | figma-console로 token binding 읽기 | part/token mapping | `exceptions.md` |
+| 3.5 | 스크립트 보강 | resolved token 값 주입 | 이 문서 |
 | 4 | draft YAML 작성 | `draft-descriptions/<component>.description.yaml` | `description-yaml-schema.md` |
-| 5 | validator, write, readback, history | Figma Description SoT 갱신 | `figma-write-readback.md`, `validation-checklist.md` |
+| 5 | validator + history | validator PASS, history 기록 | `validation-checklist.md` |
 
 ## Step 1. Preflight
 
 목표:
 
-- Description write용 Figma official MCP `use_figma`가 가능한지 확인한다.
 - 구조 추출용 Framelink MCP가 가능한지 확인한다.
 - token 추출용 figma-console MCP와 Desktop Bridge가 target Figma file에 연결되어 있는지 확인한다.
 
@@ -182,6 +181,30 @@ mcp__Framelink_Figma_MCP__get_figma_data {
 - component/variant 이름의 제어문자는 YAML 작성 전에 strip한다.
 - instance layer fill이 null인 복합 컴포넌트는 오류가 아닐 수 있으므로 관계를 확인한다.
 
+## Step 3.5. 스크립트 보강
+
+목표:
+
+- `scripts/enrich_tokens.py`로 YAML `tokens` 블록의 `resolved.{light,dark,web_var}` 값을 채운다.
+- `scripts/enrich_typography.py`로 `typography` 블록의 resolved 값을 채운다.
+
+실행 조건:
+
+- 신규 컴포넌트 draft 작성 후, 또는 `cds-catalogs/` 토큰 카탈로그가 갱신됐을 때.
+- resolved 값이 이미 최신이면 생략한다.
+
+실행 위치:
+
+```bash
+python scripts/enrich_tokens.py draft-descriptions/<component>.description.yaml
+python scripts/enrich_typography.py draft-descriptions/<component>.description.yaml
+```
+
+판단 기준:
+
+- 스크립트 결과는 draft 파일에 직접 반영된다.
+- 보강 후에도 반드시 Step 5 validator를 실행한다.
+
 ## Step 4. Draft YAML 작성
 
 목표:
@@ -200,24 +223,22 @@ draft-descriptions/<component>.description.yaml
 
 판단 기준:
 
-- draft는 Figma write 전 validator 확인용이며 SoT가 아니다.
-- 같은 component workflow를 다시 실행하면 같은 draft 파일을 최신 결과로 덮어쓴다.
+- `draft-descriptions/<component>.description.yaml`이 SoT다.
+- 같은 component workflow를 다시 실행하면 같은 파일을 최신 결과로 덮어쓴다.
 - schema section을 임의로 줄이지 않는다.
 
-## Step 5. 저장, Readback, 기록
+## Step 5. 검증/기록
 
 목표:
 
-- validator를 통과한 YAML을 Figma plain Description에 저장하고 readback으로 검증한다.
+- YAML을 validator로 검증하고, 결정 또는 동작 변경을 history에 기록한다.
 
 필수 참조:
 
-- `figma-write-readback.md`
 - `validation-checklist.md`
 
 판단 기준:
 
-- legacy `descriptionMarkdown`은 plain `description` write 전에 clear한다.
-- write 후 Figma readback을 HTML entity decode 기준으로 확인한다.
-- `descriptionMarkdownLength === 0`을 확인한다.
+- `node tools/validate-component-description.mjs draft-descriptions/<component>.description.yaml`를 실행한다.
+- FAIL이면 YAML을 수정하고 재실행한다.
 - 결정 또는 동작 변경이 있으면 history에 짧게 기록한다.
