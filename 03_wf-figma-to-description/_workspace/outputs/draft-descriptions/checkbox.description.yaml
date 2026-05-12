@@ -182,6 +182,9 @@ rules:
 spec_notes:
   source:
   - "Figma component metadata and compact Plugin API extraction from node 60365:40276."
+  usage:
+  - "Status=Indeterminate는 하위 항목이 부분 선택된 상태를 나타낸다. 단독 Checkbox에는 사용하지 않고, 그룹 전체 선택 컨트롤에서만 사용한다."
+  - "Checkbox는 그룹 내에서 다중 선택을 허용한다. 단일 선택만 허용해야 하는 경우에는 Radio를 사용하며, 즉시 반영 on/off에는 Toggle을 사용한다."
 baseline:
   node_id: 60365:40277
   variant: Mode=Default, Type=Square, Status=Default

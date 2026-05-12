@@ -131,6 +131,9 @@ rules:
 spec_notes:
   source:
   - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 27782:8837."
+  usage:
+  - "Scrollbar는 스크롤 중에만 표시되는 자동 숨김 동작이 기본이다. overflow 컨테이너와 반드시 연동해야 하며, 컨테이너 밖에 단독으로 배치하지 않는다."
+  - "Mode=Fixed는 항상 표시되는 정적 스크롤바다. 콘텐츠 길이와 무관하게 항상 노출이 필요한 컨텍스트(예: 데스크톱 리스트)에서만 사용한다."
 baseline:
   node_id: 27782:8384
   variant: Mode=Default

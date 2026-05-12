@@ -150,6 +150,9 @@ rules:
 spec_notes:
   source:
   - "Figma component metadata and compact Plugin API extraction from node 8451:113030."
+  usage:
+  - "Type=Number는 숫자를 표시하며, Type=N+는 최대 표시 숫자를 초과했을 때 'N+' 형태로 보여준다. 구현 시 숫자 자릿수에 따라 너비가 자동으로 늘어나도록 hug-content 처리가 필요하다."
+  - "Badge Number는 단독으로 사용하지 않고, 항상 대상 컴포넌트(icon-button, bottom-navigation 등)의 우상단에 절대 위치로 오버레이된다. z-index 레이어링을 명시적으로 관리해야 한다."
 baseline:
   node_id: 11098:2468
   variant: Mode=Default, Type=Number

@@ -215,6 +215,11 @@ rules:
     - "Do not recolor Toggle with community-specific colors outside the defined tokens."
     - "Do not use Toggle for a single consent or confirmation; use Checkbox instead."
 
+spec_notes:
+  usage:
+  - "OS=AOS/iOS에 따라 thumb 모양과 트랙 크기가 다르다. 두 플랫폼을 동일한 컴포넌트로 처리하지 말고 OS 축을 기준으로 분기 구현한다."
+  - "Toggle은 checked/unchecked 즉시 반영 컨트롤이다. 폼 내 단일 동의/확인에는 Checkbox를 사용한다. aria-checked 상태를 런타임에서 명시적으로 관리해야 한다."
+
 verification:
   figma_live_read:
   - "Figma Desktop Bridge connected to Chord Design System file DWEduE6GfxYMlyxKPNJ8jA."

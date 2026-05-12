@@ -425,6 +425,9 @@ spec_notes:
     size: "XLarge(52)"
     width_rule: "Fill the parent content area; the button component does not define screen margins."
     bottom_gap: "system/size/padding/box/200 from safe-area or navigation area."
+  usage:
+  - "Icon Button과 달리 Text Button은 레이블 텍스트가 필수다. 아이콘만으로 행동을 표현할 수 있는 경우에는 Icon Button을 사용한다. 최소 터치 영역(44px 이상)을 별도로 보장해야 한다."
+  - "XLarge(52) 타입은 화면 하단 고정 primary CTA 전용이다. 이 크기는 부모 콘텐츠 영역 전체 너비를 채우며, safe-area 하단 간격(system/size/padding/box/200)을 컨테이너에서 추가 처리해야 한다."
 baseline:
   node_id: 52753:39957
   variant: Mode=Default, Type=Filled, Size=Medium(40), Button Color=Default (Gray Ghost 단일컬러), Status=Default, Radius=off

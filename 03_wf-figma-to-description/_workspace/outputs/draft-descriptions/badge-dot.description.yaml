@@ -148,6 +148,9 @@ rules:
 spec_notes:
   source:
   - "Figma component metadata and compact Plugin API extraction from node 8451:112783."
+  usage:
+  - "Badge Dot는 숫자 없이 알림 존재 여부만 표시한다. 숫자 표기가 필요하면 Badge Number를 사용한다."
+  - "Outline=ON일 때 배경색과 구분되는 테두리가 적용된다. 어두운 배경에 올려놓을 때는 Outline=ON을 사용해 가시성을 확보한다."
 baseline:
   node_id: 8451:112782
   variant: Mode=Default, Size=Medium, Outline=ON

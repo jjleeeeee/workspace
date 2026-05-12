@@ -77,6 +77,9 @@ rules:
 spec_notes:
   source:
   - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 10482:75325."
+  usage:
+  - "Scrim Overlay는 단독으로 z-index를 관리하지 않는다. 항상 Modal, Bottom Sheet, Drawer 등 레이어 컴포넌트와 함께 사용하며, 소비자 컨테이너가 z-index 스태킹을 책임진다."
+  - "탭하면 뒤의 레이어를 닫는 dismiss 동작은 Scrim 자체가 아닌 부모 컴포넌트에서 구현한다. Scrim은 시각적 오버레이 역할만 담당한다."
 baseline:
   node_id: 10482:75325
   variant: Scrim_Overlay
