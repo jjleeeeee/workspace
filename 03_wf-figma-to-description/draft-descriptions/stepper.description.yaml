@@ -58,7 +58,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#FFFFFF33'
-      web_var: --cds-system-color-outline-default-200a
   control_stroke_fixed:
     part: "Quantity/PlusMinus and Number"
     role: "stroke"
@@ -67,7 +66,6 @@ tokens:
     resolved:
       light: '#FFFFFF33'
       dark: '#FFFFFF33'
-      web_var: --cds-system-fixed-color-outline-default-200a
   disabled_surface_default:
     part: "Stepper container"
     role: "fill"
@@ -76,7 +74,6 @@ tokens:
     resolved:
       light: '#F2F3F7'
       dark: '#1F1F1F'
-      web_var: --cds-system-color-surface-gray-75
   disabled_surface_fixed:
     part: "Stepper container"
     role: "fill"
@@ -85,7 +82,6 @@ tokens:
     resolved:
       light: '#1F1F1F'
       dark: '#1F1F1F'
-      web_var: --cds-system-fixed-color-surface-gray-75
   number_text_default:
     part: "Number text"
     role: "fill"
@@ -94,7 +90,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-default
   number_text_fixed:
     part: "Number text"
     role: "fill"
@@ -103,7 +98,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   number_text_disabled_default:
     part: "Number text"
     role: "fill"
@@ -112,7 +106,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#FFFFFF33'
-      web_var: --cds-system-color-text-200a
   number_text_disabled_fixed:
     part: "Number text"
     role: "fill"
@@ -121,7 +114,6 @@ tokens:
     resolved:
       light: '#FFFFFF33'
       dark: '#FFFFFF33'
-      web_var: --cds-system-fixed-color-text-200a
   subtract_icon_default_state:
     part: "subtract icon"
     role: "fill"
@@ -132,11 +124,9 @@ tokens:
       default:
         light: '#00000033'
         dark: '#FFFFFF33'
-        web_var: --cds-system-color-icon-200a
       fixed:
         light: '#FFFFFF33'
         dark: '#FFFFFF33'
-        web_var: --cds-system-fixed-color-icon-200a
   action_icon_enabled:
     part: "subtract and add icons"
     role: "fill"
@@ -147,11 +137,9 @@ tokens:
       default:
         light: '#000000'
         dark: '#FFFFFF'
-        web_var: --cds-system-color-icon-default
       fixed:
         light: '#FFFFFF'
         dark: '#FFFFFF'
-        web_var: --cds-system-fixed-color-icon-default
   action_icon_disabled:
     part: "subtract and add icons"
     role: "fill"
@@ -162,11 +150,9 @@ tokens:
       default:
         light: '#00000033'
         dark: '#FFFFFF33'
-        web_var: --cds-system-color-icon-200a
       fixed:
         light: '#FFFFFF33'
         dark: '#FFFFFF33'
-        web_var: --cds-system-fixed-color-icon-200a
   caret_surface:
     part: "Caret"
     role: "fill"
@@ -175,7 +161,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-surface-default-reverse
   number_typography:
     part: "Number text"
     role: "typography"

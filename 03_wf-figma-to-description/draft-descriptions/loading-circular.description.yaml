@@ -35,7 +35,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#0000004D'
-      web_var: --cds-system-color-outline-default-reverse-300a
   track_stroke_fixed:
     part: "circle_line"
     role: "stroke"
@@ -45,7 +44,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-fixed-color-divide-white-300a-same
   active_arc_stroke:
     part: "line"
     role: "stroke"
@@ -55,7 +53,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-outline-default
 assets:
   circular_loading_motion:
     part: "circle_line and line"

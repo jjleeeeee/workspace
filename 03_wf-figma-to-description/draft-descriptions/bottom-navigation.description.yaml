@@ -65,11 +65,9 @@ tokens:
       default:
         light: '#FFFFFF'
         dark: '#000000'
-        web_var: --cds-system-color-surface-default
       fixed:
         light: '#000000'
         dark: '#000000'
-        web_var: --cds-system-fixed-color-surface-default
   container_surface_fixed:
     part: "component"
     role: "fill"
@@ -80,11 +78,9 @@ tokens:
       default:
         light: '#000000'
         dark: '#FFFFFF'
-        web_var: --cds-system-color-surface-default-reverse
       fixed:
         light: '#000000'
         dark: '#000000'
-        web_var: --cds-system-fixed-color-surface-default
   gnb_divider_default:
     part: "GNB"
     role: "stroke"
@@ -95,11 +91,9 @@ tokens:
       default:
         light: '#0000000A'
         dark: '#FFFFFF0D'
-        web_var: --cds-system-color-divide-default-50a
       fixed:
         light: '#0000000A'
         dark: '#0000000A'
-        web_var: --cds-system-fixed-color-outline-default-reverse-50a
   gnb_divider_fixed:
     part: "GNB"
     role: "stroke"
@@ -110,11 +104,9 @@ tokens:
       default:
         light: '#0000000A'
         dark: '#FFFFFF1A'
-        web_var: --cds-system-color-divide-default-50a-2
       fixed:
         light: '#FFFFFF1A'
         dark: '#FFFFFF1A'
-        web_var: --cds-system-fixed-color-outline-default-100a
   icon_enabled_default:
     part: "tab icon"
     role: "fill | stroke"
@@ -125,11 +117,9 @@ tokens:
       default:
         light: '#282828'
         dark: '#DDDDDD'
-        web_var: --cds-system-color-icon-gray-800
       fixed:
         light: '#DDDDDD'
         dark: '#DDDDDD'
-        web_var: --cds-system-fixed-color-icon-gray-800
   icon_enabled_fixed:
     part: "tab icon"
     role: "fill | stroke"
@@ -140,11 +130,9 @@ tokens:
       default:
         light: '#282828'
         dark: '#DDDDDD'
-        web_var: --cds-system-color-icon-gray-800
       fixed:
         light: '#DDDDDD'
         dark: '#DDDDDD'
-        web_var: --cds-system-fixed-color-icon-gray-800
   icon_default:
     part: "tab icon"
     role: "fill | stroke"
@@ -155,11 +143,9 @@ tokens:
       default:
         light: '#282828'
         dark: '#DDDDDD'
-        web_var: --cds-system-color-icon-gray-800
       fixed:
         light: '#DDDDDD'
         dark: '#DDDDDD'
-        web_var: --cds-system-fixed-color-icon-gray-800
   text_enabled_default:
     part: "tab label"
     role: "fill"
@@ -170,11 +156,9 @@ tokens:
       default:
         light: '#282828'
         dark: '#DDDDDD'
-        web_var: --cds-system-color-text-gray-800
       fixed:
         light: '#DDDDDD'
         dark: '#DDDDDD'
-        web_var: --cds-system-fixed-color-text-gray-800
   text_enabled_fixed:
     part: "tab label"
     role: "fill"
@@ -185,11 +169,9 @@ tokens:
       default:
         light: '#282828'
         dark: '#DDDDDD'
-        web_var: --cds-system-color-text-gray-800
       fixed:
         light: '#DDDDDD'
         dark: '#DDDDDD'
-        web_var: --cds-system-fixed-color-text-gray-800
   text_default:
     part: "tab label"
     role: "fill"
@@ -200,11 +182,9 @@ tokens:
       default:
         light: '#282828'
         dark: '#DDDDDD'
-        web_var: --cds-system-color-text-gray-800
       fixed:
         light: '#DDDDDD'
         dark: '#DDDDDD'
-        web_var: --cds-system-fixed-color-text-gray-800
   home_indicator_ios_light:
     part: "Home Indicator / Base"
     role: "fill"
@@ -215,11 +195,9 @@ tokens:
       default:
         light: '#000000'
         dark: '#FFFFFF'
-        web_var: --cds-system-color-surface-default-reverse
       fixed:
         light: '#FFFFFF'
         dark: '#FFFFFF'
-        web_var: --cds-system-fixed-color-surface-default-reverse
   home_indicator_aos_light:
     part: "Home Indicator"
     role: "fill"
@@ -230,11 +208,9 @@ tokens:
       default:
         light: '#EBEDF2'
         dark: '#333333'
-        web_var: --cds-system-color-surface-gray-100-2
       fixed:
         light: '#EBEDF2'
         dark: '#333333'
-        web_var: --cds-system-color-surface-gray-100-2
   label_gap:
     part: "tab item"
     role: "spacing"
@@ -244,7 +220,6 @@ tokens:
     resolved:
       light: 2
       dark: 2
-      web_var: --cds-system-size-padding-box-25
   tab_label_typography_ios:
     part: "tab label"
     role: "typography"

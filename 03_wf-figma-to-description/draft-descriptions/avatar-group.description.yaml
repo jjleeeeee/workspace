@@ -62,7 +62,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-status-danger-red
   live_tag_outline:
     part: "Live Tag"
     role: "stroke"
@@ -71,7 +70,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-outline-default
   live_tag_text:
     part: "Live Tag / text"
     role: "text fill"
@@ -80,7 +78,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   overflow_count_text:
     part: "5+ overflow count"
     role: "text fill"
@@ -91,7 +88,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
 typography:
   caption_xs_system_700:
     font_family: "WeGothicSans"

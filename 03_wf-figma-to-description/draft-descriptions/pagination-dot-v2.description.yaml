@@ -53,7 +53,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-icon-default
   selected_dot_stroke_default:
     part: "dot ellipse"
     role: "stroke"
@@ -62,7 +61,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#000000'
-      web_var: --cds-system-color-outline-default-reverse
   unselected_dot_fill_default:
     part: "dot ellipse"
     role: "fill"
@@ -72,7 +70,6 @@ tokens:
     resolved:
       light: '#0000004D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-color-icon-300a
   unselected_dot_stroke_default:
     part: "dot ellipse"
     role: "stroke"
@@ -82,7 +79,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#0000004D'
-      web_var: --cds-system-color-outline-default-reverse-300a
   selected_dot_fill_fixed:
     part: "dot ellipse"
     role: "fill"
@@ -91,7 +87,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-icon-default
   selected_dot_stroke_fixed:
     part: "dot ellipse"
     role: "stroke"
@@ -100,7 +95,6 @@ tokens:
     resolved:
       light: '#3E3E3E'
       dark: '#3E3E3E'
-      web_var: --cds-system-fixed-color-outline-gray-300
   unselected_dot_fill_fixed_white:
     part: "dot ellipse"
     role: "fill"
@@ -110,7 +104,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-fixed-color-icon-white-300a-same
   unselected_dot_fill_fixed_neutral:
     part: "dot ellipse"
     role: "fill"
@@ -120,7 +113,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-fixed-color-icon-300a
   unselected_dot_stroke_fixed:
     part: "dot ellipse"
     role: "stroke"
@@ -130,7 +122,6 @@ tokens:
     resolved:
       light: '#0000004D'
       dark: '#0000004D'
-      web_var: --cds-system-fixed-color-outline-default-reverse-300a
   dot_gap:
     part: "dot frame"
     role: "spacing"
@@ -139,7 +130,6 @@ tokens:
     resolved:
       light: 6
       dark: 6
-      web_var: --cds-system-size-padding-box-75
   vertical_padding:
     part: "component"
     role: "padding"
@@ -149,7 +139,6 @@ tokens:
     resolved:
       light: 12
       dark: 12
-      web_var: --cds-system-size-padding-box-150
 assets:
   dot_indicator:
     part: "dot"

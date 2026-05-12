@@ -49,7 +49,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-roles-accent-primary
   selected_bg_fixed:
     part: "checkbox"
     role: "fill"
@@ -58,7 +57,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-status-active-primary
   selected_text_default:
     part: "number text"
     role: "fill"
@@ -67,7 +65,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#000000'
-      web_var: --cds-system-color-text-default-reverse
   selected_text_fixed:
     part: "number text"
     role: "fill"
@@ -76,7 +73,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#000000'
-      web_var: --cds-system-fixed-color-text-default-reverse
   unselected_bg:
     part: "checkbox"
     role: "fill"
@@ -86,7 +82,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#00000033'
-      web_var: --cds-system-fixed-color-surface-default-200a
   unselected_stroke_default:
     part: "checkbox"
     role: "stroke"
@@ -96,7 +91,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-fixed-color-outline-default-300a
   unselected_stroke_fixed:
     part: "checkbox"
     role: "stroke"
@@ -106,7 +100,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-fixed-color-icon-300a
   selected_text_typography:
     part: "number text"
     role: "typography"

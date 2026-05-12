@@ -11,16 +11,8 @@ for fname in CATALOG_DIR.glob("*.json"):
     for t in data["tokens"]:
         catalog[t["name"]] = t["values"]
 
-def css_var(token_name):
-    # system/fixed_color/outline/default-200a → --cds-system-fixed-color-outline-default-200a
-    return "--cds-" + token_name.replace("/", "-").replace("_", "-")
-
 def resolved_entry(token_name, values):
-    entry = {}
-    for mode, v in values.items():
-        entry[mode] = v["raw"]
-    entry["web_var"] = css_var(token_name)
-    return entry
+    return {mode: v["raw"] for mode, v in values.items()}
 
 def enrich_token_entry(entry):
     if not isinstance(entry, dict):

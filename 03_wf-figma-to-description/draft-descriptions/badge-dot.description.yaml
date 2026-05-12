@@ -54,7 +54,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-color-status-danger-red
   dot_fill_fixed:
     part: "Badge_Dot"
     role: "fill"
@@ -63,7 +62,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-status-danger-red
   outline_default:
     part: "Badge_Dot"
     role: "stroke"
@@ -72,7 +70,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#000000'
-      web_var: --cds-system-color-outline-default-reverse
   outline_fixed:
     part: "Badge_Dot"
     role: "stroke"
@@ -81,7 +78,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#000000'
-      web_var: --cds-system-fixed-color-outline-default-reverse
   radius:
     part: "Badge_Dot"
     role: "corner radius"

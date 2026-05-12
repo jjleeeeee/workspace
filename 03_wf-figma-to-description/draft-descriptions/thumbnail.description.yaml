@@ -81,7 +81,6 @@ tokens:
     resolved:
       light: '#00000080'
       dark: '#00000080'
-      web_var: --cds-system-fixed-color-surface-default-400a
   seek_bar_track:
     part: "Seek bar"
     role: "fill"
@@ -91,7 +90,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-fixed-color-surface-default-reverse-300a
   seek_bar_streaming:
     part: "Seek bar / Streaming"
     role: "fill"
@@ -100,7 +98,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-status-danger-red
   right_item_text:
     part: "Right Item_Bottom / time"
     role: "text fill"
@@ -109,7 +106,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   left_item_tag_bg:
     part: "Left Item / tag / BG"
     role: "fill"
@@ -118,7 +114,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-roles-primary
   left_item_tag_text:
     part: "Left Item / tag / Text"
     role: "text fill"
@@ -127,7 +122,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   center_button_icon:
     part: "Center Button / icon"
     role: "icon fill"
@@ -136,7 +130,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-icon-default
   radius_off:
     part: "Thumbnail frame"
     role: "corner radius"

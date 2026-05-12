@@ -63,7 +63,6 @@ tokens:
     resolved:
       light: '#DEDEDE'
       dark: '#333333'
-      web_var: --cds-system-color-button-outlined-gray
   container_stroke_fixed:
     part: "chip container"
     role: "stroke"
@@ -72,7 +71,6 @@ tokens:
     resolved:
       light: '#333333'
       dark: '#333333'
-      web_var: --cds-system-fixed-color-button-outlined-gray
   outlined_selected_stroke_default:
     part: "chip container"
     role: "stroke"
@@ -81,7 +79,6 @@ tokens:
     resolved:
       light: '#00CBD5'
       dark: '#01D5DF'
-      web_var: --cds-system-color-button-default
   outlined_selected_stroke_fixed:
     part: "chip container"
     role: "stroke"
@@ -90,7 +87,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-button-default
   disabled_stroke_default:
     part: "chip container"
     role: "stroke"
@@ -100,7 +96,6 @@ tokens:
     resolved:
       light: '#0000001A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-color-button-disabled
   disabled_stroke_fixed:
     part: "chip container"
     role: "stroke"
@@ -110,7 +105,6 @@ tokens:
     resolved:
       light: '#FFFFFF1A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-fixed-color-button-disabled
   filled_selected_surface_default:
     part: "chip container"
     role: "fill"
@@ -119,7 +113,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-surface-default-reverse
   filled_selected_surface_fixed:
     part: "chip container"
     role: "fill"
@@ -128,7 +121,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-surface-default-reverse
   filled_disabled_surface_default:
     part: "chip container"
     role: "fill"
@@ -138,7 +130,6 @@ tokens:
     resolved:
       light: '#0000001A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-color-button-disabled
   filled_disabled_surface_fixed:
     part: "chip container"
     role: "fill"
@@ -148,7 +139,6 @@ tokens:
     resolved:
       light: '#FFFFFF1A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-fixed-color-button-disabled
   label_text_default:
     part: "_atoms / text"
     role: "text fill"
@@ -157,7 +147,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-default
   label_text_fixed:
     part: "_atoms / text"
     role: "text fill"
@@ -166,7 +155,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   label_text_selected_default:
     part: "_atoms / text"
     role: "selected text fill"
@@ -175,7 +163,6 @@ tokens:
     resolved:
       light: '#00B8C1'
       dark: '#01D5DF'
-      web_var: --cds-system-color-text-primary
   label_text_selected_fixed:
     part: "_atoms / text"
     role: "selected text fill"
@@ -184,7 +171,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-text-primary
   label_text_disabled_default:
     part: "_atoms / text"
     role: "disabled text fill"
@@ -193,7 +179,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#FFFFFF33'
-      web_var: --cds-system-color-text-200a
   label_text_disabled_fixed:
     part: "_atoms / text"
     role: "disabled text fill"
@@ -202,7 +187,6 @@ tokens:
     resolved:
       light: '#FFFFFF33'
       dark: '#FFFFFF33'
-      web_var: --cds-system-fixed-color-text-200a
   padding_horizontal:
     part: "chip container"
     role: "left and right padding for Text/Icon"
@@ -210,7 +194,6 @@ tokens:
     resolved:
       light: 12
       dark: 12
-      web_var: --cds-system-size-padding-box-150
   image_padding_left:
     part: "chip container"
     role: "left padding for Image type"
@@ -218,7 +201,6 @@ tokens:
     resolved:
       light: 6
       dark: 6
-      web_var: --cds-system-size-padding-box-75
   inner_gap:
     part: "layout"
     role: "gap between icon/image and label"
@@ -226,7 +208,6 @@ tokens:
     resolved:
       light: 4
       dark: 4
-      web_var: --cds-system-size-padding-box-50
   radius_off:
     part: "chip container"
     role: "corner radius"
@@ -235,7 +216,6 @@ tokens:
     resolved:
       light: 8
       dark: 8
-      web_var: --cds-system-size-radius-box-100
   radius_on:
     part: "chip container"
     role: "corner radius"
@@ -250,7 +230,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-color-roles-negative
 typography:
   caption_s_system_500:
     font_family: "WeGothicSans"

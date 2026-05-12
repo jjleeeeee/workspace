@@ -94,11 +94,9 @@ tokens:
       default:
         light: '#00CBD5'
         dark: '#01D5DF'
-        web_var: --cds-system-color-button-default
       fixed:
         light: '#01D5DF'
         dark: '#01D5DF'
-        web_var: --cds-system-fixed-color-button-default
   filled_black:
     part: "Options"
     role: "fill"
@@ -109,11 +107,9 @@ tokens:
       default:
         light: '#000000'
         dark: '#FFFFFF'
-        web_var: --cds-system-color-button-black
       fixed:
         light: '#FFFFFF'
         dark: '#FFFFFF'
-        web_var: --cds-system-fixed-color-button-white
   outlined_default:
     part: "Options"
     role: "stroke"
@@ -124,11 +120,9 @@ tokens:
       default:
         light: '#00CBD5'
         dark: '#01D5DF'
-        web_var: --cds-system-color-button-default
       fixed:
         light: '#01D5DF'
         dark: '#01D5DF'
-        web_var: --cds-system-fixed-color-button-default
   outlined_black:
     part: "Options"
     role: "stroke"
@@ -139,11 +133,9 @@ tokens:
       default:
         light: '#000000'
         dark: '#FFFFFF'
-        web_var: --cds-system-color-button-black
       fixed:
         light: '#FFFFFF'
         dark: '#FFFFFF'
-        web_var: --cds-system-fixed-color-button-white
   hover_overlay:
     part: "Options"
     role: "fill"
@@ -154,11 +146,9 @@ tokens:
       default:
         light: '#0000000A'
         dark: '#FFFFFF0D'
-        web_var: --cds-system-color-button-hover
       fixed:
         light: '#FFFFFF0D'
         dark: '#FFFFFF0D'
-        web_var: --cds-system-fixed-color-button-hover
   disabled_container:
     part: "Options"
     role: "fill or stroke"
@@ -169,11 +159,9 @@ tokens:
       default:
         light: '#0000001A'
         dark: '#FFFFFF1A'
-        web_var: --cds-system-color-button-disabled
       fixed:
         light: '#FFFFFF1A'
         dark: '#FFFFFF1A'
-        web_var: --cds-system-fixed-color-button-disabled
   icon_on_filled:
     part: "Vector (Stroke)"
     role: "icon fill"
@@ -184,11 +172,9 @@ tokens:
       default:
         light: '#FFFFFF'
         dark: '#000000'
-        web_var: --cds-system-color-icon-default-reverse
       fixed:
         light: '#000000'
         dark: '#000000'
-        web_var: --cds-system-fixed-color-icon-default-reverse
   icon_on_outlined_default:
     part: "Vector (Stroke)"
     role: "icon fill"
@@ -199,11 +185,9 @@ tokens:
       default:
         light: '#00CBD5'
         dark: '#01D5DF'
-        web_var: --cds-system-color-button-default
       fixed:
         light: '#01D5DF'
         dark: '#01D5DF'
-        web_var: --cds-system-fixed-color-button-default
   icon_on_outlined_black:
     part: "Vector (Stroke)"
     role: "icon fill"
@@ -214,11 +198,9 @@ tokens:
       default:
         light: '#000000'
         dark: '#FFFFFF'
-        web_var: --cds-system-color-button-black
       fixed:
         light: '#FFFFFF'
         dark: '#FFFFFF'
-        web_var: --cds-system-fixed-color-button-white
   icon_disabled:
     part: "Vector (Stroke)"
     role: "icon fill"
@@ -229,7 +211,6 @@ tokens:
       default:
         light: '#00000033'
         dark: '#FFFFFF33'
-        web_var: --cds-system-color-icon-200a
   radius_on:
     part: "Options"
     role: "corner radius"

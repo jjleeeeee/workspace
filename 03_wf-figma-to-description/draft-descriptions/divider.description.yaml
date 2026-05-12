@@ -56,11 +56,9 @@ tokens:
       default:
         light: '#0000000A'
         dark: '#FFFFFF0D'
-        web_var: --cds-system-color-outline-default-50a
       fixed:
         light: '#FFFFFF0D'
         dark: '#FFFFFF0D'
-        web_var: --cds-system-fixed-color-outline-default-50a
   default_50a_2:
     part: "divider"
     role: "fill"
@@ -71,11 +69,9 @@ tokens:
       default:
         light: '#0000000A'
         dark: '#FFFFFF1A'
-        web_var: --cds-system-color-outline-default-50a-2
       fixed:
         light: '#FFFFFF1A'
         dark: '#FFFFFF1A'
-        web_var: --cds-system-fixed-color-outline-default-100a
   height_1:
     part: "divider"
     role: "height"

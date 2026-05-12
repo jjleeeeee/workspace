@@ -100,7 +100,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#000000'
-      web_var: --cds-system-color-surface-default
   navigation_surface_fixed:
     part: "Top Navigation container"
     role: "fill"
@@ -109,7 +108,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#000000'
-      web_var: --cds-system-fixed-color-surface-default
   transparent_surface:
     part: "Top Navigation container"
     role: "fill behavior"
@@ -123,7 +121,6 @@ tokens:
     resolved:
       light: '#F7F8FA'
       dark: '#161616'
-      web_var: --cds-system-color-surface-default-gray-50
   search_surface_fixed:
     part: "[V2] Search / Search Bar"
     role: "fill"
@@ -134,7 +131,6 @@ tokens:
     resolved:
       light: '#161616'
       dark: '#161616'
-      web_var: --cds-system-fixed-color-surface-default-gray-50
 typography:
   body_lg_system_700:
     font_family: "WeGothicSans"

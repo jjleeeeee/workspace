@@ -48,7 +48,6 @@ tokens:
     resolved:
       light: '#F7F8FA'
       dark: '#161616'
-      web_var: --cds-system-color-surface-default-gray-50
   search_bar_surface_fixed:
     part: "Search Bar"
     role: "fill"
@@ -57,7 +56,6 @@ tokens:
     resolved:
       light: '#161616'
       dark: '#161616'
-      web_var: --cds-system-fixed-color-surface-default-gray-50
   placeholder_text_default:
     part: "Text"
     role: "fill"
@@ -67,7 +65,6 @@ tokens:
     resolved:
       light: '#0000004D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-color-text-300a
   placeholder_text_fixed:
     part: "Text"
     role: "fill"
@@ -77,7 +74,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-fixed-color-text-300a
   query_text_default:
     part: "Text"
     role: "fill"
@@ -86,7 +82,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-default
   query_text_fixed:
     part: "Text"
     role: "fill"
@@ -95,7 +90,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   caret_default:
     part: "Caret"
     role: "fill"
@@ -104,7 +98,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-surface-default-reverse
   caret_fixed:
     part: "Caret"
     role: "fill"
@@ -113,7 +106,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-surface-default-reverse
   clear_button_bg_default:
     part: "Ellipse 197"
     role: "fill"
@@ -122,7 +114,6 @@ tokens:
     resolved:
       light: '#C8CAD1'
       dark: '#3E3E3E'
-      web_var: --cds-system-color-surface-gray-300
   clear_button_bg_fixed:
     part: "Ellipse 197"
     role: "fill"
@@ -131,7 +122,6 @@ tokens:
     resolved:
       light: '#3E3E3E'
       dark: '#3E3E3E'
-      web_var: --cds-system-fixed-color-surface-gray-300
   clear_icon_default_mode_default_state:
     part: "Vector 39 and Vector 40"
     role: "stroke"
@@ -140,7 +130,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#000000'
-      web_var: --cds-system-color-icon-default-reverse
   clear_icon_fixed_family:
     part: "Vector 39 and Vector 40"
     role: "stroke"
@@ -151,7 +140,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-icon-default
 typography:
   body_s_system_400:
     font_family: "WeGothicSans"

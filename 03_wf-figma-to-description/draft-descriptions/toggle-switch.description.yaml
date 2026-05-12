@@ -71,7 +71,6 @@ tokens:
     resolved:
       light: '#DCDEE4'
       dark: '#333333'
-      web_var: --cds-system-color-surface-gray-200
   track_off_fixed:
     part: "Track"
     role: "fill"
@@ -80,7 +79,6 @@ tokens:
     resolved:
       light: '#333333'
       dark: '#333333'
-      web_var: --cds-system-fixed-color-surface-gray-200
   track_on_default:
     part: "Track"
     role: "fill"
@@ -89,7 +87,6 @@ tokens:
     resolved:
       light: '#00CBD5'
       dark: '#01D5DF'
-      web_var: --cds-system-color-status-active-primary
   track_on_fixed:
     part: "Track"
     role: "fill"
@@ -98,7 +95,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-status-active-primary
   track_disabled_default:
     part: "Track"
     role: "fill"
@@ -107,7 +103,6 @@ tokens:
     resolved:
       light: '#DCDEE4'
       dark: '#3E3E3E'
-      web_var: --cds-system-color-status-inactive-gray
   track_disabled_fixed:
     part: "Track"
     role: "fill"
@@ -116,7 +111,6 @@ tokens:
     resolved:
       light: '#3E3E3E'
       dark: '#3E3E3E'
-      web_var: --cds-system-fixed-color-status-inactive-gray
   thumb_fill:
     part: "Switch"
     role: "fill"
@@ -125,7 +119,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-surface-default-reverse
   thumb_disabled:
     part: "Switch"
     role: "fill"
@@ -136,7 +129,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-fixed-color-surface-default-reverse-300a
 layout:
   component_size: "varies by OS and Size"
   sizes:

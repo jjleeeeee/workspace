@@ -133,7 +133,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-default
   title_text_fixed:
     part: "Title"
     role: "text fill"
@@ -142,7 +141,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   title_typography:
     part: "Title"
     role: "text style"
@@ -161,7 +159,6 @@ tokens:
     resolved:
       light: '#8E8E8E'
       dark: '#777777'
-      web_var: --cds-system-color-text-gray-500
   subtitle_text_fixed:
     part: "SubTitle"
     role: "text fill"
@@ -170,7 +167,6 @@ tokens:
     resolved:
       light: '#777777'
       dark: '#777777'
-      web_var: --cds-system-fixed-color-text-gray-500
   subtitle_typography:
     part: "SubTitle"
     role: "text style"
@@ -189,7 +185,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-default
   trailing_detail_fixed:
     part: "Trailing detail"
     role: "text fill"
@@ -198,7 +193,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   trailing_detail_typography:
     part: "Trailing detail"
     role: "text style"
@@ -217,7 +211,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   metadata_tag_text:
     part: "Multiple tags"
     role: "text fill"
@@ -226,7 +219,6 @@ tokens:
     resolved:
       light: '#8E8E8E'
       dark: '#777777'
-      web_var: --cds-system-color-text-gray-500
   metadata_tag_typography:
     part: "Multiple tags"
     role: "text style"

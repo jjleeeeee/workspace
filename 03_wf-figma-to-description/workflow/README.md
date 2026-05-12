@@ -185,7 +185,7 @@ mcp__Framelink_Figma_MCP__get_figma_data {
 
 목표:
 
-- `scripts/enrich_tokens.py`로 YAML `tokens` 블록의 `resolved.{light,dark,web_var}` 값을 채운다.
+- `scripts/enrich_tokens.py`로 YAML `tokens` 블록의 `resolved.{light,dark}` 값을 채운다.
 - `scripts/enrich_typography.py`로 `typography` 블록의 resolved 값을 채운다.
 
 실행 조건:

@@ -65,7 +65,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-default
   title_text_fixed:
     part: "Content / Title"
     role: "text fill"
@@ -74,7 +73,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   body_text_default:
     part: "Content / Body"
     role: "text fill"
@@ -84,7 +82,6 @@ tokens:
     resolved:
       light: '#00000080'
       dark: '#FFFFFF80'
-      web_var: --cds-system-color-text-400a
   body_text_fixed:
     part: "Content / Body"
     role: "text fill"
@@ -94,7 +91,6 @@ tokens:
     resolved:
       light: '#FFFFFF80'
       dark: '#FFFFFF80'
-      web_var: --cds-system-fixed-color-text-400a
   trailing_detail_default:
     part: "Trailing / Detail"
     role: "text fill"
@@ -103,7 +99,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-default
   trailing_detail_fixed:
     part: "Trailing / Detail"
     role: "text fill"
@@ -112,7 +107,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   trailing_icon_default:
     part: "Trailing / Icon"
     role: "icon fill"
@@ -121,7 +115,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-icon-default
   trailing_icon_fixed:
     part: "Trailing / Icon"
     role: "icon fill"
@@ -130,7 +123,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-icon-default
   badge_dot:
     part: "Content / Title / BadgeDot"
     role: "fill"
@@ -139,7 +131,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-color-status-danger-red
   disabled_opacity:
     part: "state layer"
     role: "opacity"

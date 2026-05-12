@@ -56,7 +56,6 @@ tokens:
     resolved:
       light: '#F7F8FA'
       dark: '#161616'
-      web_var: --cds-system-color-surface-default-gray-50
   base_fill_fixed:
     part: "Skeleton"
     role: "fill"
@@ -65,7 +64,6 @@ tokens:
     resolved:
       light: '#282828'
       dark: '#282828'
-      web_var: --cds-system-fixed-color-surface-gray-100
   rectangle_radius:
     part: "Skeleton"
     role: "corner radius"
@@ -75,7 +73,6 @@ tokens:
     resolved:
       light: 8
       dark: 8
-      web_var: --cds-system-size-radius-box-100
   line_radius:
     part: "Skeleton"
     role: "corner radius"
@@ -85,7 +82,6 @@ tokens:
     resolved:
       light: 4
       dark: 4
-      web_var: --cds-system-size-radius-box-50
   rectangle_line_horizontal_padding:
     part: "Skeleton"
     role: "padding left/right"
@@ -95,7 +91,6 @@ tokens:
     resolved:
       light: 20
       dark: 20
-      web_var: --cds-system-size-padding-box-250
   set_item_spacing:
     part: "Component set"
     role: "variant board spacing"
@@ -104,7 +99,6 @@ tokens:
     resolved:
       light: 40
       dark: 40
-      web_var: --cds-system-size-padding-box-500
   gradient_default_start_end:
     part: "Gradient"
     role: "gradient stop"
@@ -113,7 +107,6 @@ tokens:
     resolved:
       light: '#FFFFFF00'
       dark: '#00000000'
-      web_var: --cds-system-color-surface-default-0a
   gradient_default_middle:
     part: "Gradient"
     role: "gradient stop"
@@ -123,7 +116,6 @@ tokens:
     resolved:
       light: '#FFFFFFCC'
       dark: '#FFFFFF0D'
-      web_var: --cds-system-color-surface-default-600a-unequal
   gradient_fixed_start:
     part: "Gradient"
     role: "gradient stop"
@@ -132,7 +124,6 @@ tokens:
     resolved:
       light: '#FFFFFF00'
       dark: '#FFFFFF00'
-      web_var: --cds-system-fixed-color-surface-default-reverse-0a
   gradient_fixed_middle:
     part: "Gradient"
     role: "gradient stop"
@@ -142,7 +133,6 @@ tokens:
     resolved:
       light: '#FFFFFF0D'
       dark: '#FFFFFF0D'
-      web_var: --cds-system-fixed-color-surface-default-reverse-50a
   gradient_fixed_end:
     part: "Gradient"
     role: "gradient stop"
@@ -152,7 +142,6 @@ tokens:
     resolved:
       light: '#FFFFFF00'
       dark: '#00000000'
-      web_var: --cds-system-color-surface-default-0a
 layout:
   component_size:
     Rectangle_Large: "355x200"

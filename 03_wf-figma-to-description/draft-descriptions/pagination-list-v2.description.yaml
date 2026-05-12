@@ -55,7 +55,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-default
   unselected_page_text_default:
     part: "slot_number unselected text"
     role: "fill"
@@ -65,7 +64,6 @@ tokens:
     resolved:
       light: '#00000080'
       dark: '#FFFFFF80'
-      web_var: --cds-system-color-text-400a
   selected_page_text_fixed:
     part: "number_fixed selected text"
     role: "fill"
@@ -74,7 +72,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   unselected_page_text_fixed:
     part: "number_fixed unselected text"
     role: "fill"
@@ -84,7 +81,6 @@ tokens:
     resolved:
       light: '#FFFFFF80'
       dark: '#FFFFFF80'
-      web_var: --cds-system-fixed-color-text-400a
   prev_unactive_icon_default:
     part: "Prev icon"
     role: "icon fill"
@@ -94,7 +90,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#FFFFFF33'
-      web_var: --cds-system-color-icon-200a
   next_active_icon_default:
     part: "Next icon"
     role: "icon fill"
@@ -103,7 +98,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-icon-default
   prev_unactive_icon_fixed:
     part: "Prev icon"
     role: "icon fill"
@@ -113,7 +107,6 @@ tokens:
     resolved:
       light: '#FFFFFF33'
       dark: '#FFFFFF33'
-      web_var: --cds-system-fixed-color-icon-200a
   next_active_icon_fixed:
     part: "Next icon"
     role: "icon fill"
@@ -122,7 +115,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-icon-default
   ellipsis_dot_default:
     part: "ellipsis dots"
     role: "fill"
@@ -132,7 +124,6 @@ tokens:
     resolved:
       light: '#00000080'
       dark: '#FFFFFF80'
-      web_var: --cds-system-color-text-400a
   ellipsis_dot_fixed:
     part: "ellipsis dots"
     role: "fill"
@@ -142,7 +133,6 @@ tokens:
     resolved:
       light: '#FFFFFF80'
       dark: '#FFFFFF80'
-      web_var: --cds-system-fixed-color-icon-400a
   vertical_padding:
     part: "component"
     role: "padding"
@@ -151,7 +141,6 @@ tokens:
     resolved:
       light: 16
       dark: 16
-      web_var: --cds-system-size-padding-box-200
   icon_area_size:
     part: "icon_area"
     role: "size"
@@ -167,7 +156,6 @@ tokens:
     resolved:
       light: 2
       dark: 2
-      web_var: --cds-system-size-padding-box-25
 typography:
   body_xs_system_700:
     font_family: "WeGothicSans"

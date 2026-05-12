@@ -58,7 +58,6 @@ tokens:
     resolved:
       light: '#0000000A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-color-outline-default-50a-2
   image_stroke_fixed:
     part: "Avatar image"
     role: "stroke"
@@ -67,7 +66,6 @@ tokens:
     resolved:
       light: '#FFFFFF1A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-fixed-color-outline-default-100a
   ring_unread_default:
     part: "Ring"
     role: "stroke"
@@ -76,7 +74,6 @@ tokens:
     resolved:
       light: '#00CBD5'
       dark: '#01D5DF'
-      web_var: --cds-system-color-roles-primary
   ring_unread_fixed:
     part: "Ring"
     role: "stroke"
@@ -85,7 +82,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-roles-primary
   emoji_surface_default:
     part: "Emoji background"
     role: "fill"
@@ -94,7 +90,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#282828'
-      web_var: --cds-system-color-surface-default-4
   emoji_surface_fixed:
     part: "Emoji background"
     role: "fill"
@@ -103,7 +98,6 @@ tokens:
     resolved:
       light: '#282828'
       dark: '#282828'
-      web_var: --cds-system-fixed-color-surface-default-4
   badge_dot_default:
     part: "Badge_Dot"
     role: "fill"
@@ -112,7 +106,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-color-status-danger-red
   badge_dot_fixed:
     part: "Badge_Dot"
     role: "fill"
@@ -121,7 +114,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-status-danger-red
   squircle_surface:
     part: "Squircle background"
     role: "fill"
@@ -132,11 +124,9 @@ tokens:
       default:
         light: '#FFFFFF'
         dark: '#000000'
-        web_var: --cds-system-color-surface-default
       fixed:
         light: '#000000'
         dark: '#000000'
-        web_var: --cds-system-fixed-color-surface-default
   host_stroke:
     part: "Host"
     role: "stroke"
@@ -149,11 +139,9 @@ tokens:
       default:
         light: '#FFFFFF'
         dark: '#000000'
-        web_var: --cds-system-color-surface-default
       fixed:
         light: '#000000'
         dark: '#000000'
-        web_var: --cds-system-fixed-color-surface-default
 typography:
   headline_s_system_800:
     font_family: "WeGothicSans"

@@ -54,7 +54,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#FFFFFF33'
-      web_var: --cds-system-color-outline-default-200a
   box_stroke_fixed:
     part: "Box"
     role: "stroke"
@@ -63,7 +62,6 @@ tokens:
     resolved:
       light: '#FFFFFF33'
       dark: '#FFFFFF33'
-      web_var: --cds-system-fixed-color-outline-default-200a
   enabled_bg_default:
     part: "BG"
     role: "fill"
@@ -72,7 +70,6 @@ tokens:
     resolved:
       light: '#00CBD5'
       dark: '#01D5DF'
-      web_var: --cds-system-color-roles-primary
   enabled_bg_fixed:
     part: "BG"
     role: "fill"
@@ -81,7 +78,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-roles-primary
   disabled_bg_default:
     part: "BG"
     role: "fill"
@@ -90,7 +86,6 @@ tokens:
     resolved:
       light: '#0000001A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-color-surface-default-reverse-100a
   disabled_bg_fixed:
     part: "BG"
     role: "fill"
@@ -99,7 +94,6 @@ tokens:
     resolved:
       light: '#FFFFFF1A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-fixed-color-surface-default-reverse-100a
   check_icon_default:
     part: "icon_area"
     role: "icon tint"
@@ -108,7 +102,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#000000'
-      web_var: --cds-system-color-icon-default-reverse
   check_icon_disabled:
     part: "icon_area"
     role: "icon tint"
@@ -119,11 +112,9 @@ tokens:
       default:
         light: '#00000033'
         dark: '#FFFFFF33'
-        web_var: --cds-system-color-icon-200a
       fixed:
         light: '#FFFFFF33'
         dark: '#FFFFFF33'
-        web_var: --cds-system-fixed-color-icon-200a
   icon_size:
     part: "icon_area"
     role: "size"

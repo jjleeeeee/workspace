@@ -62,7 +62,6 @@ tokens:
     resolved:
       light: 52
       dark: 52
-      web_var: --cds-system-size-button-height-xlarge
   height_large:
     part: "button container"
     role: "height"
@@ -71,7 +70,6 @@ tokens:
     resolved:
       light: 44
       dark: 44
-      web_var: --cds-system-size-button-height-large
   height_medium:
     part: "button container"
     role: "height"
@@ -80,7 +78,6 @@ tokens:
     resolved:
       light: 40
       dark: 40
-      web_var: --cds-system-size-button-height-medium
   height_small:
     part: "button container"
     role: "height"
@@ -89,7 +86,6 @@ tokens:
     resolved:
       light: 36
       dark: 36
-      web_var: --cds-system-size-button-height-small
   height_xsmall:
     part: "button container"
     role: "height"
@@ -98,7 +94,6 @@ tokens:
     resolved:
       light: 32
       dark: 32
-      web_var: --cds-system-size-button-height-xsmall
   height_xxsmall:
     part: "button container"
     role: "height"
@@ -107,7 +102,6 @@ tokens:
     resolved:
       light: 24
       dark: 24
-      web_var: --cds-system-size-button-height-xxsmall
   filled_default:
     part: "button container"
     role: "fill"
@@ -118,11 +112,9 @@ tokens:
       default:
         light: '#00CBD5'
         dark: '#01D5DF'
-        web_var: --cds-system-color-button-default
       fixed:
         light: '#01D5DF'
         dark: '#01D5DF'
-        web_var: --cds-system-fixed-color-button-default
   filled_black:
     part: "button container"
     role: "fill"
@@ -133,11 +125,9 @@ tokens:
       default:
         light: '#000000'
         dark: '#FFFFFF'
-        web_var: --cds-system-color-button-black
       fixed:
         light: '#FFFFFF'
         dark: '#FFFFFF'
-        web_var: --cds-system-fixed-color-button-white
   outlined_gray:
     part: "button container"
     role: "stroke"
@@ -148,11 +138,9 @@ tokens:
       default:
         light: '#DEDEDE'
         dark: '#333333'
-        web_var: --cds-system-color-button-outlined-gray
       fixed:
         light: '#333333'
         dark: '#333333'
-        web_var: --cds-system-fixed-color-button-outlined-gray
   ghost:
     part: "button container"
     role: "fill"
@@ -161,7 +149,6 @@ tokens:
     resolved:
       light: '#FFFFFF00'
       dark: '#FFFFFF00'
-      web_var: --cds-system-color-button-ghost
   disabled:
     part: "button container"
     role: "fill or stroke"
@@ -172,11 +159,9 @@ tokens:
       default:
         light: '#0000001A'
         dark: '#FFFFFF1A'
-        web_var: --cds-system-color-button-disabled
       fixed:
         light: '#FFFFFF1A'
         dark: '#FFFFFF1A'
-        web_var: --cds-system-fixed-color-button-disabled
   label_default:
     part: "Button Text"
     role: "text fill"
@@ -186,11 +171,9 @@ tokens:
       default:
         light: '#000000'
         dark: '#FFFFFF'
-        web_var: --cds-system-color-text-default
       fixed:
         light: '#FFFFFF'
         dark: '#FFFFFF'
-        web_var: --cds-system-fixed-color-text-default
   label_reverse:
     part: "Button Text"
     role: "reverse text fill"
@@ -200,11 +183,9 @@ tokens:
       default:
         light: '#FFFFFF'
         dark: '#000000'
-        web_var: --cds-system-color-text-default-reverse
       fixed:
         light: '#000000'
         dark: '#000000'
-        web_var: --cds-system-fixed-color-text-default-reverse
   label_disabled:
     part: "Button Text"
     role: "disabled text fill"
@@ -214,11 +195,9 @@ tokens:
       default:
         light: '#00000033'
         dark: '#FFFFFF33'
-        web_var: --cds-system-color-text-200a
       fixed:
         light: '#FFFFFF33'
         dark: '#FFFFFF33'
-        web_var: --cds-system-fixed-color-text-200a
   radius_off:
     part: "button container"
     role: "corner radius"
@@ -227,7 +206,6 @@ tokens:
     resolved:
       light: 8
       dark: 8
-      web_var: --cds-system-size-radius-box-100
   radius_on:
     part: "button container"
     role: "corner radius"

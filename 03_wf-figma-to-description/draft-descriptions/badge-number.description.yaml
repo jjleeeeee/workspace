@@ -45,7 +45,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-color-roles-negative
   background_fixed:
     part: "Badge_Number container"
     role: "fill"
@@ -54,7 +53,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-roles-negative
   label_default:
     part: "Label"
     role: "text fill"
@@ -63,7 +61,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-white-same
   label_fixed:
     part: "Label"
     role: "text fill"
@@ -72,7 +69,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-white-same
   radius:
     part: "Badge_Number container"
     role: "corner radius"

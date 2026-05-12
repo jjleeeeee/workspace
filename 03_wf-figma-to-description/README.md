@@ -68,7 +68,7 @@ node tools/validate-component-description.mjs draft-descriptions/<component>.des
 
 `scripts/`는 YAML resolved 값 보강 스크립트를 둔다.
 
-- `enrich_tokens.py`: `cds-catalogs/` 색상 토큰으로 `resolved.{light,dark,web_var}` 채우기
+- `enrich_tokens.py`: `cds-catalogs/` 색상 토큰으로 `resolved.{light,dark}` 채우기
 - `enrich_typography.py`: typography 토큰 resolved 값 채우기
 - `fix_baselines.py`: baseline node_id 주입
 - `pick_baseline_node.py`: variant-keys에서 대표 baseline 선택

@@ -45,7 +45,6 @@ tokens:
     resolved:
       light: '#000000CC'
       dark: '#333333'
-      web_var: --cds-system-color-surface-default-reverse-600a-unequal
   container_fixed:
     part: "Snackbar"
     role: "fill"
@@ -54,7 +53,6 @@ tokens:
     resolved:
       light: '#333333'
       dark: '#333333'
-      web_var: --cds-system-fixed-color-surface-gray-200
   label_text:
     part: "Label"
     role: "text fill"
@@ -63,7 +61,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   label_typography:
     part: "Label"
     role: "text style"
@@ -82,7 +79,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-text-primary
   action_primary_typography:
     part: "Retry"
     role: "text style"
@@ -101,7 +97,6 @@ tokens:
     resolved:
       light: '#BBBBBB'
       dark: '#BBBBBB'
-      web_var: --cds-system-fixed-color-text-gray-700
   optional_icon:
     part: "icon_area"
     role: "icon fill"
@@ -112,7 +107,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-icon-default
 typography:
   body_xs_system_400:
     font_family: "WeGothicSans"

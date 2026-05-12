@@ -39,7 +39,6 @@ tokens:
     resolved:
       light: '#000000CC'
       dark: '#000000CC'
-      web_var: --cds-system-fixed-color-surface-black-600a-same
   cancel_icon:
     part: "Vector 73 and Vector 74"
     role: "stroke"
@@ -48,7 +47,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-icon-default
   progress_track:
     part: "Progress bar_bg"
     role: "stroke"
@@ -57,7 +55,6 @@ tokens:
     resolved:
       light: '#FFFFFF1A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-fixed-color-surface-white-100a-same
   progress_value:
     part: "Progress bar"
     role: "stroke"
@@ -66,7 +63,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-outline-default
   stroke_width:
     part: "Progress bar and Progress bar_bg"
     role: "stroke width"

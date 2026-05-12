@@ -54,7 +54,6 @@ tokens:
     resolved:
       light: '#000000CC'
       dark: '#333333'
-      web_var: --cds-system-color-surface-default-reverse-600a-unequal
   contents_black_fixed:
     part: "Contents"
     role: "fill"
@@ -63,7 +62,6 @@ tokens:
     resolved:
       light: '#333333'
       dark: '#333333'
-      web_var: --cds-system-fixed-color-surface-gray-200
   contents_white_fixed:
     part: "Contents"
     role: "fill"
@@ -72,7 +70,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-surface-default-reverse
   contents_tint_default:
     part: "Contents"
     role: "fill"
@@ -81,7 +78,6 @@ tokens:
     resolved:
       light: '#5989FE'
       dark: '#5989FE'
-      web_var: --cds-system-color-roles-accent-blue
   contents_tint_fixed_bottom_center:
     part: "Contents"
     role: "fill"
@@ -90,7 +86,6 @@ tokens:
     resolved:
       light: '#5989FE'
       dark: '#5989FE'
-      web_var: --cds-system-fixed-color-roles-secondary-blue
   contents_tint_fixed_other_positions:
     part: "Contents"
     role: "fill"
@@ -99,7 +94,6 @@ tokens:
     resolved:
       light: '#006166'
       dark: '#006166'
-      web_var: --cds-system-fixed-color-surface-primary-100
   label_on_dark_or_tint:
     part: "Label"
     role: "text fill"
@@ -108,7 +102,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   label_on_white_fixed:
     part: "Label"
     role: "text fill"
@@ -117,7 +110,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#000000'
-      web_var: --cds-system-fixed-color-text-default-reverse
   close_icon_on_dark_or_tint:
     part: "Button - Close"
     role: "icon fill"
@@ -126,7 +118,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-icon-default
   close_icon_on_white_fixed:
     part: "Button - Close"
     role: "icon fill"
@@ -135,7 +126,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#000000'
-      web_var: --cds-system-fixed-color-icon-default-reverse
   caret_fill:
     part: "element / caret item"
     role: "fill"

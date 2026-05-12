@@ -36,7 +36,6 @@ tokens:
     resolved:
       light: '#00000080'
       dark: '#00000080'
-      web_var: --cds-system-fixed-color-surface-default-400a
 layout:
   component_size: "393x852"
   resizing:

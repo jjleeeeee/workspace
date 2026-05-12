@@ -86,7 +86,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-roles-negative
   fill_text:
     part: "Text"
     role: "text fill"
@@ -95,7 +94,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   typography:
     part: "Text"
     role: "text style"

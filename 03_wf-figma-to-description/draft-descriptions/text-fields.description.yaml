@@ -101,7 +101,6 @@ tokens:
     resolved:
       light: '#00000080'
       dark: '#FFFFFF80'
-      web_var: --cds-system-color-text-400a
   title_text_fixed:
     part: "Title"
     role: "fill"
@@ -111,7 +110,6 @@ tokens:
     resolved:
       light: '#FFFFFF80'
       dark: '#FFFFFF80'
-      web_var: --cds-system-fixed-color-text-400a
   title_success_default:
     part: "Title"
     role: "fill"
@@ -120,7 +118,6 @@ tokens:
     resolved:
       light: '#00B8C1'
       dark: '#01D5DF'
-      web_var: --cds-system-color-text-primary
   title_success_fixed:
     part: "Title"
     role: "fill"
@@ -129,7 +126,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-text-primary
   title_error_default:
     part: "Title"
     role: "fill"
@@ -138,7 +134,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-color-status-danger-red
   title_error_fixed:
     part: "Title"
     role: "fill"
@@ -147,7 +142,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-status-danger-red
   text_field_disabled_surface_default:
     part: "TextField"
     role: "fill"
@@ -156,7 +150,6 @@ tokens:
     resolved:
       light: '#F2F3F7'
       dark: '#1F1F1F'
-      web_var: --cds-system-color-status-background-disabled
   text_field_disabled_surface_fixed:
     part: "TextField"
     role: "fill"
@@ -165,7 +158,6 @@ tokens:
     resolved:
       light: '#1F1F1F'
       dark: '#1F1F1F'
-      web_var: --cds-system-fixed-color-status-background-disabled
   text_field_stroke_inactive_default:
     part: "TextField"
     role: "stroke"
@@ -174,7 +166,6 @@ tokens:
     resolved:
       light: '#DCDEE4'
       dark: '#3E3E3E'
-      web_var: --cds-system-color-status-inactive-gray
   text_field_stroke_inactive_fixed:
     part: "TextField"
     role: "stroke"
@@ -183,7 +174,6 @@ tokens:
     resolved:
       light: '#3E3E3E'
       dark: '#3E3E3E'
-      web_var: --cds-system-fixed-color-status-inactive-gray
   text_field_stroke_focus_default:
     part: "TextField"
     role: "stroke"
@@ -192,7 +182,6 @@ tokens:
     resolved:
       light: '#AEB1B8'
       dark: '#555555'
-      web_var: --cds-system-color-status-focus-gray-400
   text_field_stroke_focus_fixed:
     part: "TextField"
     role: "stroke"
@@ -201,7 +190,6 @@ tokens:
     resolved:
       light: '#555555'
       dark: '#555555'
-      web_var: --cds-system-fixed-color-status-focus-gray-400
   text_field_stroke_error_default:
     part: "TextField"
     role: "stroke"
@@ -210,7 +198,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-color-status-danger-red
   text_field_stroke_error_fixed:
     part: "TextField"
     role: "stroke"
@@ -219,7 +206,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-status-danger-red
   input_text_default:
     part: "text"
     role: "fill"
@@ -228,7 +214,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-text-default
   input_text_fixed:
     part: "text"
     role: "fill"
@@ -237,7 +222,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   placeholder_text_default:
     part: "text"
     role: "fill"
@@ -247,7 +231,6 @@ tokens:
     resolved:
       light: '#0000004D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-color-text-300a
   placeholder_text_fixed:
     part: "text"
     role: "fill"
@@ -257,7 +240,6 @@ tokens:
     resolved:
       light: '#FFFFFF4D'
       dark: '#FFFFFF4D'
-      web_var: --cds-system-fixed-color-text-300a
   disabled_text_default:
     part: "Text"
     role: "fill"
@@ -267,7 +249,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#FFFFFF33'
-      web_var: --cds-system-color-text-200a
   disabled_text_fixed:
     part: "Text"
     role: "fill"
@@ -277,7 +258,6 @@ tokens:
     resolved:
       light: '#FFFFFF33'
       dark: '#FFFFFF33'
-      web_var: --cds-system-fixed-color-text-200a
   guide_success_default:
     part: "text"
     role: "fill"
@@ -286,7 +266,6 @@ tokens:
     resolved:
       light: '#00B8C1'
       dark: '#01D5DF'
-      web_var: --cds-system-color-text-primary
   guide_success_fixed:
     part: "text"
     role: "fill"
@@ -295,7 +274,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-text-primary
   guide_error_default:
     part: "text"
     role: "fill"
@@ -304,7 +282,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-color-status-danger-red
   guide_error_fixed:
     part: "text"
     role: "fill"
@@ -313,7 +290,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-status-danger-red
   character_counter_default:
     part: "12/200"
     role: "fill"
@@ -323,7 +299,6 @@ tokens:
     resolved:
       light: '#00000080'
       dark: '#FFFFFF80'
-      web_var: --cds-system-color-text-400a
   character_counter_fixed:
     part: "12/200"
     role: "fill"
@@ -333,7 +308,6 @@ tokens:
     resolved:
       light: '#FFFFFF80'
       dark: '#FFFFFF80'
-      web_var: --cds-system-fixed-color-text-400a
   caret_default:
     part: "Caret"
     role: "fill"
@@ -342,7 +316,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-surface-default-reverse
   caret_fixed:
     part: "Caret"
     role: "fill"
@@ -351,7 +324,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-surface-default-reverse
   timer_default:
     part: "Timer"
     role: "fill"
@@ -360,7 +332,6 @@ tokens:
     resolved:
       light: '#00B8C1'
       dark: '#01D5DF'
-      web_var: --cds-system-color-text-primary
   timer_fixed:
     part: "Timer"
     role: "fill"
@@ -369,7 +340,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-text-primary
   scrollbar_thumb_default:
     part: "thumb"
     role: "fill"
@@ -379,7 +349,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#FFFFFF33'
-      web_var: --cds-system-color-surface-default-reverse-200a
   scrollbar_thumb_fixed:
     part: "thumb"
     role: "fill"
@@ -389,7 +358,6 @@ tokens:
     resolved:
       light: '#FFFFFF33'
       dark: '#FFFFFF33'
-      web_var: --cds-system-fixed-color-surface-default-reverse-200a
   badge_dot_default:
     part: "Badge_Dot"
     role: "fill"
@@ -398,7 +366,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-color-status-danger-red
   badge_dot_fixed:
     part: "Badge_Dot"
     role: "fill"
@@ -409,7 +376,6 @@ tokens:
     resolved:
       light: '#FE5B58'
       dark: '#FE5B58'
-      web_var: --cds-system-fixed-color-status-danger-red
 typography:
   body_xs_system_400:
     font_family: "WeGothicSans"

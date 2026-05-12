@@ -63,7 +63,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#FFFFFF'
-      web_var: --cds-system-color-outline-default
   bar_selected_line_fixed:
     part: "_atoms/Tabs Line"
     role: "fill"
@@ -72,7 +71,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-outline-default
   bar_bottom_line_default:
     part: "Bar bottom Line"
     role: "fill"
@@ -81,7 +79,6 @@ tokens:
     resolved:
       light: '#0000001A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-color-outline-default-100a
   bar_bottom_line_fixed:
     part: "Bar bottom Line"
     role: "fill"
@@ -90,7 +87,6 @@ tokens:
     resolved:
       light: '#FFFFFF1A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-fixed-color-outline-default-100a
   scroll_more_surface_default:
     part: "scroll_more"
     role: "fill"
@@ -99,7 +95,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#282828'
-      web_var: --cds-system-color-surface-default-4
   scroll_more_surface_fixed:
     part: "scroll_more"
     role: "fill"
@@ -108,7 +103,6 @@ tokens:
     resolved:
       light: '#FFFFFF1A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-fixed-color-surface-default-reverse-100a
   scroll_more_stroke_default:
     part: "scroll_more"
     role: "stroke"
@@ -117,7 +111,6 @@ tokens:
     resolved:
       light: '#0000000A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-color-outline-default-50a-2
   scroll_more_stroke_fixed:
     part: "scroll_more"
     role: "stroke"
@@ -126,7 +119,6 @@ tokens:
     resolved:
       light: '#FFFFFF0D'
       dark: '#FFFFFF0D'
-      web_var: --cds-system-fixed-color-outline-default-50a
   expand_surface_default:
     part: "Expand chip container"
     role: "fill"
@@ -135,7 +127,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#161616'
-      web_var: --cds-system-color-surface-default-2
   expand_surface_fixed:
     part: "Expand chip container"
     role: "fill"
@@ -144,7 +135,6 @@ tokens:
     resolved:
       light: '#161616'
       dark: '#161616'
-      web_var: --cds-system-fixed-color-surface-default-gray-50
   expand_gradient_default:
     part: "Gradient_color"
     role: "fill"
@@ -153,7 +143,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#000000'
-      web_var: --cds-system-color-surface-default
   expand_gradient_fixed:
     part: "Gradient_color"
     role: "fill"
@@ -164,7 +153,6 @@ tokens:
     resolved:
       light: '#000000'
       dark: '#000000'
-      web_var: --cds-system-fixed-color-surface-default
 typography:
   body_s_system_500:
     font_family: "WeGothicSans"

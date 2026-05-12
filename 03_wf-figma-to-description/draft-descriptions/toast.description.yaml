@@ -36,7 +36,6 @@ tokens:
     resolved:
       light: '#000000CC'
       dark: '#333333'
-      web_var: --cds-system-color-surface-default-reverse-600a-unequal
   container_fixed:
     part: "Toast"
     role: "fill"
@@ -45,7 +44,6 @@ tokens:
     resolved:
       light: '#333333'
       dark: '#333333'
-      web_var: --cds-system-fixed-color-surface-gray-200
   label_text:
     part: "Label"
     role: "text fill"
@@ -54,7 +52,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-text-default
   label_typography:
     part: "Label"
     role: "text style"

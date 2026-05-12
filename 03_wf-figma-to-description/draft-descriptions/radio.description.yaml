@@ -43,7 +43,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#FFFFFF33'
-      web_var: --cds-system-color-outline-default-200a
   outline_stroke_fixed:
     part: "Outline"
     role: "stroke"
@@ -52,7 +51,6 @@ tokens:
     resolved:
       light: '#FFFFFF33'
       dark: '#FFFFFF33'
-      web_var: --cds-system-fixed-color-outline-default-200a
   active_primary_default:
     part: "Shape"
     role: "fill"
@@ -61,7 +59,6 @@ tokens:
     resolved:
       light: '#00CBD5'
       dark: '#01D5DF'
-      web_var: --cds-system-color-status-active-primary
   active_primary_fixed:
     part: "Shape"
     role: "fill"
@@ -70,7 +67,6 @@ tokens:
     resolved:
       light: '#01D5DF'
       dark: '#01D5DF'
-      web_var: --cds-system-fixed-color-status-active-primary
   inner_circle_enabled_default:
     part: "inner-circle"
     role: "fill"
@@ -79,7 +75,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#000000'
-      web_var: --cds-system-color-surface-default
   inner_circle_enabled_fixed:
     part: "inner-circle"
     role: "fill"
@@ -88,7 +83,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#FFFFFF'
-      web_var: --cds-system-fixed-color-surface-default-reverse
   disabled_background_default:
     part: "Outline"
     role: "fill"
@@ -97,7 +91,6 @@ tokens:
     resolved:
       light: '#0000001A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-color-surface-default-reverse-100a
   disabled_background_fixed:
     part: "Outline"
     role: "fill"
@@ -106,7 +99,6 @@ tokens:
     resolved:
       light: '#FFFFFF1A'
       dark: '#FFFFFF1A'
-      web_var: --cds-system-fixed-color-surface-default-reverse-100a
   disabled_inner:
     part: "inner-circle"
     role: "fill"
@@ -118,11 +110,9 @@ tokens:
       default:
         light: '#00000033'
         dark: '#FFFFFF33'
-        web_var: --cds-system-color-surface-default-reverse-200a
       fixed:
         light: '#FFFFFF33'
         dark: '#FFFFFF33'
-        web_var: --cds-system-fixed-color-surface-default-reverse-200a
 assets:
   radio_shape:
     part: "Shape"

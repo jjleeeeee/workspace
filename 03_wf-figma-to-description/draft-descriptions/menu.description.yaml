@@ -48,7 +48,6 @@ tokens:
     resolved:
       light: '#FFFFFF'
       dark: '#282828'
-      web_var: --cds-system-color-surface-default-4
   surface_fixed:
     part: "Menu container"
     role: "fill"
@@ -57,7 +56,6 @@ tokens:
     resolved:
       light: '#282828'
       dark: '#282828'
-      web_var: --cds-system-fixed-color-surface-gray-100
   scrollbar_thumb_default:
     part: "Scrollbar thumb"
     role: "fill"
@@ -66,7 +64,6 @@ tokens:
     resolved:
       light: '#00000033'
       dark: '#FFFFFF33'
-      web_var: --cds-system-color-surface-default-reverse-200a
   scrollbar_thumb_fixed:
     part: "Scrollbar thumb"
     role: "fill"
@@ -77,7 +74,6 @@ tokens:
     resolved:
       light: '#FFFFFF33'
       dark: '#FFFFFF33'
-      web_var: --cds-system-fixed-color-surface-default-reverse-200a
 typography:
   body_m_system_400:
     font_family: "WeGothicSans"
