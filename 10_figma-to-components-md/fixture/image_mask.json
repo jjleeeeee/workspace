@@ -1,13 +1,22 @@
-{
-  "coord_space": "css",
-  "regions": [
-    {
-      "id": "62973:7607",
-      "name": "[V2] Avatar image (Medium, 48x48)",
-      "x": 4.0,
-      "y": 4.0,
-      "width": 48.0,
-      "height": 48.0
-    }
-  ]
-}
+[
+  {
+    "id": "62973:7655",
+    "name": "avatar_image",
+    "x": 4,
+    "y": 4,
+    "width": 48,
+    "height": 48,
+    "figma_w": 56,
+    "figma_h": 56
+  },
+  {
+    "id": "62973:7656",
+    "name": "host_overlay",
+    "x": 26,
+    "y": 26,
+    "width": 30,
+    "height": 30,
+    "figma_w": 56,
+    "figma_h": 56
+  }
+]

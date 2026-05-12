@@ -68,6 +68,21 @@ def _hex_to_rgba(hex_color: str) -> dict:
     return {"r": round(r, 4), "g": round(g, 4), "b": round(b, 4), "a": 1.0}
 
 
+def _extract_typography_from_class(class_str: str) -> dict:
+    """Tailwind font-* 클래스에서 typography style 추출."""
+    style: dict[str, Any] = {}
+    m = re.search(r"font-\[family-name:var\(--([^,)]+)", class_str)
+    if m:
+        style["fontFamily"] = m.group(1)
+    m = re.search(r"text-\[length:var\(--([^,)]+)", class_str)
+    if m:
+        style["fontSize"] = m.group(1)
+    m = re.search(r"leading-\[var\(--([^,)]+)", class_str)
+    if m:
+        style["lineHeightToken"] = m.group(1)
+    return style
+
+
 def _extract_layout_from_class(class_str: str) -> dict:
     """Tailwind 클래스에서 layoutMode / itemSpacing / padding 추출.
     figma_walker의 extract_layout_axis / extract_padding 에 대응하는 JSX 전용 파서.
@@ -107,8 +122,31 @@ def _build_nodes(jsx: str) -> list[dict]:
     """JSX에서 data-node-id를 가진 모든 요소를 flat 노드 목록으로 변환."""
     nodes: dict[str, dict] = {}
 
+    # <p data-node-id> → TEXT 노드 직접 처리
+    p_text_pattern = re.compile(
+        r'<p([^>]*data-node-id[^>]*)>(.*?)</p>',
+        re.DOTALL,
+    )
+    for m in p_text_pattern.finditer(jsx):
+        attrs = _extract_attrs(m.group(1))
+        node_id = attrs.get("data-node-id", "")
+        if not node_id:
+            continue
+        text = m.group(2).strip()
+        class_str = attrs.get("className", "") or attrs.get("class", "")
+        node: dict[str, Any] = {
+            "id": node_id,
+            "name": attrs.get("data-name", ""),
+            "type": "TEXT",
+            "characters": text,
+        }
+        style = _extract_typography_from_class(class_str)
+        if style:
+            node["style"] = style
+        nodes[node_id] = node
+
     tag_pattern = re.compile(
-        r"<(?:div|p|span|ol|ul|li|img|section|article|main|header|footer|nav)"
+        r"<(?:div|span|ol|ul|li|section|article|main|header|footer|nav)"
         r"([^>]*data-node-id[^>]*)>",
         re.DOTALL,
     )
@@ -116,13 +154,13 @@ def _build_nodes(jsx: str) -> list[dict]:
     for m in tag_pattern.finditer(jsx):
         attrs = _extract_attrs(m.group(0))
         node_id = attrs.get("data-node-id", "")
-        if not node_id:
+        if not node_id or node_id in nodes:  # TEXT already registered
             continue
 
         name = attrs.get("data-name", "")
         class_str = attrs.get("className", "") or attrs.get("class", "")
 
-        node: dict[str, Any] = {"id": node_id, "name": name, "type": "FRAME"}
+        node = {"id": node_id, "name": name, "type": "FRAME"}
 
         fills = _extract_css_vars(class_str)
         if fills:
@@ -133,17 +171,17 @@ def _build_nodes(jsx: str) -> list[dict]:
 
         nodes[node_id] = node
 
-    # TEXT 노드: <p> 내용에서 characters 추출
-    text_pattern = re.compile(
-        r'data-node-id="([^"]+)"[^>]*>\s*<p[^>]*>\s*([^{<][^<]*?)\s*</p>',
+    # <div data-node-id> 내부 <img src> → IMAGE fill 추가
+    img_in_div_pattern = re.compile(
+        r'data-node-id="([^"]+)"[^>]*>(?:[^<]*)<(?:div|span)[^>]*>(?:[^<]*)'
+        r'<img\b[^>]+>',
         re.DOTALL,
     )
-    for m in text_pattern.finditer(jsx):
+    for m in img_in_div_pattern.finditer(jsx):
         node_id = m.group(1)
-        text = m.group(2).strip()
-        if text and node_id in nodes:
-            nodes[node_id]["type"] = "TEXT"
-            nodes[node_id]["characters"] = text
+        if node_id in nodes and nodes[node_id].get("type") != "TEXT":
+            existing = nodes[node_id].setdefault("fills", [])
+            existing.append({"type": "IMAGE"})
 
     return list(nodes.values())
 

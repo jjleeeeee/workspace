@@ -1,25 +1,3005 @@
 {
   "schema": "renderer-asset-manifest/v1",
   "icons": {
+    "LP_heart": {
+      "file": "ic_LP_heart_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "LP_heart_disabled": {
+      "file": "ic_LP_heart_disabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "add": {
+      "file": "ic_add_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "add_circle": {
+      "file": "ic_add_circle_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "add_circle_fill_gray": {
+      "file": "ic_add_circle_fill_gray_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "add_member": {
+      "file": "ic_add_member_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "add_to_community_special_dark": {
+      "file": "ic_add_to_community_special_dark.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "add_to_community_special_light": {
+      "file": "ic_add_to_community_special_light.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "age19": {
+      "file": "ic_age19_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "ai": {
+      "file": "ic_ai_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "ai_fill": {
+      "file": "ic_ai_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "ai_special": {
+      "file": "ic_ai_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "airplay": {
+      "file": "ic_airplay_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "airplay_fill": {
+      "file": "ic_airplay_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "applemusic_medium_dark": {
+      "file": "ic_applemusic_medium_dark.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "applemusic_medium_light": {
+      "file": "ic_applemusic_medium_light.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "applemusic_xsmall_dark": {
+      "file": "ic_applemusic_xsmall_dark.svg",
+      "default_size": [
+        17,
+        16
+      ],
+      "colorable": false
+    },
+    "applemusic_xsmall_light": {
+      "file": "ic_applemusic_xsmall_light.svg",
+      "default_size": [
+        17,
+        16
+      ],
+      "colorable": false
+    },
+    "arrow_down": {
+      "file": "ic_arrow_down_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "arrow_down_fill": {
+      "file": "ic_arrow_down_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "arrow_down_fill_fold": {
+      "file": "ic_arrow_down_fill_fold_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "arrow_down_fold": {
+      "file": "ic_arrow_down_fold_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "arrow_en": {
+      "file": "ic_arrow_en_medium.svg",
+      "default_size": [
+        12,
+        24
+      ],
+      "colorable": false
+    },
+    "arrow_left": {
+      "file": "ic_arrow_left_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "arrow_left_shadow": {
+      "file": "ic_arrow_left_shadow_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "arrow_right": {
+      "file": "ic_arrow_right_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "arrow_right_en": {
+      "file": "ic_arrow_right_en_medium.svg",
+      "default_size": [
+        12,
+        24
+      ],
+      "colorable": false
+    },
+    "arrow_right_shadow": {
+      "file": "ic_arrow_right_shadow_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "artist_chat_medium": {
+      "file": "ic_artist_chat_medium_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "at_sign": {
+      "file": "ic_at_sign_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "attactedfile_fill": {
+      "file": "ic_attactedfile_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "auto_translate": {
+      "file": "ic_auto_translate_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "backward_fill": {
+      "file": "ic_backward_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "badge": {
+      "file": "ic_badge_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "badge_fc_membership": {
+      "file": "ic_badge_fc_membership_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "badge_media_lock_special": {
+      "file": "ic_badge_media_lock_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "badge_media_unlock_special": {
+      "file": "ic_badge_media_unlock_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "badge_special": {
+      "file": "ic_badge_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "benefit_fill": {
+      "file": "ic_benefit_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
     "birthday_hat": {
       "file": "ic_birthdayhat_medium.svg",
-      "default_size": [24, 24],
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "block": {
+      "file": "ic_block_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "bookmark": {
+      "file": "ic_bookmark_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "bookmark_fill": {
+      "file": "ic_bookmark_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "bookmark_fill_cancel": {
+      "file": "ic_bookmark_fill_cancel_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "bookmark_special": {
+      "file": "ic_bookmark_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "btn_list_light_stick": {
+      "file": "ic_btn_list_light_stick_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "btn_list_livechat": {
+      "file": "ic_btn_list_livechat_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "btn_list_livechat_fill": {
+      "file": "ic_btn_list_livechat_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "cake_fill": {
+      "file": "ic_cake_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "calendar": {
+      "file": "ic_calendar_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "calendar_fill": {
+      "file": "ic_calendar_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "camera": {
+      "file": "ic_camera_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "camera_fill": {
+      "file": "ic_camera_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "caption": {
+      "file": "ic_caption_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "caption_fill": {
+      "file": "ic_caption_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "cart": {
+      "file": "ic_cart_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "chain_link": {
+      "file": "ic_chain_link_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "chart": {
+      "file": "ic_chart_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "chat_add": {
+      "file": "ic_chat_add_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "chat_language": {
+      "file": "ic_chat_language_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "chat_off": {
+      "file": "ic_chat_off_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "check": {
+      "file": "ic_check_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "check_mark": {
+      "file": "ic_check_mark_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "check_mark_fill": {
+      "file": "ic_check_mark_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "chromecast": {
+      "file": "ic_chromecast_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "chromecast_fill": {
+      "file": "ic_chromecast_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "clap": {
+      "file": "ic_clap_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "close": {
+      "file": "ic_close_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "close_shadow": {
+      "file": "ic_close_shadow_medium.svg",
+      "default_size": [
+        30,
+        30
+      ],
+      "colorable": false
+    },
+    "club_benefit_unlimited": {
+      "file": "ic_club_benefit_unlimited_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "collection": {
+      "file": "ic_collection_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "collection_settings": {
+      "file": "ic_collection_settings_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "comment": {
+      "file": "ic_comment_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "concert": {
+      "file": "ic_concert_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "copy": {
+      "file": "ic_copy_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "coupon_box_special": {
+      "file": "ic_coupon_box_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "creditcard_fill": {
+      "file": "ic_creditcard_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "dark_theme": {
+      "file": "ic_dark_theme_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
       "colorable": false
     },
     "default_thumbnail": {
       "file": "img_avatar_default_thumbnail.svg",
-      "default_size": [40, 40],
+      "default_size": [
+        40,
+        40
+      ],
+      "colorable": false
+    },
+    "delete": {
+      "file": "ic_delete_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "delete_fill_red": {
+      "file": "ic_delete_fill_red_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "delivery_box": {
+      "file": "ic_delivery_box_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "delivery_done": {
+      "file": "ic_delivery_done_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "digital_code_special": {
+      "file": "ic_digital_code_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "digital_membership_gr_circle": {
+      "file": "ic_digital_membership_gr_circle_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "discover": {
+      "file": "ic_discover_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "dolby_fill": {
+      "file": "ic_dolby_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "download": {
+      "file": "ic_download_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "download_shadow": {
+      "file": "ic_download_shadow_medium.svg",
+      "default_size": [
+        32,
+        31
+      ],
+      "colorable": false
+    },
+    "edit_fill": {
+      "file": "ic_edit_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "empty_DM_light": {
+      "file": "ic_empty_DM_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_add_light": {
+      "file": "ic_empty_add_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_bookmark_light": {
+      "file": "ic_empty_bookmark_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_cart_light": {
+      "file": "ic_empty_cart_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_collection_light": {
+      "file": "ic_empty_collection_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_default_light": {
+      "file": "ic_empty_default_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_fanletter_light": {
+      "file": "ic_empty_fanletter_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_history_light": {
+      "file": "ic_empty_history_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_loading": {
+      "file": "ic_empty_loading_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_search_light": {
+      "file": "ic_empty_search_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_shop_light": {
+      "file": "ic_empty_shop_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "empty_success_light": {
+      "file": "ic_empty_success_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "equalizer": {
+      "file": "ic_equalizer_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "error_500_light": {
+      "file": "ic_error_500_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_browse_light": {
+      "file": "ic_error_browse_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_common_light": {
+      "file": "ic_error_common_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_community_light": {
+      "file": "ic_error_community_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_delay_light": {
+      "file": "ic_error_delay_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_live_light": {
+      "file": "ic_error_live_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_network_light": {
+      "file": "ic_error_network_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_page_invalid_light": {
+      "file": "ic_error_page_invalid_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_page_light": {
+      "file": "ic_error_page_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_server_light": {
+      "file": "ic_error_server_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_system_light": {
+      "file": "ic_error_system_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "error_wrong_approach_light": {
+      "file": "ic_error_wrong_approach_light_xxxlarge.svg",
+      "default_size": [
+        64,
+        64
+      ],
+      "colorable": false
+    },
+    "event_application_details": {
+      "file": "ic_event_application_details_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "export": {
+      "file": "ic_export_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "face_id": {
+      "file": "ic_face_id_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "fanletter": {
+      "file": "ic_fanletter_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "fanletter_ticket": {
+      "file": "ic_fanletter_ticket_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "fanletter_ticket_fill": {
+      "file": "ic_fanletter_ticket_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "fanletter_translation": {
+      "file": "ic_fanletter_translation_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "fanletter_translation_alpha": {
+      "file": "ic_fanletter_translation_alpha_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "fanletter_translation_fill": {
+      "file": "ic_fanletter_translation_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "favorites": {
+      "file": "ic_favorites_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "favorites_fill": {
+      "file": "ic_favorites_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "favorites_fill_off": {
+      "file": "ic_favorites_fill_off_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "favorites_off": {
+      "file": "ic_favorites_off_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "fc_membership_core_gr_hexagon": {
+      "file": "ic_fc_membership_core_gr_hexagon_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "fc_membership_gr_hexagon": {
+      "file": "ic_fc_membership_gr_hexagon_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "feedback": {
+      "file": "ic_feedback_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "filtering": {
+      "file": "ic_filtering_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "flash_off_shadow": {
+      "file": "ic_flash_off_shadow_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "flash_shadow": {
+      "file": "ic_flash_shadow_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "floating_btn_fanletter_fill": {
+      "file": "ic_floating_btn_fanletter_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "floating_btn_momonets_fill": {
+      "file": "ic_floating_btn_momonets_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "floating_btn_startlive_fill": {
+      "file": "ic_floating_btn_startlive_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "forward_fill": {
+      "file": "ic_forward_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gift": {
+      "file": "ic_gift_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "global": {
+      "file": "ic_global_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_discover_disabled": {
+      "file": "ic_gnb_discover_disabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_discover_enabled": {
+      "file": "ic_gnb_discover_enabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_dm_disabled": {
+      "file": "ic_gnb_dm_disabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_dm_enabled": {
+      "file": "ic_gnb_dm_enabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_home_disabled": {
+      "file": "ic_gnb_home_disabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_home_enabled": {
+      "file": "ic_gnb_home_enabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_more_disabled": {
+      "file": "ic_gnb_more_disabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_more_enabled": {
+      "file": "ic_gnb_more_enabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_shop_disabled": {
+      "file": "ic_gnb_shop_disabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "gnb_shop_enabled": {
+      "file": "ic_gnb_shop_enabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "hashtag": {
+      "file": "ic_hashtag_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_black": {
+      "file": "ic_heart_black_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_blue": {
+      "file": "ic_heart_blue_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_green": {
+      "file": "ic_heart_green_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_hotpink": {
+      "file": "ic_heart_hotpink_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_mint": {
+      "file": "ic_heart_mint_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_orange": {
+      "file": "ic_heart_orange_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_pink": {
+      "file": "ic_heart_pink_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_purple": {
+      "file": "ic_heart_purple_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_red": {
+      "file": "ic_heart_red_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "heart_yellow": {
+      "file": "ic_heart_yellow_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "hidden": {
+      "file": "ic_hidden_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "hidden_fill": {
+      "file": "ic_hidden_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "home": {
+      "file": "ic_home_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "host_playlist": {
+      "file": "ic_host_playlist_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "hot": {
+      "file": "ic_hot_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "image_crop": {
+      "file": "ic_image_crop_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "image_edit": {
+      "file": "ic_image_edit_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "infomation_mark": {
+      "file": "ic_infomation_mark_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "infomation_mark_fill": {
+      "file": "ic_infomation_mark_fill_medium.svg",
+      "default_size": [
+        16,
+        16
+      ],
+      "colorable": false
+    },
+    "integratedmembership_gradient": {
+      "file": "img_integratedmembership_gradient.svg",
+      "default_size": [
+        272,
+        64
+      ],
+      "colorable": false
+    },
+    "integratedmembership_white": {
+      "file": "img_integratedmembership_white.svg",
+      "default_size": [
+        272,
+        64
+      ],
+      "colorable": false
+    },
+    "item_move": {
+      "file": "ic_item_move_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "jelly_fill_default": {
+      "file": "ic_jelly_fill_default_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "jelly_fill_hover": {
+      "file": "ic_jelly_fill_hover_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "jelly_shop": {
+      "file": "ic_jelly_shop_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "labflask": {
+      "file": "ic_labflask_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "language_fill": {
+      "file": "ic_language_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "leave": {
+      "file": "ic_leave_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "lens": {
+      "file": "ic_lens_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "light_theme": {
+      "file": "ic_light_theme_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "like": {
+      "file": "ic_like_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "like_on": {
+      "file": "ic_like_on_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "like_special": {
+      "file": "ic_like_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "like_translation": {
+      "file": "ic_like_translation_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "like_translation_active": {
+      "file": "ic_like_translation_active_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "link": {
+      "file": "ic_link_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "list": {
+      "file": "ic_list_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "live_like": {
+      "file": "ic_live_like_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "live_notification": {
+      "file": "ic_live_notification_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "loaction_focus": {
+      "file": "ic_loaction_focus_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "loading_circle": {
+      "file": "ic_loading_circle_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "location": {
+      "file": "ic_location_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "location_fill": {
+      "file": "ic_location_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "lock": {
+      "file": "ic_lock_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "lock_fill": {
+      "file": "ic_lock_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "login": {
+      "file": "ic_login_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "logout": {
+      "file": "ic_logout_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "magazine_fill": {
+      "file": "ic_magazine_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "mail": {
+      "file": "ic_mail_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "mail_fill": {
+      "file": "ic_mail_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "media_count_fill": {
+      "file": "ic_media_count_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "media_purchase_history": {
+      "file": "ic_media_purchase_history_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "media_rating_12_special": {
+      "file": "ic_media_rating_12_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "media_rating_15_special": {
+      "file": "ic_media_rating_15_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "media_rating_19_special": {
+      "file": "ic_media_rating_19_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "media_rating_all_special": {
+      "file": "ic_media_rating_all_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "melon__dark": {
+      "file": "ic_melon_medium__dark.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "melon_dark": {
+      "file": "ic_melon_xsmall_dark.svg",
+      "default_size": [
+        17,
+        16
+      ],
+      "colorable": false
+    },
+    "melon_medium_light": {
+      "file": "ic_melon_medium_light.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "melon_xsmall_light": {
+      "file": "ic_melon_xsmall_light.svg",
+      "default_size": [
+        17,
+        16
+      ],
+      "colorable": false
+    },
+    "membership": {
+      "file": "ic_membership_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "membership_gr": {
+      "file": "ic_membership_gr_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "menu": {
+      "file": "ic_menu_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "message": {
+      "file": "ic_message_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "message_special": {
+      "file": "ic_message_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "mic_add": {
+      "file": "ic_mic_add_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "mic_add_fill": {
+      "file": "ic_mic_add_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "mic_mute": {
+      "file": "ic_mic_mute_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "mic_off": {
+      "file": "ic_mic_off_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "mic_on": {
+      "file": "ic_mic_on_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "more": {
+      "file": "ic_more_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "more_bookmark_cancel": {
+      "file": "ic_more_bookmark_cancel_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "more_horizon_line": {
+      "file": "ic_more_horizon_line_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "more_status": {
+      "file": "ic_more_status_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "more_vertical": {
+      "file": "ic_more_vertical_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "more_vertical_en": {
+      "file": "ic_more_vertical_en_medium.svg",
+      "default_size": [
+        12,
+        24
+      ],
+      "colorable": false
+    },
+    "more_vertical_shadow": {
+      "file": "ic_more_vertical_shadow_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "music": {
+      "file": "ic_music_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "music_sync": {
+      "file": "ic_music_sync_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "musical_note": {
+      "file": "ic_musical_note_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "musical_note_fill": {
+      "file": "ic_musical_note_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "network": {
+      "file": "ic_network_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "new": {
+      "file": "ic_new_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "next": {
+      "file": "ic_next_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "notice": {
+      "file": "ic_notice_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "notice_fill": {
+      "file": "ic_notice_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "notice_special": {
+      "file": "ic_notice_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "notification": {
+      "file": "ic_notification_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "notification_check": {
+      "file": "ic_notification_check_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "notification_off": {
+      "file": "ic_notification_off_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "notification_off_fill": {
+      "file": "ic_notification_off_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "notification_setting": {
+      "file": "ic_notification_setting_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "null": {
+      "file": "ic_null_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "null_en": {
+      "file": "ic_null_en_medium.svg",
+      "default_size": [
+        12,
+        24
+      ],
+      "colorable": false
+    },
+    "off": {
+      "file": "ic_off_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "officialbadge_fill": {
+      "file": "ic_officialbadge_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "order_history": {
+      "file": "ic_order_history_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "overseas": {
+      "file": "ic_overseas_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "overseas_fill": {
+      "file": "ic_overseas_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "party": {
+      "file": "ic_party_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "party_symbol": {
+      "file": "ic_party_symbol_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "party_wave": {
+      "file": "ic_party_wave_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "pause": {
+      "file": "ic_pause_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "pause_fill": {
+      "file": "ic_pause_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "person": {
+      "file": "ic_person_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "phone_call_fill": {
+      "file": "ic_phone_call_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "picture": {
+      "file": "ic_picture_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "picture_special": {
+      "file": "ic_picture_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "pin": {
+      "file": "ic_pin_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "pin_disabled": {
+      "file": "ic_pin_disabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "pin_on": {
+      "file": "ic_pin_on_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "pin_on_disabled": {
+      "file": "ic_pin_on_disabled_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "play": {
+      "file": "ic_play_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "play_fill": {
+      "file": "ic_play_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "play_stroke": {
+      "file": "ic_play_stroke_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "player_fullview": {
+      "file": "ic_player_fullview_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "player_fullview_exit": {
+      "file": "ic_player_fullview_exit_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "player_next": {
+      "file": "ic_player_next_medium.svg",
+      "default_size": [
+        24,
+        25
+      ],
+      "colorable": false
+    },
+    "player_popupplayer": {
+      "file": "ic_player_popupplayer_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "player_previous": {
+      "file": "ic_player_previous_medium.svg",
+      "default_size": [
+        24,
+        25
+      ],
+      "colorable": false
+    },
+    "post": {
+      "file": "ic_post_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "pre_order_fill": {
+      "file": "ic_pre_order_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "previous": {
+      "file": "ic_previous_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "profile_edit": {
+      "file": "ic_profile_edit_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "purchase": {
+      "file": "ic_purchase_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "purchase_fill": {
+      "file": "ic_purchase_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "qqmusic": {
+      "file": "ic_qqmusic_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "qr": {
+      "file": "ic_qr_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "qr_gradient": {
+      "file": "ic_qr_gradient_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "quality": {
+      "file": "ic_quality_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "question_mark": {
+      "file": "ic_question_mark_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "question_mark_fill": {
+      "file": "ic_question_mark_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "reaction": {
+      "file": "ic_reaction_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "realtime": {
+      "file": "ic_realtime_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "recent": {
+      "file": "ic_recent_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "recently_media": {
+      "file": "ic_recently_media_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "refresh": {
+      "file": "ic_refresh_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "reload_time": {
+      "file": "ic_reload_time_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "report": {
+      "file": "ic_report_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "rollback_fill": {
+      "file": "ic_rollback_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "saved_video": {
+      "file": "ic_saved_video_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "scroll_to_bottom": {
+      "file": "ic_scroll_to_bottom_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "scroll_to_top": {
+      "file": "ic_scroll_to_top_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "search": {
+      "file": "ic_search_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "search_circle_fill_gray": {
+      "file": "ic_search_circle_fill_gray_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "search_shadow": {
+      "file": "ic_search_shadow_medium.svg",
+      "default_size": [
+        26,
+        26
+      ],
+      "colorable": false
+    },
+    "send": {
+      "file": "ic_send_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "setting": {
+      "file": "ic_setting_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "setting_fill": {
+      "file": "ic_setting_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "setting_special": {
+      "file": "ic_setting_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "shake": {
+      "file": "ic_shake_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "share": {
+      "file": "ic_share_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "share_shadow": {
+      "file": "ic_share_shadow_medium.svg",
+      "default_size": [
+        34,
+        31
+      ],
+      "colorable": false
+    },
+    "shipping": {
+      "file": "ic_shipping_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "shop_fill": {
+      "file": "ic_shop_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "shop_fill_default": {
+      "file": "ic_shop_fill_default_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "shopping_bag": {
+      "file": "ic_shopping_bag_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "show": {
+      "file": "ic_show_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "show_fill": {
+      "file": "ic_show_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "shuffle": {
+      "file": "ic_shuffle_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_apple": {
+      "file": "ic_social_apple_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_facebook": {
+      "file": "ic_social_facebook_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_google": {
+      "file": "ic_social_google_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_instagram": {
+      "file": "ic_social_instagram_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_kakao_special": {
+      "file": "ic_social_kakao_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_line_special": {
+      "file": "ic_social_line_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_naver_special": {
+      "file": "ic_social_naver_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_tiktok": {
+      "file": "ic_social_tiktok_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_vlive": {
+      "file": "ic_social_vlive_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_weibo": {
+      "file": "ic_social_weibo_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_whatsapp_special": {
+      "file": "ic_social_whatsapp_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_x": {
+      "file": "ic_social_x_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "social_youtube": {
+      "file": "ic_social_youtube_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "speed": {
+      "file": "ic_speed_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "spot": {
+      "file": "ic_spot_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "spot_special": {
+      "file": "ic_spot_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "spotify_medium_dark": {
+      "file": "ic_spotify_medium_dark.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "spotify_medium_light": {
+      "file": "ic_spotify_medium_light.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "spotify_xsmall_dark": {
+      "file": "ic_spotify_xsmall_dark.svg",
+      "default_size": [
+        16,
+        16
+      ],
+      "colorable": false
+    },
+    "spotify_xsmall_light": {
+      "file": "ic_spotify_xsmall_light.svg",
+      "default_size": [
+        16,
+        16
+      ],
+      "colorable": false
+    },
+    "stop_fill_medium_fill": {
+      "file": "ic_stop_fill_medium_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "subtitle_fill": {
+      "file": "ic_subtitle_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "subtitle_size": {
+      "file": "ic_subtitle_size_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "subtract": {
+      "file": "ic_subtract_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "survey_fill": {
+      "file": "ic_survey_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "system_theme": {
+      "file": "ic_system_theme_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "text_special": {
+      "file": "ic_text_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "thumb_down": {
+      "file": "ic_thumb_down_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "thumb_down_fill": {
+      "file": "ic_thumb_down_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "thumb_up": {
+      "file": "ic_thumb_up_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "thumb_up_fill": {
+      "file": "ic_thumb_up_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
       "colorable": false
     },
     "thumbnail": {
       "file": "ic_thumbnail_medium.svg",
-      "default_size": [24, 24],
+      "default_size": [
+        24,
+        24
+      ],
       "colorable": true
     },
     "thumbnail_outline": {
       "file": "ic_thumbnail_outline_medium.svg",
-      "default_size": [24, 24],
+      "default_size": [
+        24,
+        24
+      ],
       "colorable": true
+    },
+    "ticket": {
+      "file": "ic_ticket_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "ticket_fill": {
+      "file": "ic_ticket_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "ticket_special": {
+      "file": "ic_ticket_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "time": {
+      "file": "ic_time_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "translate": {
+      "file": "ic_translate_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "translation": {
+      "file": "ic_translation_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "trash_bucket_fill": {
+      "file": "ic_trash_bucket_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "unable_to_ship": {
+      "file": "ic_unable_to_ship_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "unlock_fill": {
+      "file": "ic_unlock_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "upcoming": {
+      "file": "ic_upcoming_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "user_guest": {
+      "file": "ic_user_guest_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "video": {
+      "file": "ic_video_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "video_special": {
+      "file": "ic_video_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "view": {
+      "file": "ic_view_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "volume_mute_fill": {
+      "file": "ic_volume_mute_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "volume_wave1_fill": {
+      "file": "ic_volume_wave1_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "volume_wave2_fill": {
+      "file": "ic_volume_wave2_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "warning_mark": {
+      "file": "ic_warning_mark_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "warning_mark_fill": {
+      "file": "ic_warning_mark_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "wev_ai": {
+      "file": "ic_wev_ai_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "wev_ai_special": {
+      "file": "ic_wev_ai_special_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "weverse": {
+      "file": "ic_weverse_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "weverse_fill": {
+      "file": "ic_weverse_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "weverse_symbol_fill": {
+      "file": "ic_weverse_symbol_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "weverse_symbol_navy": {
+      "file": "ic_weverse_symbol_navy_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "weverse_symbol_white": {
+      "file": "ic_weverse_symbol_white_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "weverseconcert_fill": {
+      "file": "ic_weverseconcert_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "wideview_fill": {
+      "file": "ic_wideview_fill_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "write_editorder": {
+      "file": "ic_write_editorder_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "zoom_in": {
+      "file": "ic_zoom_in_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
+    },
+    "zoom_out": {
+      "file": "ic_zoom_out_medium.svg",
+      "default_size": [
+        24,
+        24
+      ],
+      "colorable": false
     }
   }
 }

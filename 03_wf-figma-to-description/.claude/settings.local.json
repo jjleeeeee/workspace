@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p _workspace/outputs _workspace/drafts _workspace/reviews/history _workspace/reviews/retrospectives)",
+      "Bash(touch _workspace/drafts/.gitkeep)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git status *)"
+    ]
+  }
+}

@@ -1,9 +1,11 @@
 {
-  "figma_raw.json": "1c0fa18256585acfd0069e8127f614e7479035f88c00a46ab6b5d77b24de6d36",
-  "figma_screenshot.png": "ed802d80ee56b0b92113f18f6532f5691aaf3b9d290d3c17cc55c624c7782fbc",
-  "fixture.meta.json": "cfc4d7ee181ee615db753a445c7a07fe6b0baf8686710090281ba7caf15e973b",
+  "figma_raw.json": "c01616e8a7e978ec1dee26a8e3f887c8b0de3731b312b6e0b227b125adcb1bc7",
+  "figma_screenshot.png": "7e2c3f65617e5402555bc5c06fc7a7c5ab18fdd6a2bf1d60afcc04f7dcd5b567",
+  "fixture.meta.json": "00a6f47356efa10e90a02c75114147760d3954c01828e47a3e8ee14a2a31b852",
   "token_snapshot.json": "5da6954e8021e7781c33e859df5bd0e07c8315ff5b24a1faec82988403fe6942",
   "component_keys_snapshot.json": "b9c03414124d983254be5254739e482ba6ea8c72c2822ec10273f1591024f75e",
-  "expected_nodes.json": "aacf29e2128bb88ab73372ee5fbb06957f156ac7fef8d70709d04bab84fa8b49",
-  "image_mask.json": "b098264e13dda2b59ddfb1692dc4aebe5914350fa62e4cc73068fd833326c47e"
+  "expected_nodes.json": "4651df1634cc26c8a4cfe4c68ec53c1f69c3ae6636f3c339835eb304e941bd33",
+  "image_mask.json": "b5adde7d40a6d7fbadb5c2b65693bef93d5a707adc8d1d5bcd19016350191c69",
+  "asset_nodes.json": "9ceb489d9205d6def108b8dc14a7fa80a0dc90189965d3d8e27959886e147010",
+  "representative_overlays.json": "8bcbde9681c0ad4d2fd9de92f7d97d4960f886ec9b64c1c4e2a7cbc0048efc4a"
 }

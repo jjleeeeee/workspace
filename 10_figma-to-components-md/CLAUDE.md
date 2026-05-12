@@ -45,7 +45,7 @@ fixture 파일은 항상 `fixture/` 에 위치. `_workspace/` 와 절대 혼재 
 
 ---
 
-## 평가 게이트 (25개 정적 체크)
+## 평가 게이트 (28개 정적 체크)
 
 | ID | 설명 |
 |----|------|
@@ -74,8 +74,11 @@ fixture 파일은 항상 `fixture/` 에 위치. `_workspace/` 와 절대 혼재 
 | `component-keys-sha256-matches` | index.md/variant-keys sha256 = snapshot 핀 |
 | `assets-ref-resolves` | asset_ref가 src/icons/manifest.json에 등록 |
 | `assets-ref-file-exists` | manifest file이 src/icons/에 실제 존재 |
+| `mask-scale-auto-derived` | pixel_compare --fixture-meta 플래그로 mask_scale이 fixture_meta에서 자동 유도되는지 |
+| `sizing-coverage` | icon/image/logo/badge asset의 sizing.<part>가 Figma instance bbox 기준으로 ±1px 이내 정의됐는지 |
+| `representative-overlay-coverage` | representative variant의 visible 오버레이가 spec variants.representative.overlays에 모두 등록됐는지 |
 
-시각 게이트: `pixel_sim_effective ≥ 0.85` (`servers/pixel_compare.py`, representative variant만)
+시각 게이트: `pixel_sim_effective ≥ 0.95` (`servers/pixel_compare.py`, representative variant만)
 SSIM은 참고값으로만 JSON에 포함 (`score_ssim_naive`)
 
 ---
@@ -83,7 +86,7 @@ SSIM은 참고값으로만 JSON에 포함 (`score_ssim_naive`)
 ## 통과 판정
 
 ```
-PASS = 정적 all_pass AND pixel_compare.pass (pixel_sim_effective ≥ 0.85)
+PASS = 정적 all_pass AND pixel_compare.pass (pixel_sim_effective ≥ 0.95)
 ```
 
 - `pixel_sim_effective`: mask 영역 제외 후 실제 diff 픽셀 비율 기반 게이트 수치

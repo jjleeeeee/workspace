@@ -19,6 +19,13 @@ import subprocess
 import sys
 from pathlib import Path
 
+# 프로젝트 루트 .env 자동 로드 (FIGMA_API_TOKEN 등)
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).parent.parent / ".env")
+except ImportError:
+    pass
+
 REPO_ROOT = Path(__file__).parent.parent
 REQUIRED_PATHS = [
     "src/tokens/tokens.color.v1.0.json",

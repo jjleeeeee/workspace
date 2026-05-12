@@ -187,12 +187,14 @@ def check_text_coverage(figma_raw: dict, meta: dict) -> dict:
     md_texts: set[str] = set()
     for comp in (meta.get("components") or {}).values():
         _collect_md_texts(comp, md_texts)
+    # text_behavior 섹션도 검색 (emoji 등 TEXT 노드 값이 여기 등록될 수 있음)
+    _collect_md_texts(meta.get("text_behavior") or {}, md_texts)
 
     missing = figma_texts - md_texts
     if not missing:
         return fh.pass_result("text-coverage", f"TEXT {len(figma_texts)}건 모두 커버됨")
 
-    hints = [fh.hint("text-coverage", f"'{t}' — components 또는 children[].text에 추가 필요")
+    hints = [fh.hint("text-coverage", f"'{t}' — components 또는 text_behavior[].text에 추가 필요")
              for t in sorted(missing)]
     return fh.fail_result("text-coverage", f"텍스트 {len(missing)}건 누락", hints)
 
@@ -1033,6 +1035,171 @@ def check_assets_ref_file_exists(meta: dict) -> dict:
     return fail_result(check_id, f"asset 파일 미존재 {len(issues)}건", issues)
 
 
+def check_mask_scale_auto_derived(pixel_compare_result_path: str | None) -> dict:
+    check_id = "mask-scale-auto-derived"
+    if not pixel_compare_result_path or not Path(pixel_compare_result_path).exists():
+        return pass_result(check_id, "pixel_compare_result 없음 — 스킵 (Step B 이전)")
+    try:
+        pc = json.loads(Path(pixel_compare_result_path).read_text(encoding="utf-8"))
+    except Exception as e:
+        return warning_result(check_id, f"pixel_compare_result 로드 실패: {e}", [])
+
+    mask_info = pc.get("image_asset_mask") or {}
+    if not mask_info.get("applied"):
+        return pass_result(check_id, "마스크 미적용 — 스킵")
+
+    source = mask_info.get("mask_scale_source", "unknown")
+    if source == "fixture_meta":
+        return pass_result(check_id, f"mask_scale_source=fixture_meta (scale={mask_info.get('mask_scale_used')})")
+    return fail_result(check_id, f"mask_scale_source='{source}' — fixture_meta 자동 유도 미사용", [
+        hint(check_id,
+             f"Step E pixel_compare 호출에 --fixture-meta fixture/fixture.meta.json 추가 필요. "
+             f"현재 source='{source}'이므로 마스크가 raster 좌표로 자동 변환되지 않음.")
+    ])
+
+
+def check_sizing_coverage(
+    asset_nodes_path: str | None,
+    meta: dict,
+    render_result_path: str | None = None,
+) -> dict:
+    check_id = "sizing-coverage"
+    if not asset_nodes_path or not Path(asset_nodes_path).exists():
+        return pass_result(check_id, "fixture/asset_nodes.json 없음 — 스킵")
+
+    try:
+        asset_nodes = json.loads(Path(asset_nodes_path).read_text(encoding="utf-8"))
+    except Exception as e:
+        return warning_result(check_id, f"asset_nodes 로드 실패: {e}", [])
+
+    sizing = meta.get("sizing") or {}
+    assets = meta.get("assets") or {}
+    ASSET_ROLES = {"icon", "image", "logo", "badge"}
+    TOLERANCE = 1.0
+
+    issues = []
+    for node in asset_nodes:
+        if node.get("role") not in ASSET_ROLES:
+            continue
+        name = node.get("name") or ""
+        from harness.lib.figma_walker import to_kebab
+        kebab = to_kebab(name)
+        isize = node.get("instance_size") or {}
+        expected_w = isize.get("width", 0)
+        expected_h = isize.get("height", 0)
+        if expected_w == 0 and expected_h == 0:
+            continue
+
+        # sizing.<kebab> 또는 assets에서 size 파싱
+        spec_entry = sizing.get(kebab) or {}
+        spec_intrinsic = spec_entry.get("figma_intrinsic") or ""
+        # 파싱 "WxHpx" or "WxH px"
+        import re
+        m = re.match(r"(\d+(?:\.\d+)?)\s*[xX×]\s*(\d+(?:\.\d+)?)", str(spec_intrinsic))
+        if not m and kebab not in sizing:
+            # assets[key].size 시도
+            for ak, av in assets.items():
+                if isinstance(av, dict) and to_kebab(av.get("part") or "") == kebab:
+                    m = re.match(r"(\d+(?:\.\d+)?)\s*[xX×]\s*(\d+(?:\.\d+)?)", str(av.get("size") or ""))
+                    if m:
+                        break
+        if not m:
+            issues.append(hint(
+                check_id,
+                f"sizing.{kebab} 없음 — Figma instance bbox {expected_w:.0f}×{expected_h:.0f}px 기준으로 추가 필요. "
+                f"source: 'figma_instance_bbox' 명시"
+            ))
+            continue
+        spec_w, spec_h = float(m.group(1)), float(m.group(2))
+        if abs(spec_w - expected_w) > TOLERANCE or abs(spec_h - expected_h) > TOLERANCE:
+            issues.append(hint(
+                check_id,
+                f"sizing.{kebab}={spec_w:.0f}×{spec_h:.0f}px 이 Figma bbox {expected_w:.0f}×{expected_h:.0f}px 와 ±1px 초과 불일치"
+            ))
+
+    # render_result 검증
+    if render_result_path and Path(render_result_path).exists():
+        try:
+            rr = json.loads(Path(render_result_path).read_text(encoding="utf-8"))
+            rendered_dims = rr.get("rendered_dimensions") or {}
+            for part, dims in rendered_dims.items():
+                spec_entry = sizing.get(part) or {}
+                spec_intrinsic = spec_entry.get("figma_intrinsic") or ""
+                import re
+                m = re.match(r"(\d+(?:\.\d+)?)\s*[xX×]\s*(\d+(?:\.\d+)?)", str(spec_intrinsic))
+                if m and dims and len(dims) >= 2:
+                    sw, sh = float(m.group(1)), float(m.group(2))
+                    rw, rh = float(dims[0]), float(dims[1])
+                    if abs(rw - sw) > TOLERANCE or abs(rh - sh) > TOLERANCE:
+                        issues.append(hint(
+                            check_id,
+                            f"rendered_dimensions.{part}={rw:.0f}×{rh:.0f}px 이 sizing.{part}={sw:.0f}×{sh:.0f}px 와 불일치"
+                        ))
+        except Exception:
+            pass
+
+    if not issues:
+        return pass_result(check_id, "모든 asset sizing이 Figma instance bbox 기준으로 정의됨")
+    return fail_result(check_id, f"sizing 불일치/누락 {len(issues)}건", issues)
+
+
+def check_representative_overlay_coverage(
+    representative_overlays_path: str | None,
+    meta: dict,
+    render_result_path: str | None = None,
+) -> dict:
+    check_id = "representative-overlay-coverage"
+    if not representative_overlays_path or not Path(representative_overlays_path).exists():
+        return pass_result(check_id, "fixture/representative_overlays.json 없음 — 스킵")
+
+    try:
+        fixture_overlays = json.loads(Path(representative_overlays_path).read_text(encoding="utf-8"))
+    except Exception as e:
+        return warning_result(check_id, f"representative_overlays 로드 실패: {e}", [])
+
+    fixture_ids = {o["node_id"] for o in fixture_overlays if o.get("visible") is not False}
+    if not fixture_ids:
+        return pass_result(check_id, "representative variant에 visible 오버레이 없음")
+
+    # spec의 variants.representative.overlays
+    rep = (meta.get("variants") or {}).get("representative") or {}
+    spec_overlays = rep.get("overlays") or []
+    spec_ids = {o.get("node_id") for o in spec_overlays if isinstance(o, dict) and o.get("node_id")}
+
+    missing_in_spec = fixture_ids - spec_ids
+    extra_in_spec = spec_ids - fixture_ids
+    issues = []
+    for nid in missing_in_spec:
+        name = next((o.get("name", nid) for o in fixture_overlays if o.get("node_id") == nid), nid)
+        issues.append(hint(
+            check_id,
+            f"overlay '{name}' (node_id={nid}) 이 fixture에 visible=true이지만 "
+            f"variants.representative.overlays에 없음"
+        ))
+    for nid in extra_in_spec:
+        issues.append(hint(
+            check_id,
+            f"variants.representative.overlays의 node_id={nid} 이 "
+            f"fixture/representative_overlays.json에 없음 (노드 ID 불일치)"
+        ))
+
+    # render_result 검증
+    if not issues and render_result_path and Path(render_result_path).exists():
+        try:
+            rr = json.loads(Path(render_result_path).read_text(encoding="utf-8"))
+            rendered = set(rr.get("rendered_overlays") or [])
+            spec_refs = {o.get("ref", "").replace("assets.", "") for o in spec_overlays if isinstance(o, dict)}
+            missing_rendered = spec_refs - rendered
+            for ref in missing_rendered:
+                issues.append(hint(check_id, f"overlay '{ref}'이 spec에 있지만 rendered_overlays에서 누락됨"))
+        except Exception:
+            pass
+
+    if not issues:
+        return pass_result(check_id, f"representative variant 오버레이 {len(fixture_ids)}개 모두 spec에 반영됨")
+    return fail_result(check_id, f"overlay 불일치 {len(issues)}건", issues)
+
+
 def check_unmapped_figma_token(token_map: dict) -> dict:
     unmapped = token_map.get("unmapped") or []
     if not unmapped:
@@ -1057,6 +1224,10 @@ def main() -> None:
     parser.add_argument("--fixture-meta", default=None)
     parser.add_argument("--token-snapshot", default=None)
     parser.add_argument("--comp-keys-snapshot", default=None)
+    parser.add_argument("--asset-nodes", default=None, help="fixture/asset_nodes.json 경로")
+    parser.add_argument("--representative-overlays", default=None, help="fixture/representative_overlays.json 경로")
+    parser.add_argument("--render-result", default=None, help="렌더러 JSON 응답 경로 (rendered_dimensions/overlays 검증)")
+    parser.add_argument("--pixel-compare-result", default=None, help="pixel_compare_result.json 경로 (mask_scale_source 검증)")
     args = parser.parse_args()
 
     try:
@@ -1110,6 +1281,9 @@ def main() -> None:
         check_assets_ref_resolves(meta),
         check_assets_ref_file_exists(meta),
         check_unmapped_figma_token(token_map),
+        check_mask_scale_auto_derived(args.pixel_compare_result),
+        check_sizing_coverage(args.asset_nodes, meta, args.render_result),
+        check_representative_overlay_coverage(args.representative_overlays, meta, args.render_result),
     ]
 
     # 회귀 검사 (harness.lib.fix_hints 사용)

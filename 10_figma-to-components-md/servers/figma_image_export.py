@@ -150,15 +150,13 @@ def export_node(
     except Exception as e:
         raise RestApiError(f"PNG 크기 확인 실패: {e}") from e
 
-    # raster ≈ absoluteRenderBounds × scale ± 4 검증 (use_absolute_bounds=true 기준, 반올림 마진)
-    rb_w = float(render_bounds.get("width") or css_width)
-    rb_h = float(render_bounds.get("height") or css_height)
-    expected_w = round(rb_w * scale)
-    expected_h = round(rb_h * scale)
+    # raster ≈ absoluteBoundingBox × scale ± 4 검증 (use_absolute_bounds=true 사용으로 bbox 기준 렌더)
+    expected_w = round(float(bbox.get("width", css_width)) * scale)
+    expected_h = round(float(bbox.get("height", css_height)) * scale)
     if abs(raster_width - expected_w) > 4 or abs(raster_height - expected_h) > 4:
         raise RasterSizeMismatchError(
-            f"raster({raster_width}×{raster_height}) ≠ renderBounds×scale({expected_w}×{expected_h}). "
-            f"Figma absoluteRenderBounds({rb_w}×{rb_h}) 기준. 노드 크기나 scale 확인 필요."
+            f"raster({raster_width}×{raster_height}) ≠ bbox×scale({expected_w}×{expected_h}). "
+            f"Figma absoluteBoundingBox({css_width}×{css_height}) 기준. 노드 크기나 scale 확인 필요."
         )
 
     return {

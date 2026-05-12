@@ -109,7 +109,17 @@ Overview / Source Reads / Figma Identity / Variant Axes / Figma Props / Layout /
 #### sizing 추출 (platform-neutral)
 - `figma_intrinsic`: Figma에서 측정한 실제 WxH (예: `"32x32px"`)
 - `figma_constraint`: `FIXED | HUG | FILL`
+- icon/image/logo/badge asset은 반드시 `source: "figma_instance_bbox"` 명시 (`sizing-coverage` 게이트)
 - CSS 결정 금지 (예: `width: 100%` 같은 CSS 값은 platform binding 파일에서 다룸)
+
+#### representative overlays 추출
+- `fixture/representative_overlays.json`이 있으면 읽어서 `variants.representative.overlays` 항목을 생성:
+  ```yaml
+  overlays:
+    - { ref: "assets.<key>", node_id: "<id>", visible: true }
+  ```
+- `ref`는 해당 overlay에 매핑되는 `assets.<key>`를 사용. 매핑 불가 시 `ref: "assets.unknown"` 으로 기록하고 fix_hints에 추가
+- `representative-overlay-coverage` 게이트가 fixture node_id 셋과 spec 셋의 일치를 검증함
 
 ---
 

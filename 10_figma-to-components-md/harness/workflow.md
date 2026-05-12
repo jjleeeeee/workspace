@@ -174,7 +174,7 @@ Path("fixture/component_keys_snapshot.json").write_text(json.dumps(snapshot, ind
 ```
 → `fixture/component_keys_snapshot.json` 저장
 
-### Step 6. expected_nodes.json + image_mask.json 생성
+### Step 6. expected_nodes.json + image_mask.json + asset_nodes.json + representative_overlays.json 생성
 
 `fixture/figma_raw.json` 트리 순회 (figma_walker 활용):
 
@@ -195,6 +195,30 @@ Path("fixture/component_keys_snapshot.json").write_text(json.dumps(snapshot, ind
    "figma_w": 375, "figma_h": 200 }]
 ```
 
+`asset_nodes.json` (icon/image/logo/badge 노드 + visible/bbox 포함):
+```python
+from harness.lib.figma_walker import collect_asset_nodes
+import json
+from pathlib import Path
+
+figma_raw = json.loads(Path("fixture/figma_raw.json").read_text())
+nodes = collect_asset_nodes(figma_raw)
+Path("fixture/asset_nodes.json").write_text(json.dumps(nodes, indent=2))
+```
+
+`representative_overlays.json` (representative variant 서브트리의 visible 오버레이):
+```python
+from harness.lib.figma_walker import collect_visible_overlays
+import json
+from pathlib import Path
+
+figma_raw = json.loads(Path("fixture/figma_raw.json").read_text())
+fixture_meta = json.loads(Path("fixture/fixture.meta.json").read_text())
+rep_node_id = fixture_meta["figma_screenshot"]["node_id"]
+overlays = collect_visible_overlays(figma_raw, rep_node_id)
+Path("fixture/representative_overlays.json").write_text(json.dumps(overlays, indent=2))
+```
+
 ### Step 7. fixture.lock 생성
 
 ```python
@@ -204,10 +228,11 @@ from pathlib import Path
 files = [
     "figma_raw.json", "figma_screenshot.png",
     "fixture.meta.json", "token_snapshot.json", "component_keys_snapshot.json",
-    "expected_nodes.json", "image_mask.json"
+    "expected_nodes.json", "image_mask.json",
+    "asset_nodes.json", "representative_overlays.json"
 ]
 # 선택적 파일 (존재 시만 포함)
-optional = ["text_behavior_meta.json", "asset_nodes.json", "mcp_read_log.json"]
+optional = ["text_behavior_meta.json", "mcp_read_log.json"]
 
 hashes = {}
 for f in files + optional:
@@ -295,7 +320,8 @@ Task:
   --diff-png _workspace/reviews/attempt_<N>/diff.png \
   --sample-name <COMPONENT_NAME> \
   --match-figma-width \
-  --mask-json fixture/image_mask.json
+  --mask-json fixture/image_mask.json \
+  --fixture-meta fixture/fixture.meta.json
 ```
 
 ---

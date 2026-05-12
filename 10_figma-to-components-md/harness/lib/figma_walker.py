@@ -205,10 +205,57 @@ def collect_asset_nodes(figma_raw: dict) -> list[dict]:
             continue
         role = classify_asset_role(node)
         if role:
+            bbox = node.get("absoluteBoundingBox") or node.get("bbox") or {}
+            instance_w = float(bbox.get("width", 0)) if bbox else 0.0
+            instance_h = float(bbox.get("height", 0)) if bbox else 0.0
             results.append({
                 "node_id": node.get("id") or "",
                 "name": node.get("name") or "",
                 "role": role,
+                "visible": node.get("visible", True),
                 "parent_node_id": (node.get("parent") or {}).get("id") or "",
+                "bbox": {
+                    "x": float(bbox.get("x", 0)),
+                    "y": float(bbox.get("y", 0)),
+                    "width": instance_w,
+                    "height": instance_h,
+                },
+                "instance_size": {"width": instance_w, "height": instance_h},
+            })
+    return results
+
+
+def collect_visible_overlays(figma_raw: dict, representative_node_id: str) -> list[dict]:
+    """representative variant 서브트리에서 visible=True인 오버레이 노드 수집.
+
+    오버레이: role이 icon/image/logo/badge인 INSTANCE 또는 자체적으로 의미있는 레이어.
+    Returns: [{"node_id", "name", "role", "visible", "instance_size"}]
+    """
+    rep_node: dict | None = None
+    for node in all_nodes(figma_raw):
+        if node.get("id") == representative_node_id:
+            rep_node = node
+            break
+    if rep_node is None:
+        return []
+
+    results: list[dict] = []
+    for node in walk(rep_node):
+        if node.get("id") == representative_node_id:
+            continue
+        if node.get("visible") is False:
+            continue
+        role = classify_asset_role(node)
+        if role:
+            bbox = node.get("absoluteBoundingBox") or node.get("bbox") or {}
+            results.append({
+                "node_id": node.get("id") or "",
+                "name": node.get("name") or "",
+                "role": role,
+                "visible": True,
+                "instance_size": {
+                    "width": float(bbox.get("width", 0)),
+                    "height": float(bbox.get("height", 0)),
+                },
             })
     return results

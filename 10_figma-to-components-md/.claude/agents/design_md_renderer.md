@@ -94,6 +94,14 @@ frontmatter `layout.component_size`로 루트 컨테이너 크기 설정.
 - `HUG` → `width: fit-content; height: fit-content`
 - `FILL` → `flex: 1`
 
+**sub-part 크기 규칙**: 루트 외 개별 파트(avatar-image, icon_area 등)의 width/height는
+반드시 `sizing.<part>.figma_intrinsic` 또는 `assets.<key>.size`에서 읽어야 한다.
+`layout.component_size`는 루트 전용이며, 하위 요소에 재사용 금지.
+
+**오버레이 렌더 규칙**: `variants.representative.overlays` 목록이 있으면
+`visible: true`인 모든 항목을 HTML에 absolute 포지셔닝으로 렌더한다.
+목록이 없어도 fixture/representative_overlays.json이 있으면 그것을 참조한다.
+
 ### part_spacing 렌더링
 
 `layout.part_spacing.<a>__to__<b>.default.value` → `gap` 또는 `margin` 적용.
@@ -111,6 +119,11 @@ representative variant 조건과 일치하는 `variants[].when` 항목이 있으
 `assets.<key>`:
 - `role: "icon"` → `<span aria-hidden="true" style="display:inline-flex; width:<size>; height:<size>; background-color:<color>; border-radius:2px; opacity:0.5;"></span>`
 - `role: "image"` → `<div style="width:<size>; height:<size>; background-color:#d0d0d0; border-radius:<rounded>;"></div>`
+
+**SVG 인스턴스 크기 규칙**: SVG를 인라인 렌더할 때 width/height 속성은
+`sizing.<part>.figma_intrinsic` (instance bbox) 기준이다. SVG 원본 `viewBox` 크기를
+그대로 쓰는 것은 금지. `<svg width="<W>" height="<H>" preserveAspectRatio="xMidYMid meet">` 형식으로,
+`<W>`/`<H>`는 instance bbox(예: 20×20), viewBox는 원본 그대로 유지한다.
 
 ---
 
@@ -145,7 +158,14 @@ representative variant 조건과 일치하는 `variants[].when` 항목이 있으
   "representative_variant": "Mode=Default, Size=Medium",
   "representative_node_id": "1234:5678",
   "render_mode": "light",
+  "rendered_dimensions": {
+    "<part-kebab-name>": [<width_px>, <height_px>]
+  },
+  "rendered_overlays": ["<assets-key-1>", "<assets-key-2>"],
   "unresolved_tokens": [],
   "warnings": []
 }
 ```
+
+`rendered_dimensions`: 렌더된 각 sub-part의 실제 width×height. `sizing.<part>`와 일치 여부를 `sizing-coverage` 게이트가 검증한다.
+`rendered_overlays`: 실제 렌더된 오버레이 assets 키 목록. `representative-overlay-coverage` 게이트가 `variants.representative.overlays` 대비 누락 여부를 검증한다.

@@ -1,0 +1,112 @@
+{
+  "text_nodes": [
+    {
+      "id": "79482:39206",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "62973:7574",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "62973:7582",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "62973:7590",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "62973:7598",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "79578:18974",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "79578:18961",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "62973:7698",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "62973:7706",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "62973:7714",
+      "value": "🏕",
+      "type": "TEXT"
+    },
+    {
+      "id": "62973:7722",
+      "value": "🏕",
+      "type": "TEXT"
+    }
+  ],
+  "color_tokens": [
+    "system/fixed_color/outline/default-reverse",
+    "system/color/status/danger-red",
+    "system/fixed_color/status/danger-red",
+    "system/color/outline/default-reverse"
+  ],
+  "typography_tokens": [
+    "font_family\\/body",
+    "font_family\\/title"
+  ],
+  "instance_components": [],
+  "auto_layout_nodes": [
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    },
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    },
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    },
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    },
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    },
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    },
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    },
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    },
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    },
+    {
+      "name": "Avatar",
+      "axis": "vertical"
+    }
+  ]
+}

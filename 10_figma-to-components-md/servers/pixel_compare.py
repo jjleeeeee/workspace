@@ -26,7 +26,7 @@ from PIL import Image, ImageDraw
 from skimage.metrics import structural_similarity as ssim
 
 
-PASS_THRESHOLD = 0.85
+PASS_THRESHOLD = 0.95
 
 
 class SizeMismatchError(Exception):
@@ -326,7 +326,15 @@ def main() -> None:
             fixture_scale = meta.get("figma_screenshot", {}).get("scale")
         except Exception:
             pass
-    mask_scale = args.mask_scale if args.mask_scale is not None else (fixture_scale or 1.0)
+    if args.mask_scale is not None:
+        mask_scale = args.mask_scale
+        mask_scale_source = "cli"
+    elif fixture_scale is not None:
+        mask_scale = fixture_scale
+        mask_scale_source = "fixture_meta"
+    else:
+        mask_scale = 1.0
+        mask_scale_source = "default_1.0"
     export_origin = (args.mask_export_origin_x, args.mask_export_origin_y)
 
     if args.mask_json and Path(args.mask_json).exists():
@@ -382,6 +390,8 @@ def main() -> None:
             "masked_regions": masked_regions,
             "masked_pixels": masked_px,
             "effective_pixels": effective_px,
+            "mask_scale_source": mask_scale_source,
+            "mask_scale_used": mask_scale,
         },
         "score_ssim_naive": round(ssim_naive, 4),       # 참고값 (마스크 미적용)
         "score_pixel_similarity": round(pixel_sim_effective, 4),  # 게이트 기준

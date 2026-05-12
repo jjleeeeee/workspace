@@ -78,6 +78,8 @@ variants:
     variant: "<대표 variant 이름>"     # axes 기본값 조합 우선, 없으면 첫 variant
     node_id: "<id>"
     rationale: "<왜 이 variant가 대표인지>"
+    overlays:                          # fixture/representative_overlays.json과 1:1 매핑
+      - { ref: "assets.<key>", node_id: "<id>", visible: true }
 
 props:
   <PropName>:
@@ -114,8 +116,6 @@ assets:
 
 composition:
   uses:
-    # 03 bridge-descriptions/<comp>.bridge.yaml의 component_contract.composition.uses와 정합 필요
-    # 없으면 source_gaps에 "composition: not-yet-validated" 기록
     - component: "<nested DS 컴포넌트 kebab-name>"
       node_id: "<...>"
       role: "<...>"
@@ -137,6 +137,7 @@ sizing:
   <part_name>:
     figma_intrinsic: "<WxHpx>"
     figma_constraint: "FIXED | HUG | FILL"
+    source: "figma_instance_bbox"      # asset/inner part는 반드시 "figma_instance_bbox" 명시
     note: "<선택>"
 
 text_behavior:
@@ -272,7 +273,6 @@ colors:
 | `tokens-name-not-ambiguous` | {cds: name}이 복수 id에 매핑 |
 | `token-catalog-sha256-matches` | src/tokens/*.json sha256 ≠ fixture 핀 |
 | `typography-id-resolves` | typography token_fallback id 미존재 |
-| `composition-matches-bridge` | composition.uses ↔ 03 bridge yaml 불일치 |
 | `component-keys-sha256-matches` | index.md/variant-keys sha256 ≠ fixture 핀 |
 | `implementation-coverage-fields` | implementation_coverage 필드 비어있음 |
 | `rules-non-empty` | rules.do 또는 dont가 비어있음 |

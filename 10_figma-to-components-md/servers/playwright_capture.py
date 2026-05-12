@@ -25,6 +25,7 @@ def main() -> None:
     parser.add_argument("--device-scale-factor", type=float, default=3.0, help="deviceScaleFactor (기본 3.0 → 3x raster)")
     parser.add_argument("--width", type=int, default=375, help="[deprecated] --css-width 사용 권장")
     parser.add_argument("--full-page", action="store_true", help="전체 페이지 캡처")
+    parser.add_argument("--omit-background", action="store_true", help="배경 생략 (투명 PNG)")
     args = parser.parse_args()
 
     css_width = args.css_width if args.css_width is not None else args.width
@@ -61,6 +62,7 @@ def main() -> None:
             path=str(output_path),
             full_page=args.full_page,
             type="png",
+            omit_background=args.omit_background,
         )
         browser.close()
 

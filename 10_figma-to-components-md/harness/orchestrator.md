@@ -142,7 +142,6 @@ for N in range(1, 6):
 | `tokens-name-not-ambiguous` | {cds: name}이 복수 id에 매핑 |
 | `token-catalog-sha256-matches` | src/tokens/*.json sha256 ≠ snapshot 핀 |
 | `typography-id-resolves` | typography token_fallback id 미존재 |
-| `composition-matches-bridge` | composition.uses ↔ 03 bridge yaml 불일치 |
 | `component-keys-sha256-matches` | index.md/variant-keys sha256 ≠ snapshot 핀 |
 | `implementation-coverage-fields` | implementation_coverage 필드 비어있음 |
 | `rules-non-empty` | rules.do 또는 dont가 비어있음 |
