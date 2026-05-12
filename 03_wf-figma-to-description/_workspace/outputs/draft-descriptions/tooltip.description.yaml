@@ -269,10 +269,15 @@ rules:
     - "Do not use Top caret positions when the target is near the top edge and would cause clipping."
     - "Do not allow Tooltip to overlap a header layer while scrolling."
 
+spec_notes:
+  - "Fixed 모드의 Figma variant 옵션 이름에 제어 문자가 포함되어 있다. 런타임 구현 시 variant 값을 'Fixed'로 정규화해야 하며, 원본 Figma 문자열에 의존하지 않는다."
+  - "Position(8가지)은 Contents와 대상 객체 사이의 caret 위치를 결정한다. 대상 근처 화면 엣지에 따라 Bottom → Top, Left → Right 등으로 자동 전환(flip) 로직이 필요하다. Figma에는 8개 고정 Position만 있고 런타임 flip은 별도 구현 책임이다."
+
 source_gaps:
   - part: "Hidden guide rectangles inside caret/null icon internals"
     issue: "Full traversal found 168 hidden #D9D9D9 fills without variable binding."
-    decision: "Visible paint extraction found zero unbound paints, so hidden guide internals are excluded from Tooltip token mapping."
+    confirmed: true
+    reason: "Visible paint extraction found zero unbound paints; hidden guide internals are design-only and have no runtime equivalent — excluded from Tooltip token mapping."
 
 verification:
   figma_live_read:
