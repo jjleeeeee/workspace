@@ -220,10 +220,10 @@ git commit -m "refactor(harness): move examples → harness/examples/"
 
 **Files:** `plan/` → `.claude/plans/`로 합산 후 `plan/` 삭제
 
-- [ ] plan/ 아래 파일을 .claude/plans/로 이동
+- [ ] plan/ 아래 모든 파일을 .claude/plans/로 이동
 
 ```bash
-git mv plan/2026-05-12-source-gaps-spec-notes-enrichment.md .claude/plans/
+git mv plan/*.md .claude/plans/
 rmdir plan
 ```
 
@@ -717,13 +717,13 @@ node tools/validate-component-description.mjs \
   _workspace/outputs/draft-descriptions/avatar.description.yaml
 ```
 
-- [ ] enrich 스크립트 경로 확인 (내부 하드코딩 경로 없는지)
+- [ ] 전체 스크립트·도구 경로 하드코딩 감사 (enrich, fix_baselines 포함)
 
 ```bash
-grep -n "draft-descriptions" scripts/enrich_tokens.py scripts/enrich_typography.py
+rg -n "draft-descriptions|03_wf-figma-to-description" scripts/ tools/ --glob '!_workspace/**'
 ```
 
-경로 하드코딩이 있으면 인자로 받도록 수정 또는 경로 변수 업데이트.
+출력이 있으면 각 파일에서 해당 경로를 인자 또는 상대 경로로 수정 후 실행 확인.
 
 - [ ] 최종 커밋
 
