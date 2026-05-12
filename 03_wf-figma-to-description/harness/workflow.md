@@ -1,23 +1,60 @@
 ---
-type: WorkflowGuide
+type: Workflow
 status: Active
-version: 1.1
+version: 2.0
 updated: 2026-05-12
+project: "Figma Description Workflow"
 ---
 
-# Workflow Guide
+# Workflow — Figma Description 작성 절차
 
-이 문서는 Figma Component Description YAML을 작성할 때 실제로 따라가는
-실행 순서다. 루트 `PLAYBOOK.md`는 계약서이고, 이 문서는
-작업 순서와 참조 문서의 허브다.
+> 이 파일은 하네스의 핵심 작업 흐름을 정의한다.
+> 구 PLAYBOOK + 구 workflow/README.md를 통합한 단일 참조 문서.
+
+---
+
+## 미션
+
+Figma 컴포넌트의 구조, 토큰, layout, 구현 규칙을 읽어 Component
+Description YAML을 작성하고 검증한다.
+
+- `_workspace/outputs/draft-descriptions/*.description.yaml`이 유일한 스펙 SoT다.
+- Figma plain `description` 필드 쓰기는 폐기됐다(2026-05-12).
+- bridge YAML 생성은 폐기됐다(2026-05-12).
+- 이 워크플로우는 `{component}.md` 파생 산출물을 만들지 않는다.
+
+## 금지 계약
+
+- Figma plain `description` 또는 `descriptionMarkdown`에 YAML을 쓰지 않는다.
+- `bridge-descriptions/*.bridge.yaml`을 만들거나 갱신하지 않는다.
+- 확인되지 않은 값을 추측해서 YAML에 넣지 않는다. `source_gaps`에 기록한다.
+- 하위 DS component의 axes, tokens, layout 상세를 parent Description에 복붙하지 않는다. 확인된 조합 관계는 `composition.uses`에 기록한다.
+- `{component}.md` 파생 문서를 만들지 않는다.
+
+## Source Priority
+
+1. 사용자 제공 Do/Don't와 현재 요청 의도
+2. 실제 Figma component data
+3. `refs/figma-component-keys/` key registry snapshot
+4. `refs/markitdown-output/` supplemental data
+5. 기존 history
+6. LLM inference
+
+## Done Criteria
+
+- `_workspace/outputs/draft-descriptions/<component>.description.yaml`이 저장됐다.
+- local validator가 통과했거나 warning/failure 이유를 기록했다.
+- `source_gaps`가 있으면 미확인 이유가 명시되어 있다.
+- 필요한 경우 history에 변경 이유, 제외한 선택지, 재검토 조건을 기록했다.
+
+---
 
 ## Execution Contract
 
-- `AGENTS.md`와 루트 `PLAYBOOK.md`를 먼저 읽는다.
+- `CLAUDE.md`와 `harness/orchestrator.md`를 먼저 읽는다.
 - 단계별 상세 문서를 필요한 시점에 읽는다.
 - validator와 history gate는 생략하지 않는다.
 - 확인되지 않은 값은 추측하지 않고 `source_gaps`에 기록한다.
-- Figma plain `description` 쓰기, bridge YAML 생성은 폐기됐다(2026-05-12).
 
 ## Step Table
 
@@ -30,7 +67,7 @@ updated: 2026-05-12
 | 2.75 | Unpromoted nested instance swap 발견 | `composition.uses` slot 타입 목록 | 이 문서 |
 | 3 | figma-console로 token binding 읽기 | part/token mapping | `exceptions.md` |
 | 3.5 | 스크립트 보강 | resolved token 값 주입 | 이 문서 |
-| 4 | draft YAML 작성 | `draft-descriptions/<component>.description.yaml` | `description-yaml-schema.md` |
+| 4 | draft YAML 작성 | `_workspace/outputs/draft-descriptions/<component>.description.yaml` | `schema.md` |
 | 5 | validator + history | validator PASS, history 기록 | `validation-checklist.md` |
 
 ## Step 1. Preflight
@@ -196,8 +233,8 @@ mcp__Framelink_Figma_MCP__get_figma_data {
 실행 위치:
 
 ```bash
-python scripts/enrich_tokens.py draft-descriptions/<component>.description.yaml
-python scripts/enrich_typography.py draft-descriptions/<component>.description.yaml
+python scripts/enrich_tokens.py _workspace/outputs/draft-descriptions/<component>.description.yaml
+python scripts/enrich_typography.py _workspace/outputs/draft-descriptions/<component>.description.yaml
 ```
 
 판단 기준:
@@ -213,17 +250,17 @@ python scripts/enrich_typography.py draft-descriptions/<component>.description.y
 
 필수 참조:
 
-- `description-yaml-schema.md`
+- `harness/schema.md`
 
 출력:
 
 ```text
-draft-descriptions/<component>.description.yaml
+_workspace/outputs/draft-descriptions/<component>.description.yaml
 ```
 
 판단 기준:
 
-- `draft-descriptions/<component>.description.yaml`이 SoT다.
+- `_workspace/outputs/draft-descriptions/<component>.description.yaml`이 SoT다.
 - 같은 component workflow를 다시 실행하면 같은 파일을 최신 결과로 덮어쓴다.
 - schema section을 임의로 줄이지 않는다.
 
@@ -239,6 +276,20 @@ draft-descriptions/<component>.description.yaml
 
 판단 기준:
 
-- `node tools/validate-component-description.mjs draft-descriptions/<component>.description.yaml`를 실행한다.
+- `node tools/validate-component-description.mjs _workspace/outputs/draft-descriptions/<component>.description.yaml`를 실행한다.
 - FAIL이면 YAML을 수정하고 재실행한다.
-- 결정 또는 동작 변경이 있으면 history에 짧게 기록한다.
+- 결정 또는 동작 변경이 있으면 `_workspace/reviews/history/figma-description-history.md`에 짧게 기록한다.
+
+## 토큰 카탈로그 참조
+
+yaml `tokens` 블록의 `resolved` 값(light/dark hex)은 아래 카탈로그에서 파생한다.
+카탈로그가 갱신되면 `scripts/enrich_tokens.py`, `scripts/enrich_typography.py`를 재실행한다.
+
+| 카탈로그 | 경로 | freshness | 내용 |
+|---|---|---|---|
+| 색상 토큰 | `../../cds-catalogs/catalogs/tokens/tokens.color.v1.0.json` | 2026-05-12 | 408개 semantic color + resolved light/dark hex |
+| 타이포 시맨틱 | `../../cds-catalogs/catalogs/tokens/tokens.typography.semantic.json` | 2026-05-12 | 63개 Figma text style → fontSize/fontFamily/fontWeight/lineHeight |
+| 타이포 primitive | `../../cds-catalogs/catalogs/tokens/tokens.typography.v1.0.json` | 2026-05-12 | lineheight/text_size/text_weight 원시값 |
+
+경로는 `03_wf-figma-to-description/` 기준 상대경로.
+플랫폼별 변수명 변환(Web CSS 변수, Swift, Kotlin 네이밍 등)은 각 플랫폼 소비자가 semantic token 이름에서 직접 파생한다.
