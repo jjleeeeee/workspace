@@ -175,12 +175,12 @@ interaction:
     behavior: "When showIcon=false, remove the icon_area and collapse the 2px gap."
 
 implementation_order:
-- "Resolve Size first to set height, horizontal padding, and icon dimensions."
-- "Resolve Shape to choose Squircle or Round radius."
-- "Resolve Type to choose Line stroke treatment or Fill background treatment."
-- "Resolve Color through color_map and apply opacity by Type."
-- "Apply showIcon after layout so the icon area and gap collapse correctly."
-- "Keep label text short and single-line."
+  - "Resolve Size first to set height, horizontal padding, and icon dimensions."
+  - "Resolve Shape to choose Squircle or Round radius."
+  - "Resolve Type to choose Line stroke treatment or Fill background treatment."
+  - "Resolve Color through color_map and apply opacity by Type."
+  - "Apply showIcon after layout so the icon area and gap collapse correctly."
+  - "Keep label text short and single-line."
 
 implementation_coverage:
   axes: "All 89 live variants were read from Figma, including the LIVE Red exception."
@@ -191,25 +191,31 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Tag for short keywords that identify content attributes, categories, or status."
-  - "Choose Small or Medium according to information hierarchy and placement."
-  - "Use only defined system and fixed color role tokens."
-  - "Use the specified radius for each Shape value."
-  - "Keep Gray limited to system/fixed_color/text/gray-500."
+    - "Use Tag for short keywords that identify content attributes, categories, or status."
+    - "Choose Small or Medium according to information hierarchy and placement."
+    - "Use only defined system and fixed color role tokens."
+    - "Use the specified radius for each Shape value."
+    - "Keep Gray limited to system/fixed_color/text/gray-500."
   dont:
-  - "Do not put sentence-style explanations inside Tag."
-  - "Do not mix Small and Medium arbitrarily in one context."
-  - "Do not apply arbitrary colors or weak contrast backgrounds."
-  - "Do not resize the icon beyond tiny(10)."
-  - "Do not use Tag where selectable options should be Chips."
+    - "Do not put sentence-style explanations inside Tag."
+    - "Do not mix Small and Medium arbitrarily in one context."
+    - "Do not apply arbitrary colors or weak contrast backgrounds."
+    - "Do not resize the icon beyond tiny(10)."
+    - "Do not use Tag where selectable options should be Chips."
+
+spec_notes:
+  - "LIVE Red는 variant 축이 아닌 단일 예외 variant(Size=Small, Type=Fill, Shape=Squircle)로만 존재한다. 런타임 구현 시 Color=LIVE Red를 별도 분기로 처리하고, opacity를 1로 고정해야 한다(다른 Fill 색상의 0.85와 다름)."
+  - "showIcon=false일 때 icon_area와 gap(2px)을 함께 제거해야 한다. icon_area는 DS의 icon_area 컴포넌트(component_key: 5333fee674d5321de4390fafeac274b584e8a10f)를 슬롯으로 사용하며, 직접 대체 금지."
 
 source_gaps:
-- part: "icon_area nested null icon guide rectangles"
-  issue: "Full traversal found 176 visible Rectangle 1 and Rectangle 2 fills using raw #D9D9D9 without Variable binding."
-  decision: "These belong to the nested icon_area and 24/em/ic_null_medium internals; they are excluded from Tag color token mapping."
-- field: "label"
-  issue: "Live componentPropertyDefinitions exposes Show Icon and variant axes, while the existing Figma Description documents label as a public prop."
-  decision: "Keep label in props as a consumer-facing text contract sourced from Figma Description, not as a component property definition."
+  - part: "icon_area nested null icon guide rectangles"
+    issue: "Full traversal found 176 visible Rectangle 1 and Rectangle 2 fills using raw #D9D9D9 without Variable binding."
+    confirmed: true
+    reason: "These belong to the nested icon_area and 24/em/ic_null_medium internals; they are excluded from Tag color token mapping."
+  - field: "label"
+    issue: "Live componentPropertyDefinitions exposes Show Icon and variant axes, while the existing Figma Description documents label as a public prop."
+    confirmed: true
+    reason: "Keep label in props as a consumer-facing text contract sourced from Figma Description, not as a component property definition."
 
 verification:
   figma_live_read:
