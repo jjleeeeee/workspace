@@ -15,14 +15,14 @@ variants:
   count: 6
   formula: "Mode(2) x Status(3)"
   constraints:
-    - "All Mode and Status combinations are valid."
+  - "All Mode and Status combinations are valid."
   registry:
-    - { variant: "Mode=Default, Status=Default", node_id: "59215:200966", key: "5936fa29f60ec656c6b879ba9a61f1816e14acec" }
-    - { variant: "Mode=Default, Status=Enabled", node_id: "59215:200968", key: "fae7ae5fecfdda6ded346b56064eb02f5b33d3a3" }
-    - { variant: "Mode=Default, Status=Disabled", node_id: "59215:200970", key: "36d871cc8f534548e52b5fb054661411335e9566" }
-    - { variant: "Mode=Fixed, Status=Default", node_id: "59215:200972", key: "60f524b48127b387e1c8508edb7e8ea60ccb3118" }
-    - { variant: "Mode=Fixed, Status=Enabled", node_id: "59215:200974", key: "d6fbbc21bbc102d4345ba9b2911b77b335a4d3d5" }
-    - { variant: "Mode=Fixed, Status=Disabled", node_id: "59215:200976", key: "e05300683e362644f4614fb1711fe9f2fe3cdce8" }
+  - {variant: "Mode=Default, Status=Default", node_id: "59215:200966", key: "5936fa29f60ec656c6b879ba9a61f1816e14acec"}
+  - {variant: "Mode=Default, Status=Enabled", node_id: "59215:200968", key: "fae7ae5fecfdda6ded346b56064eb02f5b33d3a3"}
+  - {variant: "Mode=Default, Status=Disabled", node_id: "59215:200970", key: "36d871cc8f534548e52b5fb054661411335e9566"}
+  - {variant: "Mode=Fixed, Status=Default", node_id: "59215:200972", key: "60f524b48127b387e1c8508edb7e8ea60ccb3118"}
+  - {variant: "Mode=Fixed, Status=Enabled", node_id: "59215:200974", key: "d6fbbc21bbc102d4345ba9b2911b77b335a4d3d5"}
+  - {variant: "Mode=Fixed, Status=Disabled", node_id: "59215:200976", key: "e05300683e362644f4614fb1711fe9f2fe3cdce8"}
 
 props:
   Mode:
@@ -40,41 +40,73 @@ tokens:
     role: "stroke"
     applies_to: "Mode=Default, Status=Default or Disabled"
     token: "system/color/outline/default-200a"
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-outline-default-200a
   outline_stroke_fixed:
     part: "Outline"
     role: "stroke"
     applies_to: "Mode=Fixed, Status=Default or Disabled"
     token: "system/fixed_color/outline/default-200a"
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-outline-default-200a
   active_primary_default:
     part: "Shape"
     role: "fill"
     applies_to: "Mode=Default, Status=Enabled"
     token: "system/color/status/active-primary"
+    resolved:
+      light: '#00CBD5'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-status-active-primary
   active_primary_fixed:
     part: "Shape"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Enabled"
     token: "system/fixed_color/status/active-primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-status-active-primary
   inner_circle_enabled_default:
     part: "inner-circle"
     role: "fill"
     applies_to: "Mode=Default, Status=Enabled"
     token: "system/color/surface/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#000000'
+      web_var: --cds-system-color-surface-default
   inner_circle_enabled_fixed:
     part: "inner-circle"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Enabled"
     token: "system/fixed_color/surface/default-reverse"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-surface-default-reverse
   disabled_background_default:
     part: "Outline"
     role: "fill"
     applies_to: "Mode=Default, Status=Disabled"
     token: "system/color/surface/default-reverse-100a"
+    resolved:
+      light: '#0000001A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-color-surface-default-reverse-100a
   disabled_background_fixed:
     part: "Outline"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Disabled"
     token: "system/fixed_color/surface/default-reverse-100a"
+    resolved:
+      light: '#FFFFFF1A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-fixed-color-surface-default-reverse-100a
   disabled_inner:
     part: "inner-circle"
     role: "fill"
@@ -82,6 +114,15 @@ tokens:
     default: "system/color/surface/default-reverse-200a"
     fixed: "system/fixed_color/surface/default-reverse-200a"
 
+    resolved:
+      default:
+        light: '#00000033'
+        dark: '#FFFFFF33'
+        web_var: --cds-system-color-surface-default-reverse-200a
+      fixed:
+        light: '#FFFFFF33'
+        dark: '#FFFFFF33'
+        web_var: --cds-system-fixed-color-surface-default-reverse-200a
 assets:
   radio_shape:
     part: "Shape"
@@ -105,46 +146,50 @@ interaction:
     behavior: "A Radio group should generally expose a recommended or common default selection."
 
 implementation_order:
-  - "Select Mode and Status variant."
-  - "Render a 24x24 control with 22px outline diameter."
-  - "For Default state, render an empty circle without a dot."
-  - "For Enabled state, render Shape and inner-circle."
-  - "For Disabled state, render disabled background and disabled inner circle."
-  - "Keep Radio + Text gap at 6px when paired with labels."
+- "Select Mode and Status variant."
+- "Render a 24x24 control with 22px outline diameter."
+- "For Default state, render an empty circle without a dot."
+- "For Enabled state, render Shape and inner-circle."
+- "For Disabled state, render disabled background and disabled inner circle."
+- "Keep Radio + Text gap at 6px when paired with labels."
 
 implementation_coverage:
   axes:
-    - "Mode"
-    - "Status"
+  - "Mode"
+  - "Status"
   props:
-    - "Mode"
-    - "Status"
+  - "Mode"
+  - "Status"
   assets:
-    - "radio_shape"
-    - "inner_circle"
+  - "radio_shape"
+  - "inner_circle"
   layout:
-    - "24x24 component"
-    - "22px outline"
-    - "8px inner circle"
-    - "6px label gap"
+  - "24x24 component"
+  - "22px outline"
+  - "8px inner circle"
+  - "6px label gap"
   exclusions:
-    - "This workflow does not create a derived radio.md file."
+  - "This workflow does not create a derived radio.md file."
 
 rules:
   do:
-    - "Use Radio when users must select exactly one item from multiple options."
-    - "Use the same control type within the same selection group."
-    - "Select the most recommended or common option by default."
-    - "Use Check Box for independent agreement, approval, or confirmation."
-    - "Show the unselected state as an empty circle."
+  - "Use Radio when users must select exactly one item from multiple options."
+  - "Use the same control type within the same selection group."
+  - "Select the most recommended or common option by default."
+  - "Use Check Box for independent agreement, approval, or confirmation."
+  - "Show the unselected state as an empty circle."
   dont:
-    - "Do not use Radio for multi-select options."
-    - "Do not mix Radio and Check Box in the same selection group."
-    - "Do not expose a Radio group with all options unselected."
-    - "Do not use Radio for a single Yes or No decision."
-    - "Do not show a dot before selection."
+  - "Do not use Radio for multi-select options."
+  - "Do not mix Radio and Check Box in the same selection group."
+  - "Do not expose a Radio group with all options unselected."
+  - "Do not use Radio for a single Yes or No decision."
+  - "Do not show a dot before selection."
 
 spec_notes:
   source:
-    - "Figma component metadata and compact Plugin API extraction from node 59215:200965."
-    - "Local usage reference: refs/markitdown-output/markitdown-radio.md."
+  - "Figma component metadata and compact Plugin API extraction from node 59215:200965."
+baseline:
+  node_id: 59215:200966
+  variant: Mode=Default, Status=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

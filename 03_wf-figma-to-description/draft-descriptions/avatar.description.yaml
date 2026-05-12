@@ -16,16 +16,16 @@ variants:
   count: 44
   formula: "Mode(2) x Type(2) x Size(11)"
   constraints:
-    - "All Mode, Type, and Size combinations are valid."
-    - "Ring, Birthday_Hat, Emoji, Badge_Dot, and Host are boolean props, not variant axes."
+  - "All Mode, Type, and Size combinations are valid."
+  - "Ring, Birthday_Hat, Emoji, Badge_Dot, and Host are boolean props, not variant axes."
   registry_policy:
     component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
     storage: "44 variant node IDs and keys were verified from Figma; full registry is summarized to keep Description readable."
     sample:
-      - { variant: "Mode=Default, Type=Circle, Size=XXXXLarge", node_id: "62973:7557", key: "9a03441ed0af2b8858a195a19b054ce5aed43207" }
-      - { variant: "Mode=Default, Type=Circle, Size=Medium", node_id: "62973:7591", key: "0cecbc98341f67beb8574ddd646b7d755694d448" }
-      - { variant: "Mode=Default, Type=Squircle, Size=XXXXLarge", node_id: "62973:7624", key: "16358e36f6cb33a09549eb2a8e68811f4cbfdce3" }
-      - { variant: "Mode=Fixed, Type=Squircle, Size=Tiny", node_id: "62973:7800", key: "a7bcb927e58bc1c051213d59be35726111b1fc09" }
+    - {variant: "Mode=Default, Type=Circle, Size=XXXXLarge", node_id: "62973:7557", key: "9a03441ed0af2b8858a195a19b054ce5aed43207"}
+    - {variant: "Mode=Default, Type=Circle, Size=Medium", node_id: "62973:7591", key: "0cecbc98341f67beb8574ddd646b7d755694d448"}
+    - {variant: "Mode=Default, Type=Squircle, Size=XXXXLarge", node_id: "62973:7624", key: "16358e36f6cb33a09549eb2a8e68811f4cbfdce3"}
+    - {variant: "Mode=Fixed, Type=Squircle, Size=Tiny", node_id: "62973:7800", key: "a7bcb927e58bc1c051213d59be35726111b1fc09"}
 
 props:
   Ring:
@@ -55,47 +55,88 @@ tokens:
     role: "stroke"
     applies_to: "Mode=Default"
     token: "system/color/outline/default-50a-2"
+    resolved:
+      light: '#0000000A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-color-outline-default-50a-2
   image_stroke_fixed:
     part: "Avatar image"
     role: "stroke"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/outline/default-100a"
+    resolved:
+      light: '#FFFFFF1A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-fixed-color-outline-default-100a
   ring_unread_default:
     part: "Ring"
     role: "stroke"
     applies_to: "Mode=Default, Ring=Unread"
     token: "system/color/roles/primary"
+    resolved:
+      light: '#00CBD5'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-roles-primary
   ring_unread_fixed:
     part: "Ring"
     role: "stroke"
     applies_to: "Mode=Fixed, Ring=Unread"
     token: "system/fixed_color/roles/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-roles-primary
   emoji_surface_default:
     part: "Emoji background"
     role: "fill"
     applies_to: "Mode=Default"
     token: "system/color/surface/default-4"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#282828'
+      web_var: --cds-system-color-surface-default-4
   emoji_surface_fixed:
     part: "Emoji background"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/surface/default-4"
+    resolved:
+      light: '#282828'
+      dark: '#282828'
+      web_var: --cds-system-fixed-color-surface-default-4
   badge_dot_default:
     part: "Badge_Dot"
     role: "fill"
     applies_to: "Mode=Default, Type=Squircle"
     token: "system/color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-status-danger-red
   badge_dot_fixed:
     part: "Badge_Dot"
     role: "fill"
     applies_to: "Mode=Fixed, Type=Squircle"
     token: "system/fixed_color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-status-danger-red
   squircle_surface:
     part: "Squircle background"
     role: "fill"
     applies_to: "Type=Squircle"
     default: "system/color/surface/default"
     fixed: "system/fixed_color/surface/default"
+    resolved:
+      default:
+        light: '#FFFFFF'
+        dark: '#000000'
+        web_var: --cds-system-color-surface-default
+      fixed:
+        light: '#000000'
+        dark: '#000000'
+        web_var: --cds-system-fixed-color-surface-default
   host_stroke:
     part: "Host"
     role: "stroke"
@@ -104,6 +145,15 @@ tokens:
     fixed: "system/fixed_color/surface/default"
 
 
+    resolved:
+      default:
+        light: '#FFFFFF'
+        dark: '#000000'
+        web_var: --cds-system-color-surface-default
+      fixed:
+        light: '#000000'
+        dark: '#000000'
+        web_var: --cds-system-fixed-color-surface-default
 typography:
   headline_s_system_800:
     font_family: "WeGothicSans"
@@ -187,59 +237,63 @@ interaction:
     behavior: "Render optional Ring, Birthday_Hat, Emoji, Badge_Dot, and Host only when each boolean prop is true."
 
 implementation_order:
-  - "Select Mode, Type, and Size variant."
-  - "Render the avatar image at the Size value while preserving the component-size bounding box."
-  - "Apply Circle or Squircle shape semantics."
-  - "For Squircle, use the mask asset instead of border-radius approximation."
-  - "Apply mode-specific outline, surface, and badge tokens."
-  - "Render optional Ring, Birthday_Hat, Emoji, Badge_Dot, and Host overlays."
-  - "For Membership ring, use the Figma paint style gradient data from the spec reference."
+- "Select Mode, Type, and Size variant."
+- "Render the avatar image at the Size value while preserving the component-size bounding box."
+- "Apply Circle or Squircle shape semantics."
+- "For Squircle, use the mask asset instead of border-radius approximation."
+- "Apply mode-specific outline, surface, and badge tokens."
+- "Render optional Ring, Birthday_Hat, Emoji, Badge_Dot, and Host overlays."
+- "For Membership ring, use the Figma paint style gradient data from the spec reference."
 
 implementation_coverage:
   axes:
-    - "Mode"
-    - "Type"
-    - "Size"
+  - "Mode"
+  - "Type"
+  - "Size"
   props:
-    - "Ring"
-    - "Birthday_Hat"
-    - "Emoji"
-    - "Badge_Dot"
-    - "Host"
+  - "Ring"
+  - "Birthday_Hat"
+  - "Emoji"
+  - "Badge_Dot"
+  - "Host"
   assets:
-    - "Squircle mask"
-    - "Placeholder image"
-    - "Birthday_Hat"
-    - "Emoji"
-    - "Badge_Dot"
-    - "Host"
+  - "Squircle mask"
+  - "Placeholder image"
+  - "Birthday_Hat"
+  - "Emoji"
+  - "Badge_Dot"
+  - "Host"
   layout:
-    - "11 component sizes"
-    - "Circle and Squircle shape handling"
-    - "Ring and overlay sizing rules"
+  - "11 component sizes"
+  - "Circle and Squircle shape handling"
+  - "Ring and overlay sizing rules"
   exclusions:
-    - "This workflow does not create a derived avatar.md file."
+  - "This workflow does not create a derived avatar.md file."
 
 rules:
   do:
-    - "Use Circle Avatar for personal profiles and user identity."
-    - "Use Squircle Avatar for groups, solo artists, and official community representative images."
-    - "Use a consistent Avatar size within the same list or hierarchy."
-    - "Choose the size scale by layout density and information hierarchy."
+  - "Use Circle Avatar for personal profiles and user identity."
+  - "Use Squircle Avatar for groups, solo artists, and official community representative images."
+  - "Use a consistent Avatar size within the same list or hierarchy."
+  - "Choose the size scale by layout density and information hierarchy."
   dont:
-    - "Do not mix Avatar types when the content identity purpose differs."
-    - "Do not mix Avatar sizes within the same information hierarchy."
-    - "Do not replace Squircle with a simple rounded rectangle."
+  - "Do not mix Avatar types when the content identity purpose differs."
+  - "Do not mix Avatar sizes within the same information hierarchy."
+  - "Do not replace Squircle with a simple rounded rectangle."
 
 spec_notes:
   source:
-    - "Figma component metadata and compact Plugin API extraction from node 62973:7556."
-    - "Local usage reference: refs/markitdown-output/markitdown-avatar.md."
+  - "Figma component metadata and compact Plugin API extraction from node 62973:7556."
   membership_ring:
     type: "Figma paint style gradient, not a token path"
     style_name: "integrated-membership-gra"
     gradient_transform: "[[0.7684494853, 0.5588471889, -0.1627408862], [-0.0824003071, 0.1141824573, 0.4778847098]]"
 
 source_gaps:
-  - part: "Nested avatar atoms"
-    reason: "Some Ring and Moment_Ring details are nested instances; this Description records verified top-level props and markitdown reference details."
+- part: "Nested avatar atoms"
+  reason: "Some Ring and Moment_Ring details are nested instances; this Description records verified top-level props and markitdown reference details."
+baseline:
+  node_id: "62973:7591"
+  variant: "Mode=Default, Type=Circle, Size=Medium"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

@@ -15,24 +15,24 @@ variants:
   count: 14
   formula: "Mode(2) x State(7)"
   constraints:
-    - "All Mode and State combinations are implemented."
-    - "Enabled_Down and Enabled_Up are open list states with different popup direction."
-    - "Label_Title, Label_Guide, Label_Text, Show Title, Show Guide, Show Scrollbar, and Show Badge_Dot are component properties, not variant axes."
+  - "All Mode and State combinations are implemented."
+  - "Enabled_Down and Enabled_Up are open list states with different popup direction."
+  - "Label_Title, Label_Guide, Label_Text, Show Title, Show Guide, Show Scrollbar, and Show Badge_Dot are component properties, not variant axes."
   registry:
-    - { variant: "Mode=Default, State=Default", node_id: "60730:9606", key: "155513993abdfdba7b3aa0e30071f26300cfbb58" }
-    - { variant: "Mode=Default, State=Pressed (Hover)", node_id: "60730:9617", key: "a49a5cc3c5913e5f8982bc8698fa0d5ee3a9054c" }
-    - { variant: "Mode=Default, State=Enabled_Down", node_id: "60730:9628", key: "7f427793df3bc25ddfb378a6ebe71cedcc978109" }
-    - { variant: "Mode=Default, State=Enabled_Up", node_id: "60748:37622", key: "9542dad7fd022fc6c5d37882bd20034115abc242" }
-    - { variant: "Mode=Default, State=Completed", node_id: "60730:9648", key: "6ec2e85546ea5d54079c31965e83d053ea468b06" }
-    - { variant: "Mode=Default, State=Error", node_id: "60730:9659", key: "e2398a0f8618432f24396319c1d755a2d9eebabf" }
-    - { variant: "Mode=Default, State=Disabled", node_id: "60730:9671", key: "619fd3b13ea1fad4d488bcbaa76ec4ddf1d2d29d" }
-    - { variant: "Mode=Fixed, State=Default", node_id: "60730:9682", key: "a5c119fdb46a862637bd55ae696b33124a0b9b4a" }
-    - { variant: "Mode=Fixed, State=Pressed (Hover)", node_id: "60730:9693", key: "0d349d20eee6edc9590bfd857604816ffbbfcbeb" }
-    - { variant: "Mode=Fixed, State=Disabled", node_id: "60730:9704", key: "8e19f8d080b38d72f22ad0bbdbe363433e3e69b2" }
-    - { variant: "Mode=Fixed, State=Enabled_Down", node_id: "60730:9715", key: "230008089fde01be4990f7c71a043b45fa1c24c7" }
-    - { variant: "Mode=Fixed, State=Enabled_Up", node_id: "60748:27242", key: "c80085784171eac0c50347d13c0c5feb02ee6cc8" }
-    - { variant: "Mode=Fixed, State=Completed", node_id: "60730:9735", key: "ee5eaf8c67b829970d3eb8e56a066a68b7b1e177" }
-    - { variant: "Mode=Fixed, State=Error", node_id: "60730:9746", key: "add298f4c10a67906913e52efdc02cc30c6112ff" }
+  - {variant: "Mode=Default, State=Default", node_id: "60730:9606", key: "155513993abdfdba7b3aa0e30071f26300cfbb58"}
+  - {variant: "Mode=Default, State=Pressed (Hover)", node_id: "60730:9617", key: "a49a5cc3c5913e5f8982bc8698fa0d5ee3a9054c"}
+  - {variant: "Mode=Default, State=Enabled_Down", node_id: "60730:9628", key: "7f427793df3bc25ddfb378a6ebe71cedcc978109"}
+  - {variant: "Mode=Default, State=Enabled_Up", node_id: "60748:37622", key: "9542dad7fd022fc6c5d37882bd20034115abc242"}
+  - {variant: "Mode=Default, State=Completed", node_id: "60730:9648", key: "6ec2e85546ea5d54079c31965e83d053ea468b06"}
+  - {variant: "Mode=Default, State=Error", node_id: "60730:9659", key: "e2398a0f8618432f24396319c1d755a2d9eebabf"}
+  - {variant: "Mode=Default, State=Disabled", node_id: "60730:9671", key: "619fd3b13ea1fad4d488bcbaa76ec4ddf1d2d29d"}
+  - {variant: "Mode=Fixed, State=Default", node_id: "60730:9682", key: "a5c119fdb46a862637bd55ae696b33124a0b9b4a"}
+  - {variant: "Mode=Fixed, State=Pressed (Hover)", node_id: "60730:9693", key: "0d349d20eee6edc9590bfd857604816ffbbfcbeb"}
+  - {variant: "Mode=Fixed, State=Disabled", node_id: "60730:9704", key: "8e19f8d080b38d72f22ad0bbdbe363433e3e69b2"}
+  - {variant: "Mode=Fixed, State=Enabled_Down", node_id: "60730:9715", key: "230008089fde01be4990f7c71a043b45fa1c24c7"}
+  - {variant: "Mode=Fixed, State=Enabled_Up", node_id: "60748:27242", key: "c80085784171eac0c50347d13c0c5feb02ee6cc8"}
+  - {variant: "Mode=Fixed, State=Completed", node_id: "60730:9735", key: "ee5eaf8c67b829970d3eb8e56a066a68b7b1e177"}
+  - {variant: "Mode=Fixed, State=Error", node_id: "60730:9746", key: "add298f4c10a67906913e52efdc02cc30c6112ff"}
 
 props:
   Label_Title:
@@ -79,130 +79,226 @@ tokens:
     applies_to: "Mode=Default"
     token: "system/color/text/400a"
     opacity: 0.5
+    resolved:
+      light: '#00000080'
+      dark: '#FFFFFF80'
+      web_var: --cds-system-color-text-400a
   title_text_fixed:
     part: "Title"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/400a"
     opacity: 0.5
+    resolved:
+      light: '#FFFFFF80'
+      dark: '#FFFFFF80'
+      web_var: --cds-system-fixed-color-text-400a
   title_pressed_fixed:
     part: "Title"
     role: "fill"
     applies_to: "Mode=Fixed, State=Pressed (Hover)"
     token: "system/fixed_color/text/gray-600"
+    resolved:
+      light: '#999999'
+      dark: '#999999'
+      web_var: --cds-system-fixed-color-text-gray-600
   input_stroke_inactive_default:
     part: "Input"
     role: "stroke"
     applies_to: "Mode=Default, State=Default or Completed or Disabled"
     token: "system/color/status/inactive-gray"
+    resolved:
+      light: '#DCDEE4'
+      dark: '#3E3E3E'
+      web_var: --cds-system-color-status-inactive-gray
   input_stroke_inactive_fixed:
     part: "TextField"
     role: "stroke"
     applies_to: "Mode=Fixed, State=Default or Completed or Disabled"
     token: "system/fixed_color/status/inactive-gray"
+    resolved:
+      light: '#3E3E3E'
+      dark: '#3E3E3E'
+      web_var: --cds-system-fixed-color-status-inactive-gray
   input_stroke_focus_default:
     part: "Input or Dropdown"
     role: "stroke"
     applies_to: "Mode=Default, State=Pressed (Hover) or Enabled_Down or Enabled_Up"
     token: "system/color/status/focus-gray-400"
+    resolved:
+      light: '#AEB1B8'
+      dark: '#555555'
+      web_var: --cds-system-color-status-focus-gray-400
   input_stroke_focus_fixed:
     part: "TextField or Dropdown"
     role: "stroke"
     applies_to: "Mode=Fixed, State=Pressed (Hover) or Enabled_Down or Enabled_Up"
     token: "system/fixed_color/status/focus-gray-400"
+    resolved:
+      light: '#555555'
+      dark: '#555555'
+      web_var: --cds-system-fixed-color-status-focus-gray-400
   input_stroke_error_default:
     part: "Input"
     role: "stroke"
     applies_to: "Mode=Default, State=Error"
     token: "system/color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-status-danger-red
   input_stroke_error_fixed:
     part: "TextField"
     role: "stroke"
     applies_to: "Mode=Fixed, State=Error"
     token: "system/fixed_color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-status-danger-red
   input_pressed_surface_default:
     part: "Input"
     role: "fill"
     applies_to: "Mode=Default, State=Pressed (Hover)"
     token: "system/color/surface/default-reverse-50a-2"
     opacity: 0.04
+    resolved:
+      light: '#0000000A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-color-surface-default-reverse-50a-2
   input_pressed_surface_fixed:
     part: "TextField"
     role: "fill"
     applies_to: "Mode=Fixed, State=Pressed (Hover)"
     token: "system/fixed_color/surface/default-reverse-100a"
     opacity: 0.1
+    resolved:
+      light: '#FFFFFF1A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-fixed-color-surface-default-reverse-100a
   input_disabled_surface_default:
     part: "Input"
     role: "fill"
     applies_to: "Mode=Default, State=Disabled"
     token: "system/color/status/background-disabled"
+    resolved:
+      light: '#F2F3F7'
+      dark: '#1F1F1F'
+      web_var: --cds-system-color-status-background-disabled
   input_disabled_surface_fixed:
     part: "TextField"
     role: "fill"
     applies_to: "Mode=Fixed, State=Disabled"
     token: "system/fixed_color/status/background-disabled"
+    resolved:
+      light: '#1F1F1F'
+      dark: '#1F1F1F'
+      web_var: --cds-system-fixed-color-status-background-disabled
   label_text_default:
     part: "text"
     role: "fill"
     applies_to: "Mode=Default, enabled or completed text"
     token: "system/color/text/default"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-text-default
   label_text_fixed:
     part: "text"
     role: "fill"
     applies_to: "Mode=Fixed, enabled or completed text"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   label_text_disabled_default:
     part: "text"
     role: "fill"
     applies_to: "Mode=Default, State=Disabled"
     token: "system/color/text/200a"
     opacity: 0.2
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-text-200a
   label_text_disabled_fixed:
     part: "text"
     role: "fill"
     applies_to: "Mode=Fixed, State=Disabled"
     token: "system/fixed_color/text/200a"
     opacity: 0.2
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-text-200a
   error_message_text:
     part: "text"
     role: "fill"
     applies_to: "State=Error guide message"
     token: "system/fixed_color/roles/negative"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-roles-negative
   dropdown_surface_default:
     part: "Dropdown"
     role: "fill"
     applies_to: "Mode=Default, open states"
     token: "system/color/surface/default-4"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#282828'
+      web_var: --cds-system-color-surface-default-4
   dropdown_surface_fixed:
     part: "Dropdown"
     role: "fill"
     applies_to: "Mode=Fixed, open states"
     token: "system/fixed_color/surface/default-4"
+    resolved:
+      light: '#282828'
+      dark: '#282828'
+      web_var: --cds-system-fixed-color-surface-default-4
   dropdown_divider_default:
     part: "divider"
     role: "fill"
     applies_to: "Mode=Default, open states"
     token: "system/color/outline/default-50a-2"
     opacity: 0.04
+    resolved:
+      light: '#0000000A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-color-outline-default-50a-2
   dropdown_divider_fixed:
     part: "divider"
     role: "fill"
     applies_to: "Mode=Fixed, open states"
     token: "system/fixed_color/outline/default-100a"
     opacity: 0.1
+    resolved:
+      light: '#FFFFFF1A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-fixed-color-outline-default-100a
   scrollbar_thumb_default:
     part: "thumb"
     role: "fill"
     applies_to: "Mode=Default, open states"
     token: "system/color/surface/default-reverse-200a"
     opacity: 0.2
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-surface-default-reverse-200a
   scrollbar_thumb_fixed:
     part: "thumb"
     role: "fill"
     applies_to: "Mode=Fixed, open states"
     token: "system/fixed_color/surface/default-reverse-200a"
     opacity: 0.2
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-surface-default-reverse-200a
   badge_dot_color:
     part: "Badge_Dot"
     role: "fill"
@@ -210,6 +306,10 @@ tokens:
     token: "system/color/status/danger-red"
 
 
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-status-danger-red
 typography:
   body_xs_system_400:
     font_family: "WeGothicSans"
@@ -250,30 +350,30 @@ assets:
 
 composition:
   uses:
-    - component: "Badge_Dot"
-      node_id: "8451:112783"
-      component_set_key: "d1ea898a9e908e7470a7518abae5b45c18e0a58a"
-      role: "required or notification marker beside title"
-      usage_condition: "Show_Badge_Dot=true"
-      spec_owner: "Badge_Dot component set"
-    - component: "[V2] List_Item_Native"
-      node_id: "57343:18628"
-      component_set_key: "e120970b1638c0fa7a5b7638923eb91479384ebe"
-      role: "dropdown menu option row"
-      usage_condition: "State=Enabled_Down or State=Enabled_Up"
-      spec_owner: "[V2] List_Item_Native component set"
-    - component: "[V2] Divider"
-      node_id: "59215:76787"
-      component_set_key: "a4421d92006feceff814786c7733c63403cebf92"
-      role: "separator inside open menu list"
-      usage_condition: "open list states"
-      spec_owner: "[V2] Divider component set"
-    - component: "Scrollbar"
-      node_id: "27782:8837"
-      component_set_key: "ec2d17107a68bb443f80245ab791fb69380f0a50"
-      role: "scroll position indicator for open menu"
-      usage_condition: "Show_Scrollbar=true and list content overflows"
-      spec_owner: "Scrollbar component set"
+  - component: "Badge_Dot"
+    node_id: "8451:112783"
+    component_set_key: "d1ea898a9e908e7470a7518abae5b45c18e0a58a"
+    role: "required or notification marker beside title"
+    usage_condition: "Show_Badge_Dot=true"
+    spec_owner: "Badge_Dot component set"
+  - component: "[V2] List_Item_Native"
+    node_id: "57343:18628"
+    component_set_key: "e120970b1638c0fa7a5b7638923eb91479384ebe"
+    role: "dropdown menu option row"
+    usage_condition: "State=Enabled_Down or State=Enabled_Up"
+    spec_owner: "[V2] List_Item_Native component set"
+  - component: "[V2] Divider"
+    node_id: "59215:76787"
+    component_set_key: "a4421d92006feceff814786c7733c63403cebf92"
+    role: "separator inside open menu list"
+    usage_condition: "open list states"
+    spec_owner: "[V2] Divider component set"
+  - component: "Scrollbar"
+    node_id: "27782:8837"
+    component_set_key: "ec2d17107a68bb443f80245ab791fb69380f0a50"
+    role: "scroll position indicator for open menu"
+    usage_condition: "Show_Scrollbar=true and list content overflows"
+    spec_owner: "Scrollbar component set"
 
 layout:
   component_set:
@@ -335,17 +435,17 @@ layout:
       default:
         value: "0px, menu attached below or above input"
       variants:
-        - when: "State=Enabled_Down"
-          value: "Dropdown opens below the input."
-        - when: "State=Enabled_Up"
-          value: "Dropdown opens above the input."
+      - when: "State=Enabled_Down"
+        value: "Dropdown opens below the input."
+      - when: "State=Enabled_Up"
+        value: "Dropdown opens above the input."
 
 implementation_order:
-  - "Resolve Mode first because adaptive and fixed token families must not mix."
-  - "Resolve State next because closed, pressed, open, completed, error, and disabled states change stroke, fill, icon direction, and menu visibility."
-  - "Render Title and Guide Message only when their boolean props are true."
-  - "Render open menu composition only for Enabled_Down and Enabled_Up states."
-  - "Use List_Item_Native, Divider, Scrollbar, Badge_Dot, and icon assets through their component contracts."
+- "Resolve Mode first because adaptive and fixed token families must not mix."
+- "Resolve State next because closed, pressed, open, completed, error, and disabled states change stroke, fill, icon direction, and menu visibility."
+- "Render Title and Guide Message only when their boolean props are true."
+- "Render open menu composition only for Enabled_Down and Enabled_Up states."
+- "Use List_Item_Native, Divider, Scrollbar, Badge_Dot, and icon assets through their component contracts."
 
 implementation_coverage:
   axes: "Implement all 14 Mode x State variants, including both open directions."
@@ -356,29 +456,33 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Dropdown when users must choose from provided options rather than type a free-form value."
-    - "Show the selected value clearly in the trigger field after selection."
-    - "Place the dropdown menu adjacent to the trigger field."
-    - "Keep state colors aligned with the field state."
-    - "Use menu rows with consistent option structure."
+  - "Use Dropdown when users must choose from provided options rather than type a free-form value."
+  - "Show the selected value clearly in the trigger field after selection."
+  - "Place the dropdown menu adjacent to the trigger field."
+  - "Keep state colors aligned with the field state."
+  - "Use menu rows with consistent option structure."
   dont:
-    - "Do not leave a completed selection looking like a placeholder."
-    - "Do not mix helper text, instruction text, and selectable options at the same hierarchy."
-    - "Do not detach the menu from the trigger field."
-    - "Do not apply arbitrary colors outside the confirmed state token rules."
-    - "Do not use Dropdown when the user needs free-form input."
+  - "Do not leave a completed selection looking like a placeholder."
+  - "Do not mix helper text, instruction text, and selectable options at the same hierarchy."
+  - "Do not detach the menu from the trigger field."
+  - "Do not apply arbitrary colors outside the confirmed state token rules."
+  - "Do not use Dropdown when the user needs free-form input."
 
 spec_notes:
   source:
-    - "Live Figma readback from component set 60730:9605 on 2026-05-04."
-    - "Variant key snapshot: refs/figma-component-keys/variant-keys/dropdown-box.md."
-    - "Usage reference: refs/markitdown-output/markitdown-dropdown.md."
+  - "Live Figma readback from component set 60730:9605 on 2026-05-04."
+  - "Variant key snapshot: refs/figma-component-keys/variant-keys/dropdown-box.md."
   usage:
-    - "Dropdown is a selection component, not a text entry field."
-    - "Open states reuse List_Item_Native rows and Scrollbar instead of embedding row specs here."
+  - "Dropdown is a selection component, not a text entry field."
+  - "Open states reuse List_Item_Native rows and Scrollbar instead of embedding row specs here."
 
 source_gaps:
-  - field: "icon_component_set_key"
-    reason: "The arrow icon readback exposes concrete arrow down and fold component keys, but not a parent icon component set key; asset source is therefore recorded by icon name."
-  - part: "List_Item_Native option row internals"
-    reason: "Nested option row tokens and layout belong to the List_Item_Native component set and are intentionally referenced through composition.uses."
+- field: "icon_component_set_key"
+  reason: "The arrow icon readback exposes concrete arrow down and fold component keys, but not a parent icon component set key; asset source is therefore recorded by icon name."
+- part: "List_Item_Native option row internals"
+  reason: "Nested option row tokens and layout belong to the List_Item_Native component set and are intentionally referenced through composition.uses."
+baseline:
+  node_id: 60730:9606
+  variant: Mode=Default, State=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

@@ -13,11 +13,11 @@ variants:
   count: 2
   formula: "Mode(2)"
   constraints:
-    - "Both Mode variants are present in live Figma."
-    - "Icon is a boolean component property, not a variant axis."
+  - "Both Mode variants are present in live Figma."
+  - "Icon is a boolean component property, not a variant axis."
   registry:
-    - { variant: "Mode=Fixed", node_id: "63694:5775", key: "0bcedf9e6e0bbba92f64d166a22ba9d2fe613728" }
-    - { variant: "Mode=Default", node_id: "63694:5789", key: "a2d012aacb80f917c45d67b497f21e357391e628" }
+  - {variant: "Mode=Fixed", node_id: "63694:5775", key: "0bcedf9e6e0bbba92f64d166a22ba9d2fe613728"}
+  - {variant: "Mode=Default", node_id: "63694:5789", key: "a2d012aacb80f917c45d67b497f21e357391e628"}
 
 props:
   Label:
@@ -42,36 +42,66 @@ tokens:
     applies_to: "Mode=Default"
     token: "system/color/surface/default-reverse-600a-unequal"
     opacity: 0.8
+    resolved:
+      light: '#000000CC'
+      dark: '#333333'
+      web_var: --cds-system-color-surface-default-reverse-600a-unequal
   container_fixed:
     part: "Snackbar"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/surface/gray-200"
+    resolved:
+      light: '#333333'
+      dark: '#333333'
+      web_var: --cds-system-fixed-color-surface-gray-200
   label_text:
     part: "Label"
     role: "text fill"
     applies_to: "All Mode values"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   label_typography:
     part: "Label"
     role: "text style"
     applies_to: "All Mode values"
     token: "body-xs/system-400"
+    resolved:
+      fontSize: 14
+      fontFamily: WeGothicSans
+      fontWeight: 400
+      lineHeight: 18
   action_primary_text:
     part: "Retry"
     role: "text fill"
     applies_to: "Visible action label"
     token: "system/fixed_color/text/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-text-primary
   action_primary_typography:
     part: "Retry"
     role: "text style"
     applies_to: "Visible action label"
     token: "body-xs/system-500"
+    resolved:
+      fontSize: 14
+      fontFamily: WeGothicSans
+      fontWeight: 500
+      lineHeight: 18
   action_secondary_text:
     part: "Cancel"
     role: "text fill"
     applies_to: "Hidden secondary action label in live Figma"
     token: "system/fixed_color/text/gray-700"
+    resolved:
+      light: '#BBBBBB'
+      dark: '#BBBBBB'
+      web_var: --cds-system-fixed-color-text-gray-700
   optional_icon:
     part: "icon_area"
     role: "icon fill"
@@ -79,6 +109,10 @@ tokens:
     token: "system/fixed_color/icon/default"
 
 
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-icon-default
 typography:
   body_xs_system_400:
     font_family: "WeGothicSans"
@@ -159,12 +193,12 @@ interaction:
     behavior: "Show only one Snackbar at a time."
 
 implementation_order:
-  - "Resolve Mode first because it changes the container surface token and opacity."
-  - "Apply the fixed 12px vertical and 16px horizontal padding, 8px gap, and 8px radius."
-  - "Bind Label text with body-xs/system-400 and allow wrapping up to three lines."
-  - "Enable icon_area only when Icon=true and keep the icon as the nested DS icon_area component."
-  - "Render the optional Retry action with lower emphasis than a filled button."
-  - "Place the Snackbar above bottom UI with 10px screen margins and a 410px maximum width."
+- "Resolve Mode first because it changes the container surface token and opacity."
+- "Apply the fixed 12px vertical and 16px horizontal padding, 8px gap, and 8px radius."
+- "Bind Label text with body-xs/system-400 and allow wrapping up to three lines."
+- "Enable icon_area only when Icon=true and keep the icon as the nested DS icon_area component."
+- "Render the optional Retry action with lower emphasis than a filled button."
+- "Place the Snackbar above bottom UI with 10px screen margins and a 410px maximum width."
 
 implementation_coverage:
   axes: "Implement both Mode variants."
@@ -175,39 +209,43 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Snackbar to keep the user's flow while showing a task result and optional follow-up action."
-    - "Keep the message short and clear."
-    - "Provide an Action only when the follow-up is optional."
-    - "Limit text to three lines."
-    - "Place Snackbar above Home Indicator, GNB, or CTA Button."
-    - "Show only one Snackbar at a time."
+  - "Use Snackbar to keep the user's flow while showing a task result and optional follow-up action."
+  - "Keep the message short and clear."
+  - "Provide an Action only when the follow-up is optional."
+  - "Limit text to three lines."
+  - "Place Snackbar above Home Indicator, GNB, or CTA Button."
+  - "Show only one Snackbar at a time."
   dont:
-    - "Do not put long multi-topic copy into Snackbar."
-    - "Do not use Snackbar for required confirmation or important decisions."
-    - "Do not exceed three lines of text."
-    - "Do not overlap the primary CTA in a way that blocks operation."
-    - "Do not use Snackbar like a blocking popup."
-    - "Do not use a high-emphasis Filled Button inside Snackbar."
+  - "Do not put long multi-topic copy into Snackbar."
+  - "Do not use Snackbar for required confirmation or important decisions."
+  - "Do not exceed three lines of text."
+  - "Do not overlap the primary CTA in a way that blocks operation."
+  - "Do not use Snackbar like a blocking popup."
+  - "Do not use a high-emphasis Filled Button inside Snackbar."
 
 spec_notes:
   source:
     variant_registry: "refs/figma-component-keys/variant-keys/snackbar.md"
-    markitdown: "refs/markitdown-output/markitdown-snackbar.md"
     figma_live_read: "use_figma read-only extraction on 2026-05-04"
   usage:
-    - "Snackbar is for feedback with optional follow-up action."
-    - "It is more action-oriented than Toast but should not block the flow like Dialog."
+  - "Snackbar is for feedback with optional follow-up action."
+  - "It is more action-oriented than Toast but should not block the flow like Dialog."
 
 source_gaps:
-  - part: "Action"
-    field: "component properties"
-    reason: "Live Figma readback exposes Label and Icon properties only; Retry is visible static text and Cancel is hidden static text."
-  - part: "Runtime width"
-    field: "responsive layout"
-    reason: "Live component variants are fixed 373px samples while usage guidance defines 10px screen margins and a 410px maximum width."
+- part: "Action"
+  field: "component properties"
+  reason: "Live Figma readback exposes Label and Icon properties only; Retry is visible static text and Cancel is hidden static text."
+- part: "Runtime width"
+  field: "responsive layout"
+  reason: "Live component variants are fixed 373px samples while usage guidance defines 10px screen margins and a 410px maximum width."
 
 verification:
   figma_live_read:
-    - "Component set key and both variant keys were confirmed by read-only use_figma extraction."
-    - "Component properties Label, Icon, and Mode were confirmed from live componentPropertyDefinitions."
-    - "Container fills, text fills, text styles, padding, gap, radius, and optional icon_area reference were read from live Figma."
+  - "Component set key and both variant keys were confirmed by read-only use_figma extraction."
+  - "Component properties Label, Icon, and Mode were confirmed from live componentPropertyDefinitions."
+  - "Container fills, text fills, text styles, padding, gap, radius, and optional icon_area reference were read from live Figma."
+baseline:
+  node_id: 63694:5789
+  variant: Mode=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

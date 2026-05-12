@@ -19,17 +19,17 @@ variants:
   theoretical_formula: "Mode(2) x Size(2) x Type(3) x State(5) x Radius(2) = 120"
   implemented_formula: "120 - Small/Image combinations(20) = 100"
   constraints:
-    - "Image type is implemented only for Size=Medium."
-    - "Size=Small supports Text and Icon only."
-    - "Radius=ON resolves to pill radius; Radius=OFF resolves to 8px radius."
-    - "Badge, Badge_Number, and Marquee are boolean props, not variant axes."
+  - "Image type is implemented only for Size=Medium."
+  - "Size=Small supports Text and Icon only."
+  - "Radius=ON resolves to pill radius; Radius=OFF resolves to 8px radius."
+  - "Badge, Badge_Number, and Marquee are boolean props, not variant axes."
   registry_policy:
     component_set_key: "6f1fa3aadc347f4c8c2f26405695b2415dbdcb95"
     storage: "100 variant node IDs and keys were verified from Figma; full registry is intentionally summarized to keep Description readable."
     sample:
-      - { variant: "Mode=Default, Size=Medium, Type=Text, State=Default, Radius=OFF", node_id: "59869:78922", key: "947c0fe8c2dcd019e37975bf12876ff40006245c" }
-      - { variant: "Mode=Default, Size=Small, Type=Text, State=Default, Radius=OFF", node_id: "59869:78932", key: "4001fc50a6a9274e660671e37723da7c7474b08e" }
-      - { variant: "Mode=Fixed, Size=Medium, Type=Image (Only Medium), State=Default, Radius=ON", node_id: "67023:33670", key: "bf0f3f97547b51e2008176c6213505209889b58d" }
+    - {variant: "Mode=Default, Size=Medium, Type=Text, State=Default, Radius=OFF", node_id: "59869:78922", key: "947c0fe8c2dcd019e37975bf12876ff40006245c"}
+    - {variant: "Mode=Default, Size=Small, Type=Text, State=Default, Radius=OFF", node_id: "59869:78932", key: "4001fc50a6a9274e660671e37723da7c7474b08e"}
+    - {variant: "Mode=Fixed, Size=Medium, Type=Image (Only Medium), State=Default, Radius=ON", node_id: "67023:33670", key: "bf0f3f97547b51e2008176c6213505209889b58d"}
 
 props:
   Marquee:
@@ -51,111 +51,191 @@ tokens:
     role: "label typography"
     token: "body-s/system-500"
     resolved:
-      font_family: "font_family/body"
-      font_size: "base/text_size/text-150"
-      line_height: "base/lineheight/text-lineheight-150"
-      font_weight: "base/text_weight/text-weight-500"
+      fontSize: 15
+      fontFamily: WeGothicSans
+      fontWeight: 500
+      lineHeight: 21
   container_stroke_default:
     part: "chip container"
     role: "stroke"
     applies_to: "Mode=Default, State=Default"
     token: "system/color/button/outlined_gray"
+    resolved:
+      light: '#DEDEDE'
+      dark: '#333333'
+      web_var: --cds-system-color-button-outlined-gray
   container_stroke_fixed:
     part: "chip container"
     role: "stroke"
     applies_to: "Mode=Fixed, State=Default"
     token: "system/fixed_color/button/outlined_gray"
+    resolved:
+      light: '#333333'
+      dark: '#333333'
+      web_var: --cds-system-fixed-color-button-outlined-gray
   outlined_selected_stroke_default:
     part: "chip container"
     role: "stroke"
     applies_to: "Mode=Default, State=Outlined_Selected"
     token: "system/color/button/default"
+    resolved:
+      light: '#00CBD5'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-button-default
   outlined_selected_stroke_fixed:
     part: "chip container"
     role: "stroke"
     applies_to: "Mode=Fixed, State=Outlined_Selected"
     token: "system/fixed_color/button/default"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-button-default
   disabled_stroke_default:
     part: "chip container"
     role: "stroke"
     applies_to: "Mode=Default, State=Outlined_Disabled"
     token: "system/color/button/disabled"
     opacity: 0.1
+    resolved:
+      light: '#0000001A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-color-button-disabled
   disabled_stroke_fixed:
     part: "chip container"
     role: "stroke"
     applies_to: "Mode=Fixed, State=Outlined_Disabled"
     token: "system/fixed_color/button/disabled"
     opacity: 0.1
+    resolved:
+      light: '#FFFFFF1A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-fixed-color-button-disabled
   filled_selected_surface_default:
     part: "chip container"
     role: "fill"
     applies_to: "Mode=Default, State=Filled_Selected"
     token: "system/color/surface/default-reverse"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-surface-default-reverse
   filled_selected_surface_fixed:
     part: "chip container"
     role: "fill"
     applies_to: "Mode=Fixed, State=Filled_Selected"
     token: "system/fixed_color/surface/default-reverse"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-surface-default-reverse
   filled_disabled_surface_default:
     part: "chip container"
     role: "fill"
     applies_to: "Mode=Default, State=Filled_Disabled"
     token: "system/color/button/disabled"
     opacity: 0.1
+    resolved:
+      light: '#0000001A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-color-button-disabled
   filled_disabled_surface_fixed:
     part: "chip container"
     role: "fill"
     applies_to: "Mode=Fixed, State=Filled_Disabled"
     token: "system/fixed_color/button/disabled"
     opacity: 0.1
+    resolved:
+      light: '#FFFFFF1A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-fixed-color-button-disabled
   label_text_default:
     part: "_atoms / text"
     role: "text fill"
     applies_to: "Mode=Default"
     token: "system/color/text/default"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-text-default
   label_text_fixed:
     part: "_atoms / text"
     role: "text fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   label_text_selected_default:
     part: "_atoms / text"
     role: "selected text fill"
     applies_to: "Mode=Default, selected states"
     token: "system/color/text/primary"
+    resolved:
+      light: '#00B8C1'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-text-primary
   label_text_selected_fixed:
     part: "_atoms / text"
     role: "selected text fill"
     applies_to: "Mode=Fixed, selected states"
     token: "system/fixed_color/text/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-text-primary
   label_text_disabled_default:
     part: "_atoms / text"
     role: "disabled text fill"
     applies_to: "Mode=Default, disabled states"
     token: "system/color/text/200a"
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-text-200a
   label_text_disabled_fixed:
     part: "_atoms / text"
     role: "disabled text fill"
     applies_to: "Mode=Fixed, disabled states"
     token: "system/fixed_color/text/200a"
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-text-200a
   padding_horizontal:
     part: "chip container"
     role: "left and right padding for Text/Icon"
     token: "system/size/padding/box/150"
+    resolved:
+      light: 12
+      dark: 12
+      web_var: --cds-system-size-padding-box-150
   image_padding_left:
     part: "chip container"
     role: "left padding for Image type"
     token: "system/size/padding/box/75"
+    resolved:
+      light: 6
+      dark: 6
+      web_var: --cds-system-size-padding-box-75
   inner_gap:
     part: "layout"
     role: "gap between icon/image and label"
     token: "system/size/padding/box/50"
+    resolved:
+      light: 4
+      dark: 4
+      web_var: --cds-system-size-padding-box-50
   radius_off:
     part: "chip container"
     role: "corner radius"
     applies_to: "Radius=OFF"
     token: "system/size/radius/box/100"
+    resolved:
+      light: 8
+      dark: 8
+      web_var: --cds-system-size-radius-box-100
   radius_on:
     part: "chip container"
     role: "corner radius"
@@ -167,6 +247,10 @@ tokens:
     token: "system/color/roles/negative"
 
 
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-roles-negative
 typography:
   caption_s_system_500:
     font_family: "WeGothicSans"
@@ -237,59 +321,63 @@ interaction:
     behavior: "Use Marquee only for text overflow handling; keep component max width at 190px."
 
 implementation_order:
-  - "Select the variant by Mode, Size, Type, State, and Radius."
-  - "Reject or remap Size=Small with Type=Image because Image is Medium only."
-  - "Render the chip container with fixed height, hug width, max width 190px, and 1px stroke when applicable."
-  - "Apply container fill or stroke token from State and Mode."
-  - "Render optional Icon or Image before the label when Type requires it."
-  - "Render label through _atoms / text semantics and apply Mode/State text token."
-  - "Render Badge_Dot or Badge_Number only when the corresponding boolean prop is true."
-  - "When chips exceed page width, wrap chips instead of clipping them off-screen."
+- "Select the variant by Mode, Size, Type, State, and Radius."
+- "Reject or remap Size=Small with Type=Image because Image is Medium only."
+- "Render the chip container with fixed height, hug width, max width 190px, and 1px stroke when applicable."
+- "Apply container fill or stroke token from State and Mode."
+- "Render optional Icon or Image before the label when Type requires it."
+- "Render label through _atoms / text semantics and apply Mode/State text token."
+- "Render Badge_Dot or Badge_Number only when the corresponding boolean prop is true."
+- "When chips exceed page width, wrap chips instead of clipping them off-screen."
 
 implementation_coverage:
   axes:
-    - "Mode"
-    - "Size"
-    - "Type"
-    - "State"
-    - "Radius"
+  - "Mode"
+  - "Size"
+  - "Type"
+  - "State"
+  - "Radius"
   props:
-    - "Marquee"
-    - "Badge"
-    - "Badge_Number"
+  - "Marquee"
+  - "Badge"
+  - "Badge_Number"
   assets:
-    - "Type icon"
-    - "Image thumbnail"
-    - "Badge_Dot"
-    - "Badge_Number"
+  - "Type icon"
+  - "Image thumbnail"
+  - "Badge_Dot"
+  - "Badge_Number"
   layout:
-    - "Small and Medium heights"
-    - "Text/Icon/Image horizontal padding"
-    - "Radius ON/OFF"
-    - "max width 190px"
+  - "Small and Medium heights"
+  - "Text/Icon/Image horizontal padding"
+  - "Radius ON/OFF"
+  - "max width 190px"
   exclusions:
-    - "Size=Small with Type=Image is not implemented."
-    - "This workflow does not create a derived chips.md file."
+  - "Size=Small with Type=Image is not implemented."
+  - "This workflow does not create a derived chips.md file."
 
 rules:
   do:
-    - "Use Chips when users need to select one or multiple options from compact choices."
-    - "Use wrapping when chips exceed the page width."
-    - "Use color tokens that adapt to light and dark mode."
-    - "Use Small chips for tabs."
-    - "Use Medium size for image chips."
+  - "Use Chips when users need to select one or multiple options from compact choices."
+  - "Use wrapping when chips exceed the page width."
+  - "Use color tokens that adapt to light and dark mode."
+  - "Use Small chips for tabs."
+  - "Use Medium size for image chips."
   dont:
-    - "Do not use Chips as non-interactive information labels."
-    - "Do not let chips clip off-screen."
-    - "Do not use fixed_color for chip text and icon colors in the default adaptive mode."
-    - "Do not use Medium size for text-only tab chips."
-    - "Do not treat the chip image as an Avatar component."
+  - "Do not use Chips as non-interactive information labels."
+  - "Do not let chips clip off-screen."
+  - "Do not use fixed_color for chip text and icon colors in the default adaptive mode."
+  - "Do not use Medium size for text-only tab chips."
+  - "Do not treat the chip image as an Avatar component."
 
 spec_notes:
   source:
-    - "Figma component set metadata, Framelink structure extraction, Figma Desktop Bridge deep extraction, and Figma Plugin API compact inspection from node 59869:78921."
-    - "Local usage reference: refs/markitdown-output/markitdown-chips.md."
+  - "Figma component set metadata, Framelink structure extraction, Figma Desktop Bridge deep extraction, and Figma Plugin API compact inspection from node 59869:78921."
   usage:
-    - "The Figma component set name is [V2] Chips; implementation-facing name is Chips."
-    - "Badge_Dot and Badge_Number layers are hidden by default and controlled by boolean component properties."
-    - "Color usage reference says default adaptive chip text/icon colors should not use fixed_color."
+  - "The Figma component set name is [V2] Chips; implementation-facing name is Chips."
+  - "Badge_Dot and Badge_Number layers are hidden by default and controlled by boolean component properties."
+  - "Color usage reference says default adaptive chip text/icon colors should not use fixed_color."
+baseline:
+  node_id: 59869:78922
+  variant: Mode=Default, Size=Medium, Type=Text, State=Default, Radius=OFF
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

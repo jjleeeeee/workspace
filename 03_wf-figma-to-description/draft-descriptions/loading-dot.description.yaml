@@ -16,15 +16,15 @@ variants:
   count: 6
   formula: "Mode(2) x valid Size/Color combinations(3)"
   constraints:
-    - "Medium is available only with Color=Primary."
-    - "Small is available with Color=Primary or Color=White."
+  - "Medium is available only with Color=Primary."
+  - "Small is available with Color=Primary or Color=White."
   registry:
-    - { variant: "Mode=Default, Size=Medium, Color=Primary", node_id: "10384:29779", key: "36630c8bc6130e92f8274f4cf4b7fff2ecd8884d" }
-    - { variant: "Mode=Default, Size=Small, Color=White", node_id: "10384:29783", key: "af82a7c336142618ffbf202b2b0147c6ce947eea" }
-    - { variant: "Mode=Default, Size=Small, Color=Primary", node_id: "48790:15617", key: "6c98fb7942379c1d5ef794629abcebecb3051433" }
-    - { variant: "Mode=Fixed, Size=Medium, Color=Primary", node_id: "10384:29787", key: "01eebbced9d1d3936cb93c443b17aedab6be6d8d" }
-    - { variant: "Mode=Fixed, Size=Small, Color=White", node_id: "10384:29791", key: "da70f15eef9b2fcf958a577165ef445bc5b400d8" }
-    - { variant: "Mode=Fixed, Size=Small, Color=Primary", node_id: "48790:15621", key: "b05825685a98f6ede9410348cc33f6f7fb237f3c" }
+  - {variant: "Mode=Default, Size=Medium, Color=Primary", node_id: "10384:29779", key: "36630c8bc6130e92f8274f4cf4b7fff2ecd8884d"}
+  - {variant: "Mode=Default, Size=Small, Color=White", node_id: "10384:29783", key: "af82a7c336142618ffbf202b2b0147c6ce947eea"}
+  - {variant: "Mode=Default, Size=Small, Color=Primary", node_id: "48790:15617", key: "6c98fb7942379c1d5ef794629abcebecb3051433"}
+  - {variant: "Mode=Fixed, Size=Medium, Color=Primary", node_id: "10384:29787", key: "01eebbced9d1d3936cb93c443b17aedab6be6d8d"}
+  - {variant: "Mode=Fixed, Size=Small, Color=White", node_id: "10384:29791", key: "da70f15eef9b2fcf958a577165ef445bc5b400d8"}
+  - {variant: "Mode=Fixed, Size=Small, Color=Primary", node_id: "48790:15621", key: "b05825685a98f6ede9410348cc33f6f7fb237f3c"}
 
 props:
   Mode:
@@ -46,33 +46,57 @@ tokens:
     role: "fill"
     applies_to: "Mode=Default, Size=Medium, Color=Primary"
     token: "system/color/roles/primary"
+    resolved:
+      light: '#00CBD5'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-roles-primary
   medium_primary_fixed:
     part: "Ellipse 2181, Ellipse 2180, Ellipse 2179"
     role: "fill"
     applies_to: "Mode=Fixed, Size=Medium, Color=Primary"
     token: "system/fixed_color/roles/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-roles-primary
   small_primary:
     part: "Ellipse 2181, Ellipse 2180, Ellipse 2179"
     role: "fill"
     applies_to: "Size=Small, Color=Primary"
     token: "system/color/icon/primary"
+    resolved:
+      light: '#00B8C1'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-icon-primary
   small_white:
     part: "Ellipse 2181, Ellipse 2180, Ellipse 2179"
     role: "fill"
     applies_to: "Size=Small, Color=White"
     token: "system/color/icon/default-reverse"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#000000'
+      web_var: --cds-system-color-icon-default-reverse
   medium_dot_gap:
     part: "component"
     role: "spacing"
     applies_to: "Size=Medium"
     token: "system/size/padding/box/100"
     value: "8px"
+    resolved:
+      light: 8
+      dark: 8
+      web_var: --cds-system-size-padding-box-100
   small_dot_gap:
     part: "component"
     role: "spacing"
     applies_to: "Size=Small"
     token: "system/size/padding/box/50"
     value: "4px"
+    resolved:
+      light: 4
+      dark: 4
+      web_var: --cds-system-size-padding-box-50
   dot_opacity_sequence:
     part: "Ellipse 2181, Ellipse 2180, Ellipse 2179"
     role: "opacity"
@@ -104,56 +128,60 @@ layout:
         token: "system/size/padding/box/100"
         value: "8px for Medium"
       variants:
-        - when: "Size=Small"
-          token: "system/size/padding/box/50"
-          value: "4px"
+      - when: "Size=Small"
+        token: "system/size/padding/box/50"
+        value: "4px"
 
 implementation_order:
-  - "Resolve Size first because it controls component size, dot size, and dot spacing."
-  - "Resolve Color next within the valid Size and Color combinations."
-  - "Apply Mode-specific token only where the live Figma variant uses a fixed token."
-  - "Preserve the three-dot loading sequence and opacity staging."
-  - "Use the existing loading animation asset when available instead of rendering text ellipsis."
+- "Resolve Size first because it controls component size, dot size, and dot spacing."
+- "Resolve Color next within the valid Size and Color combinations."
+- "Apply Mode-specific token only where the live Figma variant uses a fixed token."
+- "Preserve the three-dot loading sequence and opacity staging."
+- "Use the existing loading animation asset when available instead of rendering text ellipsis."
 
 implementation_coverage:
   axes:
-    - "Mode"
-    - "Size"
-    - "Color"
+  - "Mode"
+  - "Size"
+  - "Color"
   props:
-    - "Mode"
-    - "Size"
-    - "Color"
+  - "Mode"
+  - "Size"
+  - "Color"
   assets:
-    - "loading_dot_motion"
+  - "loading_dot_motion"
   layout:
-    - "60x60 Medium component"
-    - "20x20 Small component"
-    - "8x8 Medium dots"
-    - "4x4 Small dots"
-    - "8px and 4px tokenized gaps"
+  - "60x60 Medium component"
+  - "20x20 Small component"
+  - "8x8 Medium dots"
+  - "4x4 Small dots"
+  - "8px and 4px tokenized gaps"
   exclusions:
-    - "This workflow does not create a derived loading-dot.md file."
+  - "This workflow does not create a derived loading-dot.md file."
 
 rules:
   do:
-    - "Use Medium Dot Loading for full-screen movement or screen transition loading."
-    - "Use Small Dot Loading for component-internal loading."
-    - "Use Primary or White loading colors according to the component context."
-    - "Use Loading for in-progress states only."
+  - "Use Medium Dot Loading for full-screen movement or screen transition loading."
+  - "Use Small Dot Loading for component-internal loading."
+  - "Use Primary or White loading colors according to the component context."
+  - "Use Loading for in-progress states only."
   dont:
-    - "Do not use Medium Dot Loading inside dense components."
-    - "Do not use Loading to communicate errors or completion messages."
-    - "Do not change loading colors to community colors."
-    - "Do not replace the loading asset with plain text ellipsis."
+  - "Do not use Medium Dot Loading inside dense components."
+  - "Do not use Loading to communicate errors or completion messages."
+  - "Do not change loading colors to community colors."
+  - "Do not replace the loading asset with plain text ellipsis."
 
 source_gaps:
-  - field: "assets.loading_dot_motion.source"
-    reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
-    impact: "Implementation should use the existing product loading animation asset if the platform has one, or ask design for the Lottie asset key before shipping a new asset."
+- field: "assets.loading_dot_motion.source"
+  reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
+  impact: "Implementation should use the existing product loading animation asset if the platform has one, or ask design for the Lottie asset key before shipping a new asset."
 
 spec_notes:
   source:
-    - "Figma live read via Framelink and read-only Plugin API extraction from node 10384:29778."
-    - "Variant key reference: refs/figma-component-keys/variant-keys/loading-dot.md."
-    - "Usage reference: refs/markitdown-output/markitdown-loading.md."
+  - "Figma live read via Framelink and read-only Plugin API extraction from node 10384:29778."
+  - "Variant key reference: refs/figma-component-keys/variant-keys/loading-dot.md."
+baseline:
+  node_id: 10384:29779
+  variant: Mode=Default, Size=Medium, Color=Primary
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

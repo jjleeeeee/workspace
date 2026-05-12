@@ -16,23 +16,23 @@ variants:
   count: 12
   formula: "Type(1) x Ratio(6) x Radius(2)"
   constraints:
-    - "Type currently has only Thumbnail as a live variant value."
-    - "All Ratio and Radius combinations are valid."
-    - "Fill, Button, Left Item, Right Item_top, Right Item_bottom, and Seek bar are boolean props, not variant axes."
-    - "All ratios are based on a 256px width reference."
+  - "Type currently has only Thumbnail as a live variant value."
+  - "All Ratio and Radius combinations are valid."
+  - "Fill, Button, Left Item, Right Item_top, Right Item_bottom, and Seek bar are boolean props, not variant axes."
+  - "All ratios are based on a 256px width reference."
   registry:
-    - { variant: "Type=Thumbnail, Ratio=16:9, Radius=off", node_id: "59100:15485", key: "2c4fe3ac1095699fb2d49723c243a7124ebb46b8" }
-    - { variant: "Type=Thumbnail, Ratio=16:9, Radius=on", node_id: "63087:559852", key: "9dd062f835019f21ebc5035d0f07789934f73809" }
-    - { variant: "Type=Thumbnail, Ratio=3:4, Radius=on", node_id: "60779:56307", key: "a97ceefa893c5fd871a6362404b6957658cd41fb" }
-    - { variant: "Type=Thumbnail, Ratio=3:4, Radius=off", node_id: "63087:559896", key: "8108e1dfb6aced1e7dd229575c3618c7fc3bff27" }
-    - { variant: "Type=Thumbnail, Ratio=1:1, Radius=off", node_id: "59100:15481", key: "eea6b61e300d38c0b4f0d5d40a3a7ea20ef74fbb" }
-    - { variant: "Type=Thumbnail, Ratio=1:1, Radius=on", node_id: "60779:56301", key: "30ba8fb3cddfecb2c497001083e8075a4a3cea1a" }
-    - { variant: "Type=Thumbnail, Ratio=5:8, Radius=off", node_id: "59100:15473", key: "52ccb273741defcf487ae330bdd7000f7b3615e1" }
-    - { variant: "Type=Thumbnail, Ratio=5:8, Radius=on", node_id: "60779:56289", key: "bacd2a7d0b92689a5ba3d68ea2fc3ad1f5504467" }
-    - { variant: "Type=Thumbnail, Ratio=5:6, Radius=off", node_id: "59100:15469", key: "61492ad7ea553efd0b0f6700aa56a4700fba62e8" }
-    - { variant: "Type=Thumbnail, Ratio=5:6, Radius=on", node_id: "60779:56283", key: "603da6d20670f6f1bac59c01f533951048ee0022" }
-    - { variant: "Type=Thumbnail, Ratio=9:16, Radius=off", node_id: "59100:15475", key: "ce30dbdffd983727c6cdaa1522bcc7afc0f1519a" }
-    - { variant: "Type=Thumbnail, Ratio=9:16, Radius=on", node_id: "60779:56295", key: "2d4e1af82afa131d1c3409889e436e59cce548e9" }
+  - {variant: "Type=Thumbnail, Ratio=16:9, Radius=off", node_id: "59100:15485", key: "2c4fe3ac1095699fb2d49723c243a7124ebb46b8"}
+  - {variant: "Type=Thumbnail, Ratio=16:9, Radius=on", node_id: "63087:559852", key: "9dd062f835019f21ebc5035d0f07789934f73809"}
+  - {variant: "Type=Thumbnail, Ratio=3:4, Radius=on", node_id: "60779:56307", key: "a97ceefa893c5fd871a6362404b6957658cd41fb"}
+  - {variant: "Type=Thumbnail, Ratio=3:4, Radius=off", node_id: "63087:559896", key: "8108e1dfb6aced1e7dd229575c3618c7fc3bff27"}
+  - {variant: "Type=Thumbnail, Ratio=1:1, Radius=off", node_id: "59100:15481", key: "eea6b61e300d38c0b4f0d5d40a3a7ea20ef74fbb"}
+  - {variant: "Type=Thumbnail, Ratio=1:1, Radius=on", node_id: "60779:56301", key: "30ba8fb3cddfecb2c497001083e8075a4a3cea1a"}
+  - {variant: "Type=Thumbnail, Ratio=5:8, Radius=off", node_id: "59100:15473", key: "52ccb273741defcf487ae330bdd7000f7b3615e1"}
+  - {variant: "Type=Thumbnail, Ratio=5:8, Radius=on", node_id: "60779:56289", key: "bacd2a7d0b92689a5ba3d68ea2fc3ad1f5504467"}
+  - {variant: "Type=Thumbnail, Ratio=5:6, Radius=off", node_id: "59100:15469", key: "61492ad7ea553efd0b0f6700aa56a4700fba62e8"}
+  - {variant: "Type=Thumbnail, Ratio=5:6, Radius=on", node_id: "60779:56283", key: "603da6d20670f6f1bac59c01f533951048ee0022"}
+  - {variant: "Type=Thumbnail, Ratio=9:16, Radius=off", node_id: "59100:15475", key: "ce30dbdffd983727c6cdaa1522bcc7afc0f1519a"}
+  - {variant: "Type=Thumbnail, Ratio=9:16, Radius=on", node_id: "60779:56295", key: "2d4e1af82afa131d1c3409889e436e59cce548e9"}
 
 props:
   fill:
@@ -78,37 +78,65 @@ tokens:
     applies_to: "Fill=true"
     token: "system/fixed_color/surface/default-400a"
     opacity: 0.5
+    resolved:
+      light: '#00000080'
+      dark: '#00000080'
+      web_var: --cds-system-fixed-color-surface-default-400a
   seek_bar_track:
     part: "Seek bar"
     role: "fill"
     applies_to: "Seek bar=true"
     token: "system/fixed_color/surface/default-reverse-300a"
     opacity: 0.3
+    resolved:
+      light: '#FFFFFF4D'
+      dark: '#FFFFFF4D'
+      web_var: --cds-system-fixed-color-surface-default-reverse-300a
   seek_bar_streaming:
     part: "Seek bar / Streaming"
     role: "fill"
     applies_to: "Seek bar=true"
     token: "system/fixed_color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-status-danger-red
   right_item_text:
     part: "Right Item_Bottom / time"
     role: "text fill"
     applies_to: "Right Item_bottom=true"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   left_item_tag_bg:
     part: "Left Item / tag / BG"
     role: "fill"
     applies_to: "Left Item=true"
     token: "system/fixed_color/roles/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-roles-primary
   left_item_tag_text:
     part: "Left Item / tag / Text"
     role: "text fill"
     applies_to: "Left Item=true"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   center_button_icon:
     part: "Center Button / icon"
     role: "icon fill"
     applies_to: "Button=true"
     token: "system/fixed_color/icon/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-icon-default
   radius_off:
     part: "Thumbnail frame"
     role: "corner radius"
@@ -124,6 +152,11 @@ tokens:
     role: "typography"
     token: "caption-m/system-700"
     value: "13px font, 17px line-height"
+    resolved:
+      fontSize: 13
+      fontFamily: WeGothicSans
+      fontWeight: 700
+      lineHeight: 17
   left_item_tag_typography:
     part: "Left Item / tag / Text"
     role: "typography"
@@ -131,6 +164,11 @@ tokens:
     value: "10px font, 13px line-height"
 
 
+    resolved:
+      fontSize: 10
+      fontFamily: WeGothicSans
+      fontWeight: 700
+      lineHeight: 13
 typography:
   caption_m_system_700:
     font_family: "WeGothicSans"
@@ -201,42 +239,42 @@ assets:
 
 composition:
   uses:
-    - component: "_atoms / modules / Fill"
-      node_id: "60355:25750"
-      component_set_key: "2d853faf3c8c3667a6eb6d12d4c0f648979e87fc"
-      role: "scrim overlay module"
-      usage_condition: "Fill=true"
-      spec_owner: "_atoms / modules / Fill component set"
-    - component: "_atoms / modules / Right Item_Top (Optional)"
-      node_id: "60355:25695"
-      component_set_key: "bc28ee6e91c943be47c00fb23e6af82f13d9bac1"
-      role: "top-right icon overlay module"
-      usage_condition: "Right Item_top=true"
-      spec_owner: "Right Item_Top component set"
-    - component: "_atoms / modules / Right Item_Bottom (Optional)"
-      node_id: "60376:15368"
-      component_set_key: "0c890b0108bb1b11b289e00e04598937cadf9420"
-      role: "bottom-right metadata overlay module"
-      usage_condition: "Right Item_bottom=true"
-      spec_owner: "Right Item_Bottom component set"
-    - component: "_atoms / modules / Center Button"
-      node_id: "60355:25745"
-      component_set_key: "bf8e42e8e0ba93f67d8016ccbb046983339dbecb"
-      role: "center play/action button module"
-      usage_condition: "Button=true"
-      spec_owner: "Center Button component set"
-    - component: "_atoms / modules / Left Item (Optional)"
-      node_id: "60355:25688"
-      component_set_key: "a0126bfd5c8f52f89b4f12f1ea151bbd96543f08"
-      role: "top-left icon/tag overlay module"
-      usage_condition: "Left Item=true"
-      spec_owner: "Left Item component set"
-    - component: "tag"
-      node_id: "30256:32826"
-      component_set_key: "bc5965253050f2719974ba59fab7b22b35a05b3f"
-      role: "left overlay label inside Left Item"
-      usage_condition: "Left Item=true and tag is visible"
-      spec_owner: "Tag Description"
+  - component: "_atoms / modules / Fill"
+    node_id: "60355:25750"
+    component_set_key: "2d853faf3c8c3667a6eb6d12d4c0f648979e87fc"
+    role: "scrim overlay module"
+    usage_condition: "Fill=true"
+    spec_owner: "_atoms / modules / Fill component set"
+  - component: "_atoms / modules / Right Item_Top (Optional)"
+    node_id: "60355:25695"
+    component_set_key: "bc28ee6e91c943be47c00fb23e6af82f13d9bac1"
+    role: "top-right icon overlay module"
+    usage_condition: "Right Item_top=true"
+    spec_owner: "Right Item_Top component set"
+  - component: "_atoms / modules / Right Item_Bottom (Optional)"
+    node_id: "60376:15368"
+    component_set_key: "0c890b0108bb1b11b289e00e04598937cadf9420"
+    role: "bottom-right metadata overlay module"
+    usage_condition: "Right Item_bottom=true"
+    spec_owner: "Right Item_Bottom component set"
+  - component: "_atoms / modules / Center Button"
+    node_id: "60355:25745"
+    component_set_key: "bf8e42e8e0ba93f67d8016ccbb046983339dbecb"
+    role: "center play/action button module"
+    usage_condition: "Button=true"
+    spec_owner: "Center Button component set"
+  - component: "_atoms / modules / Left Item (Optional)"
+    node_id: "60355:25688"
+    component_set_key: "a0126bfd5c8f52f89b4f12f1ea151bbd96543f08"
+    role: "top-left icon/tag overlay module"
+    usage_condition: "Left Item=true"
+    spec_owner: "Left Item component set"
+  - component: "tag"
+    node_id: "30256:32826"
+    component_set_key: "bc5965253050f2719974ba59fab7b22b35a05b3f"
+    role: "left overlay label inside Left Item"
+    usage_condition: "Left Item=true and tag is visible"
+    spec_owner: "Tag Description"
 
 layout:
   component_size: "256px reference width; height changes by Ratio"
@@ -287,11 +325,11 @@ interaction:
     behavior: "Crop image content inside the ratio frame while preserving the representative subject."
 
 implementation_order:
-  - "Resolve Ratio first because it determines the frame height from the 256px reference width."
-  - "Apply Radius after Ratio and keep clipping enabled for both radius states."
-  - "Render the image content as the base media fill."
-  - "Apply Fill scrim, Button, Left Item, Right Item_top, Right Item_bottom, and Seek bar optional modules after the base image."
-  - "Preserve nested optional module semantics instead of flattening their icon or text internals into Thumbnail."
+- "Resolve Ratio first because it determines the frame height from the 256px reference width."
+- "Apply Radius after Ratio and keep clipping enabled for both radius states."
+- "Render the image content as the base media fill."
+- "Apply Fill scrim, Button, Left Item, Right Item_top, Right Item_bottom, and Seek bar optional modules after the base image."
+- "Preserve nested optional module semantics instead of flattening their icon or text internals into Thumbnail."
 
 implementation_coverage:
   axes: "Implement all 12 Type x Ratio x Radius variants, with Type fixed to Thumbnail."
@@ -302,29 +340,33 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Thumbnail when content needs a stable representative image in a supported ratio."
-    - "Use one ratio consistently within the same list, card group, or media rail."
-    - "Keep width based on the 256px reference and respect the minimum 44px width."
-    - "Round ratio-derived decimal dimensions down."
-    - "Use optional overlay modules consistently across all ratios and expose at most two icons."
+  - "Use Thumbnail when content needs a stable representative image in a supported ratio."
+  - "Use one ratio consistently within the same list, card group, or media rail."
+  - "Keep width based on the 256px reference and respect the minimum 44px width."
+  - "Round ratio-derived decimal dimensions down."
+  - "Use optional overlay modules consistently across all ratios and expose at most two icons."
   dont:
-    - "Do not mix square and rectangular ratios arbitrarily within one list."
-    - "Do not let source image dimensions change the selected Thumbnail ratio."
-    - "Do not round ratio-derived dimensions up."
-    - "Do not expose three or more overlay icons."
-    - "Do not replace media and overlay modules with flattened decorative frames."
+  - "Do not mix square and rectangular ratios arbitrarily within one list."
+  - "Do not let source image dimensions change the selected Thumbnail ratio."
+  - "Do not round ratio-derived dimensions up."
+  - "Do not expose three or more overlay icons."
+  - "Do not replace media and overlay modules with flattened decorative frames."
 
 spec_notes:
   source:
-    - "Live Figma Plugin API readback from component set 50545:51014 on 2026-05-04."
-    - "Local variant registry reference: refs/figma-component-keys/variant-keys/thumbnail.md."
-    - "Usage reference: refs/markitdown-output/markitdown-thumbnail.md."
+  - "Live Figma Plugin API readback from component set 50545:51014 on 2026-05-04."
+  - "Local variant registry reference: refs/figma-component-keys/variant-keys/thumbnail.md."
   usage:
-    - "Thumbnail is for visually identifying content in lists, cards, media, or product contexts."
-    - "Supported ratios are 1:1, 3:4, 5:6, 5:8, 9:16, and 16:9."
-    - "Optional overlay elements must follow the same spec across ratios."
+  - "Thumbnail is for visually identifying content in lists, cards, media, or product contexts."
+  - "Supported ratios are 1:1, 3:4, 5:6, 5:8, 9:16, and 16:9."
+  - "Optional overlay elements must follow the same spec across ratios."
 
 source_gaps:
-  - field: "overlay_icon_asset_source"
-    issue: "Optional overlay modules contain icon_area placeholders and null icon instances in the component set."
-    decision: "Keep the optional modules semantic and require concrete DS icon assets from the consumer context rather than copying placeholder vector internals."
+- field: "overlay_icon_asset_source"
+  issue: "Optional overlay modules contain icon_area placeholders and null icon instances in the component set."
+  decision: "Keep the optional modules semantic and require concrete DS icon assets from the consumer context rather than copying placeholder vector internals."
+baseline:
+  node_id: 59100:15485
+  variant: Type=Thumbnail, Ratio=16:9, Radius=off
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

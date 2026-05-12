@@ -16,23 +16,23 @@ variants:
   count: 11
   formula: "Implemented subset of Shape(2) x Alignment(2) x Count(5)"
   constraints:
-    - "Live Figma currently exposes 11 component variants in this component set."
-    - "Circle has Tile and Horizontal variants for Count=1,2,3,4,5+."
-    - "Squircle currently has only Alignment=Tile, Count=1 in the live component set."
-    - "Live Tag is a boolean component property, not a variant axis."
-    - "This component set is marked design individual-use forbidden and is intended as a nested DS composition, especially for Title Header leading identification."
+  - "Live Figma currently exposes 11 component variants in this component set."
+  - "Circle has Tile and Horizontal variants for Count=1,2,3,4,5+."
+  - "Squircle currently has only Alignment=Tile, Count=1 in the live component set."
+  - "Live Tag is a boolean component property, not a variant axis."
+  - "This component set is marked design individual-use forbidden and is intended as a nested DS composition, especially for Title Header leading identification."
   registry:
-    - { variant: "Shape=Circle, Alignment=Tile, Count=1", node_id: "73587:6405", key: "49b35ebaf08d4e5eeba99ca841eaad9acf8dee2f" }
-    - { variant: "Shape=Circle, Alignment=Tile, Count=2", node_id: "73587:6409", key: "cfb3db55555d48409f2611680efe555b71f824f9" }
-    - { variant: "Shape=Circle, Alignment=Tile, Count=3", node_id: "73587:6418", key: "66f88c5fe87301b45c1c2b2f8bfd4cb03f02b688" }
-    - { variant: "Shape=Circle, Alignment=Tile, Count=4", node_id: "73587:6430", key: "3e87c06acb5e008460ae8e2e893926ba0a484e74" }
-    - { variant: "Shape=Circle, Alignment=Tile, Count=5+", node_id: "73587:6442", key: "bb1f947ad6dd08ce0a7124c6d797d1f6a17d0010" }
-    - { variant: "Shape=Circle, Alignment=Horizontal, Count=1", node_id: "73587:6457", key: "a54a5bf8d681d13c5710723ceccd8bfac6dd5cbb" }
-    - { variant: "Shape=Circle, Alignment=Horizontal, Count=2", node_id: "73587:6463", key: "e44e99876817e5de77955a94909c3a6640e5d337" }
-    - { variant: "Shape=Circle, Alignment=Horizontal, Count=3", node_id: "73587:6469", key: "18e8b566d939254fc06c99268b188173576baec4" }
-    - { variant: "Shape=Circle, Alignment=Horizontal, Count=4", node_id: "73587:6481", key: "738c08e2573631437cc31c804445d7bf7db6bf6e" }
-    - { variant: "Shape=Circle, Alignment=Horizontal, Count=5+", node_id: "73587:6493", key: "7f3df57cc3db847f9fdd4cb8b9e9e9559a4d1016" }
-    - { variant: "Shape=Squircle, Alignment=Tile, Count=1", node_id: "73587:6510", key: "97cec2eb70f7c1fa69e11aa86f8a5de407303935" }
+  - {variant: "Shape=Circle, Alignment=Tile, Count=1", node_id: "73587:6405", key: "49b35ebaf08d4e5eeba99ca841eaad9acf8dee2f"}
+  - {variant: "Shape=Circle, Alignment=Tile, Count=2", node_id: "73587:6409", key: "cfb3db55555d48409f2611680efe555b71f824f9"}
+  - {variant: "Shape=Circle, Alignment=Tile, Count=3", node_id: "73587:6418", key: "66f88c5fe87301b45c1c2b2f8bfd4cb03f02b688"}
+  - {variant: "Shape=Circle, Alignment=Tile, Count=4", node_id: "73587:6430", key: "3e87c06acb5e008460ae8e2e893926ba0a484e74"}
+  - {variant: "Shape=Circle, Alignment=Tile, Count=5+", node_id: "73587:6442", key: "bb1f947ad6dd08ce0a7124c6d797d1f6a17d0010"}
+  - {variant: "Shape=Circle, Alignment=Horizontal, Count=1", node_id: "73587:6457", key: "a54a5bf8d681d13c5710723ceccd8bfac6dd5cbb"}
+  - {variant: "Shape=Circle, Alignment=Horizontal, Count=2", node_id: "73587:6463", key: "e44e99876817e5de77955a94909c3a6640e5d337"}
+  - {variant: "Shape=Circle, Alignment=Horizontal, Count=3", node_id: "73587:6469", key: "18e8b566d939254fc06c99268b188173576baec4"}
+  - {variant: "Shape=Circle, Alignment=Horizontal, Count=4", node_id: "73587:6481", key: "738c08e2573631437cc31c804445d7bf7db6bf6e"}
+  - {variant: "Shape=Circle, Alignment=Horizontal, Count=5+", node_id: "73587:6493", key: "7f3df57cc3db847f9fdd4cb8b9e9e9559a4d1016"}
+  - {variant: "Shape=Squircle, Alignment=Tile, Count=1", node_id: "73587:6510", key: "97cec2eb70f7c1fa69e11aa86f8a5de407303935"}
 
 props:
   Live_Tag:
@@ -59,16 +59,28 @@ tokens:
     role: "fill"
     applies_to: "Alignment=Tile, Live_Tag=true"
     token: "system/fixed_color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-status-danger-red
   live_tag_outline:
     part: "Live Tag"
     role: "stroke"
     applies_to: "Alignment=Tile, Live_Tag=true"
     token: "system/fixed_color/outline/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-outline-default
   live_tag_text:
     part: "Live Tag / text"
     role: "text fill"
     applies_to: "Alignment=Tile, Live_Tag=true"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   overflow_count_text:
     part: "5+ overflow count"
     role: "text fill"
@@ -76,6 +88,10 @@ tokens:
     token: "system/fixed_color/text/default"
 
 
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
 typography:
   caption_xs_system_700:
     font_family: "WeGothicSans"
@@ -113,12 +129,12 @@ assets:
 
 composition:
   uses:
-    - component: "[V2] Avatar"
-      node_id: "62973:7556"
-      component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
-      role: "individual avatar visual inside the group"
-      usage_condition: "All Avatar Group variants"
-      spec_owner: "[V2] Avatar Description"
+  - component: "[V2] Avatar"
+    node_id: "62973:7556"
+    component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
+    role: "individual avatar visual inside the group"
+    usage_condition: "All Avatar Group variants"
+    spec_owner: "[V2] Avatar Description"
 
 layout:
   component_size: "Component set board 1360x940px; individual variants range from 26x26px to 38x46px or 68x26px."
@@ -145,11 +161,11 @@ layout:
       variants: []
 
 implementation_order:
-  - "Resolve Shape, Alignment, and Count to select an implemented Avatar Group variant."
-  - "Use nested [V2] Avatar instances for individual identity visuals."
-  - "Apply Live_Tag only in Tile alignment variants where the Live Tag frame exists."
-  - "For Count=5+, preserve the internal overflow count indicator."
-  - "Treat Avatar Group as a nested composition component, not as a standalone consumer choice."
+- "Resolve Shape, Alignment, and Count to select an implemented Avatar Group variant."
+- "Use nested [V2] Avatar instances for individual identity visuals."
+- "Apply Live_Tag only in Tile alignment variants where the Live Tag frame exists."
+- "For Count=5+, preserve the internal overflow count indicator."
+- "Treat Avatar Group as a nested composition component, not as a standalone consumer choice."
 
 implementation_coverage:
   axes: "Implement the 11 live variants in the component set and do not infer missing Squircle combinations."
@@ -160,29 +176,34 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Avatar Group as a nested composition when multiple identities or live identity status must be represented compactly."
-    - "Use Tile alignment when the LIVE status label is part of the avatar identity presentation."
-    - "Use Horizontal alignment for compact overlapping avatar groups without the LIVE label."
-    - "Preserve the 5+ overflow indicator when Count=5+."
+  - "Use Avatar Group as a nested composition when multiple identities or live identity status must be represented compactly."
+  - "Use Tile alignment when the LIVE status label is part of the avatar identity presentation."
+  - "Use Horizontal alignment for compact overlapping avatar groups without the LIVE label."
+  - "Preserve the 5+ overflow indicator when Count=5+."
   dont:
-    - "Do not use Avatar Group as an independently designed standalone component when the Figma label says design individual-use forbidden."
-    - "Do not replace nested [V2] Avatar instances with plain image masks or CSS-drawn shapes."
-    - "Do not infer unavailable Squircle variants that are not present in live Figma."
-    - "Do not replace the Live Tag or 5+ indicator with arbitrary text outside the Avatar Group contract."
+  - "Do not use Avatar Group as an independently designed standalone component when the Figma label says design individual-use forbidden."
+  - "Do not replace nested [V2] Avatar instances with plain image masks or CSS-drawn shapes."
+  - "Do not infer unavailable Squircle variants that are not present in live Figma."
+  - "Do not replace the Live Tag or 5+ indicator with arbitrary text outside the Avatar Group contract."
 
 spec_notes:
   source:
-    - "Live Figma Plugin API readback from component set 73587:6404 on 2026-05-08."
-    - "Usage context appears in Title Header leading avatar composition and markitdown-title-header Avatar combination guidance."
+  - "Live Figma Plugin API readback from component set 73587:6404 on 2026-05-08."
+  - "Usage context appears in Title Header leading avatar composition and markitdown-title-header Avatar combination guidance."
   readback:
-    - "Component set description was 0 characters before this workflow run."
-    - "componentPropertyDefinitions exposes Live Tag boolean plus Shape, Alignment, and Count variant properties."
-    - "Live component set currently has 11 children despite variant options implying a larger theoretical matrix."
+  - "Component set description was 0 characters before this workflow run."
+  - "componentPropertyDefinitions exposes Live Tag boolean plus Shape, Alignment, and Count variant properties."
+  - "Live component set currently has 11 children despite variant options implying a larger theoretical matrix."
 
 source_gaps:
-  - field: "Squircle variant matrix"
-    reason: "Live component set exposes Shape=Squircle only for Alignment=Tile, Count=1 at read time."
-    impact: "Do not generate Squircle Horizontal or multi-count Squircle variants until they exist in Figma."
-  - field: "Live Tag visibility outside Tile"
-    reason: "Live Tag frame was found in Tile variants, not in Horizontal variants."
-    impact: "Treat Live_Tag as supported by Tile alignment only unless future Figma variants prove otherwise."
+- field: "Squircle variant matrix"
+  reason: "Live component set exposes Shape=Squircle only for Alignment=Tile, Count=1 at read time."
+  impact: "Do not generate Squircle Horizontal or multi-count Squircle variants until they exist in Figma."
+- field: "Live Tag visibility outside Tile"
+  reason: "Live Tag frame was found in Tile variants, not in Horizontal variants."
+  impact: "Treat Live_Tag as supported by Tile alignment only unless future Figma variants prove otherwise."
+baseline:
+  node_id: 73587:6405
+  variant: Shape=Circle, Alignment=Tile, Count=1
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

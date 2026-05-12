@@ -16,25 +16,25 @@ variants:
   count: 16
   formula: "Mode(2) x OS(2) x focus(4)"
   constraints:
-    - "All Mode, OS, and focus combinations are valid."
-    - "Show_System is a boolean property, not a variant axis."
+  - "All Mode, OS, and focus combinations are valid."
+  - "Show_System is a boolean property, not a variant axis."
   registry:
-    - { variant: "Mode=Fixed, OS=iOS, focus=1_Home", node_id: "13361:20296", key: "001b12ef92c715f4a04e732784845920da9d8346" }
-    - { variant: "Mode=Fixed, OS=iOS, focus=2_Shop", node_id: "13361:20304", key: "8475b5a4eef88eec0f320d97e9cc465eccdfafee" }
-    - { variant: "Mode=Fixed, OS=iOS, focus=3_DM", node_id: "13361:20312", key: "bc7d5d152451b7474d574f932d2036bfab1013db" }
-    - { variant: "Mode=Fixed, OS=iOS, focus=4_More", node_id: "13361:20328", key: "cb2e24a25e39a4bba30c6f26e53cfa20c757a914" }
-    - { variant: "Mode=Fixed, OS=AOS, focus=1_Home", node_id: "13361:20336", key: "eceb50840085378ad6e96b6a0bed752f837d5acb" }
-    - { variant: "Mode=Fixed, OS=AOS, focus=2_Shop", node_id: "13361:20344", key: "eeb4103c936e77a0bfcccbcb7d07769213b0210a" }
-    - { variant: "Mode=Fixed, OS=AOS, focus=3_DM", node_id: "13361:20352", key: "bfed5ea688bbd3c6e7e239d80beddc8c99276481" }
-    - { variant: "Mode=Fixed, OS=AOS, focus=4_More", node_id: "13361:20368", key: "6ac7ef2419921febacde234d958bf46ba755fed9" }
-    - { variant: "Mode=Default, OS=iOS, focus=1_Home", node_id: "13361:20400", key: "6742945c8c0d560c140240edccfe3af140b14ff9" }
-    - { variant: "Mode=Default, OS=iOS, focus=2_Shop", node_id: "13361:20384", key: "1ccdf295789c03cec38cb7347e4eaebd9958b06e" }
-    - { variant: "Mode=Default, OS=iOS, focus=3_DM", node_id: "13361:20392", key: "b7872b7ebf558f0e1721ab2441f78b92eef90d1f" }
-    - { variant: "Mode=Default, OS=iOS, focus=4_More", node_id: "13361:20408", key: "d926d6cf6943777594ba5b9b721b12a654c261a9" }
-    - { variant: "Mode=Default, OS=AOS, focus=1_Home", node_id: "13361:20416", key: "efeaa8edc1e5651a0ff0dcbf2a1225e74438ffe8" }
-    - { variant: "Mode=Default, OS=AOS, focus=2_Shop", node_id: "13361:20424", key: "c29393a398b45e3c862cbbbc79856224fcf7b393" }
-    - { variant: "Mode=Default, OS=AOS, focus=3_DM", node_id: "13361:20432", key: "a1c1e732daa19af37800d23c5c8b6c314e0eb974" }
-    - { variant: "Mode=Default, OS=AOS, focus=4_More", node_id: "13361:20448", key: "cc3f47eb5089b25ff4c47943660d52987a298c31" }
+  - {variant: "Mode=Fixed, OS=iOS, focus=1_Home", node_id: "13361:20296", key: "001b12ef92c715f4a04e732784845920da9d8346"}
+  - {variant: "Mode=Fixed, OS=iOS, focus=2_Shop", node_id: "13361:20304", key: "8475b5a4eef88eec0f320d97e9cc465eccdfafee"}
+  - {variant: "Mode=Fixed, OS=iOS, focus=3_DM", node_id: "13361:20312", key: "bc7d5d152451b7474d574f932d2036bfab1013db"}
+  - {variant: "Mode=Fixed, OS=iOS, focus=4_More", node_id: "13361:20328", key: "cb2e24a25e39a4bba30c6f26e53cfa20c757a914"}
+  - {variant: "Mode=Fixed, OS=AOS, focus=1_Home", node_id: "13361:20336", key: "eceb50840085378ad6e96b6a0bed752f837d5acb"}
+  - {variant: "Mode=Fixed, OS=AOS, focus=2_Shop", node_id: "13361:20344", key: "eeb4103c936e77a0bfcccbcb7d07769213b0210a"}
+  - {variant: "Mode=Fixed, OS=AOS, focus=3_DM", node_id: "13361:20352", key: "bfed5ea688bbd3c6e7e239d80beddc8c99276481"}
+  - {variant: "Mode=Fixed, OS=AOS, focus=4_More", node_id: "13361:20368", key: "6ac7ef2419921febacde234d958bf46ba755fed9"}
+  - {variant: "Mode=Default, OS=iOS, focus=1_Home", node_id: "13361:20400", key: "6742945c8c0d560c140240edccfe3af140b14ff9"}
+  - {variant: "Mode=Default, OS=iOS, focus=2_Shop", node_id: "13361:20384", key: "1ccdf295789c03cec38cb7347e4eaebd9958b06e"}
+  - {variant: "Mode=Default, OS=iOS, focus=3_DM", node_id: "13361:20392", key: "b7872b7ebf558f0e1721ab2441f78b92eef90d1f"}
+  - {variant: "Mode=Default, OS=iOS, focus=4_More", node_id: "13361:20408", key: "d926d6cf6943777594ba5b9b721b12a654c261a9"}
+  - {variant: "Mode=Default, OS=AOS, focus=1_Home", node_id: "13361:20416", key: "efeaa8edc1e5651a0ff0dcbf2a1225e74438ffe8"}
+  - {variant: "Mode=Default, OS=AOS, focus=2_Shop", node_id: "13361:20424", key: "c29393a398b45e3c862cbbbc79856224fcf7b393"}
+  - {variant: "Mode=Default, OS=AOS, focus=3_DM", node_id: "13361:20432", key: "a1c1e732daa19af37800d23c5c8b6c314e0eb974"}
+  - {variant: "Mode=Default, OS=AOS, focus=4_More", node_id: "13361:20448", key: "cc3f47eb5089b25ff4c47943660d52987a298c31"}
 
 props:
   Show_System:
@@ -61,78 +61,190 @@ tokens:
     applies_to: "Mode=Default"
     default: "system/color/surface/default"
     fixed: "system/fixed_color/surface/default"
+    resolved:
+      default:
+        light: '#FFFFFF'
+        dark: '#000000'
+        web_var: --cds-system-color-surface-default
+      fixed:
+        light: '#000000'
+        dark: '#000000'
+        web_var: --cds-system-fixed-color-surface-default
   container_surface_fixed:
     part: "component"
     role: "fill"
     applies_to: "Mode=Fixed"
     default: "system/color/surface/default-reverse"
     fixed: "system/fixed_color/surface/default"
+    resolved:
+      default:
+        light: '#000000'
+        dark: '#FFFFFF'
+        web_var: --cds-system-color-surface-default-reverse
+      fixed:
+        light: '#000000'
+        dark: '#000000'
+        web_var: --cds-system-fixed-color-surface-default
   gnb_divider_default:
     part: "GNB"
     role: "stroke"
     applies_to: "Mode=Default"
     default: "system/color/divide/default-50a"
     fixed: "system/fixed_color/outline/default-reverse-50a"
+    resolved:
+      default:
+        light: '#0000000A'
+        dark: '#FFFFFF0D'
+        web_var: --cds-system-color-divide-default-50a
+      fixed:
+        light: '#0000000A'
+        dark: '#0000000A'
+        web_var: --cds-system-fixed-color-outline-default-reverse-50a
   gnb_divider_fixed:
     part: "GNB"
     role: "stroke"
     applies_to: "Mode=Fixed"
     default: "system/color/divide/default-50a-2"
     fixed: "system/fixed_color/outline/default-100a"
+    resolved:
+      default:
+        light: '#0000000A'
+        dark: '#FFFFFF1A'
+        web_var: --cds-system-color-divide-default-50a-2
+      fixed:
+        light: '#FFFFFF1A'
+        dark: '#FFFFFF1A'
+        web_var: --cds-system-fixed-color-outline-default-100a
   icon_enabled_default:
     part: "tab icon"
     role: "fill | stroke"
     applies_to: "Mode=Default, focused tab"
     default: "system/color/icon/gray-800"
     fixed: "system/fixed_color/icon/gray-800"
+    resolved:
+      default:
+        light: '#282828'
+        dark: '#DDDDDD'
+        web_var: --cds-system-color-icon-gray-800
+      fixed:
+        light: '#DDDDDD'
+        dark: '#DDDDDD'
+        web_var: --cds-system-fixed-color-icon-gray-800
   icon_enabled_fixed:
     part: "tab icon"
     role: "fill | stroke"
     applies_to: "Mode=Fixed, focused tab"
     default: "system/color/icon/gray-800"
     fixed: "system/fixed_color/icon/gray-800"
+    resolved:
+      default:
+        light: '#282828'
+        dark: '#DDDDDD'
+        web_var: --cds-system-color-icon-gray-800
+      fixed:
+        light: '#DDDDDD'
+        dark: '#DDDDDD'
+        web_var: --cds-system-fixed-color-icon-gray-800
   icon_default:
     part: "tab icon"
     role: "fill | stroke"
     applies_to: "unfocused tab"
     default: "system/color/icon/gray-800"
     fixed: "system/fixed_color/icon/gray-800"
+    resolved:
+      default:
+        light: '#282828'
+        dark: '#DDDDDD'
+        web_var: --cds-system-color-icon-gray-800
+      fixed:
+        light: '#DDDDDD'
+        dark: '#DDDDDD'
+        web_var: --cds-system-fixed-color-icon-gray-800
   text_enabled_default:
     part: "tab label"
     role: "fill"
     applies_to: "Mode=Default, focused tab"
     default: "system/color/text/gray-800"
     fixed: "system/fixed_color/text/gray-800"
+    resolved:
+      default:
+        light: '#282828'
+        dark: '#DDDDDD'
+        web_var: --cds-system-color-text-gray-800
+      fixed:
+        light: '#DDDDDD'
+        dark: '#DDDDDD'
+        web_var: --cds-system-fixed-color-text-gray-800
   text_enabled_fixed:
     part: "tab label"
     role: "fill"
     applies_to: "Mode=Fixed, focused tab"
     default: "system/color/text/gray-800"
     fixed: "system/fixed_color/text/gray-800"
+    resolved:
+      default:
+        light: '#282828'
+        dark: '#DDDDDD'
+        web_var: --cds-system-color-text-gray-800
+      fixed:
+        light: '#DDDDDD'
+        dark: '#DDDDDD'
+        web_var: --cds-system-fixed-color-text-gray-800
   text_default:
     part: "tab label"
     role: "fill"
     applies_to: "unfocused tab"
     default: "system/color/text/gray-800"
     fixed: "system/fixed_color/text/gray-800"
+    resolved:
+      default:
+        light: '#282828'
+        dark: '#DDDDDD'
+        web_var: --cds-system-color-text-gray-800
+      fixed:
+        light: '#DDDDDD'
+        dark: '#DDDDDD'
+        web_var: --cds-system-fixed-color-text-gray-800
   home_indicator_ios_light:
     part: "Home Indicator / Base"
     role: "fill"
     applies_to: "OS=iOS, Mode=Default"
     default: "system/color/surface/default-reverse"
     fixed: "system/fixed_color/surface/default-reverse"
+    resolved:
+      default:
+        light: '#000000'
+        dark: '#FFFFFF'
+        web_var: --cds-system-color-surface-default-reverse
+      fixed:
+        light: '#FFFFFF'
+        dark: '#FFFFFF'
+        web_var: --cds-system-fixed-color-surface-default-reverse
   home_indicator_aos_light:
     part: "Home Indicator"
     role: "fill"
     applies_to: "OS=AOS, Mode=Default"
     default: "system/color/surface/gray-100-2"
     fixed: "system/color/surface/gray-100-2"
+    resolved:
+      default:
+        light: '#EBEDF2'
+        dark: '#333333'
+        web_var: --cds-system-color-surface-gray-100-2
+      fixed:
+        light: '#EBEDF2'
+        dark: '#333333'
+        web_var: --cds-system-color-surface-gray-100-2
   label_gap:
     part: "tab item"
     role: "spacing"
     applies_to: "icon to label"
     token: "system/size/padding/box/25"
     value: "2px"
+    resolved:
+      light: 2
+      dark: 2
+      web_var: --cds-system-size-padding-box-25
   tab_label_typography_ios:
     part: "tab label"
     role: "typography"
@@ -285,11 +397,11 @@ layout:
       variants: []
 
 implementation_order:
-  - "Resolve OS first because iOS and AOS differ in typography size, line height, and system indicator structure."
-  - "Resolve Mode next because Default and Fixed determine surface, divider, and fixed color token families."
-  - "Resolve focus after Mode and OS; the focused tab receives Enabled icon and Bold label treatment."
-  - "Apply Show_System last because it only controls the system indicator area, not the GNB tab layout."
-  - "Preserve icon assets and do not replace them with text or CSS primitives."
+- "Resolve OS first because iOS and AOS differ in typography size, line height, and system indicator structure."
+- "Resolve Mode next because Default and Fixed determine surface, divider, and fixed color token families."
+- "Resolve focus after Mode and OS; the focused tab receives Enabled icon and Bold label treatment."
+- "Apply Show_System last because it only controls the system indicator area, not the GNB tab layout."
+- "Preserve icon assets and do not replace them with text or CSS primitives."
 
 implementation_coverage:
   axes: "Implement all 16 Mode x OS x focus combinations."
@@ -300,30 +412,34 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Bottom Navigation for 3-5 top-level destinations that need repeated access."
-    - "Keep tab order and position consistent across screens."
-    - "Use icon and label together for each navigation option."
-    - "Make the active tab visually distinct with Enabled icon treatment and Bold label."
-    - "Keep Shop in its fixed service display mode when that service condition applies."
-    - "Let each tab area stretch horizontally instead of using a fixed screen-specific tab width."
-    - "Use Badge only in the defined position and style when notification state is required."
+  - "Use Bottom Navigation for 3-5 top-level destinations that need repeated access."
+  - "Keep tab order and position consistent across screens."
+  - "Use icon and label together for each navigation option."
+  - "Make the active tab visually distinct with Enabled icon treatment and Bold label."
+  - "Keep Shop in its fixed service display mode when that service condition applies."
+  - "Let each tab area stretch horizontally instead of using a fixed screen-specific tab width."
+  - "Use Badge only in the defined position and style when notification state is required."
   dont:
-    - "Do not add temporary menus or campaign links as tabs."
-    - "Do not show icons without labels."
-    - "Do not truncate, wrap, or ellipsize tab labels."
-    - "Do not use the same icon style and label weight for active and inactive tabs."
-    - "Do not switch Shop Bottom Navigation to dark colors when the service condition requires fixed light display."
-    - "Do not manually change Badge position or color."
+  - "Do not add temporary menus or campaign links as tabs."
+  - "Do not show icons without labels."
+  - "Do not truncate, wrap, or ellipsize tab labels."
+  - "Do not use the same icon style and label weight for active and inactive tabs."
+  - "Do not switch Shop Bottom Navigation to dark colors when the service condition requires fixed light display."
+  - "Do not manually change Badge position or color."
 
 spec_notes:
   source:
-    markitdown: "refs/markitdown-output/markitdown-bottom-navigation.md"
     figma_context: "get_design_context, get_context_for_code_connect, get_variable_defs, Framelink, Desktop Bridge deep extraction"
   usage:
-    - "Bottom Navigation is for major app areas that are repeatedly accessed."
-    - "It is not for one-off actions or secondary movement inside a page."
-    - "Badge usage is allowed only for notification or update meaning."
+  - "Bottom Navigation is for major app areas that are repeatedly accessed."
+  - "It is not for one-off actions or secondary movement inside a page."
+  - "Badge usage is allowed only for notification or update meaning."
 
 source_gaps:
-  - part: "Badge / number"
-    reason: "The component contains hidden number frames and Usage mentions Badge, but the selected visible variants do not expose a concrete Badge visual position/style in the extracted tree."
+- part: "Badge / number"
+  reason: "The component contains hidden number frames and Usage mentions Badge, but the selected visible variants do not expose a concrete Badge visual position/style in the extracted tree."
+baseline:
+  node_id: "13361:20400"
+  variant: "Mode=Default, OS=iOS, focus=1_Home"
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

@@ -14,11 +14,11 @@ variants:
   count: 2
   formula: "Mode(2)"
   constraints:
-    - "Mode=Default and Mode=Fixed are both implemented."
-    - "Button is a boolean component property, not a variant axis."
+  - "Mode=Default and Mode=Fixed are both implemented."
+  - "Button is a boolean component property, not a variant axis."
   registry:
-    - { variant: "Mode=Default", node_id: "8998:21680", key: "719d2ddce274ffd181cba331ac4c2f3cd26fc6ea" }
-    - { variant: "Mode=Fixed", node_id: "9003:21728", key: "d580be5f3a291c6819c9d1d44942a7c7385bc69c" }
+  - {variant: "Mode=Default", node_id: "8998:21680", key: "719d2ddce274ffd181cba331ac4c2f3cd26fc6ea"}
+  - {variant: "Mode=Fixed", node_id: "9003:21728", key: "d580be5f3a291c6819c9d1d44942a7c7385bc69c"}
 
 props:
   Mode:
@@ -36,21 +36,37 @@ tokens:
     role: "fill"
     applies_to: "All variants"
     token: "system/fixed_color/surface/black-600a-same"
+    resolved:
+      light: '#000000CC'
+      dark: '#000000CC'
+      web_var: --cds-system-fixed-color-surface-black-600a-same
   cancel_icon:
     part: "Vector 73 and Vector 74"
     role: "stroke"
     applies_to: "Button=true"
     token: "system/fixed_color/icon/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-icon-default
   progress_track:
     part: "Progress bar_bg"
     role: "stroke"
     applies_to: "All variants"
     token: "system/fixed_color/surface/white-100a-same"
+    resolved:
+      light: '#FFFFFF1A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-fixed-color-surface-white-100a-same
   progress_value:
     part: "Progress bar"
     role: "stroke"
     applies_to: "All variants"
     token: "system/fixed_color/outline/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-outline-default
   stroke_width:
     part: "Progress bar and Progress bar_bg"
     role: "stroke width"
@@ -97,42 +113,46 @@ layout:
       variants: []
 
 implementation_order:
-  - "Resolve Mode variant first."
-  - "Render a 56x56 circular background."
-  - "Render the 44x44 progress track and 41x44 progress value with 2px strokes."
-  - "Apply fixed color tokens from the live component."
-  - "Render the cancel button only when Button=true."
+- "Resolve Mode variant first."
+- "Render a 56x56 circular background."
+- "Render the 44x44 progress track and 41x44 progress value with 2px strokes."
+- "Apply fixed color tokens from the live component."
+- "Render the cancel button only when Button=true."
 
 implementation_coverage:
   axes:
-    - "Mode"
+  - "Mode"
   props:
-    - "Button"
+  - "Button"
   assets:
-    - "cancel_button"
+  - "cancel_button"
   layout:
-    - "56x56 circular background"
-    - "44x44 track"
-    - "41x44 progress value"
-    - "16x16 cancel button"
+  - "56x56 circular background"
+  - "44x44 track"
+  - "41x44 progress value"
+  - "16x16 cancel button"
   exclusions:
-    - "No additional Size or State axes are present in the live component set."
-    - "This workflow does not create a derived circular-progress-indicator.md file."
+  - "No additional Size or State axes are present in the live component set."
+  - "This workflow does not create a derived circular-progress-indicator.md file."
 
 rules:
   do:
-    - "Use Circular Loading only when Dot Loading cannot be used inside a component."
-    - "Keep Circular Loading inside component-level contexts."
-    - "Use the live fixed tokens for background, track, progress, and cancel icon."
+  - "Use Circular Loading only when Dot Loading cannot be used inside a component."
+  - "Keep Circular Loading inside component-level contexts."
+  - "Use the live fixed tokens for background, track, progress, and cancel icon."
   dont:
-    - "Do not use Circular Loading for full-screen page transitions."
-    - "Do not use Circular Loading when Dot Loading is the available pattern."
-    - "Do not replace the cancel button asset with text or a custom vector."
+  - "Do not use Circular Loading for full-screen page transitions."
+  - "Do not use Circular Loading when Dot Loading is the available pattern."
+  - "Do not replace the cancel button asset with text or a custom vector."
 
 spec_notes:
   source:
-    - "Framelink full extraction for node 9003:21751."
-    - "Official Figma Plugin API read-only extraction for both variants, Button property, nested btn instance, and bound tokens."
-    - "Code Connect context for Button boolean visibility reference."
-    - "Registry reference: refs/figma-component-keys/variant-keys/circular-progress-indicator.md."
-    - "Usage reference: refs/markitdown-output/markitdown-loading.md."
+  - "Framelink full extraction for node 9003:21751."
+  - "Official Figma Plugin API read-only extraction for both variants, Button property, nested btn instance, and bound tokens."
+  - "Code Connect context for Button boolean visibility reference."
+  - "Registry reference: refs/figma-component-keys/variant-keys/circular-progress-indicator.md."
+baseline:
+  node_id: 8998:21680
+  variant: Mode=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

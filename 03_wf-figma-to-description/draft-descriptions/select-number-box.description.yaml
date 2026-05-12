@@ -15,16 +15,16 @@ variants:
   count: 6
   formula: "Mode(2) x State(3)"
   constraints:
-    - "All Mode and State combinations are valid."
-    - "Selected uses a numeric label up to two digits; Selected-99+ uses the text label 99+."
-    - "Unselected has no number text child."
+  - "All Mode and State combinations are valid."
+  - "Selected uses a numeric label up to two digits; Selected-99+ uses the text label 99+."
+  - "Unselected has no number text child."
   registry:
-    - { variant: "Mode=Default, State=Selected", node_id: "12436:394", key: "c11f6eb4ddb78f5b3f2ae2139ef159337aa23172" }
-    - { variant: "Mode=Default, State=Selected-99+", node_id: "15538:847", key: "31267794ff4f6670fc791297569acb7fb0f60cda" }
-    - { variant: "Mode=Default, State=Unselected", node_id: "12436:397", key: "d2ca6975c7bd129eeaae629b8417ffad90402514" }
-    - { variant: "Mode=Fixed, State=Selected", node_id: "12436:376", key: "519ef74860760d4f2c6e95e8ed5279715d099bc0" }
-    - { variant: "Mode=Fixed, State=Selected-99+", node_id: "15538:852", key: "d36fec3d6c005fa162632b27112411852c7ca967" }
-    - { variant: "Mode=Fixed, State=Unselected", node_id: "12436:379", key: "3147c2e5f3b66ec79c3192a6ba2023407e82b6a7" }
+  - {variant: "Mode=Default, State=Selected", node_id: "12436:394", key: "c11f6eb4ddb78f5b3f2ae2139ef159337aa23172"}
+  - {variant: "Mode=Default, State=Selected-99+", node_id: "15538:847", key: "31267794ff4f6670fc791297569acb7fb0f60cda"}
+  - {variant: "Mode=Default, State=Unselected", node_id: "12436:397", key: "d2ca6975c7bd129eeaae629b8417ffad90402514"}
+  - {variant: "Mode=Fixed, State=Selected", node_id: "12436:376", key: "519ef74860760d4f2c6e95e8ed5279715d099bc0"}
+  - {variant: "Mode=Fixed, State=Selected-99+", node_id: "15538:852", key: "d36fec3d6c005fa162632b27112411852c7ca967"}
+  - {variant: "Mode=Fixed, State=Unselected", node_id: "12436:379", key: "3147c2e5f3b66ec79c3192a6ba2023407e82b6a7"}
 
 props:
   Mode:
@@ -46,39 +46,67 @@ tokens:
     role: "fill"
     applies_to: "Mode=Default, State=Selected or Selected-99+"
     token: "system/fixed_color/roles/accent-primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-roles-accent-primary
   selected_bg_fixed:
     part: "checkbox"
     role: "fill"
     applies_to: "Mode=Fixed, State=Selected or Selected-99+"
     token: "system/fixed_color/status/active-primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-status-active-primary
   selected_text_default:
     part: "number text"
     role: "fill"
     applies_to: "Mode=Default, State=Selected or Selected-99+"
     token: "system/color/text/default-reverse"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#000000'
+      web_var: --cds-system-color-text-default-reverse
   selected_text_fixed:
     part: "number text"
     role: "fill"
     applies_to: "Mode=Fixed, State=Selected or Selected-99+"
     token: "system/fixed_color/text/default-reverse"
+    resolved:
+      light: '#000000'
+      dark: '#000000'
+      web_var: --cds-system-fixed-color-text-default-reverse
   unselected_bg:
     part: "checkbox"
     role: "fill"
     applies_to: "State=Unselected"
     token: "system/fixed_color/surface/default-200a"
     opacity: "20%"
+    resolved:
+      light: '#00000033'
+      dark: '#00000033'
+      web_var: --cds-system-fixed-color-surface-default-200a
   unselected_stroke_default:
     part: "checkbox"
     role: "stroke"
     applies_to: "Mode=Default, State=Unselected"
     token: "system/fixed_color/outline/default-300a"
     opacity: "30%"
+    resolved:
+      light: '#FFFFFF4D'
+      dark: '#FFFFFF4D'
+      web_var: --cds-system-fixed-color-outline-default-300a
   unselected_stroke_fixed:
     part: "checkbox"
     role: "stroke"
     applies_to: "Mode=Fixed, State=Unselected"
     token: "system/fixed_color/icon/300a"
     opacity: "30%"
+    resolved:
+      light: '#FFFFFF4D'
+      dark: '#FFFFFF4D'
+      web_var: --cds-system-fixed-color-icon-300a
   selected_text_typography:
     part: "number text"
     role: "typography"
@@ -127,55 +155,59 @@ layout:
         token: "center aligned"
         value: "0px; text is centered inside checkbox"
       variants:
-        - when: "State=Unselected"
-          token: "not applicable"
-          value: "No text node"
+      - when: "State=Unselected"
+        token: "not applicable"
+        value: "No text node"
 
 implementation_order:
-  - "Select Mode and State variant."
-  - "Render a 24x24 outer component with a 22x22 circular marker."
-  - "For Selected state, show the selected order with caption-s typography."
-  - "For Selected-99+ state, show 99+ with caption-xs typography."
-  - "For Unselected state, remove the number text and apply fill plus stroke tokens."
-  - "Apply fixed-color tokens for image-editing or overlay contexts."
+- "Select Mode and State variant."
+- "Render a 24x24 outer component with a 22x22 circular marker."
+- "For Selected state, show the selected order with caption-s typography."
+- "For Selected-99+ state, show 99+ with caption-xs typography."
+- "For Unselected state, remove the number text and apply fill plus stroke tokens."
+- "Apply fixed-color tokens for image-editing or overlay contexts."
 
 implementation_coverage:
   axes:
-    - "Mode"
-    - "State"
+  - "Mode"
+  - "State"
   props:
-    - "Mode"
-    - "State"
-    - "value"
+  - "Mode"
+  - "State"
+  - "value"
   assets:
-    - "No asset-backed visual is used."
+  - "No asset-backed visual is used."
   layout:
-    - "24x24 component"
-    - "22x22 checkbox"
-    - "100px radius"
-    - "1.5px unselected stroke"
-    - "16x16 Selected text bounds"
-    - "20x13 Selected-99+ text bounds"
+  - "24x24 component"
+  - "22x22 checkbox"
+  - "100px radius"
+  - "1.5px unselected stroke"
+  - "16x16 Selected text bounds"
+  - "20x13 Selected-99+ text bounds"
   exclusions:
-    - "This workflow does not create a derived select-number-box.md file."
-    - "Figma Description writeback is intentionally skipped for this worker task."
+  - "This workflow does not create a derived select-number-box.md file."
+  - "Figma Description writeback is intentionally skipped for this worker task."
 
 rules:
   do:
-    - "Use Select Number Box when selection order affects the result."
-    - "Show selected order up to two digits."
-    - "Use 99+ when the selected order has three or more digits."
-    - "Use fixed_color treatment in image-editing contexts."
-    - "Place the number inside or close to the selected object so the target remains clear."
+  - "Use Select Number Box when selection order affects the result."
+  - "Show selected order up to two digits."
+  - "Use 99+ when the selected order has three or more digits."
+  - "Use fixed_color treatment in image-editing contexts."
+  - "Place the number inside or close to the selected object so the target remains clear."
   dont:
-    - "Do not expose three or more digits directly inside the box."
-    - "Do not show a number in Unselected state."
-    - "Do not use Select Number Box for simple checkbox selection."
-    - "Do not place the number far away from the selected target."
+  - "Do not expose three or more digits directly inside the box."
+  - "Do not show a number in Unselected state."
+  - "Do not use Select Number Box for simple checkbox selection."
+  - "Do not place the number far away from the selected target."
 
 spec_notes:
   source:
-    - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 12436:362."
-    - "Local usage reference: refs/markitdown-output/markitdown-select-number-box.md."
+  - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 12436:362."
   figma_name_cleanup:
-    - "Live Figma component set name includes a control character before Select_Number_Box; YAML stores the cleaned name."
+  - "Live Figma component set name includes a control character before Select_Number_Box; YAML stores the cleaned name."
+baseline:
+  node_id: 12436:394
+  variant: Mode=Default, State=Selected
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

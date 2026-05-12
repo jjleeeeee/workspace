@@ -14,13 +14,13 @@ variants:
   count: 4
   formula: "Mode(2) x Align(2)"
   constraints:
-    - "All Mode and Align combinations are present in live Figma."
-    - "Slot and boolean controls are component properties, not variant axes."
+  - "All Mode and Align combinations are present in live Figma."
+  - "Slot and boolean controls are component properties, not variant axes."
   registry:
-    - { variant: "Mode=Default, Align=Left", node_id: "64450:28044", key: "d58508050fa6843f5e234d0fe8fa929afe1beb46" }
-    - { variant: "Mode=Fixed, Align=Left", node_id: "68998:22347", key: "ccdadd57d18d51db17d2bbe7a28913ddfacd9a94" }
-    - { variant: "Mode=Default, Align=Center", node_id: "65513:23665", key: "2604a482e1d7a9947c6aa335056cd6dd05907169" }
-    - { variant: "Mode=Fixed, Align=Center", node_id: "65513:23700", key: "93d1df27e4c3ebf83da13fab48c626ae0767b9b6" }
+  - {variant: "Mode=Default, Align=Left", node_id: "64450:28044", key: "d58508050fa6843f5e234d0fe8fa929afe1beb46"}
+  - {variant: "Mode=Fixed, Align=Left", node_id: "68998:22347", key: "ccdadd57d18d51db17d2bbe7a28913ddfacd9a94"}
+  - {variant: "Mode=Default, Align=Center", node_id: "65513:23665", key: "2604a482e1d7a9947c6aa335056cd6dd05907169"}
+  - {variant: "Mode=Fixed, Align=Center", node_id: "65513:23700", key: "93d1df27e4c3ebf83da13fab48c626ae0767b9b6"}
 
 props:
   Marquee:
@@ -130,56 +130,103 @@ tokens:
     role: "text fill"
     applies_to: "Mode=Default"
     token: "system/color/text/default"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-text-default
   title_text_fixed:
     part: "Title"
     role: "text fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   title_typography:
     part: "Title"
     role: "text style"
     applies_to: "All Mode and Align values"
     token: "body-m/system-700"
+    resolved:
+      fontSize: 16
+      fontFamily: WeGothicSans
+      fontWeight: 700
+      lineHeight: 22
   subtitle_text_default:
     part: "SubTitle"
     role: "text fill"
     applies_to: "Mode=Default"
     token: "system/color/text/gray-500"
+    resolved:
+      light: '#8E8E8E'
+      dark: '#777777'
+      web_var: --cds-system-color-text-gray-500
   subtitle_text_fixed:
     part: "SubTitle"
     role: "text fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/gray-500"
+    resolved:
+      light: '#777777'
+      dark: '#777777'
+      web_var: --cds-system-fixed-color-text-gray-500
   subtitle_typography:
     part: "SubTitle"
     role: "text style"
     applies_to: "All Mode and Align values"
     token: "caption-m/system-400"
+    resolved:
+      fontSize: 13
+      fontFamily: WeGothicSans
+      fontWeight: 400
+      lineHeight: 17
   trailing_detail_default:
     part: "Trailing detail"
     role: "text fill"
     applies_to: "Mode=Default"
     token: "system/color/text/default"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-text-default
   trailing_detail_fixed:
     part: "Trailing detail"
     role: "text fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   trailing_detail_typography:
     part: "Trailing detail"
     role: "text style"
     applies_to: "All Mode and Align values"
     token: "body-xs/system-500"
+    resolved:
+      fontSize: 14
+      fontFamily: WeGothicSans
+      fontWeight: 500
+      lineHeight: 18
   live_badge_text:
     part: "LIVE badge text"
     role: "text fill"
     applies_to: "Visible LIVE label in left variants"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   metadata_tag_text:
     part: "Multiple tags"
     role: "text fill"
     applies_to: "Hide from artist, CC, SDH tags in live samples"
     token: "system/color/text/gray-500"
+    resolved:
+      light: '#8E8E8E'
+      dark: '#777777'
+      web_var: --cds-system-color-text-gray-500
   metadata_tag_typography:
     part: "Multiple tags"
     role: "text style"
@@ -187,6 +234,11 @@ tokens:
     token: "caption-xs/system-700"
 
 
+    resolved:
+      fontSize: 10
+      fontFamily: WeGothicSans
+      fontWeight: 700
+      lineHeight: 13
 typography:
   caption_xs_system_700:
     font_family: "WeGothicSans"
@@ -245,22 +297,22 @@ assets:
 
 composition:
   uses:
-    - component_set: "Avatar Group (디자인 개별 사용금지)"
-      component_set_key: "6ad2e4b184997b01a86fa87e803387200dcca643"
-      purpose: "Leading avatar grouping for Align=Left."
-      consumer_contract: "Leading=true can expose avatar-based identification in left title headers."
-    - component_set: "[V2] Avatar"
-      component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
-      purpose: "Avatar visual inside the left leading area."
-      consumer_contract: "Avatar appearance is owned by the Avatar component."
-    - component_set: "Tag"
-      component_set_key: "0da6722ea2b5a431721cd72b9bb00df3367edc1c"
-      purpose: "Metadata tags in the Multiple area."
-      consumer_contract: "Multiple tag boolean controls show or hide DS Tag instances."
-    - component_set: "atoms / trailing"
-      component_set_key: "e347d6dfee99c5f46be383a6f2fe056bffb8c30f"
-      purpose: "Trailing text and icon group."
-      consumer_contract: "Trailing=true exposes the trailing group without copying its child spec into Title Header."
+  - component_set: "Avatar Group (디자인 개별 사용금지)"
+    component_set_key: "6ad2e4b184997b01a86fa87e803387200dcca643"
+    purpose: "Leading avatar grouping for Align=Left."
+    consumer_contract: "Leading=true can expose avatar-based identification in left title headers."
+  - component_set: "[V2] Avatar"
+    component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
+    purpose: "Avatar visual inside the left leading area."
+    consumer_contract: "Avatar appearance is owned by the Avatar component."
+  - component_set: "Tag"
+    component_set_key: "0da6722ea2b5a431721cd72b9bb00df3367edc1c"
+    purpose: "Metadata tags in the Multiple area."
+    consumer_contract: "Multiple tag boolean controls show or hide DS Tag instances."
+  - component_set: "atoms / trailing"
+    component_set_key: "e347d6dfee99c5f46be383a6f2fe056bffb8c30f"
+    purpose: "Trailing text and icon group."
+    consumer_contract: "Trailing=true exposes the trailing group without copying its child spec into Title Header."
 
 layout:
   component_size: "393x48px for all four live variants"
@@ -311,12 +363,12 @@ layout:
       variants: []
 
 implementation_order:
-  - "Resolve Mode first because text and detail tokens switch between semantic and fixed token families."
-  - "Resolve Align next because Left and Center use different padding, leading structure, and title alignment."
-  - "Apply the fixed 48px height before optional content so the header does not resize."
-  - "Apply Leading, Trailing, title, subtitle, badge, and Multiple controls as visibility or slot composition only."
-  - "Use nested Avatar, Tag, and trailing components without copying their child specs into Title Header."
-  - "Keep title content to one line and avoid navigation behavior."
+- "Resolve Mode first because text and detail tokens switch between semantic and fixed token families."
+- "Resolve Align next because Left and Center use different padding, leading structure, and title alignment."
+- "Apply the fixed 48px height before optional content so the header does not resize."
+- "Apply Leading, Trailing, title, subtitle, badge, and Multiple controls as visibility or slot composition only."
+- "Use nested Avatar, Tag, and trailing components without copying their child specs into Title Header."
+- "Keep title content to one line and avoid navigation behavior."
 
 implementation_coverage:
   axes: "Implement all four Mode x Align variants."
@@ -327,42 +379,47 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Title Header to show the current content group's title and supporting information inside a screen."
-    - "Choose Left or Center alignment based on the information hierarchy."
-    - "Keep the height fixed at 48px."
-    - "Keep short text titles to one line."
-    - "Use text button, dropdown, or trailing support only when a simple secondary action is needed."
-    - "Use avatar with text only when it helps identify a subject."
+  - "Use Title Header to show the current content group's title and supporting information inside a screen."
+  - "Choose Left or Center alignment based on the information hierarchy."
+  - "Keep the height fixed at 48px."
+  - "Keep short text titles to one line."
+  - "Use text button, dropdown, or trailing support only when a simple secondary action is needed."
+  - "Use avatar with text only when it helps identify a subject."
   dont:
-    - "Do not mix Left and Center alignment arbitrarily in the same screen."
-    - "Do not put two or more title lines into Title Header."
-    - "Do not use Title Header for page navigation or complex navigation structure."
-    - "Do not add multiple complex actions that exceed the header role."
-    - "Do not use Title Header as a fixed top navigation area."
-    - "Do not add avatar decoration without identification meaning."
+  - "Do not mix Left and Center alignment arbitrarily in the same screen."
+  - "Do not put two or more title lines into Title Header."
+  - "Do not use Title Header for page navigation or complex navigation structure."
+  - "Do not add multiple complex actions that exceed the header role."
+  - "Do not use Title Header as a fixed top navigation area."
+  - "Do not add avatar decoration without identification meaning."
 
 spec_notes:
   source:
     variant_registry: "refs/figma-component-keys/variant-keys/title-header.md"
-    markitdown: "refs/markitdown-output/markitdown-title-header.md"
     figma_live_read: "use_figma read-only extraction on 2026-05-08"
   usage:
-    - "Title Header is a pattern for title and information inside the current screen."
-    - "It differs from Top Navigation because it does not provide page movement."
+  - "Title Header is a pattern for title and information inside the current screen."
+  - "It differs from Top Navigation because it does not provide page movement."
 
 source_gaps:
-  - part: "Membership and gradient mask internals"
-    field: "assets"
-    reason: "Live readback confirmed vector/img_integratedmembership_gradient and Gradient_Mask instances, but usage guidance does not define them as independent consumer-facing component contracts."
-  - part: "Fixed Left nested subtitle"
-    field: "tokens"
-    reason: "Live readback found both fixed_color and semantic gray-500 subtitle tokens inside the Fixed Left variant due to nested multiple-slot content; the main subtitle token mapping records the fixed token while this mixed nested content is noted here."
-  - part: "Multiple slots"
-    field: "slot content"
-    reason: "Live Figma exposes SLOT properties with empty preferredValues, so this draft records slot existence and confirmed visible sample content without inventing slot value constraints."
+- part: "Membership and gradient mask internals"
+  field: "assets"
+  reason: "Live readback confirmed vector/img_integratedmembership_gradient and Gradient_Mask instances, but usage guidance does not define them as independent consumer-facing component contracts."
+- part: "Fixed Left nested subtitle"
+  field: "tokens"
+  reason: "Live readback found both fixed_color and semantic gray-500 subtitle tokens inside the Fixed Left variant due to nested multiple-slot content; the main subtitle token mapping records the fixed
+    token while this mixed nested content is noted here."
+- part: "Multiple slots"
+  field: "slot content"
+  reason: "Live Figma exposes SLOT properties with empty preferredValues, so this draft records slot existence and confirmed visible sample content without inventing slot value constraints."
 
 verification:
   figma_live_read:
-    - "Component set key and all four variant keys were confirmed by read-only use_figma extraction."
-    - "Mode and Align axes plus live boolean and slot component properties were confirmed from componentPropertyDefinitions, including Multiple Title2 and Multiple2 slot properties."
-    - "Variant sizes, padding, gaps, text styles, text tokens, major child frames, and nested DS component set references were read from live Figma."
+  - "Component set key and all four variant keys were confirmed by read-only use_figma extraction."
+  - "Mode and Align axes plus live boolean and slot component properties were confirmed from componentPropertyDefinitions, including Multiple Title2 and Multiple2 slot properties."
+  - "Variant sizes, padding, gaps, text styles, text tokens, major child frames, and nested DS component set references were read from live Figma."
+baseline:
+  node_id: 64450:28044
+  variant: Mode=Default, Align=Left
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

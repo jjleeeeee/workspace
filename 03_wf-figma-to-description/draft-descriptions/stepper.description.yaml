@@ -15,17 +15,17 @@ variants:
   count: 6
   formula: "Mode(2) x State(3)"
   constraints:
-    - "All Mode and State combinations are valid."
-    - "State=Default represents the normal minimum-edge sample where subtract is disabled and add is enabled."
-    - "State=Enabled represents both subtract and add controls enabled."
-    - "State=Disabled disables both controls and the numeric label."
+  - "All Mode and State combinations are valid."
+  - "State=Default represents the normal minimum-edge sample where subtract is disabled and add is enabled."
+  - "State=Enabled represents both subtract and add controls enabled."
+  - "State=Disabled disables both controls and the numeric label."
   registry:
-    - { variant: "Mode=Default, State=Default", node_id: "61604:4395", key: "0a83b0528461a1160cdf2191987253aba33dfb10" }
-    - { variant: "Mode=Default, State=Disabled", node_id: "61604:4404", key: "3d3a1d26619b9f4f4a445fbee4756e677b12159b" }
-    - { variant: "Mode=Default, State=Enabled", node_id: "61604:4413", key: "dbd35703f40cedfbffc5fc8919e3dc0daf0ccd25" }
-    - { variant: "Mode=Fixed, State=Default", node_id: "61604:4422", key: "288984866d159f7bb82d080e525ef83a89c016a4" }
-    - { variant: "Mode=Fixed, State=Enabled", node_id: "61604:4431", key: "0344ba07faecd60987f98e512142c57de9adc977" }
-    - { variant: "Mode=Fixed, State=Disabled", node_id: "61604:4440", key: "beca73b9a54214b6a102120e9ada030f2287040d" }
+  - {variant: "Mode=Default, State=Default", node_id: "61604:4395", key: "0a83b0528461a1160cdf2191987253aba33dfb10"}
+  - {variant: "Mode=Default, State=Disabled", node_id: "61604:4404", key: "3d3a1d26619b9f4f4a445fbee4756e677b12159b"}
+  - {variant: "Mode=Default, State=Enabled", node_id: "61604:4413", key: "dbd35703f40cedfbffc5fc8919e3dc0daf0ccd25"}
+  - {variant: "Mode=Fixed, State=Default", node_id: "61604:4422", key: "288984866d159f7bb82d080e525ef83a89c016a4"}
+  - {variant: "Mode=Fixed, State=Enabled", node_id: "61604:4431", key: "0344ba07faecd60987f98e512142c57de9adc977"}
+  - {variant: "Mode=Fixed, State=Disabled", node_id: "61604:4440", key: "beca73b9a54214b6a102120e9ada030f2287040d"}
 
 props:
   Caret:
@@ -55,64 +55,127 @@ tokens:
     role: "stroke"
     applies_to: "Mode=Default"
     token: "system/color/outline/default-200a"
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-outline-default-200a
   control_stroke_fixed:
     part: "Quantity/PlusMinus and Number"
     role: "stroke"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/outline/default-200a"
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-outline-default-200a
   disabled_surface_default:
     part: "Stepper container"
     role: "fill"
     applies_to: "Mode=Default, State=Disabled"
     token: "system/color/surface/gray-75"
+    resolved:
+      light: '#F2F3F7'
+      dark: '#1F1F1F'
+      web_var: --cds-system-color-surface-gray-75
   disabled_surface_fixed:
     part: "Stepper container"
     role: "fill"
     applies_to: "Mode=Fixed, State=Disabled"
     token: "system/fixed_color/surface/gray-75"
+    resolved:
+      light: '#1F1F1F'
+      dark: '#1F1F1F'
+      web_var: --cds-system-fixed-color-surface-gray-75
   number_text_default:
     part: "Number text"
     role: "fill"
     applies_to: "Mode=Default, State=Default or State=Enabled"
     token: "system/color/text/default"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-text-default
   number_text_fixed:
     part: "Number text"
     role: "fill"
     applies_to: "Mode=Fixed, State=Default or State=Enabled"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   number_text_disabled_default:
     part: "Number text"
     role: "fill"
     applies_to: "Mode=Default, State=Disabled"
     token: "system/color/text/200a"
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-text-200a
   number_text_disabled_fixed:
     part: "Number text"
     role: "fill"
     applies_to: "Mode=Fixed, State=Disabled"
     token: "system/fixed_color/text/200a"
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-text-200a
   subtract_icon_default_state:
     part: "subtract icon"
     role: "fill"
     applies_to: "State=Default"
     default: "system/color/icon/200a"
     fixed: "system/fixed_color/icon/200a"
+    resolved:
+      default:
+        light: '#00000033'
+        dark: '#FFFFFF33'
+        web_var: --cds-system-color-icon-200a
+      fixed:
+        light: '#FFFFFF33'
+        dark: '#FFFFFF33'
+        web_var: --cds-system-fixed-color-icon-200a
   action_icon_enabled:
     part: "subtract and add icons"
     role: "fill"
     applies_to: "State=Enabled, plus icon in State=Default"
     default: "system/color/icon/default"
     fixed: "system/fixed_color/icon/default"
+    resolved:
+      default:
+        light: '#000000'
+        dark: '#FFFFFF'
+        web_var: --cds-system-color-icon-default
+      fixed:
+        light: '#FFFFFF'
+        dark: '#FFFFFF'
+        web_var: --cds-system-fixed-color-icon-default
   action_icon_disabled:
     part: "subtract and add icons"
     role: "fill"
     applies_to: "State=Disabled"
     default: "system/color/icon/200a"
     fixed: "system/fixed_color/icon/200a"
+    resolved:
+      default:
+        light: '#00000033'
+        dark: '#FFFFFF33'
+        web_var: --cds-system-color-icon-200a
+      fixed:
+        light: '#FFFFFF33'
+        dark: '#FFFFFF33'
+        web_var: --cds-system-fixed-color-icon-200a
   caret_surface:
     part: "Caret"
     role: "fill"
     applies_to: "Caret=true"
     token: "system/color/surface/default-reverse"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-surface-default-reverse
   number_typography:
     part: "Number text"
     role: "typography"
@@ -186,12 +249,12 @@ layout:
       variants: []
 
 implementation_order:
-  - "Render the fixed 104x28 Stepper frame before resolving state."
-  - "Place subtract, number, and add regions as 28px, 48px, and 28px widths with no gap."
-  - "Resolve Mode to select Default or Fixed outline, text, and icon token families."
-  - "Resolve State to enable or disable subtract and add icon treatments."
-  - "Apply the Label text and optional Caret without resizing the component."
-  - "Block values above two digits and use State to communicate min or max limits."
+- "Render the fixed 104x28 Stepper frame before resolving state."
+- "Place subtract, number, and add regions as 28px, 48px, and 28px widths with no gap."
+- "Resolve Mode to select Default or Fixed outline, text, and icon token families."
+- "Resolve State to enable or disable subtract and add icon treatments."
+- "Apply the Label text and optional Caret without resizing the component."
+- "Block values above two digits and use State to communicate min or max limits."
 
 implementation_coverage:
   axes: "Implement all 6 Mode x State combinations."
@@ -202,21 +265,25 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Stepper when a small numeric quantity must be adjusted quickly."
-    - "Keep Stepper width and height fixed."
-    - "Allow direct numeric input and subtract or add button control."
-    - "Disable the subtract control when the minimum value is reached."
-    - "Disable the add control when the maximum value is reached."
-    - "Limit visible input to two digits."
+  - "Use Stepper when a small numeric quantity must be adjusted quickly."
+  - "Keep Stepper width and height fixed."
+  - "Allow direct numeric input and subtract or add button control."
+  - "Disable the subtract control when the minimum value is reached."
+  - "Disable the add control when the maximum value is reached."
+  - "Limit visible input to two digits."
   dont:
-    - "Do not resize Stepper based on content length."
-    - "Do not allow three-digit values."
-    - "Do not show only the number without visible controls."
-    - "Do not leave a direction button enabled when the value cannot change in that direction."
-    - "Do not replace plus or minus icons with text characters."
+  - "Do not resize Stepper based on content length."
+  - "Do not allow three-digit values."
+  - "Do not show only the number without visible controls."
+  - "Do not leave a direction button enabled when the value cannot change in that direction."
+  - "Do not replace plus or minus icons with text characters."
 
 spec_notes:
   source:
-    - "Live Figma read-only extraction from node 61604:4394 on 2026-05-04."
-    - "Registry reference: refs/figma-component-keys/variant-keys/stepper.md."
-    - "Usage reference: refs/markitdown-output/markitdown-stepper.md."
+  - "Live Figma read-only extraction from node 61604:4394 on 2026-05-04."
+  - "Registry reference: refs/figma-component-keys/variant-keys/stepper.md."
+baseline:
+  node_id: 61604:4395
+  variant: Mode=Default, State=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

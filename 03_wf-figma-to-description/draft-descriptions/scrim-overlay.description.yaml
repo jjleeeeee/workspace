@@ -15,9 +15,9 @@ variants:
   count: 1
   formula: "Single component"
   constraints:
-    - "Scrim_Overlay has no variant axes in Figma."
+  - "Scrim_Overlay has no variant axes in Figma."
   registry:
-    - { variant: "Scrim_Overlay", node_id: "10482:75325", key: "82556da89c0795003b5b07261ac8dc65fb09da1c" }
+  - {variant: "Scrim_Overlay", node_id: "10482:75325", key: "82556da89c0795003b5b07261ac8dc65fb09da1c"}
 
 props:
   opacity:
@@ -33,6 +33,10 @@ tokens:
     token: "system/fixed_color/surface/default-400a"
     opacity: "50%"
 
+    resolved:
+      light: '#00000080'
+      dark: '#00000080'
+      web_var: --cds-system-fixed-color-surface-default-400a
 layout:
   component_size: "393x852"
   resizing:
@@ -41,37 +45,41 @@ layout:
   opacity: "50%"
 
 implementation_order:
-  - "Render Scrim Overlay above background content and below the active modal or overlay surface."
-  - "Apply the fixed surface token with 50% opacity."
-  - "Stretch or size the overlay to fully cover the target viewport or container."
-  - "Preserve the overlay as a visual hierarchy layer, not as an interactive content surface."
+- "Render Scrim Overlay above background content and below the active modal or overlay surface."
+- "Apply the fixed surface token with 50% opacity."
+- "Stretch or size the overlay to fully cover the target viewport or container."
+- "Preserve the overlay as a visual hierarchy layer, not as an interactive content surface."
 
 implementation_coverage:
   axes:
-    - "Variant"
+  - "Variant"
   props:
-    - "opacity"
+  - "opacity"
   assets:
-    - "No asset-backed visual is used."
+  - "No asset-backed visual is used."
   layout:
-    - "393x852 source frame"
-    - "Full-cover overlay behavior"
-    - "50% opacity"
+  - "393x852 source frame"
+  - "Full-cover overlay behavior"
+  - "50% opacity"
   exclusions:
-    - "This workflow does not create a derived scrim-overlay.md file."
-    - "Figma Description writeback is intentionally skipped for this worker task."
+  - "This workflow does not create a derived scrim-overlay.md file."
+  - "Figma Description writeback is intentionally skipped for this worker task."
 
 rules:
   do:
-    - "Use Scrim Overlay to separate foreground overlays from background content."
-    - "Use 50% opacity for Scrim Overlay."
-    - "Place Scrim Overlay behind Dialog or other blocking overlay surfaces."
+  - "Use Scrim Overlay to separate foreground overlays from background content."
+  - "Use 50% opacity for Scrim Overlay."
+  - "Place Scrim Overlay behind Dialog or other blocking overlay surfaces."
   dont:
-    - "Do not change Scrim Overlay opacity arbitrarily."
-    - "Do not use Scrim Overlay as content or decoration without a foreground overlay."
-    - "Do not let background content visually compete with the active foreground surface."
+  - "Do not change Scrim Overlay opacity arbitrarily."
+  - "Do not use Scrim Overlay as content or decoration without a foreground overlay."
+  - "Do not let background content visually compete with the active foreground surface."
 
 spec_notes:
   source:
-    - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 10482:75325."
-    - "Supplemental usage reference: refs/markitdown-output/markitdown-dialog.md Scrim Overlay section."
+  - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 10482:75325."
+baseline:
+  node_id: 10482:75325
+  variant: Scrim_Overlay
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

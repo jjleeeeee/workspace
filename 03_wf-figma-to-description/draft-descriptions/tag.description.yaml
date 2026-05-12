@@ -11,28 +11,29 @@ axes:
   Size: ["Small", "Medium"]
   Type: ["Line", "Fill"]
   Shape: ["Squircle", "Round"]
-  Color: ["Primary", "Secondary-Blue", "Secondary-Green", "Secondary-Purple", "Secondary-Pink", "Gray", "White", "Red", "Membership-Malachite-Green", "Membership-Lavender", "Membership-Cornflower-Blue", "LIVE Red"]
+  Color: ["Primary", "Secondary-Blue", "Secondary-Green", "Secondary-Purple", "Secondary-Pink", "Gray", "White", "Red", "Membership-Malachite-Green", "Membership-Lavender", "Membership-Cornflower-Blue",
+    "LIVE Red"]
 
 variants:
   count: 89
   implemented_formula: "Size(2) x Type(2) x Shape(2) x 11 standard Color values + LIVE Red exception(1) = 89"
   constraints:
-    - "The 11 standard Color values each cover all Size, Type, and Shape combinations."
-    - "LIVE Red exists only as Size=Small, Type=Fill, Shape=Squircle."
-    - "Show Icon is a boolean property, not a variant axis."
-    - "Use registry_policy instead of listing all 89 variant keys inline."
+  - "The 11 standard Color values each cover all Size, Type, and Shape combinations."
+  - "LIVE Red exists only as Size=Small, Type=Fill, Shape=Squircle."
+  - "Show Icon is a boolean property, not a variant axis."
+  - "Use registry_policy instead of listing all 89 variant keys inline."
   registry_policy:
     component_set_key: "bc5965253050f2719974ba59fab7b22b35a05b3f"
     verified_count: 89
     storage: "89 variant node IDs and keys were verified from Figma and local variant registry; full registry is summarized for readability."
     sample:
-      - { variant: "Size=Small, Type=Line, Shape=Squircle, Color=Primary", node_id: "30256:32822", key: "050df4afa307ccc5b79a68424be9ba0cf06a035f" }
-      - { variant: "Size=Small, Type=Line, Shape=Round, Color=Primary", node_id: "30308:7286", key: "dcde7f5b5dfcbdf379443bec44e395cd1d9cb6ed" }
-      - { variant: "Size=Small, Type=Fill, Shape=Squircle, Color=Primary", node_id: "30256:32824", key: "aae3295464a7bdd09d3a2e4964d6cae0b0523731" }
-      - { variant: "Size=Small, Type=Fill, Shape=Round, Color=Primary", node_id: "30308:7327", key: "9e9bf8bcd07c143a58c0f9672b8a527f32cfb3cc" }
-      - { variant: "Size=Small, Type=Fill, Shape=Squircle, Color=LIVE Red", node_id: "78106:19320", key: "28817b01000cd40132c1d197cd8beb99b0331f72" }
-      - { variant: "Size=Medium, Type=Fill, Shape=Squircle, Color=Membership-Malachite-Green", node_id: "71325:15084", key: "f198246e0abb83322c8b44737916e75b352328b0" }
-      - { variant: "Size=Medium, Type=Fill, Shape=Round, Color=Membership-Cornflower-Blue", node_id: "71325:15409", key: "09539674b3861153ca85d31730f8f39c5eade81a" }
+    - {variant: "Size=Small, Type=Line, Shape=Squircle, Color=Primary", node_id: "30256:32822", key: "050df4afa307ccc5b79a68424be9ba0cf06a035f"}
+    - {variant: "Size=Small, Type=Line, Shape=Round, Color=Primary", node_id: "30308:7286", key: "dcde7f5b5dfcbdf379443bec44e395cd1d9cb6ed"}
+    - {variant: "Size=Small, Type=Fill, Shape=Squircle, Color=Primary", node_id: "30256:32824", key: "aae3295464a7bdd09d3a2e4964d6cae0b0523731"}
+    - {variant: "Size=Small, Type=Fill, Shape=Round, Color=Primary", node_id: "30308:7327", key: "9e9bf8bcd07c143a58c0f9672b8a527f32cfb3cc"}
+    - {variant: "Size=Small, Type=Fill, Shape=Squircle, Color=LIVE Red", node_id: "78106:19320", key: "28817b01000cd40132c1d197cd8beb99b0331f72"}
+    - {variant: "Size=Medium, Type=Fill, Shape=Squircle, Color=Membership-Malachite-Green", node_id: "71325:15084", key: "f198246e0abb83322c8b44737916e75b352328b0"}
+    - {variant: "Size=Medium, Type=Fill, Shape=Round, Color=Membership-Cornflower-Blue", node_id: "71325:15409", key: "09539674b3861153ca85d31730f8f39c5eade81a"}
 
 props:
   label:
@@ -82,16 +83,29 @@ tokens:
     applies_to: "Color=LIVE Red"
     token: "system/fixed_color/roles/negative"
     opacity: 1
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-roles-negative
   fill_text:
     part: "Text"
     role: "text fill"
     applies_to: "Type=Fill"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   typography:
     part: "Text"
     role: "text style"
     applies_to: "All standard Tag variants"
     token: "caption-xs/system-700"
+    resolved:
+      fontSize: 10
+      fontFamily: WeGothicSans
+      fontWeight: 700
+      lineHeight: 13
   icon_size:
     part: "icon_area"
     role: "icon size"
@@ -163,12 +177,12 @@ interaction:
     behavior: "When showIcon=false, remove the icon_area and collapse the 2px gap."
 
 implementation_order:
-  - "Resolve Size first to set height, horizontal padding, and icon dimensions."
-  - "Resolve Shape to choose Squircle or Round radius."
-  - "Resolve Type to choose Line stroke treatment or Fill background treatment."
-  - "Resolve Color through color_map and apply opacity by Type."
-  - "Apply showIcon after layout so the icon area and gap collapse correctly."
-  - "Keep label text short and single-line."
+- "Resolve Size first to set height, horizontal padding, and icon dimensions."
+- "Resolve Shape to choose Squircle or Round radius."
+- "Resolve Type to choose Line stroke treatment or Fill background treatment."
+- "Resolve Color through color_map and apply opacity by Type."
+- "Apply showIcon after layout so the icon area and gap collapse correctly."
+- "Keep label text short and single-line."
 
 implementation_coverage:
   axes: "All 89 live variants were read from Figma, including the LIVE Red exception."
@@ -179,27 +193,32 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Tag for short keywords that identify content attributes, categories, or status."
-    - "Choose Small or Medium according to information hierarchy and placement."
-    - "Use only defined system and fixed color role tokens."
-    - "Use the specified radius for each Shape value."
-    - "Keep Gray limited to system/fixed_color/text/gray-500."
+  - "Use Tag for short keywords that identify content attributes, categories, or status."
+  - "Choose Small or Medium according to information hierarchy and placement."
+  - "Use only defined system and fixed color role tokens."
+  - "Use the specified radius for each Shape value."
+  - "Keep Gray limited to system/fixed_color/text/gray-500."
   dont:
-    - "Do not put sentence-style explanations inside Tag."
-    - "Do not mix Small and Medium arbitrarily in one context."
-    - "Do not apply arbitrary colors or weak contrast backgrounds."
-    - "Do not resize the icon beyond tiny(10)."
-    - "Do not use Tag where selectable options should be Chips."
+  - "Do not put sentence-style explanations inside Tag."
+  - "Do not mix Small and Medium arbitrarily in one context."
+  - "Do not apply arbitrary colors or weak contrast backgrounds."
+  - "Do not resize the icon beyond tiny(10)."
+  - "Do not use Tag where selectable options should be Chips."
 
 source_gaps:
-  - part: "icon_area nested null icon guide rectangles"
-    issue: "Full traversal found 176 visible Rectangle 1 and Rectangle 2 fills using raw #D9D9D9 without Variable binding."
-    decision: "These belong to the nested icon_area and 24/em/ic_null_medium internals; they are excluded from Tag color token mapping."
-  - field: "label"
-    issue: "Live componentPropertyDefinitions exposes Show Icon and variant axes, while the existing Figma Description documents label as a public prop."
-    decision: "Keep label in props as a consumer-facing text contract sourced from Figma Description, not as a component property definition."
+- part: "icon_area nested null icon guide rectangles"
+  issue: "Full traversal found 176 visible Rectangle 1 and Rectangle 2 fills using raw #D9D9D9 without Variable binding."
+  decision: "These belong to the nested icon_area and 24/em/ic_null_medium internals; they are excluded from Tag color token mapping."
+- field: "label"
+  issue: "Live componentPropertyDefinitions exposes Show Icon and variant axes, while the existing Figma Description documents label as a public prop."
+  decision: "Keep label in props as a consumer-facing text contract sourced from Figma Description, not as a component property definition."
 
 verification:
   figma_live_read:
-    - "Figma Desktop Bridge connected to Chord Design System file DWEduE6GfxYMlyxKPNJ8jA."
-    - "Framelink and use_figma read-only traversal checked 89 variants, variant keys, paint variables, component props, layout groups, and unbound paint samples."
+  - "Figma Desktop Bridge connected to Chord Design System file DWEduE6GfxYMlyxKPNJ8jA."
+  - "Framelink and use_figma read-only traversal checked 89 variants, variant keys, paint variables, component props, layout groups, and unbound paint samples."
+baseline:
+  node_id: 30256:32823
+  variant: Size=Medium, Type=Line, Shape=Squircle, Color=Primary
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

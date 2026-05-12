@@ -13,11 +13,11 @@ variants:
   count: 2
   formula: "Mode(2)"
   constraints:
-    - "Both Mode variants are present in live Figma."
-    - "Toast has no consumer-facing icon or action axis in this component set."
+  - "Both Mode variants are present in live Figma."
+  - "Toast has no consumer-facing icon or action axis in this component set."
   registry:
-    - { variant: "Mode=Default", node_id: "63694:4596", key: "740f01902623d372c3bfa2070f7eb22f79cf74a8" }
-    - { variant: "Mode=Fixed", node_id: "63694:4601", key: "b068014c9d1c7f981b74bad1ff8862ac0b579bab" }
+  - {variant: "Mode=Default", node_id: "63694:4596", key: "740f01902623d372c3bfa2070f7eb22f79cf74a8"}
+  - {variant: "Mode=Fixed", node_id: "63694:4601", key: "b068014c9d1c7f981b74bad1ff8862ac0b579bab"}
 
 props:
   Label:
@@ -33,16 +33,28 @@ tokens:
     applies_to: "Mode=Default"
     token: "system/color/surface/default-reverse-600a-unequal"
     opacity: 0.8
+    resolved:
+      light: '#000000CC'
+      dark: '#333333'
+      web_var: --cds-system-color-surface-default-reverse-600a-unequal
   container_fixed:
     part: "Toast"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/surface/gray-200"
+    resolved:
+      light: '#333333'
+      dark: '#333333'
+      web_var: --cds-system-fixed-color-surface-gray-200
   label_text:
     part: "Label"
     role: "text fill"
     applies_to: "All Mode values"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   label_typography:
     part: "Label"
     role: "text style"
@@ -50,6 +62,11 @@ tokens:
     token: "body-xs/system-400"
 
 
+    resolved:
+      fontSize: 14
+      fontFamily: WeGothicSans
+      fontWeight: 400
+      lineHeight: 18
 typography:
   body_xs_system_400:
     font_family: "WeGothicSans"
@@ -97,11 +114,11 @@ interaction:
     behavior: "Toast must not block user actions or require a decision."
 
 implementation_order:
-  - "Resolve Mode first because it changes the container surface token and opacity."
-  - "Apply the 12px vertical and 16px horizontal padding, 8px radius, and centered vertical layout."
-  - "Bind Label with body-xs/system-400 and center alignment."
-  - "Allow wrapping only up to two lines when the max width is reached."
-  - "Place Toast at the bottom with 20px spacing from bottom UI, 10px mobile margins, and a 410px max width."
+- "Resolve Mode first because it changes the container surface token and opacity."
+- "Apply the 12px vertical and 16px horizontal padding, 8px radius, and centered vertical layout."
+- "Bind Label with body-xs/system-400 and center alignment."
+- "Allow wrapping only up to two lines when the max width is reached."
+- "Place Toast at the bottom with 20px spacing from bottom UI, 10px mobile margins, and a 410px max width."
 
 implementation_coverage:
   axes: "Implement both Mode variants."
@@ -112,42 +129,46 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Toast for brief system status feedback such as error, completion, or progress updates."
-    - "Keep the message concise."
-    - "Let Toast disappear automatically after a short duration."
-    - "Place Toast at the bottom with 20px spacing from bottom UI."
-    - "Limit text to two lines."
-    - "Center-align Toast text."
-    - "Respect 10px mobile side margins and a 410px maximum width on larger screens."
+  - "Use Toast for brief system status feedback such as error, completion, or progress updates."
+  - "Keep the message concise."
+  - "Let Toast disappear automatically after a short duration."
+  - "Place Toast at the bottom with 20px spacing from bottom UI."
+  - "Limit text to two lines."
+  - "Center-align Toast text."
+  - "Respect 10px mobile side margins and a 410px maximum width on larger screens."
   dont:
-    - "Do not use Toast like a popup that blocks user flow."
-    - "Do not use Toast for content that requires user choice or follow-up action."
-    - "Do not put long explanations or multiple sentences into Toast."
-    - "Do not add icons or buttons inside Toast."
-    - "Do not force line breaks before the maximum width is reached."
-    - "Do not stretch Toast to full screen width on large screens."
-    - "Do not left-align or right-align Toast text."
+  - "Do not use Toast like a popup that blocks user flow."
+  - "Do not use Toast for content that requires user choice or follow-up action."
+  - "Do not put long explanations or multiple sentences into Toast."
+  - "Do not add icons or buttons inside Toast."
+  - "Do not force line breaks before the maximum width is reached."
+  - "Do not stretch Toast to full screen width on large screens."
+  - "Do not left-align or right-align Toast text."
 
 spec_notes:
   source:
     variant_registry: "refs/figma-component-keys/variant-keys/toast.md"
-    markitdown: "refs/markitdown-output/markitdown-toast.md"
     figma_live_read: "use_figma read-only extraction on 2026-05-04"
   usage:
-    - "Toast is for short non-blocking feedback."
-    - "Use Snackbar instead when the user needs an optional follow-up action."
-    - "Use Dialog instead when the user must make a decision."
+  - "Toast is for short non-blocking feedback."
+  - "Use Snackbar instead when the user needs an optional follow-up action."
+  - "Use Dialog instead when the user must make a decision."
 
 source_gaps:
-  - part: "Hidden checkbox and icon_area internals"
-    field: "composition"
-    reason: "Live Figma contains hidden [V1] Checkbox and icon_area descendants, but usage explicitly defines Toast as text-only without icons or buttons, so those descendants are excluded from composition.uses."
-  - part: "Runtime width"
-    field: "responsive layout"
-    reason: "Live component variants are 293px hug-content samples while usage guidance defines mobile side margins and a 410px maximum width."
+- part: "Hidden checkbox and icon_area internals"
+  field: "composition"
+  reason: "Live Figma contains hidden [V1] Checkbox and icon_area descendants, but usage explicitly defines Toast as text-only without icons or buttons, so those descendants are excluded from composition.uses."
+- part: "Runtime width"
+  field: "responsive layout"
+  reason: "Live component variants are 293px hug-content samples while usage guidance defines mobile side margins and a 410px maximum width."
 
 verification:
   figma_live_read:
-    - "Component set key and both variant keys were confirmed by read-only use_figma extraction."
-    - "Component properties Label and Mode were confirmed from live componentPropertyDefinitions."
-    - "Container fills, label fill, text style, padding, radius, alignment, and hidden non-contract descendants were read from live Figma."
+  - "Component set key and both variant keys were confirmed by read-only use_figma extraction."
+  - "Component properties Label and Mode were confirmed from live componentPropertyDefinitions."
+  - "Container fills, label fill, text style, padding, radius, alignment, and hidden non-contract descendants were read from live Figma."
+baseline:
+  node_id: 63694:4596
+  variant: Mode=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

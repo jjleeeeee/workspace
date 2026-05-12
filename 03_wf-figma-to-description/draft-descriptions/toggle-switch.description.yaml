@@ -16,33 +16,33 @@ variants:
   count: 24
   formula: "Mode(2) x OS(2) x Size(2) x Status(3)"
   constraints:
-    - "All Mode, OS, Size, and Status combinations are valid."
-    - "Status=Default is OFF; Status=Enabled is ON; Status=Disabled is inactive OFF."
+  - "All Mode, OS, Size, and Status combinations are valid."
+  - "Status=Default is OFF; Status=Enabled is ON; Status=Disabled is inactive OFF."
   registry:
-    - { variant: "Mode=Fixed, OS=AOS, Size=Medium, Status=Default", node_id: "8934:17628", key: "8ec59ece4be36cad667b4005ef8671d5a5fc3b26" }
-    - { variant: "Mode=Fixed, OS=AOS, Size=Small, Status=Default", node_id: "18903:40885", key: "865a61bb074e82064a85d998985d01903002fb2b" }
-    - { variant: "Mode=Fixed, OS=AOS, Size=Medium, Status=Enabled", node_id: "8934:17625", key: "b6267c5a560cb20b2baaea9c1e658c4b09834a4c" }
-    - { variant: "Mode=Fixed, OS=AOS, Size=Small, Status=Enabled", node_id: "18903:40888", key: "8273b0af712edf023b9ffd96007085db9a9ebba8" }
-    - { variant: "Mode=Default, OS=AOS, Size=Medium, Status=Default", node_id: "7927:149551", key: "908654498af0462d761cff1f9bc883815fb9ae07" }
-    - { variant: "Mode=Default, OS=AOS, Size=Small, Status=Default", node_id: "18860:38690", key: "fd4c017bea9b804e8dcd1603a4a5eb3c024ca0f9" }
-    - { variant: "Mode=Default, OS=AOS, Size=Medium, Status=Enabled", node_id: "7927:149558", key: "81fc0274b891610d3034bb2018b5c814bf357a95" }
-    - { variant: "Mode=Default, OS=AOS, Size=Small, Status=Enabled", node_id: "18860:38693", key: "e64593658809a822b0c3ea5705d4bbf8c66ffcfa" }
-    - { variant: "Mode=Fixed, OS=iOS, Size=Medium, Status=Enabled", node_id: "8934:17617", key: "ed9ccd53ea63b2bfb87961da5931d51f44814842" }
-    - { variant: "Mode=Fixed, OS=iOS, Size=Small, Status=Enabled", node_id: "18860:38713", key: "0ff28335bd75ee1ae79311f4cf6d670bd6807658" }
-    - { variant: "Mode=Fixed, OS=iOS, Size=Medium, Status=Default", node_id: "8934:17619", key: "95f0ef2eea10f7db0baf6c4b272fc3d747d62024" }
-    - { variant: "Mode=Fixed, OS=iOS, Size=Small, Status=Default", node_id: "18860:38715", key: "7115d3315165828cfa31fc136622c99a9f9ac285" }
-    - { variant: "Mode=Default, OS=iOS, Size=Medium, Status=Enabled", node_id: "7927:149566", key: "d5cdf289ad607bbfc9b56f837eaf28057d27bf13" }
-    - { variant: "Mode=Default, OS=iOS, Size=Small, Status=Enabled", node_id: "18860:38672", key: "622787733144234daf40445fe31c7e2967fcf717" }
-    - { variant: "Mode=Default, OS=iOS, Size=Medium, Status=Default", node_id: "7927:149568", key: "99caed3dabd9403ddf0436bf45a1073f0f82b656" }
-    - { variant: "Mode=Default, OS=iOS, Size=Small, Status=Default", node_id: "18860:38674", key: "5ccd86262904561218077561438243372a258401" }
-    - { variant: "Mode=Default, OS=iOS, Size=Small, Status=Disabled", node_id: "26115:19909", key: "568f4161c0bb5da465940f26d730456eb1eeb761" }
-    - { variant: "Mode=Default, OS=iOS, Size=Medium, Status=Disabled", node_id: "26115:19911", key: "fcab79ad1ae5c6f522daecfdc78db648842f3553" }
-    - { variant: "Mode=Fixed, OS=iOS, Size=Medium, Status=Disabled", node_id: "26115:19917", key: "744c5420723872afd452d09165e453250c567556" }
-    - { variant: "Mode=Fixed, OS=iOS, Size=Small, Status=Disabled", node_id: "26115:19919", key: "47d523ae985fda5c4b24cc16e9feeb3460eedb09" }
-    - { variant: "Mode=Default, OS=AOS, Size=Medium, Status=Disabled", node_id: "26115:20184", key: "b86c814f85f95fe92a764dbca117f0838658c0c7" }
-    - { variant: "Mode=Default, OS=AOS, Size=Small, Status=Disabled", node_id: "26115:20186", key: "86a0e5684a761a080c20fc91c0ccbe55dee082d6" }
-    - { variant: "Mode=Fixed, OS=AOS, Size=Small, Status=Disabled", node_id: "26115:20192", key: "b777dcad57b694045ca0ad7771549ed6a81204c1" }
-    - { variant: "Mode=Fixed, OS=AOS, Size=Medium, Status=Disabled", node_id: "26115:20194", key: "161c6c4c03dd295db9336582ab4c22c830589c7d" }
+  - {variant: "Mode=Fixed, OS=AOS, Size=Medium, Status=Default", node_id: "8934:17628", key: "8ec59ece4be36cad667b4005ef8671d5a5fc3b26"}
+  - {variant: "Mode=Fixed, OS=AOS, Size=Small, Status=Default", node_id: "18903:40885", key: "865a61bb074e82064a85d998985d01903002fb2b"}
+  - {variant: "Mode=Fixed, OS=AOS, Size=Medium, Status=Enabled", node_id: "8934:17625", key: "b6267c5a560cb20b2baaea9c1e658c4b09834a4c"}
+  - {variant: "Mode=Fixed, OS=AOS, Size=Small, Status=Enabled", node_id: "18903:40888", key: "8273b0af712edf023b9ffd96007085db9a9ebba8"}
+  - {variant: "Mode=Default, OS=AOS, Size=Medium, Status=Default", node_id: "7927:149551", key: "908654498af0462d761cff1f9bc883815fb9ae07"}
+  - {variant: "Mode=Default, OS=AOS, Size=Small, Status=Default", node_id: "18860:38690", key: "fd4c017bea9b804e8dcd1603a4a5eb3c024ca0f9"}
+  - {variant: "Mode=Default, OS=AOS, Size=Medium, Status=Enabled", node_id: "7927:149558", key: "81fc0274b891610d3034bb2018b5c814bf357a95"}
+  - {variant: "Mode=Default, OS=AOS, Size=Small, Status=Enabled", node_id: "18860:38693", key: "e64593658809a822b0c3ea5705d4bbf8c66ffcfa"}
+  - {variant: "Mode=Fixed, OS=iOS, Size=Medium, Status=Enabled", node_id: "8934:17617", key: "ed9ccd53ea63b2bfb87961da5931d51f44814842"}
+  - {variant: "Mode=Fixed, OS=iOS, Size=Small, Status=Enabled", node_id: "18860:38713", key: "0ff28335bd75ee1ae79311f4cf6d670bd6807658"}
+  - {variant: "Mode=Fixed, OS=iOS, Size=Medium, Status=Default", node_id: "8934:17619", key: "95f0ef2eea10f7db0baf6c4b272fc3d747d62024"}
+  - {variant: "Mode=Fixed, OS=iOS, Size=Small, Status=Default", node_id: "18860:38715", key: "7115d3315165828cfa31fc136622c99a9f9ac285"}
+  - {variant: "Mode=Default, OS=iOS, Size=Medium, Status=Enabled", node_id: "7927:149566", key: "d5cdf289ad607bbfc9b56f837eaf28057d27bf13"}
+  - {variant: "Mode=Default, OS=iOS, Size=Small, Status=Enabled", node_id: "18860:38672", key: "622787733144234daf40445fe31c7e2967fcf717"}
+  - {variant: "Mode=Default, OS=iOS, Size=Medium, Status=Default", node_id: "7927:149568", key: "99caed3dabd9403ddf0436bf45a1073f0f82b656"}
+  - {variant: "Mode=Default, OS=iOS, Size=Small, Status=Default", node_id: "18860:38674", key: "5ccd86262904561218077561438243372a258401"}
+  - {variant: "Mode=Default, OS=iOS, Size=Small, Status=Disabled", node_id: "26115:19909", key: "568f4161c0bb5da465940f26d730456eb1eeb761"}
+  - {variant: "Mode=Default, OS=iOS, Size=Medium, Status=Disabled", node_id: "26115:19911", key: "fcab79ad1ae5c6f522daecfdc78db648842f3553"}
+  - {variant: "Mode=Fixed, OS=iOS, Size=Medium, Status=Disabled", node_id: "26115:19917", key: "744c5420723872afd452d09165e453250c567556"}
+  - {variant: "Mode=Fixed, OS=iOS, Size=Small, Status=Disabled", node_id: "26115:19919", key: "47d523ae985fda5c4b24cc16e9feeb3460eedb09"}
+  - {variant: "Mode=Default, OS=AOS, Size=Medium, Status=Disabled", node_id: "26115:20184", key: "b86c814f85f95fe92a764dbca117f0838658c0c7"}
+  - {variant: "Mode=Default, OS=AOS, Size=Small, Status=Disabled", node_id: "26115:20186", key: "86a0e5684a761a080c20fc91c0ccbe55dee082d6"}
+  - {variant: "Mode=Fixed, OS=AOS, Size=Small, Status=Disabled", node_id: "26115:20192", key: "b777dcad57b694045ca0ad7771549ed6a81204c1"}
+  - {variant: "Mode=Fixed, OS=AOS, Size=Medium, Status=Disabled", node_id: "26115:20194", key: "161c6c4c03dd295db9336582ab4c22c830589c7d"}
 
 props:
   Mode:
@@ -68,36 +68,64 @@ tokens:
     role: "fill"
     applies_to: "Mode=Default, Status=Default"
     token: "system/color/surface/gray-200"
+    resolved:
+      light: '#DCDEE4'
+      dark: '#333333'
+      web_var: --cds-system-color-surface-gray-200
   track_off_fixed:
     part: "Track"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Default"
     token: "system/fixed_color/surface/gray-200"
+    resolved:
+      light: '#333333'
+      dark: '#333333'
+      web_var: --cds-system-fixed-color-surface-gray-200
   track_on_default:
     part: "Track"
     role: "fill"
     applies_to: "Mode=Default, Status=Enabled"
     token: "system/color/status/active-primary"
+    resolved:
+      light: '#00CBD5'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-status-active-primary
   track_on_fixed:
     part: "Track"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Enabled"
     token: "system/fixed_color/status/active-primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-status-active-primary
   track_disabled_default:
     part: "Track"
     role: "fill"
     applies_to: "Mode=Default, Status=Disabled"
     token: "system/color/status/inactive-gray"
+    resolved:
+      light: '#DCDEE4'
+      dark: '#3E3E3E'
+      web_var: --cds-system-color-status-inactive-gray
   track_disabled_fixed:
     part: "Track"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Disabled"
     token: "system/fixed_color/status/inactive-gray"
+    resolved:
+      light: '#3E3E3E'
+      dark: '#3E3E3E'
+      web_var: --cds-system-fixed-color-status-inactive-gray
   thumb_fill:
     part: "Switch"
     role: "fill"
     applies_to: "Status=Default or Enabled"
     token: "system/fixed_color/surface/default-reverse"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-surface-default-reverse
   thumb_disabled:
     part: "Switch"
     role: "fill"
@@ -105,6 +133,10 @@ tokens:
     token: "system/fixed_color/surface/default-reverse-300a"
     opacity: 0.3
 
+    resolved:
+      light: '#FFFFFF4D'
+      dark: '#FFFFFF4D'
+      web_var: --cds-system-fixed-color-surface-default-reverse-300a
 layout:
   component_size: "varies by OS and Size"
   sizes:
@@ -146,18 +178,18 @@ layout:
         token: "component geometry"
         value: "thumb inset equals platform padding"
       variants:
-        - when: "OS=iOS, Size=Medium"
-          token: "component geometry"
-          value: "2px"
-        - when: "OS=iOS, Size=Small"
-          token: "component geometry"
-          value: "2px"
-        - when: "OS=AOS, Size=Medium"
-          token: "component geometry"
-          value: "4px"
-        - when: "OS=AOS, Size=Small"
-          token: "component geometry"
-          value: "3px"
+      - when: "OS=iOS, Size=Medium"
+        token: "component geometry"
+        value: "2px"
+      - when: "OS=iOS, Size=Small"
+        token: "component geometry"
+        value: "2px"
+      - when: "OS=AOS, Size=Medium"
+        token: "component geometry"
+        value: "4px"
+      - when: "OS=AOS, Size=Small"
+        token: "component geometry"
+        value: "3px"
 
 interaction:
   toggle:
@@ -166,11 +198,11 @@ interaction:
     behavior: "Disabled variants are inactive and must not appear visually enabled."
 
 implementation_order:
-  - "Select OS and Size before resolving geometry."
-  - "Resolve Status to place the Switch thumb left or right."
-  - "Apply Mode-specific track token after Status is known."
-  - "Apply disabled track and thumb overrides last."
-  - "Keep platform-specific geometry consistent within one platform surface."
+- "Select OS and Size before resolving geometry."
+- "Resolve Status to place the Switch thumb left or right."
+- "Apply Mode-specific track token after Status is known."
+- "Apply disabled track and thumb overrides last."
+- "Keep platform-specific geometry consistent within one platform surface."
 
 implementation_coverage:
   axes: "All 24 Mode, OS, Size, and Status variants were live-read from Figma."
@@ -181,17 +213,22 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Toggle when a setting changes immediately after the user switches it."
-    - "Use the OS variant that matches the platform context."
-    - "Use Default, Enabled, and Disabled states to communicate OFF, ON, and inactive status."
-    - "Pair the Toggle with a label that explains the setting being changed."
+  - "Use Toggle when a setting changes immediately after the user switches it."
+  - "Use the OS variant that matches the platform context."
+  - "Use Default, Enabled, and Disabled states to communicate OFF, ON, and inactive status."
+  - "Pair the Toggle with a label that explains the setting being changed."
   dont:
-    - "Do not mix iOS and AOS Toggle variants inside one platform screen."
-    - "Do not use Toggle for choices that require a separate save or confirmation step."
-    - "Do not recolor Toggle with community-specific colors outside the defined tokens."
-    - "Do not use Toggle for a single consent or confirmation; use Checkbox instead."
+  - "Do not mix iOS and AOS Toggle variants inside one platform screen."
+  - "Do not use Toggle for choices that require a separate save or confirmation step."
+  - "Do not recolor Toggle with community-specific colors outside the defined tokens."
+  - "Do not use Toggle for a single consent or confirmation; use Checkbox instead."
 
 verification:
   figma_live_read:
-    - "Figma Desktop Bridge connected to Chord Design System file DWEduE6GfxYMlyxKPNJ8jA."
-    - "Framelink and use_figma read-only traversal checked 24 variants, variant keys, paint variables, and layout samples."
+  - "Figma Desktop Bridge connected to Chord Design System file DWEduE6GfxYMlyxKPNJ8jA."
+  - "Framelink and use_figma read-only traversal checked 24 variants, variant keys, paint variables, and layout samples."
+baseline:
+  node_id: 7927:149551
+  variant: Mode=Default, OS=AOS, Size=Medium, Status=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

@@ -16,43 +16,43 @@ variants:
   count: 32
   formula: "Mode(2) x Text_Type(8) x Scroll_Bg(2)"
   constraints:
-    - "All Mode, Text Type, and Scroll Bg combinations are implemented."
-    - "Text Type=Search composes [V2] Search."
-    - "Text Type=Logo Svg and Logo Svg_center compose the logo component set."
-    - "Leading, Trailing, Image, Marquee, Official Badge, Sub Title, and Sub Title Icon are boolean props, not variant axes."
+  - "All Mode, Text Type, and Scroll Bg combinations are implemented."
+  - "Text Type=Search composes [V2] Search."
+  - "Text Type=Logo Svg and Logo Svg_center compose the logo component set."
+  - "Leading, Trailing, Image, Marquee, Official Badge, Sub Title, and Sub Title Icon are boolean props, not variant axes."
   registry:
-    - { variant: "Mode=Default, Text Type=Center, Scroll Bg=Off", node_id: "64450:39561", key: "2e2c8551bc6d9ccf8c12f438af3d2701ac8d08b3" }
-    - { variant: "Mode=Default, Text Type=Left, Scroll Bg=On", node_id: "64450:39579", key: "7e80e186bf8a766079721aa2904d5acfdace3f16" }
-    - { variant: "Mode=Default, Text Type=Left, Scroll Bg=Off", node_id: "68553:59717", key: "0153c0058d36f5db435c3744438c98170ead01e0" }
-    - { variant: "Mode=Default, Text Type=Default, Scroll Bg=On", node_id: "64535:23254", key: "f376a56567551c8bd70f0e915b479b45603abf0d" }
-    - { variant: "Mode=Default, Text Type=Center, Scroll Bg=On", node_id: "64450:39596", key: "b191b1b00ef54cf12923f96416e3a998298a4127" }
-    - { variant: "Mode=Default, Text Type=Logo Svg_center, Scroll Bg=On", node_id: "74169:9693", key: "994b49a75ae89394699512ee185dbdde44fc5a23" }
-    - { variant: "Mode=Fixed, Text Type=Logo Svg_center, Scroll Bg=On", node_id: "74169:10211", key: "7eba765ed86fd2e2dc35ba08e6e80b9c31dbe471" }
-    - { variant: "Mode=Fixed, Text Type=Logo Svg_center, Scroll Bg=Off", node_id: "74169:10253", key: "527df177df2ffd294dd09da3f692756846cffc77" }
-    - { variant: "Mode=Default, Text Type=Logo Svg_center, Scroll Bg=Off", node_id: "74169:10127", key: "b52e78cd383bbaf114a66aa4e8fd986ad442e51f" }
-    - { variant: "Mode=Default, Text Type=Search, Scroll Bg=On", node_id: "68650:13519", key: "125acfaa7a88512883789ff8673081543e44b031" }
-    - { variant: "Mode=Fixed, Text Type=Search, Scroll Bg=On", node_id: "68650:33700", key: "afb828f880940fdc449af0763776e927f86b41d6" }
-    - { variant: "Mode=Default, Text Type=Search, Scroll Bg=Off", node_id: "68650:33674", key: "dc9959b926d97a4fed0c4b6c1278f4887f07a0e9" }
-    - { variant: "Mode=Fixed, Text Type=Search, Scroll Bg=Off", node_id: "68650:33704", key: "8a4e90c5eb0997d0ca2dab652f650b763f79d5d3" }
-    - { variant: "Mode=Default, Text Type=Img+Text, Scroll Bg=On", node_id: "64450:39614", key: "87f2762d676e1eef8bce9d4efdf70bb4a97ad178" }
-    - { variant: "Mode=Default, Text Type=Img, Scroll Bg=On", node_id: "64450:39634", key: "b76f9a5f4cb7a5c11e39d74743d1141e81c6a004" }
-    - { variant: "Mode=Default, Text Type=Logo Svg, Scroll Bg=On", node_id: "72332:49372", key: "957b95447d5321f84892d11d2eee3a43c1495628" }
-    - { variant: "Mode=Default, Text Type=Default, Scroll Bg=Off", node_id: "64535:23271", key: "00441c679e82785a13bd8f88fed25ffdbb929515" }
-    - { variant: "Mode=Default, Text Type=Img+Text, Scroll Bg=Off", node_id: "64450:39658", key: "f5fbc13a6eb243f4ff9968bde1bd5df44a86767e" }
-    - { variant: "Mode=Default, Text Type=Img, Scroll Bg=Off", node_id: "64450:39678", key: "d646bcc534222919bba644bc96552da7bd3d6a68" }
-    - { variant: "Mode=Default, Text Type=Logo Svg, Scroll Bg=Off", node_id: "72332:49377", key: "28550a623a5c6433f9bc8e6420f9673c23382c02" }
-    - { variant: "Mode=Fixed, Text Type=Left, Scroll Bg=On", node_id: "64450:39684", key: "2b6c8065d8548a6611276b8911550337397067ff" }
-    - { variant: "Mode=Fixed, Text Type=Default, Scroll Bg=On", node_id: "64535:23288", key: "59e7f23da835fc11a95733e3c59280e8a495f925" }
-    - { variant: "Mode=Fixed, Text Type=Left, Scroll Bg=Off", node_id: "64450:39702", key: "988f77a20b789e6f236451657a8d9b4ce94e9021" }
-    - { variant: "Mode=Fixed, Text Type=Default, Scroll Bg=Off", node_id: "64535:23305", key: "47a2ca953d5bba2bc91266d5216e997499b77502" }
-    - { variant: "Mode=Fixed, Text Type=Img+Text, Scroll Bg=On", node_id: "64450:39720", key: "ebc637db9995fec156285882fd153c412c6461bf" }
-    - { variant: "Mode=Fixed, Text Type=Img, Scroll Bg=On", node_id: "64450:39740", key: "58c4e4f6902e2e54f76e7e00a895fd3aec7f5fba" }
-    - { variant: "Mode=Fixed, Text Type=Logo Svg, Scroll Bg=On", node_id: "72332:49382", key: "ab34c94ecf34f6aebdf4ef417591d8a820537cef" }
-    - { variant: "Mode=Fixed, Text Type=Img+Text, Scroll Bg=Off", node_id: "64450:39746", key: "b83f02e07beed2b263d53092e733a0494c680557" }
-    - { variant: "Mode=Fixed, Text Type=Img, Scroll Bg=Off", node_id: "64450:39766", key: "3a629ed5a0a56de5672187865a95fcc4b0a251b0" }
-    - { variant: "Mode=Fixed, Text Type=Logo Svg, Scroll Bg=Off", node_id: "72332:49387", key: "c96e3d1d828dcc156dd294840ac72b5380b7b0f1" }
-    - { variant: "Mode=Fixed, Text Type=Center, Scroll Bg=On", node_id: "64450:39772", key: "5595928470ff115dfa87a90ce9d1ceaea63dfbd2" }
-    - { variant: "Mode=Fixed, Text Type=Center, Scroll Bg=Off", node_id: "64450:39790", key: "99fcd58bf09e8285809a6acf537e6f64c29a56a2" }
+  - {variant: "Mode=Default, Text Type=Center, Scroll Bg=Off", node_id: "64450:39561", key: "2e2c8551bc6d9ccf8c12f438af3d2701ac8d08b3"}
+  - {variant: "Mode=Default, Text Type=Left, Scroll Bg=On", node_id: "64450:39579", key: "7e80e186bf8a766079721aa2904d5acfdace3f16"}
+  - {variant: "Mode=Default, Text Type=Left, Scroll Bg=Off", node_id: "68553:59717", key: "0153c0058d36f5db435c3744438c98170ead01e0"}
+  - {variant: "Mode=Default, Text Type=Default, Scroll Bg=On", node_id: "64535:23254", key: "f376a56567551c8bd70f0e915b479b45603abf0d"}
+  - {variant: "Mode=Default, Text Type=Center, Scroll Bg=On", node_id: "64450:39596", key: "b191b1b00ef54cf12923f96416e3a998298a4127"}
+  - {variant: "Mode=Default, Text Type=Logo Svg_center, Scroll Bg=On", node_id: "74169:9693", key: "994b49a75ae89394699512ee185dbdde44fc5a23"}
+  - {variant: "Mode=Fixed, Text Type=Logo Svg_center, Scroll Bg=On", node_id: "74169:10211", key: "7eba765ed86fd2e2dc35ba08e6e80b9c31dbe471"}
+  - {variant: "Mode=Fixed, Text Type=Logo Svg_center, Scroll Bg=Off", node_id: "74169:10253", key: "527df177df2ffd294dd09da3f692756846cffc77"}
+  - {variant: "Mode=Default, Text Type=Logo Svg_center, Scroll Bg=Off", node_id: "74169:10127", key: "b52e78cd383bbaf114a66aa4e8fd986ad442e51f"}
+  - {variant: "Mode=Default, Text Type=Search, Scroll Bg=On", node_id: "68650:13519", key: "125acfaa7a88512883789ff8673081543e44b031"}
+  - {variant: "Mode=Fixed, Text Type=Search, Scroll Bg=On", node_id: "68650:33700", key: "afb828f880940fdc449af0763776e927f86b41d6"}
+  - {variant: "Mode=Default, Text Type=Search, Scroll Bg=Off", node_id: "68650:33674", key: "dc9959b926d97a4fed0c4b6c1278f4887f07a0e9"}
+  - {variant: "Mode=Fixed, Text Type=Search, Scroll Bg=Off", node_id: "68650:33704", key: "8a4e90c5eb0997d0ca2dab652f650b763f79d5d3"}
+  - {variant: "Mode=Default, Text Type=Img+Text, Scroll Bg=On", node_id: "64450:39614", key: "87f2762d676e1eef8bce9d4efdf70bb4a97ad178"}
+  - {variant: "Mode=Default, Text Type=Img, Scroll Bg=On", node_id: "64450:39634", key: "b76f9a5f4cb7a5c11e39d74743d1141e81c6a004"}
+  - {variant: "Mode=Default, Text Type=Logo Svg, Scroll Bg=On", node_id: "72332:49372", key: "957b95447d5321f84892d11d2eee3a43c1495628"}
+  - {variant: "Mode=Default, Text Type=Default, Scroll Bg=Off", node_id: "64535:23271", key: "00441c679e82785a13bd8f88fed25ffdbb929515"}
+  - {variant: "Mode=Default, Text Type=Img+Text, Scroll Bg=Off", node_id: "64450:39658", key: "f5fbc13a6eb243f4ff9968bde1bd5df44a86767e"}
+  - {variant: "Mode=Default, Text Type=Img, Scroll Bg=Off", node_id: "64450:39678", key: "d646bcc534222919bba644bc96552da7bd3d6a68"}
+  - {variant: "Mode=Default, Text Type=Logo Svg, Scroll Bg=Off", node_id: "72332:49377", key: "28550a623a5c6433f9bc8e6420f9673c23382c02"}
+  - {variant: "Mode=Fixed, Text Type=Left, Scroll Bg=On", node_id: "64450:39684", key: "2b6c8065d8548a6611276b8911550337397067ff"}
+  - {variant: "Mode=Fixed, Text Type=Default, Scroll Bg=On", node_id: "64535:23288", key: "59e7f23da835fc11a95733e3c59280e8a495f925"}
+  - {variant: "Mode=Fixed, Text Type=Left, Scroll Bg=Off", node_id: "64450:39702", key: "988f77a20b789e6f236451657a8d9b4ce94e9021"}
+  - {variant: "Mode=Fixed, Text Type=Default, Scroll Bg=Off", node_id: "64535:23305", key: "47a2ca953d5bba2bc91266d5216e997499b77502"}
+  - {variant: "Mode=Fixed, Text Type=Img+Text, Scroll Bg=On", node_id: "64450:39720", key: "ebc637db9995fec156285882fd153c412c6461bf"}
+  - {variant: "Mode=Fixed, Text Type=Img, Scroll Bg=On", node_id: "64450:39740", key: "58c4e4f6902e2e54f76e7e00a895fd3aec7f5fba"}
+  - {variant: "Mode=Fixed, Text Type=Logo Svg, Scroll Bg=On", node_id: "72332:49382", key: "ab34c94ecf34f6aebdf4ef417591d8a820537cef"}
+  - {variant: "Mode=Fixed, Text Type=Img+Text, Scroll Bg=Off", node_id: "64450:39746", key: "b83f02e07beed2b263d53092e733a0494c680557"}
+  - {variant: "Mode=Fixed, Text Type=Img, Scroll Bg=Off", node_id: "64450:39766", key: "3a629ed5a0a56de5672187865a95fcc4b0a251b0"}
+  - {variant: "Mode=Fixed, Text Type=Logo Svg, Scroll Bg=Off", node_id: "72332:49387", key: "c96e3d1d828dcc156dd294840ac72b5380b7b0f1"}
+  - {variant: "Mode=Fixed, Text Type=Center, Scroll Bg=On", node_id: "64450:39772", key: "5595928470ff115dfa87a90ce9d1ceaea63dfbd2"}
+  - {variant: "Mode=Fixed, Text Type=Center, Scroll Bg=Off", node_id: "64450:39790", key: "99fcd58bf09e8285809a6acf537e6f64c29a56a2"}
 
 props:
   Sub_Title:
@@ -97,11 +97,19 @@ tokens:
     role: "fill"
     applies_to: "Mode=Default, Scroll Bg=On"
     token: "system/color/surface/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#000000'
+      web_var: --cds-system-color-surface-default
   navigation_surface_fixed:
     part: "Top Navigation container"
     role: "fill"
     applies_to: "Mode=Fixed, Scroll Bg=On"
     token: "system/fixed_color/surface/default"
+    resolved:
+      light: '#000000'
+      dark: '#000000'
+      web_var: --cds-system-fixed-color-surface-default
   transparent_surface:
     part: "Top Navigation container"
     role: "fill behavior"
@@ -112,6 +120,10 @@ tokens:
     role: "fill"
     applies_to: "Mode=Default, Text Type=Search"
     token: "system/color/surface/default-gray-50"
+    resolved:
+      light: '#F7F8FA'
+      dark: '#161616'
+      web_var: --cds-system-color-surface-default-gray-50
   search_surface_fixed:
     part: "[V2] Search / Search Bar"
     role: "fill"
@@ -119,6 +131,10 @@ tokens:
     token: "system/fixed_color/surface/default-gray-50"
 
 
+    resolved:
+      light: '#161616'
+      dark: '#161616'
+      web_var: --cds-system-fixed-color-surface-default-gray-50
 typography:
   body_lg_system_700:
     font_family: "WeGothicSans"
@@ -178,36 +194,36 @@ assets:
 
 composition:
   uses:
-    - component: "_atoms/Leading"
-      node_id: "64450:29257"
-      component_set_key: "9b6668db4590108c06ab2f20a49b939c25758b8d"
-      role: "Leading navigation or image area"
-      usage_condition: "Leading=true; direct or nested inside Leading+Text depending Text Type"
-      spec_owner: "_atoms/Leading component set"
-    - component: "_atoms/Trailing"
-      node_id: "64450:29265"
-      component_set_key: "584275e8878752e038eff1d8d23a02f61bd061cf"
-      role: "Trailing action icons"
-      usage_condition: "Trailing=true"
-      spec_owner: "_atoms/Trailing component set"
-    - component: "[V2] Search"
-      node_id: "59722:17972"
-      component_set_key: "cbcd2baf8a758cd859c194359b69faf7fa3e543a"
-      role: "Search field inside navigation"
-      usage_condition: "Text Type=Search"
-      spec_owner: "[V2] Search component set"
-    - component: "logo"
-      node_id: "9238:59946"
-      component_set_key: "fb53806b85b3b2400f17ec46e8823fe4537f410a"
-      role: "Logo title asset"
-      usage_condition: "Text Type=Logo Svg or Text Type=Logo Svg_center"
-      spec_owner: "logo component set"
-    - component: "[V2] Avatar"
-      node_id: "62973:7556"
-      component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
-      role: "Image title or profile visual"
-      usage_condition: "Image=true where title layout includes image content"
-      spec_owner: "[V2] Avatar component set"
+  - component: "_atoms/Leading"
+    node_id: "64450:29257"
+    component_set_key: "9b6668db4590108c06ab2f20a49b939c25758b8d"
+    role: "Leading navigation or image area"
+    usage_condition: "Leading=true; direct or nested inside Leading+Text depending Text Type"
+    spec_owner: "_atoms/Leading component set"
+  - component: "_atoms/Trailing"
+    node_id: "64450:29265"
+    component_set_key: "584275e8878752e038eff1d8d23a02f61bd061cf"
+    role: "Trailing action icons"
+    usage_condition: "Trailing=true"
+    spec_owner: "_atoms/Trailing component set"
+  - component: "[V2] Search"
+    node_id: "59722:17972"
+    component_set_key: "cbcd2baf8a758cd859c194359b69faf7fa3e543a"
+    role: "Search field inside navigation"
+    usage_condition: "Text Type=Search"
+    spec_owner: "[V2] Search component set"
+  - component: "logo"
+    node_id: "9238:59946"
+    component_set_key: "fb53806b85b3b2400f17ec46e8823fe4537f410a"
+    role: "Logo title asset"
+    usage_condition: "Text Type=Logo Svg or Text Type=Logo Svg_center"
+    spec_owner: "logo component set"
+  - component: "[V2] Avatar"
+    node_id: "62973:7556"
+    component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
+    role: "Image title or profile visual"
+    usage_condition: "Image=true where title layout includes image content"
+    spec_owner: "[V2] Avatar component set"
 
 layout:
   component_size: "393x48px"
@@ -247,9 +263,9 @@ layout:
         token: "none"
         value: "0px inside Leading+Text samples"
       variants:
-        - when: "Text Type=Center or Logo Svg_center"
-          token: "center layout"
-          value: "Title is centered independently from side slots"
+      - when: "Text Type=Center or Logo Svg_center"
+        token: "center layout"
+        value: "Title is centered independently from side slots"
     title__to__trailing:
       variation_checked_by:
         axes: true
@@ -261,12 +277,12 @@ layout:
       variants: []
 
 implementation_order:
-  - "Resolve Text Type first because it determines whether title, logo, image, or Search composition is used."
-  - "Resolve Leading and Trailing visibility while preserving the maximum icon count rule."
-  - "Resolve Scroll Bg to choose filled or transparent navigation surface."
-  - "Resolve Mode to choose Default or Fixed token families."
-  - "Apply Marquee to long titles instead of truncating important names."
-  - "Delegate nested Search, logo, Avatar, Leading, and Trailing internals to their component sets."
+- "Resolve Text Type first because it determines whether title, logo, image, or Search composition is used."
+- "Resolve Leading and Trailing visibility while preserving the maximum icon count rule."
+- "Resolve Scroll Bg to choose filled or transparent navigation surface."
+- "Resolve Mode to choose Default or Fixed token families."
+- "Apply Marquee to long titles instead of truncating important names."
+- "Delegate nested Search, logo, Avatar, Leading, and Trailing internals to their component sets."
 
 implementation_coverage:
   axes: "Implement all 32 Mode x Text_Type x Scroll_Bg combinations."
@@ -277,24 +293,28 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Top Navigation for page title, back, close, share, search, and current-context actions."
-    - "Keep the height fixed at 48px."
-    - "Use Leading and Trailing icons for page movement or contextual actions."
-    - "Limit Leading and Trailing icons to four total."
-    - "Use background color when scrolling requires title and icon readability."
-    - "Use Marquee for important titles or artist names that exceed the available width."
-    - "Keep logo or image content within the 180px maximum width rule."
+  - "Use Top Navigation for page title, back, close, share, search, and current-context actions."
+  - "Keep the height fixed at 48px."
+  - "Use Leading and Trailing icons for page movement or contextual actions."
+  - "Limit Leading and Trailing icons to four total."
+  - "Use background color when scrolling requires title and icon readability."
+  - "Use Marquee for important titles or artist names that exceed the available width."
+  - "Keep logo or image content within the 180px maximum width rule."
   dont:
-    - "Do not place custom icons whose function is hard to predict."
-    - "Do not let content show through when Scroll Bg should preserve readability."
-    - "Do not place primary navigation icons against iOS or Android expectations."
-    - "Do not truncate important names with an ellipsis."
-    - "Do not make logo content wider than 180px."
-    - "Do not show two or more trailing icons in Logo Svg_center layouts."
-    - "Do not put body copy or secondary descriptions in the title area."
+  - "Do not place custom icons whose function is hard to predict."
+  - "Do not let content show through when Scroll Bg should preserve readability."
+  - "Do not place primary navigation icons against iOS or Android expectations."
+  - "Do not truncate important names with an ellipsis."
+  - "Do not make logo content wider than 180px."
+  - "Do not show two or more trailing icons in Logo Svg_center layouts."
+  - "Do not put body copy or secondary descriptions in the title area."
 
 spec_notes:
   source:
-    - "Live Figma read-only extraction from node 64450:39560 on 2026-05-08."
-    - "Registry reference: refs/figma-component-keys/variant-keys/top-navigation.md."
-    - "Usage reference: refs/markitdown-output/markitdown-top-navigation.md."
+  - "Live Figma read-only extraction from node 64450:39560 on 2026-05-08."
+  - "Registry reference: refs/figma-component-keys/variant-keys/top-navigation.md."
+baseline:
+  node_id: 64450:39561
+  variant: Mode=Default, Text Type=Center, Scroll Bg=Off
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

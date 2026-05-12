@@ -16,20 +16,20 @@ variants:
   count: 12
   formula: "Mode(2) x Type(2) x Status(3)"
   constraints:
-    - "All Mode, Type, and Status combinations are valid."
+  - "All Mode, Type, and Status combinations are valid."
   registry:
-    - { variant: "Mode=Default, Type=Square, Status=Default", node_id: "60365:40277", key: "1ae35e933e8ae8b70a92056fdba5756efafa1cc2" }
-    - { variant: "Mode=Default, Type=Circle, Status=Default", node_id: "60365:40279", key: "f0f3604b4c06e466048b74a96662d818abf763eb" }
-    - { variant: "Mode=Default, Type=Square, Status=Enabled", node_id: "60365:40287", key: "b5dcca9ebab4095e296500b10b05a8831513a417" }
-    - { variant: "Mode=Default, Type=Circle, Status=Enabled", node_id: "60365:40289", key: "351492bbcdbd03282801f21aa5b9e9521dc9f5f1" }
-    - { variant: "Mode=Default, Type=Square, Status=Disabled", node_id: "60365:40297", key: "566198b07c0776362178e75fa0afdfe7977151b3" }
-    - { variant: "Mode=Default, Type=Circle, Status=Disabled", node_id: "60365:40299", key: "b1d057516b0b64d7474edd9bdf1a1b1386eba455" }
-    - { variant: "Mode=Fixed, Type=Square, Status=Default", node_id: "60365:40307", key: "fdd2c753eaedebbab5130b27019402ffbf754c73" }
-    - { variant: "Mode=Fixed, Type=Circle, Status=Default", node_id: "60365:40309", key: "2cf729ebb8448b8d7a3d82b4341c307391755227" }
-    - { variant: "Mode=Fixed, Type=Square, Status=Enabled", node_id: "60365:40317", key: "541d07efd1affb9cb595579371b829e6c6249426" }
-    - { variant: "Mode=Fixed, Type=Circle, Status=Enabled", node_id: "60365:40319", key: "0278f2c0e9a4c324529aaee8ac241ec04684219b" }
-    - { variant: "Mode=Fixed, Type=Square, Status=Disabled", node_id: "60365:40327", key: "1fdc15732d1427bb3a540b8689c86c433660b19d" }
-    - { variant: "Mode=Fixed, Type=Circle, Status=Disabled", node_id: "60365:40329", key: "fabb83704e82e49ac760350ad46c144b41c9c2ed" }
+  - {variant: "Mode=Default, Type=Square, Status=Default", node_id: "60365:40277", key: "1ae35e933e8ae8b70a92056fdba5756efafa1cc2"}
+  - {variant: "Mode=Default, Type=Circle, Status=Default", node_id: "60365:40279", key: "f0f3604b4c06e466048b74a96662d818abf763eb"}
+  - {variant: "Mode=Default, Type=Square, Status=Enabled", node_id: "60365:40287", key: "b5dcca9ebab4095e296500b10b05a8831513a417"}
+  - {variant: "Mode=Default, Type=Circle, Status=Enabled", node_id: "60365:40289", key: "351492bbcdbd03282801f21aa5b9e9521dc9f5f1"}
+  - {variant: "Mode=Default, Type=Square, Status=Disabled", node_id: "60365:40297", key: "566198b07c0776362178e75fa0afdfe7977151b3"}
+  - {variant: "Mode=Default, Type=Circle, Status=Disabled", node_id: "60365:40299", key: "b1d057516b0b64d7474edd9bdf1a1b1386eba455"}
+  - {variant: "Mode=Fixed, Type=Square, Status=Default", node_id: "60365:40307", key: "fdd2c753eaedebbab5130b27019402ffbf754c73"}
+  - {variant: "Mode=Fixed, Type=Circle, Status=Default", node_id: "60365:40309", key: "2cf729ebb8448b8d7a3d82b4341c307391755227"}
+  - {variant: "Mode=Fixed, Type=Square, Status=Enabled", node_id: "60365:40317", key: "541d07efd1affb9cb595579371b829e6c6249426"}
+  - {variant: "Mode=Fixed, Type=Circle, Status=Enabled", node_id: "60365:40319", key: "0278f2c0e9a4c324529aaee8ac241ec04684219b"}
+  - {variant: "Mode=Fixed, Type=Square, Status=Disabled", node_id: "60365:40327", key: "1fdc15732d1427bb3a540b8689c86c433660b19d"}
+  - {variant: "Mode=Fixed, Type=Circle, Status=Disabled", node_id: "60365:40329", key: "fabb83704e82e49ac760350ad46c144b41c9c2ed"}
 
 props:
   Mode:
@@ -51,42 +51,79 @@ tokens:
     role: "stroke"
     applies_to: "Mode=Default, Status=Default"
     token: "system/color/outline/default-200a"
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-outline-default-200a
   box_stroke_fixed:
     part: "Box"
     role: "stroke"
     applies_to: "Mode=Fixed, Status=Default"
     token: "system/fixed_color/outline/default-200a"
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-outline-default-200a
   enabled_bg_default:
     part: "BG"
     role: "fill"
     applies_to: "Mode=Default, Status=Enabled"
     token: "system/color/roles/primary"
+    resolved:
+      light: '#00CBD5'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-roles-primary
   enabled_bg_fixed:
     part: "BG"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Enabled"
     token: "system/fixed_color/roles/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-roles-primary
   disabled_bg_default:
     part: "BG"
     role: "fill"
     applies_to: "Mode=Default, Status=Disabled"
     token: "system/color/surface/default-reverse-100a"
+    resolved:
+      light: '#0000001A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-color-surface-default-reverse-100a
   disabled_bg_fixed:
     part: "BG"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Disabled"
     token: "system/fixed_color/surface/default-reverse-100a"
+    resolved:
+      light: '#FFFFFF1A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-fixed-color-surface-default-reverse-100a
   check_icon_default:
     part: "icon_area"
     role: "icon tint"
     applies_to: "Mode=Default, Status=Enabled"
     token: "system/color/icon/default-reverse"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#000000'
+      web_var: --cds-system-color-icon-default-reverse
   check_icon_disabled:
     part: "icon_area"
     role: "icon tint"
     applies_to: "Status=Disabled"
     default: "system/color/icon/200a"
     fixed: "system/fixed_color/icon/200a"
+    resolved:
+      default:
+        light: '#00000033'
+        dark: '#FFFFFF33'
+        web_var: --cds-system-color-icon-200a
+      fixed:
+        light: '#FFFFFF33'
+        dark: '#FFFFFF33'
+        web_var: --cds-system-fixed-color-icon-200a
   icon_size:
     part: "icon_area"
     role: "size"
@@ -112,46 +149,50 @@ interaction:
     behavior: "Disabled must not trigger selection changes."
 
 implementation_order:
-  - "Select Mode, Type, and Status variant."
-  - "Render a 24x24 control with a 22x22 visual box."
-  - "Use Circle as the default shape and Square only in list-item contexts."
-  - "Render check icon only for Enabled or Disabled states."
-  - "Apply mode-specific stroke, fill, and icon tokens."
-  - "Keep Check Box + Text and Check Mark + Text gaps at 6px when paired with labels."
+- "Select Mode, Type, and Status variant."
+- "Render a 24x24 control with a 22x22 visual box."
+- "Use Circle as the default shape and Square only in list-item contexts."
+- "Render check icon only for Enabled or Disabled states."
+- "Apply mode-specific stroke, fill, and icon tokens."
+- "Keep Check Box + Text and Check Mark + Text gaps at 6px when paired with labels."
 
 implementation_coverage:
   axes:
-    - "Mode"
-    - "Type"
-    - "Status"
+  - "Mode"
+  - "Type"
+  - "Status"
   props:
-    - "Mode"
-    - "Type"
-    - "Status"
+  - "Mode"
+  - "Type"
+  - "Status"
   assets:
-    - "check_icon"
+  - "check_icon"
   layout:
-    - "24x24 component"
-    - "22x22 box"
-    - "16x16 icon area"
-    - "6px label gap"
+  - "24x24 component"
+  - "22x22 box"
+  - "16x16 icon area"
+  - "6px label gap"
   exclusions:
-    - "This workflow does not create a derived checkbox.md file."
+  - "This workflow does not create a derived checkbox.md file."
 
 rules:
   do:
-    - "Use Check Box when users can select zero, one, multiple, or all options."
-    - "Use Check Box for a single agreement, approval, or confirmation."
-    - "Use Circle as the default Check Box type."
-    - "Use Square only in specified contexts such as List Item."
-    - "Use Enabled state to clearly emphasize selected items."
+  - "Use Check Box when users can select zero, one, multiple, or all options."
+  - "Use Check Box for a single agreement, approval, or confirmation."
+  - "Use Circle as the default Check Box type."
+  - "Use Square only in specified contexts such as List Item."
+  - "Use Enabled state to clearly emphasize selected items."
   dont:
-    - "Do not use Check Box when users must choose only one option from a group."
-    - "Do not mix Square and Circle in the same selection group."
-    - "Do not show a gray check icon in Default state."
-    - "Do not leave parent and child selection states inconsistent."
+  - "Do not use Check Box when users must choose only one option from a group."
+  - "Do not mix Square and Circle in the same selection group."
+  - "Do not show a gray check icon in Default state."
+  - "Do not leave parent and child selection states inconsistent."
 
 spec_notes:
   source:
-    - "Figma component metadata and compact Plugin API extraction from node 60365:40276."
-    - "Local usage reference: refs/markitdown-output/markitdown-checkbox.md."
+  - "Figma component metadata and compact Plugin API extraction from node 60365:40276."
+baseline:
+  node_id: 60365:40277
+  variant: Mode=Default, Type=Square, Status=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

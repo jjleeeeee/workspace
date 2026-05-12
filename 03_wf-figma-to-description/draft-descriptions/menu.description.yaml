@@ -14,12 +14,12 @@ variants:
   count: 2
   formula: "Mode(2)"
   constraints:
-    - "All Mode values are valid."
-    - "Menu item structure is provided by nested [V2] List_Item_Native instances, not by additional Menu variant axes."
-    - "Scrollbar is hidden in the base variants and is used for overflow when menu content exceeds max height."
+  - "All Mode values are valid."
+  - "Menu item structure is provided by nested [V2] List_Item_Native instances, not by additional Menu variant axes."
+  - "Scrollbar is hidden in the base variants and is used for overflow when menu content exceeds max height."
   registry:
-    - { variant: "Mode=Default", node_id: "25963:37236", key: "2c9dab8fe97ad77325c7e52a149018aa5a31119b" }
-    - { variant: "Mode=Fixed", node_id: "28236:18156", key: "fbaee8c05fa757bc7b4bd8bf785e2f851cc94153" }
+  - {variant: "Mode=Default", node_id: "25963:37236", key: "2c9dab8fe97ad77325c7e52a149018aa5a31119b"}
+  - {variant: "Mode=Fixed", node_id: "28236:18156", key: "fbaee8c05fa757bc7b4bd8bf785e2f851cc94153"}
 
 props:
   Mode:
@@ -45,16 +45,28 @@ tokens:
     role: "fill"
     applies_to: "Mode=Default"
     token: "system/color/surface/default-4"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#282828'
+      web_var: --cds-system-color-surface-default-4
   surface_fixed:
     part: "Menu container"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/surface/gray-100"
+    resolved:
+      light: '#282828'
+      dark: '#282828'
+      web_var: --cds-system-fixed-color-surface-gray-100
   scrollbar_thumb_default:
     part: "Scrollbar thumb"
     role: "fill"
     applies_to: "Mode=Default, overflow visible"
     token: "system/color/surface/default-reverse-200a"
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-surface-default-reverse-200a
   scrollbar_thumb_fixed:
     part: "Scrollbar thumb"
     role: "fill"
@@ -62,6 +74,10 @@ tokens:
     token: "system/fixed_color/surface/default-reverse-200a"
 
 
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-surface-default-reverse-200a
 typography:
   body_m_system_400:
     font_family: "WeGothicSans"
@@ -84,18 +100,18 @@ typography:
 
 composition:
   uses:
-    - component: "[V2] List_Item_Native"
-      node_id: "57343:18628"
-      component_set_key: "e120970b1638c0fa7a5b7638923eb91479384ebe"
-      role: "Menu option row"
-      usage_condition: "All menu items"
-      spec_owner: "[V2] List_Item_Native component set"
-    - component: "Scrollbar"
-      node_id: "27782:8837"
-      component_set_key: "ec2d17107a68bb443f80245ab791fb69380f0a50"
-      role: "Overflow scroll affordance"
-      usage_condition: "When menu content exceeds max height"
-      spec_owner: "Scrollbar component set"
+  - component: "[V2] List_Item_Native"
+    node_id: "57343:18628"
+    component_set_key: "e120970b1638c0fa7a5b7638923eb91479384ebe"
+    role: "Menu option row"
+    usage_condition: "All menu items"
+    spec_owner: "[V2] List_Item_Native component set"
+  - component: "Scrollbar"
+    node_id: "27782:8837"
+    component_set_key: "ec2d17107a68bb443f80245ab791fb69380f0a50"
+    role: "Overflow scroll affordance"
+    usage_condition: "When menu content exceeds max height"
+    spec_owner: "Scrollbar component set"
 
 layout:
   component_size: "240x370px"
@@ -132,11 +148,11 @@ layout:
       variants: []
 
 implementation_order:
-  - "Resolve Mode first to choose Default or Fixed surface and scrollbar thumb tokens."
-  - "Render menu as a 240px wide overlay with max height 370px and 8px radius."
-  - "Compose menu rows from [V2] List_Item_Native and keep row height consistent within one Menu."
-  - "Apply internal scrolling when row content exceeds the max height."
-  - "Position Menu from the trigger context using top, bottom, or center placement rules."
+- "Resolve Mode first to choose Default or Fixed surface and scrollbar thumb tokens."
+- "Render menu as a 240px wide overlay with max height 370px and 8px radius."
+- "Compose menu rows from [V2] List_Item_Native and keep row height consistent within one Menu."
+- "Apply internal scrolling when row content exceeds the max height."
+- "Position Menu from the trigger context using top, bottom, or center placement rules."
 
 implementation_coverage:
   axes: "Implement both Default and Fixed Mode variants."
@@ -147,20 +163,24 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Menu for a short list of actions or selectable items in the current context."
-    - "Build Menu items with [V2] List_Item_Native."
-    - "Keep the trigger location and Menu placement visually related."
-    - "Use internal scrolling when menu content exceeds 370px height."
-    - "Keep all rows in one Menu structurally consistent."
+  - "Use Menu for a short list of actions or selectable items in the current context."
+  - "Build Menu items with [V2] List_Item_Native."
+  - "Keep the trigger location and Menu placement visually related."
+  - "Use internal scrolling when menu content exceeds 370px height."
+  - "Keep all rows in one Menu structurally consistent."
   dont:
-    - "Do not use Menu as an independent navigation page."
-    - "Do not put long settings flows or multi-step explanations inside Menu."
-    - "Do not mix row heights and row structures within one Menu."
-    - "Do not display Menu in a position unrelated to the trigger."
-    - "Do not let Menu grow beyond the max height into surrounding screen content."
+  - "Do not use Menu as an independent navigation page."
+  - "Do not put long settings flows or multi-step explanations inside Menu."
+  - "Do not mix row heights and row structures within one Menu."
+  - "Do not display Menu in a position unrelated to the trigger."
+  - "Do not let Menu grow beyond the max height into surrounding screen content."
 
 spec_notes:
   source:
-    - "Live Figma read-only extraction from node 25963:37235 on 2026-05-04."
-    - "Registry reference: refs/figma-component-keys/variant-keys/menu.md."
-    - "Usage reference: refs/markitdown-output/markitdown-menu.md."
+  - "Live Figma read-only extraction from node 25963:37235 on 2026-05-04."
+  - "Registry reference: refs/figma-component-keys/variant-keys/menu.md."
+baseline:
+  node_id: 25963:37236
+  variant: Mode=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

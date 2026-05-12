@@ -16,15 +16,15 @@ variants:
   count: 6
   formula: "Mode(2) x valid Rounded and Height combinations"
   constraints:
-    - "Height=Default (2) supports Rounded=OFF and Rounded=ON."
-    - "Height=4 supports Rounded=OFF only."
+  - "Height=Default (2) supports Rounded=OFF and Rounded=ON."
+  - "Height=4 supports Rounded=OFF only."
   registry:
-    - { variant: "Mode=Default, Rounded=OFF, Height=Default (2)", node_id: "9003:21726", key: "a6f020a1305a2f188285bc7f33cb1de59ce8f798" }
-    - { variant: "Mode=Default, Rounded=ON, Height=Default (2)", node_id: "9003:21774", key: "9ed8fdc1b6f67ade1452cfb281aa178b3ed09377" }
-    - { variant: "Mode=Default, Rounded=OFF, Height=4", node_id: "9006:24640", key: "7417ce2627c8d4b1a37a0ee623efec353cbfd178" }
-    - { variant: "Mode=Fixed, Rounded=OFF, Height=Default (2)", node_id: "26104:94219", key: "853648cb9a7936ebed2b3cb5e311709076207ff7" }
-    - { variant: "Mode=Fixed, Rounded=ON, Height=Default (2)", node_id: "26104:94217", key: "34f2d5cf911ef84698c6d57093133076b1e7e393" }
-    - { variant: "Mode=Fixed, Rounded=OFF, Height=4", node_id: "26104:94215", key: "e924be1fe4ba68be4990ba76513c9849c6730ca2" }
+  - {variant: "Mode=Default, Rounded=OFF, Height=Default (2)", node_id: "9003:21726", key: "a6f020a1305a2f188285bc7f33cb1de59ce8f798"}
+  - {variant: "Mode=Default, Rounded=ON, Height=Default (2)", node_id: "9003:21774", key: "9ed8fdc1b6f67ade1452cfb281aa178b3ed09377"}
+  - {variant: "Mode=Default, Rounded=OFF, Height=4", node_id: "9006:24640", key: "7417ce2627c8d4b1a37a0ee623efec353cbfd178"}
+  - {variant: "Mode=Fixed, Rounded=OFF, Height=Default (2)", node_id: "26104:94219", key: "853648cb9a7936ebed2b3cb5e311709076207ff7"}
+  - {variant: "Mode=Fixed, Rounded=ON, Height=Default (2)", node_id: "26104:94217", key: "34f2d5cf911ef84698c6d57093133076b1e7e393"}
+  - {variant: "Mode=Fixed, Rounded=OFF, Height=4", node_id: "26104:94215", key: "e924be1fe4ba68be4990ba76513c9849c6730ca2"}
 
 props:
   Mode:
@@ -46,31 +46,55 @@ tokens:
     role: "fill"
     applies_to: "Mode=Default, Rounded=OFF"
     token: "system/color/surface/gray-75"
+    resolved:
+      light: '#F2F3F7'
+      dark: '#1F1F1F'
+      web_var: --cds-system-color-surface-gray-75
   track_default_on:
     part: "Segment Option"
     role: "fill"
     applies_to: "Mode=Default, Rounded=ON"
     token: "system/color/surface/white-200a-same"
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-surface-white-200a-same
   track_fixed:
     part: "Segment Option"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/surface/white-200a-same"
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-surface-white-200a-same
   line_gray:
     part: "elements / Line"
     role: "fill"
     applies_to: "Height=Default (2), gray line"
     token: "system/color/divide/gray-75"
+    resolved:
+      light: '#F2F3F7'
+      dark: '#1F1F1F'
+      web_var: --cds-system-color-divide-gray-75
   progress_default:
     part: "elements / Line"
     role: "fill"
     applies_to: "Mode=Default, loaded progress segment"
     token: "system/color/roles/primary"
+    resolved:
+      light: '#00CBD5'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-roles-primary
   progress_fixed:
     part: "elements / Line"
     role: "fill"
     applies_to: "Mode=Fixed, loaded progress segment"
     token: "system/fixed_color/roles/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-roles-primary
   height_default:
     part: "component"
     role: "height"
@@ -84,18 +108,18 @@ tokens:
 
 composition:
   uses:
-    - component: "Progress_Indicator / elements / Linear"
-      node_id: "9003:21712"
-      component_set_key: "e9bfafee171c78368229ad76b4d05352b40c2485"
-      role: "Segment Option wrapper for linear progress track"
-      usage_condition: "All variants"
-      spec_owner: "Progress_Indicator / elements / Linear"
-    - component: "elements / Line"
-      node_id: "8987:18757"
-      component_set_key: "823d2b01b4b0981f92f86a0a4a9ce4f69ba35865"
-      role: "Gray track and primary loaded segment"
-      usage_condition: "Nested inside Segment Option"
-      spec_owner: "elements / Line"
+  - component: "Progress_Indicator / elements / Linear"
+    node_id: "9003:21712"
+    component_set_key: "e9bfafee171c78368229ad76b4d05352b40c2485"
+    role: "Segment Option wrapper for linear progress track"
+    usage_condition: "All variants"
+    spec_owner: "Progress_Indicator / elements / Linear"
+  - component: "elements / Line"
+    node_id: "8987:18757"
+    component_set_key: "823d2b01b4b0981f92f86a0a4a9ce4f69ba35865"
+    role: "Gray track and primary loaded segment"
+    usage_condition: "Nested inside Segment Option"
+    spec_owner: "elements / Line"
 
 layout:
   component_size:
@@ -122,54 +146,58 @@ layout:
         token: "overlap"
         value: "negative overlap layout"
       variants:
-        - when: "Height=Default (2)"
-          token: "custom"
-          value: "-1920px item spacing, 240px right padding"
-        - when: "Height=4"
-          token: "custom"
-          value: "-500px item spacing, 220px right padding"
+      - when: "Height=Default (2)"
+        token: "custom"
+        value: "-1920px item spacing, 240px right padding"
+      - when: "Height=4"
+        token: "custom"
+        value: "-500px item spacing, 220px right padding"
 
 implementation_order:
-  - "Resolve Height and valid Rounded combination first."
-  - "Render a 393px-wide track with 2px or 4px height."
-  - "Apply Mode-specific track and progress tokens."
-  - "Render the loaded progress segment above the base track."
-  - "Apply Rounded=ON only for Height=Default (2)."
+- "Resolve Height and valid Rounded combination first."
+- "Render a 393px-wide track with 2px or 4px height."
+- "Apply Mode-specific track and progress tokens."
+- "Render the loaded progress segment above the base track."
+- "Apply Rounded=ON only for Height=Default (2)."
 
 implementation_coverage:
   axes:
-    - "Mode"
-    - "Rounded"
-    - "Height"
+  - "Mode"
+  - "Rounded"
+  - "Height"
   props:
-    - "Mode"
-    - "Rounded"
-    - "Height"
+  - "Mode"
+  - "Rounded"
+  - "Height"
   assets:
-    - "No external asset; nested DS line components are recorded in composition."
+  - "No external asset; nested DS line components are recorded in composition."
   layout:
-    - "393px reference width"
-    - "2px and 4px heights"
-    - "loaded segment sample widths"
-    - "negative overlap layout"
+  - "393px reference width"
+  - "2px and 4px heights"
+  - "loaded segment sample widths"
+  - "negative overlap layout"
   exclusions:
-    - "Rounded=ON with Height=4 is not implemented in Figma."
-    - "This workflow does not create a derived linear-progress-indicator.md file."
+  - "Rounded=ON with Height=4 is not implemented in Figma."
+  - "This workflow does not create a derived linear-progress-indicator.md file."
 
 rules:
   do:
-    - "Use Linear Progress Indicator to show task progress within a bounded horizontal area."
-    - "Use the primary progress token for the loaded segment."
-    - "Use Loading components to communicate ongoing processing state."
+  - "Use Linear Progress Indicator to show task progress within a bounded horizontal area."
+  - "Use the primary progress token for the loaded segment."
+  - "Use Loading components to communicate ongoing processing state."
   dont:
-    - "Do not use Linear Progress Indicator for error or completion messages."
-    - "Do not replace the loaded segment with arbitrary colors."
-    - "Do not create a Rounded=ON, Height=4 combination unless Figma adds it."
+  - "Do not use Linear Progress Indicator for error or completion messages."
+  - "Do not replace the loaded segment with arbitrary colors."
+  - "Do not create a Rounded=ON, Height=4 combination unless Figma adds it."
 
 spec_notes:
   source:
-    - "Framelink full extraction for node 9003:21727."
-    - "Official Figma Plugin API read-only extraction for all 6 variants, nested instances, and bound tokens."
-    - "Code Connect context for nested progress indicator elements."
-    - "Registry reference: refs/figma-component-keys/variant-keys/linear-progress-indicator.md."
-    - "Usage reference: refs/markitdown-output/markitdown-loading.md."
+  - "Framelink full extraction for node 9003:21727."
+  - "Official Figma Plugin API read-only extraction for all 6 variants, nested instances, and bound tokens."
+  - "Code Connect context for nested progress indicator elements."
+  - "Registry reference: refs/figma-component-keys/variant-keys/linear-progress-indicator.md."
+baseline:
+  node_id: 9003:21726
+  variant: Mode=Default, Rounded=OFF, Height=Default (2)
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

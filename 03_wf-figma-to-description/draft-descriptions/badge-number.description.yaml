@@ -15,12 +15,12 @@ variants:
   count: 4
   formula: "Mode(2) x Type(2)"
   constraints:
-    - "All Mode and Type combinations are valid."
+  - "All Mode and Type combinations are valid."
   registry:
-    - { variant: "Mode=Default, Type=Number", node_id: "11098:2468", key: "ef6ff2a742a94d11d2357ba7587daa82bb751835" }
-    - { variant: "Mode=Default, Type=New", node_id: "11098:2470", key: "008df581f536e71c5f23742c37cdb7264fce4008" }
-    - { variant: "Mode=Fixed, Type=Number", node_id: "11098:2478", key: "0fce9ac8b679ab83d45b14c18e989c75f95addb9" }
-    - { variant: "Mode=Fixed, Type=New", node_id: "11098:2480", key: "cda05092bd74ae16e8e5922ffabcd0003b138058" }
+  - {variant: "Mode=Default, Type=Number", node_id: "11098:2468", key: "ef6ff2a742a94d11d2357ba7587daa82bb751835"}
+  - {variant: "Mode=Default, Type=New", node_id: "11098:2470", key: "008df581f536e71c5f23742c37cdb7264fce4008"}
+  - {variant: "Mode=Fixed, Type=Number", node_id: "11098:2478", key: "0fce9ac8b679ab83d45b14c18e989c75f95addb9"}
+  - {variant: "Mode=Fixed, Type=New", node_id: "11098:2480", key: "cda05092bd74ae16e8e5922ffabcd0003b138058"}
 
 props:
   Mode:
@@ -42,21 +42,37 @@ tokens:
     role: "fill"
     applies_to: "Mode=Default"
     token: "system/color/roles/negative"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-roles-negative
   background_fixed:
     part: "Badge_Number container"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/roles/negative"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-roles-negative
   label_default:
     part: "Label"
     role: "text fill"
     applies_to: "Mode=Default"
     token: "system/color/text/white-same"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-text-white-same
   label_fixed:
     part: "Label"
     role: "text fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/white-same"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-white-same
   radius:
     part: "Badge_Number container"
     role: "corner radius"
@@ -98,44 +114,48 @@ interaction:
     behavior: "Use New when the item should be marked as newly available rather than counted."
 
 implementation_order:
-  - "Select Mode and Type variant."
-  - "Apply mode-specific negative background token."
-  - "Apply mode-specific white-same label token."
-  - "For Type=Number, render the Label prop and cap it to 4 characters including plus sign."
-  - "For Type=New, render the N label."
-  - "Keep Number at 39x16 and New at 16x16 with 20 radius."
+- "Select Mode and Type variant."
+- "Apply mode-specific negative background token."
+- "Apply mode-specific white-same label token."
+- "For Type=Number, render the Label prop and cap it to 4 characters including plus sign."
+- "For Type=New, render the N label."
+- "Keep Number at 39x16 and New at 16x16 with 20 radius."
 
 implementation_coverage:
   axes:
-    - "Mode"
-    - "Type"
+  - "Mode"
+  - "Type"
   props:
-    - "Mode"
-    - "Type"
-    - "Label"
+  - "Mode"
+  - "Type"
+  - "Label"
   assets:
-    - "number_label"
-    - "new_label"
+  - "number_label"
+  - "new_label"
   layout:
-    - "Number 39x16"
-    - "New 16x16"
-    - "20 radius"
-    - "4-character label limit"
+  - "Number 39x16"
+  - "New 16x16"
+  - "20 radius"
+  - "4-character label limit"
   exclusions:
-    - "This workflow does not create a derived badge-number.md file."
-    - "Do/Don't product guidance is not present in markitdown-badge.md."
+  - "This workflow does not create a derived badge-number.md file."
+  - "Do/Don't product guidance is not present in markitdown-badge.md."
 
 rules:
   do:
-    - "Use Number Badge when a notification count should be visible."
-    - "Use New Badge when the item should show new state instead of a count."
-    - "Limit Number labels to 4 characters including the plus sign."
+  - "Use Number Badge when a notification count should be visible."
+  - "Use New Badge when the item should show new state instead of a count."
+  - "Limit Number labels to 4 characters including the plus sign."
   dont:
-    - "Do not use Number Badge for status presence only; use Dot Badge instead."
-    - "Do not exceed the 4-character label limit."
-    - "Do not change the New label away from N without an explicit product rule."
+  - "Do not use Number Badge for status presence only; use Dot Badge instead."
+  - "Do not exceed the 4-character label limit."
+  - "Do not change the New label away from N without an explicit product rule."
 
 spec_notes:
   source:
-    - "Figma component metadata and compact Plugin API extraction from node 8451:113030."
-    - "Local usage reference: refs/markitdown-output/markitdown-badge.md."
+  - "Figma component metadata and compact Plugin API extraction from node 8451:113030."
+baseline:
+  node_id: 11098:2468
+  variant: Mode=Default, Type=Number
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

@@ -16,22 +16,22 @@ variants:
   count: 12
   formula: "Mode(2) x Size(2) x Status(3)"
   constraints:
-    - "All Mode, Size, and Status combinations are valid."
-    - "Show Divider, Show Trailing, Show Small Leading, and Show Medium Leading are boolean props, not variant axes."
-    - "Small and Medium use separate Leading component sets but resolve to the same consumer-facing leading media slot."
+  - "All Mode, Size, and Status combinations are valid."
+  - "Show Divider, Show Trailing, Show Small Leading, and Show Medium Leading are boolean props, not variant axes."
+  - "Small and Medium use separate Leading component sets but resolve to the same consumer-facing leading media slot."
   registry:
-    - { variant: "Mode=Fixed, Size=Small, Status=Default", node_id: "57343:18629", key: "3e5f9bf98b6688521ae639f231b7fd8c0aae2ad4" }
-    - { variant: "Mode=Fixed, Size=Small, Status=Hover(Pressed)", node_id: "57343:18635", key: "0e559c98aa57448911d8e8b94e242695f22a96f1" }
-    - { variant: "Mode=Fixed, Size=Small, Status=Disabled", node_id: "57343:18641", key: "c5836efbca772e4c1dedad6fbdf5d996aa7b3a6b" }
-    - { variant: "Mode=Fixed, Size=Medium, Status=Default", node_id: "57343:18647", key: "d954709a41ab64d1ea1f7c2271719ca237485519" }
-    - { variant: "Mode=Fixed, Size=Medium, Status=Hover(Pressed)", node_id: "57343:18653", key: "e27b66dbc2b7cb0bf546dc0b1e2fbff4a63c2c38" }
-    - { variant: "Mode=Fixed, Size=Medium, Status=Disabled", node_id: "57343:18659", key: "24bdf71f649c321072571b177817a17d48dab646" }
-    - { variant: "Mode=Default, Size=Medium, Status=Default", node_id: "57343:18665", key: "513c6f226e7e6effb7a80375886c47eb7a98316f" }
-    - { variant: "Mode=Default, Size=Medium, Status=Hover(Pressed)", node_id: "57343:18671", key: "dbfc6ce438f1cfd4dd74a05e748f821e50c25d0b" }
-    - { variant: "Mode=Default, Size=Medium, Status=Disabled", node_id: "57343:18677", key: "bd9188605fc9052d683d2aaa3e0bdefe4a13ba4a" }
-    - { variant: "Mode=Default, Size=Small, Status=Default", node_id: "57343:18683", key: "32759e79ff4420cdf1090b647b8203949b42992f" }
-    - { variant: "Mode=Default, Size=Small, Status=Hover(Pressed)", node_id: "57343:18689", key: "8235a4d836b3ebc78afe79ea29a09b8ecc6435d9" }
-    - { variant: "Mode=Default, Size=Small, Status=Disabled", node_id: "57343:18695", key: "2b5358dbc1bacec23aff68d4a22ad847e435be1c" }
+  - {variant: "Mode=Fixed, Size=Small, Status=Default", node_id: "57343:18629", key: "3e5f9bf98b6688521ae639f231b7fd8c0aae2ad4"}
+  - {variant: "Mode=Fixed, Size=Small, Status=Hover(Pressed)", node_id: "57343:18635", key: "0e559c98aa57448911d8e8b94e242695f22a96f1"}
+  - {variant: "Mode=Fixed, Size=Small, Status=Disabled", node_id: "57343:18641", key: "c5836efbca772e4c1dedad6fbdf5d996aa7b3a6b"}
+  - {variant: "Mode=Fixed, Size=Medium, Status=Default", node_id: "57343:18647", key: "d954709a41ab64d1ea1f7c2271719ca237485519"}
+  - {variant: "Mode=Fixed, Size=Medium, Status=Hover(Pressed)", node_id: "57343:18653", key: "e27b66dbc2b7cb0bf546dc0b1e2fbff4a63c2c38"}
+  - {variant: "Mode=Fixed, Size=Medium, Status=Disabled", node_id: "57343:18659", key: "24bdf71f649c321072571b177817a17d48dab646"}
+  - {variant: "Mode=Default, Size=Medium, Status=Default", node_id: "57343:18665", key: "513c6f226e7e6effb7a80375886c47eb7a98316f"}
+  - {variant: "Mode=Default, Size=Medium, Status=Hover(Pressed)", node_id: "57343:18671", key: "dbfc6ce438f1cfd4dd74a05e748f821e50c25d0b"}
+  - {variant: "Mode=Default, Size=Medium, Status=Disabled", node_id: "57343:18677", key: "bd9188605fc9052d683d2aaa3e0bdefe4a13ba4a"}
+  - {variant: "Mode=Default, Size=Small, Status=Default", node_id: "57343:18683", key: "32759e79ff4420cdf1090b647b8203949b42992f"}
+  - {variant: "Mode=Default, Size=Small, Status=Hover(Pressed)", node_id: "57343:18689", key: "8235a4d836b3ebc78afe79ea29a09b8ecc6435d9"}
+  - {variant: "Mode=Default, Size=Small, Status=Disabled", node_id: "57343:18695", key: "2b5358dbc1bacec23aff68d4a22ad847e435be1c"}
 
 props:
   showDivider:
@@ -61,60 +61,104 @@ tokens:
     role: "text fill"
     applies_to: "Mode=Default"
     token: "system/color/text/default"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-text-default
   title_text_fixed:
     part: "Content / Title"
     role: "text fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   body_text_default:
     part: "Content / Body"
     role: "text fill"
     applies_to: "Mode=Default"
     token: "system/color/text/400a"
     opacity: 0.5
+    resolved:
+      light: '#00000080'
+      dark: '#FFFFFF80'
+      web_var: --cds-system-color-text-400a
   body_text_fixed:
     part: "Content / Body"
     role: "text fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/400a"
     opacity: 0.5
+    resolved:
+      light: '#FFFFFF80'
+      dark: '#FFFFFF80'
+      web_var: --cds-system-fixed-color-text-400a
   trailing_detail_default:
     part: "Trailing / Detail"
     role: "text fill"
     applies_to: "Mode=Default"
     token: "system/color/text/default"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-text-default
   trailing_detail_fixed:
     part: "Trailing / Detail"
     role: "text fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   trailing_icon_default:
     part: "Trailing / Icon"
     role: "icon fill"
     applies_to: "Mode=Default"
     token: "system/color/icon/default"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-icon-default
   trailing_icon_fixed:
     part: "Trailing / Icon"
     role: "icon fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/icon/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-icon-default
   divider_default:
     part: "Divider"
     role: "fill"
     applies_to: "Mode=Default"
     token: "system/color/outline/default-50a-2"
     opacity: 0.04
+    resolved:
+      light: '#0000000A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-color-outline-default-50a-2
   divider_fixed:
     part: "Divider"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/outline/default-100a"
     opacity: 0.1
+    resolved:
+      light: '#FFFFFF1A'
+      dark: '#FFFFFF1A'
+      web_var: --cds-system-fixed-color-outline-default-100a
   badge_dot:
     part: "Content / Title / BadgeDot"
     role: "fill"
     applies_to: "Title badge indicator"
     token: "system/color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-status-danger-red
   disabled_opacity:
     part: "component"
     role: "opacity"
@@ -125,11 +169,21 @@ tokens:
     role: "typography"
     token: "body-m/system-700"
     value: "16px font, 22px line-height"
+    resolved:
+      fontSize: 16
+      fontFamily: WeGothicSans
+      fontWeight: 700
+      lineHeight: 22
   typography_body:
     part: "Content / Body"
     role: "typography"
     token: "body-xs/system-400"
     value: "14px font, 18px line-height"
+    resolved:
+      fontSize: 14
+      fontFamily: WeGothicSans
+      fontWeight: 400
+      lineHeight: 18
   typography_trailing:
     part: "Trailing / Detail"
     role: "typography"
@@ -137,6 +191,11 @@ tokens:
     value: "14px font, 18px line-height"
 
 
+    resolved:
+      fontSize: 14
+      fontFamily: WeGothicSans
+      fontWeight: 500
+      lineHeight: 18
 typography:
   caption_m_system_700:
     font_family: "WeGothicSans"
@@ -196,30 +255,30 @@ assets:
 
 composition:
   uses:
-    - component: "[V2] Thumbnail"
-      node_id: "50545:51014"
-      component_set_key: "d0a05143f1a3867b7d8d30eacf939b885d41e0eb"
-      role: "leading media slot"
-      usage_condition: "Show Small Leading=true or Show Medium Leading=true"
-      spec_owner: "[V2] Thumbnail Description"
-    - component: "Badge_Dot"
-      node_id: "8451:112783"
-      component_set_key: "d1ea898a9e908e7470a7518abae5b45c18e0a58a"
-      role: "title badge indicator"
-      usage_condition: "referenced in the Title module"
-      spec_owner: "Badge_Dot Description"
-    - component: "_atoms / modules / Trailing (Optional)"
-      node_id: "57343:20409"
-      component_set_key: "a984ca34f20a11ce339609566d77496f48630b55"
-      role: "right-side detail and icon slot"
-      usage_condition: "Show Trailing=true"
-      spec_owner: "Trailing component set"
-    - component: "[V2] Divider"
-      node_id: "59215:76787"
-      component_set_key: "a4421d92006feceff814786c7733c63403cebf92"
-      role: "bottom row separator"
-      usage_condition: "Show Divider=true"
-      spec_owner: "[V2] Divider Description"
+  - component: "[V2] Thumbnail"
+    node_id: "50545:51014"
+    component_set_key: "d0a05143f1a3867b7d8d30eacf939b885d41e0eb"
+    role: "leading media slot"
+    usage_condition: "Show Small Leading=true or Show Medium Leading=true"
+    spec_owner: "[V2] Thumbnail Description"
+  - component: "Badge_Dot"
+    node_id: "8451:112783"
+    component_set_key: "d1ea898a9e908e7470a7518abae5b45c18e0a58a"
+    role: "title badge indicator"
+    usage_condition: "referenced in the Title module"
+    spec_owner: "Badge_Dot Description"
+  - component: "_atoms / modules / Trailing (Optional)"
+    node_id: "57343:20409"
+    component_set_key: "a984ca34f20a11ce339609566d77496f48630b55"
+    role: "right-side detail and icon slot"
+    usage_condition: "Show Trailing=true"
+    spec_owner: "Trailing component set"
+  - component: "[V2] Divider"
+    node_id: "59215:76787"
+    component_set_key: "a4421d92006feceff814786c7733c63403cebf92"
+    role: "bottom row separator"
+    usage_condition: "Show Divider=true"
+    spec_owner: "[V2] Divider Description"
 
 layout:
   component_size: "393px wide; Size=Small 393x59px; Size=Medium 393x81px"
@@ -273,11 +332,11 @@ interaction:
     behavior: "When a leading, trailing, or divider prop is false, remove the slot and collapse the associated gap."
 
 implementation_order:
-  - "Resolve Size first because it changes row height, vertical padding, leading media size, and content width."
-  - "Resolve Mode next because text, icon, and divider tokens switch between adaptive and fixed token families."
-  - "Apply Status after Mode; Disabled lowers root opacity without replacing text or icon tokens."
-  - "Apply optional leading, trailing, and divider props last so removed slots collapse their layout gaps."
-  - "Keep nested Thumbnail, Badge_Dot, Trailing, and Divider components as composition references."
+- "Resolve Size first because it changes row height, vertical padding, leading media size, and content width."
+- "Resolve Mode next because text, icon, and divider tokens switch between adaptive and fixed token families."
+- "Apply Status after Mode; Disabled lowers root opacity without replacing text or icon tokens."
+- "Apply optional leading, trailing, and divider props last so removed slots collapse their layout gaps."
+- "Keep nested Thumbnail, Badge_Dot, Trailing, and Divider components as composition references."
 
 implementation_coverage:
   axes: "Implement all 12 Mode x Size x Status variants."
@@ -288,18 +347,18 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Native List Item for app list rows that need a leading media thumbnail, two-line content, and optional trailing detail."
-    - "Choose Small for compact rows and Medium when the leading media needs more visual weight."
-    - "Use Default mode for adaptive surfaces and Fixed mode for fixed-color contexts."
-    - "Use Disabled only by applying the verified opacity behavior after mode tokens are resolved."
-    - "Keep Divider, Trailing, and Leading visibility controlled by their boolean props."
+  - "Use Native List Item for app list rows that need a leading media thumbnail, two-line content, and optional trailing detail."
+  - "Choose Small for compact rows and Medium when the leading media needs more visual weight."
+  - "Use Default mode for adaptive surfaces and Fixed mode for fixed-color contexts."
+  - "Use Disabled only by applying the verified opacity behavior after mode tokens are resolved."
+  - "Keep Divider, Trailing, and Leading visibility controlled by their boolean props."
   dont:
-    - "Do not replace the nested Thumbnail or Badge_Dot with parent-level CSS primitives."
-    - "Do not use arbitrary row heights or leading media sizes outside the Small and Medium metrics."
-    - "Do not keep the 12px slot gap when an optional slot is hidden."
-    - "Do not use fixed_color tokens in Default mode except for nested child components that own their own token contract."
-    - "Do not treat internal icon_area or vector layers as parent-level composition dependencies."
-    - "Do not place the Title Badge as a flex item after a full-width title span; it follows the rendered end of the title text."
+  - "Do not replace the nested Thumbnail or Badge_Dot with parent-level CSS primitives."
+  - "Do not use arbitrary row heights or leading media sizes outside the Small and Medium metrics."
+  - "Do not keep the 12px slot gap when an optional slot is hidden."
+  - "Do not use fixed_color tokens in Default mode except for nested child components that own their own token contract."
+  - "Do not treat internal icon_area or vector layers as parent-level composition dependencies."
+  - "Do not place the Title Badge as a flex item after a full-width title span; it follows the rendered end of the title text."
 
 text_behavior:
   title:
@@ -308,10 +367,10 @@ text_behavior:
     overflow_policy: "wrap unless a separate product runtime explicitly opts into clipping or ellipsis."
     row_height_behavior: "Row height grows with wrapped title text; default fixed sample height is not a max-height contract."
     inline_adornments:
-      - part: "Content / Title / BadgeDot"
-        role: "badge"
-        attachment: "rendered-text-end"
-        rule: "Badge follows the rendered end of title text, not the full title container end."
+    - part: "Content / Title / BadgeDot"
+      role: "badge"
+      attachment: "rendered-text-end"
+      rule: "Badge follows the rendered end of title text, not the full title container end."
   body:
     text_auto_resize: "HEIGHT"
     parent_sizing: "Content and row use hug/min-height behavior in implementation readback."
@@ -320,13 +379,18 @@ text_behavior:
 
 spec_notes:
   source:
-    - "Live Figma Plugin API readback from component set 57343:18628 on 2026-05-04."
-    - "Local variant registry reference: refs/figma-component-keys/variant-keys/list-item-native.md."
+  - "Live Figma Plugin API readback from component set 57343:18628 on 2026-05-04."
+  - "Local variant registry reference: refs/figma-component-keys/variant-keys/list-item-native.md."
   readback:
-    - "componentPropertyDefinitions exposes four boolean optional-slot props."
-    - "Status=Disabled is verified as component root opacity 0.2 in the sampled live variants."
+  - "componentPropertyDefinitions exposes four boolean optional-slot props."
+  - "Status=Disabled is verified as component root opacity 0.2 in the sampled live variants."
 
 source_gaps:
-  - field: "usage_reference"
-    issue: "No matching markitdown-output file for List_Item_Native was present in the workflow refs."
-    decision: "Usage rules are limited to live Figma structure, variant keys, and confirmed nested DS composition."
+- field: "usage_reference"
+  issue: "No matching markitdown-output file for List_Item_Native was present in the workflow refs."
+  decision: "Usage rules are limited to live Figma structure, variant keys, and confirmed nested DS composition."
+baseline:
+  node_id: 57343:18665
+  variant: Mode=Default, Size=Medium, Status=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

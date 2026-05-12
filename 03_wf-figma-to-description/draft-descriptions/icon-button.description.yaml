@@ -19,19 +19,19 @@ variants:
   count: 192
   formula: "Mode(2) x Type(2) x Size(4) x State(3) x Radius(2) x Button_Color(2)"
   constraints:
-    - "All Mode, Type, Size, State, Radius, and Button_Color combinations are implemented."
-    - "Full 192 variant registry is summarized to keep Description readable."
+  - "All Mode, Type, Size, State, Radius, and Button_Color combinations are implemented."
+  - "Full 192 variant registry is summarized to keep Description readable."
   registry_policy:
     component_set_key: "b60ecb5e664ce4e19bd9b11dd521d9b710d711df"
     source_ref: "refs/figma-component-keys/variant-keys/icon-button.md"
     verified_count: 192
     sample:
-      - { variant: "Mode=Default, Type=Filled, Size=XLarge(52), State=Default, Radius=on, Button Color=Default", node_id: "54093:38778", key: "a287abd16349c29efa7c86ee3e2a778b88ea908b" }
-      - { variant: "Mode=Default, Type=Filled, Size=XLarge(52), State=Default, Radius=on, Button Color=Black", node_id: "69875:33872", key: "4835bd019670d293557b3af6ab4c877332b042ec" }
-      - { variant: "Mode=Default, Type=Outlined, Size=XLarge(52), State=Default, Radius=on, Button Color=Default", node_id: "54093:38922", key: "3313e097b0bc6fe6c18b8f7005bd40251bab1f16" }
-      - { variant: "Mode=Default, Type=Outlined, Size=XLarge(52), State=Default, Radius=on, Button Color=Black", node_id: "69875:34140", key: "effb3786cbaa6c2348f087ffc093e99e3c632377" }
-      - { variant: "Mode=Fixed, Type=Outlined, Size=XXSmall(24), State=Hover, Radius=on, Button Color=Default", node_id: "54093:39063", key: "3d19f426f08df3289be06061c828663418a1e2b1" }
-      - { variant: "Mode=Fixed, Type=Outlined, Size=XXSmall(24), State=Hover, Radius=on, Button Color=Black", node_id: "69875:34089", key: "7140d920679702aa4bad2f9b53127c96c23a120b" }
+    - {variant: "Mode=Default, Type=Filled, Size=XLarge(52), State=Default, Radius=on, Button Color=Default", node_id: "54093:38778", key: "a287abd16349c29efa7c86ee3e2a778b88ea908b"}
+    - {variant: "Mode=Default, Type=Filled, Size=XLarge(52), State=Default, Radius=on, Button Color=Black", node_id: "69875:33872", key: "4835bd019670d293557b3af6ab4c877332b042ec"}
+    - {variant: "Mode=Default, Type=Outlined, Size=XLarge(52), State=Default, Radius=on, Button Color=Default", node_id: "54093:38922", key: "3313e097b0bc6fe6c18b8f7005bd40251bab1f16"}
+    - {variant: "Mode=Default, Type=Outlined, Size=XLarge(52), State=Default, Radius=on, Button Color=Black", node_id: "69875:34140", key: "effb3786cbaa6c2348f087ffc093e99e3c632377"}
+    - {variant: "Mode=Fixed, Type=Outlined, Size=XXSmall(24), State=Hover, Radius=on, Button Color=Default", node_id: "54093:39063", key: "3d19f426f08df3289be06061c828663418a1e2b1"}
+    - {variant: "Mode=Fixed, Type=Outlined, Size=XXSmall(24), State=Hover, Radius=on, Button Color=Black", node_id: "69875:34089", key: "7140d920679702aa4bad2f9b53127c96c23a120b"}
 
 props:
   Mode:
@@ -90,60 +90,146 @@ tokens:
     applies_to: "Type=Filled, Button_Color=Default, State=Default"
     default: "system/color/button/default"
     fixed: "system/fixed_color/button/default"
+    resolved:
+      default:
+        light: '#00CBD5'
+        dark: '#01D5DF'
+        web_var: --cds-system-color-button-default
+      fixed:
+        light: '#01D5DF'
+        dark: '#01D5DF'
+        web_var: --cds-system-fixed-color-button-default
   filled_black:
     part: "Options"
     role: "fill"
     applies_to: "Type=Filled, Button_Color=Black, State=Default"
     default: "system/color/button/black"
     fixed: "system/fixed_color/button/white"
+    resolved:
+      default:
+        light: '#000000'
+        dark: '#FFFFFF'
+        web_var: --cds-system-color-button-black
+      fixed:
+        light: '#FFFFFF'
+        dark: '#FFFFFF'
+        web_var: --cds-system-fixed-color-button-white
   outlined_default:
     part: "Options"
     role: "stroke"
     applies_to: "Type=Outlined, Button_Color=Default, State=Default"
     default: "system/color/button/default"
     fixed: "system/fixed_color/button/default"
+    resolved:
+      default:
+        light: '#00CBD5'
+        dark: '#01D5DF'
+        web_var: --cds-system-color-button-default
+      fixed:
+        light: '#01D5DF'
+        dark: '#01D5DF'
+        web_var: --cds-system-fixed-color-button-default
   outlined_black:
     part: "Options"
     role: "stroke"
     applies_to: "Type=Outlined, Button_Color=Black, State=Default"
     default: "system/color/button/black"
     fixed: "system/fixed_color/button/white"
+    resolved:
+      default:
+        light: '#000000'
+        dark: '#FFFFFF'
+        web_var: --cds-system-color-button-black
+      fixed:
+        light: '#FFFFFF'
+        dark: '#FFFFFF'
+        web_var: --cds-system-fixed-color-button-white
   hover_overlay:
     part: "Options"
     role: "fill"
     applies_to: "State=Hover"
     default: "system/color/button/hover"
     fixed: "system/fixed_color/button/hover"
+    resolved:
+      default:
+        light: '#0000000A'
+        dark: '#FFFFFF0D'
+        web_var: --cds-system-color-button-hover
+      fixed:
+        light: '#FFFFFF0D'
+        dark: '#FFFFFF0D'
+        web_var: --cds-system-fixed-color-button-hover
   disabled_container:
     part: "Options"
     role: "fill or stroke"
     applies_to: "State=Disabled"
     default: "system/color/button/disabled"
     fixed: "system/fixed_color/button/disabled"
+    resolved:
+      default:
+        light: '#0000001A'
+        dark: '#FFFFFF1A'
+        web_var: --cds-system-color-button-disabled
+      fixed:
+        light: '#FFFFFF1A'
+        dark: '#FFFFFF1A'
+        web_var: --cds-system-fixed-color-button-disabled
   icon_on_filled:
     part: "Vector (Stroke)"
     role: "icon fill"
     applies_to: "Type=Filled, State=Default or Hover"
     default: "system/color/icon/default-reverse"
     fixed: "system/fixed_color/icon/default-reverse"
+    resolved:
+      default:
+        light: '#FFFFFF'
+        dark: '#000000'
+        web_var: --cds-system-color-icon-default-reverse
+      fixed:
+        light: '#000000'
+        dark: '#000000'
+        web_var: --cds-system-fixed-color-icon-default-reverse
   icon_on_outlined_default:
     part: "Vector (Stroke)"
     role: "icon fill"
     applies_to: "Type=Outlined, Button_Color=Default, State=Default or Hover"
     default: "system/color/button/default"
     fixed: "system/fixed_color/button/default"
+    resolved:
+      default:
+        light: '#00CBD5'
+        dark: '#01D5DF'
+        web_var: --cds-system-color-button-default
+      fixed:
+        light: '#01D5DF'
+        dark: '#01D5DF'
+        web_var: --cds-system-fixed-color-button-default
   icon_on_outlined_black:
     part: "Vector (Stroke)"
     role: "icon fill"
     applies_to: "Type=Outlined, Button_Color=Black, State=Default or Hover"
     default: "system/color/button/black"
     fixed: "system/fixed_color/button/white"
+    resolved:
+      default:
+        light: '#000000'
+        dark: '#FFFFFF'
+        web_var: --cds-system-color-button-black
+      fixed:
+        light: '#FFFFFF'
+        dark: '#FFFFFF'
+        web_var: --cds-system-fixed-color-button-white
   icon_disabled:
     part: "Vector (Stroke)"
     role: "icon fill"
     applies_to: "State=Disabled"
     default: "system/color/icon/200a"
     fixed: "system/fixed_color/icon/100a or system/fixed_color/button/disabled by Type"
+    resolved:
+      default:
+        light: '#00000033'
+        dark: '#FFFFFF33'
+        web_var: --cds-system-color-icon-200a
   radius_on:
     part: "Options"
     role: "corner radius"
@@ -191,55 +277,60 @@ layout:
     off: 8
 
 implementation_order:
-  - "Resolve Size first and render a square Options frame."
-  - "Resolve Radius on the Options frame after size is set."
-  - "Apply Type and Button_Color visual tokens for fill or stroke."
-  - "Apply State overlays and disabled overrides after base visual tokens."
-  - "Render the nested icon_area asset centered inside the Options frame."
-  - "Apply icon tint from Type, Button_Color, Mode, and State."
+- "Resolve Size first and render a square Options frame."
+- "Resolve Radius on the Options frame after size is set."
+- "Apply Type and Button_Color visual tokens for fill or stroke."
+- "Apply State overlays and disabled overrides after base visual tokens."
+- "Render the nested icon_area asset centered inside the Options frame."
+- "Apply icon tint from Type, Button_Color, Mode, and State."
 
 implementation_coverage:
   axes:
-    - "Mode"
-    - "Type"
-    - "Size"
-    - "State"
-    - "Radius"
-    - "Button_Color"
+  - "Mode"
+  - "Type"
+  - "Size"
+  - "State"
+  - "Radius"
+  - "Button_Color"
   props:
-    - "Icon instance swap"
+  - "Icon instance swap"
   assets:
-    - "icon_area"
-    - "default_icon_sample"
+  - "icon_area"
+  - "default_icon_sample"
   layout:
-    - "4 square sizes"
-    - "20x20 or 12x12 icon area"
-    - "Radius on and off"
-    - "Outlined 1px stroke"
+  - "4 square sizes"
+  - "20x20 or 12x12 icon area"
+  - "Radius on and off"
+  - "Outlined 1px stroke"
   exclusions:
-    - "Full 192 variant registry is summarized by registry_policy."
-    - "This workflow does not create a derived icon-button.md file."
+  - "Full 192 variant registry is summarized by registry_policy."
+  - "This workflow does not create a derived icon-button.md file."
 
 rules:
   do:
-    - "Use Icon Button when the action can be understood by a clear icon."
-    - "Keep the icon centered in the full square control."
-    - "Preserve the DS icon asset and tint tokens."
-    - "Use Disabled state when the action is unavailable."
+  - "Use Icon Button when the action can be understood by a clear icon."
+  - "Keep the icon centered in the full square control."
+  - "Preserve the DS icon asset and tint tokens."
+  - "Use Disabled state when the action is unavailable."
   dont:
-    - "Do not replace the icon asset with text content."
-    - "Do not apply arbitrary icon or container colors outside the component tokens."
-    - "Do not change the icon size independently from the Size variant."
-    - "Do not use Icon Button when the action meaning requires a text label."
+  - "Do not replace the icon asset with text content."
+  - "Do not apply arbitrary icon or container colors outside the component tokens."
+  - "Do not change the icon size independently from the Size variant."
+  - "Do not use Icon Button when the action meaning requires a text label."
 
 source_gaps:
-  - field: "icon_area size reference"
-    reason: "markitdown-button lists a 24x24 XLarge Icon Button inner area, but live Figma variants sampled from 54093:38778, 54093:38814, and 54093:38850 render icon_area at 20x20; this draft follows live Figma."
+- field: "icon_area size reference"
+  reason: "markitdown-button lists a 24x24 XLarge Icon Button inner area, but live Figma variants sampled from 54093:38778, 54093:38814, and 54093:38850 render icon_area at 20x20; this draft follows live
+    Figma."
 
 spec_notes:
   source:
-    - "Framelink full extraction for node 54093:38777."
-    - "Official Figma Plugin API read-only extraction for all 192 variants, token groups, and geometry samples."
-    - "Code Connect context for nested icon_area instance properties."
-    - "Registry reference: refs/figma-component-keys/variant-keys/icon-button.md."
-    - "Usage reference: refs/markitdown-output/markitdown-button.md."
+  - "Framelink full extraction for node 54093:38777."
+  - "Official Figma Plugin API read-only extraction for all 192 variants, token groups, and geometry samples."
+  - "Code Connect context for nested icon_area instance properties."
+  - "Registry reference: refs/figma-component-keys/variant-keys/icon-button.md."
+baseline:
+  node_id: 54093:38814
+  variant: Mode=Default, Type=Filled, Size=Medium(40), State=Default, Radius=on, Button Color=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

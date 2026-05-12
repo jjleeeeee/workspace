@@ -14,11 +14,11 @@ variants:
   count: 3
   formula: "Mode(3)"
   constraints:
-    - "All Mode values are valid."
+  - "All Mode values are valid."
   registry:
-    - { variant: "Mode=Default", node_id: "27782:8384", key: "09590ca5297b2a812847b36c87c18816a94245b1" }
-    - { variant: "Mode=Fixed - White", node_id: "27782:8838", key: "ce5a00b540e94f2c582f33aea77ef29c8edbc71d" }
-    - { variant: "Mode=Fixed - Black", node_id: "35115:16747", key: "27a9e0c90ffb9baa2a9833f6c73707f760161157" }
+  - {variant: "Mode=Default", node_id: "27782:8384", key: "09590ca5297b2a812847b36c87c18816a94245b1"}
+  - {variant: "Mode=Fixed - White", node_id: "27782:8838", key: "ce5a00b540e94f2c582f33aea77ef29c8edbc71d"}
+  - {variant: "Mode=Fixed - Black", node_id: "35115:16747", key: "27a9e0c90ffb9baa2a9833f6c73707f760161157"}
 
 props:
   Mode:
@@ -33,29 +33,49 @@ tokens:
     applies_to: "Mode=Default"
     token: "system/color/surface/default-reverse-200a"
     opacity: "20%"
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-surface-default-reverse-200a
   thumb_fill_fixed_white:
     part: "thumb"
     role: "fill"
     applies_to: "Mode=Fixed - White"
     token: "system/fixed_color/surface/default-reverse-200a"
     opacity: "20%"
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-surface-default-reverse-200a
   thumb_fill_fixed_black:
     part: "thumb"
     role: "fill"
     applies_to: "Mode=Fixed - Black"
     token: "system/fixed_color/surface/default-200a"
     opacity: "20%"
+    resolved:
+      light: '#00000033'
+      dark: '#00000033'
+      web_var: --cds-system-fixed-color-surface-default-200a
   horizontal_padding:
     part: "Scrollbar"
     role: "padding left/right"
     token: "system/size/padding/box/25"
     value: "2px"
+    resolved:
+      light: 2
+      dark: 2
+      web_var: --cds-system-size-padding-box-25
   vertical_padding:
     part: "Scrollbar"
     role: "padding top/bottom"
     token: "system/size/padding/box/50"
     value: "4px"
 
+    resolved:
+      light: 4
+      dark: 4
+      web_var: --cds-system-size-padding-box-50
 layout:
   component_size: "10x100"
   thumb_size: "6x60"
@@ -79,41 +99,45 @@ layout:
       variants: []
 
 implementation_order:
-  - "Select the Mode variant for the background context."
-  - "Render a 10x100 scrollbar container with 2px horizontal and 4px vertical padding."
-  - "Render the thumb as a 6x60 rounded rectangle."
-  - "Apply the mode-specific thumb fill token and preserve 20% opacity."
-  - "Keep the scrollbar separate from content so it does not obscure readable content."
+- "Select the Mode variant for the background context."
+- "Render a 10x100 scrollbar container with 2px horizontal and 4px vertical padding."
+- "Render the thumb as a 6x60 rounded rectangle."
+- "Apply the mode-specific thumb fill token and preserve 20% opacity."
+- "Keep the scrollbar separate from content so it does not obscure readable content."
 
 implementation_coverage:
   axes:
-    - "Mode"
+  - "Mode"
   props:
-    - "Mode"
+  - "Mode"
   assets:
-    - "No asset-backed visual is used."
+  - "No asset-backed visual is used."
   layout:
-    - "10x100 component"
-    - "6x60 thumb"
-    - "2px horizontal padding"
-    - "4px vertical padding"
-    - "3px thumb radius"
+  - "10x100 component"
+  - "6x60 thumb"
+  - "2px horizontal padding"
+  - "4px vertical padding"
+  - "3px thumb radius"
   exclusions:
-    - "This workflow does not create a derived scrollbar.md file."
-    - "Figma Description writeback is intentionally skipped for this worker task."
+  - "This workflow does not create a derived scrollbar.md file."
+  - "Figma Description writeback is intentionally skipped for this worker task."
 
 rules:
   do:
-    - "Use Scrollbar when content is longer or wider than the visible area."
-    - "Expose Scrollbar separately from the content area."
-    - "Use Scrollbar to communicate current content position and scroll affordance."
-    - "On PC, keep the scroll track area distinguishable from the content area."
+  - "Use Scrollbar when content is longer or wider than the visible area."
+  - "Expose Scrollbar separately from the content area."
+  - "Use Scrollbar to communicate current content position and scroll affordance."
+  - "On PC, keep the scroll track area distinguishable from the content area."
   dont:
-    - "Do not overlap Scrollbar on top of content in a way that harms readability."
-    - "Do not hide the scroll track on PC when users need to understand the control position."
-    - "Do not use Scrollbar as a static decorative graphic."
+  - "Do not overlap Scrollbar on top of content in a way that harms readability."
+  - "Do not hide the scroll track on PC when users need to understand the control position."
+  - "Do not use Scrollbar as a static decorative graphic."
 
 spec_notes:
   source:
-    - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 27782:8837."
-    - "Local usage reference: refs/markitdown-output/markitdown-scroll-bar.md."
+  - "Figma live read: Framelink extraction and Desktop Bridge deep extraction from node 27782:8837."
+baseline:
+  node_id: 27782:8384
+  variant: Mode=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'

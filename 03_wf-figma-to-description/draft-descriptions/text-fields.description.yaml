@@ -16,30 +16,30 @@ variants:
   count: 20
   formula: "Mode(2) x Lines(2) x Status(5)"
   constraints:
-    - "All Mode, Lines, and Status combinations are implemented."
-    - "Single and Multiple line variants share title, guide message, badge, character counter, and mode/status semantics."
-    - "Title Label, Guide Message, Country Code, Multi-line Label, Scrollbar, Character Counter Label, Character Counter, Show Badge_Dot, and Show Title are component properties, not variant axes."
+  - "All Mode, Lines, and Status combinations are implemented."
+  - "Single and Multiple line variants share title, guide message, badge, character counter, and mode/status semantics."
+  - "Title Label, Guide Message, Country Code, Multi-line Label, Scrollbar, Character Counter Label, Character Counter, Show Badge_Dot, and Show Title are component properties, not variant axes."
   registry:
-    - { variant: "Mode=Default, Lines=Multiple, Status=Disabled", node_id: "62030:25226", key: "b581916e6dd86d4daf196e8901003bd7ec9a0e78" }
-    - { variant: "Mode=Default, Lines=Multiple, Status=Default", node_id: "62030:25244", key: "1ed968a06895f555d1c9075c3d69f9872bc91e96" }
-    - { variant: "Mode=Default, Lines=Multiple, Status=Enabled", node_id: "62030:25253", key: "5518be0ca2b49e32fcb12292e36ec64a51b583d0" }
-    - { variant: "Mode=Default, Lines=Multiple, Status=Success", node_id: "62030:25277", key: "b4833872f1db453b4c5d69264fa747a8e0f02b8e" }
-    - { variant: "Mode=Default, Lines=Multiple, Status=Error", node_id: "62030:25295", key: "5c863023effb3b7e4d157ad05929887430529787" }
-    - { variant: "Mode=Fixed, Lines=Multiple, Status=Disabled", node_id: "62030:25304", key: "9b1dcc081d1ac6935592982a918bfa6b9bbd1e86" }
-    - { variant: "Mode=Fixed, Lines=Multiple, Status=Default", node_id: "62030:25322", key: "734d09758031d902e3825cbb4e4c1ed53811fe71" }
-    - { variant: "Mode=Fixed, Lines=Multiple, Status=Success", node_id: "62078:570324", key: "1faeb7585c794eeceae51a24bbc6de2bf90e081b" }
-    - { variant: "Mode=Fixed, Lines=Multiple, Status=Enabled", node_id: "62078:570269", key: "f5b472317d7a65caae2f7b43172a13d6e12fc4db" }
-    - { variant: "Mode=Fixed, Lines=Multiple, Status=Error", node_id: "62030:25373", key: "a857a4d40b442f7ae7f3d28d564855f3958c6d84" }
-    - { variant: "Mode=Fixed, Lines=Single, Status=Disabled", node_id: "62030:25382", key: "0b53d4924e2a8fa5bb4bfcb1032c50385f3cf6cc" }
-    - { variant: "Mode=Fixed, Lines=Single, Status=Default", node_id: "62030:25395", key: "c09e0e366227ede98d8f08fbf4aa3216b93a7b17" }
-    - { variant: "Mode=Fixed, Lines=Single, Status=Enabled", node_id: "62030:25421", key: "0afa70c3dc078afd01c114e604de6b41d5ac21d3" }
-    - { variant: "Mode=Fixed, Lines=Single, Status=Error", node_id: "62030:25434", key: "ef0b5c83eb7d5eff0ca5956bf07563432090440b" }
-    - { variant: "Mode=Fixed, Lines=Single, Status=Success", node_id: "62030:25447", key: "237ff92a14a7a6e959bda73aedd394da1c8db129" }
-    - { variant: "Mode=Default, Lines=Single, Status=Disabled", node_id: "62030:25473", key: "59de2a8e787d0d4037ea56e3c394109caa2b1d59" }
-    - { variant: "Mode=Default, Lines=Single, Status=Default", node_id: "62030:25485", key: "2dfd3759b46dd8f2266796d39dfa4f9bacc5e380" }
-    - { variant: "Mode=Default, Lines=Single, Status=Enabled", node_id: "62030:25509", key: "d24fcb1437178dd2fe3743688620f917fb1e0b5f" }
-    - { variant: "Mode=Default, Lines=Single, Status=Error", node_id: "62030:25521", key: "5d165aa1455daafd4dd269316ee561d7177d0aba" }
-    - { variant: "Mode=Default, Lines=Single, Status=Success", node_id: "62030:25545", key: "ac8f97858e13f5fb2305cb8f8b53295a15e623a2" }
+  - {variant: "Mode=Default, Lines=Multiple, Status=Disabled", node_id: "62030:25226", key: "b581916e6dd86d4daf196e8901003bd7ec9a0e78"}
+  - {variant: "Mode=Default, Lines=Multiple, Status=Default", node_id: "62030:25244", key: "1ed968a06895f555d1c9075c3d69f9872bc91e96"}
+  - {variant: "Mode=Default, Lines=Multiple, Status=Enabled", node_id: "62030:25253", key: "5518be0ca2b49e32fcb12292e36ec64a51b583d0"}
+  - {variant: "Mode=Default, Lines=Multiple, Status=Success", node_id: "62030:25277", key: "b4833872f1db453b4c5d69264fa747a8e0f02b8e"}
+  - {variant: "Mode=Default, Lines=Multiple, Status=Error", node_id: "62030:25295", key: "5c863023effb3b7e4d157ad05929887430529787"}
+  - {variant: "Mode=Fixed, Lines=Multiple, Status=Disabled", node_id: "62030:25304", key: "9b1dcc081d1ac6935592982a918bfa6b9bbd1e86"}
+  - {variant: "Mode=Fixed, Lines=Multiple, Status=Default", node_id: "62030:25322", key: "734d09758031d902e3825cbb4e4c1ed53811fe71"}
+  - {variant: "Mode=Fixed, Lines=Multiple, Status=Success", node_id: "62078:570324", key: "1faeb7585c794eeceae51a24bbc6de2bf90e081b"}
+  - {variant: "Mode=Fixed, Lines=Multiple, Status=Enabled", node_id: "62078:570269", key: "f5b472317d7a65caae2f7b43172a13d6e12fc4db"}
+  - {variant: "Mode=Fixed, Lines=Multiple, Status=Error", node_id: "62030:25373", key: "a857a4d40b442f7ae7f3d28d564855f3958c6d84"}
+  - {variant: "Mode=Fixed, Lines=Single, Status=Disabled", node_id: "62030:25382", key: "0b53d4924e2a8fa5bb4bfcb1032c50385f3cf6cc"}
+  - {variant: "Mode=Fixed, Lines=Single, Status=Default", node_id: "62030:25395", key: "c09e0e366227ede98d8f08fbf4aa3216b93a7b17"}
+  - {variant: "Mode=Fixed, Lines=Single, Status=Enabled", node_id: "62030:25421", key: "0afa70c3dc078afd01c114e604de6b41d5ac21d3"}
+  - {variant: "Mode=Fixed, Lines=Single, Status=Error", node_id: "62030:25434", key: "ef0b5c83eb7d5eff0ca5956bf07563432090440b"}
+  - {variant: "Mode=Fixed, Lines=Single, Status=Success", node_id: "62030:25447", key: "237ff92a14a7a6e959bda73aedd394da1c8db129"}
+  - {variant: "Mode=Default, Lines=Single, Status=Disabled", node_id: "62030:25473", key: "59de2a8e787d0d4037ea56e3c394109caa2b1d59"}
+  - {variant: "Mode=Default, Lines=Single, Status=Default", node_id: "62030:25485", key: "2dfd3759b46dd8f2266796d39dfa4f9bacc5e380"}
+  - {variant: "Mode=Default, Lines=Single, Status=Enabled", node_id: "62030:25509", key: "d24fcb1437178dd2fe3743688620f917fb1e0b5f"}
+  - {variant: "Mode=Default, Lines=Single, Status=Error", node_id: "62030:25521", key: "5d165aa1455daafd4dd269316ee561d7177d0aba"}
+  - {variant: "Mode=Default, Lines=Single, Status=Success", node_id: "62030:25545", key: "ac8f97858e13f5fb2305cb8f8b53295a15e623a2"}
 
 props:
   Title_Label:
@@ -98,175 +98,307 @@ tokens:
     applies_to: "Mode=Default, Status=Default or Disabled or Enabled"
     token: "system/color/text/400a"
     opacity: 0.5
+    resolved:
+      light: '#00000080'
+      dark: '#FFFFFF80'
+      web_var: --cds-system-color-text-400a
   title_text_fixed:
     part: "Title"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Default"
     token: "system/fixed_color/text/400a"
     opacity: 0.5
+    resolved:
+      light: '#FFFFFF80'
+      dark: '#FFFFFF80'
+      web_var: --cds-system-fixed-color-text-400a
   title_success_default:
     part: "Title"
     role: "fill"
     applies_to: "Mode=Default, Status=Success"
     token: "system/color/text/primary"
+    resolved:
+      light: '#00B8C1'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-text-primary
   title_success_fixed:
     part: "Title"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Success"
     token: "system/fixed_color/text/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-text-primary
   title_error_default:
     part: "Title"
     role: "fill"
     applies_to: "Mode=Default, Status=Error"
     token: "system/color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-status-danger-red
   title_error_fixed:
     part: "Title"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Error"
     token: "system/fixed_color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-status-danger-red
   text_field_disabled_surface_default:
     part: "TextField"
     role: "fill"
     applies_to: "Mode=Default, Status=Disabled"
     token: "system/color/status/background-disabled"
+    resolved:
+      light: '#F2F3F7'
+      dark: '#1F1F1F'
+      web_var: --cds-system-color-status-background-disabled
   text_field_disabled_surface_fixed:
     part: "TextField"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Disabled"
     token: "system/fixed_color/status/background-disabled"
+    resolved:
+      light: '#1F1F1F'
+      dark: '#1F1F1F'
+      web_var: --cds-system-fixed-color-status-background-disabled
   text_field_stroke_inactive_default:
     part: "TextField"
     role: "stroke"
     applies_to: "Mode=Default, Status=Default or Disabled or Success"
     token: "system/color/status/inactive-gray"
+    resolved:
+      light: '#DCDEE4'
+      dark: '#3E3E3E'
+      web_var: --cds-system-color-status-inactive-gray
   text_field_stroke_inactive_fixed:
     part: "TextField"
     role: "stroke"
     applies_to: "Mode=Fixed, Status=Default or Disabled or Success"
     token: "system/fixed_color/status/inactive-gray"
+    resolved:
+      light: '#3E3E3E'
+      dark: '#3E3E3E'
+      web_var: --cds-system-fixed-color-status-inactive-gray
   text_field_stroke_focus_default:
     part: "TextField"
     role: "stroke"
     applies_to: "Mode=Default, Status=Enabled"
     token: "system/color/status/focus-gray-400"
+    resolved:
+      light: '#AEB1B8'
+      dark: '#555555'
+      web_var: --cds-system-color-status-focus-gray-400
   text_field_stroke_focus_fixed:
     part: "TextField"
     role: "stroke"
     applies_to: "Mode=Fixed, Status=Enabled"
     token: "system/fixed_color/status/focus-gray-400"
+    resolved:
+      light: '#555555'
+      dark: '#555555'
+      web_var: --cds-system-fixed-color-status-focus-gray-400
   text_field_stroke_error_default:
     part: "TextField"
     role: "stroke"
     applies_to: "Mode=Default, Status=Error"
     token: "system/color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-status-danger-red
   text_field_stroke_error_fixed:
     part: "TextField"
     role: "stroke"
     applies_to: "Mode=Fixed, Status=Error"
     token: "system/fixed_color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-status-danger-red
   input_text_default:
     part: "text"
     role: "fill"
     applies_to: "Mode=Default, active text"
     token: "system/color/text/default"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-text-default
   input_text_fixed:
     part: "text"
     role: "fill"
     applies_to: "Mode=Fixed, active text"
     token: "system/fixed_color/text/default"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-text-default
   placeholder_text_default:
     part: "text"
     role: "fill"
     applies_to: "Mode=Default, placeholder or inactive text"
     token: "system/color/text/300a"
     opacity: 0.3
+    resolved:
+      light: '#0000004D'
+      dark: '#FFFFFF4D'
+      web_var: --cds-system-color-text-300a
   placeholder_text_fixed:
     part: "text"
     role: "fill"
     applies_to: "Mode=Fixed, placeholder or inactive text"
     token: "system/fixed_color/text/300a"
     opacity: 0.3
+    resolved:
+      light: '#FFFFFF4D'
+      dark: '#FFFFFF4D'
+      web_var: --cds-system-fixed-color-text-300a
   disabled_text_default:
     part: "Text"
     role: "fill"
     applies_to: "Mode=Default, Status=Disabled"
     token: "system/color/text/200a"
     opacity: 0.2
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-text-200a
   disabled_text_fixed:
     part: "Text"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Disabled"
     token: "system/fixed_color/text/200a"
     opacity: 0.2
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-text-200a
   guide_success_default:
     part: "text"
     role: "fill"
     applies_to: "Mode=Default, Status=Success"
     token: "system/color/text/primary"
+    resolved:
+      light: '#00B8C1'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-text-primary
   guide_success_fixed:
     part: "text"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Success"
     token: "system/fixed_color/text/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-text-primary
   guide_error_default:
     part: "text"
     role: "fill"
     applies_to: "Mode=Default, Status=Error"
     token: "system/color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-status-danger-red
   guide_error_fixed:
     part: "text"
     role: "fill"
     applies_to: "Mode=Fixed, Status=Error"
     token: "system/fixed_color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-status-danger-red
   character_counter_default:
     part: "12/200"
     role: "fill"
     applies_to: "Mode=Default"
     token: "system/color/text/400a"
     opacity: 0.5
+    resolved:
+      light: '#00000080'
+      dark: '#FFFFFF80'
+      web_var: --cds-system-color-text-400a
   character_counter_fixed:
     part: "12/200"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/400a"
     opacity: 0.5
+    resolved:
+      light: '#FFFFFF80'
+      dark: '#FFFFFF80'
+      web_var: --cds-system-fixed-color-text-400a
   caret_default:
     part: "Caret"
     role: "fill"
     applies_to: "Mode=Default, active editing"
     token: "system/color/surface/default-reverse"
+    resolved:
+      light: '#000000'
+      dark: '#FFFFFF'
+      web_var: --cds-system-color-surface-default-reverse
   caret_fixed:
     part: "Caret"
     role: "fill"
     applies_to: "Mode=Fixed, active editing"
     token: "system/fixed_color/surface/default-reverse"
+    resolved:
+      light: '#FFFFFF'
+      dark: '#FFFFFF'
+      web_var: --cds-system-fixed-color-surface-default-reverse
   timer_default:
     part: "Timer"
     role: "fill"
     applies_to: "Mode=Default"
     token: "system/color/text/primary"
+    resolved:
+      light: '#00B8C1'
+      dark: '#01D5DF'
+      web_var: --cds-system-color-text-primary
   timer_fixed:
     part: "Timer"
     role: "fill"
     applies_to: "Mode=Fixed"
     token: "system/fixed_color/text/primary"
+    resolved:
+      light: '#01D5DF'
+      dark: '#01D5DF'
+      web_var: --cds-system-fixed-color-text-primary
   scrollbar_thumb_default:
     part: "thumb"
     role: "fill"
     applies_to: "Mode=Default, Lines=Multiple"
     token: "system/color/surface/default-reverse-200a"
     opacity: 0.2
+    resolved:
+      light: '#00000033'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-color-surface-default-reverse-200a
   scrollbar_thumb_fixed:
     part: "thumb"
     role: "fill"
     applies_to: "Mode=Fixed, Lines=Multiple"
     token: "system/fixed_color/surface/default-reverse-200a"
     opacity: 0.2
+    resolved:
+      light: '#FFFFFF33'
+      dark: '#FFFFFF33'
+      web_var: --cds-system-fixed-color-surface-default-reverse-200a
   badge_dot_default:
     part: "Badge_Dot"
     role: "fill"
     applies_to: "Mode=Default, Show_Badge_Dot=true"
     token: "system/color/status/danger-red"
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-color-status-danger-red
   badge_dot_fixed:
     part: "Badge_Dot"
     role: "fill"
@@ -274,6 +406,10 @@ tokens:
     token: "system/fixed_color/status/danger-red"
 
 
+    resolved:
+      light: '#FE5B58'
+      dark: '#FE5B58'
+      web_var: --cds-system-fixed-color-status-danger-red
 typography:
   body_xs_system_400:
     font_family: "WeGothicSans"
@@ -328,42 +464,42 @@ assets:
 
 composition:
   uses:
-    - component: "Input"
-      node_id: "62030:25118"
-      component_set_key: "b247b1e27209ef814568ebc99e19ea8b8d2f3e09"
-      role: "single-line input body and optional trailing controls"
-      usage_condition: "Lines=Single"
-      spec_owner: "Input component set"
-    - component: "Guide Message"
-      node_id: "62030:25179"
-      component_set_key: "fe8818f96c1b0ba8ff464579b455e15e3ac5b3c8"
-      role: "helper, success, and error message below the field"
-      usage_condition: "Guide_Message=true"
-      spec_owner: "Guide Message component set"
-    - component: "Badge_Dot"
-      node_id: "8451:112783"
-      component_set_key: "d1ea898a9e908e7470a7518abae5b45c18e0a58a"
-      role: "required or status marker beside title"
-      usage_condition: "Show_Badge_Dot=true"
-      spec_owner: "Badge_Dot component set"
-    - component: "Scrollbar"
-      node_id: "58651:35661"
-      component_set_key: "ec2d17107a68bb443f80245ab791fb69380f0a50"
-      role: "multi-line overflow indicator"
-      usage_condition: "Lines=Multiple and Scrollbar=true"
-      spec_owner: "Scrollbar component set"
-    - component: "Text Button"
-      node_id: "52753:39618"
-      component_set_key: "70d2a20bcdfe3ac7a3c3190410d9a255d8783e1d"
-      role: "optional single-line trailing action"
-      usage_condition: "nested Input Show Button=true"
-      spec_owner: "Text Button component set"
-    - component: "Hidden"
-      node_id: "41139:101303"
-      component_set_key: "dc2737f3b3f7547ef3c2a0bb90c312079ace933d"
-      role: "password visibility toggle icon"
-      usage_condition: "nested Input Show Eye Icon=true"
-      spec_owner: "Hidden component set"
+  - component: "Input"
+    node_id: "62030:25118"
+    component_set_key: "b247b1e27209ef814568ebc99e19ea8b8d2f3e09"
+    role: "single-line input body and optional trailing controls"
+    usage_condition: "Lines=Single"
+    spec_owner: "Input component set"
+  - component: "Guide Message"
+    node_id: "62030:25179"
+    component_set_key: "fe8818f96c1b0ba8ff464579b455e15e3ac5b3c8"
+    role: "helper, success, and error message below the field"
+    usage_condition: "Guide_Message=true"
+    spec_owner: "Guide Message component set"
+  - component: "Badge_Dot"
+    node_id: "8451:112783"
+    component_set_key: "d1ea898a9e908e7470a7518abae5b45c18e0a58a"
+    role: "required or status marker beside title"
+    usage_condition: "Show_Badge_Dot=true"
+    spec_owner: "Badge_Dot component set"
+  - component: "Scrollbar"
+    node_id: "58651:35661"
+    component_set_key: "ec2d17107a68bb443f80245ab791fb69380f0a50"
+    role: "multi-line overflow indicator"
+    usage_condition: "Lines=Multiple and Scrollbar=true"
+    spec_owner: "Scrollbar component set"
+  - component: "Text Button"
+    node_id: "52753:39618"
+    component_set_key: "70d2a20bcdfe3ac7a3c3190410d9a255d8783e1d"
+    role: "optional single-line trailing action"
+    usage_condition: "nested Input Show Button=true"
+    spec_owner: "Text Button component set"
+  - component: "Hidden"
+    node_id: "41139:101303"
+    component_set_key: "dc2737f3b3f7547ef3c2a0bb90c312079ace933d"
+    role: "password visibility toggle icon"
+    usage_condition: "nested Input Show Eye Icon=true"
+    spec_owner: "Hidden component set"
 
 layout:
   component_set:
@@ -434,11 +570,11 @@ layout:
       variants: []
 
 implementation_order:
-  - "Resolve Lines first because Single and Multiple use different field body composition and height."
-  - "Resolve Mode next because adaptive and fixed token families must not mix."
-  - "Resolve Status after Mode to apply inactive, focus, error, success, and disabled color treatment."
-  - "Render title, badge, character counter, country code, scrollbar, and guide message from their boolean props."
-  - "Use nested Input, Guide Message, Badge_Dot, Scrollbar, Text Button, and Hidden component contracts instead of copying their internals."
+- "Resolve Lines first because Single and Multiple use different field body composition and height."
+- "Resolve Mode next because adaptive and fixed token families must not mix."
+- "Resolve Status after Mode to apply inactive, focus, error, success, and disabled color treatment."
+- "Render title, badge, character counter, country code, scrollbar, and guide message from their boolean props."
+- "Use nested Input, Guide Message, Badge_Dot, Scrollbar, Text Button, and Hidden component contracts instead of copying their internals."
 
 implementation_coverage:
   axes: "Implement all 20 Mode x Lines x Status variants."
@@ -449,29 +585,34 @@ implementation_coverage:
 
 rules:
   do:
-    - "Use Text Fields when users need to enter or edit text directly."
-    - "Provide a title label so the input purpose remains clear after typing."
-    - "Use Single for short one-line input and Multiple for content that needs two or more visible lines."
-    - "Use Error and Success states with visible guide feedback, not color alone."
-    - "Keep optional actions directly related to the input purpose."
+  - "Use Text Fields when users need to enter or edit text directly."
+  - "Provide a title label so the input purpose remains clear after typing."
+  - "Use Single for short one-line input and Multiple for content that needs two or more visible lines."
+  - "Use Error and Success states with visible guide feedback, not color alone."
+  - "Keep optional actions directly related to the input purpose."
   dont:
-    - "Do not rely on placeholder text alone to explain the field purpose."
-    - "Do not mix multiple status meanings in one field."
-    - "Do not communicate an error only through color."
-    - "Do not place unrelated actions inside the input field."
-    - "Do not put multi-line content into Single when users need to review more than one line."
+  - "Do not rely on placeholder text alone to explain the field purpose."
+  - "Do not mix multiple status meanings in one field."
+  - "Do not communicate an error only through color."
+  - "Do not place unrelated actions inside the input field."
+  - "Do not put multi-line content into Single when users need to review more than one line."
 
 spec_notes:
   source:
-    - "Live Figma readback from component set 62030:25225 on 2026-05-04."
-    - "Variant key snapshot: refs/figma-component-keys/variant-keys/text-fields.md."
-    - "Usage reference: refs/markitdown-output/markitdown-text-fields.md."
+  - "Live Figma readback from component set 62030:25225 on 2026-05-04."
+  - "Variant key snapshot: refs/figma-component-keys/variant-keys/text-fields.md."
   usage:
-    - "Text Fields collect direct user input and must expose clear status and feedback."
-    - "Nested composition is retained as references to avoid duplicating child component descriptions."
+  - "Text Fields collect direct user input and must expose clear status and feedback."
+  - "Nested composition is retained as references to avoid duplicating child component descriptions."
 
 source_gaps:
-  - part: "Input nested optional controls"
-    reason: "Nested Input exposes additional controls such as clear, check, eye, button, and timer; this parent draft records composition and consumer-facing intent but does not duplicate nested Input internals."
-  - part: "Guide Message success and error variants"
-    reason: "Live readback returned concrete component keys for success and error Guide Message instances without a parent component set on those two variants, so the parent Guide Message set is recorded for the default case and status-specific instances are summarized by role."
+- part: "Input nested optional controls"
+  reason: "Nested Input exposes additional controls such as clear, check, eye, button, and timer; this parent draft records composition and consumer-facing intent but does not duplicate nested Input internals."
+- part: "Guide Message success and error variants"
+  reason: "Live readback returned concrete component keys for success and error Guide Message instances without a parent component set on those two variants, so the parent Guide Message set is recorded
+    for the default case and status-specific instances are summarized by role."
+baseline:
+  node_id: 62030:25244
+  variant: Mode=Default, Lines=Multiple, Status=Default
+  figma_file: "DWEduE6GfxYMlyxKPNJ8jA"
+  note: 'Fetch on demand: figma_get_component_image(node_id, scale=2)'
