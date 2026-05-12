@@ -1,0 +1,1 @@
+/Users/jj.iee/Desktop/workspace/10_figma-to-components-md/.claude/commands/figma-to-md.md
