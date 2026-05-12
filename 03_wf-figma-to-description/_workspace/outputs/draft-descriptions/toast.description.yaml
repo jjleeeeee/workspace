@@ -153,9 +153,11 @@ spec_notes:
 
 source_gaps:
   - part: "Hidden checkbox and icon_area internals"
+    confirmed: true
     field: "composition"
     reason: "Live Figma contains hidden [V1] Checkbox and icon_area descendants, but usage explicitly defines Toast as text-only without icons or buttons, so those descendants are excluded from composition.uses."
   - part: "Runtime width"
+    confirmed: true
     field: "responsive layout"
     reason: "Live component variants are 293px hug-content samples while usage guidance defines mobile side margins and a 410px maximum width."
 

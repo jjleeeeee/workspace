@@ -301,6 +301,7 @@ rules:
 
 source_gaps:
   - field: "icon_area size reference"
+    confirmed: true
     reason: "markitdown-button lists a 24x24 XLarge Icon Button inner area, but live Figma variants sampled from 54093:38778, 54093:38814, and 54093:38850 render icon_area at 20x20; this draft follows live
     Figma."
 

@@ -207,9 +207,11 @@ rules:
 
 source_gaps:
   - field: "tokens.unselected_dot_fill_fixed_white vs tokens.unselected_dot_fill_fixed_neutral"
+    confirmed: true
     reason: "Live extraction confirms both fixed-mode unselected fill tokens, but the design source does not name the semantic split beyond variant position."
     impact: "Implementation should map directly from the Figma variant pattern or verify the intended fixed-mode split with design before simplifying."
   - field: "layout.right_padding for some Dots=6+ edge variants"
+    confirmed: true
     reason: "Live extraction shows numeric right padding of 8px or 9px on some edge variants without a bound paddingRight token."
     impact: "Use the extracted numeric padding for those variants or verify whether a missing variable binding should be added in Figma."
 
@@ -217,6 +219,9 @@ spec_notes:
   source:
   - "Figma live read via Framelink and read-only Plugin API extraction from node 62324:12061."
   - "Variant key reference: refs/figma-component-keys/variant-keys/pagination-dot-v2.md."
+  usage:
+  - "Fixed 모드의 unselected dot은 두 가지 토큰(fixed-white, fixed-neutral)으로 분기된다. 디자인 소스에서 명시적 시맨틱 이름이 없으므로 Figma variant 패턴에서 직접 매핑하거나 구현 전 디자인팀에 확인한다."
+  - "Dots=6 이상 일부 엣지 variant에서 paddingRight가 토큰 없이 8~9px 하드코딩되어 있다. 해당 variant는 추출값을 그대로 사용하되, Figma에 토큰 바인딩이 추가되면 업데이트한다."
 baseline:
   node_id: 62370:9717
   variant: Mode=Default, Dots=5, Selection=1

@@ -246,8 +246,10 @@ spec_notes:
 
 source_gaps:
   - field: "legacy_description_markdown"
+    confirmed: true
     reason: "Live readback reports existing rich-text description length 16; no Figma write was requested, so this draft does not clear it."
   - part: "search icon"
+    confirmed: true
     reason: "The icon_area instance confirms a 16px icon slot, but the exact selected search icon component key was not returned as a component set."
 baseline:
   node_id: 59722:17973

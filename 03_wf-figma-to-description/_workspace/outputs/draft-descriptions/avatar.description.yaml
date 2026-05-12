@@ -279,6 +279,7 @@ spec_notes:
 
 source_gaps:
   - part: "Nested avatar atoms"
+    confirmed: true
     reason: "Some Ring and Moment_Ring details are nested instances; this Description records verified top-level props and markitdown reference details."
 baseline:
   node_id: "62973:7591"

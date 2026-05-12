@@ -224,12 +224,15 @@ spec_notes:
   usage:
   - "Snackbar is for feedback with optional follow-up action."
   - "It is more action-oriented than Toast but should not block the flow like Dialog."
+  - "Action 버튼(Retry/Cancel)은 Figma에서 static text로 존재하며 component property로 노출되지 않는다. 런타임에서는 별도 prop으로 분기 처리해야 하며, 빈 상태일 때 버튼 영역이 자동으로 숨겨지도록 구현한다."
 
 source_gaps:
   - part: "Action"
+    confirmed: true
     field: "component properties"
     reason: "Live Figma readback exposes Label and Icon properties only; Retry is visible static text and Cancel is hidden static text."
   - part: "Runtime width"
+    confirmed: true
     field: "responsive layout"
     reason: "Live component variants are fixed 373px samples while usage guidance defines 10px screen margins and a 410px maximum width."
 

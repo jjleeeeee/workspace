@@ -112,9 +112,11 @@ rules:
 
 source_gaps:
   - field: "assets.circular_loading_motion.source"
+    confirmed: true
     reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
     impact: "Implementation should use the existing product loading animation asset if available, or ask design for the Lottie asset key before shipping a new asset."
   - field: "motion.rotation_timing"
+    confirmed: true
     reason: "Live Figma extraction confirms geometry and tokens but does not expose animation timing."
     impact: "Do not invent timing values in implementation without a motion spec or asset handoff."
 
@@ -122,6 +124,9 @@ spec_notes:
   source:
   - "Figma live read via Framelink and read-only Plugin API extraction from node 10384:29888."
   - "Variant key reference: refs/figma-component-keys/variant-keys/loading-circular.md."
+  usage:
+  - "Lottie 애니메이션 에셋 키와 모션 타이밍은 Figma 외부에서 관리된다. 구현 시 기존 제품 로딩 에셋을 재사용하거나, 디자인팀에 에셋 키를 요청한 후 연동해야 하며 임의로 값을 만들어 사용하지 않는다."
+  - "Size=Large 변형이 없다. Loading Circular는 단일 크기(64px)로만 존재하며, Mode=Default/Fixed가 유일한 축이다. 컨테이너가 작을 경우 컴포넌트를 크기 조정하지 말고 대신 Loading Dot을 사용한다."
 baseline:
   node_id: 10384:29889
   variant: \bMode=Default

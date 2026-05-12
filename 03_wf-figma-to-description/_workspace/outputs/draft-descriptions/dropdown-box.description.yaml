@@ -453,8 +453,10 @@ spec_notes:
 
 source_gaps:
   - field: "icon_component_set_key"
+    confirmed: true
     reason: "The arrow icon readback exposes concrete arrow down and fold component keys, but not a parent icon component set key; asset source is therefore recorded by icon name."
   - part: "List_Item_Native option row internals"
+    confirmed: true
     reason: "Nested option row tokens and layout belong to the List_Item_Native component set and are intentionally referenced through composition.uses."
 baseline:
   node_id: 60730:9606

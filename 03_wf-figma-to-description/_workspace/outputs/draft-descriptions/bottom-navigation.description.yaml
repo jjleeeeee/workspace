@@ -412,6 +412,7 @@ spec_notes:
 
 source_gaps:
   - part: "Badge / number"
+    confirmed: true
     reason: "The component contains hidden number frames and Usage mentions Badge, but the selected visible variants do not expose a concrete Badge visual position/style in the extracted tree."
 baseline:
   node_id: "13361:20400"

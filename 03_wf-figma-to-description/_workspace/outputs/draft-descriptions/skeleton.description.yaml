@@ -228,11 +228,16 @@ spec_notes:
   - "Figma live read: Framelink extraction, Desktop Bridge deep extraction, and read-only use_figma targeted extraction from node 12447:42302."
   description_readback:
   - "Existing Figma description contains: tag : 스켈레톤."
+  usage:
+  - "Circle 변형은 200px 클리핑 컨테이너 + 내부 ellipse 조합으로 구현되어 있으며, 바운드 radius 토큰이 없다. 런타임에서는 border-radius: 50%로 처리하면 된다."
+  - "Skeleton은 실제 콘텐츠 레이아웃과 동일한 크기와 비율을 유지해야 한다. 애니메이션(shimmer) 구현은 Figma에 정의되지 않으며 플랫폼별 별도 스펙을 따른다."
 
 source_gaps:
   - part: "Circle radius token"
+    confirmed: true
     reason: "Circle variants use a 200px clipped component and ellipse Skeleton child, but no bound radius token was present in live extraction."
   - part: "Skeleton usage guidance"
+    confirmed: true
     reason: "No dedicated refs/markitdown-output/markitdown-skeleton.md file exists; rules are limited to Figma live data and conservative DS usage."
 baseline:
   node_id: 12447:42335

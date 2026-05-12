@@ -395,13 +395,16 @@ spec_notes:
 
 source_gaps:
   - part: "Membership and gradient mask internals"
+    confirmed: true
     field: "assets"
     reason: "Live readback confirmed vector/img_integratedmembership_gradient and Gradient_Mask instances, but usage guidance does not define them as independent consumer-facing component contracts."
   - part: "Fixed Left nested subtitle"
+    confirmed: true
     field: "tokens"
     reason: "Live readback found both fixed_color and semantic gray-500 subtitle tokens inside the Fixed Left variant due to nested multiple-slot content; the main subtitle token mapping records the fixed
     token while this mixed nested content is noted here."
   - part: "Multiple slots"
+    confirmed: true
     field: "slot content"
     reason: "Live Figma exposes SLOT properties with empty preferredValues, so this draft records slot existence and confirmed visible sample content without inventing slot value constraints."
 

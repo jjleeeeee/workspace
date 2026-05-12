@@ -167,6 +167,7 @@ rules:
 
 source_gaps:
   - field: "assets.loading_dot_motion.source"
+    confirmed: true
     reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
     impact: "Implementation should use the existing product loading animation asset if the platform has one, or ask design for the Lottie asset key before shipping a new asset."
 
@@ -174,6 +175,9 @@ spec_notes:
   source:
   - "Figma live read via Framelink and read-only Plugin API extraction from node 10384:29778."
   - "Variant key reference: refs/figma-component-keys/variant-keys/loading-dot.md."
+  usage:
+  - "Lottie 애니메이션 에셋 키는 Figma 외부에서 관리된다. Loading Circular와 동일하게 기존 제품 에셋을 재사용하거나 디자인팀에 에셋 키를 요청해야 하며, 애니메이션 타이밍을 임의로 정의하지 않는다."
+  - "Loading Dot은 인라인·콤팩트 컨텍스트(버튼 내부, 작은 영역)에 적합하다. 전체 화면 로딩 대기에는 Loading Circular를 사용한다."
 baseline:
   node_id: 10384:29779
   variant: Mode=Default, Size=Medium, Color=Primary

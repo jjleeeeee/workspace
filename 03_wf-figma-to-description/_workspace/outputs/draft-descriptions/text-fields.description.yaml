@@ -573,8 +573,10 @@ spec_notes:
 
 source_gaps:
   - part: "Input nested optional controls"
+    confirmed: true
     reason: "Nested Input exposes additional controls such as clear, check, eye, button, and timer; this parent draft records composition and consumer-facing intent but does not duplicate nested Input internals."
   - part: "Guide Message success and error variants"
+    confirmed: true
     reason: "Live readback returned concrete component keys for success and error Guide Message instances without a parent component set on those two variants, so the parent Guide Message set is recorded
     for the default case and status-specific instances are summarized by role."
 baseline:
