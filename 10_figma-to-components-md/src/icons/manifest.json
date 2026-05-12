@@ -1,0 +1,25 @@
+{
+  "schema": "renderer-asset-manifest/v1",
+  "icons": {
+    "birthday_hat": {
+      "file": "ic_birthdayhat_medium.svg",
+      "default_size": [24, 24],
+      "colorable": false
+    },
+    "default_thumbnail": {
+      "file": "img_avatar_default_thumbnail.svg",
+      "default_size": [40, 40],
+      "colorable": false
+    },
+    "thumbnail": {
+      "file": "ic_thumbnail_medium.svg",
+      "default_size": [24, 24],
+      "colorable": true
+    },
+    "thumbnail_outline": {
+      "file": "ic_thumbnail_outline_medium.svg",
+      "default_size": [24, 24],
+      "colorable": true
+    }
+  }
+}
