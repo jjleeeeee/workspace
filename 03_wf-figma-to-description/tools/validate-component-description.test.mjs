@@ -96,7 +96,7 @@ validation:
 
 describe("validate-component-description", () => {
   it("keeps legacy description validation as the default mode", () => {
-    const result = runValidator(["examples/valid-description.yaml"]);
+    const result = runValidator(["harness/examples/valid-description.yaml"]);
 
     assert.equal(result.status, 0, result.stderr);
     assert.match(result.stdout, /PASS valid-description\.yaml/);
