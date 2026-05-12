@@ -1,0 +1,7 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "include": ["src/components/**/*.{ts,tsx}"],
+    "exclude": ["src/**/*.test.*", "src/**/*.stories.*"]
+  }
+}
