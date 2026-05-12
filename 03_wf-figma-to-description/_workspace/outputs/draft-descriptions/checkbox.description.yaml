@@ -140,12 +140,12 @@ interaction:
     behavior: "Disabled must not trigger selection changes."
 
 implementation_order:
-- "Select Mode, Type, and Status variant."
-- "Render a 24x24 control with a 22x22 visual box."
-- "Use Circle as the default shape and Square only in list-item contexts."
-- "Render check icon only for Enabled or Disabled states."
-- "Apply mode-specific stroke, fill, and icon tokens."
-- "Keep Check Box + Text and Check Mark + Text gaps at 6px when paired with labels."
+  - "Select Mode, Type, and Status variant."
+  - "Render a 24x24 control with a 22x22 visual box."
+  - "Use Circle as the default shape and Square only in list-item contexts."
+  - "Render check icon only for Enabled or Disabled states."
+  - "Apply mode-specific stroke, fill, and icon tokens."
+  - "Keep Check Box + Text and Check Mark + Text gaps at 6px when paired with labels."
 
 implementation_coverage:
   axes:
@@ -168,16 +168,16 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Check Box when users can select zero, one, multiple, or all options."
-  - "Use Check Box for a single agreement, approval, or confirmation."
-  - "Use Circle as the default Check Box type."
-  - "Use Square only in specified contexts such as List Item."
-  - "Use Enabled state to clearly emphasize selected items."
+    - "Use Check Box when users can select zero, one, multiple, or all options."
+    - "Use Check Box for a single agreement, approval, or confirmation."
+    - "Use Circle as the default Check Box type."
+    - "Use Square only in specified contexts such as List Item."
+    - "Use Enabled state to clearly emphasize selected items."
   dont:
-  - "Do not use Check Box when users must choose only one option from a group."
-  - "Do not mix Square and Circle in the same selection group."
-  - "Do not show a gray check icon in Default state."
-  - "Do not leave parent and child selection states inconsistent."
+    - "Do not use Check Box when users must choose only one option from a group."
+    - "Do not mix Square and Circle in the same selection group."
+    - "Do not show a gray check icon in Default state."
+    - "Do not leave parent and child selection states inconsistent."
 
 spec_notes:
   source:

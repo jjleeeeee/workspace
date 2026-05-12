@@ -94,11 +94,11 @@ layout:
       variants: []
 
 implementation_order:
-- "Select the Mode variant for the background context."
-- "Render a 10x100 scrollbar container with 2px horizontal and 4px vertical padding."
-- "Render the thumb as a 6x60 rounded rectangle."
-- "Apply the mode-specific thumb fill token and preserve 20% opacity."
-- "Keep the scrollbar separate from content so it does not obscure readable content."
+  - "Select the Mode variant for the background context."
+  - "Render a 10x100 scrollbar container with 2px horizontal and 4px vertical padding."
+  - "Render the thumb as a 6x60 rounded rectangle."
+  - "Apply the mode-specific thumb fill token and preserve 20% opacity."
+  - "Keep the scrollbar separate from content so it does not obscure readable content."
 
 implementation_coverage:
   axes:
@@ -119,14 +119,14 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Scrollbar when content is longer or wider than the visible area."
-  - "Expose Scrollbar separately from the content area."
-  - "Use Scrollbar to communicate current content position and scroll affordance."
-  - "On PC, keep the scroll track area distinguishable from the content area."
+    - "Use Scrollbar when content is longer or wider than the visible area."
+    - "Expose Scrollbar separately from the content area."
+    - "Use Scrollbar to communicate current content position and scroll affordance."
+    - "On PC, keep the scroll track area distinguishable from the content area."
   dont:
-  - "Do not overlap Scrollbar on top of content in a way that harms readability."
-  - "Do not hide the scroll track on PC when users need to understand the control position."
-  - "Do not use Scrollbar as a static decorative graphic."
+    - "Do not overlap Scrollbar on top of content in a way that harms readability."
+    - "Do not hide the scroll track on PC when users need to understand the control position."
+    - "Do not use Scrollbar as a static decorative graphic."
 
 spec_notes:
   source:

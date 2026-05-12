@@ -187,12 +187,12 @@ interaction:
     behavior: "Show only one Snackbar at a time."
 
 implementation_order:
-- "Resolve Mode first because it changes the container surface token and opacity."
-- "Apply the fixed 12px vertical and 16px horizontal padding, 8px gap, and 8px radius."
-- "Bind Label text with body-xs/system-400 and allow wrapping up to three lines."
-- "Enable icon_area only when Icon=true and keep the icon as the nested DS icon_area component."
-- "Render the optional Retry action with lower emphasis than a filled button."
-- "Place the Snackbar above bottom UI with 10px screen margins and a 410px maximum width."
+  - "Resolve Mode first because it changes the container surface token and opacity."
+  - "Apply the fixed 12px vertical and 16px horizontal padding, 8px gap, and 8px radius."
+  - "Bind Label text with body-xs/system-400 and allow wrapping up to three lines."
+  - "Enable icon_area only when Icon=true and keep the icon as the nested DS icon_area component."
+  - "Render the optional Retry action with lower emphasis than a filled button."
+  - "Place the Snackbar above bottom UI with 10px screen margins and a 410px maximum width."
 
 implementation_coverage:
   axes: "Implement both Mode variants."
@@ -203,19 +203,19 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Snackbar to keep the user's flow while showing a task result and optional follow-up action."
-  - "Keep the message short and clear."
-  - "Provide an Action only when the follow-up is optional."
-  - "Limit text to three lines."
-  - "Place Snackbar above Home Indicator, GNB, or CTA Button."
-  - "Show only one Snackbar at a time."
+    - "Use Snackbar to keep the user's flow while showing a task result and optional follow-up action."
+    - "Keep the message short and clear."
+    - "Provide an Action only when the follow-up is optional."
+    - "Limit text to three lines."
+    - "Place Snackbar above Home Indicator, GNB, or CTA Button."
+    - "Show only one Snackbar at a time."
   dont:
-  - "Do not put long multi-topic copy into Snackbar."
-  - "Do not use Snackbar for required confirmation or important decisions."
-  - "Do not exceed three lines of text."
-  - "Do not overlap the primary CTA in a way that blocks operation."
-  - "Do not use Snackbar like a blocking popup."
-  - "Do not use a high-emphasis Filled Button inside Snackbar."
+    - "Do not put long multi-topic copy into Snackbar."
+    - "Do not use Snackbar for required confirmation or important decisions."
+    - "Do not exceed three lines of text."
+    - "Do not overlap the primary CTA in a way that blocks operation."
+    - "Do not use Snackbar like a blocking popup."
+    - "Do not use a high-emphasis Filled Button inside Snackbar."
 
 spec_notes:
   source:
@@ -226,12 +226,12 @@ spec_notes:
   - "It is more action-oriented than Toast but should not block the flow like Dialog."
 
 source_gaps:
-- part: "Action"
-  field: "component properties"
-  reason: "Live Figma readback exposes Label and Icon properties only; Retry is visible static text and Cancel is hidden static text."
-- part: "Runtime width"
-  field: "responsive layout"
-  reason: "Live component variants are fixed 373px samples while usage guidance defines 10px screen margins and a 410px maximum width."
+  - part: "Action"
+    field: "component properties"
+    reason: "Live Figma readback exposes Label and Icon properties only; Retry is visible static text and Cancel is hidden static text."
+  - part: "Runtime width"
+    field: "responsive layout"
+    reason: "Live component variants are fixed 373px samples while usage guidance defines 10px screen margins and a 410px maximum width."
 
 verification:
   figma_live_read:

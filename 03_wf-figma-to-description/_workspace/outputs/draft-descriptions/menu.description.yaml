@@ -144,11 +144,11 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Mode first to choose Default or Fixed surface and scrollbar thumb tokens."
-- "Render menu as a 240px wide overlay with max height 370px and 8px radius."
-- "Compose menu rows from [V2] List_Item_Native and keep row height consistent within one Menu."
-- "Apply internal scrolling when row content exceeds the max height."
-- "Position Menu from the trigger context using top, bottom, or center placement rules."
+  - "Resolve Mode first to choose Default or Fixed surface and scrollbar thumb tokens."
+  - "Render menu as a 240px wide overlay with max height 370px and 8px radius."
+  - "Compose menu rows from [V2] List_Item_Native and keep row height consistent within one Menu."
+  - "Apply internal scrolling when row content exceeds the max height."
+  - "Position Menu from the trigger context using top, bottom, or center placement rules."
 
 implementation_coverage:
   axes: "Implement both Default and Fixed Mode variants."
@@ -159,17 +159,17 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Menu for a short list of actions or selectable items in the current context."
-  - "Build Menu items with [V2] List_Item_Native."
-  - "Keep the trigger location and Menu placement visually related."
-  - "Use internal scrolling when menu content exceeds 370px height."
-  - "Keep all rows in one Menu structurally consistent."
+    - "Use Menu for a short list of actions or selectable items in the current context."
+    - "Build Menu items with [V2] List_Item_Native."
+    - "Keep the trigger location and Menu placement visually related."
+    - "Use internal scrolling when menu content exceeds 370px height."
+    - "Keep all rows in one Menu structurally consistent."
   dont:
-  - "Do not use Menu as an independent navigation page."
-  - "Do not put long settings flows or multi-step explanations inside Menu."
-  - "Do not mix row heights and row structures within one Menu."
-  - "Do not display Menu in a position unrelated to the trigger."
-  - "Do not let Menu grow beyond the max height into surrounding screen content."
+    - "Do not use Menu as an independent navigation page."
+    - "Do not put long settings flows or multi-step explanations inside Menu."
+    - "Do not mix row heights and row structures within one Menu."
+    - "Do not display Menu in a position unrelated to the trigger."
+    - "Do not let Menu grow beyond the max height into surrounding screen content."
 
 spec_notes:
   source:

@@ -536,11 +536,11 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Lines first because Single and Multiple use different field body composition and height."
-- "Resolve Mode next because adaptive and fixed token families must not mix."
-- "Resolve Status after Mode to apply inactive, focus, error, success, and disabled color treatment."
-- "Render title, badge, character counter, country code, scrollbar, and guide message from their boolean props."
-- "Use nested Input, Guide Message, Badge_Dot, Scrollbar, Text Button, and Hidden component contracts instead of copying their internals."
+  - "Resolve Lines first because Single and Multiple use different field body composition and height."
+  - "Resolve Mode next because adaptive and fixed token families must not mix."
+  - "Resolve Status after Mode to apply inactive, focus, error, success, and disabled color treatment."
+  - "Render title, badge, character counter, country code, scrollbar, and guide message from their boolean props."
+  - "Use nested Input, Guide Message, Badge_Dot, Scrollbar, Text Button, and Hidden component contracts instead of copying their internals."
 
 implementation_coverage:
   axes: "Implement all 20 Mode x Lines x Status variants."
@@ -551,17 +551,17 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Text Fields when users need to enter or edit text directly."
-  - "Provide a title label so the input purpose remains clear after typing."
-  - "Use Single for short one-line input and Multiple for content that needs two or more visible lines."
-  - "Use Error and Success states with visible guide feedback, not color alone."
-  - "Keep optional actions directly related to the input purpose."
+    - "Use Text Fields when users need to enter or edit text directly."
+    - "Provide a title label so the input purpose remains clear after typing."
+    - "Use Single for short one-line input and Multiple for content that needs two or more visible lines."
+    - "Use Error and Success states with visible guide feedback, not color alone."
+    - "Keep optional actions directly related to the input purpose."
   dont:
-  - "Do not rely on placeholder text alone to explain the field purpose."
-  - "Do not mix multiple status meanings in one field."
-  - "Do not communicate an error only through color."
-  - "Do not place unrelated actions inside the input field."
-  - "Do not put multi-line content into Single when users need to review more than one line."
+    - "Do not rely on placeholder text alone to explain the field purpose."
+    - "Do not mix multiple status meanings in one field."
+    - "Do not communicate an error only through color."
+    - "Do not place unrelated actions inside the input field."
+    - "Do not put multi-line content into Single when users need to review more than one line."
 
 spec_notes:
   source:
@@ -572,10 +572,10 @@ spec_notes:
   - "Nested composition is retained as references to avoid duplicating child component descriptions."
 
 source_gaps:
-- part: "Input nested optional controls"
-  reason: "Nested Input exposes additional controls such as clear, check, eye, button, and timer; this parent draft records composition and consumer-facing intent but does not duplicate nested Input internals."
-- part: "Guide Message success and error variants"
-  reason: "Live readback returned concrete component keys for success and error Guide Message instances without a parent component set on those two variants, so the parent Guide Message set is recorded
+  - part: "Input nested optional controls"
+    reason: "Nested Input exposes additional controls such as clear, check, eye, button, and timer; this parent draft records composition and consumer-facing intent but does not duplicate nested Input internals."
+  - part: "Guide Message success and error variants"
+    reason: "Live readback returned concrete component keys for success and error Guide Message instances without a parent component set on those two variants, so the parent Guide Message set is recorded
     for the default case and status-specific instances are summarized by role."
 baseline:
   node_id: 62030:25244

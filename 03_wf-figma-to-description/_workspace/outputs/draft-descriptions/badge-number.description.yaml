@@ -110,12 +110,12 @@ interaction:
     behavior: "Use New when the item should be marked as newly available rather than counted."
 
 implementation_order:
-- "Select Mode and Type variant."
-- "Apply mode-specific negative background token."
-- "Apply mode-specific white-same label token."
-- "For Type=Number, render the Label prop and cap it to 4 characters including plus sign."
-- "For Type=New, render the N label."
-- "Keep Number at 39x16 and New at 16x16 with 20 radius."
+  - "Select Mode and Type variant."
+  - "Apply mode-specific negative background token."
+  - "Apply mode-specific white-same label token."
+  - "For Type=Number, render the Label prop and cap it to 4 characters including plus sign."
+  - "For Type=New, render the N label."
+  - "Keep Number at 39x16 and New at 16x16 with 20 radius."
 
 implementation_coverage:
   axes:
@@ -139,13 +139,13 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Number Badge when a notification count should be visible."
-  - "Use New Badge when the item should show new state instead of a count."
-  - "Limit Number labels to 4 characters including the plus sign."
+    - "Use Number Badge when a notification count should be visible."
+    - "Use New Badge when the item should show new state instead of a count."
+    - "Limit Number labels to 4 characters including the plus sign."
   dont:
-  - "Do not use Number Badge for status presence only; use Dot Badge instead."
-  - "Do not exceed the 4-character label limit."
-  - "Do not change the New label away from N without an explicit product rule."
+    - "Do not use Number Badge for status presence only; use Dot Badge instead."
+    - "Do not exceed the 4-character label limit."
+    - "Do not change the New label away from N without an explicit product rule."
 
 spec_notes:
   source:

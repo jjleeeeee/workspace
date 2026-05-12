@@ -355,12 +355,12 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Mode first because text and detail tokens switch between semantic and fixed token families."
-- "Resolve Align next because Left and Center use different padding, leading structure, and title alignment."
-- "Apply the fixed 48px height before optional content so the header does not resize."
-- "Apply Leading, Trailing, title, subtitle, badge, and Multiple controls as visibility or slot composition only."
-- "Use nested Avatar, Tag, and trailing components without copying their child specs into Title Header."
-- "Keep title content to one line and avoid navigation behavior."
+  - "Resolve Mode first because text and detail tokens switch between semantic and fixed token families."
+  - "Resolve Align next because Left and Center use different padding, leading structure, and title alignment."
+  - "Apply the fixed 48px height before optional content so the header does not resize."
+  - "Apply Leading, Trailing, title, subtitle, badge, and Multiple controls as visibility or slot composition only."
+  - "Use nested Avatar, Tag, and trailing components without copying their child specs into Title Header."
+  - "Keep title content to one line and avoid navigation behavior."
 
 implementation_coverage:
   axes: "Implement all four Mode x Align variants."
@@ -371,19 +371,19 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Title Header to show the current content group's title and supporting information inside a screen."
-  - "Choose Left or Center alignment based on the information hierarchy."
-  - "Keep the height fixed at 48px."
-  - "Keep short text titles to one line."
-  - "Use text button, dropdown, or trailing support only when a simple secondary action is needed."
-  - "Use avatar with text only when it helps identify a subject."
+    - "Use Title Header to show the current content group's title and supporting information inside a screen."
+    - "Choose Left or Center alignment based on the information hierarchy."
+    - "Keep the height fixed at 48px."
+    - "Keep short text titles to one line."
+    - "Use text button, dropdown, or trailing support only when a simple secondary action is needed."
+    - "Use avatar with text only when it helps identify a subject."
   dont:
-  - "Do not mix Left and Center alignment arbitrarily in the same screen."
-  - "Do not put two or more title lines into Title Header."
-  - "Do not use Title Header for page navigation or complex navigation structure."
-  - "Do not add multiple complex actions that exceed the header role."
-  - "Do not use Title Header as a fixed top navigation area."
-  - "Do not add avatar decoration without identification meaning."
+    - "Do not mix Left and Center alignment arbitrarily in the same screen."
+    - "Do not put two or more title lines into Title Header."
+    - "Do not use Title Header for page navigation or complex navigation structure."
+    - "Do not add multiple complex actions that exceed the header role."
+    - "Do not use Title Header as a fixed top navigation area."
+    - "Do not add avatar decoration without identification meaning."
 
 spec_notes:
   source:
@@ -394,16 +394,16 @@ spec_notes:
   - "It differs from Top Navigation because it does not provide page movement."
 
 source_gaps:
-- part: "Membership and gradient mask internals"
-  field: "assets"
-  reason: "Live readback confirmed vector/img_integratedmembership_gradient and Gradient_Mask instances, but usage guidance does not define them as independent consumer-facing component contracts."
-- part: "Fixed Left nested subtitle"
-  field: "tokens"
-  reason: "Live readback found both fixed_color and semantic gray-500 subtitle tokens inside the Fixed Left variant due to nested multiple-slot content; the main subtitle token mapping records the fixed
+  - part: "Membership and gradient mask internals"
+    field: "assets"
+    reason: "Live readback confirmed vector/img_integratedmembership_gradient and Gradient_Mask instances, but usage guidance does not define them as independent consumer-facing component contracts."
+  - part: "Fixed Left nested subtitle"
+    field: "tokens"
+    reason: "Live readback found both fixed_color and semantic gray-500 subtitle tokens inside the Fixed Left variant due to nested multiple-slot content; the main subtitle token mapping records the fixed
     token while this mixed nested content is noted here."
-- part: "Multiple slots"
-  field: "slot content"
-  reason: "Live Figma exposes SLOT properties with empty preferredValues, so this draft records slot existence and confirmed visible sample content without inventing slot value constraints."
+  - part: "Multiple slots"
+    field: "slot content"
+    reason: "Live Figma exposes SLOT properties with empty preferredValues, so this draft records slot existence and confirmed visible sample content without inventing slot value constraints."
 
 verification:
   figma_live_read:

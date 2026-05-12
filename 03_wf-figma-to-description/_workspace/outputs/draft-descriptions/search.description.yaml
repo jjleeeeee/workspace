@@ -210,11 +210,11 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Mode first because Default and Fixed use different token families."
-- "Resolve State next to switch placeholder text, query text, caret, and clear action visibility."
-- "Render the search icon before the input label in every variant."
-- "Render clear button only when the component is active or populated."
-- "Keep the 36px pill search bar, 12px horizontal padding, and 24px radius."
+  - "Resolve Mode first because Default and Fixed use different token families."
+  - "Resolve State next to switch placeholder text, query text, caret, and clear action visibility."
+  - "Render the search icon before the input label in every variant."
+  - "Render clear button only when the component is active or populated."
+  - "Keep the 36px pill search bar, 12px horizontal padding, and 24px radius."
 
 implementation_coverage:
   axes: "Implement all 6 Mode x State variants."
@@ -225,16 +225,16 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Search when users enter a keyword to narrow or find content."
-  - "Show the search icon before the input text."
-  - "Provide a clear action while a query is active or completed."
-  - "Connect result count or no-result feedback near the search context outside this field."
-  - "Open the keyboard when the enabled search field is focused."
+    - "Use Search when users enter a keyword to narrow or find content."
+    - "Show the search icon before the input text."
+    - "Provide a clear action while a query is active or completed."
+    - "Connect result count or no-result feedback near the search context outside this field."
+    - "Open the keyboard when the enabled search field is focused."
   dont:
-  - "Do not make Search look like a generic text field without the search icon."
-  - "Do not hide the clear action when a query is present."
-  - "Do not visually treat an enabled search box as disabled."
-  - "Do not detach search results from the query context."
+    - "Do not make Search look like a generic text field without the search icon."
+    - "Do not hide the clear action when a query is present."
+    - "Do not visually treat an enabled search box as disabled."
+    - "Do not detach search results from the query context."
 
 spec_notes:
   source:
@@ -245,10 +245,10 @@ spec_notes:
   - "Live readback has a legacy rich-text description value, but this draft stores YAML only in plain description."
 
 source_gaps:
-- field: "legacy_description_markdown"
-  reason: "Live readback reports existing rich-text description length 16; no Figma write was requested, so this draft does not clear it."
-- part: "search icon"
-  reason: "The icon_area instance confirms a 16px icon slot, but the exact selected search icon component key was not returned as a component set."
+  - field: "legacy_description_markdown"
+    reason: "Live readback reports existing rich-text description length 16; no Figma write was requested, so this draft does not clear it."
+  - part: "search icon"
+    reason: "The icon_area instance confirms a 16px icon slot, but the exact selected search icon component key was not returned as a component set."
 baseline:
   node_id: 59722:17973
   variant: Mode=Default, State=Default

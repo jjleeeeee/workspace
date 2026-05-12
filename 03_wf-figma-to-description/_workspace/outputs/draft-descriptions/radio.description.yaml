@@ -136,12 +136,12 @@ interaction:
     behavior: "A Radio group should generally expose a recommended or common default selection."
 
 implementation_order:
-- "Select Mode and Status variant."
-- "Render a 24x24 control with 22px outline diameter."
-- "For Default state, render an empty circle without a dot."
-- "For Enabled state, render Shape and inner-circle."
-- "For Disabled state, render disabled background and disabled inner circle."
-- "Keep Radio + Text gap at 6px when paired with labels."
+  - "Select Mode and Status variant."
+  - "Render a 24x24 control with 22px outline diameter."
+  - "For Default state, render an empty circle without a dot."
+  - "For Enabled state, render Shape and inner-circle."
+  - "For Disabled state, render disabled background and disabled inner circle."
+  - "Keep Radio + Text gap at 6px when paired with labels."
 
 implementation_coverage:
   axes:
@@ -163,17 +163,17 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Radio when users must select exactly one item from multiple options."
-  - "Use the same control type within the same selection group."
-  - "Select the most recommended or common option by default."
-  - "Use Check Box for independent agreement, approval, or confirmation."
-  - "Show the unselected state as an empty circle."
+    - "Use Radio when users must select exactly one item from multiple options."
+    - "Use the same control type within the same selection group."
+    - "Select the most recommended or common option by default."
+    - "Use Check Box for independent agreement, approval, or confirmation."
+    - "Show the unselected state as an empty circle."
   dont:
-  - "Do not use Radio for multi-select options."
-  - "Do not mix Radio and Check Box in the same selection group."
-  - "Do not expose a Radio group with all options unselected."
-  - "Do not use Radio for a single Yes or No decision."
-  - "Do not show a dot before selection."
+    - "Do not use Radio for multi-select options."
+    - "Do not mix Radio and Check Box in the same selection group."
+    - "Do not expose a Radio group with all options unselected."
+    - "Do not use Radio for a single Yes or No decision."
+    - "Do not show a dot before selection."
 
 spec_notes:
   source:

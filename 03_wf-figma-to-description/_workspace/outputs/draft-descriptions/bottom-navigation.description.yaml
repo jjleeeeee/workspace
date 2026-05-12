@@ -372,11 +372,11 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve OS first because iOS and AOS differ in typography size, line height, and system indicator structure."
-- "Resolve Mode next because Default and Fixed determine surface, divider, and fixed color token families."
-- "Resolve focus after Mode and OS; the focused tab receives Enabled icon and Bold label treatment."
-- "Apply Show_System last because it only controls the system indicator area, not the GNB tab layout."
-- "Preserve icon assets and do not replace them with text or CSS primitives."
+  - "Resolve OS first because iOS and AOS differ in typography size, line height, and system indicator structure."
+  - "Resolve Mode next because Default and Fixed determine surface, divider, and fixed color token families."
+  - "Resolve focus after Mode and OS; the focused tab receives Enabled icon and Bold label treatment."
+  - "Apply Show_System last because it only controls the system indicator area, not the GNB tab layout."
+  - "Preserve icon assets and do not replace them with text or CSS primitives."
 
 implementation_coverage:
   axes: "Implement all 16 Mode x OS x focus combinations."
@@ -387,20 +387,20 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Bottom Navigation for 3-5 top-level destinations that need repeated access."
-  - "Keep tab order and position consistent across screens."
-  - "Use icon and label together for each navigation option."
-  - "Make the active tab visually distinct with Enabled icon treatment and Bold label."
-  - "Keep Shop in its fixed service display mode when that service condition applies."
-  - "Let each tab area stretch horizontally instead of using a fixed screen-specific tab width."
-  - "Use Badge only in the defined position and style when notification state is required."
+    - "Use Bottom Navigation for 3-5 top-level destinations that need repeated access."
+    - "Keep tab order and position consistent across screens."
+    - "Use icon and label together for each navigation option."
+    - "Make the active tab visually distinct with Enabled icon treatment and Bold label."
+    - "Keep Shop in its fixed service display mode when that service condition applies."
+    - "Let each tab area stretch horizontally instead of using a fixed screen-specific tab width."
+    - "Use Badge only in the defined position and style when notification state is required."
   dont:
-  - "Do not add temporary menus or campaign links as tabs."
-  - "Do not show icons without labels."
-  - "Do not truncate, wrap, or ellipsize tab labels."
-  - "Do not use the same icon style and label weight for active and inactive tabs."
-  - "Do not switch Shop Bottom Navigation to dark colors when the service condition requires fixed light display."
-  - "Do not manually change Badge position or color."
+    - "Do not add temporary menus or campaign links as tabs."
+    - "Do not show icons without labels."
+    - "Do not truncate, wrap, or ellipsize tab labels."
+    - "Do not use the same icon style and label weight for active and inactive tabs."
+    - "Do not switch Shop Bottom Navigation to dark colors when the service condition requires fixed light display."
+    - "Do not manually change Badge position or color."
 
 spec_notes:
   source:
@@ -411,8 +411,8 @@ spec_notes:
   - "Badge usage is allowed only for notification or update meaning."
 
 source_gaps:
-- part: "Badge / number"
-  reason: "The component contains hidden number frames and Usage mentions Badge, but the selected visible variants do not expose a concrete Badge visual position/style in the extracted tree."
+  - part: "Badge / number"
+    reason: "The component contains hidden number frames and Usage mentions Badge, but the selected visible variants do not expose a concrete Badge visual position/style in the extracted tree."
 baseline:
   node_id: "13361:20400"
   variant: "Mode=Default, OS=iOS, focus=1_Home"

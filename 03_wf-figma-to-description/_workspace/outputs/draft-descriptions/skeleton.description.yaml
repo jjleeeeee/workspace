@@ -181,12 +181,12 @@ layout:
       variants: []
 
 implementation_order:
-- "Select Mode, Type, and Size variant."
-- "Render the base Skeleton shape at the source dimensions for the selected Type and Size."
-- "Apply the mode-specific base fill token."
-- "Apply Type-specific radius or circle clipping."
-- "Render the Gradient child above the base shape and clip it to the Skeleton boundary."
-- "Apply the mode-specific gradient stop tokens and preserve the stop positions."
+  - "Select Mode, Type, and Size variant."
+  - "Render the base Skeleton shape at the source dimensions for the selected Type and Size."
+  - "Apply the mode-specific base fill token."
+  - "Apply Type-specific radius or circle clipping."
+  - "Render the Gradient child above the base shape and clip it to the Skeleton boundary."
+  - "Apply the mode-specific gradient stop tokens and preserve the stop positions."
 
 implementation_coverage:
   axes:
@@ -213,15 +213,15 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Skeleton to reserve space while real content is loading."
-  - "Match Skeleton Type and Size to the expected content shape."
-  - "Keep the Gradient clipped inside the Skeleton shape."
-  - "Use Fixed mode when the Skeleton must stay stable on fixed dark surfaces."
+    - "Use Skeleton to reserve space while real content is loading."
+    - "Match Skeleton Type and Size to the expected content shape."
+    - "Keep the Gradient clipped inside the Skeleton shape."
+    - "Use Fixed mode when the Skeleton must stay stable on fixed dark surfaces."
   dont:
-  - "Do not use Skeleton as final content."
-  - "Do not change the gradient stop positions or alpha values without a design update."
-  - "Do not use Line or Rectangle when the target content is circular."
-  - "Do not expose loading text inside the Skeleton shape."
+    - "Do not use Skeleton as final content."
+    - "Do not change the gradient stop positions or alpha values without a design update."
+    - "Do not use Line or Rectangle when the target content is circular."
+    - "Do not expose loading text inside the Skeleton shape."
 
 spec_notes:
   source:
@@ -230,10 +230,10 @@ spec_notes:
   - "Existing Figma description contains: tag : 스켈레톤."
 
 source_gaps:
-- part: "Circle radius token"
-  reason: "Circle variants use a 200px clipped component and ellipse Skeleton child, but no bound radius token was present in live extraction."
-- part: "Skeleton usage guidance"
-  reason: "No dedicated refs/markitdown-output/markitdown-skeleton.md file exists; rules are limited to Figma live data and conservative DS usage."
+  - part: "Circle radius token"
+    reason: "Circle variants use a 200px clipped component and ellipse Skeleton child, but no bound radius token was present in live extraction."
+  - part: "Skeleton usage guidance"
+    reason: "No dedicated refs/markitdown-output/markitdown-skeleton.md file exists; rules are limited to Figma live data and conservative DS usage."
 baseline:
   node_id: 12447:42335
   variant: Mode=Default, Type=Rectangle, Size=Medium

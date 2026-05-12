@@ -225,13 +225,13 @@ interaction:
     behavior: "Render optional Ring, Birthday_Hat, Emoji, Badge_Dot, and Host only when each boolean prop is true."
 
 implementation_order:
-- "Select Mode, Type, and Size variant."
-- "Render the avatar image at the Size value while preserving the component-size bounding box."
-- "Apply Circle or Squircle shape semantics."
-- "For Squircle, use the mask asset instead of border-radius approximation."
-- "Apply mode-specific outline, surface, and badge tokens."
-- "Render optional Ring, Birthday_Hat, Emoji, Badge_Dot, and Host overlays."
-- "For Membership ring, use the Figma paint style gradient data from the spec reference."
+  - "Select Mode, Type, and Size variant."
+  - "Render the avatar image at the Size value while preserving the component-size bounding box."
+  - "Apply Circle or Squircle shape semantics."
+  - "For Squircle, use the mask asset instead of border-radius approximation."
+  - "Apply mode-specific outline, surface, and badge tokens."
+  - "Render optional Ring, Birthday_Hat, Emoji, Badge_Dot, and Host overlays."
+  - "For Membership ring, use the Figma paint style gradient data from the spec reference."
 
 implementation_coverage:
   axes:
@@ -260,14 +260,14 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Circle Avatar for personal profiles and user identity."
-  - "Use Squircle Avatar for groups, solo artists, and official community representative images."
-  - "Use a consistent Avatar size within the same list or hierarchy."
-  - "Choose the size scale by layout density and information hierarchy."
+    - "Use Circle Avatar for personal profiles and user identity."
+    - "Use Squircle Avatar for groups, solo artists, and official community representative images."
+    - "Use a consistent Avatar size within the same list or hierarchy."
+    - "Choose the size scale by layout density and information hierarchy."
   dont:
-  - "Do not mix Avatar types when the content identity purpose differs."
-  - "Do not mix Avatar sizes within the same information hierarchy."
-  - "Do not replace Squircle with a simple rounded rectangle."
+    - "Do not mix Avatar types when the content identity purpose differs."
+    - "Do not mix Avatar sizes within the same information hierarchy."
+    - "Do not replace Squircle with a simple rounded rectangle."
 
 spec_notes:
   source:
@@ -278,8 +278,8 @@ spec_notes:
     gradient_transform: "[[0.7684494853, 0.5588471889, -0.1627408862], [-0.0824003071, 0.1141824573, 0.4778847098]]"
 
 source_gaps:
-- part: "Nested avatar atoms"
-  reason: "Some Ring and Moment_Ring details are nested instances; this Description records verified top-level props and markitdown reference details."
+  - part: "Nested avatar atoms"
+    reason: "Some Ring and Moment_Ring details are nested instances; this Description records verified top-level props and markitdown reference details."
 baseline:
   node_id: "62973:7591"
   variant: "Mode=Default, Type=Circle, Size=Medium"

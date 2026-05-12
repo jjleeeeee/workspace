@@ -416,11 +416,11 @@ layout:
         value: "Dropdown opens above the input."
 
 implementation_order:
-- "Resolve Mode first because adaptive and fixed token families must not mix."
-- "Resolve State next because closed, pressed, open, completed, error, and disabled states change stroke, fill, icon direction, and menu visibility."
-- "Render Title and Guide Message only when their boolean props are true."
-- "Render open menu composition only for Enabled_Down and Enabled_Up states."
-- "Use List_Item_Native, Divider, Scrollbar, Badge_Dot, and icon assets through their component contracts."
+  - "Resolve Mode first because adaptive and fixed token families must not mix."
+  - "Resolve State next because closed, pressed, open, completed, error, and disabled states change stroke, fill, icon direction, and menu visibility."
+  - "Render Title and Guide Message only when their boolean props are true."
+  - "Render open menu composition only for Enabled_Down and Enabled_Up states."
+  - "Use List_Item_Native, Divider, Scrollbar, Badge_Dot, and icon assets through their component contracts."
 
 implementation_coverage:
   axes: "Implement all 14 Mode x State variants, including both open directions."
@@ -431,17 +431,17 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Dropdown when users must choose from provided options rather than type a free-form value."
-  - "Show the selected value clearly in the trigger field after selection."
-  - "Place the dropdown menu adjacent to the trigger field."
-  - "Keep state colors aligned with the field state."
-  - "Use menu rows with consistent option structure."
+    - "Use Dropdown when users must choose from provided options rather than type a free-form value."
+    - "Show the selected value clearly in the trigger field after selection."
+    - "Place the dropdown menu adjacent to the trigger field."
+    - "Keep state colors aligned with the field state."
+    - "Use menu rows with consistent option structure."
   dont:
-  - "Do not leave a completed selection looking like a placeholder."
-  - "Do not mix helper text, instruction text, and selectable options at the same hierarchy."
-  - "Do not detach the menu from the trigger field."
-  - "Do not apply arbitrary colors outside the confirmed state token rules."
-  - "Do not use Dropdown when the user needs free-form input."
+    - "Do not leave a completed selection looking like a placeholder."
+    - "Do not mix helper text, instruction text, and selectable options at the same hierarchy."
+    - "Do not detach the menu from the trigger field."
+    - "Do not apply arbitrary colors outside the confirmed state token rules."
+    - "Do not use Dropdown when the user needs free-form input."
 
 spec_notes:
   source:
@@ -452,10 +452,10 @@ spec_notes:
   - "Open states reuse List_Item_Native rows and Scrollbar instead of embedding row specs here."
 
 source_gaps:
-- field: "icon_component_set_key"
-  reason: "The arrow icon readback exposes concrete arrow down and fold component keys, but not a parent icon component set key; asset source is therefore recorded by icon name."
-- part: "List_Item_Native option row internals"
-  reason: "Nested option row tokens and layout belong to the List_Item_Native component set and are intentionally referenced through composition.uses."
+  - field: "icon_component_set_key"
+    reason: "The arrow icon readback exposes concrete arrow down and fold component keys, but not a parent icon component set key; asset source is therefore recorded by icon name."
+  - part: "List_Item_Native option row internals"
+    reason: "Nested option row tokens and layout belong to the List_Item_Native component set and are intentionally referenced through composition.uses."
 baseline:
   node_id: 60730:9606
   variant: Mode=Default, State=Default

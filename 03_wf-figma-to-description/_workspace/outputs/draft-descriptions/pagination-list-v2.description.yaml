@@ -262,12 +262,12 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Mode, Size, and Pages first."
-- "Choose the 40x40 Large slot or 32x32 Small slot pattern."
-- "Render previous control, page number slots, optional ellipsis slot, and next control in order."
-- "Apply selected and unselected page text tokens."
-- "Apply inactive previous and active next icon tokens after Mode is resolved."
-- "Use the nested slot components and icon assets instead of copying child internals into the parent."
+  - "Resolve Mode, Size, and Pages first."
+  - "Choose the 40x40 Large slot or 32x32 Small slot pattern."
+  - "Render previous control, page number slots, optional ellipsis slot, and next control in order."
+  - "Apply selected and unselected page text tokens."
+  - "Apply inactive previous and active next icon tokens after Mode is resolved."
+  - "Use the nested slot components and icon assets instead of copying child internals into the parent."
 
 implementation_coverage:
   axes:
@@ -294,15 +294,15 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use List Pagination when users need clear numeric page position and movement control."
-  - "Use List Pagination for web lists where exact current page awareness is needed."
-  - "Use an ellipsis slot when 8 or more pages are represented."
-  - "Place List Pagination below the list."
+    - "Use List Pagination when users need clear numeric page position and movement control."
+    - "Use List Pagination for web lists where exact current page awareness is needed."
+    - "Use an ellipsis slot when 8 or more pages are represented."
+    - "Place List Pagination below the list."
   dont:
-  - "Do not use Dot Pagination alone when exact page movement is required."
-  - "Do not expose every page number in a long uncompressed row."
-  - "Do not place List Pagination at the top of the page."
-  - "Do not force Large size in narrow layouts where it crowds content."
+    - "Do not use Dot Pagination alone when exact page movement is required."
+    - "Do not expose every page number in a long uncompressed row."
+    - "Do not place List Pagination at the top of the page."
+    - "Do not force Large size in narrow layouts where it crowds content."
 
 spec_notes:
   pagination_usage:

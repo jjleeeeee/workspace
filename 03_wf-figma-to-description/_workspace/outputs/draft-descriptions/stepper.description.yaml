@@ -234,12 +234,12 @@ layout:
       variants: []
 
 implementation_order:
-- "Render the fixed 104x28 Stepper frame before resolving state."
-- "Place subtract, number, and add regions as 28px, 48px, and 28px widths with no gap."
-- "Resolve Mode to select Default or Fixed outline, text, and icon token families."
-- "Resolve State to enable or disable subtract and add icon treatments."
-- "Apply the Label text and optional Caret without resizing the component."
-- "Block values above two digits and use State to communicate min or max limits."
+  - "Render the fixed 104x28 Stepper frame before resolving state."
+  - "Place subtract, number, and add regions as 28px, 48px, and 28px widths with no gap."
+  - "Resolve Mode to select Default or Fixed outline, text, and icon token families."
+  - "Resolve State to enable or disable subtract and add icon treatments."
+  - "Apply the Label text and optional Caret without resizing the component."
+  - "Block values above two digits and use State to communicate min or max limits."
 
 implementation_coverage:
   axes: "Implement all 6 Mode x State combinations."
@@ -250,18 +250,18 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Stepper when a small numeric quantity must be adjusted quickly."
-  - "Keep Stepper width and height fixed."
-  - "Allow direct numeric input and subtract or add button control."
-  - "Disable the subtract control when the minimum value is reached."
-  - "Disable the add control when the maximum value is reached."
-  - "Limit visible input to two digits."
+    - "Use Stepper when a small numeric quantity must be adjusted quickly."
+    - "Keep Stepper width and height fixed."
+    - "Allow direct numeric input and subtract or add button control."
+    - "Disable the subtract control when the minimum value is reached."
+    - "Disable the add control when the maximum value is reached."
+    - "Limit visible input to two digits."
   dont:
-  - "Do not resize Stepper based on content length."
-  - "Do not allow three-digit values."
-  - "Do not show only the number without visible controls."
-  - "Do not leave a direction button enabled when the value cannot change in that direction."
-  - "Do not replace plus or minus icons with text characters."
+    - "Do not resize Stepper based on content length."
+    - "Do not allow three-digit values."
+    - "Do not show only the number without visible controls."
+    - "Do not leave a direction button enabled when the value cannot change in that direction."
+    - "Do not replace plus or minus icons with text characters."
 
 spec_notes:
   source:

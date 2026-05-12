@@ -127,11 +127,11 @@ layout:
         value: "4px"
 
 implementation_order:
-- "Resolve Size first because it controls component size, dot size, and dot spacing."
-- "Resolve Color next within the valid Size and Color combinations."
-- "Apply Mode-specific token only where the live Figma variant uses a fixed token."
-- "Preserve the three-dot loading sequence and opacity staging."
-- "Use the existing loading animation asset when available instead of rendering text ellipsis."
+  - "Resolve Size first because it controls component size, dot size, and dot spacing."
+  - "Resolve Color next within the valid Size and Color combinations."
+  - "Apply Mode-specific token only where the live Figma variant uses a fixed token."
+  - "Preserve the three-dot loading sequence and opacity staging."
+  - "Use the existing loading animation asset when available instead of rendering text ellipsis."
 
 implementation_coverage:
   axes:
@@ -155,20 +155,20 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Medium Dot Loading for full-screen movement or screen transition loading."
-  - "Use Small Dot Loading for component-internal loading."
-  - "Use Primary or White loading colors according to the component context."
-  - "Use Loading for in-progress states only."
+    - "Use Medium Dot Loading for full-screen movement or screen transition loading."
+    - "Use Small Dot Loading for component-internal loading."
+    - "Use Primary or White loading colors according to the component context."
+    - "Use Loading for in-progress states only."
   dont:
-  - "Do not use Medium Dot Loading inside dense components."
-  - "Do not use Loading to communicate errors or completion messages."
-  - "Do not change loading colors to community colors."
-  - "Do not replace the loading asset with plain text ellipsis."
+    - "Do not use Medium Dot Loading inside dense components."
+    - "Do not use Loading to communicate errors or completion messages."
+    - "Do not change loading colors to community colors."
+    - "Do not replace the loading asset with plain text ellipsis."
 
 source_gaps:
-- field: "assets.loading_dot_motion.source"
-  reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
-  impact: "Implementation should use the existing product loading animation asset if the platform has one, or ask design for the Lottie asset key before shipping a new asset."
+  - field: "assets.loading_dot_motion.source"
+    reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
+    impact: "Implementation should use the existing product loading animation asset if the platform has one, or ask design for the Lottie asset key before shipping a new asset."
 
 spec_notes:
   source:

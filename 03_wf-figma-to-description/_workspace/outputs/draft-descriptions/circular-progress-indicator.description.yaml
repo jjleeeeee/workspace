@@ -109,11 +109,11 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Mode variant first."
-- "Render a 56x56 circular background."
-- "Render the 44x44 progress track and 41x44 progress value with 2px strokes."
-- "Apply fixed color tokens from the live component."
-- "Render the cancel button only when Button=true."
+  - "Resolve Mode variant first."
+  - "Render a 56x56 circular background."
+  - "Render the 44x44 progress track and 41x44 progress value with 2px strokes."
+  - "Apply fixed color tokens from the live component."
+  - "Render the cancel button only when Button=true."
 
 implementation_coverage:
   axes:
@@ -133,13 +133,13 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Circular Loading only when Dot Loading cannot be used inside a component."
-  - "Keep Circular Loading inside component-level contexts."
-  - "Use the live fixed tokens for background, track, progress, and cancel icon."
+    - "Use Circular Loading only when Dot Loading cannot be used inside a component."
+    - "Keep Circular Loading inside component-level contexts."
+    - "Use the live fixed tokens for background, track, progress, and cancel icon."
   dont:
-  - "Do not use Circular Loading for full-screen page transitions."
-  - "Do not use Circular Loading when Dot Loading is the available pattern."
-  - "Do not replace the cancel button asset with text or a custom vector."
+    - "Do not use Circular Loading for full-screen page transitions."
+    - "Do not use Circular Loading when Dot Loading is the available pattern."
+    - "Do not replace the cancel button asset with text or a custom vector."
 
 spec_notes:
   source:

@@ -109,10 +109,10 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Height first and render a 393px-wide horizontal region."
-- "Apply Mode and Style token to the divider fill."
-- "Stretch the divider across the parent width when used in a container."
-- "Keep the divider free of radius, text, icon, and interaction behavior."
+  - "Resolve Height first and render a 393px-wide horizontal region."
+  - "Apply Mode and Style token to the divider fill."
+  - "Stretch the divider across the parent width when used in a container."
+  - "Keep the divider free of radius, text, icon, and interaction behavior."
 
 implementation_coverage:
   axes:
@@ -135,14 +135,14 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Divider to separate content groups without adding semantic content."
-  - "Use Height=1 or Height=2 for thin separation."
-  - "Use Height=8 only when a stronger section break is needed."
-  - "Use Fixed mode only in fixed-theme surfaces."
+    - "Use Divider to separate content groups without adding semantic content."
+    - "Use Height=1 or Height=2 for thin separation."
+    - "Use Height=8 only when a stronger section break is needed."
+    - "Use Fixed mode only in fixed-theme surfaces."
   dont:
-  - "Do not use Divider as a text label or interactive control."
-  - "Do not override the fill color outside the Style and Mode tokens."
-  - "Do not add icon, text, or radius to the divider."
+    - "Do not use Divider as a text label or interactive control."
+    - "Do not override the fill color outside the Style and Mode tokens."
+    - "Do not add icon, text, or radius to the divider."
 
 spec_notes:
   source:

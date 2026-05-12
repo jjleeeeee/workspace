@@ -148,11 +148,11 @@ layout:
         value: "-500px item spacing, 220px right padding"
 
 implementation_order:
-- "Resolve Height and valid Rounded combination first."
-- "Render a 393px-wide track with 2px or 4px height."
-- "Apply Mode-specific track and progress tokens."
-- "Render the loaded progress segment above the base track."
-- "Apply Rounded=ON only for Height=Default (2)."
+  - "Resolve Height and valid Rounded combination first."
+  - "Render a 393px-wide track with 2px or 4px height."
+  - "Apply Mode-specific track and progress tokens."
+  - "Render the loaded progress segment above the base track."
+  - "Apply Rounded=ON only for Height=Default (2)."
 
 implementation_coverage:
   axes:
@@ -176,13 +176,13 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Linear Progress Indicator to show task progress within a bounded horizontal area."
-  - "Use the primary progress token for the loaded segment."
-  - "Use Loading components to communicate ongoing processing state."
+    - "Use Linear Progress Indicator to show task progress within a bounded horizontal area."
+    - "Use the primary progress token for the loaded segment."
+    - "Use Loading components to communicate ongoing processing state."
   dont:
-  - "Do not use Linear Progress Indicator for error or completion messages."
-  - "Do not replace the loaded segment with arbitrary colors."
-  - "Do not create a Rounded=ON, Height=4 combination unless Figma adds it."
+    - "Do not use Linear Progress Indicator for error or completion messages."
+    - "Do not replace the loaded segment with arbitrary colors."
+    - "Do not create a Rounded=ON, Height=4 combination unless Figma adds it."
 
 spec_notes:
   source:

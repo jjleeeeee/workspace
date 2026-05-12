@@ -190,11 +190,11 @@ interaction:
     behavior: "Disabled variants are inactive and must not appear visually enabled."
 
 implementation_order:
-- "Select OS and Size before resolving geometry."
-- "Resolve Status to place the Switch thumb left or right."
-- "Apply Mode-specific track token after Status is known."
-- "Apply disabled track and thumb overrides last."
-- "Keep platform-specific geometry consistent within one platform surface."
+  - "Select OS and Size before resolving geometry."
+  - "Resolve Status to place the Switch thumb left or right."
+  - "Apply Mode-specific track token after Status is known."
+  - "Apply disabled track and thumb overrides last."
+  - "Keep platform-specific geometry consistent within one platform surface."
 
 implementation_coverage:
   axes: "All 24 Mode, OS, Size, and Status variants were live-read from Figma."
@@ -205,15 +205,15 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Toggle when a setting changes immediately after the user switches it."
-  - "Use the OS variant that matches the platform context."
-  - "Use Default, Enabled, and Disabled states to communicate OFF, ON, and inactive status."
-  - "Pair the Toggle with a label that explains the setting being changed."
+    - "Use Toggle when a setting changes immediately after the user switches it."
+    - "Use the OS variant that matches the platform context."
+    - "Use Default, Enabled, and Disabled states to communicate OFF, ON, and inactive status."
+    - "Pair the Toggle with a label that explains the setting being changed."
   dont:
-  - "Do not mix iOS and AOS Toggle variants inside one platform screen."
-  - "Do not use Toggle for choices that require a separate save or confirmation step."
-  - "Do not recolor Toggle with community-specific colors outside the defined tokens."
-  - "Do not use Toggle for a single consent or confirmation; use Checkbox instead."
+    - "Do not mix iOS and AOS Toggle variants inside one platform screen."
+    - "Do not use Toggle for choices that require a separate save or confirmation step."
+    - "Do not recolor Toggle with community-specific colors outside the defined tokens."
+    - "Do not use Toggle for a single consent or confirmation; use Checkbox instead."
 
 verification:
   figma_live_read:

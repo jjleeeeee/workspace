@@ -321,11 +321,11 @@ interaction:
     behavior: "When a leading, trailing, or divider prop is false, remove the slot and collapse the associated gap."
 
 implementation_order:
-- "Resolve Size first because it changes row height, vertical padding, leading media size, and content width."
-- "Resolve Mode next because text, icon, and divider tokens switch between adaptive and fixed token families."
-- "Apply Status after Mode; Disabled lowers root opacity without replacing text or icon tokens."
-- "Apply optional leading, trailing, and divider props last so removed slots collapse their layout gaps."
-- "Keep nested Thumbnail, Badge_Dot, Trailing, and Divider components as composition references."
+  - "Resolve Size first because it changes row height, vertical padding, leading media size, and content width."
+  - "Resolve Mode next because text, icon, and divider tokens switch between adaptive and fixed token families."
+  - "Apply Status after Mode; Disabled lowers root opacity without replacing text or icon tokens."
+  - "Apply optional leading, trailing, and divider props last so removed slots collapse their layout gaps."
+  - "Keep nested Thumbnail, Badge_Dot, Trailing, and Divider components as composition references."
 
 implementation_coverage:
   axes: "Implement all 12 Mode x Size x Status variants."
@@ -336,18 +336,18 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Native List Item for app list rows that need a leading media thumbnail, two-line content, and optional trailing detail."
-  - "Choose Small for compact rows and Medium when the leading media needs more visual weight."
-  - "Use Default mode for adaptive surfaces and Fixed mode for fixed-color contexts."
-  - "Use Disabled only by applying the verified opacity behavior after mode tokens are resolved."
-  - "Keep Divider, Trailing, and Leading visibility controlled by their boolean props."
+    - "Use Native List Item for app list rows that need a leading media thumbnail, two-line content, and optional trailing detail."
+    - "Choose Small for compact rows and Medium when the leading media needs more visual weight."
+    - "Use Default mode for adaptive surfaces and Fixed mode for fixed-color contexts."
+    - "Use Disabled only by applying the verified opacity behavior after mode tokens are resolved."
+    - "Keep Divider, Trailing, and Leading visibility controlled by their boolean props."
   dont:
-  - "Do not replace the nested Thumbnail or Badge_Dot with parent-level CSS primitives."
-  - "Do not use arbitrary row heights or leading media sizes outside the Small and Medium metrics."
-  - "Do not keep the 12px slot gap when an optional slot is hidden."
-  - "Do not use fixed_color tokens in Default mode except for nested child components that own their own token contract."
-  - "Do not treat internal icon_area or vector layers as parent-level composition dependencies."
-  - "Do not place the Title Badge as a flex item after a full-width title span; it follows the rendered end of the title text."
+    - "Do not replace the nested Thumbnail or Badge_Dot with parent-level CSS primitives."
+    - "Do not use arbitrary row heights or leading media sizes outside the Small and Medium metrics."
+    - "Do not keep the 12px slot gap when an optional slot is hidden."
+    - "Do not use fixed_color tokens in Default mode except for nested child components that own their own token contract."
+    - "Do not treat internal icon_area or vector layers as parent-level composition dependencies."
+    - "Do not place the Title Badge as a flex item after a full-width title span; it follows the rendered end of the title text."
 
 text_behavior:
   title:
@@ -375,9 +375,9 @@ spec_notes:
   - "Status=Disabled is verified as component root opacity 0.2 in the sampled live variants."
 
 source_gaps:
-- field: "usage_reference"
-  issue: "No matching markitdown-output file for List_Item_Native was present in the workflow refs."
-  decision: "Usage rules are limited to live Figma structure, variant keys, and confirmed nested DS composition."
+  - field: "usage_reference"
+    issue: "No matching markitdown-output file for List_Item_Native was present in the workflow refs."
+    decision: "Usage rules are limited to live Figma structure, variant keys, and confirmed nested DS composition."
 baseline:
   node_id: 57343:18665
   variant: Mode=Default, Size=Medium, Status=Default

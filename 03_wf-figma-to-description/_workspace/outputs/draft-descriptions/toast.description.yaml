@@ -111,11 +111,11 @@ interaction:
     behavior: "Toast must not block user actions or require a decision."
 
 implementation_order:
-- "Resolve Mode first because it changes the container surface token and opacity."
-- "Apply the 12px vertical and 16px horizontal padding, 8px radius, and centered vertical layout."
-- "Bind Label with body-xs/system-400 and center alignment."
-- "Allow wrapping only up to two lines when the max width is reached."
-- "Place Toast at the bottom with 20px spacing from bottom UI, 10px mobile margins, and a 410px max width."
+  - "Resolve Mode first because it changes the container surface token and opacity."
+  - "Apply the 12px vertical and 16px horizontal padding, 8px radius, and centered vertical layout."
+  - "Bind Label with body-xs/system-400 and center alignment."
+  - "Allow wrapping only up to two lines when the max width is reached."
+  - "Place Toast at the bottom with 20px spacing from bottom UI, 10px mobile margins, and a 410px max width."
 
 implementation_coverage:
   axes: "Implement both Mode variants."
@@ -126,21 +126,21 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Toast for brief system status feedback such as error, completion, or progress updates."
-  - "Keep the message concise."
-  - "Let Toast disappear automatically after a short duration."
-  - "Place Toast at the bottom with 20px spacing from bottom UI."
-  - "Limit text to two lines."
-  - "Center-align Toast text."
-  - "Respect 10px mobile side margins and a 410px maximum width on larger screens."
+    - "Use Toast for brief system status feedback such as error, completion, or progress updates."
+    - "Keep the message concise."
+    - "Let Toast disappear automatically after a short duration."
+    - "Place Toast at the bottom with 20px spacing from bottom UI."
+    - "Limit text to two lines."
+    - "Center-align Toast text."
+    - "Respect 10px mobile side margins and a 410px maximum width on larger screens."
   dont:
-  - "Do not use Toast like a popup that blocks user flow."
-  - "Do not use Toast for content that requires user choice or follow-up action."
-  - "Do not put long explanations or multiple sentences into Toast."
-  - "Do not add icons or buttons inside Toast."
-  - "Do not force line breaks before the maximum width is reached."
-  - "Do not stretch Toast to full screen width on large screens."
-  - "Do not left-align or right-align Toast text."
+    - "Do not use Toast like a popup that blocks user flow."
+    - "Do not use Toast for content that requires user choice or follow-up action."
+    - "Do not put long explanations or multiple sentences into Toast."
+    - "Do not add icons or buttons inside Toast."
+    - "Do not force line breaks before the maximum width is reached."
+    - "Do not stretch Toast to full screen width on large screens."
+    - "Do not left-align or right-align Toast text."
 
 spec_notes:
   source:
@@ -152,12 +152,12 @@ spec_notes:
   - "Use Dialog instead when the user must make a decision."
 
 source_gaps:
-- part: "Hidden checkbox and icon_area internals"
-  field: "composition"
-  reason: "Live Figma contains hidden [V1] Checkbox and icon_area descendants, but usage explicitly defines Toast as text-only without icons or buttons, so those descendants are excluded from composition.uses."
-- part: "Runtime width"
-  field: "responsive layout"
-  reason: "Live component variants are 293px hug-content samples while usage guidance defines mobile side margins and a 410px maximum width."
+  - part: "Hidden checkbox and icon_area internals"
+    field: "composition"
+    reason: "Live Figma contains hidden [V1] Checkbox and icon_area descendants, but usage explicitly defines Toast as text-only without icons or buttons, so those descendants are excluded from composition.uses."
+  - part: "Runtime width"
+    field: "responsive layout"
+    reason: "Live component variants are 293px hug-content samples while usage guidance defines mobile side margins and a 410px maximum width."
 
 verification:
   figma_live_read:

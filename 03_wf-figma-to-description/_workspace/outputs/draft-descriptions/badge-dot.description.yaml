@@ -109,12 +109,12 @@ interaction:
     behavior: "Use Dot Badge when only presence of an update or status matters, not the exact count."
 
 implementation_order:
-- "Select Mode, Size, and Outline variant."
-- "Apply mode-specific danger-red fill token."
-- "Use OFF sizes for badges without outline and ON sizes for badges with outline."
-- "When Outline=ON, apply mode-specific default-reverse outline token."
-- "Use 1px outline for Small and Medium; use 2px outline for Large."
-- "Render as a circular shape with 100 radius."
+  - "Select Mode, Size, and Outline variant."
+  - "Apply mode-specific danger-red fill token."
+  - "Use OFF sizes for badges without outline and ON sizes for badges with outline."
+  - "When Outline=ON, apply mode-specific default-reverse outline token."
+  - "Use 1px outline for Small and Medium; use 2px outline for Large."
+  - "Render as a circular shape with 100 radius."
 
 implementation_coverage:
   axes:
@@ -137,13 +137,13 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Dot Badge for notification or status presence on navigation items and icons."
-  - "Use Outline=ON when the badge needs separation from the background or icon surface."
-  - "Keep the badge circular and use the provided size variants."
+    - "Use Dot Badge for notification or status presence on navigation items and icons."
+    - "Use Outline=ON when the badge needs separation from the background or icon surface."
+    - "Keep the badge circular and use the provided size variants."
   dont:
-  - "Do not use Dot Badge when an exact count or New label is required."
-  - "Do not render Dot Badge as text."
-  - "Do not invent sizes outside Small, Medium, and Large."
+    - "Do not use Dot Badge when an exact count or New label is required."
+    - "Do not render Dot Badge as text."
+    - "Do not invent sizes outside Small, Medium, and Large."
 
 spec_notes:
   source:

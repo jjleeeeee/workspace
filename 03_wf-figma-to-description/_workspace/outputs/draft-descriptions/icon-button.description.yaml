@@ -258,12 +258,12 @@ layout:
     off: 8
 
 implementation_order:
-- "Resolve Size first and render a square Options frame."
-- "Resolve Radius on the Options frame after size is set."
-- "Apply Type and Button_Color visual tokens for fill or stroke."
-- "Apply State overlays and disabled overrides after base visual tokens."
-- "Render the nested icon_area asset centered inside the Options frame."
-- "Apply icon tint from Type, Button_Color, Mode, and State."
+  - "Resolve Size first and render a square Options frame."
+  - "Resolve Radius on the Options frame after size is set."
+  - "Apply Type and Button_Color visual tokens for fill or stroke."
+  - "Apply State overlays and disabled overrides after base visual tokens."
+  - "Render the nested icon_area asset centered inside the Options frame."
+  - "Apply icon tint from Type, Button_Color, Mode, and State."
 
 implementation_coverage:
   axes:
@@ -289,19 +289,19 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Icon Button when the action can be understood by a clear icon."
-  - "Keep the icon centered in the full square control."
-  - "Preserve the DS icon asset and tint tokens."
-  - "Use Disabled state when the action is unavailable."
+    - "Use Icon Button when the action can be understood by a clear icon."
+    - "Keep the icon centered in the full square control."
+    - "Preserve the DS icon asset and tint tokens."
+    - "Use Disabled state when the action is unavailable."
   dont:
-  - "Do not replace the icon asset with text content."
-  - "Do not apply arbitrary icon or container colors outside the component tokens."
-  - "Do not change the icon size independently from the Size variant."
-  - "Do not use Icon Button when the action meaning requires a text label."
+    - "Do not replace the icon asset with text content."
+    - "Do not apply arbitrary icon or container colors outside the component tokens."
+    - "Do not change the icon size independently from the Size variant."
+    - "Do not use Icon Button when the action meaning requires a text label."
 
 source_gaps:
-- field: "icon_area size reference"
-  reason: "markitdown-button lists a 24x24 XLarge Icon Button inner area, but live Figma variants sampled from 54093:38778, 54093:38814, and 54093:38850 render icon_area at 20x20; this draft follows live
+  - field: "icon_area size reference"
+    reason: "markitdown-button lists a 24x24 XLarge Icon Button inner area, but live Figma variants sampled from 54093:38778, 54093:38814, and 54093:38850 render icon_area at 20x20; this draft follows live
     Figma."
 
 spec_notes:

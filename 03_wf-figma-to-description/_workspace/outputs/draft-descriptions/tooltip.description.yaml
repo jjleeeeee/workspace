@@ -241,12 +241,12 @@ interaction:
     behavior: "Tooltip must remain visually connected to the object it explains."
 
 implementation_order:
-- "Select Mode, Size, Color, and Position variant."
-- "Apply Size-specific content padding and typography."
-- "Apply Color-specific Contents, Label, close icon, and caret tokens."
-- "Place the caret according to Position and keep it connected to the target."
-- "Apply Button_Close visibility after layout so text width and close affordance remain stable."
-- "Apply White_fixed shadow treatment after color tokens."
+  - "Select Mode, Size, Color, and Position variant."
+  - "Apply Size-specific content padding and typography."
+  - "Apply Color-specific Contents, Label, close icon, and caret tokens."
+  - "Place the caret according to Position and keep it connected to the target."
+  - "Apply Button_Close visibility after layout so text width and close affordance remain stable."
+  - "Apply White_fixed shadow treatment after color tokens."
 
 implementation_coverage:
   axes: "All 96 Mode, Size, Color, and Position variants were live-read from Figma."
@@ -257,22 +257,22 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Tooltip for guidance that is less critical than a Dialog and tied to a specific object."
-  - "Keep copy concise: Single line uses one line; Multi lines use at least two and at most eight lines."
-  - "Use a maximum width of 240px."
-  - "Choose close button or auto-dismiss behavior according to the message purpose."
-  - "Keep margin from screen edges so the tooltip remains readable."
+    - "Use Tooltip for guidance that is less critical than a Dialog and tied to a specific object."
+    - "Keep copy concise: Single line uses one line; Multi lines use at least two and at most eight lines."
+    - "Use a maximum width of 240px."
+    - "Choose close button or auto-dismiss behavior according to the message purpose."
+    - "Keep margin from screen edges so the tooltip remains readable."
   dont:
-  - "Do not use Tooltip for standalone announcements or long guidance."
-  - "Do not exceed eight lines of text."
-  - "Do not stretch Tooltip width across the screen."
-  - "Do not use Top caret positions when the target is near the top edge and would cause clipping."
-  - "Do not allow Tooltip to overlap a header layer while scrolling."
+    - "Do not use Tooltip for standalone announcements or long guidance."
+    - "Do not exceed eight lines of text."
+    - "Do not stretch Tooltip width across the screen."
+    - "Do not use Top caret positions when the target is near the top edge and would cause clipping."
+    - "Do not allow Tooltip to overlap a header layer while scrolling."
 
 source_gaps:
-- part: "Hidden guide rectangles inside caret/null icon internals"
-  issue: "Full traversal found 168 hidden #D9D9D9 fills without variable binding."
-  decision: "Visible paint extraction found zero unbound paints, so hidden guide internals are excluded from Tooltip token mapping."
+  - part: "Hidden guide rectangles inside caret/null icon internals"
+    issue: "Full traversal found 168 hidden #D9D9D9 fills without variable binding."
+    decision: "Visible paint extraction found zero unbound paints, so hidden guide internals are excluded from Tooltip token mapping."
 
 verification:
   figma_live_read:

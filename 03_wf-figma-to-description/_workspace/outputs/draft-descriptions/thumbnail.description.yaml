@@ -318,11 +318,11 @@ interaction:
     behavior: "Crop image content inside the ratio frame while preserving the representative subject."
 
 implementation_order:
-- "Resolve Ratio first because it determines the frame height from the 256px reference width."
-- "Apply Radius after Ratio and keep clipping enabled for both radius states."
-- "Render the image content as the base media fill."
-- "Apply Fill scrim, Button, Left Item, Right Item_top, Right Item_bottom, and Seek bar optional modules after the base image."
-- "Preserve nested optional module semantics instead of flattening their icon or text internals into Thumbnail."
+  - "Resolve Ratio first because it determines the frame height from the 256px reference width."
+  - "Apply Radius after Ratio and keep clipping enabled for both radius states."
+  - "Render the image content as the base media fill."
+  - "Apply Fill scrim, Button, Left Item, Right Item_top, Right Item_bottom, and Seek bar optional modules after the base image."
+  - "Preserve nested optional module semantics instead of flattening their icon or text internals into Thumbnail."
 
 implementation_coverage:
   axes: "Implement all 12 Type x Ratio x Radius variants, with Type fixed to Thumbnail."
@@ -333,17 +333,17 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Thumbnail when content needs a stable representative image in a supported ratio."
-  - "Use one ratio consistently within the same list, card group, or media rail."
-  - "Keep width based on the 256px reference and respect the minimum 44px width."
-  - "Round ratio-derived decimal dimensions down."
-  - "Use optional overlay modules consistently across all ratios and expose at most two icons."
+    - "Use Thumbnail when content needs a stable representative image in a supported ratio."
+    - "Use one ratio consistently within the same list, card group, or media rail."
+    - "Keep width based on the 256px reference and respect the minimum 44px width."
+    - "Round ratio-derived decimal dimensions down."
+    - "Use optional overlay modules consistently across all ratios and expose at most two icons."
   dont:
-  - "Do not mix square and rectangular ratios arbitrarily within one list."
-  - "Do not let source image dimensions change the selected Thumbnail ratio."
-  - "Do not round ratio-derived dimensions up."
-  - "Do not expose three or more overlay icons."
-  - "Do not replace media and overlay modules with flattened decorative frames."
+    - "Do not mix square and rectangular ratios arbitrarily within one list."
+    - "Do not let source image dimensions change the selected Thumbnail ratio."
+    - "Do not round ratio-derived dimensions up."
+    - "Do not expose three or more overlay icons."
+    - "Do not replace media and overlay modules with flattened decorative frames."
 
 spec_notes:
   source:
@@ -355,9 +355,9 @@ spec_notes:
   - "Optional overlay elements must follow the same spec across ratios."
 
 source_gaps:
-- field: "overlay_icon_asset_source"
-  issue: "Optional overlay modules contain icon_area placeholders and null icon instances in the component set."
-  decision: "Keep the optional modules semantic and require concrete DS icon assets from the consumer context rather than copying placeholder vector internals."
+  - field: "overlay_icon_asset_source"
+    issue: "Optional overlay modules contain icon_area placeholders and null icon instances in the component set."
+    decision: "Keep the optional modules semantic and require concrete DS icon assets from the consumer context rather than copying placeholder vector internals."
 baseline:
   node_id: 59100:15485
   variant: Type=Thumbnail, Ratio=16:9, Radius=off

@@ -79,11 +79,11 @@ layout:
       variants: []
 
 implementation_order:
-- "Strip the raw control character from the Figma Mode axis before mapping props."
-- "Render a 20x20 circular loading area."
-- "Render the 16x16 track with 2px stroke."
-- "Render the active arc with 2px stroke above the track."
-- "Apply Mode-specific track token and shared active arc token."
+  - "Strip the raw control character from the Figma Mode axis before mapping props."
+  - "Render a 20x20 circular loading area."
+  - "Render the 16x16 track with 2px stroke."
+  - "Render the active arc with 2px stroke above the track."
+  - "Apply Mode-specific track token and shared active arc token."
 
 implementation_coverage:
   axes:
@@ -102,21 +102,21 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Circular Loading only when Dot Loading cannot be used."
-  - "Use Circular Loading inside components, not as the primary full-screen loading indicator."
-  - "Use Loading only for in-progress states."
+    - "Use Circular Loading only when Dot Loading cannot be used."
+    - "Use Circular Loading inside components, not as the primary full-screen loading indicator."
+    - "Use Loading only for in-progress states."
   dont:
-  - "Do not use Circular Loading when Dot Loading is available."
-  - "Do not use Circular Loading for screen-level movement loading."
-  - "Do not use Loading to communicate errors or completion messages."
+    - "Do not use Circular Loading when Dot Loading is available."
+    - "Do not use Circular Loading for screen-level movement loading."
+    - "Do not use Loading to communicate errors or completion messages."
 
 source_gaps:
-- field: "assets.circular_loading_motion.source"
-  reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
-  impact: "Implementation should use the existing product loading animation asset if available, or ask design for the Lottie asset key before shipping a new asset."
-- field: "motion.rotation_timing"
-  reason: "Live Figma extraction confirms geometry and tokens but does not expose animation timing."
-  impact: "Do not invent timing values in implementation without a motion spec or asset handoff."
+  - field: "assets.circular_loading_motion.source"
+    reason: "Usage reference says Loading uses Lottie Animation, but the live component extraction and local refs do not provide the JSON asset key or file path."
+    impact: "Implementation should use the existing product loading animation asset if available, or ask design for the Lottie asset key before shipping a new asset."
+  - field: "motion.rotation_timing"
+    reason: "Live Figma extraction confirms geometry and tokens but does not expose animation timing."
+    impact: "Do not invent timing values in implementation without a motion spec or asset handoff."
 
 spec_notes:
   source:

@@ -153,12 +153,12 @@ layout:
         value: "No text node"
 
 implementation_order:
-- "Select Mode and State variant."
-- "Render a 24x24 outer component with a 22x22 circular marker."
-- "For Selected state, show the selected order with caption-s typography."
-- "For Selected-99+ state, show 99+ with caption-xs typography."
-- "For Unselected state, remove the number text and apply fill plus stroke tokens."
-- "Apply fixed-color tokens for image-editing or overlay contexts."
+  - "Select Mode and State variant."
+  - "Render a 24x24 outer component with a 22x22 circular marker."
+  - "For Selected state, show the selected order with caption-s typography."
+  - "For Selected-99+ state, show 99+ with caption-xs typography."
+  - "For Unselected state, remove the number text and apply fill plus stroke tokens."
+  - "Apply fixed-color tokens for image-editing or overlay contexts."
 
 implementation_coverage:
   axes:
@@ -183,16 +183,16 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Select Number Box when selection order affects the result."
-  - "Show selected order up to two digits."
-  - "Use 99+ when the selected order has three or more digits."
-  - "Use fixed_color treatment in image-editing contexts."
-  - "Place the number inside or close to the selected object so the target remains clear."
+    - "Use Select Number Box when selection order affects the result."
+    - "Show selected order up to two digits."
+    - "Use 99+ when the selected order has three or more digits."
+    - "Use fixed_color treatment in image-editing contexts."
+    - "Place the number inside or close to the selected object so the target remains clear."
   dont:
-  - "Do not expose three or more digits directly inside the box."
-  - "Do not show a number in Unselected state."
-  - "Do not use Select Number Box for simple checkbox selection."
-  - "Do not place the number far away from the selected target."
+    - "Do not expose three or more digits directly inside the box."
+    - "Do not show a number in Unselected state."
+    - "Do not use Select Number Box for simple checkbox selection."
+    - "Do not place the number far away from the selected target."
 
 spec_notes:
   source:

@@ -365,14 +365,14 @@ interaction:
     behavior: "Disabled state must not trigger actions."
 
 implementation_order:
-- "Select variant by Mode, Type, Size, Button_Color, Status, and Radius."
-- "Reject Black Button_Color for Outlined_gray and Ghost types."
-- "Apply Size height and horizontal padding tokens."
-- "Render centered content group with optional leading and trailing content."
-- "Apply Type and Button_Color visual tokens."
-- "Apply Status visual behavior for Hover, Loading, and Disabled."
-- "Use Radius=on as pill and Radius=off as 8px radius."
-- "For bottom speciality buttons, use XLarge and let the parent content area define width."
+  - "Select variant by Mode, Type, Size, Button_Color, Status, and Radius."
+  - "Reject Black Button_Color for Outlined_gray and Ghost types."
+  - "Apply Size height and horizontal padding tokens."
+  - "Render centered content group with optional leading and trailing content."
+  - "Apply Type and Button_Color visual tokens."
+  - "Apply Status visual behavior for Hover, Loading, and Disabled."
+  - "Use Radius=on as pill and Radius=off as 8px radius."
+  - "For bottom speciality buttons, use XLarge and let the parent content area define width."
 
 implementation_coverage:
   axes:
@@ -403,20 +403,20 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Primary Mint as the default button color."
-  - "Use community color only when the service or community context is explicit."
-  - "Preserve label typography by button size."
-  - "Use Horizontal layout for short labels and Vertical layout for long or multilingual labels."
-  - "Place the primary action on the right in horizontal dual-button groups."
-  - "Use Triple Button only in vertical layout."
-  - "Enable primary buttons only after required information is complete."
+    - "Use Primary Mint as the default button color."
+    - "Use community color only when the service or community context is explicit."
+    - "Preserve label typography by button size."
+    - "Use Horizontal layout for short labels and Vertical layout for long or multilingual labels."
+    - "Place the primary action on the right in horizontal dual-button groups."
+    - "Use Triple Button only in vertical layout."
+    - "Enable primary buttons only after required information is complete."
   dont:
-  - "Do not apply arbitrary colors without a clear reason."
-  - "Do not treat colors outside WDS button color properties as common WDS variants."
-  - "Do not override label size or weight."
-  - "Do not force long labels into a horizontal layout."
-  - "Do not place three buttons in a horizontal group."
-  - "Do not allow duplicate requests during Loading."
+    - "Do not apply arbitrary colors without a clear reason."
+    - "Do not treat colors outside WDS button color properties as common WDS variants."
+    - "Do not override label size or weight."
+    - "Do not force long labels into a horizontal layout."
+    - "Do not place three buttons in a horizontal group."
+    - "Do not allow duplicate requests during Loading."
 
 spec_notes:
   source:

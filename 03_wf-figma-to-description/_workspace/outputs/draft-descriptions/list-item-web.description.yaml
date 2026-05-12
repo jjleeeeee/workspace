@@ -302,11 +302,11 @@ interaction:
     behavior: "When leading, trailing, or divider props are false, remove the slot and collapse the associated gap."
 
 implementation_order:
-- "Resolve Size first because it changes row height, vertical padding, leading media size, and content width."
-- "Resolve Alignment next; the current component set only supports Center alignment."
-- "Resolve Mode before color application because text and icon tokens switch token families."
-- "Apply States after Mode; Disabled lowers state-layer opacity without replacing text or icon tokens."
-- "Apply optional leading, trailing, and divider props last so removed slots collapse their layout gaps."
+  - "Resolve Size first because it changes row height, vertical padding, leading media size, and content width."
+  - "Resolve Alignment next; the current component set only supports Center alignment."
+  - "Resolve Mode before color application because text and icon tokens switch token families."
+  - "Apply States after Mode; Disabled lowers state-layer opacity without replacing text or icon tokens."
+  - "Apply optional leading, trailing, and divider props last so removed slots collapse their layout gaps."
 
 implementation_coverage:
   axes: "Implement all 12 Mode x Size x Alignment x States variants, with Alignment fixed to Center."
@@ -317,17 +317,17 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Web List Item for web list rows that need a leading media thumbnail, two-line content, and optional trailing detail."
-  - "Keep Alignment=Center unless a new live variant value is added."
-  - "Use Default mode for adaptive web surfaces and Fixed mode only in fixed-color contexts."
-  - "Apply Disabled through the verified state-layer opacity behavior."
-  - "Keep leading, trailing, and divider visibility controlled by their boolean props."
+    - "Use Web List Item for web list rows that need a leading media thumbnail, two-line content, and optional trailing detail."
+    - "Keep Alignment=Center unless a new live variant value is added."
+    - "Use Default mode for adaptive web surfaces and Fixed mode only in fixed-color contexts."
+    - "Apply Disabled through the verified state-layer opacity behavior."
+    - "Keep leading, trailing, and divider visibility controlled by their boolean props."
   dont:
-  - "Do not create left, right, or stretch alignment variants that are not present in the component set."
-  - "Do not replace Thumbnail or Badge_Dot with parent-level CSS primitives."
-  - "Do not preserve layout gaps after optional slots are hidden."
-  - "Do not use Native typography metrics for Web variants."
-  - "Do not treat internal icon_area or vector layers as parent-level composition dependencies."
+    - "Do not create left, right, or stretch alignment variants that are not present in the component set."
+    - "Do not replace Thumbnail or Badge_Dot with parent-level CSS primitives."
+    - "Do not preserve layout gaps after optional slots are hidden."
+    - "Do not use Native typography metrics for Web variants."
+    - "Do not treat internal icon_area or vector layers as parent-level composition dependencies."
 
 spec_notes:
   source:
@@ -338,9 +338,9 @@ spec_notes:
   - "States=Disabled is verified as state-layer opacity 0.2 in the sampled live variants."
 
 source_gaps:
-- field: "usage_reference"
-  issue: "No matching markitdown-output file for List_Item_Web was present in the workflow refs."
-  decision: "Usage rules are limited to live Figma structure, variant keys, and confirmed nested DS composition."
+  - field: "usage_reference"
+    issue: "No matching markitdown-output file for List_Item_Web was present in the workflow refs."
+    decision: "Usage rules are limited to live Figma structure, variant keys, and confirmed nested DS composition."
 baseline:
   node_id: 69579:9080
   variant: Mode=Default, Size=Medium, Alignment=Center, States=Default

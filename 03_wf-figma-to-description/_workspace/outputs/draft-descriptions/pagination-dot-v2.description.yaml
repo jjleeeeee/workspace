@@ -168,11 +168,11 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Mode, Dots, and Selection first."
-- "Render the 120x32 horizontal component with tokenized 12px vertical padding and 6px dot spacing."
-- "For Dots=2 through Dots=5, render one 6px selected dot and remaining 6px unselected dots."
-- "For Dots=6+, render condensed 6px, 4px, and 2px dots according to the selected position."
-- "Apply selected and unselected fill and stroke tokens after the dot size pattern is chosen."
+  - "Resolve Mode, Dots, and Selection first."
+  - "Render the 120x32 horizontal component with tokenized 12px vertical padding and 6px dot spacing."
+  - "For Dots=2 through Dots=5, render one 6px selected dot and remaining 6px unselected dots."
+  - "For Dots=6+, render condensed 6px, 4px, and 2px dots according to the selected position."
+  - "Apply selected and unselected fill and stroke tokens after the dot size pattern is chosen."
 
 implementation_coverage:
   axes:
@@ -197,21 +197,21 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Dot Pagination when users only need a lightweight sense of current position."
-  - "Use Dot Pagination when exact page count or direct page jumping is not required."
-  - "Keep the selected position visually distinct from unselected positions."
+    - "Use Dot Pagination when users only need a lightweight sense of current position."
+    - "Use Dot Pagination when exact page count or direct page jumping is not required."
+    - "Keep the selected position visually distinct from unselected positions."
   dont:
-  - "Do not use Dot Pagination for lists that require direct numeric page navigation."
-  - "Do not expose unavailable selections beyond the configured Dots value."
-  - "Do not replace dot indicators with text punctuation."
+    - "Do not use Dot Pagination for lists that require direct numeric page navigation."
+    - "Do not expose unavailable selections beyond the configured Dots value."
+    - "Do not replace dot indicators with text punctuation."
 
 source_gaps:
-- field: "tokens.unselected_dot_fill_fixed_white vs tokens.unselected_dot_fill_fixed_neutral"
-  reason: "Live extraction confirms both fixed-mode unselected fill tokens, but the design source does not name the semantic split beyond variant position."
-  impact: "Implementation should map directly from the Figma variant pattern or verify the intended fixed-mode split with design before simplifying."
-- field: "layout.right_padding for some Dots=6+ edge variants"
-  reason: "Live extraction shows numeric right padding of 8px or 9px on some edge variants without a bound paddingRight token."
-  impact: "Use the extracted numeric padding for those variants or verify whether a missing variable binding should be added in Figma."
+  - field: "tokens.unselected_dot_fill_fixed_white vs tokens.unselected_dot_fill_fixed_neutral"
+    reason: "Live extraction confirms both fixed-mode unselected fill tokens, but the design source does not name the semantic split beyond variant position."
+    impact: "Implementation should map directly from the Figma variant pattern or verify the intended fixed-mode split with design before simplifying."
+  - field: "layout.right_padding for some Dots=6+ edge variants"
+    reason: "Live extraction shows numeric right padding of 8px or 9px on some edge variants without a bound paddingRight token."
+    impact: "Use the extracted numeric padding for those variants or verify whether a missing variable binding should be added in Figma."
 
 spec_notes:
   source:

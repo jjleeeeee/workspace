@@ -273,12 +273,12 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Text Type first because it determines whether title, logo, image, or Search composition is used."
-- "Resolve Leading and Trailing visibility while preserving the maximum icon count rule."
-- "Resolve Scroll Bg to choose filled or transparent navigation surface."
-- "Resolve Mode to choose Default or Fixed token families."
-- "Apply Marquee to long titles instead of truncating important names."
-- "Delegate nested Search, logo, Avatar, Leading, and Trailing internals to their component sets."
+  - "Resolve Text Type first because it determines whether title, logo, image, or Search composition is used."
+  - "Resolve Leading and Trailing visibility while preserving the maximum icon count rule."
+  - "Resolve Scroll Bg to choose filled or transparent navigation surface."
+  - "Resolve Mode to choose Default or Fixed token families."
+  - "Apply Marquee to long titles instead of truncating important names."
+  - "Delegate nested Search, logo, Avatar, Leading, and Trailing internals to their component sets."
 
 implementation_coverage:
   axes: "Implement all 32 Mode x Text_Type x Scroll_Bg combinations."
@@ -289,21 +289,21 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Top Navigation for page title, back, close, share, search, and current-context actions."
-  - "Keep the height fixed at 48px."
-  - "Use Leading and Trailing icons for page movement or contextual actions."
-  - "Limit Leading and Trailing icons to four total."
-  - "Use background color when scrolling requires title and icon readability."
-  - "Use Marquee for important titles or artist names that exceed the available width."
-  - "Keep logo or image content within the 180px maximum width rule."
+    - "Use Top Navigation for page title, back, close, share, search, and current-context actions."
+    - "Keep the height fixed at 48px."
+    - "Use Leading and Trailing icons for page movement or contextual actions."
+    - "Limit Leading and Trailing icons to four total."
+    - "Use background color when scrolling requires title and icon readability."
+    - "Use Marquee for important titles or artist names that exceed the available width."
+    - "Keep logo or image content within the 180px maximum width rule."
   dont:
-  - "Do not place custom icons whose function is hard to predict."
-  - "Do not let content show through when Scroll Bg should preserve readability."
-  - "Do not place primary navigation icons against iOS or Android expectations."
-  - "Do not truncate important names with an ellipsis."
-  - "Do not make logo content wider than 180px."
-  - "Do not show two or more trailing icons in Logo Svg_center layouts."
-  - "Do not put body copy or secondary descriptions in the title area."
+    - "Do not place custom icons whose function is hard to predict."
+    - "Do not let content show through when Scroll Bg should preserve readability."
+    - "Do not place primary navigation icons against iOS or Android expectations."
+    - "Do not truncate important names with an ellipsis."
+    - "Do not make logo content wider than 180px."
+    - "Do not show two or more trailing icons in Logo Svg_center layouts."
+    - "Do not put body copy or secondary descriptions in the title area."
 
 spec_notes:
   source:

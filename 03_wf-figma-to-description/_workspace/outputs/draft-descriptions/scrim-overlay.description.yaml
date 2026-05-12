@@ -44,10 +44,10 @@ layout:
   opacity: "50%"
 
 implementation_order:
-- "Render Scrim Overlay above background content and below the active modal or overlay surface."
-- "Apply the fixed surface token with 50% opacity."
-- "Stretch or size the overlay to fully cover the target viewport or container."
-- "Preserve the overlay as a visual hierarchy layer, not as an interactive content surface."
+  - "Render Scrim Overlay above background content and below the active modal or overlay surface."
+  - "Apply the fixed surface token with 50% opacity."
+  - "Stretch or size the overlay to fully cover the target viewport or container."
+  - "Preserve the overlay as a visual hierarchy layer, not as an interactive content surface."
 
 implementation_coverage:
   axes:
@@ -66,13 +66,13 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Scrim Overlay to separate foreground overlays from background content."
-  - "Use 50% opacity for Scrim Overlay."
-  - "Place Scrim Overlay behind Dialog or other blocking overlay surfaces."
+    - "Use Scrim Overlay to separate foreground overlays from background content."
+    - "Use 50% opacity for Scrim Overlay."
+    - "Place Scrim Overlay behind Dialog or other blocking overlay surfaces."
   dont:
-  - "Do not change Scrim Overlay opacity arbitrarily."
-  - "Do not use Scrim Overlay as content or decoration without a foreground overlay."
-  - "Do not let background content visually compete with the active foreground surface."
+    - "Do not change Scrim Overlay opacity arbitrarily."
+    - "Do not use Scrim Overlay as content or decoration without a foreground overlay."
+    - "Do not let background content visually compete with the active foreground surface."
 
 spec_notes:
   source:

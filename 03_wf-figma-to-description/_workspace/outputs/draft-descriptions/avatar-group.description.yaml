@@ -157,11 +157,11 @@ layout:
       variants: []
 
 implementation_order:
-- "Resolve Shape, Alignment, and Count to select an implemented Avatar Group variant."
-- "Use nested [V2] Avatar instances for individual identity visuals."
-- "Apply Live_Tag only in Tile alignment variants where the Live Tag frame exists."
-- "For Count=5+, preserve the internal overflow count indicator."
-- "Treat Avatar Group as a nested composition component, not as a standalone consumer choice."
+  - "Resolve Shape, Alignment, and Count to select an implemented Avatar Group variant."
+  - "Use nested [V2] Avatar instances for individual identity visuals."
+  - "Apply Live_Tag only in Tile alignment variants where the Live Tag frame exists."
+  - "For Count=5+, preserve the internal overflow count indicator."
+  - "Treat Avatar Group as a nested composition component, not as a standalone consumer choice."
 
 implementation_coverage:
   axes: "Implement the 11 live variants in the component set and do not infer missing Squircle combinations."
@@ -172,15 +172,15 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Avatar Group as a nested composition when multiple identities or live identity status must be represented compactly."
-  - "Use Tile alignment when the LIVE status label is part of the avatar identity presentation."
-  - "Use Horizontal alignment for compact overlapping avatar groups without the LIVE label."
-  - "Preserve the 5+ overflow indicator when Count=5+."
+    - "Use Avatar Group as a nested composition when multiple identities or live identity status must be represented compactly."
+    - "Use Tile alignment when the LIVE status label is part of the avatar identity presentation."
+    - "Use Horizontal alignment for compact overlapping avatar groups without the LIVE label."
+    - "Preserve the 5+ overflow indicator when Count=5+."
   dont:
-  - "Do not use Avatar Group as an independently designed standalone component when the Figma label says design individual-use forbidden."
-  - "Do not replace nested [V2] Avatar instances with plain image masks or CSS-drawn shapes."
-  - "Do not infer unavailable Squircle variants that are not present in live Figma."
-  - "Do not replace the Live Tag or 5+ indicator with arbitrary text outside the Avatar Group contract."
+    - "Do not use Avatar Group as an independently designed standalone component when the Figma label says design individual-use forbidden."
+    - "Do not replace nested [V2] Avatar instances with plain image masks or CSS-drawn shapes."
+    - "Do not infer unavailable Squircle variants that are not present in live Figma."
+    - "Do not replace the Live Tag or 5+ indicator with arbitrary text outside the Avatar Group contract."
 
 spec_notes:
   source:
@@ -192,12 +192,12 @@ spec_notes:
   - "Live component set currently has 11 children despite variant options implying a larger theoretical matrix."
 
 source_gaps:
-- field: "Squircle variant matrix"
-  reason: "Live component set exposes Shape=Squircle only for Alignment=Tile, Count=1 at read time."
-  impact: "Do not generate Squircle Horizontal or multi-count Squircle variants until they exist in Figma."
-- field: "Live Tag visibility outside Tile"
-  reason: "Live Tag frame was found in Tile variants, not in Horizontal variants."
-  impact: "Treat Live_Tag as supported by Tile alignment only unless future Figma variants prove otherwise."
+  - field: "Squircle variant matrix"
+    reason: "Live component set exposes Shape=Squircle only for Alignment=Tile, Count=1 at read time."
+    impact: "Do not generate Squircle Horizontal or multi-count Squircle variants until they exist in Figma."
+  - field: "Live Tag visibility outside Tile"
+    reason: "Live Tag frame was found in Tile variants, not in Horizontal variants."
+    impact: "Treat Live_Tag as supported by Tile alignment only unless future Figma variants prove otherwise."
 baseline:
   node_id: 73587:6405
   variant: Shape=Circle, Alignment=Tile, Count=1

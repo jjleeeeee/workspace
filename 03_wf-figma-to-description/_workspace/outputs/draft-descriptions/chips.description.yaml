@@ -300,14 +300,14 @@ interaction:
     behavior: "Use Marquee only for text overflow handling; keep component max width at 190px."
 
 implementation_order:
-- "Select the variant by Mode, Size, Type, State, and Radius."
-- "Reject or remap Size=Small with Type=Image because Image is Medium only."
-- "Render the chip container with fixed height, hug width, max width 190px, and 1px stroke when applicable."
-- "Apply container fill or stroke token from State and Mode."
-- "Render optional Icon or Image before the label when Type requires it."
-- "Render label through _atoms / text semantics and apply Mode/State text token."
-- "Render Badge_Dot or Badge_Number only when the corresponding boolean prop is true."
-- "When chips exceed page width, wrap chips instead of clipping them off-screen."
+  - "Select the variant by Mode, Size, Type, State, and Radius."
+  - "Reject or remap Size=Small with Type=Image because Image is Medium only."
+  - "Render the chip container with fixed height, hug width, max width 190px, and 1px stroke when applicable."
+  - "Apply container fill or stroke token from State and Mode."
+  - "Render optional Icon or Image before the label when Type requires it."
+  - "Render label through _atoms / text semantics and apply Mode/State text token."
+  - "Render Badge_Dot or Badge_Number only when the corresponding boolean prop is true."
+  - "When chips exceed page width, wrap chips instead of clipping them off-screen."
 
 implementation_coverage:
   axes:
@@ -336,17 +336,17 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Chips when users need to select one or multiple options from compact choices."
-  - "Use wrapping when chips exceed the page width."
-  - "Use color tokens that adapt to light and dark mode."
-  - "Use Small chips for tabs."
-  - "Use Medium size for image chips."
+    - "Use Chips when users need to select one or multiple options from compact choices."
+    - "Use wrapping when chips exceed the page width."
+    - "Use color tokens that adapt to light and dark mode."
+    - "Use Small chips for tabs."
+    - "Use Medium size for image chips."
   dont:
-  - "Do not use Chips as non-interactive information labels."
-  - "Do not let chips clip off-screen."
-  - "Do not use fixed_color for chip text and icon colors in the default adaptive mode."
-  - "Do not use Medium size for text-only tab chips."
-  - "Do not treat the chip image as an Avatar component."
+    - "Do not use Chips as non-interactive information labels."
+    - "Do not let chips clip off-screen."
+    - "Do not use fixed_color for chip text and icon colors in the default adaptive mode."
+    - "Do not use Medium size for text-only tab chips."
+    - "Do not treat the chip image as an Avatar component."
 
 spec_notes:
   source:

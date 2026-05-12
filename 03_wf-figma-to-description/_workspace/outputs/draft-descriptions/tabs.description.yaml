@@ -254,12 +254,12 @@ layout:
         value: "No more control"
 
 implementation_order:
-- "Resolve Style first because Bar and Chip use different nested tab item components."
-- "Resolve Type next to choose Fixed width, Scrollable overflow, or Expand chip behavior."
-- "Resolve Size only within the valid Style and Type constraints."
-- "Resolve Mode to choose Default or Fixed token families for parent-owned lines, surfaces, and controls."
-- "Render selected state through the child tab or chip component rather than duplicating child visual rules."
-- "Apply Expand_Button only for Expand(Only Chips) chip variants."
+  - "Resolve Style first because Bar and Chip use different nested tab item components."
+  - "Resolve Type next to choose Fixed width, Scrollable overflow, or Expand chip behavior."
+  - "Resolve Size only within the valid Style and Type constraints."
+  - "Resolve Mode to choose Default or Fixed token families for parent-owned lines, surfaces, and controls."
+  - "Render selected state through the child tab or chip component rather than duplicating child visual rules."
+  - "Apply Expand_Button only for Expand(Only Chips) chip variants."
 
 implementation_coverage:
   axes: "Implement all 16 valid Mode x Style x Type x Size variants and reject invalid theoretical combinations."
@@ -270,19 +270,19 @@ implementation_coverage:
 
 rules:
   do:
-  - "Use Tabs to switch related content within the current screen."
-  - "Keep Type, Size, and padding rules consistent within one tab group."
-  - "Show a clear selected state for the active tab."
-  - "Update the related content immediately when a tab is selected."
-  - "Use Marquee behavior for labels that exceed the supported width."
-  - "Use Medium size only when image content is included."
+    - "Use Tabs to switch related content within the current screen."
+    - "Keep Type, Size, and padding rules consistent within one tab group."
+    - "Show a clear selected state for the active tab."
+    - "Update the related content immediately when a tab is selected."
+    - "Use Marquee behavior for labels that exceed the supported width."
+    - "Use Medium size only when image content is included."
   dont:
-  - "Do not use Tabs for unrelated page transitions or independent task flows."
-  - "Do not mix different tab item types in one group unless the chip usage explicitly supports it."
-  - "Do not truncate long labels with an ellipsis."
-  - "Do not use Medium size for text-only or icon-only chip tabs."
-  - "Do not arbitrarily change horizontal padding."
-  - "Do not render selected and unselected tabs with the same visual treatment."
+    - "Do not use Tabs for unrelated page transitions or independent task flows."
+    - "Do not mix different tab item types in one group unless the chip usage explicitly supports it."
+    - "Do not truncate long labels with an ellipsis."
+    - "Do not use Medium size for text-only or icon-only chip tabs."
+    - "Do not arbitrarily change horizontal padding."
+    - "Do not render selected and unselected tabs with the same visual treatment."
 
 spec_notes:
   source:
