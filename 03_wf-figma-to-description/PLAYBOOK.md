@@ -148,7 +148,7 @@ yaml `tokens` 블록의 `resolved` 값(light/dark hex)은 아래 카탈로그에
 | 타이포 primitive | `../../cds-catalogs/catalogs/tokens/tokens.typography.v1.0.json` | 2026-05-12 | lineheight/text_size/text_weight 원시값 |
 
 경로는 `03_wf-figma-to-description/` 기준 상대경로.
-플랫폼별 CSS 변수(`--cds-...`) 변환은 각 플랫폼 소비자가 semantic token 이름에서 직접 파생한다.
+플랫폼별 변수명 변환(Web CSS 변수, Swift, Kotlin 네이밍 등)은 각 플랫폼 소비자가 semantic token 이름에서 직접 파생한다.
 
 ### 재실행 스크립트 위치
 
