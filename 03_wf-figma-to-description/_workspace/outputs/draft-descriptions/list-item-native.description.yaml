@@ -373,11 +373,14 @@ spec_notes:
   readback:
   - "componentPropertyDefinitions exposes four boolean optional-slot props."
   - "Status=Disabled is verified as component root opacity 0.2 in the sampled live variants."
+  usage:
+  - "Status=Disabled는 개별 슬롯이 아닌 컴포넌트 루트에 opacity 0.2를 적용해 비활성 처리된다. 내부 슬롯을 개별적으로 dim 처리하지 않는다."
+  - "4개의 boolean 선택 슬롯(leading image, leading icon, trailing action, trailing text)은 독립적으로 토글 가능하다. 단, 조합 가능한 슬롯은 Figma variant로 확인된 조합만 허용하며 임의 조합은 사용하지 않는다."
 
 source_gaps:
   - field: "usage_reference"
-    issue: "No matching markitdown-output file for List_Item_Native was present in the workflow refs."
-    decision: "Usage rules are limited to live Figma structure, variant keys, and confirmed nested DS composition."
+    confirmed: true
+    reason: "No markitdown-output file for List_Item_Native exists; usage rules are limited to live Figma structure, variant keys, and confirmed nested DS composition."
 baseline:
   node_id: 57343:18665
   variant: Mode=Default, Size=Medium, Status=Default

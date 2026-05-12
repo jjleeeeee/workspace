@@ -356,8 +356,8 @@ spec_notes:
 
 source_gaps:
   - field: "overlay_icon_asset_source"
-    issue: "Optional overlay modules contain icon_area placeholders and null icon instances in the component set."
-    decision: "Keep the optional modules semantic and require concrete DS icon assets from the consumer context rather than copying placeholder vector internals."
+    confirmed: true
+    reason: "Optional overlay modules contain icon_area placeholders and null icon instances; keeping modules semantic and requiring concrete DS icon assets from consumer context avoids copying placeholder vector internals."
 baseline:
   node_id: 59100:15485
   variant: Type=Thumbnail, Ratio=16:9, Radius=off

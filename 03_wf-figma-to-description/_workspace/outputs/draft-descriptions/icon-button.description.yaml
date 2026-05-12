@@ -311,6 +311,9 @@ spec_notes:
   - "Official Figma Plugin API read-only extraction for all 192 variants, token groups, and geometry samples."
   - "Code Connect context for nested icon_area instance properties."
   - "Registry reference: refs/figma-component-keys/variant-keys/icon-button.md."
+  usage:
+  - "icon_area 실제 렌더 크기는 20x20px이다. markitdown 참조문서에 24x24(XLarge) 수치가 있으나 live Figma 측정값이 우선한다. 구현 시 20x20를 기준으로 사용한다."
+  - "Radius=on 일 때 버튼은 완전한 원형(border-radius: 50%)이 되며, Radius=off일 때는 Size별 고정 radius 값을 적용한다. 두 모드를 동일한 컴포넌트로 처리해야 한다."
 baseline:
   node_id: 54093:38814
   variant: Mode=Default, Type=Filled, Size=Medium(40), State=Default, Radius=on, Button Color=Default

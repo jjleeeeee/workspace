@@ -276,6 +276,9 @@ spec_notes:
     type: "Figma paint style gradient, not a token path"
     style_name: "integrated-membership-gra"
     gradient_transform: "[[0.7684494853, 0.5588471889, -0.1627408862], [-0.0824003071, 0.1141824573, 0.4778847098]]"
+  usage:
+  - "Membership Ring 그라디언트는 토큰 경로가 아닌 Figma paint style(integrated-membership-gra)로 정의된다. 런타임에서는 그라디언트 변환 행렬을 직접 적용하거나 디자인팀이 제공한 에셋을 사용해야 하며, 임의 색상으로 대체하지 않는다."
+  - "Ring과 Moment_Ring의 내부 atom 상세는 composition.uses 참조로만 기록되며, 이 YAML에 중복 서술하지 않는다. 구현 시 해당 컴포넌트 스펙을 별도로 확인한다."
 
 source_gaps:
   - part: "Nested avatar atoms"
