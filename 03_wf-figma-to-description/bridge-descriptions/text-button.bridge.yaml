@@ -1,0 +1,114 @@
+bridge:
+  component: "TextButton"
+  purpose: "Platform-neutral component contract plus platform-specific implementation bindings."
+  source_draft: "draft-descriptions/text-button.description.yaml"
+  status: "ready"
+  updated: "2026-05-11"
+
+component_contract:
+  figma:
+    file_key: "DWEduE6GfxYMlyxKPNJ8jA"
+    node_id: "52753:39618"
+    component_set_key: "70d2a20bcdfe3ac7a3c3190410d9a255d8783e1d"
+  figma_read_evidence:
+    provenance: "live_figma_read"
+    source_summary:
+      - "Console MCP figma_get_component(52753:39618, format=metadata, enrich=true)"
+      - "Figma MCP get_design_context(52753:39957) representative filled/default/medium"
+      - "Console MCP figma_get_component_image(52753:39957, scale=1 and scale=3)"
+    representative_nodes:
+      - { id: "52753:39957", label: "Mode=Default, Type=Filled, Size=Medium(40), Button Color=Default, Status=Default, Radius=off" }
+      - { id: "52753:39979", label: "Mode=Default, Type=Filled, Size=Medium(40), Button Color=Default, Status=Loading, Radius=off" }
+      - { id: "52753:44303", label: "Mode=Default, Type=Ghost, Size=Medium(40), Button Color=Default, Status=Default, Radius=off" }
+  axes:
+    Mode: ["Default", "Fixed"]
+    Type: ["Filled", "Outlined Color", "Outlined Gray", "Ghost"]
+    Size: ["XLarge", "Large", "Medium", "Small", "XSmall", "XXSmall"]
+    Button_Color: ["Default", "Black"]
+    Status: ["Default", "Hover", "Loading", "Disabled"]
+    Radius: ["off", "on"]
+  props:
+    Option_Leading: { type: "boolean", default: false, semantic: "Optional leading content slot." }
+    Option_Trailing: { type: "boolean", default: false, semantic: "Optional trailing content slot." }
+    Button_Text: { type: "text", default: "Text", semantic: "Button label content." }
+    Trailing_Icon: { type: "boolean", default: true, semantic: "Trailing icon visibility." }
+    Trailing_Text: { type: "boolean", default: false, semantic: "Trailing text visibility." }
+  validation_scope:
+    comparison_scope: "full-parity"
+    rationale: "Default filled medium button has deterministic text, size, radius, color, and no media-backed assets."
+
+platform_bindings:
+  react:
+    source_note:
+      provenance: "04_source_note"
+      path: "../04_wf-figma-to-react-components/src/figma/text-button.source.md"
+      sections:
+        - "MCP Reads"
+        - "Variant Axes"
+        - "Component Properties"
+        - "Constraints"
+        - "Token Mapping"
+        - "Implementation Notes"
+        - "Token vs Rendered Pixel Notes"
+        - "Alpha Token Notes"
+        - "Font Mapping Notes"
+        - "Text Behavior Notes"
+        - "Sizing Interpretation Notes"
+        - "Nested Module Inventory"
+        - "Known Gaps"
+    props:
+      axes:
+        Mode: { prop: "mode", values: ["default", "fixed"], storybook_control: true }
+        Type: { prop: "buttonType", values: ["filled", "outlinedColor", "outlinedGray", "ghost"], storybook_control: true }
+        Size: { prop: "size", values: ["xlarge", "large", "medium", "small", "xsmall", "xxsmall"], storybook_control: true }
+        Button_Color: { prop: "buttonColor", values: ["default", "black"], storybook_control: true }
+        Status: { prop: "status", values: ["default", "hover", "loading", "disabled"], storybook_control: true }
+        Radius: { prop: "radius", values: ["off", "on"], storybook_control: true }
+      properties:
+        Option_Leading: { prop: "optionLeading", type: "boolean", default: false, storybook_control: true }
+        Option_Trailing: { prop: "optionTrailing", type: "boolean", default: false, storybook_control: true }
+        Button_Text: { prop: "children", type: "ReactNode", default: "Text", storybook_control: true }
+        Trailing_Icon: { prop: "trailingIcon", type: "boolean", default: true, storybook_control: true }
+        Trailing_Text: { prop: "trailingText", type: "boolean", default: false, storybook_control: true }
+      runtime_hidden:
+        - { prop: "type", reason: "Native button type; defaults to button and is hidden from Storybook Controls." }
+    visual_validation:
+      provenance: "04_visual_registry"
+      registry_path: "../04_wf-figma-to-react-components/src/figma/visual-registry.json"
+      registry_id: "text-button-default"
+      component: "TextButton"
+      story_id: "atoms-textbutton--playground"
+      selector: ".chord-text-button"
+      comparison_scope: "full-parity"
+      is_parity_gate: true
+      expected_size: "63x40"
+      visual_scale: 3
+      max_diff_pixel_ratio: 0.03
+      layout_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/text-button-default.png"
+      visual_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/text-button-default@3x.png"
+    implementation_bridge:
+      provenance: "04_source_note"
+      findings:
+        - "Public prop uses buttonType instead of native type to avoid HTML button prop conflict."
+        - "Filled representative node 52753:39957 has no strokes; CSS must avoid layout-affecting border for filled variants."
+        - "Stroke-like variants should use inset rendering because Figma strokes are strokeAlign=INSIDE."
+        - "WeGothicSans remains first in the CSS font-family stack as the Chord system alias."
+        - "Leading, trailing, and loading visuals are consumer Options slots; do not map by shape similarity."
+      known_gaps:
+        - "Loading animation is CSS dots in v1 because no production Lottie asset was provided."
+        - "Leading/trailing icon production assets remain consumer-provided slot content."
+  swift:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract axes and props as the source model."
+      - "Create Swift naming and platform control mapping under platform_bindings.swift before implementation."
+  kotlin:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract axes and props as the source model."
+      - "Create Kotlin naming and platform control mapping under platform_bindings.kotlin before implementation."
+
+validation:
+  commands:
+    - "node tools/validate-component-description.mjs --mode=bridge bridge-descriptions/text-button.bridge.yaml"
+    - "cd ../04_wf-figma-to-react-components && npm run visual:diff"

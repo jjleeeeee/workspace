@@ -26,6 +26,14 @@
 
 ## History
 
+### 2026-05-12 / figma-description-bulk-clear
+
+- 변경: draft 기준 37개 Figma component/component set의 plain `description`과 legacy `descriptionMarkdown`을 모두 빈 문자열로 clear했다.
+- 이유: 사용자가 전체 컴포넌트에 들어간 Description 삭제를 명시 승인했기 때문이다.
+- 제외: 로컬 `draft-descriptions/*.description.yaml`, refs, validator, `{component}.md` 파생 문서는 건드리지 않았다.
+- 검증: Figma official readback에서 37개 모두 `descriptionLength === 0`, `descriptionMarkdownLength === 0`을 확인했다.
+- 재검토: Figma Description SoT를 다시 사용할지, 또는 로컬 draft/bridge 기반으로 재작성할지 결정할 때.
+
 ### 2026-05-09 / typography-schema-batch
 
 - 변경: live Figma text node가 확인된 23개 Description에 top-level `typography` 섹션을 추가하고 Figma plain Description에 저장했다.

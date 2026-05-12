@@ -1,0 +1,124 @@
+bridge:
+  component: "ListItemNative"
+  purpose: "Platform-neutral component contract plus platform-specific implementation bindings."
+  source_draft: "draft-descriptions/list-item-native.description.yaml"
+  status: "structure-only"
+  updated: "2026-05-11"
+
+component_contract:
+  figma:
+    file_key: "DWEduE6GfxYMlyxKPNJ8jA"
+    node_id: "57343:18628"
+    component_set_key: "e120970b1638c0fa7a5b7638923eb91479384ebe"
+  figma_read_evidence:
+    provenance: "live_figma_read"
+    source_summary:
+      - "Figma MCP get_design_context(57343:18628) parent component set"
+      - "Figma MCP get_design_context(57343:20409) Trailing module"
+      - "Console MCP deep reads for parent, Small Leading, Medium Leading, and Trailing modules"
+      - "Figma REST audit src/figma/rest-audits/list-item-native.rest.json"
+      - "Figma MCP get_design_context(81275:904969) title badge and text behavior sample"
+    representative_nodes:
+      - { id: "57343:18665", label: "Mode=Default, Size=Medium, Status=Default" }
+      - { id: "57343:20409", label: "Trailing Optional module component set" }
+      - { id: "63406:10120", label: "Small Leading Optional module component set" }
+      - { id: "57343:20398", label: "Medium Leading Optional module component set" }
+      - { id: "81275:904969", label: "Title badge and text behavior sample" }
+  axes:
+    Mode: ["Default", "Fixed"]
+    Size: ["Small", "Medium"]
+    Status: ["Default", "Hover Pressed", "Disabled"]
+  props:
+    Show_Divider: { type: "boolean", default: true, semantic: "Divider visibility." }
+    Show_Trailing: { type: "boolean", default: true, semantic: "Trailing module visibility." }
+    Show_Small_Leading: { type: "boolean", default: true, semantic: "Small leading module visibility." }
+    Show_Medium_Leading: { type: "boolean", default: true, semantic: "Medium leading module visibility." }
+  composition:
+    nested_controls:
+      - { name: "leadingType", values: ["avatar", "checkbox", "icon", "radio", "rectangularThumbnail", "squareThumbnail"] }
+      - { name: "trailingType", values: ["iconButton", "mainButton", "numberBadge", "radio", "toggle", "textAndIcon", "textOnly", "iconOnly"] }
+      - { name: "textOverflow", values: ["wrap", "clip", "ellipsis"] }
+  validation_scope:
+    comparison_scope: "structure-only"
+    rationale: "Default list item includes media-backed nested Thumbnail behavior, so full visual parity is not claimed."
+
+platform_bindings:
+  react:
+    source_note:
+      provenance: "04_source_note"
+      path: "../04_wf-figma-to-react-components/src/figma/list-item-native.source.md"
+      sections:
+        - "Figma Identity"
+        - "Figma Reads"
+        - "Variant Axes"
+        - "Figma Boolean Props"
+        - "Layout Contract"
+        - "Composition Contract"
+        - "Nested Module Inventory"
+        - "Token Mapping"
+        - "Text Behavior Notes"
+        - "Text Flow Contract"
+        - "Token vs Rendered Pixel Notes"
+        - "Storybook Contract"
+        - "Known Gaps"
+    props:
+      axes:
+        Mode: { prop: "mode", values: ["default", "fixed"], storybook_control: true }
+        Size: { prop: "size", values: ["small", "medium"], storybook_control: true }
+        Status: { prop: "status", values: ["default", "hoverPressed", "disabled"], storybook_control: true }
+      properties:
+        Show_Divider: { prop: "showDivider", type: "boolean", default: true, storybook_control: true }
+        Show_Trailing: { prop: "showTrailing", type: "boolean", default: true, storybook_control: true }
+        Show_Small_Leading: { prop: "showSmallLeading", type: "boolean", default: true, storybook_control: true }
+        Show_Medium_Leading: { prop: "showMediumLeading", type: "boolean", default: true, storybook_control: true }
+      nested_controls:
+        - { prop: "leadingType", values: ["avatar", "checkbox", "icon", "radio", "rectangularThumbnail", "squareThumbnail"], storybook_control: true }
+        - { prop: "trailingType", values: ["iconButton", "mainButton", "numberBadge", "radio", "toggle", "textAndIcon", "textOnly", "iconOnly"], storybook_control: true }
+        - { prop: "textOverflow", values: ["wrap", "clip", "ellipsis"], storybook_control: false }
+      runtime_hidden:
+        - { prop: "title", reason: "Runtime content text." }
+        - { prop: "bodyText", reason: "Runtime content text." }
+        - { prop: "detailText", reason: "Runtime content text." }
+        - { prop: "inlineSize", reason: "Verified parent composition sizing prop for Menu." }
+        - { prop: "thumbnailSrc", reason: "Runtime media content." }
+    visual_validation:
+      provenance: "04_visual_registry"
+      registry_path: "../04_wf-figma-to-react-components/src/figma/visual-registry.json"
+      registry_id: "list-item-native-default"
+      component: "ListItemNative"
+      story_id: "atoms-listitemnative--playground"
+      selector: ".chord-list-item-native"
+      comparison_scope: "structure-only"
+      is_parity_gate: false
+      expected_size: "393x81"
+      visual_scale: 1
+      max_diff_pixel_ratio: 0.35
+      layout_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/list-item-native-default.png"
+      visual_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/list-item-native-default.png"
+    implementation_bridge:
+      provenance: "04_source_note"
+      findings:
+        - "Nested branch coverage is complete/deep-inventoried, but visual parity remains structure-only due media-backed Thumbnail content."
+        - "Default text behavior is wrap because title uses textAutoResize=WIDTH_AND_HEIGHT and body uses textAutoResize=HEIGHT."
+        - "Title BadgeDot is title-owned inline adornment; do not render it after a full-width title span."
+        - "Alpha tokens such as body text 400a and divider outline tokens must not receive extra CSS opacity."
+        - "Nested atoms are composed through public props; CSS scale and arbitrary parent overrides are forbidden."
+        - "Menu compact row is a verified parent composition branch using inlineSize and hidden runtime props."
+      known_gaps:
+        - "Figma sample uses concrete Thumbnail media; component default composes Thumbnail no-image state unless thumbnailSrc is supplied."
+        - "Visual registry is non-gating structure-only until deterministic media parity is closed."
+  swift:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract axes, props, and composition as the source model."
+      - "Create Swift nested module mapping under platform_bindings.swift before implementation."
+  kotlin:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract axes, props, and composition as the source model."
+      - "Create Kotlin nested module mapping under platform_bindings.kotlin before implementation."
+
+validation:
+  commands:
+    - "node tools/validate-component-description.mjs --mode=bridge bridge-descriptions/list-item-native.bridge.yaml"
+    - "cd ../04_wf-figma-to-react-components && npm run visual:diff"

@@ -1,0 +1,95 @@
+bridge:
+  component: "Radio"
+  purpose: "Platform-neutral component contract plus platform-specific implementation bindings."
+  source_draft: "draft-descriptions/radio.description.yaml"
+  status: "ready"
+  updated: "2026-05-11"
+
+component_contract:
+  figma:
+    file_key: "DWEduE6GfxYMlyxKPNJ8jA"
+    node_id: "59215:200965"
+    component_set_key: "a04bcc0355ca5db25efdc00cdfc68958db3f5976"
+  figma_read_evidence:
+    provenance: "live_figma_read"
+    source_summary:
+      - "Console MCP figma_get_component(59215:200965, enrich=true)"
+      - "Console MCP figma_get_component_for_development(59215:200966)"
+      - "Console MCP figma_get_component_image(59215:200966, scale=1)"
+      - "Console MCP figma_get_component_image(59215:200966, scale=3)"
+    representative_nodes:
+      - { id: "59215:200966", label: "Mode=Default, Status=Default" }
+  axes:
+    Mode: ["Default", "Fixed"]
+    Status: ["Default", "Enabled", "Disabled"]
+  props:
+    Mode: { type: "Default | Fixed", default: "Default", semantic: "Theme mode." }
+    Status: { type: "Default | Enabled | Disabled", default: "Default", semantic: "Default unselected, Enabled selected, Disabled inactive." }
+  assets:
+    radio_shape: { source: "Shape", semantic: "Visible in Enabled state as selected outer fill." }
+    inner_circle: { source: "inner-circle", semantic: "Visible in Enabled and Disabled states; Default remains empty." }
+  validation_scope:
+    comparison_scope: "full-parity"
+    rationale: "Default radio is deterministic 24x24 primitive ellipse content."
+
+platform_bindings:
+  react:
+    source_note:
+      provenance: "04_source_note"
+      path: "../04_wf-figma-to-react-components/src/figma/radio.source.md"
+      sections:
+        - "Figma Contract"
+        - "MCP Reads"
+        - "Props Mapping"
+        - "Layout"
+        - "Token Mapping"
+        - "Font Mapping Notes"
+        - "Asset Status"
+        - "Known Gaps"
+    props:
+      axes:
+        Mode: { prop: "mode", values: ["default", "fixed"], storybook_control: true }
+        Status: { prop: "status", values: ["default", "enabled", "disabled"], storybook_control: true }
+      runtime_hidden:
+        - { prop: "checked", reason: "Native radio runtime state." }
+        - { prop: "disabled", reason: "Native radio runtime state." }
+        - { prop: "onChange", reason: "Native radio runtime handler." }
+    visual_validation:
+      provenance: "04_visual_registry"
+      registry_path: "../04_wf-figma-to-react-components/src/figma/visual-registry.json"
+      registry_id: "radio-default"
+      component: "Radio"
+      story_id: "atoms-radio--playground"
+      selector: ".chord-radio"
+      comparison_scope: "full-parity"
+      is_parity_gate: true
+      expected_size: "24x24"
+      visual_scale: 3
+      max_diff_pixel_ratio: 0.03
+      layout_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/radio-default.png"
+      visual_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/radio-default@3x.png"
+    implementation_bridge:
+      provenance: "04_source_note"
+      findings:
+        - "Default representative is Mode=Default, Status=Default at node 59215:200966."
+        - "Component renders a 24x24 control with a centered 22px outline diameter."
+        - "Inner circle diameter is 8px."
+        - "Radio has no external asset; shapes are primitive ellipses."
+        - "Group-level single-selection behavior belongs to a future RadioGroup, not this atom."
+      known_gaps:
+        - "RadioGroup default-selection and mutual-exclusion behavior is outside this atom bridge."
+  swift:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract axes, props, assets, and validation scope as the source model."
+      - "Create Swift selected/disabled/event mapping under platform_bindings.swift before implementation."
+  kotlin:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract axes, props, assets, and validation scope as the source model."
+      - "Create Kotlin selected/disabled/event mapping under platform_bindings.kotlin before implementation."
+
+validation:
+  commands:
+    - "node tools/validate-component-description.mjs --mode=bridge bridge-descriptions/radio.bridge.yaml"
+    - "cd ../04_wf-figma-to-react-components && npm run visual:diff"

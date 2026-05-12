@@ -1,0 +1,126 @@
+bridge:
+  component: "Avatar"
+  purpose: "Platform-neutral component contract plus platform-specific implementation bindings."
+  source_draft: "draft-descriptions/avatar.description.yaml"
+  status: "structure-only"
+  updated: "2026-05-11"
+
+component_contract:
+  figma:
+    file_key: "DWEduE6GfxYMlyxKPNJ8jA"
+    node_id: "62973:7556"
+    component_set_key: "33d955018e09fb10ab89cefc8f00f2662a2b0e39"
+  figma_read_evidence:
+    provenance: "live_figma_read"
+    source_summary:
+      - "Console MCP figma_get_component(62973:7556, enrich=true)"
+      - "Console MCP figma_get_component_for_development(62973:7591) for Mode=Default, Type=Circle, Size=Medium"
+      - "Console MCP figma_get_component_for_development(62973:7599) for Mode=Default, Type=Circle, Size=Small"
+      - "Console MCP figma_get_component_for_development(62973:7653) for Mode=Default, Type=Squircle, Size=Medium"
+      - "Framelink download_figma_images(80800:54100) for squircle mask"
+      - "Figma MCP get_design_context(81500:7449) for placeholder image bundle"
+    representative_nodes:
+      - { id: "62973:7599", label: "Mode=Default, Type=Circle, Size=Small" }
+      - { id: "62973:7653", label: "Mode=Default, Type=Squircle, Size=Medium" }
+      - { id: "57343:20399", label: "ListItem Leading Type=Avatar composition sample" }
+      - { id: "81500:7449", label: "Avatar placeholder image bundle" }
+  axes:
+    Mode: ["Default", "Fixed"]
+    Type: ["Circle", "Squircle"]
+    Size: ["XXXXLarge", "XXXLarge", "XXLarge", "XLarge", "Large", "Medium", "Small", "XSmall", "XXSmall", "XXXSmall", "Tiny"]
+  props:
+    Ring: { type: "boolean", default: true, semantic: "Circle avatar ring visibility." }
+    Birthday_Hat: { type: "boolean", default: true, semantic: "Birthday hat visibility on Circle avatar." }
+    Emoji: { type: "boolean", default: true, semantic: "Emoji badge visibility on Circle avatar." }
+    Badge_Dot: { type: "boolean", default: false, semantic: "Notification dot visibility on Squircle avatar." }
+    Host: { type: "boolean", default: true, semantic: "Host badge visibility on Squircle avatar." }
+  assets:
+    squircle_mask: { source: "80800:54100", semantic: "Use mask asset; do not approximate Squircle with border-radius." }
+    placeholder_image: { source: "81500:7449", semantic: "Use when avatar image is missing." }
+  validation_scope:
+    comparison_scope: "structure-only"
+    rationale: "Avatar baselines depend on placeholder/media assets, so React visual registry is non-gating until deterministic media parity is closed."
+
+platform_bindings:
+  react:
+    source_note:
+      provenance: "04_source_note"
+      path: "../04_wf-figma-to-react-components/src/figma/avatar.source.md"
+      sections:
+        - "Figma Identity"
+        - "Source Reads"
+        - "Variant Axes"
+        - "Figma Props"
+        - "Code Mapping"
+        - "Size Contract"
+        - "Asset Notes"
+        - "Parent Composition Sizing Notes"
+        - "Host Overlay Contract"
+        - "Composition Notes"
+        - "Placeholder SVG Mapping"
+        - "Known Gaps"
+    props:
+      axes:
+        Mode: { prop: "mode", values: ["default", "fixed"], storybook_control: true }
+        Type: { prop: "avatarType", values: ["circle", "squircle"], storybook_control: true }
+        Size: { prop: "size", values: ["xxxxlarge", "xxxlarge", "xxlarge", "xlarge", "large", "medium", "small", "xsmall", "xxsmall", "xxxsmall", "tiny"], storybook_control: true }
+      properties:
+        Ring: { prop: "ring", type: "boolean", default: true, storybook_control: true }
+        Birthday_Hat: { prop: "birthdayHat", type: "boolean", default: true, storybook_control: true }
+        Emoji: { prop: "emoji", type: "boolean", default: true, storybook_control: true }
+        Badge_Dot: { prop: "badgeDot", type: "boolean", default: true, storybook_control: true }
+        Host: { prop: "host", type: "boolean", default: true, storybook_control: true }
+      runtime_hidden:
+        - { prop: "src", reason: "Runtime media content." }
+        - { prop: "alt", reason: "Runtime accessibility text." }
+        - { prop: "emojiText", reason: "Runtime emoji content." }
+        - { prop: "hostSrc", reason: "Runtime nested avatar media content." }
+        - { prop: "hostAlt", reason: "Runtime nested avatar accessibility text." }
+        - { prop: "componentSize", reason: "Verified parent composition sizing hook." }
+        - { prop: "imageSize", reason: "Verified parent composition sizing hook." }
+    visual_validation:
+      provenance: "04_visual_registry"
+      registry_path: "../04_wf-figma-to-react-components/src/figma/visual-registry.json"
+      registry_id: "avatar-circle-small-default"
+      component: "Avatar"
+      story_id: "atoms-avatar--visual-circle-small"
+      selector: ".chord-avatar"
+      comparison_scope: "structure-only"
+      is_parity_gate: false
+      expected_size: "46x46"
+      visual_scale: 3
+      max_diff_pixel_ratio: 0.75
+      layout_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/avatar-circle-small-default.png"
+      visual_baseline_path: "../04_wf-figma-to-react-components/src/figma/baselines/avatar-circle-small-default-3x.png"
+    additional_visual_validations:
+      - registry_id: "avatar-squircle-medium-default"
+        story_id: "atoms-avatar--visual-squircle-medium"
+        comparison_scope: "structure-only"
+        is_parity_gate: false
+        expected_size: "56x56"
+    implementation_bridge:
+      provenance: "04_source_note"
+      findings:
+        - "Circle supports ring, birthdayHat, and emoji; Squircle supports badgeDot and host."
+        - "Squircle uses exported mask asset src/assets/avatar/squircle-mask.svg instead of border-radius approximation."
+        - "Missing or failed avatar images fall back to size-specific placeholder SVGs."
+        - "Host overlay is pinned inside the parent frame; do not push Host outside with negative offsets."
+        - "Parent components may pass componentSize and imageSize only when verified in the parent source note."
+      known_gaps:
+        - "Visual registry is structure-only and non-gating because Figma baselines use media/placeholder content."
+        - "Draft Badge_Dot default and 04 source-note/code default differ; keep this explicit until a fresh live read resolves the default contract."
+  swift:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract axes, props, assets, and validation scope as the source model."
+      - "Create Swift image loading, placeholder, mask, and overlay mapping under platform_bindings.swift before implementation."
+  kotlin:
+    status: "not-authored"
+    binding_policy:
+      - "Use component_contract axes, props, assets, and validation scope as the source model."
+      - "Create Kotlin image loading, placeholder, mask, and overlay mapping under platform_bindings.kotlin before implementation."
+
+validation:
+  commands:
+    - "node tools/validate-component-description.mjs --mode=bridge bridge-descriptions/avatar.bridge.yaml"
+    - "cd ../04_wf-figma-to-react-components && npm run visual:diff"
