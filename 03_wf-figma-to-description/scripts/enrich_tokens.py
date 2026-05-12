@@ -3,7 +3,7 @@ from pathlib import Path
 from ruamel.yaml import YAML
 
 CATALOG_DIR = Path("/Users/jj.iee/Desktop/workspace/cds-catalogs/catalogs/tokens")
-DESC_DIR = Path("/Users/jj.iee/Desktop/workspace/03_wf-figma-to-description/draft-descriptions")
+DESC_DIR = Path("/Users/jj.iee/Desktop/workspace/03_wf-figma-to-description/_workspace/outputs/draft-descriptions")
 
 catalog = {}
 for fname in CATALOG_DIR.glob("*.json"):

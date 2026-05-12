@@ -21,7 +21,7 @@ node tools/validate-component-description.mjs examples/invalid-description.yaml
 실제 YAML 확인:
 
 ```bash
-node tools/validate-component-description.mjs draft-descriptions/<component>.description.yaml
+node tools/validate-component-description.mjs _workspace/outputs/draft-descriptions/<component>.description.yaml
 ```
 
 기대 결과:
@@ -41,7 +41,7 @@ node tools/validate-component-description.mjs draft-descriptions/<component>.des
 - [ ] `figma_execute`로 token name 추출 완료
 - [ ] `token: null` 항목은 YAML에 직접 넣지 않고 `source_gaps`에 기록
 - [ ] 필요 시 `scripts/enrich_tokens.py`, `scripts/enrich_typography.py` 실행 완료
-- [ ] Description YAML 작성 및 저장 완료 (`draft-descriptions/<component>.description.yaml`)
+- [ ] Description YAML 작성 및 저장 완료 (`_workspace/outputs/draft-descriptions/<component>.description.yaml`)
 - [ ] validator 실행 완료 (PASS)
 - [ ] `implementation_order` 포함 및 플랫폼 중립 문구 확인
 - [ ] `implementation_coverage` 포함 및 axes/props/assets/layout coverage 확인
@@ -62,7 +62,7 @@ node tools/validate-component-description.mjs draft-descriptions/<component>.des
 
 ```md
 완료:
-- 산출물: draft-descriptions/<component>.description.yaml, history 기록(필요 시)
+- 산출물: _workspace/outputs/draft-descriptions/<component>.description.yaml, history 기록(필요 시)
 - 입력: Figma `<file_key>`, node `<component_set_node_id>`, 사용자 제공 Do/Don't
 - 사용 도구: Framelink MCP, figma-console MCP
 - 검증: local validator PASS

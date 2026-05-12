@@ -3,7 +3,7 @@ from pathlib import Path
 from ruamel.yaml import YAML
 
 TYPO_CATALOG = Path("/Users/jj.iee/Desktop/workspace/cds-catalogs/catalogs/tokens/tokens.typography.semantic.json")
-DESC_DIR = Path("/Users/jj.iee/Desktop/workspace/03_wf-figma-to-description/draft-descriptions")
+DESC_DIR = Path("/Users/jj.iee/Desktop/workspace/03_wf-figma-to-description/_workspace/outputs/draft-descriptions")
 
 catalog = {t["name"]: t for t in json.loads(TYPO_CATALOG.read_text())["tokens"]}
 

@@ -3,7 +3,7 @@ from pathlib import Path
 from ruamel.yaml import YAML
 
 VKEYS_DIR = Path("/Users/jj.iee/Desktop/workspace/03_wf-figma-to-description/refs/figma-component-keys/variant-keys")
-DESC_DIR = Path("/Users/jj.iee/Desktop/workspace/03_wf-figma-to-description/draft-descriptions")
+DESC_DIR = Path("/Users/jj.iee/Desktop/workspace/03_wf-figma-to-description/_workspace/outputs/draft-descriptions")
 
 SIZE_PRIORITY = ["Medium", "Large", "Small", "XLarge", "XSmall"]
 PREFER_STATUS = ["Default", "Off", "Inactive"]

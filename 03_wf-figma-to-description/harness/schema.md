@@ -198,14 +198,14 @@ validator는 최소한 다음 top-level section을 기대한다.
 ## Bridge YAML Shape
 
 Bridge YAML은 `bridge-descriptions/<component>.bridge.yaml`에 둔다.
-`draft-descriptions/*.description.yaml`와 같은 Figma write/readback 흐름에 넣지
+`_workspace/outputs/draft-descriptions/*.description.yaml`와 같은 Figma write/readback 흐름에 넣지
 않는다.
 
 ```yaml
 bridge:
   component: "<ComponentName>"
   purpose: "Platform-neutral component contract plus platform-specific implementation bindings."
-  source_draft: "draft-descriptions/<component>.description.yaml"
+  source_draft: "_workspace/outputs/draft-descriptions/<component>.description.yaml"
   status: "ready | partial | structure-only | needs-live-read"
   updated: "<YYYY-MM-DD>"
 

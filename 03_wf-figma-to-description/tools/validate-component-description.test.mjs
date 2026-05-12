@@ -33,7 +33,7 @@ function makeBridge({ registryPath, comparisonScope = "full-parity", isParityGat
   return `
 bridge:
   component: "TextButton"
-  source_draft: "draft-descriptions/text-button.description.yaml"
+  source_draft: "_workspace/outputs/draft-descriptions/text-button.description.yaml"
   status: "ready"
 
 component_contract:
