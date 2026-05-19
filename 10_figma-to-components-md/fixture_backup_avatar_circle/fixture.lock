@@ -1,9 +1,0 @@
-{
-  "figma_raw.json": "c01616e8a7e978ec1dee26a8e3f887c8b0de3731b312b6e0b227b125adcb1bc7",
-  "figma_screenshot.png": "1a194d2dd27ad4a48c6aeea67eddb3013be23b75f09a6d77868426a91fc87afd",
-  "fixture.meta.json": "3591bdaf11733105bce28a6e99de29d78291311abc40d2750d75f033c70ee75a",
-  "token_snapshot.json": "5da6954e8021e7781c33e859df5bd0e07c8315ff5b24a1faec82988403fe6942",
-  "component_keys_snapshot.json": "b9c03414124d983254be5254739e482ba6ea8c72c2822ec10273f1591024f75e",
-  "expected_nodes.json": "764cada8977810cc839871bffdcaad8098aa2e2871014599e409387ae6f91780",
-  "image_mask.json": "9d61fc570c2e0f2361eecb9596d0c837e51d819d463041d91f5b2942d116a4fb"
-}
