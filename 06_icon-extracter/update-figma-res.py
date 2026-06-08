@@ -13,6 +13,33 @@ import time
 REQUEST_TIMEOUT_SECONDS = 20
 REQUEST_RETRY_COUNT = 3
 REQUEST_RETRY_DELAY_SECONDS = 1
+WORKSPACE_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def load_env_file(filepath):
+    if not os.path.exists(filepath):
+        return
+
+    with open(filepath, "r", encoding="utf-8") as file:
+        for raw_line in file:
+            line = raw_line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+
+            key, value = line.split("=", 1)
+            key = key.strip()
+            value = value.strip().strip("\"'")
+
+            if key and key not in os.environ:
+                os.environ[key] = value
+
+
+def get_required_env(name):
+    load_env_file(os.path.join(WORKSPACE_ROOT, ".env"))
+    value = os.environ.get(name, "").strip()
+    if not value:
+        raise RuntimeError(f"{name} is required. Set it in .env or shell environment.")
+    return value
 
 def read_txt_to_list_generator(filepath):
     """
@@ -40,7 +67,7 @@ def read_txt_to_list_generator(filepath):
     except Exception as e:
         print(f"An error occurred: {e}")
         return []
-token = os.environ.get("FIGMA_TOKEN", "")
+token = get_required_env("FIGMA_TOKEN")
 file_id="DWEduE6GfxYMlyxKPNJ8jA"
 node_id="5:23828"
 headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8', 'X-FIGMA-TOKEN': f'{token}'}

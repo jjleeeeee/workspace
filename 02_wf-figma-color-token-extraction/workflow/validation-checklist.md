@@ -1,6 +1,6 @@
 # Validation Checklist
 
-`outputs/current/tokens.color.v1.0.json` 생성 후 반드시 확인한다.
+`../chord-design-system/tokens/` 생성 후 반드시 확인한다.
 
 | Check | Expected |
 | --- | ---: |

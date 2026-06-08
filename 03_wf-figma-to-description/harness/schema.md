@@ -178,8 +178,12 @@ validator는 최소한 다음 top-level section을 기대한다.
   다르면 `variants[]`에 `when`, `token`, `value`를 분리한다.
 - `typography`는 선택 섹션이다. Figma text node의 `fontFamily` 값을
   `actual-font`, `system-alias`, `token-alias`, `unknown` 중 하나로 분류한다.
-  `system-alias`이면 `system_fallback`에 OS 시스템 폰트를 기록한다.
-  `WeGothicSans`처럼 macOS 전용 렌더링 alias는 `system-alias`로 분류한다.
+  `system-alias`이면 `system_fallback`에 OS 시스템 폰트를 기록하고,
+  `../../chord-design-system/tokens/typography.semantic.json`의
+  `fontFamilySemantics` metadata와 연결한다. `WeGothicSans`는
+  `fontFamilySemantics.WeGothicSans` 기준으로 Apple 한국어 system font
+  environment alias이며, `system_fallback`에는 Apple SD Gothic + SF Pro
+  조합을 기록한다.
   분류가 불명확하면 `unknown`으로 남기고 `source_gaps`에 이유를 기록한다.
 - `text_behavior`는 선택 섹션이다. `textAutoResize`, parent sizing, overflow
   policy, inline adornment 위치, row height behavior가 구현 결과를 바꿀 때

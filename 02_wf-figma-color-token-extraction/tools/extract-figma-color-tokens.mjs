@@ -3,10 +3,46 @@
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { fileURLToPath } from "node:url";
 
 const DEFAULT_FILE_KEY = "DWEduE6GfxYMlyxKPNJ8jA";
 const DEFAULT_STAGE_LABEL = "v1.0";
-const DEFAULT_OUTPUT_DIR = "02_wf-figma-color-token-extraction/outputs/current";
+const WORKSPACE_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const DEFAULT_OUTPUT_DIR = path.join(WORKSPACE_ROOT, "chord-design-system/tokens");
+const TOKEN_FILES = {
+  color: "color.json",
+  size: "size.json",
+  typography: "typography.json",
+  typographySemantic: "typography.semantic.json",
+};
+
+const FONT_FAMILY_SEMANTICS = {
+  WeGothicSans: {
+    kind: "system-alias",
+    platform: "ios",
+    meaning: "Apple system font environment for Korean UI",
+    composition: ["Apple SD Gothic", "SF Pro"],
+    runtimeStack: ["-apple-system", "BlinkMacSystemFont", "SF Pro", "Apple SD Gothic Neo", "system-ui", "sans-serif"],
+  },
+  Roboto: {
+    kind: "system-font",
+    platform: "aos",
+    meaning: "Android OS default system font",
+    runtimeStack: ["Roboto", "system-ui", "sans-serif"],
+  },
+  Pretendard: {
+    kind: "web-font",
+    platform: "web",
+    meaning: "Web UI font",
+    runtimeStack: ["Pretendard", "ui-sans-serif", "system-ui", "sans-serif"],
+  },
+  "CircularXX TT": {
+    kind: "brand-font",
+    platform: "shared",
+    meaning: "Brand/display Latin font",
+    runtimeStack: ["CircularXX TT", "ui-sans-serif", "system-ui", "sans-serif"],
+  },
+};
 
 const MODE_NAME_MAP = new Map([
   ["Light", "light"],
@@ -40,7 +76,47 @@ const USAGE_SCOPE_MAP = new Map([
   ["TEXT_CONTENT", "text-content"],
 ]);
 
-const COLOR_TOKEN_FILE = "tokens.color.v1.0.json";
+const TYPOGRAPHY_STYLE_SCALE = {
+  "caption-2xs": { textSize: "text-15", lineHeight: "text-lineheight-15", family: "body" },
+  "caption-xs": { textSize: "text-25", lineHeight: "text-lineheight-25", family: "body" },
+  "caption-s": { textSize: "text-50", lineHeight: "text-lineheight-50", family: "body" },
+  "caption-m": { textSize: "text-75", lineHeight: "text-lineheight-75", family: "body" },
+  "body-xs": { textSize: "text-100", lineHeight: "text-lineheight-100", family: "body" },
+  "body-s": { textSize: "text-150", lineHeight: "text-lineheight-150", family: "body" },
+  "body-m": { textSize: "text-200", lineHeight: "text-lineheight-200", family: "body" },
+  "body-lg": { textSize: "text-300", lineHeight: "text-lineheight-300", family: "body" },
+  "headline-s": { textSize: "text-400", lineHeight: "text-lineheight-400", family: "title" },
+  "headline-m": { textSize: "text-500", lineHeight: "text-lineheight-500", family: "title" },
+  "title-s": { textSize: "text-600", lineHeight: "text-lineheight-600", family: "title" },
+  "title-m": { textSize: "text-700", lineHeight: "text-lineheight-700", family: "title" },
+  "title-lg": { textSize: "text-800", lineHeight: "text-lineheight-800", family: "title" },
+  "title-xlg": { textSize: "text-900", lineHeight: "text-lineheight-900", family: "title" },
+  "title-2xlg": { textSize: "text-1200", lineHeight: "text-lineheight-900", family: "title" },
+};
+
+const SEMANTIC_TYPOGRAPHY_STYLES = [
+  ...["title-2xlg", "title-xlg", "title-lg", "title-m"].flatMap((style) => [
+    { style, variant: "system", weight: 800 },
+    { style, variant: "circular", weight: 900 },
+  ]),
+  { style: "title-s", variant: "system", weight: 800 },
+  { style: "title-s", variant: "circular", weight: 900 },
+  { style: "title-s", variant: "circular", weight: 500 },
+  { style: "headline-m", variant: "system", weight: 800 },
+  { style: "headline-m", variant: "circular", weight: 900 },
+  { style: "headline-s", variant: "system", weight: 800 },
+  { style: "headline-s", variant: "system", weight: 700 },
+  { style: "headline-s", variant: "circular", weight: 700 },
+  ...["body-lg", "body-m", "body-s", "body-xs"].flatMap((style) => [
+    ...[700, 600, 500, 400].map((weight) => ({ style, variant: "system", weight })),
+    ...[700, 500, 400].map((weight) => ({ style, variant: "circular", weight })),
+  ]),
+  ...["caption-m", "caption-s", "caption-xs"].flatMap((style) => [
+    ...[700, 500, 400].map((weight) => ({ style, variant: "system", weight })),
+    ...[700, 500, 400].map((weight) => ({ style, variant: "circular", weight })),
+  ]),
+  { style: "caption-2xs", variant: "system", weight: 400 },
+];
 
 export function tokenIdFromName(name, prefix = "token:") {
   return `${prefix}${name.toLowerCase().replaceAll("/", ".").replaceAll("_", "-")}`;
@@ -88,15 +164,49 @@ export function buildCatalogs(restPayload, options = {}) {
     collectionById,
     variableById,
   });
+  const sizeBuild = buildSizeCatalog({
+    source: { ...baseSource, collection: "WDS_tokens" },
+    collection: wdsCollection,
+    collectionById,
+    variableById,
+  });
+  const typographyBuild = buildTypographyCatalog({
+    source: { ...baseSource, collection: "TYPO_tokens + TYPO_circular_tokens" },
+    collections,
+    collectionById,
+    variableById,
+  });
+  const typography = makeCatalog({
+    source: typographyBuild.source,
+    modes: ["ios", "aos", "web", "mode-1"],
+    tokens: typographyBuild.tokens,
+    diagnostics: typographyBuild.diagnostics,
+  });
 
-  return {
+  const catalogs = {
     color: makeCatalog({
       source: colorBuild.source,
       modes: ["light", "dark"],
       tokens: colorBuild.tokens,
       diagnostics: colorBuild.diagnostics,
     }),
+    size: makeCatalog({
+      source: sizeBuild.source,
+      modes: ["light", "dark"],
+      tokens: sizeBuild.tokens,
+      diagnostics: sizeBuild.diagnostics,
+    }),
+    typography,
   };
+
+  if (options.includeSemantic) {
+    catalogs.typographySemantic = buildSemanticTypographyCatalog(typography, {
+      fileKey,
+      freshness,
+    });
+  }
+
+  return catalogs;
 }
 
 function buildColorCatalog({ source, collection, collectionById, variableById }) {
@@ -143,6 +253,139 @@ function buildColorCatalog({ source, collection, collectionById, variableById })
   }
 
   return { source, tokens, diagnostics };
+}
+
+function buildSizeCatalog({ source, collection, collectionById, variableById }) {
+  const tokens = variablesForCollection(collection, variableById)
+    .filter((variable) => variable.resolvedType === "FLOAT")
+    .filter((variable) => variable.name.startsWith("system/size/"))
+    .sort(compareTokenSource)
+    .map((variable) => buildToken(variable, {
+      collection,
+      collectionById,
+      variableById,
+      idPrefix: "token:",
+      type: "dimension",
+      transformRaw: (value) => value,
+    }));
+
+  return { source, tokens, diagnostics: makeCommonDiagnostics(tokens) };
+}
+
+function buildTypographyCatalog({ source, collections, collectionById, variableById }) {
+  const defaultCollection = selectPrimaryCollection(collections, "TYPO_tokens");
+  const circularCollection = selectPrimaryCollection(collections, "TYPO_circular_tokens");
+  const tokens = [
+    ...buildTypographyTokensForCollection({
+      collection: circularCollection,
+      collectionById,
+      variableById,
+      idPrefix: "token:typography.circular.",
+    }),
+    ...buildTypographyTokensForCollection({
+      collection: defaultCollection,
+      collectionById,
+      variableById,
+      idPrefix: "token:typography.default.",
+    }),
+  ].sort((a, b) => a.id.localeCompare(b.id));
+
+  return { source, tokens, diagnostics: makeCommonDiagnostics(tokens) };
+}
+
+function buildTypographyTokensForCollection({ collection, collectionById, variableById, idPrefix }) {
+  return variablesForCollection(collection, variableById)
+    .filter((variable) => variable.resolvedType === "FLOAT" || variable.resolvedType === "STRING")
+    .sort((a, b) => tokenIdFromName(a.name, idPrefix).localeCompare(tokenIdFromName(b.name, idPrefix)))
+    .map((variable) => buildToken(variable, {
+      collection,
+      collectionById,
+      variableById,
+      idPrefix,
+      type: typographyTokenType(variable),
+      transformRaw: (value) => value,
+    }));
+}
+
+function typographyTokenType(variable) {
+  if (variable.resolvedType === "STRING") {
+    return "string";
+  }
+  const usage = usageFor(variable);
+  if (usage.includes("font-size") || usage.includes("line-height") || usage.includes("letter-spacing")) {
+    return "dimension";
+  }
+  return "number";
+}
+
+export function buildSemanticTypographyCatalog(typographyCatalog, options = {}) {
+  const fileKey = options.fileKey ?? DEFAULT_FILE_KEY;
+  const freshness = options.freshness ?? new Date().toISOString();
+  const tokenById = new Map(typographyCatalog.tokens.map((token) => [token.id, token]));
+
+  const tokens = SEMANTIC_TYPOGRAPHY_STYLES.map((style) => {
+    const refs = refsForSemanticStyle(style);
+    for (const [property, ref] of Object.entries(refs)) {
+      if (!tokenById.has(ref)) {
+        throw new Error(`Missing typography primitive for ${style.style}/${style.variant}-${style.weight}: refs.${property}=${ref}`);
+      }
+    }
+    return {
+      name: `${style.style}/${style.variant}-${style.weight}`,
+      refs,
+      resolved: resolveSemanticTypography(refs, tokenById),
+    };
+  });
+
+  return {
+    $schema: "https://our-ds-mcp/schemas/typography-semantic.v1.json",
+    source: {
+      origin: "Figma text styles",
+      fileKey,
+      tool: "semantic typography generator",
+      primitive: "typography.json",
+      freshness,
+      coverage: {
+        total: tokens.length,
+      },
+    },
+    fontFamilySemantics: FONT_FAMILY_SEMANTICS,
+    tokens,
+  };
+}
+
+function refsForSemanticStyle({ style, variant, weight }) {
+  const scale = TYPOGRAPHY_STYLE_SCALE[style];
+  if (!scale) {
+    throw new Error(`Unknown semantic typography style: ${style}`);
+  }
+  const family = variant === "circular" ? "title" : scale.family;
+  return {
+    fontFamily: typographyRef(variant, `font_family/${family}`),
+    fontSize: typographyRef(variant, `base/text_size/${scale.textSize}`),
+    fontWeight: typographyRef(variant, `base/text_weight/text-weight-${weight}`),
+    lineHeight: typographyRef(variant, `base/lineheight/${scale.lineHeight}`),
+  };
+}
+
+function typographyRef(variant, name) {
+  const family = variant === "circular" ? "circular" : "default";
+  return tokenIdFromName(name, `token:typography.${family}.`);
+}
+
+function resolveSemanticTypography(refs, tokenById) {
+  const modes = Object.keys(tokenById.get(refs.fontSize).values);
+  const resolved = {};
+  for (const mode of modes) {
+    resolved[mode] = {
+      fontSize: tokenById.get(refs.fontSize).values[mode].raw,
+      fontFamily: tokenById.get(refs.fontFamily).values[mode].raw,
+      fontWeight: tokenById.get(refs.fontWeight).values[mode].raw,
+      lineHeight: tokenById.get(refs.lineHeight).values[mode].raw,
+      letterSpacing: 0,
+    };
+  }
+  return resolved;
 }
 
 function buildToken(variable, { collection, collectionById, variableById, idPrefix, type, transformRaw }) {
@@ -381,7 +624,7 @@ function printHelp() {
 
 Options:
   --file-key <key>       Figma file key. Defaults to ${DEFAULT_FILE_KEY}
-  --output-dir <path>    Directory for ${COLOR_TOKEN_FILE}. Defaults to ${DEFAULT_OUTPUT_DIR}
+  --output-dir <path>    Directory for token JSON files. Defaults to ${DEFAULT_OUTPUT_DIR}
   --stage-label <label>  source.stageLabel. Defaults to ${DEFAULT_STAGE_LABEL}
   --freshness <iso>      Override source.freshness. Defaults to current time
   --input <path>         Use saved Figma REST variables/local JSON instead of calling REST
@@ -402,12 +645,20 @@ async function main() {
     fileKey: args.fileKey,
     stageLabel: args.stageLabel,
     freshness: args.freshness ?? new Date().toISOString(),
+    includeSemantic: true,
   });
   fs.mkdirSync(args.outputDir, { recursive: true });
-  const outputPath = path.join(args.outputDir, COLOR_TOKEN_FILE);
-  fs.writeFileSync(outputPath, `${JSON.stringify(catalogs.color, null, 2)}\n`);
-  console.log(`Wrote color token catalog to ${outputPath}`);
-  console.log(`color: ${catalogs.color.tokens.length} tokens, modes=${catalogs.color.modes.join(",")}`);
+  for (const [catalogName, fileName] of Object.entries(TOKEN_FILES)) {
+    const catalog = catalogs[catalogName];
+    if (!catalog) {
+      continue;
+    }
+    const outputPath = path.join(args.outputDir, fileName);
+    fs.writeFileSync(outputPath, `${JSON.stringify(catalog, null, 2)}\n`);
+    const modes = catalog.modes ? `, modes=${catalog.modes.join(",")}` : "";
+    console.log(`Wrote ${catalogName} token catalog to ${outputPath}`);
+    console.log(`${catalogName}: ${catalog.tokens.length} tokens${modes}`);
+  }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

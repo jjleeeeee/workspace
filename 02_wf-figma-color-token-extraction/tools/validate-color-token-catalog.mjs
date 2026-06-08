@@ -3,10 +3,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { fileURLToPath } from "node:url";
 
-const DEFAULT_INPUT_DIR = "02_wf-figma-color-token-extraction/outputs/current";
+const WORKSPACE_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const DEFAULT_INPUT_DIR = path.join(WORKSPACE_ROOT, "chord-design-system/tokens");
 const TOKEN_FILES = [
-  "tokens.color.v1.0.json",
+  "color.json",
 ];
 
 const TOKEN_ID_PATTERN = /^token:[a-z0-9][a-z0-9_-]*(\.[a-z0-9_-]+)*$/;

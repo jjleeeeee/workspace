@@ -6,10 +6,10 @@
 | --- | --- | --- |
 | 1 | preflight 확인 | `FIGMA_ACCESS_TOKEN`, `outputs/current/`, `outputs/raw/` |
 | 2 | 변환 로직 테스트 | `node tools/extract-figma-color-tokens.test.mjs` |
-| 3 | Figma REST 추출 | `node tools/extract-figma-color-tokens.mjs --output-dir outputs/current --raw-output outputs/raw/figma.variables.local.<YYYY-MM-DD>.json` |
-| 4 | catalog 검증 | `node tools/validate-color-token-catalog.mjs --input-dir outputs/current` |
-| 5 | 이전 snapshot diff | `diff -u outputs/previous-2026-04-23/tokens.color.v1.0.json outputs/current/tokens.color.v1.0.json` |
-| 6 | canonical sync 여부 결정 | `../cds-catalogs/catalogs/tokens/tokens.color.v1.0.json` |
+| 3 | Figma REST 추출 | `node tools/extract-figma-color-tokens.mjs --raw-output outputs/raw/figma.variables.local.<YYYY-MM-DD>.json` |
+| 4 | catalog 검증 | `node tools/validate-token-catalogs.mjs --input-dir ../chord-design-system/tokens` |
+| 5 | 이전 snapshot diff | `diff -u <previous-color-snapshot> ../chord-design-system/tokens/color.json` |
+| 6 | canonical output 확인 | `../chord-design-system/tokens/` |
 | 7 | history 기록 | `history/` |
 
 ## Detailed Docs
@@ -19,18 +19,16 @@
 - `validation-checklist.md`: output 검증 기준
 - `exceptions.md`: REST 실패, token 누락, dangling alias 등 예외 처리
 
-## Canonical Sync
+## Canonical Output
 
-canonical 반영은 사용자가 요청했을 때만 한다.
-
-대상:
+최종 산출물 대상:
 
 ```text
-../cds-catalogs/catalogs/tokens/tokens.color.v1.0.json
+../chord-design-system/tokens/
 ```
 
 반영 전 확인:
 
-- local validation pass
+- validation pass
 - 기존 대비 token added/removed/changed 확인
 - 변경 이유 설명 가능

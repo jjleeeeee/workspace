@@ -287,9 +287,9 @@ yaml `tokens` 블록의 `resolved` 값(light/dark hex)은 아래 카탈로그에
 
 | 카탈로그 | 경로 | freshness | 내용 |
 |---|---|---|---|
-| 색상 토큰 | `../../cds-catalogs/catalogs/tokens/tokens.color.v1.0.json` | 2026-05-12 | 408개 semantic color + resolved light/dark hex |
-| 타이포 시맨틱 | `../../cds-catalogs/catalogs/tokens/tokens.typography.semantic.json` | 2026-05-12 | 63개 Figma text style → fontSize/fontFamily/fontWeight/lineHeight |
-| 타이포 primitive | `../../cds-catalogs/catalogs/tokens/tokens.typography.v1.0.json` | 2026-05-12 | lineheight/text_size/text_weight 원시값 |
+| 색상 토큰 | `../../chord-design-system/tokens/color.json` | 2026-05-12 | 408개 semantic color + resolved light/dark hex |
+| 타이포 시맨틱 | `../../chord-design-system/tokens/typography.semantic.json` | 2026-05-12 | 63개 Figma text style → primitive refs + resolved cache + fontFamilySemantics |
+| 타이포 primitive | `../../chord-design-system/tokens/typography.json` | 2026-05-12 | lineheight/text_size/text_weight 원시값 |
 
 경로는 `03_wf-figma-to-description/` 기준 상대경로.
 플랫폼별 변수명 변환(Web CSS 변수, Swift, Kotlin 네이밍 등)은 각 플랫폼 소비자가 semantic token 이름에서 직접 파생한다.

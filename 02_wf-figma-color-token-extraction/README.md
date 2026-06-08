@@ -49,7 +49,7 @@ node tools/extract-figma-color-tokens.mjs \
 | `PLAYBOOK.md` | 컬러 토큰 추출 실행 계약서 |
 | `workflow/` | 추출 정책, 검증 기준, 예외 대응 상세 문서 |
 | `tools/` | Figma REST 추출, catalog 검증, 회귀 테스트 스크립트 |
-| `outputs/current/` | 최신 color token output |
+| `outputs/current/` | 임시 검증용 token output |
 | `outputs/previous-2026-04-23/` | 2026-04-23 기준 이전 color snapshot |
 | `outputs/raw/` | Figma REST `variables/local` raw snapshot |
 | `history/` | 실행 기록과 판단 변경 로그 |
@@ -57,15 +57,14 @@ node tools/extract-figma-color-tokens.mjs \
 
 ## Outputs
 
-- `outputs/current/tokens.color.v1.0.json`
+- `../chord-design-system/tokens/color.json`
+- `../chord-design-system/tokens/size.json`
+- `../chord-design-system/tokens/typography.json`
+- `../chord-design-system/tokens/typography.semantic.json` — semantic refs/resolved cache + `fontFamilySemantics` runtime 해석 metadata
 - 선택적 raw snapshot: `outputs/raw/figma.variables.local.<YYYY-MM-DD>.json`
-- 필요 시 canonical 반영 대상:
-  `../cds-catalogs/catalogs/tokens/tokens.color.v1.0.json`
 
 ## Non-Outputs
 
-- size token catalog
-- typography token catalog
 - DSL harness
 - component implementation
 - HTML visual demo

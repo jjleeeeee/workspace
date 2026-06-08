@@ -2,14 +2,15 @@ import json, glob
 from pathlib import Path
 from ruamel.yaml import YAML
 
-CATALOG_DIR = Path("/Users/jj.iee/Desktop/workspace/cds-catalogs/catalogs/tokens")
+CATALOG_DIR = Path("/Users/jj.iee/Desktop/workspace/chord-design-system/tokens")
 DESC_DIR = Path("/Users/jj.iee/Desktop/workspace/03_wf-figma-to-description/_workspace/outputs/draft-descriptions")
 
 catalog = {}
 for fname in CATALOG_DIR.glob("*.json"):
     data = json.loads(fname.read_text())
     for t in data["tokens"]:
-        catalog[t["name"]] = t["values"]
+        if "values" in t:
+            catalog[t["name"]] = t["values"]
 
 def resolved_entry(token_name, values):
     return {mode: v["raw"] for mode, v in values.items()}

@@ -2,10 +2,18 @@ import json, glob
 from pathlib import Path
 from ruamel.yaml import YAML
 
-TYPO_CATALOG = Path("/Users/jj.iee/Desktop/workspace/cds-catalogs/catalogs/tokens/tokens.typography.semantic.json")
+TYPO_CATALOG = Path("/Users/jj.iee/Desktop/workspace/chord-design-system/tokens/typography.semantic.json")
 DESC_DIR = Path("/Users/jj.iee/Desktop/workspace/03_wf-figma-to-description/_workspace/outputs/draft-descriptions")
 
 catalog = {t["name"]: t for t in json.loads(TYPO_CATALOG.read_text())["tokens"]}
+
+def default_resolved(t):
+    resolved = t.get("resolved", {})
+    if "ios" in resolved:
+        return resolved["ios"]
+    if "mode-1" in resolved:
+        return resolved["mode-1"]
+    return next(iter(resolved.values()), {})
 
 def enrich(entry):
     if not isinstance(entry, dict) or "resolved" in entry:
@@ -16,11 +24,12 @@ def enrich(entry):
     if name not in catalog:
         return False
     t = catalog[name]
+    resolved = default_resolved(t)
     entry["resolved"] = {
-        "fontSize": t["fontSize"],
-        "fontFamily": t["fontFamily"],
-        "fontWeight": t["fontWeight"],
-        "lineHeight": t["lineHeight"],
+        "fontSize": resolved["fontSize"],
+        "fontFamily": resolved["fontFamily"],
+        "fontWeight": resolved["fontWeight"],
+        "lineHeight": resolved["lineHeight"],
     }
     return True
 

@@ -82,22 +82,20 @@ node tools/extract-figma-color-tokens.mjs \
 검증:
 
 ```bash
-node tools/validate-color-token-catalog.mjs --input-dir outputs/current
+node tools/validate-token-catalogs.mjs --input-dir ../chord-design-system/tokens
 ```
 
 이전 기준과 diff:
 
 ```bash
-diff -u \
-  outputs/previous-2026-04-23/tokens.color.v1.0.json \
-  outputs/current/tokens.color.v1.0.json
+diff -u <previous-color-snapshot> ../chord-design-system/tokens/color.json
 ```
 
 ## 7. Done Criteria
 
-- `outputs/current/tokens.color.v1.0.json`이 생성됐다.
+- `../chord-design-system/tokens/{color,size,typography,typography.semantic}.json`이 생성됐다.
 - validation `errorCount`가 `0`이다.
 - token count, added/removed/changed id를 확인했다.
 - `base/color` output count, non-hex count, non-null alias count가 모두 `0`이다.
 - `system/color/roles/brand-green` 처리 판단이 유지 또는 갱신됐다.
-- canonical sync를 했다면 변경 파일이 의도한 catalog 파일뿐이다.
+- 최종 산출물이 `../chord-design-system/tokens/`에만 반영됐다.
