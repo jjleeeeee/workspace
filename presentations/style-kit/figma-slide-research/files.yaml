@@ -1,0 +1,22 @@
+files:
+  - key: HbHKFxazHHdjq7WUjpztfb
+    name: "Chord ChatBot"
+    url: https://www.figma.com/slides/HbHKFxazHHdjq7WUjpztfb
+    source: Figma Slides Desktop Bridge
+    status: initial_compact_extraction_complete
+    slide_count: 28
+    final_font_rule: Pretendard
+  - key: 237R2Xz39e9Dr9KjdJPIlI
+    name: "[ClickTF] Design to Dev. WorkFlow(Test Ver.)"
+    url: https://www.figma.com/slides/237R2Xz39e9Dr9KjdJPIlI
+    source: Figma Slides Desktop Bridge
+    status: initial_compact_extraction_complete
+    slide_count: 65
+    final_font_rule: Pretendard
+  - key: 5ApcqynkNIBm8gFf0pCfft
+    name: "LLM to Harness Workflow"
+    url: https://www.figma.com/slides/5ApcqynkNIBm8gFf0pCfft
+    source: Figma Slides Desktop Bridge
+    status: initial_compact_extraction_complete
+    slide_count: 38
+    final_font_rule: Pretendard

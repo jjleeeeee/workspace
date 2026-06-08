@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "file": {
+    "key": "HbHKFxazHHdjq7WUjpztfb",
+    "name": "Chord ChatBot",
+    "url": "https://www.figma.com/slides/HbHKFxazHHdjq7WUjpztfb",
+    "source": "Figma Slides Desktop Bridge"
+  },
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "slides": [
+    {
+      "index": 1,
+      "nodeId": "1:560",
+      "name": "Slide 01",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 5,
+      "x": 0,
+      "y": 0,
+      "likelyLayout": "cover"
+    },
+    {
+      "index": 2,
+      "nodeId": "1:565",
+      "name": "Slide 02",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 7,
+      "x": 2160,
+      "y": 0,
+      "likelyLayout": "workflow-circle"
+    },
+    {
+      "index": 3,
+      "nodeId": "3:90102",
+      "name": "Slide 03",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 7,
+      "x": 4320,
+      "y": 0,
+      "likelyLayout": "workflow-circle"
+    },
+    {
+      "index": 4,
+      "nodeId": "3:90125",
+      "name": "Slide 04",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 3,
+      "x": 6480,
+      "y": 0,
+      "likelyLayout": "workflow-circle"
+    },
+    {
+      "index": 5,
+      "nodeId": "3:93364",
+      "name": "Slide 05",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 6,
+      "x": 8640,
+      "y": 0,
+      "likelyLayout": "workflow-circle"
+    },
+    {
+      "index": 6,
+      "nodeId": "3:90",
+      "name": "Slide 06",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 6,
+      "x": 10800,
+      "y": 0,
+      "likelyLayout": "dense-reference"
+    },
+    {
+      "index": 7,
+      "nodeId": "3:63805",
+      "name": "Slide 07",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 9,
+      "x": 12960,
+      "y": 0,
+      "likelyLayout": "dense-reference"
+    },
+    {
+      "index": 8,
+      "nodeId": "3:90155",
+      "name": "Slide 08",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 5,
+      "x": 15120,
+      "y": 0,
+      "likelyLayout": "problem-or-painpoint"
+    },
+    {
+      "index": 9,
+      "nodeId": "3:90252",
+      "name": "Slide 09",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 5,
+      "x": 17280,
+      "y": 0,
+      "likelyLayout": "problem-or-painpoint"
+    },
+    {
+      "index": 10,
+      "nodeId": "3:93383",
+      "name": "Slide 10",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 25,
+      "x": 19440,
+      "y": 0,
+      "likelyLayout": "problem-or-painpoint"
+    },
+    {
+      "index": 11,
+      "nodeId": "3:90328",
+      "name": "Slide 11",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 46,
+      "x": 21600,
+      "y": 0,
+      "likelyLayout": "problem-or-painpoint"
+    },
+    {
+      "index": 12,
+      "nodeId": "3:90451",
+      "name": "Slide 12",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 69,
+      "x": 23760,
+      "y": 0,
+      "likelyLayout": "problem-or-painpoint"
+    },
+    {
+      "index": 13,
+      "nodeId": "3:93108",
+      "name": "Slide 13",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 71,
+      "x": 25920,
+      "y": 0,
+      "likelyLayout": "problem-or-painpoint"
+    },
+    {
+      "index": 14,
+      "nodeId": "3:90209",
+      "name": "Slide 14",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 7,
+      "x": 28080,
+      "y": 0,
+      "likelyLayout": "problem-or-painpoint"
+    },
+    {
+      "index": 15,
+      "nodeId": "3:93318",
+      "name": "Slide 15",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 0,
+      "x": 30240,
+      "y": 0,
+      "likelyLayout": "blank-or-spacer"
+    },
+    {
+      "index": 16,
+      "nodeId": "3:93343",
+      "name": "Slide 16",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 1,
+      "x": 32400,
+      "y": 0,
+      "likelyLayout": "transition-or-title"
+    },
+    {
+      "index": 17,
+      "nodeId": "3:93344",
+      "name": "Slide 17",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 2,
+      "x": 34560,
+      "y": 0,
+      "likelyLayout": "transition-or-title"
+    },
+    {
+      "index": 18,
+      "nodeId": "3:93358",
+      "name": "Slide 18",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 2,
+      "x": 36720,
+      "y": 0,
+      "likelyLayout": "transition-or-title"
+    },
+    {
+      "index": 19,
+      "nodeId": "3:90993",
+      "name": "Slide 19",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 4,
+      "x": 38880,
+      "y": 0,
+      "likelyLayout": "transition-or-title"
+    },
+    {
+      "index": 20,
+      "nodeId": "3:91001",
+      "name": "Slide 20",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 8,
+      "x": 41040,
+      "y": 0,
+      "likelyLayout": "documentation-source-of-truth"
+    },
+    {
+      "index": 21,
+      "nodeId": "3:91023",
+      "name": "Slide 21",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 6,
+      "x": 0,
+      "y": 1320,
+      "likelyLayout": "documentation-source-of-truth"
+    },
+    {
+      "index": 22,
+      "nodeId": "3:97",
+      "name": "Slide 22",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 7,
+      "x": 2160,
+      "y": 1320,
+      "likelyLayout": "documentation-source-of-truth"
+    },
+    {
+      "index": 23,
+      "nodeId": "3:92822",
+      "name": "Slide 23",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 19,
+      "x": 4320,
+      "y": 1320,
+      "likelyLayout": "workflow-circle-with-notes"
+    },
+    {
+      "index": 24,
+      "nodeId": "3:92617",
+      "name": "Slide 24",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 7,
+      "x": 6480,
+      "y": 1320,
+      "likelyLayout": "prompt-example"
+    },
+    {
+      "index": 25,
+      "nodeId": "3:92740",
+      "name": "Slide 25",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 6,
+      "x": 8640,
+      "y": 1320,
+      "likelyLayout": "prompt-example"
+    },
+    {
+      "index": 26,
+      "nodeId": "3:92723",
+      "name": "Slide 26",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 8,
+      "x": 10800,
+      "y": 1320,
+      "likelyLayout": "prompt-example"
+    },
+    {
+      "index": 27,
+      "nodeId": "3:92788",
+      "name": "Slide 27",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 4,
+      "x": 12960,
+      "y": 1320,
+      "likelyLayout": "availability-or-screenshot"
+    },
+    {
+      "index": 28,
+      "nodeId": "3:92806",
+      "name": "Slide 28",
+      "width": 1920,
+      "height": 1080,
+      "childCount": 2,
+      "x": 15120,
+      "y": 1320,
+      "likelyLayout": "q-and-a"
+    }
+  ]
+}

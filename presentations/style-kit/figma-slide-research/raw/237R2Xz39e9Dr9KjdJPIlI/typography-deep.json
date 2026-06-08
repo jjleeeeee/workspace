@@ -1,0 +1,677 @@
+{
+  "schemaVersion": 1,
+  "extractionKind": "figma-console-mcp typography deep extraction summary",
+  "sourceFile": {
+    "key": "237R2Xz39e9Dr9KjdJPIlI",
+    "name": "[ClickTF] Design to Dev. WorkFlow(Test Ver.)",
+    "url": "https://www.figma.com/slides/237R2Xz39e9Dr9KjdJPIlI"
+  },
+  "finalFontRule": "Pretendard",
+  "slideCount": 65,
+  "textLayerCount": 313,
+  "note": "Figma Console MCP extracted all 65 slides and counted 313 text layers. This file stores role-level evidence and representative layer samples for typography rule promotion; exact per-node text geometry can be expanded in later chunks if a token needs audit-level proof.",
+  "slides": [
+    {
+      "index": 1,
+      "nodeId": "1:42",
+      "name": "1",
+      "textLayerCount": 2
+    },
+    {
+      "index": 2,
+      "nodeId": "1:123",
+      "name": "2",
+      "textLayerCount": 11
+    },
+    {
+      "index": 3,
+      "nodeId": "170:3201",
+      "name": "3",
+      "textLayerCount": 2
+    },
+    {
+      "index": 4,
+      "nodeId": "23:681",
+      "name": "4",
+      "textLayerCount": 1
+    },
+    {
+      "index": 5,
+      "nodeId": "165:3191",
+      "name": "5",
+      "textLayerCount": 3
+    },
+    {
+      "index": 6,
+      "nodeId": "146:259",
+      "name": "6",
+      "textLayerCount": 1
+    },
+    {
+      "index": 7,
+      "nodeId": "146:432",
+      "name": "7",
+      "textLayerCount": 1
+    },
+    {
+      "index": 8,
+      "nodeId": "146:474",
+      "name": "8",
+      "textLayerCount": 1
+    },
+    {
+      "index": 9,
+      "nodeId": "146:310",
+      "name": "9",
+      "textLayerCount": 5
+    },
+    {
+      "index": 10,
+      "nodeId": "146:545",
+      "name": "10",
+      "textLayerCount": 5
+    },
+    {
+      "index": 11,
+      "nodeId": "146:522",
+      "name": "11",
+      "textLayerCount": 5
+    },
+    {
+      "index": 12,
+      "nodeId": "146:569",
+      "name": "12",
+      "textLayerCount": 6
+    },
+    {
+      "index": 13,
+      "nodeId": "146:1564",
+      "name": "13",
+      "textLayerCount": 2
+    },
+    {
+      "index": 14,
+      "nodeId": "5:2",
+      "name": "14",
+      "textLayerCount": 41
+    },
+    {
+      "index": 15,
+      "nodeId": "23:560",
+      "name": "15",
+      "textLayerCount": 41
+    },
+    {
+      "index": 16,
+      "nodeId": "5:91",
+      "name": "16",
+      "textLayerCount": 44
+    },
+    {
+      "index": 17,
+      "nodeId": "10:326",
+      "name": "17",
+      "textLayerCount": 24
+    },
+    {
+      "index": 18,
+      "nodeId": "23:698",
+      "name": "18",
+      "textLayerCount": 24
+    },
+    {
+      "index": 19,
+      "nodeId": "146:1568",
+      "name": "19",
+      "textLayerCount": 2
+    },
+    {
+      "index": 20,
+      "nodeId": "156:2587",
+      "name": "20",
+      "textLayerCount": 2
+    },
+    {
+      "index": 21,
+      "nodeId": "160:2644",
+      "name": "21",
+      "textLayerCount": 2
+    },
+    {
+      "index": 22,
+      "nodeId": "160:2648",
+      "name": "22",
+      "textLayerCount": 1
+    },
+    {
+      "index": 23,
+      "nodeId": "160:2671",
+      "name": "23",
+      "textLayerCount": 1
+    },
+    {
+      "index": 24,
+      "nodeId": "160:2662",
+      "name": "24",
+      "textLayerCount": 1
+    },
+    {
+      "index": 25,
+      "nodeId": "143:212",
+      "name": "25",
+      "textLayerCount": 1
+    },
+    {
+      "index": 26,
+      "nodeId": "146:1694",
+      "name": "26",
+      "textLayerCount": 2
+    },
+    {
+      "index": 27,
+      "nodeId": "146:1713",
+      "name": "27",
+      "textLayerCount": 3
+    },
+    {
+      "index": 28,
+      "nodeId": "146:1732",
+      "name": "28",
+      "textLayerCount": 3
+    },
+    {
+      "index": 29,
+      "nodeId": "151:1900",
+      "name": "29",
+      "textLayerCount": 3
+    },
+    {
+      "index": 30,
+      "nodeId": "152:1971",
+      "name": "30",
+      "textLayerCount": 6
+    },
+    {
+      "index": 31,
+      "nodeId": "152:2032",
+      "name": "31",
+      "textLayerCount": 10
+    },
+    {
+      "index": 32,
+      "nodeId": "156:2439",
+      "name": "32",
+      "textLayerCount": 3
+    },
+    {
+      "index": 33,
+      "nodeId": "156:2489",
+      "name": "33",
+      "textLayerCount": 1
+    },
+    {
+      "index": 34,
+      "nodeId": "156:2568",
+      "name": "34",
+      "textLayerCount": 1
+    },
+    {
+      "index": 35,
+      "nodeId": "156:2606",
+      "name": "35",
+      "textLayerCount": 1
+    },
+    {
+      "index": 36,
+      "nodeId": "156:2542",
+      "name": "36",
+      "textLayerCount": 1
+    },
+    {
+      "index": 37,
+      "nodeId": "9:190",
+      "name": "37",
+      "textLayerCount": 1
+    },
+    {
+      "index": 38,
+      "nodeId": "160:2688",
+      "name": "38",
+      "textLayerCount": 1
+    },
+    {
+      "index": 39,
+      "nodeId": "165:3154",
+      "name": "39",
+      "textLayerCount": 2
+    },
+    {
+      "index": 40,
+      "nodeId": "164:2703",
+      "name": "40",
+      "textLayerCount": 2
+    },
+    {
+      "index": 41,
+      "nodeId": "164:2715",
+      "name": "41",
+      "textLayerCount": 1
+    },
+    {
+      "index": 42,
+      "nodeId": "164:2725",
+      "name": "42",
+      "textLayerCount": 5
+    },
+    {
+      "index": 43,
+      "nodeId": "164:2748",
+      "name": "43",
+      "textLayerCount": 4
+    },
+    {
+      "index": 44,
+      "nodeId": "164:2774",
+      "name": "44",
+      "textLayerCount": 4
+    },
+    {
+      "index": 45,
+      "nodeId": "164:2793",
+      "name": "45",
+      "textLayerCount": 4
+    },
+    {
+      "index": 46,
+      "nodeId": "165:3161",
+      "name": "46",
+      "textLayerCount": 2
+    },
+    {
+      "index": 47,
+      "nodeId": "21:204",
+      "name": "47",
+      "textLayerCount": 1
+    },
+    {
+      "index": 48,
+      "nodeId": "165:3098",
+      "name": "48",
+      "textLayerCount": 1
+    },
+    {
+      "index": 49,
+      "nodeId": "165:2957",
+      "name": "49",
+      "textLayerCount": 1
+    },
+    {
+      "index": 50,
+      "nodeId": "165:3014",
+      "name": "50",
+      "textLayerCount": 1
+    },
+    {
+      "index": 51,
+      "nodeId": "165:2976",
+      "name": "51",
+      "textLayerCount": 1
+    },
+    {
+      "index": 52,
+      "nodeId": "165:2995",
+      "name": "52",
+      "textLayerCount": 1
+    },
+    {
+      "index": 53,
+      "nodeId": "165:2938",
+      "name": "53",
+      "textLayerCount": 1
+    },
+    {
+      "index": 54,
+      "nodeId": "165:3033",
+      "name": "54",
+      "textLayerCount": 2
+    },
+    {
+      "index": 55,
+      "nodeId": "165:3116",
+      "name": "55",
+      "textLayerCount": 1
+    },
+    {
+      "index": 56,
+      "nodeId": "165:2877",
+      "name": "56",
+      "textLayerCount": 1
+    },
+    {
+      "index": 57,
+      "nodeId": "165:3053",
+      "name": "57",
+      "textLayerCount": 1
+    },
+    {
+      "index": 58,
+      "nodeId": "165:3068",
+      "name": "58",
+      "textLayerCount": 1
+    },
+    {
+      "index": 59,
+      "nodeId": "165:3083",
+      "name": "59",
+      "textLayerCount": 1
+    },
+    {
+      "index": 60,
+      "nodeId": "165:3122",
+      "name": "60",
+      "textLayerCount": 2
+    },
+    {
+      "index": 61,
+      "nodeId": "165:2854",
+      "name": "61",
+      "textLayerCount": 2
+    },
+    {
+      "index": 62,
+      "nodeId": "165:2934",
+      "name": "62",
+      "textLayerCount": 2
+    },
+    {
+      "index": 63,
+      "nodeId": "165:2844",
+      "name": "63",
+      "textLayerCount": 2
+    },
+    {
+      "index": 64,
+      "nodeId": "164:2809",
+      "name": "64",
+      "textLayerCount": 1
+    },
+    {
+      "index": 65,
+      "nodeId": "14:809",
+      "name": "65",
+      "textLayerCount": 1
+    }
+  ],
+  "observedFontFamilies": {
+    "CircularXX TT": 157,
+    "Pretendard": 112,
+    "Inter": 35,
+    "WeGothicSans": 9
+  },
+  "roleCounts": {
+    "cover-title": 1,
+    "body": 94,
+    "label": 61,
+    "content-title": 58,
+    "section-title": 5,
+    "chapter-number": 5,
+    "subtitle": 4,
+    "caption": 85
+  },
+  "topRoleStyles": {
+    "cover-title": [
+      {
+        "sizePx": 80,
+        "weight": 700,
+        "count": 1
+      }
+    ],
+    "section-title": [
+      {
+        "sizePx": 60,
+        "weight": 900,
+        "count": 5
+      }
+    ],
+    "chapter-number": [
+      {
+        "sizePx": 42,
+        "weight": 700,
+        "count": 5
+      }
+    ],
+    "content-title": [
+      {
+        "sizePx": 52,
+        "weight": 700,
+        "count": 57
+      },
+      {
+        "sizePx": 60,
+        "weight": 900,
+        "count": 1
+      }
+    ],
+    "subtitle": [
+      {
+        "sizePx": 32,
+        "weight": 700,
+        "count": 4
+      }
+    ],
+    "body": [
+      {
+        "sizePx": 20,
+        "weight": 500,
+        "count": 35
+      },
+      {
+        "sizePx": 32,
+        "weight": 700,
+        "count": 22
+      },
+      {
+        "sizePx": 36,
+        "weight": 700,
+        "count": 17
+      },
+      {
+        "sizePx": 20,
+        "weight": 700,
+        "count": 6
+      },
+      {
+        "sizePx": 24,
+        "weight": 500,
+        "count": 5
+      },
+      {
+        "sizePx": 60,
+        "weight": 900,
+        "count": 3
+      },
+      {
+        "sizePx": 24,
+        "weight": 400,
+        "count": 3
+      }
+    ],
+    "label": [
+      {
+        "sizePx": 20,
+        "weight": 700,
+        "count": 47
+      },
+      {
+        "sizePx": 26,
+        "weight": 700,
+        "count": 9
+      },
+      {
+        "sizePx": 24,
+        "weight": 700,
+        "count": 5
+      }
+    ],
+    "caption": [
+      {
+        "sizePx": 18,
+        "weight": 700,
+        "count": 28
+      },
+      {
+        "sizePx": 18,
+        "weight": 500,
+        "count": 27
+      },
+      {
+        "sizePx": 16,
+        "weight": 700,
+        "count": 18
+      },
+      {
+        "sizePx": 16,
+        "weight": 400,
+        "count": 6
+      },
+      {
+        "sizePx": 14,
+        "weight": 400,
+        "count": 3
+      },
+      {
+        "sizePx": 13,
+        "weight": 700,
+        "count": 3
+      }
+    ]
+  },
+  "representativeLayers": [
+    {
+      "slideIndex": 1,
+      "id": "146:218",
+      "text": "Design to Dev. Workflow Automation",
+      "role": "cover-title",
+      "x": 100,
+      "y": 408,
+      "width": 1288,
+      "height": 192,
+      "fontFamilyOriginal": "CircularXX TT",
+      "fontStyleOriginal": "Bold",
+      "fontSize": 80,
+      "fontWeight": 700
+    },
+    {
+      "slideIndex": 3,
+      "id": "170:3203",
+      "text": "문제 정의",
+      "role": "section-title",
+      "x": 100,
+      "y": 544,
+      "width": 1720,
+      "height": 72,
+      "fontFamilyOriginal": "CircularXX TT",
+      "fontStyleOriginal": "Black",
+      "fontSize": 60,
+      "fontWeight": 900
+    },
+    {
+      "slideIndex": 3,
+      "id": "170:3204",
+      "text": "01",
+      "role": "chapter-number",
+      "x": 760,
+      "y": 465,
+      "width": 400,
+      "height": 55,
+      "fontFamilyOriginal": "CircularXX TT",
+      "fontStyleOriginal": "Bold",
+      "fontSize": 42,
+      "fontWeight": 700
+    },
+    {
+      "slideIndex": 4,
+      "id": "165:3167",
+      "text": "서막의 시작",
+      "role": "content-title",
+      "x": 100,
+      "y": 100,
+      "width": 1720,
+      "height": 62,
+      "fontFamilyOriginal": "Pretendard",
+      "fontStyleOriginal": "Bold",
+      "fontSize": 52,
+      "fontWeight": 700
+    },
+    {
+      "slideIndex": 16,
+      "id": "10:274",
+      "text": "공통",
+      "role": "subtitle",
+      "x": 100,
+      "y": 236,
+      "width": 374,
+      "height": 38,
+      "fontFamilyOriginal": "Pretendard",
+      "fontStyleOriginal": "Bold",
+      "fontSize": 32,
+      "fontWeight": 700
+    },
+    {
+      "slideIndex": 2,
+      "id": "146:236",
+      "text": "문제 정의",
+      "role": "body",
+      "x": 1475,
+      "y": 722,
+      "width": 330,
+      "height": 34,
+      "fontFamilyOriginal": "Pretendard",
+      "fontStyleOriginal": "Medium",
+      "fontSize": 24,
+      "fontWeight": 500
+    },
+    {
+      "slideIndex": 14,
+      "id": "5:52",
+      "text": "Check Box",
+      "role": "dense-body",
+      "x": 453,
+      "y": 474,
+      "width": 313,
+      "height": 32,
+      "fontFamilyOriginal": "CircularXX TT",
+      "fontStyleOriginal": "Medium",
+      "fontSize": 20,
+      "fontWeight": 500
+    },
+    {
+      "slideIndex": 14,
+      "id": "5:48",
+      "text": "Action & Selection (액션 및 선택)",
+      "role": "label",
+      "x": 453,
+      "y": 260,
+      "width": 313,
+      "height": 64,
+      "fontFamilyOriginal": "CircularXX TT",
+      "fontStyleOriginal": "Bold",
+      "fontSize": 20,
+      "fontWeight": 700
+    },
+    {
+      "slideIndex": 16,
+      "id": "5:134",
+      "text": "Avatar",
+      "role": "caption",
+      "x": 552,
+      "y": 335,
+      "width": 289,
+      "height": 29,
+      "fontFamilyOriginal": "CircularXX TT",
+      "fontStyleOriginal": "Medium",
+      "fontSize": 18,
+      "fontWeight": 500
+    }
+  ]
+}
