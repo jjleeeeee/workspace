@@ -184,7 +184,7 @@
 ## Test Plan
 
 - PPT 제작 전, 기존 `report/`의 발견과 슬라이드 메시지가 충돌하지 않는지 확인한다.
-- `teamlead-interview-analysis.md`, `cds-current-state-review.md`, `head-of-design-interview-template.md`의 핵심 메시지가 서로 같은 프레임인지 확인한다.
+- `report/analysis-docs/teamlead-interview-analysis.md`, `report/cds-current-state-review.md`, `template/head-of-design-interview-template.md`의 핵심 메시지가 서로 같은 프레임인지 확인한다.
 - 차트 제목이 통계처럼 과장되지 않고, "정성 신호의 반복"으로 읽히는지 점검한다.
 - 수치가 들어가는 차트는 `14명 전체`, `13명 기준`, `11명 기준`, `8명 기준` 중 어떤 기준 인원인지 명시한다.
 - `rg "Chart.js|doughnut|indexAxis|scatter|horizontal bar|11명 기준|14명 전체" plan/cds-status-report-ppt-plan.md`로 Chart.js 계획이 들어갔는지 확인한다.

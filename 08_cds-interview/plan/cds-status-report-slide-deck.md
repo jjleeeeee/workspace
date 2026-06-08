@@ -822,7 +822,7 @@ HoD 인터뷰를 반영한 5개 운영 쟁점으로 마무리한다.
 
 - HoD 응답을 `유지 / 보정 / 리더십 쟁점 추가`로 분류
 - 최종 PPT에서 `현황 → 라이프사이클 전환점 → HoD 보강 원칙 → 리더십 선택지` 순서로 정리
-- 상세 발화와 근거는 `report/hod-interview-analysis.md` 및 기존 `report/` 문서로 연결
+- 상세 발화와 근거는 `report/analysis-docs/hod-interview-analysis.md` 및 기존 `report/` 문서로 연결
 
 ## 부록 후보
 
