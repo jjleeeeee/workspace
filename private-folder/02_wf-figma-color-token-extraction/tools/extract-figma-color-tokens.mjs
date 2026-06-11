@@ -212,12 +212,17 @@ export function buildCatalogs(restPayload, options = {}) {
 function buildColorCatalog({ source, collection, collectionById, variableById }) {
   const tokens = [];
   const danglingIds = [];
-  const candidates = variablesForCollection(collection, variableById)
+  const allCandidates = variablesForCollection(collection, variableById)
     .filter((variable) => variable.resolvedType === "COLOR")
     .filter((variable) => (
       variable.name.startsWith("system/color/") ||
       variable.name.startsWith("system/fixed_color/")
-    ))
+    ));
+  const deletedIds = allCandidates
+    .filter((variable) => variable.deletedButReferenced)
+    .map((variable) => tokenIdFromName(variable.name, "token:"));
+  const candidates = allCandidates
+    .filter((variable) => !variable.deletedButReferenced)
     .sort(compareTokenSource);
 
   for (const variable of candidates) {
@@ -244,6 +249,13 @@ function buildColorCatalog({ source, collection, collectionById, variableById })
       message: "SameColor/FixedColor cleanup is intentionally deferred; system tokens are flattened to raw hex for DSL rendering.",
     },
   ];
+  if (deletedIds.length > 0) {
+    diagnostics.push({
+      code: "alias:deleted-but-referenced",
+      message: "Color variables marked deletedButReferenced in Figma REST are excluded; they appear in the API but not in the Figma Variables UI.",
+      tokens: deletedIds,
+    });
+  }
   if (danglingIds.length > 0) {
     diagnostics.push({
       code: "alias:dangling",
@@ -257,6 +269,7 @@ function buildColorCatalog({ source, collection, collectionById, variableById })
 
 function buildSizeCatalog({ source, collection, collectionById, variableById }) {
   const tokens = variablesForCollection(collection, variableById)
+    .filter((variable) => !variable.deletedButReferenced)
     .filter((variable) => variable.resolvedType === "FLOAT")
     .filter((variable) => variable.name.startsWith("system/size/"))
     .sort(compareTokenSource)

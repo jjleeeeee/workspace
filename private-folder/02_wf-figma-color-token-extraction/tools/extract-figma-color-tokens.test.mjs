@@ -31,6 +31,8 @@ const restPayload = {
           "VariableID:base-dark",
           "VariableID:button",
           "VariableID:dangling",
+          "VariableID:deleted-color",
+          "VariableID:deleted-size",
           "VariableID:size",
           "VariableID:version",
         ],
@@ -109,6 +111,35 @@ const restPayload = {
         codeSyntax: {},
         description: "",
         hiddenFromPublishing: false,
+      },
+      "VariableID:deleted-color": {
+        id: "VariableID:deleted-color",
+        key: "deleted-color-key",
+        name: "system/color/button/ghost",
+        variableCollectionId: "VariableCollectionId:wds",
+        resolvedType: "COLOR",
+        valuesByMode: {
+          "490:0": { r: 0, g: 0, b: 0, a: 0 },
+          "7606:6": { r: 0, g: 0, b: 0, a: 0 },
+        },
+        scopes: ["ALL_SCOPES"],
+        codeSyntax: {},
+        description: "",
+        hiddenFromPublishing: false,
+        deletedButReferenced: true,
+      },
+      "VariableID:deleted-size": {
+        id: "VariableID:deleted-size",
+        key: "deleted-size-key",
+        name: "system/size/button-height/deleted",
+        variableCollectionId: "VariableCollectionId:wds",
+        resolvedType: "FLOAT",
+        valuesByMode: { "490:0": 0, "7606:6": 0 },
+        scopes: ["WIDTH_HEIGHT"],
+        codeSyntax: {},
+        description: "",
+        hiddenFromPublishing: false,
+        deletedButReferenced: true,
       },
       "VariableID:size": {
         id: "VariableID:size",
@@ -199,7 +230,7 @@ const { typographySemantic } = buildCatalogs(rawFixture, {
   includeSemantic: true,
 });
 
-assert.equal(color.tokens.length, 1);
+assert.equal(color.tokens.length, 1, "deletedButReferenced color token must be excluded");
 assert.equal(color.tokens[0].id, "token:system.color.button.default");
 assert.deepEqual(color.tokens[0].values, {
   light: { raw: "#00CBD5", aliasOf: null },
@@ -207,8 +238,11 @@ assert.deepEqual(color.tokens[0].values, {
 });
 assert.deepEqual(color.tokens[0].usage, ["all", "stroke"]);
 assert.deepEqual(color.diagnostics.at(-1).tokens, ["token:system.color.roles.brand-green"]);
+const deletedDiag = color.diagnostics.find((d) => d.code === "alias:deleted-but-referenced");
+assert.ok(deletedDiag, "diagnostic for deleted-but-referenced must exist");
+assert.deepEqual(deletedDiag.tokens, ["token:system.color.button.ghost"]);
 
-assert.equal(size.tokens.length, 1);
+assert.equal(size.tokens.length, 1, "deletedButReferenced size token must be excluded");
 assert.equal(size.tokens[0].id, "token:system.size.button-height.large");
 assert.equal(size.tokens[0].type, "dimension");
 assert.deepEqual(size.tokens[0].values, {

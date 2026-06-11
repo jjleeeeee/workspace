@@ -1,0 +1,2259 @@
+{
+  "$schema": "https://our-ds-mcp/schemas/tokens.v1.json",
+  "source": {
+    "origin": "figma:Chord Design System",
+    "fileKey": "vuq1CyC1Pi4NZYE7ximg3I",
+    "collection": "TYPO_tokens + TYPO_circular_tokens",
+    "version": "0.6.0",
+    "freshness": "2026-06-10T00:00:00.000Z",
+    "coverage": {
+      "total": 71,
+      "documented": 0,
+      "hidden": 0
+    },
+    "stageLabel": "v1.0"
+  },
+  "modes": [
+    "ios",
+    "aos",
+    "web",
+    "mode-1"
+  ],
+  "tokens": [
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-100",
+      "name": "base/lineheight/text-lineheight-100",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 18,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-100"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "13e9acc2bab840dd0b9435f90a4e3190c9f86aac",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-150",
+      "name": "base/lineheight/text-lineheight-150",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 21,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-150"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "3f9e086d6fd55930f94a94709834123bc2af626e",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-200",
+      "name": "base/lineheight/text-lineheight-200",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 22,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-200"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "c3233eaf9967bfb09b2e62c03199cbd151dfc367",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-25",
+      "name": "base/lineheight/text-lineheight-25",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 13,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-25"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "651075f84d611a9ab0b81bb1c58e44413e4ae30f",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-300",
+      "name": "base/lineheight/text-lineheight-300",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 23,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-300"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "04c96f693808ebb0ebf232f0e5ac3dd0906455c0",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-400",
+      "name": "base/lineheight/text-lineheight-400",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 25,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-400"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "97e7ed6f87dbb103ca9a3bf814d3385f958fffc3",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-50",
+      "name": "base/lineheight/text-lineheight-50",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 16,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-50"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "4f20235361930f0b850b138ff6d32cde28c43afd",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-500",
+      "name": "base/lineheight/text-lineheight-500",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 27,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-500"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "79714062c80d6a469115c3d15d09653de8688f68",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-600",
+      "name": "base/lineheight/text-lineheight-600",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 33,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-600"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "ca2f1af97c31aed8a5efc935635d328b18a51d2d",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-700",
+      "name": "base/lineheight/text-lineheight-700",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 38,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-700"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "910e0de9563450748301d8db15368076b8b9a11a",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-75",
+      "name": "base/lineheight/text-lineheight-75",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 17,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-75"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "58eb020be28217c597dba932e3bd9cb006bc1fea",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-800",
+      "name": "base/lineheight/text-lineheight-800",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 43,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-800"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "b1dc0149762c3a90145b4713ba4fa425fe0fde84",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.lineheight.text-lineheight-900",
+      "name": "base/lineheight/text-lineheight-900",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 48,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-900"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "9aa97c434f50c3b611e773b8f3afd838c1b4d041",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-100",
+      "name": "base/text_size/text-100",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 14,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-100"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "3a1bbdcb987aaaf692488e15da84e6d2e3e59c98",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-1200",
+      "name": "base/text_size/text-1200",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 48,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-1200"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "d57a7f7f5b9b685d2f72210da82951221fbf695a",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-150",
+      "name": "base/text_size/text-150",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 15,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-150"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "a7665c12d073e52a6c11929f2100a4bfe7126d88",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-200",
+      "name": "base/text_size/text-200",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 16,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-200"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "3d58b4298855bdb4991c98c947bf6a2812f65ba8",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-25",
+      "name": "base/text_size/text-25",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 10,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-25"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "badd7edd2b15cb7a7badde367676007876404dba",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-300",
+      "name": "base/text_size/text-300",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 17,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-300"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "c08d916f84633a9e5e204c827b12544c041be09d",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-400",
+      "name": "base/text_size/text-400",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 19,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-400"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "54393bc21e16baef6c21bd4f8104ccdca5a0d2ea",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-50",
+      "name": "base/text_size/text-50",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 12,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-50"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "630cfd6e3a669da76c12541ab8f44044b3f5ca34",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-500",
+      "name": "base/text_size/text-500",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 21,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-500"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "1be18a79d9275590c4748ab80e74f948e14fdc75",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-600",
+      "name": "base/text_size/text-600",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 25,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-600"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "2a96a069141783cfcca4500db3f63d86848ade1f",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-700",
+      "name": "base/text_size/text-700",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 29,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-700"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "0702645a3ccfb463816025ec2f8ec20849178cbd",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-75",
+      "name": "base/text_size/text-75",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 13,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-75"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "cbf82a439e56d51121b6fa31f9542c7338be4a7a",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-800",
+      "name": "base/text_size/text-800",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 33,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-800"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "c8398ad36e8e3bfdd3266c3b3b2f73395c73001d",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-size.text-900",
+      "name": "base/text_size/text-900",
+      "type": "dimension",
+      "values": {
+        "mode-1": {
+          "raw": 37,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-900"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "f4a6af87d4b8ba05f60bd3752450e6f4475f9662",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-weight.text-weight-400",
+      "name": "base/text_weight/text-weight-400",
+      "type": "number",
+      "values": {
+        "mode-1": {
+          "raw": 400,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-style"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-weight-text-weight-400"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "6f801b2e96a6085c24e6550fc742c6f10b2c2edb",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-weight.text-weight-500",
+      "name": "base/text_weight/text-weight-500",
+      "type": "number",
+      "values": {
+        "mode-1": {
+          "raw": 500,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-style"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-weight-text-weight-500"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "075f03dc7c2ba7b5966f78f12a55001f01ade6fe",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-weight.text-weight-700",
+      "name": "base/text_weight/text-weight-700",
+      "type": "number",
+      "values": {
+        "mode-1": {
+          "raw": 700,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-style"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-weight-text-weight-700"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "6846eba5cdaeaa27ec21d3fa03b293a72056f27c",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.base.text-weight.text-weight-900",
+      "name": "base/text_weight/text-weight-900",
+      "type": "number",
+      "values": {
+        "mode-1": {
+          "raw": 900,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-style"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-weight-text-weight-900"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "e6eeca5633402e1f2276580739823211a4f69ac5",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.circular.font-family.title",
+      "name": "font_family/title",
+      "type": "string",
+      "values": {
+        "mode-1": {
+          "raw": "CircularXX TT",
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-family"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "font-family-title"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "104bf70243571165bf9a723de5c5a2f5dd0bb686",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-100",
+      "name": "base/lineheight/text-lineheight-100",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 18,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 17,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 17,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-100"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "921b8793df8e219f9913415c639237cd5b53cf5c",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-15",
+      "name": "base/lineheight/text-lineheight-15",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 12,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 10,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 10,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-15"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "513ab8c1391a8d1fb6f86ee577424530889c8fab",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-150",
+      "name": "base/lineheight/text-lineheight-150",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 21,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 18,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 18,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-150"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "4150ff09c41afc4e45760dbfe1fb34e1e12620fd",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-200",
+      "name": "base/lineheight/text-lineheight-200",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 22,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 21,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 21,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-200"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "dd6c69f590d3b6dbc92d22e4cce1a5adc0a0bd4a",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-25",
+      "name": "base/lineheight/text-lineheight-25",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 13,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 12,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 12,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-25"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "368f4d8d81a1a232dc39cfa8186be88cccda53a3",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-300",
+      "name": "base/lineheight/text-lineheight-300",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 23,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 22,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 22,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-300"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "59d50213f58e0f041752e663e55c8cb8a63a9610",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-400",
+      "name": "base/lineheight/text-lineheight-400",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 25,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 23,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 23,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-400"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "059ae2a501ebd79f6891769e1a25f37e04461837",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-50",
+      "name": "base/lineheight/text-lineheight-50",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 16,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 14,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 14,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-50"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "f967fae9ce3a3806edfa693a5d694edccb35c2cc",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-500",
+      "name": "base/lineheight/text-lineheight-500",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 27,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 26,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 26,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-500"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "f6c8c05ccc4e6a7faae0dcff0b5a850fe79aff66",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-600",
+      "name": "base/lineheight/text-lineheight-600",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 33,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 31,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 31,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-600"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "e6d90b8559418137331b1c4375b64f2be3148918",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-700",
+      "name": "base/lineheight/text-lineheight-700",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 38,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 36,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 36,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-700"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "0bfdee876b2804e0ab8b3bcf32a1e3e717cb00fa",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-75",
+      "name": "base/lineheight/text-lineheight-75",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 17,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 16,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 16,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-75"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "68408d0d78a6ebecaf77be9847049ff6c0f65590",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-800",
+      "name": "base/lineheight/text-lineheight-800",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 43,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 42,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 42,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-800"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "3ff25cfc764e2899c496f1e30e972f22237075d0",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.lineheight.text-lineheight-900",
+      "name": "base/lineheight/text-lineheight-900",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 48,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 47,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 47,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "line-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "lineheight-text-lineheight-900"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "f9ae436e1ef7a050eacd240ce5e162738db742f4",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-100",
+      "name": "base/text_size/text-100",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 14,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 13,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 13,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-100"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "1f71fea07579eb2603208beab10acfee1093eaf0",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-1200",
+      "name": "base/text_size/text-1200",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 48,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 48,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 48,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-1200"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "3088f4fcf86786b5833d16832fd80a1fc40691d4",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-15",
+      "name": "base/text_size/text-15",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 9,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 8,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 8,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-15"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "f6ebf953b0709c49d895a7b08ff64421044ecc10",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-150",
+      "name": "base/text_size/text-150",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 15,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 14,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 14,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-150"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "c66330d9974ded7bbaf0bed5e62046c3b7f23066",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-200",
+      "name": "base/text_size/text-200",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 16,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 15,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 15,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-200"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "763c0414d8ca9aab7727796175731fd91fb390d2",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-25",
+      "name": "base/text_size/text-25",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 10,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 9,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 9,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-25"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "f0e2f81cd4ab26eef78d834bf55505a45165f66e",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-300",
+      "name": "base/text_size/text-300",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 17,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 16,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 16,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-300"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "35cdf3bb4aa515c1ebe039a2d653514c7d7aedbf",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-400",
+      "name": "base/text_size/text-400",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 19,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 18,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 18,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-400"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "04d9e2a31e0d59ef0771d5f67712d0319f38f4c4",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-50",
+      "name": "base/text_size/text-50",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 12,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 11,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 11,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-50"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "9cd74480a7162081400bbcfa38c7f5ee3fc05aa8",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-500",
+      "name": "base/text_size/text-500",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 21,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 20,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 20,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-500"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "d059d853732f8a1df21884d6395291ca72c7809e",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-600",
+      "name": "base/text_size/text-600",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 25,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 24,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 24,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-600"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "49237f0182f45220e4d052361bb24e81cefd094a",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-700",
+      "name": "base/text_size/text-700",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 29,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 28,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 28,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-700"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "01e4455b9d75ee71c8ca40c49ceb0ce0085b6219",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-75",
+      "name": "base/text_size/text-75",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 13,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 12,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 12,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-75"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "7a0a88c65dbb248188aefeb2ddc79003f2b9781c",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-800",
+      "name": "base/text_size/text-800",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 33,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 32,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 32,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-800"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "1b8674e5ee63c23425898922335ae5b5302459d2",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-size.text-900",
+      "name": "base/text_size/text-900",
+      "type": "dimension",
+      "values": {
+        "ios": {
+          "raw": 37,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 36,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 36,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-size"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-size-text-900"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "bf156de9e61702e1e2d67079831c492a164fef0b",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-weight.text-weight-400",
+      "name": "base/text_weight/text-weight-400",
+      "type": "number",
+      "values": {
+        "ios": {
+          "raw": 400,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 400,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 400,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-style"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-weight-text-weight-400"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "bbc3572d632210a25ffb783c3fa371e3ed89d703",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-weight.text-weight-500",
+      "name": "base/text_weight/text-weight-500",
+      "type": "number",
+      "values": {
+        "ios": {
+          "raw": 500,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 500,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 500,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-style"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-weight-text-weight-500"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "487282adcd5d0e271ffe27824f11271f108c28ae",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-weight.text-weight-600",
+      "name": "base/text_weight/text-weight-600",
+      "type": "number",
+      "values": {
+        "ios": {
+          "raw": 600,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 600,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 600,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-style"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-weight-text-weight-600"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "6590759a36af7a3e943cbe742c276de8b9422a20",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-weight.text-weight-700",
+      "name": "base/text_weight/text-weight-700",
+      "type": "number",
+      "values": {
+        "ios": {
+          "raw": 700,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 700,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 700,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-style"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-weight-text-weight-700"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "0fcde3fd0738b3dd117adf1d2bd236712c305bf1",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.base.text-weight.text-weight-800",
+      "name": "base/text_weight/text-weight-800",
+      "type": "number",
+      "values": {
+        "ios": {
+          "raw": 800,
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": 800,
+          "aliasOf": null
+        },
+        "web": {
+          "raw": 800,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "font-style"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "text-weight-text-weight-800"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "fcb50fc87ab502fced67c73bc26001c579cfb181",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.font-family.body",
+      "name": "font_family/body",
+      "type": "string",
+      "values": {
+        "ios": {
+          "raw": "WeGothicSans",
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": "Roboto",
+          "aliasOf": null
+        },
+        "web": {
+          "raw": "Pretendard",
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "all"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "font-family-body"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "f83db931f6243991d0fbedcea1ce3f61c4d1857b",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.font-family.title",
+      "name": "font_family/title",
+      "type": "string",
+      "values": {
+        "ios": {
+          "raw": "WeGothicSans",
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": "Roboto",
+          "aliasOf": null
+        },
+        "web": {
+          "raw": "Pretendard",
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "all"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "font-family-title"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "1824bff909c959d9f59a0295d207a1c3df0b5b8b",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.font-weight.extra-bold",
+      "name": "font_weight/extra-bold",
+      "type": "string",
+      "values": {
+        "ios": {
+          "raw": "800",
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": "800",
+          "aliasOf": null
+        },
+        "web": {
+          "raw": "800",
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "all"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "font-weight-extra-bold"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "f8a711b84feaa2a6eae6d97524304e7a9008966d",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.font-weight.medium",
+      "name": "font_weight/medium",
+      "type": "string",
+      "values": {
+        "ios": {
+          "raw": "500",
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": "500",
+          "aliasOf": null
+        },
+        "web": {
+          "raw": "500",
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "all"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "font-weight-medium"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "ab4013497306ec1a3988658d2673aff490021250",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:typography.default.font-weight.regular",
+      "name": "font_weight/regular",
+      "type": "string",
+      "values": {
+        "ios": {
+          "raw": "400",
+          "aliasOf": null
+        },
+        "aos": {
+          "raw": "400",
+          "aliasOf": null
+        },
+        "web": {
+          "raw": "400",
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "all"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "font-weight-regular"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "266fcca96ba90b60d01eaaaa623d2e273d3fdeae",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "documentation:missing",
+      "message": "71/71 tokens have empty descriptions."
+    }
+  ]
+}

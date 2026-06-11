@@ -1,0 +1,1927 @@
+{
+  "$schema": "https://our-ds-mcp/schemas/tokens.v1.json",
+  "source": {
+    "origin": "figma:Chord Design System",
+    "fileKey": "vuq1CyC1Pi4NZYE7ximg3I",
+    "collection": "WDS_tokens",
+    "version": "0.6.0",
+    "freshness": "2026-06-10T00:00:00.000Z",
+    "coverage": {
+      "total": 67,
+      "documented": 45,
+      "hidden": 0
+    },
+    "stageLabel": "v1.0"
+  },
+  "modes": [
+    "light",
+    "dark"
+  ],
+  "tokens": [
+    {
+      "id": "token:system.size.button-height.large",
+      "name": "system/size/button-height/large",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 44,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 44,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "button-height-large"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "7b60c8d2b3003679fff46992c2d908f0c94a39ed",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.button-height.medium",
+      "name": "system/size/button-height/medium",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 40,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 40,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "button-height-medium"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "65973eb37d9c9fbc155e7124e7198cc4ebf5b104",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.button-height.small",
+      "name": "system/size/button-height/small",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 36,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 36,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "button-height-small"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "7d88435137c8b85a750290d4243eabceb89c3599",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.button-height.xlarge",
+      "name": "system/size/button-height/xlarge",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 52,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 52,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "button-height-xlarge"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "4376d7d85aaf89379292caa07694b72befdbd57c",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.button-height.xsmall",
+      "name": "system/size/button-height/xsmall",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 32,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 32,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "button-height-xsmall"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "d36e99ad5093c81daddf79118a5df620ef95acd5",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.button-height.xxlarge",
+      "name": "system/size/button-height/xxlarge",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 56,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 56,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "button-height-xxlarge"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "8dc653790c85d2d22272e8d70acfc9b88fb905b6",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.button-height.xxsmall",
+      "name": "system/size/button-height/xxsmall",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 24,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 24,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "button-height-xxsmall"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "73901e05aaa268702e6f56bfdd3187f936df40a1",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.gap.0",
+      "name": "system/size/gap/0",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 0,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 0,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap0",
+        "android": "gap0",
+        "web": "gap-0"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "573dc4adc9afafc22873f6f05e2965d22151fc33",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.100",
+      "name": "system/size/gap/100",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 8,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 8,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap100",
+        "android": "gap100",
+        "web": "gap-100"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "35459dd493ce085902372117ec7f949ca5ed7791",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.150",
+      "name": "system/size/gap/150",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 12,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 12,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap150",
+        "android": "gap150",
+        "web": "gap-150"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "51847df60db1b4542a46d240a71dc9fccd42fb9d",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.200",
+      "name": "system/size/gap/200",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 16,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 16,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap200",
+        "android": "gap200",
+        "web": "gap-200"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "9684eefc16c3b247a6c22adce656137242c1907a",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.25",
+      "name": "system/size/gap/25",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 2,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 2,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap25",
+        "android": "gap25",
+        "web": "gap-25"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "811642eeb99be7e8bb0769a43ea012242b6e49b8",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.250",
+      "name": "system/size/gap/250",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 20,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 20,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap250",
+        "android": "gap250",
+        "web": "gap-250"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "2936c438f7c137bd8d69cb00fb9ec27da7c1fc41",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.300",
+      "name": "system/size/gap/300",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 24,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 24,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap300",
+        "android": "gap300",
+        "web": "gap-300"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "6135696b3b0332987426318603abd0715512b48e",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.350",
+      "name": "system/size/gap/350",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 28,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 28,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap350",
+        "android": "gap350",
+        "web": "gap-350"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "bb17327cb5859dde5d0f831da2232bab630d76e1",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.400",
+      "name": "system/size/gap/400",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 32,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 32,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap400",
+        "android": "gap400",
+        "web": "gap-400"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "ab74844cb5ab701b2c3f2c10ec5548460afb06ad",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.50",
+      "name": "system/size/gap/50",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 4,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 4,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap50",
+        "android": "gap50",
+        "web": "gap-50"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "611abe63d5b2d371efd13edb5864ab107d62cba3",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.75",
+      "name": "system/size/gap/75",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 6,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 6,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap75",
+        "android": "gap75",
+        "web": "gap-75"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "ccc455d3b0a25fa3bbd3b51c391e98315c04e796",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.negative-100",
+      "name": "system/size/gap/negative-100",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": -8,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": -8,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gapNegative100",
+        "android": "gapNegative100",
+        "web": "gap-negative-100"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "57280230364b88ebbefbfe4c46cb6626cc844b0e",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.negative-25",
+      "name": "system/size/gap/negative-25",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": -2,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 0,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gapNegative25",
+        "android": "gapNegative25",
+        "web": "gap-negative-25"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "7951f8cec5819fa192996c0fe5ba210b75f016ba",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.negative-50",
+      "name": "system/size/gap/negative-50",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": -4,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": -4,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gapNegative50",
+        "android": "gapNegative50",
+        "web": "gap-negative-50"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "9cd41d540b5a29da4ce75311c4bc5ec00199269b",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.negative-75",
+      "name": "system/size/gap/negative-75",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": -6,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": -6,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gapNegative75",
+        "android": "gapNegative75",
+        "web": "gap-negative-75"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "193fbe1302b9720b933cf2ddab7cefb17130820b",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.icon.10nquad",
+      "name": "system/size/icon/10nquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 5,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 5,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-10nquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "ad232e1fa81db745909ce1f3d4dd5f88e272aaee",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.12mquad",
+      "name": "system/size/icon/12mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 12,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 12,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-12mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "7ca0c83efd2e8c011454290d7b5c55321e1e644c",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.12nquad",
+      "name": "system/size/icon/12nquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 6,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 6,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-12nquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "fde9d40de345560d8940cbd2705e5ef9e15c1d96",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.16mquad",
+      "name": "system/size/icon/16mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 16,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 16,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-16mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "9f62fdd6a44091cf805e0014cda5f480f747b529",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.16nquad",
+      "name": "system/size/icon/16nquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 8,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 8,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-16nquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "b20c84c4090b75cdf64187e2749eae5ca5845f70",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.20mquad",
+      "name": "system/size/icon/20mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 20,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 20,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-20mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "4b87fbd3fe7839f26264c6650c6474f2980448fe",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.20nquad",
+      "name": "system/size/icon/20nquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 10,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 10,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-20nquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "fc7527a762c8c32d796ad658c97aa0944cce2dbe",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.24mquad",
+      "name": "system/size/icon/24mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 24,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 24,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-24mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "9a760c23ff557bd3b2edf56393941a71035e27ec",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.24nquad",
+      "name": "system/size/icon/24nquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 12,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 12,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-24nquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "f812ede674af5ed8dd7e5cda44d22139bba55937",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.32mquad",
+      "name": "system/size/icon/32mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 32,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 32,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-32mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "34271ca915a44cd52e9aa900582881dfd2061786",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.40mquad",
+      "name": "system/size/icon/40mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 40,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 40,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-40mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "18d32735d19860dd7dd0670dee0d5dee577780e9",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.48mquad",
+      "name": "system/size/icon/48mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 48,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 48,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-48mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "08d7f2c5b1fc5b7fb2333e38fe5246aea8c5cda5",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.56mquad",
+      "name": "system/size/icon/56mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 56,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 56,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-56mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "c98227744816e9986f8034cd3fadc1ed2fb33033",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.64mquad",
+      "name": "system/size/icon/64mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 64,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 64,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-64mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "1223c24a2b372800e842e55adee744f20a1fa828",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.icon.72mquad",
+      "name": "system/size/icon/72mquad",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 72,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 72,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": null,
+        "web": "icon-72mquad"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "c9524ac80790582ee40b6b3c844cacb3614745ce",
+      "diagnostics": [
+        "documentation:missing",
+        "platform-code:missing-ios",
+        "platform-code:missing-android"
+      ]
+    },
+    {
+      "id": "token:system.size.margin.screen.0",
+      "name": "system/size/margin/screen/0",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 0,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 0,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "marginScreen0",
+        "android": "marginScreen0",
+        "web": "margin-screen-0"
+      },
+      "description": "화면 여백 구성에 사용 (단일 프레임엔 사용 불가)",
+      "hidden": false,
+      "figmaKey": "648051a74cbe6881abda348746b4c5bfcb9f1ff0",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.margin.screen.125",
+      "name": "system/size/margin/screen/125",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 10,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 10,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "marginScreen125",
+        "android": "marginScreen125",
+        "web": "margin-screen-125"
+      },
+      "description": "화면 여백 구성에 사용 (단일 프레임엔 사용 불가)",
+      "hidden": false,
+      "figmaKey": "f5bd43007c8113f82dd43a9261c79e44361dfcf3",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.margin.screen.200",
+      "name": "system/size/margin/screen/200",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 16,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 16,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "marginScreen200",
+        "android": "marginScreen200",
+        "web": "margin-screen-200"
+      },
+      "description": "화면 여백 구성에 사용 (단일 프레임엔 사용 불가)",
+      "hidden": false,
+      "figmaKey": "2cda558895594edc4973b04bfa456df17f10c651",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.margin.screen.250",
+      "name": "system/size/margin/screen/250",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 20,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 20,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "marginScreen250",
+        "android": "marginScreen250",
+        "web": "margin-screen-250"
+      },
+      "description": "화면 여백 구성에 사용 (단일 프레임엔 사용 불가)",
+      "hidden": false,
+      "figmaKey": "0b5e6faa5a14143634587e4ebb083777067b1050",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.0",
+      "name": "system/size/padding/box/0",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 0,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 0,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox0",
+        "android": "paddingBox0",
+        "web": "padding-box-0"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "1963df32e49375a8911b8e0e322b9ab38680268a",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.100",
+      "name": "system/size/padding/box/100",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 8,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 8,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox100",
+        "android": "paddingBox100",
+        "web": "padding-box-100"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "d98438aed042ca842fd0a89196a0695e6bd3845b",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.1000",
+      "name": "system/size/padding/box/1000",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 80,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 80,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox1000",
+        "android": "paddingBox1000",
+        "web": "padding-box-1000"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "9d2990701dadc4d8e8a49df3cd967e25b9e374c0",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.150",
+      "name": "system/size/padding/box/150",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 12,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 12,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox150",
+        "android": "paddingBox150",
+        "web": "padding-box-150"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "4e0efc3daae3094f3bc35cfcb9e45b90ed15b988",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.200",
+      "name": "system/size/padding/box/200",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 16,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 16,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox200",
+        "android": "paddingBox200",
+        "web": "padding-box-200"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "e77605bde54c49ce68fdd28688ea5d2498616bdf",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.25",
+      "name": "system/size/padding/box/25",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 2,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 2,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox25",
+        "android": "paddingBox25",
+        "web": "padding-box-25"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "21f33e8882b504a30294f99ae2dbb6c5b08378bf",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.250",
+      "name": "system/size/padding/box/250",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 20,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 20,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox250",
+        "android": "paddingBox250",
+        "web": "padding-box-250"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "43e9c0ca4c023695436ffff916a15661b8269ba6",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.300",
+      "name": "system/size/padding/box/300",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 24,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 24,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox300",
+        "android": "paddingBox300",
+        "web": "padding-box-300"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "b2950a34f888478d3fc1683177f77162f703b001",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.350",
+      "name": "system/size/padding/box/350",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 28,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 28,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox350",
+        "android": "paddingBox350",
+        "web": "padding-box-350"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "6e6a6ec1bf05b9fe1dcc54f129e69d648bfe02e7",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.400",
+      "name": "system/size/padding/box/400",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 32,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 32,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox400",
+        "android": "paddingBox400",
+        "web": "padding-box-400"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "946bf2cb08ba88ece1a671342d256792f3f2b946",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.50",
+      "name": "system/size/padding/box/50",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 4,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 4,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox50",
+        "android": "paddingBox50",
+        "web": "padding-box-50"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "9b47c852d489e6853a765fd4ab8610ebbfb8de71",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.500",
+      "name": "system/size/padding/box/500",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 40,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 40,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox500",
+        "android": "paddingBox500",
+        "web": "padding-box-500"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "48423c794c858086409d3cd5cc3b2632fe30290c",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.600",
+      "name": "system/size/padding/box/600",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 48,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 48,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox600",
+        "android": "paddingBox600",
+        "web": "padding-box-600"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "590d1e004c46eb2180be28b8620977c759e97c04",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.700",
+      "name": "system/size/padding/box/700",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 56,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 56,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": null,
+        "android": "paddingBox700",
+        "web": "padding-box-700"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "e6e52ffc302a4cb222244468ff9d2bb992076d6e",
+      "diagnostics": [
+        "platform-code:missing-ios"
+      ]
+    },
+    {
+      "id": "token:system.size.padding.box.75",
+      "name": "system/size/padding/box/75",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 6,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 6,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox75",
+        "android": "paddingBox75",
+        "web": "padding-box-75"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "b819967213c6b164f68248282e232a3d34f8c6b3",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.800",
+      "name": "system/size/padding/box/800",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 64,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 64,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox800",
+        "android": "paddingBox800",
+        "web": "padding-box-800"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "66d70d3453b0f0996a2b5b7874271b05642ea72e",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.900",
+      "name": "system/size/padding/box/900",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 72,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 72,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox900",
+        "android": "paddingBox900",
+        "web": "padding-box-900"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "21a8d981529f623ee6ead3960215fff226f558cc",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.box.0",
+      "name": "system/size/radius/box/0",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 0,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 0,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusBox0",
+        "android": "radiusBox0",
+        "web": "radius-box-0"
+      },
+      "description": "요소 모서리의 둥글기",
+      "hidden": false,
+      "figmaKey": "4ebc9afb544a2b017105443e7c730a32680fbf0b",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.box.100",
+      "name": "system/size/radius/box/100",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 8,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 8,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusBox100",
+        "android": "radiusBox100",
+        "web": "radius-box-100"
+      },
+      "description": "요소 모서리의 둥글기",
+      "hidden": false,
+      "figmaKey": "b2f567a2aa917a12c87dd3e542af796947c8c89b",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.box.150",
+      "name": "system/size/radius/box/150",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 12,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 12,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusBox150",
+        "android": "radiusBox150",
+        "web": "radius-box-150"
+      },
+      "description": "요소 모서리의 둥글기",
+      "hidden": false,
+      "figmaKey": "a21f2b7e64c3570f8e4940c83ca5a7fabd9f01b0",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.box.200",
+      "name": "system/size/radius/box/200",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 16,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 16,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusBox200",
+        "android": "radiusBox200",
+        "web": "radius-box-200"
+      },
+      "description": "요소 모서리의 둥글기",
+      "hidden": false,
+      "figmaKey": "c183d0baff2ca75b1d357df9f255fdfea7a12e0c",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.box.25",
+      "name": "system/size/radius/box/25",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 2,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 2,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusBox25",
+        "android": "radiusBox25",
+        "web": "radius-box-25"
+      },
+      "description": "요소 모서리의 둥글기",
+      "hidden": false,
+      "figmaKey": "8f436966dde5f0414cc2a20630bbe7521c5ff5f8",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.box.250",
+      "name": "system/size/radius/box/250",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 20,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 20,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusBox250",
+        "android": "radiusBox250",
+        "web": "radius-box-250"
+      },
+      "description": "요소 모서리의 둥글기",
+      "hidden": false,
+      "figmaKey": "f02e4ad5168151f3f268d31269b7029188086f1c",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.box.300",
+      "name": "system/size/radius/box/300",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 24,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 24,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusBox300",
+        "android": "radiusBox300",
+        "web": "radius-box-300"
+      },
+      "description": "요소 모서리의 둥글기",
+      "hidden": false,
+      "figmaKey": "fa197e7d45409331bab4a5b11716f9feeb565195",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.box.50",
+      "name": "system/size/radius/box/50",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 4,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 4,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusBox50",
+        "android": "radiusBox50",
+        "web": "radius-box-50"
+      },
+      "description": "요소 모서리의 둥글기",
+      "hidden": false,
+      "figmaKey": "5947232ecf66b1a0e3de7ec9b291d777bbc931fb",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.box.75",
+      "name": "system/size/radius/box/75",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 6,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 6,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusBox75",
+        "android": "radiusBox75",
+        "web": "radius-box-75"
+      },
+      "description": "요소 모서리의 둥글기",
+      "hidden": false,
+      "figmaKey": "2ea6ce81b3940dcc32b98ccebdfd0fe7369f7a8e",
+      "diagnostics": []
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "documentation:missing",
+      "message": "22/67 tokens have empty descriptions."
+    }
+  ]
+}
