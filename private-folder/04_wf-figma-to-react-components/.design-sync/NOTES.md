@@ -13,19 +13,21 @@
 - **Canvas/iframe 스케일 차이**: preview가 storybook보다 작게 렌더링 — 프레이밍 아티팩트, content/composition 동일하면 `match`.
 - **ASSETS_BLOCKED (ds-preview.invalid)**: 양쪽 패널 동일하게 차단 — 일반 컴포넌트 스토리 그레이딩에 영향 없음.
 - **애니메이션 전용 스토리**: static 스크린샷에서 양쪽 공백 = `match` (LoadingCircular).
-- **cardMode=column 너비**: preview iframe이 부모 컨테이너를 채우지 않아 LinearProgressIndicator 트랙이 storybook보다 좁게 표시됨 → `close` 수용.
-- **시스템 폰트 폴백**: WeGothicSans/Pretendard 미탑재 → 양쪽 패널 폰트 동일한 system font. Menu에서 약간 작게 표시 → `close` 수용.
+- **cardMode=column 너비**: preview iframe이 부모 컨테이너를 채우지 않아 트랙형 컴포넌트가 storybook보다 좁게 표시됨 → `close` 수용.
+- **시스템 폰트 폴백**: WeGothicSans/Pretendard 미탑재 → 양쪽 패널 폰트 동일한 system font. 약간 작게 표시 → `close` 수용.
 - **TopNavigation SVG 폴백**: 아이콘 슬롯에 SVG fallback 텍스트 — 양쪽 동일, 에셋 갭이지 렌더링 문제 아님.
-- **Thumbnail 플레이스홀더**: ASSETS_BLOCKED로 "UNIVERSE" 워터마크 — 양쪽 동일.
+- **cardMode 없는 wide 컴포넌트 스케일**: Search/ToggleSwitch Playground가 storybook보다 작게 렌더링 — cardMode viewport 제약. Variants/States 스토리는 match. `close` 수용.
 
-## Close Components
+## Close Components (현재 싱크 기준)
 
-- `LinearProgressIndicator`: preview 트랙 너비 좁음 (cardMode=column iframe 제약). Color/content 정확.
-- `Menu`: 시스템 폰트 폴백으로 텍스트 약간 작음. Structure/content 정확.
+- `Search`: Playground preview 스케일 축소 (cardMode viewport 제약). Variants/States 정확.
+- `ToggleSwitch`: Playground preview 스케일 축소 (cardMode viewport 제약). Variants/States 정확.
 
 ## Re-sync Risks
 
-- `dist/index.d.ts`는 수동 생성 파일 — `npm run build:lib` 재실행 후 덮어쓰면 사라짐. 재싱크 전 재생성 필요.
-- DropdownBox, TextFields가 index.ts에 추가되면 titleMap null 항목 제거 필요.
+- `dist/index.d.ts`는 수동 생성 파일 — `npm run build:lib` 재실행 후 덮어씀. 빌드 후 항상 재생성: `echo "export * from './components/index';" > dist/index.d.ts`
+- `npm run build:lib` 실행 시 `.design-sync/sb-reference`도 stale 상태가 됨 — `npx storybook build -c .storybook -o .design-sync/sb-reference` 재빌드 필요.
+- 컴포넌트 추가/삭제 시 `src/components/` + `src/components/index.ts` 양쪽 반영 확인 후 build:lib → sb-reference 순으로 재빌드.
 - 폰트 (WeGothicSans, Pretendard, CircularXX TT) 미탑재 — 재싱크 시 폰트 파일 추가 검토.
 - FigmaCompare 스토리 skip 유지 — 외부 이미지 의존성 변경 없는 한.
+- `--entry dist/index.js` flag: resync.mjs가 node_modules에서 pkg를 못 찾을 때 필요. driver 실행 시 추가: `node .ds-sync/resync.mjs --entry dist/index.js`
