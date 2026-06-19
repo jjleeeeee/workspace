@@ -23,7 +23,6 @@
     "build-storybook": "storybook build",
     "tokens:build": "node scripts/build-tokens.mjs",
     "icons:sync-medium": "node scripts/sync-medium-icons.mjs",
-    "figma:rest-audit:list-item": "node scripts/audit-figma-rest-list-item.mjs",
     "knowledge:audit": "node scripts/audit-knowledge-layer.mjs",
     "rules:audit": "node scripts/audit-workflow-rules.mjs",
     "visual:baseline": "node scripts/visual-diff.mjs baseline",

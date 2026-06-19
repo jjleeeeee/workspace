@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Search } from "./Search";
 import type { SearchMode, SearchState } from "./Search";
@@ -38,7 +39,23 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
+export const Playground: Story = {
+  render: function Render(args) {
+    const [value, setValue] = useState("");
+    const [submitted, setSubmitted] = useState(false);
+    const state: SearchState = submitted ? "completed" : value ? "enabled" : "default";
+    return (
+      <Search
+        {...args}
+        state={state}
+        value={value}
+        onChange={(v) => { setValue(v); setSubmitted(false); }}
+        onClear={() => { setValue(""); setSubmitted(false); }}
+        onSearch={() => setSubmitted(true)}
+      />
+    );
+  },
+};
 
 export const Variants: Story = {
   render: (args) => (
@@ -51,13 +68,26 @@ export const Variants: Story = {
 };
 
 export const States: Story = {
-  render: (args) => (
-    <div style={{ display: "grid", gap: 16, justifyItems: "start" }}>
-      <Search {...args} label="Search" state="default" />
-      <Search {...args} label="Search" state="enabled" />
-      <Search {...args} label="Keyword" state="completed" />
-    </div>
-  ),
+  render: function Render(args) {
+    const [value, setValue] = useState("");
+    const [submitted, setSubmitted] = useState(false);
+    const state: SearchState = submitted ? "completed" : value ? "enabled" : "default";
+    return (
+      <div style={{ display: "grid", gap: 12, justifyItems: "start" }}>
+        <span style={{ color: "#888", fontSize: 12 }}>
+          state: <strong>{state}</strong> — type to enable · Enter to complete · clear to reset
+        </span>
+        <Search
+          {...args}
+          state={state}
+          value={value}
+          onChange={(v) => { setValue(v); setSubmitted(false); }}
+          onClear={() => { setValue(""); setSubmitted(false); }}
+          onSearch={() => setSubmitted(true)}
+        />
+      </div>
+    );
+  },
 };
 
 export const FigmaCompare: Story = {

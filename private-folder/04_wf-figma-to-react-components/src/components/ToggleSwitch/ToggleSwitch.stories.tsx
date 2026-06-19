@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ToggleSwitch } from "./ToggleSwitch";
 import "./ToggleSwitch.css";
@@ -36,7 +37,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
+export const Playground: Story = {
+  render: function Render(args) {
+    const [checked, setChecked] = useState(false);
+    return <ToggleSwitch {...args} checked={checked} status={undefined} onClick={() => setChecked((v) => !v)} />;
+  },
+};
 
 export const Variants: Story = {
   render: (args) => (

@@ -12,7 +12,6 @@ describe("Chips", () => {
     expect(chip).toHaveAttribute("data-size", "small");
     expect(chip).toHaveAttribute("data-type", "text");
     expect(chip).toHaveAttribute("data-state", "default");
-    expect(chip).toHaveAttribute("data-radius", "on");
     expect(chip).not.toBeDisabled();
   });
 

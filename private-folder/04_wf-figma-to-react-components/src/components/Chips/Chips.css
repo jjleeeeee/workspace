@@ -25,7 +25,7 @@
     var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
   font-size: var(--cds-typography-default-base-text-size-text-150, 14px);
   font-weight: var(--cds-typography-default-base-text-weight-text-weight-500, 500);
-  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-150, 21px);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150, 18px);
   letter-spacing: 0;
   overflow: hidden;
   position: relative;
@@ -34,15 +34,21 @@
 
 .chord-chips[data-size="medium"] {
   block-size: 36px;
+  font-size: var(--cds-typography-default-base-text-size-text-200, 15px);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200, 21px);
 }
 
-.chord-chips[data-radius="off"] {
-  --chips-radius: var(--cds-system-size-radius-box-100, 8px);
+.chord-chips[data-type="icon"] {
+  --chips-padding-start: var(--cds-system-size-padding-box-125, 10px);
 }
 
 .chord-chips[data-type="image"] {
-  --chips-padding-start: var(--cds-system-size-padding-box-75, 6px);
+  --chips-padding-start: var(--cds-system-size-padding-box-50, 4px);
   --chips-content-max: 172px;
+}
+
+.chord-chips[data-trailing="true"] {
+  --chips-padding-end: var(--cds-system-size-padding-box-125, 10px);
 }
 
 .chord-chips[data-mode="fixed"] {
@@ -92,6 +98,31 @@
 .chord-chips[data-mode="fixed"][data-state="outlined-disabled"] {
   --chips-stroke: var(--cds-system-fixed-color-button-disabled, #ffffff1a);
   --chips-text: var(--cds-system-fixed-color-text-200a, #ffffff33);
+}
+
+.chord-chips::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.chord-chips:not(:disabled):hover::before {
+  background: var(--cds-system-color-button-hover, #0000000a);
+}
+
+.chord-chips:not(:disabled):active::before {
+  background: var(--cds-system-color-surface-default-reverse-50a, #0000000a);
+}
+
+.chord-chips[data-mode="fixed"]:not(:disabled):hover::before {
+  background: var(--cds-system-fixed-color-button-hover, #ffffff0d);
+}
+
+.chord-chips[data-mode="fixed"]:not(:disabled):active::before {
+  background: var(--cds-system-fixed-color-surface-default-reverse-100a, #ffffff1a);
 }
 
 .chord-chips:disabled {
@@ -144,6 +175,16 @@
 .chord-chips[data-marquee="true"] .chord-chips__label {
   -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 24px), transparent 100%);
   mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 24px), transparent 100%);
+}
+
+.chord-chips__trailing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  inline-size: 16px;
+  block-size: 16px;
+  color: currentColor;
 }
 
 .chord-chips__badge {

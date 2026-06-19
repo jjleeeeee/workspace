@@ -1,0 +1,54 @@
+```json
+{
+  "meta": {
+    "persona": "yuki",
+    "scenario_id": "proto-walk-global-home-community-search-v1",
+    "version": "as-is",
+    "total_turns": 4,
+    "reached": true
+  },
+  "reliability": {
+    "R1": {
+      "score": 4,
+      "rationale": "Turn 1 'Discover 추천 커뮤니티 섹션', Turn 2 '가입 버튼', Turn 4 'Joined 배지·12.5M 멤버' — 위버스 실제 UI 요소 정확히 지칭. 오류 없음. 단, Turn 3에서 '비슷하게 생긴 검색 화면'이라 모호하게 표현해 5점 미달."
+    },
+    "R2": {
+      "score": 4,
+      "rationale": "Turn 1: 유일한 hotspot이라 강제 선택 — 직관적 UI 선호 가치관으로 혼란 명시. Turn 3: 가입 피드백 부재 상황에서 TXT 텍스트 탭으로 추론 전환 — 합리적. 가치관 연결 일관되나 Turn 3 추론 서술이 단순해 5점 미달."
+    },
+    "R3": {
+      "score": 5,
+      "rationale": "전 4턴 모두 GOAL(Discover → TXT 가입 → 피드) 근접 hotspot 선택. REACH_FRAME 35:79132 도달. 목표 이탈 선택 0회."
+    },
+    "R4": {
+      "score": 5,
+      "rationale": "Turn 1 '촛토 불안하다 ( ；∀；)', Turn 2 '이거다 싶어서 ✨', Turn 4 '안도 ( ´ ▽ ` )' — 일본 팬덤 용어·카오모지·이모지 모두 퍼소나 설정과 일치. 감정 흐름(혼란→기대→안도)이 walk 경험과 자연스럽게 연결."
+    },
+    "R5": "N/A — walker는 외압 없음",
+    "R6": {
+      "score": 5,
+      "rationale": "전 턴 통해 23세 일본 여성 팬 말투·가치관(직관적 UI 선호, 가입 성공 효능감) 유지. 카오모지·이모지 사용 일관. 모순 발화 없음."
+    }
+  },
+  "walk_metrics": {
+    "W1": {
+      "score": 5,
+      "rationale": "시나리오 §3 W1 기준 적용. total_turns=4, REACH_FRAME 도달, 부수 화면 0 → 총 턴 ≤ 5 충족 → 5점."
+    },
+    "W2": {
+      "score": 4,
+      "rationale": "시나리오 §3 W2 기준 적용. confusion_avg=2.25. 5점 기준(≤1.5) 초과, 3점 기준(2.5~3.5) 미만 — 중간값 → 4점. Turn 1 confusion=4가 평균을 끌어올림."
+    },
+    "W3": {
+      "score": 3,
+      "rationale": "시나리오 §3 W3 기준 적용. label_unclear=1개 → 3점 구간(1~2개). unexpected_dest는 W3 산정 제외(type 불일치)."
+    }
+  },
+  "summary": {
+    "reliability_avg": 4.6,
+    "walk_avg": 4.0,
+    "top_weakness": "W3",
+    "design_insight": "Discover → 검색 전환 아이콘 라벨 미노출(Turn 1 confusion=4)과 가입 후 동일 검색 화면 복귀로 성공 피드백 부재(Turn 3 unexpected_dest) — 두 지점이 W3·W2 감점 원인."
+  }
+}
+```

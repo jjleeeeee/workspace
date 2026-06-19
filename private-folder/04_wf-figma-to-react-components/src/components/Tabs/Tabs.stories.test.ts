@@ -12,10 +12,11 @@ describe("Tabs stories contract", () => {
   it("controls.include lists only figma-facing props", () => {
     const include = meta.parameters?.controls?.include ?? [];
     expect(include).toContain("mode");
-    expect(include).toContain("style");
     expect(include).toContain("type");
-    expect(include).toContain("size");
-    expect(include).toContain("showExpandButton");
+    expect(include).toContain("barBadge");
+    expect(include).not.toContain("style");
+    expect(include).not.toContain("size");
+    expect(include).not.toContain("showExpandButton");
   });
 
   it("controls.include does not expose consumer props", () => {
@@ -25,12 +26,12 @@ describe("Tabs stories contract", () => {
     expect(include).not.toContain("onTabChange");
   });
 
-  it("argTypes define mode, style, type, size controls", () => {
+  it("argTypes define mode and type controls", () => {
     const keys = Object.keys(meta.argTypes ?? {});
     expect(keys).toContain("mode");
-    expect(keys).toContain("style");
     expect(keys).toContain("type");
-    expect(keys).toContain("size");
+    expect(keys).not.toContain("style");
+    expect(keys).not.toContain("size");
   });
 
   it("uses a local 3x visual baseline for FigmaCompare", () => {

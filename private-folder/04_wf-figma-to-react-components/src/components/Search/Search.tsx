@@ -5,13 +5,17 @@ import "./Search.css";
 export type SearchMode = "default" | "fixed";
 export type SearchState = "default" | "enabled" | "completed";
 
-export interface SearchProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface SearchProps extends Omit<HTMLAttributes<HTMLDivElement>, "children" | "onChange"> {
   clearIconSlot?: ReactNode;
   label?: string;
   mode?: SearchMode;
+  onChange?: (value: string) => void;
   onClear?: () => void;
+  onSearch?: (value: string) => void;
+  placeholder?: string;
   searchIconSlot?: ReactNode;
   state?: SearchState;
+  value?: string;
 }
 
 export function Search({
@@ -19,9 +23,13 @@ export function Search({
   clearIconSlot,
   label = "Search",
   mode = "default",
+  onChange,
   onClear,
+  onSearch,
+  placeholder,
   searchIconSlot,
   state = "default",
+  value,
   ...divProps
 }: SearchProps) {
   const classNames = ["chord-search", className].filter(Boolean).join(" ");
@@ -40,7 +48,16 @@ export function Search({
       <span className="chord-search__icon" aria-hidden={searchIconSlot ? undefined : "true"}>
         {searchIconSlot ?? <ChordIcon data-testid="search-icon" name="searchMedium" size={16} />}
       </span>
-      <span className="chord-search__label">{label}</span>
+      <input
+        className="chord-search__input"
+        onChange={(e) => onChange?.(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") onSearch?.(value ?? "");
+        }}
+        placeholder={placeholder ?? label}
+        type="text"
+        value={value ?? ""}
+      />
       {clearVisible ? (
         <button className="chord-search__clear" onClick={onClear} type="button" aria-label="Clear search">
           {clearIconSlot ?? (
@@ -48,8 +65,8 @@ export function Search({
               <ChordIcon
                 className="chord-search__clear-glyph"
                 data-testid="clear-icon"
-                name="deleteMedium"
-                size={18}
+                name="closeMedium"
+                size={10}
               />
             </span>
           )}

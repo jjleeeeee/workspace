@@ -1,7 +1,11 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { Skeleton } from "./Skeleton";
+
+const skeletonCss = readFileSync(join(process.cwd(), "src/components/Skeleton/Skeleton.css"), "utf8");
 
 describe("Skeleton", () => {
   it("renders the Figma default contract", () => {
@@ -29,5 +33,18 @@ describe("Skeleton", () => {
     render(<Skeleton aria-label="콘텐츠 로딩 중" data-testid="skeleton" />);
 
     expect(screen.getByTestId("skeleton")).not.toHaveAttribute("aria-hidden");
+  });
+});
+
+describe("Skeleton CSS contract", () => {
+  it("defines shimmer keyframe animation on ::after", () => {
+    expect(skeletonCss).toContain("chord-skeleton-shimmer");
+    expect(skeletonCss).toContain("animation");
+    expect(skeletonCss).toContain("translateX");
+  });
+
+  it("respects prefers-reduced-motion", () => {
+    expect(skeletonCss).toContain("prefers-reduced-motion");
+    expect(skeletonCss).toContain("animation: none");
   });
 });

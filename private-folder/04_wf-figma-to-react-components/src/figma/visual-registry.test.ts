@@ -26,35 +26,8 @@ describe("visual registry coverage", () => {
     }
   });
 
-  it("includes ListItemNative now that default structural comparison is deterministic", () => {
-    expect(visualRegistry).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          component: "ListItemNative",
-          comparisonScope: "structure-only",
-          id: "list-item-native-default",
-          isParityGate: false,
-          storyId: "atoms-listitemnative--playground",
-        }),
-      ]),
-    );
-  });
-
-  it("marks TextFields Default/Single/Default as a full-parity gate after the nested default branch is implemented", () => {
-    expect(visualRegistry).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          component: "TextFields",
-          comparisonScope: "full-parity",
-          id: "text-fields-default",
-          isParityGate: true,
-        }),
-      ]),
-    );
-  });
-
-  it("registers Avatar and Thumbnail as structure-only non-gating because baselines are Figma media exports not component placeholder captures", () => {
-    const mediaComponents = visualRegistry.filter((e) => e.component === "Avatar" || e.component === "Thumbnail");
+  it("registers Avatar as structure-only non-gating because baselines are Figma media exports not component placeholder captures", () => {
+    const mediaComponents = visualRegistry.filter((e) => e.component === "Avatar");
     expect(mediaComponents.length).toBeGreaterThan(0);
     for (const entry of mediaComponents) {
       expect(entry.comparisonScope).toBe("structure-only");

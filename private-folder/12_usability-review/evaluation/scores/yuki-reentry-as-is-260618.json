@@ -1,0 +1,54 @@
+```json
+{
+  "meta": {
+    "persona": "yuki",
+    "scenario_id": "proto-walk-global-home-community-reentry-v1",
+    "version": "as-is",
+    "total_turns": 4,
+    "reached": true
+  },
+  "reliability": {
+    "R1": {
+      "score": 4,
+      "rationale": "Turn 1–5 전반에 걸쳐 '커뮤니티 피드', '나의 커뮤니티 목록', 'Discover', '검색 화면' 등 위버스 실제 화면명을 정확히 지칭. 없는 기능 지어냄 없음. Turn 5 reasoning에서 'Now LIVE', '추천 커뮤니티' 등 Discover 콘텐츠 요소를 정확히 인식. 다만 하단 탭 바의 구체적 명칭(예: 홈·서치·알림 탭 구분)을 언급하지 않아 위버스 구조 지식 깊이가 제한적."
+    },
+    "R2": {
+      "score": 3,
+      "rationale": "Turn 1: bbox_y 위치 차이로 두 아이콘 구분 시도 — 합리적 휴리스틱. Turn 3: '아까 아래쪽 눌렀더니 안 됐으니까 위쪽 시도' — 소거법 추론. Turn 4: 'TOMORROW X TOGETHER 누르면 커뮤니티로 돌아가는 것 같아서 제외' — 목적 기반 필터링. 추론 자체는 일관되나 유키 핵심 가치관(직관적 UI 선호, 안전성)과 명시적으로 연결된 발화는 없음. 가치관 근거보다 시행착오 제거법에 의존."
+    },
+    "R3": {
+      "score": 4,
+      "rationale": "GIVE_UP 없이 4턴 내내 Discover 도달 목표를 향한 선택만 수행. Turn 2: 루프백 후에도 '가입' 등 목표 외 hotspot 선택 않고 탭 아이콘 재시도. Turn 4: 'TOMORROW X TOGETHER 커뮤니티 재진입' 선택 기피하며 목표 유지. REACH_FRAME 35:75221 도달 성공. 단, Turn 1의 잘못된 선택(y=9796)이 2턴 낭비를 유발해 효율 측면에서 감점."
+    },
+    "R4": {
+      "score": 5,
+      "rationale": "Turn 1 '혼란' + '전혀 모르겠어요' → Turn 2 '짜증' + '이상한 데로 왔잖아요...💦' → Turn 3 '( ；∀；)', '촛토 답답해요🥺' → Turn 5 '안도' + '우연히 도착한 느낌이에요'. 감정이 화면 상황과 정확히 대응하며 에스컬레이션 구조가 자연스러움. 유키 설정의 '복잡한 시스템으로 실패 경험' 페인포인트와 직결. 일본 팬덤 특유 이모지·카오모지(；∀；, 🥺, 💦)와 '촛토' 사용이 설정과 완전 일치."
+    },
+    "R5": "N/A — walker는 외압 없음",
+    "R6": {
+      "score": 5,
+      "rationale": "5턴 전체에서 상냥하나 직설적인 23세 일본 여성 팬 말투 유지. '어?? ...잖아요', '에...' 등 구어체 감탄사와 일본식 카오모지( ；∀；)가 일관됨. '가성비 나쁘면 단호히 포기' 성향이 Turn 2–3의 단호한 판단 배제 행동으로 드러남. Turn 5 '우연히 도착한 느낌' 발화가 유키의 '예측 가능한 네비게이션 선호' 가치관과 자연스럽게 충돌. 설정 내 모순 없음."
+    }
+  },
+  "walk_metrics": {
+    "W1": {
+      "score": 3,
+      "rationale": "시나리오 §3 W1 기준 적용. total_decision_turns=4, reached=true, session_retention=false. '도달했으나 재검색 동선 반복 (턴 3~5, 세션 미유지)' → 3점. 4턴은 기준 범위(3~5) 내, 세션 미유지 확인됨."
+    },
+    "W2": {
+      "score": 3,
+      "rationale": "confusion_avg=3.4. 시나리오 §3 W2 기준 '평균 2.5~3.5 → 3점' 적용. Turn 1(3), Turn 2(4), Turn 3(4), Turn 4(4) — 의사결정 턴 4개 평균 3.75였으나 transcript summary.confusion_avg=3.4(Turn 5 포함 평균). 기준값 3.4가 2.5~3.5 구간에 속함 → 3점."
+    },
+    "W3": {
+      "score": 1,
+      "rationale": "시나리오 §3 W3 기준 적용. friction_count=3 (label_unclear, unexpected_dest, dead_end). 'friction 2건+ → 1점'. session_retention=false. '다른 커뮤니티인 줄 알았다' 발화는 없으나 friction 3건이 1점 기준 충족. Discover 도달 후에도 TXT 커뮤니티 즉시 재진입 경로 인식 불가."
+    }
+  },
+  "summary": {
+    "reliability_avg": 4.2,
+    "walk_avg": 2.33,
+    "top_weakness": "W3",
+    "design_insight": "커뮤니티 피드 하단 탭에 Discover 직접 진입점 부재 + 동일 라벨 아이콘 2개가 소거법 탐색을 강제 — 탭 바 아이콘 라벨 차별화 및 Discover 직접 탭 노출로 friction 제거 필요."
+  }
+}
+```

@@ -17,6 +17,8 @@ import playFillMediumSvg from "./icons/ic_play_fill_medium.svg?raw";
 import questionMarkMediumSvg from "./icons/ic_question_mark_medium.svg?raw";
 import searchMediumSvg from "./icons/ic_search_medium.svg?raw";
 import sendMediumSvg from "./icons/ic_send_medium.svg?raw";
+import scrollToBottomMediumSvg from "./icons/ic_scroll_to_bottom_medium.svg?raw";
+import scrollToTopMediumSvg from "./icons/ic_scroll_to_top_medium.svg?raw";
 import subtractMediumSvg from "./icons/ic_subtract_medium.svg?raw";
 import "./chord-icons.css";
 
@@ -181,6 +183,22 @@ const chordIconAssetSources = {
     nodeId: "15108:5842",
     sourceName: "24/em/ic_send_medium",
     svg: sendMediumSvg,
+  },
+  scrollToBottomMedium: {
+    fileName: "ic_scroll_to_bottom_medium.svg",
+    figmaKey: "figma-branch-fab-scroll-to-bottom",
+    frameSize: 24,
+    nodeId: "15773:15259",
+    sourceName: "24/em/ic_scroll_to_bottom_medium",
+    svg: scrollToBottomMediumSvg,
+  },
+  scrollToTopMedium: {
+    fileName: "ic_scroll_to_top_medium.svg",
+    figmaKey: "figma-branch-fab-scroll-to-top",
+    frameSize: 24,
+    nodeId: "16319:48550",
+    sourceName: "24/em/ic_scroll_to_top_medium",
+    svg: scrollToTopMediumSvg,
   },
   subtractMedium: {
     fileName: "ic_subtract_medium.svg",

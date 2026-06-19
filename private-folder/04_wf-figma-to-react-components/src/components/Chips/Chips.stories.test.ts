@@ -9,7 +9,6 @@ describe("Chips stories", () => {
       "label",
       "marquee",
       "mode",
-      "radius",
       "size",
       "state",
       "type",

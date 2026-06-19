@@ -6,14 +6,18 @@ export type TooltipMode = "default" | "fixed";
 export type TooltipSize = "large" | "medium";
 export type TooltipColor = "black" | "white-fixed" | "tint";
 export type TooltipPosition =
-  | "bottom-center"
-  | "bottom-left"
-  | "bottom-right"
-  | "left-center"
-  | "right-center"
-  | "top-center"
-  | "top-left"
-  | "top-right";
+  | "down-center"
+  | "down-left"
+  | "down-right"
+  | "up-center"
+  | "up-left"
+  | "up-right"
+  | "left-top"
+  | "left-middle"
+  | "left-bottom"
+  | "right-top"
+  | "right-middle"
+  | "right-bottom";
 
 export type TooltipProps = HTMLAttributes<HTMLDivElement> & {
   buttonClose?: boolean;
@@ -34,7 +38,7 @@ export function Tooltip({
   color = "black",
   label = "가로 최대 240, 글자수 최대 8줄",
   mode = "default",
-  position = "bottom-center",
+  position = "down-center",
   role = "tooltip",
   size = "large",
   ...rest

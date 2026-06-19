@@ -1,0 +1,235 @@
+walker.md 규칙 + satomi 퍼소나로 graph 순회 시작.
+
+**경로 추적 결과:**
+- `35:79132` 출발 → Discover(`35:75221`) 도달 가능 경로:
+  - 직접: `I35:79354` → `35:78792` → `I35:78795` → `35:75221` (2턴)
+  - Satomi는 bottom tab(y=9796) 먼저 시도 → 검색 loop → 2턴 손실 → 총 4 decision turns
+
+```json
+{
+  "meta": {
+    "scenario_id": "proto-walk-global-home-community-reentry-v1",
+    "persona": "satomi",
+    "version": "as-is",
+    "date": "2026-06-18",
+    "start_frame": "35:79132",
+    "reach_frame": "35:75221",
+    "goal": "TXT 커뮤니티 피드에서 Discover(글로벌홈)로 이탈하라.",
+    "max_turns": 10
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "frame_id": "35:79132",
+      "frame_name": "커뮤니티_피드탭_하이라이트",
+      "visit_count": 1,
+      "frame_context": {
+        "visible_texts_relevant": [
+          "TOMORROW X TOGETHER",
+          "Home", "Feed", "Live / Media", "Shop",
+          "Highlight", "Fan", "Artist", "Party"
+        ],
+        "available_hotspots": [
+          {
+            "id": "I35:79349;87669:2362",
+            "label": "[하단 우측 아이콘]",
+            "position": "bottom-right tab bar (y=9796)"
+          },
+          {
+            "id": "I35:79354;64535:23272;68650:2404",
+            "label": "[하단 우측 아이콘]",
+            "position": "upper-right area (y=9077)"
+          }
+        ]
+      },
+      "choice_id": "I35:79349;87669:2362",
+      "reasoning": "화면 위쪽에는 Home·Feed·Live·Shop 탭이 있고, 아래쪽 탭 바에도 아이콘들이 있어요. Discover(글로벌 홈)로 가려면 아래 전역 내비게이션 탭을 눌러야 할 것 같아서, 하단 오른쪽 아이콘을 눌렀어요. 텍스트 라벨이 없어서 뭔지 정확히는 모르겠지만, 위치상 글로벌 탭 같아서요 ☺️",
+      "emotion": "기대",
+      "confusion_level": 3,
+      "friction": {
+        "type": "label_unclear",
+        "note": "같은 화면에 '[하단 우측 아이콘]' 라벨의 아이콘이 두 개 있는데, 텍스트 없이 아이콘만 있어서 어느 쪽이 Discover로 가는 버튼인지 전혀 구분이 안 됐어요. 돋보기 없이도 읽히는 텍스트 라벨이 있었으면 바로 알았을 텐데요 💦"
+      },
+      "auto_transit_chain": [
+        "35:79355 (커뮤니티_피드탭_하이라이트 variant)",
+        "35:78115 (검색 — 빈 화면, auto)",
+        "35:78286 (검색 — 목록 로드됨, auto)"
+      ],
+      "landed_frame": "35:78286"
+    },
+    {
+      "turn": 2,
+      "frame_id": "35:78286",
+      "frame_name": "검색",
+      "visit_count": 1,
+      "frame_context": {
+        "visible_texts_relevant": [
+          "나의 커뮤니티",
+          "TOMORROW X TOGETHER",
+          "SEVENTEEN", "CORTIS", "BTS", "LE SSERAFIM",
+          "투모로우바이투게더 커뮤니티 오픈",
+          "더 가까이 소통해보세요!"
+        ],
+        "available_hotspots": [
+          {
+            "id": "35:78334",
+            "label": "가입",
+            "position": "LE SSERAFIM 옆 (y=9539)"
+          },
+          {
+            "id": "I35:78451;68650:39004",
+            "label": "[하단 우측 아이콘]",
+            "position": "upper-right (y=9077)"
+          }
+        ]
+      },
+      "choice_id": "I35:78451;68650:39004",
+      "reasoning": "Discover로 가고 싶었는데 갑자기 검색 화면이 나와서 조금 당황했어요 💦 '나의 커뮤니티'라고 쓰여 있고 투모로우엑스투게더도 보이는데, 여기는 글로벌 홈이 아니에요. 오른쪽 위에 아이콘이 하나 보이는데, 이걸 누르면 Discover로 갈 수 있지 않을까 해서 눌러봐요.",
+      "emotion": "혼란",
+      "confusion_level": 4,
+      "friction": {
+        "type": "unexpected_dest",
+        "note": "하단 탭 아이콘을 눌렀더니 Discover가 아닌 검색 화면으로 왔어요. 어느 방향으로 가야 글로벌 홈에 닿을 수 있는지 감이 전혀 안 잡혀서, 눈에 보이는 아이콘을 일단 눌러보는 수밖에 없었어요."
+      },
+      "auto_transit_chain": [],
+      "landed_frame": "35:79132"
+    },
+    {
+      "turn": 3,
+      "frame_id": "35:79132",
+      "frame_name": "커뮤니티_피드탭_하이라이트",
+      "visit_count": 2,
+      "frame_context": {
+        "visible_texts_relevant": [
+          "TOMORROW X TOGETHER",
+          "Home", "Feed", "Live / Media", "Shop",
+          "Highlight", "Fan", "Artist", "Party"
+        ],
+        "available_hotspots": [
+          {
+            "id": "I35:79349;87669:2362",
+            "label": "[하단 우측 아이콘]",
+            "position": "bottom-right tab bar (y=9796)"
+          },
+          {
+            "id": "I35:79354;64535:23272;68650:2404",
+            "label": "[하단 우측 아이콘]",
+            "position": "upper-right area (y=9077)"
+          }
+        ]
+      },
+      "choice_id": "I35:79354;64535:23272;68650:2404",
+      "reasoning": "또 커뮤니티 화면으로 돌아왔네요 💦 아까 아래쪽 아이콘을 눌렀더니 검색→커뮤니티 루프를 돌았어요. 이번에는 위치가 다른 쪽—위에 있는 아이콘—을 눌러볼게요. 같은 라벨인데 다른 위치니까, 이쪽이 Discover로 가는 버튼일 수도 있어요 ☺️",
+      "emotion": "짜증",
+      "confusion_level": 3,
+      "friction": {
+        "type": "dead_end",
+        "note": "첫 선택이 검색→커뮤니티 루프로 이어져 Discover 경로 발견을 2턴 지연시켰어요. 같은 화면에 동일 라벨 아이콘이 두 개 있는 구조 자체가 혼란의 원인이고요. 어른 덕질은 차분히 해야 하는데, 이렇게 길을 잃으면 금방 지치게 되더라고요 💦"
+      },
+      "auto_transit_chain": [],
+      "landed_frame": "35:78792"
+    },
+    {
+      "turn": 4,
+      "frame_id": "35:78792",
+      "frame_name": "검색",
+      "visit_count": 1,
+      "frame_context": {
+        "visible_texts_relevant": [
+          "나의 커뮤니티",
+          "TOMORROW X TOGETHER",
+          "SEVENTEEN", "CORTIS", "BTS", "LE SSERAFIM"
+        ],
+        "available_hotspots": [
+          {
+            "id": "I35:78795;68650:39004",
+            "label": "[하단 우측 아이콘]",
+            "position": "upper-right (y=9077)"
+          },
+          {
+            "id": "I35:78798;3484:12480",
+            "label": "TOMORROW\nX TOGETHER",
+            "position": "나의 커뮤니티 섹션 썸네일"
+          },
+          {
+            "id": "35:78811",
+            "label": "TOMORROW X TOGETHER",
+            "position": "Weverse DM 섹션 행"
+          }
+        ]
+      },
+      "choice_id": "I35:78795;68650:39004",
+      "reasoning": "또 검색 화면이 나왔어요. 투모로우엑스투게더 항목을 누르면 커뮤니티로 돌아갈 수 있을 것 같은데, 지금은 Discover를 먼저 찾는 게 목표예요. 오른쪽 위 아이콘—이번 검색 화면에서는 이전과 다른 frame일 수도 있으니—을 한 번 더 눌러봐요. 혹시 이쪽이 글로벌 홈으로 가는 길일 수도 있어서요.",
+      "emotion": "기대",
+      "confusion_level": 2,
+      "friction": null,
+      "auto_transit_chain": [],
+      "landed_frame": "35:75221"
+    },
+    {
+      "turn": 5,
+      "frame_id": "35:75221",
+      "frame_name": "Discover",
+      "visit_count": 1,
+      "frame_context": {
+        "visible_texts_relevant": [
+          "TOMORROW X TOGETHER WORLD TOUR ACT : TOMORROW",
+          "새로워진 위버스를 만나보세요!",
+          "Global Fandom Platform, Weverse",
+          "추천 커뮤니티",
+          "DM 트렌드",
+          "놓치지 말아야 할 소식"
+        ]
+      },
+      "choice_id": "REACHED",
+      "reasoning": "드디어 Discover 화면이 나왔어요! '새로워진 위버스를 만나보세요!'라는 문구와 투모로우엑스투게더 월드 투어 배너도 보이고, '추천 커뮤니티' 섹션도 있어서 여기가 글로벌 홈이 맞는 것 같아요 ☺️ 조금 돌아온 것 같아서 아쉽지만, 결국 찾았네요. 다음에는 어느 아이콘이 여기로 오는지 기억해둬야겠어요.",
+      "emotion": "안도",
+      "confusion_level": 1,
+      "friction": null,
+      "auto_transit_chain": [],
+      "landed_frame": "35:75221"
+    }
+  ],
+  "summary": {
+    "outcome": "REACHED",
+    "decision_turns": 4,
+    "total_turns_output": 5,
+    "session_retained": false,
+    "confusion_avg": 2.6,
+    "confusion_by_turn": [3, 4, 3, 2, 1],
+    "friction_count": 3,
+    "friction_types": ["label_unclear", "unexpected_dest", "dead_end"],
+    "frames_visited": [
+      "35:79132 (visit 1)",
+      "35:78286",
+      "35:79132 (visit 2)",
+      "35:78792",
+      "35:75221 — REACHED"
+    ],
+    "wasted_turns_due_to_wrong_path": 2,
+    "key_pain_points": [
+      "동일 frame에 '[하단 우측 아이콘]' 라벨 2개 병존 → 방향 판단 불가, 잘못된 탭 먼저 선택",
+      "잘못된 첫 선택이 검색→커뮤니티 루프를 형성해 2턴 손실 (AS-IS 기준선 페인포인트 확인)",
+      "어떤 아이콘이 Discover로 가는지 텍스트 라벨 없이 예측 불가 (Satomi UX 선호: 아이콘+텍스트 병기)"
+    ],
+    "scores": {
+      "W1_re_entry_goal_reach": 3,
+      "W1_note": "도달 성공, 4 decision turns 소요 (기준선 3~5턴 범위)",
+      "W2_discoverability": 3,
+      "W2_note": "confusion 평균 2.6 → 2.5~3.5 구간",
+      "W3_session_retention": 3,
+      "W3_note": "재진입 루프 중 커뮤니티 컨텍스트(TXT) 인지는 유지했으나, 재확인 행동 1회(turn 3에서 커뮤니티로 돌아와 재시도) 발생"
+    }
+  }
+}
+```
+
+**핵심 발견:**
+- AS-IS 경로에서 35:79132 → Discover 직접 탭 없음 확인. 검색 경유 필수.
+- Satomi는 bottom tab(y=9796) 먼저 선택 → 루프 2턴 손실. **H1 지지** (confusion 2.6, 턴 4+).
+- 동일 라벨 아이콘 2개가 핵심 마찰점. 텍스트 라벨 부재가 Satomi 페르소나에 특히 치명적.
+
+**TL;DR**
+- 결론: Satomi 4 decision turns에 Discover 도달, confusion 평균 2.6, 마찰 3건
+- 다음 행동: 이 transcript로 judge 실행 → R1-R6 + W1-W3 채점
+- 추천: TO-BE에서 Discover 직접 탭(하단 내비 텍스트 라벨 포함) 추가 시 H2 검증 가능 / 대안: 검색 화면 내 "Discover" 명시 진입점

@@ -28,7 +28,7 @@ describe("ChordIcon asset registry", () => {
     expect(screen.getByTestId("icon")).toHaveAttribute("data-icon-size", "10");
   });
 
-  it("registers the TextFields country-code arrow down glyph from the Figma icon area", () => {
+  it("registers the arrow down glyph from the Figma icon area", () => {
     const asset = getChordIconAsset("arrowDownMedium");
 
     expect(asset.sourceName).toBe("24/em/ic_arrow_down_medium");

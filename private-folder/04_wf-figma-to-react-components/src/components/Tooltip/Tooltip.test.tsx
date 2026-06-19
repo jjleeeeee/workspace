@@ -16,7 +16,7 @@ describe("Tooltip", () => {
     expect(tooltip).toHaveAttribute("data-mode", "default");
     expect(tooltip).toHaveAttribute("data-size", "large");
     expect(tooltip).toHaveAttribute("data-color", "black");
-    expect(tooltip).toHaveAttribute("data-position", "bottom-center");
+    expect(tooltip).toHaveAttribute("data-position", "down-center");
     expect(tooltip).toHaveAttribute("data-button-close", "true");
     expect(screen.getByRole("button", { name: "Close tooltip" })).toBeInTheDocument();
   });
@@ -62,9 +62,9 @@ describe("Tooltip", () => {
     expect(tooltipCss).toMatch(
       /\.chord-tooltip\[data-mode="fixed"\]\[data-color="tint"\]\s*\{[^}]*--cds-system-fixed-color-surface-primary-100/s,
     );
-    // Bottom Center must be a separate override using secondary-blue
+    // Down Center must be a separate override using secondary-blue
     expect(tooltipCss).toMatch(
-      /\.chord-tooltip\[data-mode="fixed"\]\[data-color="tint"\]\[data-position="bottom-center"\][^{]*\{[^}]*--cds-system-fixed-color-roles-secondary-blue/s,
+      /\.chord-tooltip\[data-mode="fixed"\]\[data-color="tint"\]\[data-position="down-center"\][^{]*\{[^}]*--cds-system-fixed-color-roles-secondary-blue/s,
     );
   });
 });

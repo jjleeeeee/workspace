@@ -16,8 +16,28 @@ describe("Search", () => {
     expect(search).toHaveAttribute("data-mode", "default");
     expect(search).toHaveAttribute("data-state", "default");
     expect(search).toHaveAttribute("data-clear-visible", "false");
-    expect(search).toHaveTextContent("Search");
+    const input = screen.getByRole("textbox");
+    expect(input).toHaveAttribute("placeholder", "Search");
     expect(screen.queryByRole("button", { name: /clear search/i })).toBeNull();
+  });
+
+  it("fires onChange when input value changes", () => {
+    const onChange = vi.fn();
+    render(<Search onChange={onChange} />);
+    fireEvent.change(screen.getByRole("textbox"), { target: { value: "hello" } });
+    expect(onChange).toHaveBeenCalledWith("hello");
+  });
+
+  it("fires onSearch on Enter keydown", () => {
+    const onSearch = vi.fn();
+    render(<Search onSearch={onSearch} value="hello" />);
+    fireEvent.keyDown(screen.getByRole("textbox"), { key: "Enter" });
+    expect(onSearch).toHaveBeenCalledWith("hello");
+  });
+
+  it("shows placeholder from label prop when placeholder not given", () => {
+    render(<Search label="찾기" />);
+    expect(screen.getByRole("textbox")).toHaveAttribute("placeholder", "찾기");
   });
 
   it("shows the clear control for enabled and completed states", () => {
@@ -46,12 +66,17 @@ describe("Search CSS contract", () => {
     expect(searchCss).not.toMatch(/opacity:\s*0\.3/);
   });
 
-  it("uses mapped search and delete icons from confirmed registry entries", () => {
+  it("uses icon-default token for search icon (not the 30% label color)", () => {
+    expect(searchCss).toContain("--cds-system-color-icon-default");
+    expect(searchCss).toContain("--search-icon");
+  });
+
+  it("uses mapped search and close icons from confirmed registry entries", () => {
     render(<Search state="completed" />);
 
     expect(screen.getByTestId("search-icon")).toHaveAttribute("data-icon-name", "searchMedium");
-    expect(screen.getByTestId("clear-icon")).toHaveAttribute("data-icon-name", "deleteMedium");
-    expect(screen.getByTestId("clear-icon")).toHaveAttribute("data-icon-size", "18");
+    expect(screen.getByTestId("clear-icon")).toHaveAttribute("data-icon-name", "closeMedium");
+    expect(screen.getByTestId("clear-icon")).toHaveAttribute("data-icon-size", "10");
     expect(screen.queryByTestId("clear-icon-unresolved")).not.toBeInTheDocument();
     expect(searchCss).not.toContain("chord-search__search-replacement");
     expect(searchCss).not.toContain("chord-search__clear-graphic::before");

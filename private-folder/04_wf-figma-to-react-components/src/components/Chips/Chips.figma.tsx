@@ -16,13 +16,12 @@ figma.connect(
         Filled_Disabled: "filled-disabled",
         Outlined_Disabled: "outlined-disabled",
       }),
-      radius: figma.enum("Radius", { ON: "on", OFF: "off" }),
       marquee: figma.boolean("Marquee"),
       badge: figma.boolean("Badge"),
       badgeNumber: figma.boolean("Badge_Number"),
     },
-    example: ({ mode, size, type, state, radius, marquee, badge, badgeNumber }) => (
-      <Chips mode={mode} size={size} type={type} state={state} radius={radius} label="텍스트" {...{ marquee, badge, badgeNumber }} />
+    example: ({ mode, size, type, state, marquee, badge, badgeNumber }) => (
+      <Chips mode={mode} size={size} type={type} state={state} label="텍스트" {...{ marquee, badge, badgeNumber }} />
     ),
   }
 );

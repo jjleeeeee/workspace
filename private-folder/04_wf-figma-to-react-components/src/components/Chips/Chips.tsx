@@ -16,21 +16,19 @@ export type ChipsState =
   | "outlined-selected"
   | "filled-disabled"
   | "outlined-disabled";
-export type ChipsRadius = "on" | "off";
-
 export type ChipsProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children" | "disabled" | "type"> & {
   label: string;
   mode?: ChipsMode;
   size?: ChipsSize;
   type?: ChipsType;
   state?: ChipsState;
-  radius?: ChipsRadius;
   marquee?: boolean;
   badge?: boolean;
   badgeNumber?: boolean;
   badgeNumberLabel?: string | number;
   icon?: ReactNode;
   image?: ReactNode;
+  trailingIcon?: boolean | ReactNode;
 };
 
 export function resolveChipsType(type: ChipsType, size: ChipsSize): ChipsType {
@@ -60,9 +58,9 @@ export function Chips({
   label,
   marquee = false,
   mode = "default",
-  radius = "on",
   size = "small",
   state = "default",
+  trailingIcon,
   type: typeProp = "text",
   ...buttonProps
 }: ChipsProps) {
@@ -79,9 +77,9 @@ export function Chips({
       data-badge-number={badgeNumber ? "true" : undefined}
       data-marquee={marquee ? "true" : undefined}
       data-mode={mode}
-      data-radius={radius}
       data-size={size}
       data-state={state}
+      data-trailing={trailingIcon ? "true" : undefined}
       data-type={type}
       disabled={disabled}
       type="button"
@@ -98,6 +96,11 @@ export function Chips({
           </span>
         )}
         <span className="chord-chips__label">{label}</span>
+        {trailingIcon && (
+          <span aria-hidden="true" className="chord-chips__trailing">
+            {trailingIcon}
+          </span>
+        )}
       </span>
       {badgeNumber ? (
         <span aria-hidden="true" className="chord-chips__badge chord-chips__badge--number">

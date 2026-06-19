@@ -1,9 +1,11 @@
+@keyframes chord-skeleton-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
 .chord-skeleton {
   --skeleton-bg: var(--cds-system-color-surface-default-gray-50, #f7f8fa);
   --skeleton-highlight: var(--cds-system-color-surface-default-600a-unequal, rgba(255, 255, 255, 0.8));
-  --skeleton-gradient-start: var(--cds-system-color-surface-default-0a, rgba(255, 255, 255, 0));
-  --skeleton-gradient-end: var(--cds-system-color-surface-default-0a, rgba(255, 255, 255, 0));
-  --skeleton-gradient-width: 50%;
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -14,23 +16,26 @@
 
 .chord-skeleton::after {
   position: absolute;
-  inset-block: 0;
-  inset-inline-start: 50%;
-  inline-size: var(--skeleton-gradient-width);
+  inset: 0;
   content: "";
   background: linear-gradient(
     90deg,
-    var(--skeleton-gradient-start) 0%,
+    transparent 0%,
     var(--skeleton-highlight) 50%,
-    var(--skeleton-gradient-end) 100%
+    transparent 100%
   );
-  transform: translateX(-50%);
+  animation: chord-skeleton-shimmer 1.5s ease-in-out infinite;
 }
 
 .chord-skeleton[data-mode="fixed"] {
   --skeleton-bg: var(--cds-system-fixed-color-surface-gray-100, #333333);
   --skeleton-highlight: var(--cds-system-fixed-color-surface-default-reverse-50a, rgba(255, 255, 255, 0.05));
-  --skeleton-gradient-start: var(--cds-system-fixed-color-surface-default-reverse-0a, rgba(255, 255, 255, 0));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chord-skeleton::after {
+    animation: none;
+  }
 }
 
 .chord-skeleton[data-type="rectangle"] {
@@ -75,10 +80,3 @@
   block-size: 32px;
 }
 
-.chord-skeleton[data-mode="fixed"][data-size="large"]:not([data-type="circle"]) {
-  --skeleton-gradient-width: 160px;
-}
-
-.chord-skeleton[data-mode="fixed"][data-size="medium"]:not([data-type="circle"]) {
-  --skeleton-gradient-width: 67.2px;
-}

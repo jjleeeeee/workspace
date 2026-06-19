@@ -1,49 +1,26 @@
+import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  Tabs,
-  tabsModeOptions,
-  tabsStyleOptions,
-  tabsTypeOptions,
-  tabsSizeOptions,
-} from "./Tabs";
+import { Tabs, tabsModeOptions, tabsTypeOptions } from "./Tabs";
 import "./Tabs.css";
 
-const figmaControlNames = [
-  "mode",
-  "style",
-  "type",
-  "size",
-  "barBadge",
-  "showExpandButton",
-  "scrollMoreSize",
-  "scrollMoreState",
-] as const;
+const figmaControlNames = ["mode", "type", "barBadge"] as const;
 
 const argTypes = {
   mode: { control: { type: "inline-radio" }, options: tabsModeOptions },
-  style: { control: { type: "inline-radio" }, options: tabsStyleOptions },
   type: { control: { type: "inline-radio" }, options: tabsTypeOptions },
-  size: { control: { type: "inline-radio" }, options: tabsSizeOptions },
   barBadge: { control: { type: "boolean" } },
-  showExpandButton: { control: { type: "boolean" } },
-  scrollMoreSize: { control: { type: "inline-radio" }, options: ["medium", "small"] },
-  scrollMoreState: { control: { type: "inline-radio" }, options: ["spread", "fold"] },
 } as const;
 
 const sampleItems = ["Tab 1", "Tab 2", "Tab 3", "Tab 4"];
+const swipeItems = ["Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5", "Tab 6"];
 
 const meta = {
   title: "Atoms/Tabs",
   component: Tabs,
   args: {
     mode: "default",
-    style: "bar",
-    type: "fixed",
-    size: "medium",
+    type: "fill",
     barBadge: false,
-    showExpandButton: true,
-    scrollMoreSize: "small",
-    scrollMoreState: "spread",
     tabItems: sampleItems,
     selectedIndex: 0,
   },
@@ -53,7 +30,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Figma node 65172:10165 기반 [V2] Tabs입니다. Source note: src/figma/tabs.source.md.",
+          "Figma node 65172:10165 기반 [V2] Tabs입니다. Bar style만 지원. Source note: src/figma/tabs.source.md.",
       },
     },
   },
@@ -62,78 +39,52 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
+export const Playground: Story = {
+  render: function Render(args) {
+    const [selected, setSelected] = useState(0);
+    const items = args.type === "swipe" ? swipeItems : sampleItems;
+    return <Tabs {...args} tabItems={items} selectedIndex={selected} onTabChange={setSelected} />;
+  },
+};
 
-export const Styles: Story = {
+export const Types: Story = {
   parameters: { controls: { disable: true } },
-  render: (args) => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>style=bar, type=fixed</span>
-        <Tabs {...args} style="bar" type="fixed" />
+  render: function Render(args) {
+    const [sel1, setSel1] = useState(0);
+    const [sel2, setSel2] = useState(0);
+    return (
+      <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>type=fill (Content Fill)</span>
+          <Tabs {...args} type="fill" selectedIndex={sel1} onTabChange={setSel1} />
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>type=swipe (Content Swipe)</span>
+          <Tabs {...args} type="swipe" tabItems={["Long Label One", "Long Label Two", "Long Label Three", "Long Label Four", "Long Label Five"]} selectedIndex={sel2} onTabChange={setSel2} />
+        </div>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>style=bar, type=scrollable</span>
-        <Tabs {...args} style="bar" type="scrollable" tabItems={["Long Label One", "Long Label Two", "Long Label Three", "Long Label Four", "Long Label Five"]} />
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>style=chip, type=fixed</span>
-        <Tabs {...args} style="chip" type="fixed" />
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>style=chip, type=scrollable</span>
-        <Tabs {...args} style="chip" type="scrollable" />
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>style=chip, type=expand</span>
-        <Tabs {...args} style="chip" type="expand" tabItems={["Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5", "Tab 6", "Tab 7"]} />
-      </div>
-    </div>
-  ),
+    );
+  },
 };
 
 export const Modes: Story = {
   parameters: { controls: { disable: true } },
-  render: (args) => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>mode=default, style=bar</span>
-        <Tabs {...args} mode="default" style="bar" />
+  render: function Render(args) {
+    const [sel1, setSel1] = useState(0);
+    const [sel2, setSel2] = useState(0);
+    return (
+      <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>mode=default</span>
+          <Tabs {...args} mode="default" selectedIndex={sel1} onTabChange={setSel1} />
+        </div>
+        <div style={{ background: "#181818", borderRadius: 8, display: "flex", flexDirection: "column", gap: 4, padding: 16 }}>
+          <span style={{ color: "#aaa", fontFamily: "monospace", fontSize: 11 }}>mode=fixed</span>
+          <Tabs {...args} mode="fixed" selectedIndex={sel2} onTabChange={setSel2} />
+        </div>
       </div>
-      <div style={{ background: "#181818", borderRadius: 8, display: "flex", flexDirection: "column", gap: 4, padding: 16 }}>
-        <span style={{ color: "#aaa", fontFamily: "monospace", fontSize: 11 }}>mode=fixed, style=bar</span>
-        <Tabs {...args} mode="fixed" style="bar" />
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>mode=default, style=chip</span>
-        <Tabs {...args} mode="default" style="chip" />
-      </div>
-      <div style={{ background: "#181818", borderRadius: 8, display: "flex", flexDirection: "column", gap: 4, padding: 16 }}>
-        <span style={{ color: "#aaa", fontFamily: "monospace", fontSize: 11 }}>mode=fixed, style=chip</span>
-        <Tabs {...args} mode="fixed" style="chip" />
-      </div>
-    </div>
-  ),
-};
-
-export const Sizes: Story = {
-  parameters: { controls: { disable: true } },
-  render: (args) => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>size=medium (chip)</span>
-        <Tabs {...args} style="chip" size="medium" />
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>size=small-only-chips</span>
-        <Tabs {...args} style="chip" size="small-only-chips" />
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>size=small (expand)</span>
-        <Tabs {...args} style="chip" type="expand" size="small" tabItems={["Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5"]} />
-      </div>
-    </div>
-  ),
+    );
+  },
 };
 
 export const NestedModules: Story = {
@@ -142,15 +93,7 @@ export const NestedModules: Story = {
     <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
         <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>barBadge=true</span>
-        <Tabs {...args} style="bar" type="fixed" barBadge />
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>scroll_more size=small, state=spread</span>
-        <Tabs {...args} style="chip" type="scrollable" scrollMoreSize="small" scrollMoreState="spread" />
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>expand gradient</span>
-        <Tabs {...args} style="chip" type="expand" tabItems={["Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5", "Tab 6"]} />
+        <Tabs {...args} type="fill" barBadge />
       </div>
     </div>
   ),
@@ -174,7 +117,7 @@ export const FigmaCompare: Story = {
           <span style={{ color: "#777", fontFamily: "monospace", fontSize: 11, fontWeight: 700 }}>
             Implementation
           </span>
-          <Tabs {...args} mode="default" style="bar" type="fixed" size="medium" />
+          <Tabs {...args} mode="default" type="fill" />
         </div>
       </div>
     </div>

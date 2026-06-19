@@ -247,7 +247,7 @@ export function Avatar({
   alt = "프로필 이미지",
   avatarType = "circle",
   badgeDot = true,
-  birthdayHat = true,
+  birthdayHat = false,
   className,
   componentSize,
   emoji = true,

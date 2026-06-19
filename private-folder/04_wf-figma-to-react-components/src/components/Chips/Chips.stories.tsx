@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ChordIcon } from "../../assets/chord-icons";
 import { Chips } from "./Chips";
-import type { ChipsMode, ChipsRadius, ChipsSize, ChipsState, ChipsType } from "./Chips";
+import type { ChipsMode, ChipsSize, ChipsState, ChipsType } from "./Chips";
 
 const chipsBaseline = new URL("../../figma/baselines/chips-default@3x.png", import.meta.url).href;
 const chipsBadgeDotBaseline = new URL("../../figma/baselines/chips-badge-dot@3x.png", import.meta.url).href;
@@ -13,10 +13,10 @@ const figmaControlNames = [
   "label",
   "marquee",
   "mode",
-  "radius",
   "size",
   "state",
-  "type",
+  "trailingIcon",
+  "leading",
 ] as const;
 
 const modeOptions: ChipsMode[] = ["default", "fixed"];
@@ -29,7 +29,6 @@ const stateOptions: ChipsState[] = [
   "filled-disabled",
   "outlined-disabled",
 ];
-const radiusOptions: ChipsRadius[] = ["on", "off"];
 
 const argTypes = {
   badge: { control: { type: "boolean" } },
@@ -37,10 +36,10 @@ const argTypes = {
   label: { control: { type: "text" } },
   marquee: { control: { type: "boolean" } },
   mode: { control: { type: "inline-radio" }, options: modeOptions },
-  radius: { control: { type: "inline-radio" }, options: radiusOptions },
   size: { control: { type: "inline-radio" }, options: sizeOptions },
   state: { control: { type: "select" }, options: stateOptions },
-  type: { control: { type: "inline-radio" }, options: typeOptions },
+  trailingIcon: { control: { type: "boolean" } },
+  type: { control: { type: "select" }, name: "leading", options: typeOptions },
 } as const;
 
 const meta = {
@@ -52,9 +51,9 @@ const meta = {
     label: "Text",
     marquee: false,
     mode: "default",
-    radius: "on",
     size: "small",
     state: "default",
+    trailingIcon: false,
     type: "text",
   },
   argTypes,
@@ -77,9 +76,14 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {
   args: {
     label: "Text",
-    radius: "off",
     size: "medium",
   },
+  render: (args) => (
+    <Chips
+      {...args}
+      trailingIcon={args.trailingIcon === true ? <ChordIcon name="nullMedium" size={16} /> : args.trailingIcon || undefined}
+    />
+  ),
 };
 
 export const Types: Story = {
@@ -121,11 +125,9 @@ export const Badges: Story = {
 export const Sizes: Story = {
   render: (args) => (
     <div style={{ alignItems: "center", display: "flex", flexWrap: "wrap", gap: 8 }}>
-      {sizeOptions.map((size) =>
-        radiusOptions.map((radius) => (
-          <Chips {...args} key={`${size}-${radius}`} label={`${size} / ${radius}`} radius={radius} size={size} />
-        )),
-      )}
+      {sizeOptions.map((size) => (
+        <Chips {...args} key={size} label={size} size={size} />
+      ))}
     </div>
   ),
 };
@@ -151,7 +153,6 @@ export const FigmaCompare: Story = {
   args: {
     label: "Text",
     mode: "default",
-    radius: "off",
     size: "medium",
     state: "default",
     type: "text",
@@ -170,7 +171,6 @@ export const BadgeDotCompare: Story = {
     badge: true,
     label: "Text",
     mode: "default",
-    radius: "on",
     size: "small",
     state: "outlined-selected",
     type: "icon",

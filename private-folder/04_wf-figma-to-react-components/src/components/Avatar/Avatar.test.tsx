@@ -47,7 +47,7 @@ describe("Avatar", () => {
     const avatar = screen.getByTestId("avatar");
     expect(avatar).toHaveAttribute("data-type", "circle");
     expect(screen.getByTestId("avatar-ring")).toBeInTheDocument();
-    expect(screen.getByTestId("avatar-birthday-hat")).toHaveAttribute("data-icon-name", "birthdayHatMedium");
+    expect(screen.queryByTestId("avatar-birthday-hat")).not.toBeInTheDocument();
     expect(screen.getByTestId("avatar-emoji")).toHaveTextContent("🏕");
     expect(screen.queryByTestId("avatar-badge-dot")).not.toBeInTheDocument();
     expect(screen.queryByTestId("avatar-host")).not.toBeInTheDocument();

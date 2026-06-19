@@ -2,7 +2,11 @@
   display: block;
   inline-size: 393px;
   block-size: 852px;
-  background: var(--cds-system-fixed-color-surface-default-400a, #00000080);
+  background: var(--cds-system-fixed-color-surface-default-400a, rgb(0 0 0 / 50%));
+}
+
+.chord-scrim-overlay[data-color="80"] {
+  background: var(--cds-system-fixed-color-surface-default-600a, rgb(0 0 0 / 80%));
 }
 
 .chord-scrim-overlay[data-full-cover="true"] {
