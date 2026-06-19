@@ -55,19 +55,16 @@ Use these tokens in custom layout wrappers or surface-level text elements that s
 
 ---
 
-## Available Components (34 total)
+## Available Components (20 total)
 
 All under `window.ChordDsComponents.*`:
 
-`Avatar` · `AvatarGroup` · `BadgeDot` · `BadgeNumber` · `Checkbox` · `Chips` · `CircularProgressIndicator` · `Divider` · `IconButton` · `LinearProgressIndicator` · `ListItemNative` · `ListItemWeb` · `LoadingCircular` · `LoadingDot` · `Menu` · `PaginationDot` · `PaginationList` · `Radio` · `ScrimOverlay` · `Scrollbar` · `Search` · `SelectNumberBox` · `Skeleton` · `Snackbar` · `Stepper` · `Tabs` · `Tag` · `TextButton` · `Thumbnail` · `TitleHeader` · `Toast` · `ToggleSwitch` · `Tooltip` · `TopNavigation`
-
-Not yet exported (WIP): `DropdownBox`, `TextFields`
+`Avatar` · `BadgeDot` · `BadgeNumber` · `Checkbox` · `Chips` · `FloatingActionButton` · `LoadingDot` · `PaginationDot` · `PaginationList` · `Radio` · `ScrimOverlay` · `Search` · `Skeleton` · `Snackbar` · `Tabs` · `TextButton` · `Toast` · `ToggleSwitch` · `Tooltip` · `TopNavigation`
 
 ---
 
 ## Known Gaps
 
 - **Fonts**: WeGothicSans, Pretendard, CircularXX TT are not shipped — system font fallback applies. Typography spacing is accurate; rendered font face differs.
-- **LinearProgressIndicator**: track width renders narrower than spec inside column card mode (iframe constraint). Color and behavior are correct.
-- **Menu**: font renders slightly smaller due to system fallback. Structure is correct.
+- **Search / ToggleSwitch**: Playground preview renders slightly smaller than storybook reference — cardMode viewport constraint; all variants/states render correctly.
 - **External images**: `FigmaCompare` stories are excluded — they depend on Figma CDN assets blocked in sandbox.
