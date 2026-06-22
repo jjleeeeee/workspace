@@ -63,6 +63,22 @@ All under `window.ChordDsComponents.*`:
 
 ---
 
+## Token Files
+
+Raw design token JSON available in the project under `tokens/`:
+
+| File | Contents |
+|---|---|
+| `tokens/color.json` | System color tokens — 408 tokens, light/dark modes |
+| `tokens/size.json` | Spacing / size scale tokens |
+| `tokens/typography.json` | Typography base tokens |
+| `tokens/typography.semantic.json` | Semantic typography aliases |
+
+Format: `{ tokens: [{ id, name, type, values: { light: { raw, aliasOf }, dark: { raw, aliasOf } } }] }`
+
+Token IDs follow the `system/<category>/<name>` path pattern.
+CSS counterparts are available as `--cds-*` custom properties (already loaded via `styles.css`).
+
 ## Known Gaps
 
 - **Fonts**: WeGothicSans, Pretendard, CircularXX TT are not shipped — system font fallback applies. Typography spacing is accurate; rendered font face differs.
