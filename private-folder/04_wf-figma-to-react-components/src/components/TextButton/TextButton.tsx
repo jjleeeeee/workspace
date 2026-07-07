@@ -1,5 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { ChordIcon } from "../../assets/chord-icons";
+import { cx } from "../../utils/cx";
 import "./TextButton.css";
 
 export type TextButtonMode = "default" | "fixed";
@@ -26,10 +27,6 @@ export type TextButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "col
 };
 
 const typesWithBlack = new Set<TextButtonType>(["filled", "outlinedColor"]);
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export function normalizeTextButtonColor(buttonType: TextButtonType, buttonColor: TextButtonColor) {
   if (buttonColor === "black" && !typesWithBlack.has(buttonType)) return "default";

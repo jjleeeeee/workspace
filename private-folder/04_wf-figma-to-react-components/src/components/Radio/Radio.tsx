@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
+import { cx } from "../../utils/cx";
 import "./Radio.css";
 
 export type RadioMode = "default" | "fixed";
@@ -10,10 +11,6 @@ export type RadioProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type"> &
   nativeType?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
   status?: RadioStatus;
 };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export function resolveRadioStatus(
   status: RadioStatus | undefined,

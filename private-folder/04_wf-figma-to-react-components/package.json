@@ -23,6 +23,7 @@
     "build-storybook": "storybook build",
     "tokens:build": "node scripts/build-tokens.mjs",
     "icons:sync-medium": "node scripts/sync-medium-icons.mjs",
+    "icons:generate": "node scripts/generate-chord-icons.mjs",
     "knowledge:audit": "node scripts/audit-knowledge-layer.mjs",
     "rules:audit": "node scripts/audit-workflow-rules.mjs",
     "visual:baseline": "node scripts/visual-diff.mjs baseline",
@@ -40,6 +41,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.7.0",
+    "lottie-react": "^2.4.1",
     "typescript": "^5.9.3",
     "vite": "^6.4.2"
   },

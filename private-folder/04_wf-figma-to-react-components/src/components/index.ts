@@ -16,6 +16,7 @@ export * from "./FloatingActionButton/FloatingActionButton";
 export * from "./TextButton/TextButton";
 export * from "./Tabs/Tabs";
 export * from "./TopNavigation/TopNavigation";
+export * from "./BottomNavigation/BottomNavigation";
 export * from "./Tooltip/Tooltip";
 export * from "./ToggleSwitch/ToggleSwitch";
 export * from "./Toast/Toast";

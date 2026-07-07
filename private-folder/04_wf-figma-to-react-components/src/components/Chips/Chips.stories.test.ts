@@ -11,6 +11,7 @@ describe("Chips stories", () => {
       "mode",
       "size",
       "state",
+      "trailingIcon",
       "type",
     ]);
   });

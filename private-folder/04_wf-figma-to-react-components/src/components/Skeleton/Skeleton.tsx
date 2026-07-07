@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from "react";
+import { cx } from "../../utils/cx";
 import "./Skeleton.css";
 
 export type SkeletonMode = "default" | "fixed";
@@ -10,10 +11,6 @@ export type SkeletonProps = HTMLAttributes<HTMLSpanElement> & {
   size?: SkeletonSize;
   skeletonType?: SkeletonType;
 };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export function Skeleton({
   className,

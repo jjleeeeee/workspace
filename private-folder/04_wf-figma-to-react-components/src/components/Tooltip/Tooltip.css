@@ -118,7 +118,7 @@
 }
 
 .chord-tooltip[data-color="white-fixed"] .chord-tooltip__bubble {
-  box-shadow: 0 6px 28px #0000001a;
+  box-shadow: var(--cds-system-shadow-lg, 0 6px 28px #0000001a);
 }
 
 .chord-tooltip[data-position^="up"] {

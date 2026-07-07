@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from "react";
+import { cx } from "../../utils/cx";
 import "./PaginationDot.css";
 
 export type PaginationDotMode = "default" | "fixed";
@@ -16,10 +17,6 @@ type DotModel = {
   selected: boolean;
   size: "normal" | "small" | "tiny";
 };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 function dotCountToNumber(dots: PaginationDotCount) {
   return dots === "6+" ? 6 : Number.parseInt(dots, 10);

@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from "react";
 import { ChordIcon } from "../../assets/chord-icons";
+import { cx } from "../../utils/cx";
 import "./Tooltip.css";
 
 export type TooltipMode = "default" | "fixed";
@@ -27,10 +28,6 @@ export type TooltipProps = HTMLAttributes<HTMLDivElement> & {
   position?: TooltipPosition;
   size?: TooltipSize;
 };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export function Tooltip({
   buttonClose = true,

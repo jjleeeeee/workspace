@@ -45,6 +45,7 @@ const DIAGNOSTIC_CODES = new Set([
   "hidden-from-publishing",
   "type:ambiguous-float",
   "alias:dangling",
+  "alias:deleted-but-referenced",
 ]);
 
 function validateCatalog(catalog, filename) {

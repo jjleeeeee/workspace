@@ -1,0 +1,1161 @@
+{
+  "slug": "my-feed",
+  "figma": {
+    "fileKey": "gnxpCiUTQhuWVgmdiSh61A",
+    "nodeId": "2-2207"
+  },
+  "limit": 25,
+  "offset": 25,
+  "hasMore": true,
+  "startedAt": "2026-07-03T06:17:38.108Z",
+  "updatedAt": "2026-07-03T06:19:14.148Z",
+  "totalScanned": 1672,
+  "dsInstancesSkipped": [
+    {
+      "id": "2:2209",
+      "name": "💠 Status_bar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2210",
+      "name": "💠 Top Navigation",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2217",
+      "name": "💠 Badge_Dot",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2223",
+      "name": "💠 Badge_Dot",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2233",
+      "name": "💠 Badge_Dot",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2239",
+      "name": "💠 Badge_Dot",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2276;1202:87110",
+      "name": "💠 [V2] Tabs",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2276;4742:80887;307:33362",
+      "name": "💠 [V2] Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2276;4742:80887;313:34432",
+      "name": "💠 [V2] Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2276;4742:80887;313:34514",
+      "name": "💠 [V2] Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2276;4742:80887;416:85430",
+      "name": "💠 [V2] Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2276;4742:80887;4750:122141",
+      "name": "💠 [V2] Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2276;4742:80887;4750:123150",
+      "name": "💠 [V2] Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2276;4742:80887;4750:123753",
+      "name": "💠 [V2] Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2276;1202:87117;76502:9617;73675:33592;73587:6511",
+      "name": "💠 [V2] Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2300",
+      "name": "💠 [V2] Tabs",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2304;76502:9617;62973:7807",
+      "name": "💠 Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2305;1202:85748",
+      "name": "💠 [V2] Thumbnail",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2305;319:38422",
+      "name": "💠 Pagination_Dot(v2)",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2307;76502:9617;62973:7807",
+      "name": "💠 Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2317;121:53455",
+      "name": "🛠️ List_Item_Native",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2317;166:42070",
+      "name": "💠 [V1] Divider",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2320;76502:9617;62973:7807",
+      "name": "💠 Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2321;1202:85748",
+      "name": "💠 [V2] Thumbnail",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2321;319:38422",
+      "name": "💠 Pagination_Dot(v2)",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2323;76502:9617;62973:7807",
+      "name": "💠 Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2333;121:53455",
+      "name": "🛠️ List_Item_Native",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2333;166:42070",
+      "name": "💠 [V1] Divider",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2336",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2338;76502:9617;73675:33592",
+      "name": "🛠️ Avatar Group (디자인 개별 사용금지)",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2341;416:75680",
+      "name": "💠 Text Button",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2363",
+      "name": "💠 [V2] Tabs",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2367",
+      "name": "💠 Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2382;76502:9617;62973:7807",
+      "name": "💠 Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2384;76502:9617;62973:7807",
+      "name": "💠 Avatar",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2387",
+      "name": "💠 [V2] Thumbnail",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2391",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2392",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2415",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2416",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2417",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2418",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2419",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2420",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2421",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2439",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2440",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2441",
+      "name": "🛠️ tag",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2443",
+      "name": "🛠️ Merch(Native)",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2444",
+      "name": "🛠️ Merch(Native)",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2445",
+      "name": "🛠️ Merch(Native)",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2446",
+      "name": "🛠️ Merch(Native)",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2447",
+      "name": "🛠️ Merch(Native)",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2448",
+      "name": "🛠️ Merch(Native)",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "I2:2449;416:75680",
+      "name": "💠 Text Button",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    },
+    {
+      "id": "2:2450",
+      "name": "💠 Bottom Navigation",
+      "mainComponentId": null,
+      "mainComponentKey": null,
+      "mainComponentName": null
+    }
+  ],
+  "nodes": [
+    {
+      "id": "2:2207",
+      "name": "MyFeed",
+      "type": "FRAME",
+      "parent": "0:1",
+      "layout": {
+        "mode": "VERTICAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 0
+      },
+      "geometry": {
+        "w": 393,
+        "h": 2259,
+        "x": 698,
+        "y": 0
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:246021494b0abee2b26c6a69b2752f263fad6633/89509:52212"
+            }
+          }
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:246021494b0abee2b26c6a69b2752f263fad6633/89509:52212"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2:2208",
+      "name": "navigationBar",
+      "type": "FRAME",
+      "parent": "2:2207",
+      "layout": {
+        "mode": "VERTICAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 0
+      },
+      "geometry": {
+        "w": 393,
+        "h": 98,
+        "x": 0,
+        "y": 0
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:246021494b0abee2b26c6a69b2752f263fad6633/89509:52212"
+            }
+          }
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2211",
+      "name": "tabs",
+      "type": "FRAME",
+      "parent": "2:2207",
+      "layout": {
+        "mode": "HORIZONTAL",
+        "padding": [
+          0,
+          16,
+          0,
+          16
+        ],
+        "itemSpacing": 16
+      },
+      "geometry": {
+        "w": 393,
+        "h": 48,
+        "x": 0,
+        "y": 98
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2212",
+      "name": "tab02",
+      "type": "FRAME",
+      "parent": "2:2211",
+      "layout": {
+        "mode": "HORIZONTAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 69,
+        "h": 48,
+        "x": 16,
+        "y": 0
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2213",
+      "name": "tabInner",
+      "type": "FRAME",
+      "parent": "2:2212",
+      "layout": {
+        "mode": "HORIZONTAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 69,
+        "h": 27,
+        "x": 0,
+        "y": 10.5
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2214",
+      "name": "text",
+      "type": "FRAME",
+      "parent": "2:2213",
+      "layout": {
+        "mode": "VERTICAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 69,
+        "h": 27,
+        "x": 0,
+        "y": 0
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2215",
+      "name": "myFeedLabel",
+      "type": "TEXT",
+      "parent": "2:2214",
+      "layout": null,
+      "geometry": {
+        "w": 69,
+        "h": 23,
+        "x": 0,
+        "y": 0
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.067,
+            "g": 0.067,
+            "b": 0.067
+          }
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": null,
+      "text": {
+        "characters": "My Feed",
+        "styleId": "S:7eb61da9681efc803e014b2a883df6c395de11ba,34308:26"
+      },
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2216",
+      "name": "line",
+      "type": "RECTANGLE",
+      "parent": "2:2214",
+      "layout": null,
+      "geometry": {
+        "w": 69,
+        "h": 2,
+        "x": 0,
+        "y": 25
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          }
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2218",
+      "name": "tab01",
+      "type": "FRAME",
+      "parent": "2:2211",
+      "layout": {
+        "mode": "HORIZONTAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 70,
+        "h": 48,
+        "x": 101,
+        "y": 0
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2219",
+      "name": "tabInner",
+      "type": "FRAME",
+      "parent": "2:2218",
+      "layout": {
+        "mode": "HORIZONTAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 70,
+        "h": 27,
+        "x": 0,
+        "y": 10.5
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2220",
+      "name": "text",
+      "type": "FRAME",
+      "parent": "2:2219",
+      "layout": {
+        "mode": "VERTICAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 70,
+        "h": 27,
+        "x": 0,
+        "y": 0
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2221",
+      "name": "discoverLabel",
+      "type": "TEXT",
+      "parent": "2:2220",
+      "layout": null,
+      "geometry": {
+        "w": 70,
+        "h": 23,
+        "x": 0,
+        "y": 0
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.282,
+            "g": 0.282,
+            "b": 0.282
+          }
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": null,
+      "text": {
+        "characters": "Discover",
+        "styleId": "S:7eb61da9681efc803e014b2a883df6c395de11ba,34308:26"
+      },
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2222",
+      "name": "line",
+      "type": "RECTANGLE",
+      "parent": "2:2220",
+      "layout": null,
+      "geometry": {
+        "w": 69,
+        "h": 2,
+        "x": 0,
+        "y": 25
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          }
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2224",
+      "name": "tab03",
+      "type": "FRAME",
+      "parent": "2:2211",
+      "layout": {
+        "mode": "HORIZONTAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 45,
+        "h": 48,
+        "x": 187,
+        "y": 0
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2225",
+      "name": "tabContent",
+      "type": "FRAME",
+      "parent": "2:2224",
+      "layout": {
+        "mode": "HORIZONTAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 45,
+        "h": 28,
+        "x": 0,
+        "y": 10
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2226",
+      "name": "text",
+      "type": "FRAME",
+      "parent": "2:2225",
+      "layout": {
+        "mode": "VERTICAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 45,
+        "h": 28,
+        "x": 0,
+        "y": 0
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2227",
+      "name": "logo",
+      "type": "FRAME",
+      "parent": "2:2226",
+      "layout": {
+        "mode": "NONE",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 0
+      },
+      "geometry": {
+        "w": 45,
+        "h": 24,
+        "x": 0,
+        "y": 0
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2228",
+      "name": "union",
+      "type": "BOOLEAN_OPERATION",
+      "parent": "2:2227",
+      "layout": null,
+      "geometry": {
+        "w": 44.63,
+        "h": 17,
+        "x": 0,
+        "y": 6
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.282,
+            "g": 0.282,
+            "b": 0.282
+          }
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2229",
+      "name": "vector",
+      "type": "VECTOR",
+      "parent": "2:2228",
+      "layout": null,
+      "geometry": {
+        "w": 15.5,
+        "h": 15.3,
+        "x": 29.1,
+        "y": 7.7
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2230",
+      "name": "vectorB",
+      "type": "VECTOR",
+      "parent": "2:2228",
+      "layout": null,
+      "geometry": {
+        "w": 17.1,
+        "h": 8.97,
+        "x": 11.97,
+        "y": 10.11
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2231",
+      "name": "vectorC",
+      "type": "VECTOR",
+      "parent": "2:2228",
+      "layout": null,
+      "geometry": {
+        "w": 12.66,
+        "h": 12.98,
+        "x": 0,
+        "y": 6
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2232",
+      "name": "line",
+      "type": "RECTANGLE",
+      "parent": "2:2226",
+      "layout": null,
+      "geometry": {
+        "w": 42,
+        "h": 2,
+        "x": 0,
+        "y": 25
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          }
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2234",
+      "name": "tab01",
+      "type": "FRAME",
+      "parent": "2:2211",
+      "layout": {
+        "mode": "HORIZONTAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 38,
+        "h": 48,
+        "x": 248,
+        "y": 0
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2235",
+      "name": "tabInner",
+      "type": "FRAME",
+      "parent": "2:2234",
+      "layout": {
+        "mode": "HORIZONTAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 38,
+        "h": 27,
+        "x": 0,
+        "y": 10.5
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    },
+    {
+      "id": "2:2236",
+      "name": "text",
+      "type": "FRAME",
+      "parent": "2:2235",
+      "layout": {
+        "mode": "VERTICAL",
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "itemSpacing": 2
+      },
+      "geometry": {
+        "w": 38,
+        "h": 27,
+        "x": 0,
+        "y": 0
+      },
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "cornerRadius": 0,
+      "text": null,
+      "boundVariables": {}
+    }
+  ]
+}

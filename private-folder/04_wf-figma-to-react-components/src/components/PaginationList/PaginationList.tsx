@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from "react";
 import { ChordIcon } from "../../assets/chord-icons";
+import { cx } from "../../utils/cx";
 import "./PaginationList.css";
 
 export type PaginationListMode = "default" | "fixed";
@@ -17,10 +18,6 @@ export type PaginationListItem =
   | { disabled: boolean; key: "previous" | "next"; kind: "control" }
   | { key: string; kind: "page"; page: number; selected: boolean }
   | { key: "ellipsis"; kind: "ellipsis" };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 function pagesToCount(pages: PaginationListPages) {
   return pages === "8+" ? 8 : Number.parseInt(pages, 10);

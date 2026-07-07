@@ -10,14 +10,16 @@
 # ```
 
 SCRIPT_PATH=$(dirname "$0")
+VENV_PATH="$SCRIPT_PATH/.venv"
+PYTHON_BIN="$VENV_PATH/bin/python"
 
 install_python_module() {
     module_name=$1
 
-    if pip3 show $module_name >/dev/null 2>&1; then
+    if "$PYTHON_BIN" -m pip show $module_name >/dev/null 2>&1; then
         echo "$module_name is already installed"
     else
-        pip3 install $module_name
+        "$PYTHON_BIN" -m pip install $module_name
 
         if [ $? -eq 0 ]; then
             echo "Successfully installed $module_name"
@@ -27,14 +29,18 @@ install_python_module() {
     fi
 }
 
+if [ ! -x "$PYTHON_BIN" ]; then
+    python3 -m venv "$VENV_PATH"
+fi
+
 install_python_module requests
 
 case "$1" in
     -f|--force)
         shift
-        python3 "$SCRIPT_PATH/update-figma-res.py" --force "$@"
+        "$PYTHON_BIN" "$SCRIPT_PATH/update-figma-res.py" --force "$@"
         ;;
     *)
-        python3 "$SCRIPT_PATH/update-figma-res.py" "$@"
+        "$PYTHON_BIN" "$SCRIPT_PATH/update-figma-res.py" "$@"
         ;;
 esac

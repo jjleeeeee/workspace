@@ -6,13 +6,16 @@ build/
 .env
 .env.local
 .env.*.local
+**/.figma_token
 storybook-static/
 .serena/
+.vite/
 .omc/
 .playwright-cli/
 .playwright-mcp/
 
 .venv/
+.build/
 __pycache__/
 *.pyc
 
@@ -24,6 +27,10 @@ cds-catalogs/
 design-cds-docs/
 01_second-brain/
 08_presentation_docs/vendor/frontend-slides/
+figma-make-template/
+second-brain/
+private-folder/95_mac-app-test/
+.claude/worktrees/
 
 # 임시/실험 산출물 — Codex 리뷰 노이즈 제거
 .tmp/

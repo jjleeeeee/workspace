@@ -1,5 +1,6 @@
 import type { ButtonHTMLAttributes } from "react";
 import { ChordIcon } from "../../assets/chord-icons";
+import { cx } from "../../utils/cx";
 import "./Checkbox.css";
 
 export type CheckboxMode = "default" | "fixed";
@@ -13,10 +14,6 @@ export type CheckboxProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type"
   nativeType?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
   status?: CheckboxStatus;
 };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export function resolveCheckboxStatus(
   status: CheckboxStatus | undefined,

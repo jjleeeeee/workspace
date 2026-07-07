@@ -1,10 +1,12 @@
 import type { ReactNode } from "react";
 import { ChordIcon } from "../../assets/chord-icons";
+import { ChordLogo, type ChordLogoName } from "../../assets/chord-logos";
 import { Avatar } from "../Avatar/Avatar";
 import { Search } from "../Search/Search";
 import "./TopNavigation.css";
 
 export type TopNavigationMode = "default" | "fixed";
+export type TopNavigationOS = "ios" | "android";
 export type TopNavigationTextType =
   | "default"
   | "left"
@@ -19,6 +21,7 @@ export type TopNavigationLeadingType = "icon-avatar" | "avatar" | "icon";
 export type TopNavigationTrailingCount = "1ea" | "2ea" | "3ea" | "lottie";
 
 export const topNavigationModeOptions: TopNavigationMode[] = ["default", "fixed"];
+export const topNavigationOSOptions: TopNavigationOS[] = ["ios", "android"];
 export const topNavigationTextTypeOptions: TopNavigationTextType[] = [
   "default",
   "left",
@@ -35,6 +38,7 @@ export const topNavigationTrailingCountOptions: TopNavigationTrailingCount[] = [
 
 export type TopNavigationProps = {
   mode?: TopNavigationMode;
+  os?: TopNavigationOS;
   textType?: TopNavigationTextType;
   scrollBg?: TopNavigationScrollBg;
   marquee?: boolean;
@@ -48,6 +52,7 @@ export type TopNavigationProps = {
   showTrailing?: boolean;
   showImage?: boolean;
   showOfficialBadge?: boolean;
+  logoName?: ChordLogoName;
   leadingSlot?: ReactNode;
   leadingAvatarSlot?: ReactNode;
   trailingSlot?: ReactNode;
@@ -72,6 +77,7 @@ function DefaultAvatar() {
 
 export function TopNavigation({
   mode = "default",
+  os = "ios",
   textType = "center",
   scrollBg = "off",
   marquee = false,
@@ -85,6 +91,7 @@ export function TopNavigation({
   showTrailing = true,
   showImage = true,
   showOfficialBadge = true,
+  logoName,
   leadingSlot,
   leadingAvatarSlot,
   trailingSlot,
@@ -95,9 +102,10 @@ export function TopNavigation({
   const isSearch = textType === "search";
   const isLogo = textType === "logo-svg" || textType === "logo-svg-center";
   const isImg = textType === "img" || textType === "img-text";
-  const hasLeading = showLeading && !isImg;
+  // logo-svg has no leading per Figma; logo-svg-center does (icon only)
+  const hasLeading = showLeading && !isImg && textType !== "logo-svg";
   const hasTrailing = showTrailing;
-  const trailingItemCount = trailingCount === "3ea" ? 3 : trailingCount === "2ea" ? 2 : 1;
+  const trailingItemCount = ({ "3ea": 3, "2ea": 2 } as Record<string, number>)[trailingCount] ?? 1;
   const defaultLeading = (() => {
     if (leadingSlot) return leadingSlot;
     if (leadingType === "avatar") return leadingAvatarSlot ?? <DefaultAvatar />;
@@ -115,11 +123,8 @@ export function TopNavigation({
     );
   })();
   const defaultImage = imageSlot ?? <DefaultAvatar />;
-  const defaultLogo = logoSlot ?? (
-    <span className="chord-top-navigation__logo-placeholder" data-asset-classification="unknown">
-      Logo
-    </span>
-  );
+  const resolvedLogoName = logoName ?? (mode === "fixed" ? "fixedShopWText" : "defaultShopWText");
+  const defaultLogo = logoSlot ?? <ChordLogo name={resolvedLogoName} />;
   const renderTrailingItem = (index: number) => {
     if (trailingCount === "lottie") {
       return (
@@ -140,6 +145,7 @@ export function TopNavigation({
       data-leading-type={leadingType}
       data-marquee={String(marquee)}
       data-mode={mode}
+      data-os={os}
       data-text-type={textType}
       data-scroll-bg={scrollBg}
       data-trailing-count={trailingCount}
@@ -155,7 +161,12 @@ export function TopNavigation({
           <Search />
         </div>
       ) : isLogo ? (
-        <div className="chord-top-navigation__logo">{defaultLogo}</div>
+        <>
+          <div className="chord-top-navigation__logo">{defaultLogo}</div>
+          {textType === "logo-svg-center" && (
+            <div className="chord-top-navigation__spacer" aria-hidden="true" />
+          )}
+        </>
       ) : (
         <>
           {isImg && showImage && (
@@ -172,12 +183,12 @@ export function TopNavigation({
             </div>
             {showSubTitle && textType !== "img" && (
               <span className="chord-top-navigation__subtitle-row">
+                <span className="chord-top-navigation__subtitle">{subTitleLabel}</span>
                 {showSubTitleIcon && (
                   <span className="chord-top-navigation__subtitle-icon">
                     <ChordIcon name="nullMedium" size={12} />
                   </span>
                 )}
-                <span className="chord-top-navigation__subtitle">{subTitleLabel}</span>
               </span>
             )}
           </div>

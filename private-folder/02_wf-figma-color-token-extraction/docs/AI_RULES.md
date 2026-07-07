@@ -74,6 +74,7 @@ record `alias:dangling` diagnostics.
 
 - `../chord-design-system/tokens/color.json` exists.
 - `../chord-design-system/tokens/size.json` exists.
+- `../chord-design-system/tokens/breakpoint.json` exists.
 - `../chord-design-system/tokens/typography.json` exists.
 - `../chord-design-system/tokens/typography.semantic.json` exists.
 - Validation reports `errorCount: 0`.

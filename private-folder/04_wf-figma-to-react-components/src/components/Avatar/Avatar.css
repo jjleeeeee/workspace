@@ -99,7 +99,7 @@
   background: var(--avatar-emoji-bg);
   block-size: var(--avatar-emoji-size);
   border-radius: 999px;
-  box-shadow: 0 6px 28px #0000001a;
+  box-shadow: var(--cds-system-shadow-lg);
   box-sizing: border-box;
   display: inline-flex;
   font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",

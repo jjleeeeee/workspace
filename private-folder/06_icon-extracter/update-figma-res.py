@@ -13,7 +13,8 @@ import time
 REQUEST_TIMEOUT_SECONDS = 20
 REQUEST_RETRY_COUNT = 3
 REQUEST_RETRY_DELAY_SECONDS = 1
-WORKSPACE_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+PRIVATE_FOLDER_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+WORKSPACE_ROOT = os.path.abspath(os.path.join(PRIVATE_FOLDER_ROOT, ".."))
 
 
 def load_env_file(filepath):
@@ -35,6 +36,7 @@ def load_env_file(filepath):
 
 
 def get_required_env(name):
+    load_env_file(os.path.join(PRIVATE_FOLDER_ROOT, ".env"))
     load_env_file(os.path.join(WORKSPACE_ROOT, ".env"))
     value = os.environ.get(name, "").strip()
     if not value:

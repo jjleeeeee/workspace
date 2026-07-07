@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from "react";
+import { cx } from "../../utils/cx";
 import "./BadgeDot.css";
 
 export type BadgeDotMode = "default" | "fixed";
@@ -10,10 +11,6 @@ export type BadgeDotProps = HTMLAttributes<HTMLSpanElement> & {
   outline?: BadgeDotOutline;
   size?: BadgeDotSize;
 };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export function BadgeDot({
   className,

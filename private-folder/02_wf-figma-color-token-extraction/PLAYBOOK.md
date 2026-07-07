@@ -93,7 +93,7 @@ diff -u <previous-color-snapshot> ../chord-design-system/tokens/color.json
 
 ## 7. Done Criteria
 
-- `../chord-design-system/tokens/{color,size,typography,typography.semantic}.json`이 생성됐다.
+- `../chord-design-system/tokens/{color,size,breakpoint,typography,typography.semantic}.json`이 생성됐다.
 - validation `errorCount`가 `0`이다.
 - token count, added/removed/changed id를 확인했다.
 - `base/color` output count, non-hex count, non-null alias count가 모두 `0`이다.

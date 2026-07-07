@@ -71,6 +71,7 @@
   --cds-typography-default-font-weight-extra-bold: 800;
   --cds-typography-default-font-weight-medium: 500;
   --cds-typography-default-font-weight-regular: 400;
+  --cds-system-shadow-lg: var(--cds-system-shadow-position-x-large) var(--cds-system-shadow-position-y-large) var(--cds-system-shadow-blur-large) var(--cds-system-shadow-spread-large) var(--cds-system-fixed-color-surface-default-100a);
 }
 
 :root, [data-theme='light'] {
@@ -78,43 +79,8 @@
   --cds-system-color-button-black: #000000;
   --cds-system-color-button-default: #00CBD5;
   --cds-system-color-button-disabled: #0000001A;
-  --cds-system-color-button-ghost: #FFFFFF00;
   --cds-system-color-button-hover: #0000000A;
   --cds-system-color-button-outlined-gray: #DEDEDE;
-  --cds-system-color-community-blue-1: #2898FD;
-  --cds-system-color-community-blue-2: #0A84FF;
-  --cds-system-color-community-brown-1: #D77F04;
-  --cds-system-color-community-brown-2: #C28B00;
-  --cds-system-color-community-brown-3: #A46904;
-  --cds-system-color-community-coral-1: #E9687E;
-  --cds-system-color-community-coral-2: #F34965;
-  --cds-system-color-community-cyan-1: #2FA1C2;
-  --cds-system-color-community-cyan-2: #0A7A94;
-  --cds-system-color-community-green-1: #70A300;
-  --cds-system-color-community-green-2: #1EAC02;
-  --cds-system-color-community-green-3: #198407;
-  --cds-system-color-community-indigo-1: #757DFF;
-  --cds-system-color-community-indigo-2: #5855FF;
-  --cds-system-color-community-olive-1: #A89267;
-  --cds-system-color-community-olive-2: #A39600;
-  --cds-system-color-community-olive-3: #8A7709;
-  --cds-system-color-community-orange-1: #F76838;
-  --cds-system-color-community-orange-2: #F4511A;
-  --cds-system-color-community-orange-3: #D13F00;
-  --cds-system-color-community-pink-1: #E968A6;
-  --cds-system-color-community-pink-2: #F34996;
-  --cds-system-color-community-pink-3: #F62382;
-  --cds-system-color-community-purple-1: #987DE8;
-  --cds-system-color-community-purple-2: #815BE1;
-  --cds-system-color-community-purple-3: #7D2BE5;
-  --cds-system-color-community-red-1: #FF5757;
-  --cds-system-color-community-red-2: #F73838;
-  --cds-system-color-community-red-3: #D31717;
-  --cds-system-color-community-teal-1: #26A69A;
-  --cds-system-color-community-teal-2: #1C857E;
-  --cds-system-color-community-violet-1: #CA8BE9;
-  --cds-system-color-community-violet-2: #B353E4;
-  --cds-system-color-community-violet-3: #A42EE0;
   --cds-system-color-divide-default-100a: #0000001A;
   --cds-system-color-divide-default-200a: #00000033;
   --cds-system-color-divide-default-300a: #0000004D;
@@ -131,35 +97,6 @@
   --cds-system-color-divide-gray-75: #F2F3F7;
   --cds-system-color-divide-white-300a-same: #FFFFFF4D;
   --cds-system-color-divide-white-500a-same: #FFFFFFA6;
-  --cds-system-color-dm-point-black: #00CBD5;
-  --cds-system-color-dm-point-blue: #2DB4FF;
-  --cds-system-color-dm-point-green: #11D33C;
-  --cds-system-color-dm-point-hotpink: #FE648E;
-  --cds-system-color-dm-point-mint: #00CBD5;
-  --cds-system-color-dm-point-orange: #FD721C;
-  --cds-system-color-dm-point-pink: #F55AFF;
-  --cds-system-color-dm-point-purple: #836AFD;
-  --cds-system-color-dm-point-red: #FF6557;
-  --cds-system-color-dm-point-yellow: #FBC100;
-  --cds-system-color-dm-speech-bubble-black: #45474F;
-  --cds-system-color-dm-speech-bubble-blue: #D9EFFF;
-  --cds-system-color-dm-speech-bubble-green: #DAFDDA;
-  --cds-system-color-dm-speech-bubble-hotpink: #FEDFE4;
-  --cds-system-color-dm-speech-bubble-mint: #BBF3F6;
-  --cds-system-color-dm-speech-bubble-orange: #FFE3D6;
-  --cds-system-color-dm-speech-bubble-outline-blue: #2DB4FF1A;
-  --cds-system-color-dm-speech-bubble-outline-green: #11D33C1A;
-  --cds-system-color-dm-speech-bubble-outline-hotpink: #FE648E1A;
-  --cds-system-color-dm-speech-bubble-outline-mint: #08CCCA1A;
-  --cds-system-color-dm-speech-bubble-outline-orange: #FD721C1A;
-  --cds-system-color-dm-speech-bubble-outline-pink: #F55AFF1A;
-  --cds-system-color-dm-speech-bubble-outline-purple: #836AFD1A;
-  --cds-system-color-dm-speech-bubble-outline-red: #FF65571A;
-  --cds-system-color-dm-speech-bubble-outline-yellow: #FBC1001A;
-  --cds-system-color-dm-speech-bubble-pink: #FDE0FE;
-  --cds-system-color-dm-speech-bubble-purple: #E4E3FD;
-  --cds-system-color-dm-speech-bubble-red: #FEDFE4;
-  --cds-system-color-dm-speech-bubble-yellow: #FFEDC6;
   --cds-system-color-icon-100a: #0000001A;
   --cds-system-color-icon-200a: #00000033;
   --cds-system-color-icon-200a-2: #00000033;
@@ -490,6 +427,22 @@
   --cds-system-size-button-height-xsmall: 32px;
   --cds-system-size-button-height-xxlarge: 56px;
   --cds-system-size-button-height-xxsmall: 24px;
+  --cds-system-size-gap-0: 0px;
+  --cds-system-size-gap-100: 8px;
+  --cds-system-size-gap-125: 10px;
+  --cds-system-size-gap-150: 12px;
+  --cds-system-size-gap-200: 16px;
+  --cds-system-size-gap-25: 2px;
+  --cds-system-size-gap-250: 20px;
+  --cds-system-size-gap-300: 24px;
+  --cds-system-size-gap-350: 28px;
+  --cds-system-size-gap-400: 32px;
+  --cds-system-size-gap-50: 4px;
+  --cds-system-size-gap-75: 6px;
+  --cds-system-size-gap-negative-100: -8px;
+  --cds-system-size-gap-negative-25: -2px;
+  --cds-system-size-gap-negative-50: -4px;
+  --cds-system-size-gap-negative-75: -6px;
   --cds-system-size-icon-10nquad: 5px;
   --cds-system-size-icon-12mquad: 12px;
   --cds-system-size-icon-12nquad: 6px;
@@ -512,6 +465,7 @@
   --cds-system-size-padding-box-0: 0px;
   --cds-system-size-padding-box-100: 8px;
   --cds-system-size-padding-box-1000: 80px;
+  --cds-system-size-padding-box-125: 10px;
   --cds-system-size-padding-box-150: 12px;
   --cds-system-size-padding-box-200: 16px;
   --cds-system-size-padding-box-25: 2px;
@@ -526,17 +480,6 @@
   --cds-system-size-padding-box-75: 6px;
   --cds-system-size-padding-box-800: 64px;
   --cds-system-size-padding-box-900: 72px;
-  --cds-system-size-padding-box-negative-100: -8px;
-  --cds-system-size-padding-box-negative-25: -2px;
-  --cds-system-size-padding-box-negative-50: -4px;
-  --cds-system-size-padding-box-negative-75: -6px;
-  --cds-system-size-padding-thumb-0: 0px;
-  --cds-system-size-padding-thumb-100: 8px;
-  --cds-system-size-padding-thumb-25: 2px;
-  --cds-system-size-padding-thumb-250: 20px;
-  --cds-system-size-padding-thumb-300: 24px;
-  --cds-system-size-padding-thumb-350: 28px;
-  --cds-system-size-padding-thumb-50: 4px;
   --cds-system-size-radius-box-0: 0px;
   --cds-system-size-radius-box-100: 8px;
   --cds-system-size-radius-box-150: 12px;
@@ -546,52 +489,19 @@
   --cds-system-size-radius-box-300: 24px;
   --cds-system-size-radius-box-50: 4px;
   --cds-system-size-radius-box-75: 6px;
-  --cds-system-size-radius-thumb-150: 12px;
-  --cds-system-size-radius-thumb-200: 16px;
-  --cds-system-size-radius-thumb-250: 20px;
+  --cds-system-size-radius-pill: 999px;
+  --cds-system-shadow-blur-large: 24px;
+  --cds-system-shadow-position-x-large: 0px;
+  --cds-system-shadow-position-y-large: 6px;
+  --cds-system-shadow-spread-large: 0px;
 }
 
 [data-theme='dark'] {
   --cds-system-color-button-black: #FFFFFF;
   --cds-system-color-button-default: #01D5DF;
   --cds-system-color-button-disabled: #FFFFFF1A;
-  --cds-system-color-button-ghost: #FFFFFF00;
   --cds-system-color-button-hover: #FFFFFF0D;
   --cds-system-color-button-outlined-gray: #333333;
-  --cds-system-color-community-blue-1: #2898FD;
-  --cds-system-color-community-blue-2: #0A84FF;
-  --cds-system-color-community-brown-1: #D77F04;
-  --cds-system-color-community-brown-2: #C28B00;
-  --cds-system-color-community-brown-3: #A46904;
-  --cds-system-color-community-coral-1: #E9687E;
-  --cds-system-color-community-coral-2: #F34965;
-  --cds-system-color-community-cyan-1: #2FA1C2;
-  --cds-system-color-community-cyan-2: #0A7A94;
-  --cds-system-color-community-green-1: #70A300;
-  --cds-system-color-community-green-2: #1EAC02;
-  --cds-system-color-community-green-3: #198407;
-  --cds-system-color-community-indigo-1: #757DFF;
-  --cds-system-color-community-indigo-2: #5855FF;
-  --cds-system-color-community-olive-1: #A89267;
-  --cds-system-color-community-olive-2: #A39600;
-  --cds-system-color-community-olive-3: #8A7709;
-  --cds-system-color-community-orange-1: #F76838;
-  --cds-system-color-community-orange-2: #F4511A;
-  --cds-system-color-community-orange-3: #D13F00;
-  --cds-system-color-community-pink-1: #E968A6;
-  --cds-system-color-community-pink-2: #F34996;
-  --cds-system-color-community-pink-3: #F62382;
-  --cds-system-color-community-purple-1: #987DE8;
-  --cds-system-color-community-purple-2: #815BE1;
-  --cds-system-color-community-purple-3: #7D2BE5;
-  --cds-system-color-community-red-1: #FF5757;
-  --cds-system-color-community-red-2: #F73838;
-  --cds-system-color-community-red-3: #D31717;
-  --cds-system-color-community-teal-1: #26A69A;
-  --cds-system-color-community-teal-2: #1C857E;
-  --cds-system-color-community-violet-1: #CA8BE9;
-  --cds-system-color-community-violet-2: #B353E4;
-  --cds-system-color-community-violet-3: #A42EE0;
   --cds-system-color-divide-default-100a: #FFFFFF1A;
   --cds-system-color-divide-default-200a: #FFFFFF33;
   --cds-system-color-divide-default-300a: #FFFFFF4D;
@@ -608,35 +518,6 @@
   --cds-system-color-divide-gray-75: #1F1F1F;
   --cds-system-color-divide-white-300a-same: #FFFFFF4D;
   --cds-system-color-divide-white-500a-same: #FFFFFFA6;
-  --cds-system-color-dm-point-black: #01D5DF;
-  --cds-system-color-dm-point-blue: #2DB4FF;
-  --cds-system-color-dm-point-green: #11D33C;
-  --cds-system-color-dm-point-hotpink: #FE648E;
-  --cds-system-color-dm-point-mint: #01D5DF;
-  --cds-system-color-dm-point-orange: #FD721C;
-  --cds-system-color-dm-point-pink: #F55AFF;
-  --cds-system-color-dm-point-purple: #836AFD;
-  --cds-system-color-dm-point-red: #FF6557;
-  --cds-system-color-dm-point-yellow: #FBC100;
-  --cds-system-color-dm-speech-bubble-black: #45474F;
-  --cds-system-color-dm-speech-bubble-blue: #00476F;
-  --cds-system-color-dm-speech-bubble-green: #0A5B1D;
-  --cds-system-color-dm-speech-bubble-hotpink: #79253C;
-  --cds-system-color-dm-speech-bubble-mint: #006166;
-  --cds-system-color-dm-speech-bubble-orange: #7D4421;
-  --cds-system-color-dm-speech-bubble-outline-blue: #2DB4FF1A;
-  --cds-system-color-dm-speech-bubble-outline-green: #11D33C1A;
-  --cds-system-color-dm-speech-bubble-outline-hotpink: #FE648E1A;
-  --cds-system-color-dm-speech-bubble-outline-mint: #08CCCA1A;
-  --cds-system-color-dm-speech-bubble-outline-orange: #FD721C1A;
-  --cds-system-color-dm-speech-bubble-outline-pink: #F55AFF1A;
-  --cds-system-color-dm-speech-bubble-outline-purple: #836AFD1A;
-  --cds-system-color-dm-speech-bubble-outline-red: #FF65571A;
-  --cds-system-color-dm-speech-bubble-outline-yellow: #FBC1001A;
-  --cds-system-color-dm-speech-bubble-pink: #6B236F;
-  --cds-system-color-dm-speech-bubble-purple: #403391;
-  --cds-system-color-dm-speech-bubble-red: #7B241C;
-  --cds-system-color-dm-speech-bubble-yellow: #6C5300;
   --cds-system-color-icon-100a: #FFFFFF1A;
   --cds-system-color-icon-200a: #FFFFFF33;
   --cds-system-color-icon-200a-2: #FFFFFF1A;
@@ -967,6 +848,22 @@
   --cds-system-size-button-height-xsmall: 32px;
   --cds-system-size-button-height-xxlarge: 56px;
   --cds-system-size-button-height-xxsmall: 24px;
+  --cds-system-size-gap-0: 0px;
+  --cds-system-size-gap-100: 8px;
+  --cds-system-size-gap-125: 10px;
+  --cds-system-size-gap-150: 12px;
+  --cds-system-size-gap-200: 16px;
+  --cds-system-size-gap-25: 2px;
+  --cds-system-size-gap-250: 20px;
+  --cds-system-size-gap-300: 24px;
+  --cds-system-size-gap-350: 28px;
+  --cds-system-size-gap-400: 32px;
+  --cds-system-size-gap-50: 4px;
+  --cds-system-size-gap-75: 6px;
+  --cds-system-size-gap-negative-100: -8px;
+  --cds-system-size-gap-negative-25: -2px;
+  --cds-system-size-gap-negative-50: -4px;
+  --cds-system-size-gap-negative-75: -6px;
   --cds-system-size-icon-10nquad: 5px;
   --cds-system-size-icon-12mquad: 12px;
   --cds-system-size-icon-12nquad: 6px;
@@ -989,6 +886,7 @@
   --cds-system-size-padding-box-0: 0px;
   --cds-system-size-padding-box-100: 8px;
   --cds-system-size-padding-box-1000: 80px;
+  --cds-system-size-padding-box-125: 10px;
   --cds-system-size-padding-box-150: 12px;
   --cds-system-size-padding-box-200: 16px;
   --cds-system-size-padding-box-25: 2px;
@@ -1003,17 +901,6 @@
   --cds-system-size-padding-box-75: 6px;
   --cds-system-size-padding-box-800: 64px;
   --cds-system-size-padding-box-900: 72px;
-  --cds-system-size-padding-box-negative-100: -8px;
-  --cds-system-size-padding-box-negative-25: 0px;
-  --cds-system-size-padding-box-negative-50: -4px;
-  --cds-system-size-padding-box-negative-75: -6px;
-  --cds-system-size-padding-thumb-0: 0px;
-  --cds-system-size-padding-thumb-100: 8px;
-  --cds-system-size-padding-thumb-25: 2px;
-  --cds-system-size-padding-thumb-250: 20px;
-  --cds-system-size-padding-thumb-300: 24px;
-  --cds-system-size-padding-thumb-350: 28px;
-  --cds-system-size-padding-thumb-50: 4px;
   --cds-system-size-radius-box-0: 0px;
   --cds-system-size-radius-box-100: 8px;
   --cds-system-size-radius-box-150: 12px;
@@ -1023,7 +910,389 @@
   --cds-system-size-radius-box-300: 24px;
   --cds-system-size-radius-box-50: 4px;
   --cds-system-size-radius-box-75: 6px;
-  --cds-system-size-radius-thumb-150: 12px;
-  --cds-system-size-radius-thumb-200: 16px;
-  --cds-system-size-radius-thumb-250: 20px;
+  --cds-system-size-radius-pill: 999px;
+  --cds-system-shadow-blur-large: 24px;
+  --cds-system-shadow-position-x-large: 0px;
+  --cds-system-shadow-position-y-large: 6px;
+  --cds-system-shadow-spread-large: 0px;
+}
+
+/* Semantic typography utility classes */
+.chord-text-title-2xlg-system-800 {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-1200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-900);
+}
+.chord-text-title-2xlg-circular-900 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-1200);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-900);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-900);
+}
+.chord-text-title-xlg-system-800 {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-900);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-900);
+}
+.chord-text-title-xlg-circular-900 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-900);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-900);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-900);
+}
+.chord-text-title-lg-system-800 {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-800);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-800);
+}
+.chord-text-title-lg-circular-900 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-800);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-900);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-800);
+}
+.chord-text-title-m-system-800 {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-700);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-700);
+}
+.chord-text-title-m-circular-900 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-700);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-900);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-700);
+}
+.chord-text-title-s-system-800 {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-600);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-600);
+}
+.chord-text-title-s-circular-900 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-600);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-900);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-600);
+}
+.chord-text-title-s-circular-500 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-600);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-600);
+}
+.chord-text-headline-m-system-800 {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-500);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-500);
+}
+.chord-text-headline-m-circular-900 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-500);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-900);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-500);
+}
+.chord-text-headline-s-system-800 {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-400);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-400);
+}
+.chord-text-headline-s-system-700 {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-400);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-400);
+}
+.chord-text-headline-s-circular-700 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-400);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-400);
+}
+.chord-text-body-lg-system-700 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-300);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-300);
+}
+.chord-text-body-lg-system-600 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-300);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-600);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-300);
+}
+.chord-text-body-lg-system-500 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-300);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-300);
+}
+.chord-text-body-lg-system-400 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-300);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-300);
+}
+.chord-text-body-lg-circular-700 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-300);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-300);
+}
+.chord-text-body-lg-circular-500 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-300);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-300);
+}
+.chord-text-body-lg-circular-400 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-300);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-300);
+}
+.chord-text-body-m-system-700 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200);
+}
+.chord-text-body-m-system-600 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-600);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200);
+}
+.chord-text-body-m-system-500 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200);
+}
+.chord-text-body-m-system-400 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200);
+}
+.chord-text-body-m-circular-700 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-200);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-200);
+}
+.chord-text-body-m-circular-500 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-200);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-200);
+}
+.chord-text-body-m-circular-400 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-200);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-200);
+}
+.chord-text-body-s-system-700 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+}
+.chord-text-body-s-system-600 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-600);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+}
+.chord-text-body-s-system-500 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+}
+.chord-text-body-s-system-400 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+}
+.chord-text-body-s-circular-700 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-150);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-150);
+}
+.chord-text-body-s-circular-500 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-150);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-150);
+}
+.chord-text-body-s-circular-400 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-150);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-150);
+}
+.chord-text-body-xs-system-700 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+}
+.chord-text-body-xs-system-600 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-600);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+}
+.chord-text-body-xs-system-500 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+}
+.chord-text-body-xs-system-400 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+}
+.chord-text-body-xs-circular-700 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-100);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-100);
+}
+.chord-text-body-xs-circular-500 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-100);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-100);
+}
+.chord-text-body-xs-circular-400 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-100);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-100);
+}
+.chord-text-caption-m-system-700 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-75);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75);
+}
+.chord-text-caption-m-system-500 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-75);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75);
+}
+.chord-text-caption-m-system-400 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-75);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75);
+}
+.chord-text-caption-m-circular-700 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-75);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-75);
+}
+.chord-text-caption-m-circular-500 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-75);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-75);
+}
+.chord-text-caption-m-circular-400 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-75);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-75);
+}
+.chord-text-caption-s-system-700 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+}
+.chord-text-caption-s-system-500 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+}
+.chord-text-caption-s-system-400 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+}
+.chord-text-caption-s-circular-700 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-50);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-50);
+}
+.chord-text-caption-s-circular-500 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-50);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-50);
+}
+.chord-text-caption-s-circular-400 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-50);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-50);
+}
+.chord-text-caption-xs-system-700 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-25);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-25);
+}
+.chord-text-caption-xs-system-500 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-25);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-25);
+}
+.chord-text-caption-xs-system-400 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-25);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-25);
+}
+.chord-text-caption-xs-circular-700 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-25);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-25);
+}
+.chord-text-caption-xs-circular-500 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-25);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-25);
+}
+.chord-text-caption-xs-circular-400 {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-25);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-25);
+}
+.chord-text-caption-2xs-system-400 {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-15);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-15);
 }

@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from "react";
+import { cx } from "../../utils/cx";
 import "./BadgeNumber.css";
 
 export type BadgeNumberMode = "default" | "fixed";
@@ -9,10 +10,6 @@ export type BadgeNumberProps = HTMLAttributes<HTMLSpanElement> & {
   label?: string | number;
   mode?: BadgeNumberMode;
 };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export function normalizeBadgeNumberLabel(label: string | number | null | undefined) {
   const normalized = String(label ?? "").trim();

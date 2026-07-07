@@ -4,7 +4,7 @@
   flex-direction: column;
   font-family: "WeGothicSans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", var(--cds-typography-default-font-family-body, Pretendard, ui-sans-serif, system-ui, sans-serif);
   position: relative;
-  width: 393px;
+  width: 100%;
 
   --tabs-selected-text: var(--cds-system-color-text-default, #000000);
   --tabs-unselected-text: var(--cds-system-color-text-gray-700, #484848);
@@ -23,8 +23,8 @@
   align-items: flex-end;
   box-sizing: border-box;
   display: flex;
-  height: 44px;
-  padding-inline: 16px;
+  height: var(--cds-system-size-button-height-large, 44px);
+  padding-inline: var(--cds-system-size-padding-box-200, 16px);
   position: relative;
   width: 100%;
   z-index: 2;
@@ -44,7 +44,7 @@
   flex: none;
   max-width: none;
   min-width: 88px;
-  padding-inline: 8px;
+  padding-inline: var(--cds-system-size-padding-box-100, 8px);
 }
 
 .chord-tabs__bar-item {
@@ -56,7 +56,7 @@
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  height: 44px;
+  height: var(--cds-system-size-button-height-large, 44px);
   justify-content: center;
   max-width: 92px;
   min-width: 1px;
@@ -66,9 +66,9 @@
 
 .chord-tabs__bar-label {
   color: var(--tabs-unselected-text);
-  font-size: 15px;
+  font-size: var(--cds-typography-circular-base-text-size-text-150, 15px);
   font-weight: 700;
-  line-height: 21px;
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-150, 21px);
   max-width: 100%;
   min-width: 0;
   overflow: hidden;

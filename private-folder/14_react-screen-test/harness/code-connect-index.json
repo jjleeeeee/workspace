@@ -1,0 +1,724 @@
+{
+  "DWEduE6GfxYMlyxKPNJ8jA": {
+    "62973:7556": {
+      "component": "Avatar",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=62973-7556",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Type": {
+          "type": "enum",
+          "react_prop": "avatarType",
+          "values": {
+            "Circle": "circle",
+            "Squircle": "squircle"
+          }
+        },
+        "Size": {
+          "type": "enum",
+          "react_prop": "size",
+          "values": {
+            "XXXXLarge": "xxxxlarge",
+            "XXXLarge": "xxxlarge",
+            "XXLarge": "xxlarge",
+            "XLarge": "xlarge"
+          }
+        },
+        "Badge_Dot": {
+          "type": "boolean",
+          "react_prop": "badgeDot"
+        },
+        "Birthday_Hat": {
+          "type": "boolean",
+          "react_prop": "birthdayHat"
+        },
+        "Emoji": {
+          "type": "boolean",
+          "react_prop": "emoji"
+        },
+        "Host": {
+          "type": "boolean",
+          "react_prop": "host"
+        },
+        "Ring": {
+          "type": "boolean",
+          "react_prop": "ring"
+        }
+      }
+    },
+    "8451:112783": {
+      "component": "BadgeDot",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=8451-112783",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Size": {
+          "type": "enum",
+          "react_prop": "size",
+          "values": {
+            "Small": "small",
+            "Medium": "medium",
+            "Large": "large"
+          }
+        },
+        "Outline": {
+          "type": "enum",
+          "react_prop": "outline",
+          "values": {
+            "OFF": "off",
+            "ON": "on"
+          }
+        }
+      }
+    },
+    "8451:113030": {
+      "component": "BadgeNumber",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=8451-113030",
+      "props": {
+        "Type": {
+          "type": "enum",
+          "react_prop": "badgeType",
+          "values": {
+            "Number": "number",
+            "New": "new"
+          }
+        },
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Label": {
+          "type": "string",
+          "react_prop": "label"
+        }
+      }
+    },
+    "87669:2290": {
+      "component": "BottomNavigation",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=87669-2290",
+      "props": {
+        "OS": {
+          "type": "enum",
+          "react_prop": "os",
+          "values": {
+            "iOS": "ios",
+            "Android": "android"
+          }
+        },
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        }
+      }
+    },
+    "60365:40276": {
+      "component": "Checkbox",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=60365-40276",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Type": {
+          "type": "enum",
+          "react_prop": "checkboxType",
+          "values": {
+            "Circle": "circle",
+            "Square": "square"
+          }
+        },
+        "Status": {
+          "type": "enum",
+          "react_prop": "status",
+          "values": {
+            "Default": "default",
+            "Enabled": "enabled",
+            "Disabled": "disabled"
+          }
+        }
+      }
+    },
+    "59869:78921": {
+      "component": "Chips",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=59869-78921",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Size": {
+          "type": "enum",
+          "react_prop": "size",
+          "values": {
+            "Small": "small",
+            "Medium": "medium"
+          }
+        },
+        "Type": {
+          "type": "enum",
+          "react_prop": "type",
+          "values": {
+            "Text": "text",
+            "Icon": "icon",
+            "Image (Only Medium)": "image"
+          }
+        },
+        "State": {
+          "type": "enum",
+          "react_prop": "state",
+          "values": {
+            "Default": "default",
+            "Filled_Selected": "filled-selected",
+            "Outlined_Selected": "outlined-selected",
+            "Filled_Disabled": "filled-disabled",
+            "Outlined_Disabled": "outlined-disabled"
+          }
+        },
+        "Marquee": {
+          "type": "boolean",
+          "react_prop": "marquee"
+        },
+        "Badge": {
+          "type": "boolean",
+          "react_prop": "badge"
+        },
+        "Badge_Number": {
+          "type": "boolean",
+          "react_prop": "badgeNumber"
+        }
+      }
+    },
+    "10384:29778": {
+      "component": "LoadingDot",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=10384-29778",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Size": {
+          "type": "enum",
+          "react_prop": "size",
+          "values": {
+            "Medium": "medium",
+            "Small": "small"
+          }
+        },
+        "Color": {
+          "type": "enum",
+          "react_prop": "color",
+          "values": {
+            "Primary": "primary",
+            "White": "white"
+          }
+        }
+      }
+    },
+    "62324:12061": {
+      "component": "PaginationDot",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=62324-12061",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Fixed": "fixed",
+            "Default": "default"
+          }
+        },
+        "Dots": {
+          "type": "enum",
+          "react_prop": "dots",
+          "values": {
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6+": "6+"
+          }
+        },
+        "Selection": {
+          "type": "enum",
+          "react_prop": "selection",
+          "values": {}
+        }
+      }
+    },
+    "61753:7839": {
+      "component": "PaginationList",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=61753-7839",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Size": {
+          "type": "enum",
+          "react_prop": "size",
+          "values": {
+            "Large": "large",
+            "Small": "small"
+          }
+        },
+        "Pages": {
+          "type": "enum",
+          "react_prop": "pages",
+          "values": {
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8+": "8+"
+          }
+        }
+      }
+    },
+    "59215:200965": {
+      "component": "Radio",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=59215-200965",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Status": {
+          "type": "enum",
+          "react_prop": "status",
+          "values": {
+            "Default": "default",
+            "Enabled": "enabled",
+            "Disabled": "disabled"
+          }
+        }
+      }
+    },
+    "10482:75325": {
+      "component": "ScrimOverlay",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=10482-75325",
+      "props": {}
+    },
+    "59722:17972": {
+      "component": "Search",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=59722-17972",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "State": {
+          "type": "enum",
+          "react_prop": "state",
+          "values": {
+            "Default": "default",
+            "Enabled": "enabled",
+            "Completed": "completed"
+          }
+        },
+        "Label": {
+          "type": "string",
+          "react_prop": "label"
+        }
+      }
+    },
+    "12447:42302": {
+      "component": "Skeleton",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=12447-42302",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Type": {
+          "type": "enum",
+          "react_prop": "skeletonType",
+          "values": {
+            "Rectangle": "rectangle",
+            "Circle": "circle",
+            "Line": "line"
+          }
+        },
+        "Size": {
+          "type": "enum",
+          "react_prop": "size",
+          "values": {
+            "Large": "large",
+            "Medium": "medium"
+          }
+        }
+      }
+    },
+    "63694:5774": {
+      "component": "Snackbar",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=63694-5774",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Icon": {
+          "type": "boolean",
+          "react_prop": "icon"
+        },
+        "Label": {
+          "type": "string",
+          "react_prop": "label"
+        }
+      }
+    },
+    "65172:10165": {
+      "component": "Tabs",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=65172-10165",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Type": {
+          "type": "enum",
+          "react_prop": "type",
+          "values": {
+            "Content Fill": "fill",
+            "Content Swipe": "swipe"
+          }
+        }
+      }
+    },
+    "52753:39618": {
+      "component": "TextButton",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=52753-39618",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Type": {
+          "type": "enum",
+          "react_prop": "buttonType",
+          "values": {
+            "Filled": "filled",
+            "Outlined_color": "outlinedColor",
+            "Outlined_gray": "outlinedGray",
+            "Ghost": "ghost"
+          }
+        },
+        "Size": {
+          "type": "enum",
+          "react_prop": "size",
+          "values": {
+            "XLarge(52)": "xlarge",
+            "Large(44)": "large",
+            "Medium(40)": "medium",
+            "Small(36)": "small",
+            "XSmall(32)": "xsmall",
+            "XXSmall(24)": "xxsmall"
+          }
+        },
+        "Button Color": {
+          "type": "enum",
+          "react_prop": "buttonColor",
+          "values": {
+            "Default (Gray Ghost 단일컬러)": "default",
+            "Black(Gray Ghost 미적용)": "black"
+          }
+        },
+        "Status": {
+          "type": "enum",
+          "react_prop": "status",
+          "values": {
+            "Default": "default",
+            "Hover": "hover",
+            "Loading": "loading",
+            "Disabled": "disabled"
+          }
+        },
+        "Radius": {
+          "type": "enum",
+          "react_prop": "radius",
+          "values": {
+            "off": "off",
+            "on": "on"
+          }
+        },
+        "Option-Leading": {
+          "type": "boolean",
+          "react_prop": "optionLeading"
+        },
+        "Option-Trailing": {
+          "type": "boolean",
+          "react_prop": "optionTrailing"
+        },
+        "-> Trailing-Icon": {
+          "type": "boolean",
+          "react_prop": "trailingIcon"
+        },
+        "-> Trailing-Text": {
+          "type": "boolean",
+          "react_prop": "trailingText"
+        },
+        "Button Text": {
+          "type": "string",
+          "react_prop": "buttonText"
+        }
+      }
+    },
+    "63694:4595": {
+      "component": "Toast",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=63694-4595",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Label": {
+          "type": "string",
+          "react_prop": "label"
+        }
+      }
+    },
+    "7927:149092": {
+      "component": "ToggleSwitch",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=7927-149092",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "OS": {
+          "type": "enum",
+          "react_prop": "platform",
+          "values": {
+            "iOS": "ios",
+            "AOS": "aos"
+          }
+        },
+        "Size": {
+          "type": "enum",
+          "react_prop": "size",
+          "values": {
+            "Medium": "medium",
+            "Small": "small"
+          }
+        },
+        "Status": {
+          "type": "enum",
+          "react_prop": "status",
+          "values": {
+            "Default": "default",
+            "Enabled": "enabled",
+            "Disabled": "disabled"
+          }
+        }
+      }
+    },
+    "7891:6903": {
+      "component": "Tooltip",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=7891-6903",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default"
+          }
+        },
+        "Size": {
+          "type": "enum",
+          "react_prop": "size",
+          "values": {
+            "Large": "large",
+            "Medium": "medium"
+          }
+        },
+        "Color": {
+          "type": "enum",
+          "react_prop": "color",
+          "values": {
+            "Black": "black",
+            "White_fixed": "white-fixed",
+            "Tint": "tint"
+          }
+        },
+        "Position": {
+          "type": "enum",
+          "react_prop": "position",
+          "values": {
+            "Down - Align Center": "down-center",
+            "Down - Align Left": "down-left",
+            "Down - Align Right": "down-right",
+            "Up - Align Center": "up-center",
+            "Up - Align Left": "up-left",
+            "Up - Align Right": "up-right",
+            "Left - Align Top": "left-top",
+            "Left - Align Middle": "left-middle",
+            "Left - Align Bottom": "left-bottom",
+            "Right - Align Top": "right-top",
+            "Right - Align Middle": "right-middle",
+            "Right - Align Bottom": "right-bottom"
+          }
+        },
+        "Button - Close": {
+          "type": "boolean",
+          "react_prop": "buttonClose"
+        },
+        "Label": {
+          "type": "string",
+          "react_prop": "label"
+        }
+      }
+    },
+    "64450:39560": {
+      "component": "TopNavigation",
+      "import": "@chord-ds/components",
+      "figma_url": "https://www.figma.com/design/DWEduE6GfxYMlyxKPNJ8jA?node-id=64450-39560",
+      "props": {
+        "Mode": {
+          "type": "enum",
+          "react_prop": "mode",
+          "values": {
+            "Default": "default",
+            "Fixed": "fixed"
+          }
+        },
+        "Text Type": {
+          "type": "enum",
+          "react_prop": "textType",
+          "values": {
+            "Default": "default",
+            "Left": "left",
+            "Center": "center",
+            "Img": "img",
+            "Img+Text": "img-text",
+            "Logo Svg": "logo-svg",
+            "Logo Svg_center": "logo-svg-center",
+            "Search": "search"
+          }
+        },
+        "Scroll Bg": {
+          "type": "enum",
+          "react_prop": "scrollBg",
+          "values": {
+            "On": "on",
+            "Off": "off"
+          }
+        },
+        "Leading": {
+          "type": "boolean",
+          "react_prop": "showLeading"
+        },
+        "Trailing": {
+          "type": "boolean",
+          "react_prop": "showTrailing"
+        },
+        "Image": {
+          "type": "boolean",
+          "react_prop": "showImage"
+        },
+        "[Title] Official Badge": {
+          "type": "boolean",
+          "react_prop": "showOfficialBadge"
+        },
+        "[Sub] Title": {
+          "type": "boolean",
+          "react_prop": "showSubTitle"
+        },
+        "[Sub] Title Icon": {
+          "type": "boolean",
+          "react_prop": "showSubTitleIcon"
+        },
+        "Marquee": {
+          "type": "boolean",
+          "react_prop": "marquee"
+        }
+      }
+    }
+  }
+}

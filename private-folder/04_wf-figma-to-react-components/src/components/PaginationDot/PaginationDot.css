@@ -8,7 +8,7 @@
   justify-content: center;
   inline-size: 120px;
   block-size: 32px;
-  gap: var(--cds-system-size-padding-box-75, 6px);
+  gap: var(--cds-system-size-gap-75, 6px);
   padding-block: var(--cds-system-size-padding-box-150, 12px);
   vertical-align: middle;
 }

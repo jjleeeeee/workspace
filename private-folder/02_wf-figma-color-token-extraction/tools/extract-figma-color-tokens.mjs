@@ -8,10 +8,12 @@ import { fileURLToPath } from "node:url";
 const DEFAULT_FILE_KEY = "DWEduE6GfxYMlyxKPNJ8jA";
 const DEFAULT_STAGE_LABEL = "v1.0";
 const WORKSPACE_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const DEFAULT_OUTPUT_DIR = path.join(WORKSPACE_ROOT, "chord-design-system/tokens");
+const DEFAULT_OUTPUT_DIR = path.join(WORKSPACE_ROOT, "../../chord-design-system/tokens");
 const TOKEN_FILES = {
   color: "color.json",
   size: "size.json",
+  shadow: "shadow.json",
+  breakpoint: "breakpoint.json",
   typography: "typography.json",
   typographySemantic: "typography.semantic.json",
 };
@@ -61,6 +63,7 @@ const USAGE_SCOPE_MAP = new Map([
   ["TEXT_FILL", "text-fill"],
   ["STROKE_COLOR", "stroke"],
   ["EFFECT_COLOR", "effect"],
+  ["EFFECT_FLOAT", "shadow"],
   ["CORNER_RADIUS", "corner-radius"],
   ["WIDTH_HEIGHT", "width-height"],
   ["GAP", "gap"],
@@ -170,6 +173,18 @@ export function buildCatalogs(restPayload, options = {}) {
     collectionById,
     variableById,
   });
+  const shadowBuild = buildShadowCatalog({
+    source: { ...baseSource, collection: "WDS_tokens" },
+    collection: wdsCollection,
+    collectionById,
+    variableById,
+  });
+  const breakpointBuild = buildBreakpointCatalog({
+    source: { ...baseSource, collection: "WDS_tokens" },
+    collection: wdsCollection,
+    collectionById,
+    variableById,
+  });
   const typographyBuild = buildTypographyCatalog({
     source: { ...baseSource, collection: "TYPO_tokens + TYPO_circular_tokens" },
     collections,
@@ -195,6 +210,18 @@ export function buildCatalogs(restPayload, options = {}) {
       modes: ["light", "dark"],
       tokens: sizeBuild.tokens,
       diagnostics: sizeBuild.diagnostics,
+    }),
+    shadow: makeCatalog({
+      source: shadowBuild.source,
+      modes: ["light", "dark"],
+      tokens: shadowBuild.tokens,
+      diagnostics: shadowBuild.diagnostics,
+    }),
+    breakpoint: makeCatalog({
+      source: breakpointBuild.source,
+      modes: ["light", "dark"],
+      tokens: breakpointBuild.tokens,
+      diagnostics: breakpointBuild.diagnostics,
     }),
     typography,
   };
@@ -272,6 +299,42 @@ function buildSizeCatalog({ source, collection, collectionById, variableById }) 
     .filter((variable) => !variable.deletedButReferenced)
     .filter((variable) => variable.resolvedType === "FLOAT")
     .filter((variable) => variable.name.startsWith("system/size/"))
+    .sort(compareTokenSource)
+    .map((variable) => buildToken(variable, {
+      collection,
+      collectionById,
+      variableById,
+      idPrefix: "token:",
+      type: "dimension",
+      transformRaw: (value) => value,
+    }));
+
+  return { source, tokens, diagnostics: makeCommonDiagnostics(tokens) };
+}
+
+function buildShadowCatalog({ source, collection, collectionById, variableById }) {
+  const tokens = variablesForCollection(collection, variableById)
+    .filter((variable) => !variable.deletedButReferenced)
+    .filter((variable) => variable.resolvedType === "FLOAT")
+    .filter((variable) => variable.name.startsWith("system/shadow/"))
+    .sort(compareTokenSource)
+    .map((variable) => buildToken(variable, {
+      collection,
+      collectionById,
+      variableById,
+      idPrefix: "token:",
+      type: "dimension",
+      transformRaw: (value) => value,
+    }));
+
+  return { source, tokens, diagnostics: makeCommonDiagnostics(tokens) };
+}
+
+function buildBreakpointCatalog({ source, collection, collectionById, variableById }) {
+  const tokens = variablesForCollection(collection, variableById)
+    .filter((variable) => !variable.deletedButReferenced)
+    .filter((variable) => variable.resolvedType === "FLOAT")
+    .filter((variable) => variable.name.startsWith("system/breakpoint/"))
     .sort(compareTokenSource)
     .map((variable) => buildToken(variable, {
       collection,
@@ -510,7 +573,13 @@ function platformCodeFor(variable) {
 
 function deriveWebCode(name) {
   const segments = name.split("/");
-  const relevant = segments[0] === "system" ? segments.slice(2) : segments[0] === "base" ? segments.slice(1) : segments;
+  const relevant = segments[0] === "system" && segments[1] === "shadow"
+    ? segments.slice(1)
+    : segments[0] === "system"
+    ? segments.slice(2)
+    : segments[0] === "base"
+    ? segments.slice(1)
+    : segments;
   return relevant.join("-").toLowerCase().replaceAll("_", "-");
 }
 
@@ -608,6 +677,7 @@ function parseArgs(argv) {
   const args = {
     fileKey: DEFAULT_FILE_KEY,
     outputDir: DEFAULT_OUTPUT_DIR,
+    extraOutputDirs: [],
     stageLabel: DEFAULT_STAGE_LABEL,
     input: null,
     rawOutput: null,
@@ -618,6 +688,7 @@ function parseArgs(argv) {
     const next = () => argv[++index];
     if (arg === "--file-key") args.fileKey = next();
     else if (arg === "--output-dir") args.outputDir = next();
+    else if (arg === "--extra-output-dir") args.extraOutputDirs.push(next());
     else if (arg === "--stage-label") args.stageLabel = next();
     else if (arg === "--input") args.input = next();
     else if (arg === "--raw-output") args.rawOutput = next();
@@ -660,16 +731,19 @@ async function main() {
     freshness: args.freshness ?? new Date().toISOString(),
     includeSemantic: true,
   });
-  fs.mkdirSync(args.outputDir, { recursive: true });
+  const outputDirs = [args.outputDir, ...args.extraOutputDirs];
   for (const [catalogName, fileName] of Object.entries(TOKEN_FILES)) {
     const catalog = catalogs[catalogName];
     if (!catalog) {
       continue;
     }
-    const outputPath = path.join(args.outputDir, fileName);
-    fs.writeFileSync(outputPath, `${JSON.stringify(catalog, null, 2)}\n`);
     const modes = catalog.modes ? `, modes=${catalog.modes.join(",")}` : "";
-    console.log(`Wrote ${catalogName} token catalog to ${outputPath}`);
+    for (const dir of outputDirs) {
+      fs.mkdirSync(dir, { recursive: true });
+      const outputPath = path.join(dir, fileName);
+      fs.writeFileSync(outputPath, `${JSON.stringify(catalog, null, 2)}\n`);
+      console.log(`Wrote ${catalogName} token catalog to ${outputPath}`);
+    }
     console.log(`${catalogName}: ${catalog.tokens.length} tokens${modes}`);
   }
 }

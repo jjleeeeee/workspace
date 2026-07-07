@@ -1,5 +1,6 @@
 import type { CSSProperties, HTMLAttributes } from "react";
 import { useEffect, useState } from "react";
+import { cx } from "../../utils/cx";
 import { ChordIcon } from "../../assets/chord-icons";
 import type { ChordIconSize } from "../../assets/chord-icons";
 import placeholderLarge from "../../assets/avatar/avatar-placeholder-large.svg";
@@ -230,17 +231,9 @@ export interface AvatarProps extends Omit<HTMLAttributes<HTMLSpanElement>, "chil
   src?: string;
 }
 
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export function getAvatarSizeSpec(size: AvatarSize) {
   const { component, image } = avatarSizeSpecs[size];
   return { component, image };
-}
-
-function cssPx(value: number) {
-  return `${value}px`;
 }
 
 export function Avatar({
@@ -279,16 +272,16 @@ export function Avatar({
   const placeholderAsset = avatarPlaceholderAssets[size];
   const avatarStyle = {
     ...style,
-    "--avatar-badge-dot-size": cssPx(spec.squircleBadgeDot),
-    "--avatar-badge-frame-size": cssPx(spec.squircleBadgeDot + spec.squircleBadgeStroke * 2),
-    "--avatar-badge-stroke": cssPx(spec.squircleBadgeStroke),
-    "--avatar-birthday-hat-size": cssPx(spec.birthdayHat),
-    "--avatar-component-size": cssPx(resolvedComponentSize),
-    "--avatar-emoji-size": cssPx(spec.emoji),
-    "--avatar-host-size": cssPx(spec.host),
-    "--avatar-image-offset": cssPx(imageOffset),
-    "--avatar-image-size": cssPx(resolvedImageSize),
-    "--avatar-ring-stroke": cssPx(spec.ringStroke),
+    "--avatar-badge-dot-size": `${spec.squircleBadgeDot}px`,
+    "--avatar-badge-frame-size": `${spec.squircleBadgeDot + spec.squircleBadgeStroke * 2}px`,
+    "--avatar-badge-stroke": `${spec.squircleBadgeStroke}px`,
+    "--avatar-birthday-hat-size": `${spec.birthdayHat}px`,
+    "--avatar-component-size": `${resolvedComponentSize}px`,
+    "--avatar-emoji-size": `${spec.emoji}px`,
+    "--avatar-host-size": `${spec.host}px`,
+    "--avatar-image-offset": `${imageOffset}px`,
+    "--avatar-image-size": `${resolvedImageSize}px`,
+    "--avatar-ring-stroke": `${spec.ringStroke}px`,
   } as CSSProperties;
 
   useEffect(() => {

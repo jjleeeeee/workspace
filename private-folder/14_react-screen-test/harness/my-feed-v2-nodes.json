@@ -1,0 +1,15 @@
+{
+  "slug": "my-feed-v2",
+  "figma": {
+    "fileKey": "gnxpCiUTQhuWVgmdiSh61A",
+    "nodeId": "2-2207"
+  },
+  "limit": 25,
+  "offset": 0,
+  "hasMore": true,
+  "startedAt": "2026-07-03T07:29:52.477Z",
+  "updatedAt": "2026-07-03T07:29:52.477Z",
+  "totalScanned": 0,
+  "dsInstancesSkipped": [],
+  "nodes": []
+}

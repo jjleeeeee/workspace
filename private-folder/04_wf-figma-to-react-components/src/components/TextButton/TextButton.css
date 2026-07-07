@@ -188,7 +188,7 @@
 .chord-text-button__trailing {
   display: inline-flex;
   align-items: center;
-  gap: var(--cds-system-size-padding-box-50, 4px);
+  gap: var(--cds-system-size-gap-50, 4px);
   padding-inline-start: var(--cds-system-size-padding-box-75, 6px);
 }
 
@@ -201,7 +201,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--cds-system-size-padding-box-25, 2px);
+  gap: var(--cds-system-size-gap-25, 2px);
   inline-size: 20px;
   block-size: 20px;
 }

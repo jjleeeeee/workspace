@@ -2,13 +2,13 @@
   "$schema": "https://our-ds-mcp/schemas/tokens.v1.json",
   "source": {
     "origin": "figma:Chord Design System",
-    "fileKey": "vuq1CyC1Pi4NZYE7ximg3I",
+    "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
     "collection": "WDS_tokens",
     "version": "0.6.0",
-    "freshness": "2026-06-10T00:00:00.000Z",
+    "freshness": "2026-07-03T00:06:03.351Z",
     "coverage": {
-      "total": 67,
-      "documented": 45,
+      "total": 70,
+      "documented": 48,
       "hidden": 0
     },
     "stageLabel": "v1.0"
@@ -42,7 +42,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "7b60c8d2b3003679fff46992c2d908f0c94a39ed",
+      "figmaKey": "f23d940cd4f46c0f0d97551cc8273b75de506d3f",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -73,7 +73,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "65973eb37d9c9fbc155e7124e7198cc4ebf5b104",
+      "figmaKey": "91184b661040c81bd47b5c809dbac4460fc23313",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -104,7 +104,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "7d88435137c8b85a750290d4243eabceb89c3599",
+      "figmaKey": "0fc48758a408c81ea84cb8deae6ba6f49223da06",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -135,7 +135,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "4376d7d85aaf89379292caa07694b72befdbd57c",
+      "figmaKey": "e9219c3fd33a01fa65da91104d3b47048dab26d7",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -166,7 +166,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "d36e99ad5093c81daddf79118a5df620ef95acd5",
+      "figmaKey": "fcc2180d8f72e196849bf2dadace8aa1c5891bb9",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -197,7 +197,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "8dc653790c85d2d22272e8d70acfc9b88fb905b6",
+      "figmaKey": "b91a9da4616237a57ad30499614f1ea00e013c0d",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -228,7 +228,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "73901e05aaa268702e6f56bfdd3187f936df40a1",
+      "figmaKey": "28cc6f6abb514d07483b417565f7da7bcaf72b6e",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -259,7 +259,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "573dc4adc9afafc22873f6f05e2965d22151fc33",
+      "figmaKey": "1f6d5e3ae5fee6282398f7a5d115d3203263d8bf",
       "diagnostics": []
     },
     {
@@ -286,7 +286,34 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "35459dd493ce085902372117ec7f949ca5ed7791",
+      "figmaKey": "a1da9a9281501db94e010fd9b231a4cd7cf223d1",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.gap.125",
+      "name": "system/size/gap/125",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 10,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 10,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "gap125",
+        "android": "gap125",
+        "web": "gap-125"
+      },
+      "description": "요소와 요소사이에 사용",
+      "hidden": false,
+      "figmaKey": "89c1179c535bcd4c1d04b9bfddc33b88ce32b289",
       "diagnostics": []
     },
     {
@@ -313,7 +340,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "51847df60db1b4542a46d240a71dc9fccd42fb9d",
+      "figmaKey": "d0341d1a4f3022a4415bc38a313943f17039ddfe",
       "diagnostics": []
     },
     {
@@ -340,7 +367,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "9684eefc16c3b247a6c22adce656137242c1907a",
+      "figmaKey": "e69e190e091c0524e26d1f60eda88553ff2ba2cf",
       "diagnostics": []
     },
     {
@@ -367,7 +394,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "811642eeb99be7e8bb0769a43ea012242b6e49b8",
+      "figmaKey": "dca366bc61521018200bf1c63a5dd6e2a3a8a89d",
       "diagnostics": []
     },
     {
@@ -394,7 +421,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "2936c438f7c137bd8d69cb00fb9ec27da7c1fc41",
+      "figmaKey": "0949b624afe1e560ec75025321abd740380e3f4d",
       "diagnostics": []
     },
     {
@@ -421,7 +448,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "6135696b3b0332987426318603abd0715512b48e",
+      "figmaKey": "7439e912d91de975b3f1a4100d480bfeb2127afd",
       "diagnostics": []
     },
     {
@@ -448,7 +475,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "bb17327cb5859dde5d0f831da2232bab630d76e1",
+      "figmaKey": "af040d7cee569a3718e01cf2a32cce35cc77053c",
       "diagnostics": []
     },
     {
@@ -475,7 +502,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "ab74844cb5ab701b2c3f2c10ec5548460afb06ad",
+      "figmaKey": "d233e60f5ee2ed3efe1048a18f2bad30eb17bdaf",
       "diagnostics": []
     },
     {
@@ -502,7 +529,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "611abe63d5b2d371efd13edb5864ab107d62cba3",
+      "figmaKey": "c61ca3dfcc1e7c144b097685ef3de849cea8db6c",
       "diagnostics": []
     },
     {
@@ -529,7 +556,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "ccc455d3b0a25fa3bbd3b51c391e98315c04e796",
+      "figmaKey": "af83521661a8ec7749a11dffb038688819f9f20e",
       "diagnostics": []
     },
     {
@@ -556,7 +583,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "57280230364b88ebbefbfe4c46cb6626cc844b0e",
+      "figmaKey": "f11810b94563dcdded2cb4dd7dce709e95df9109",
       "diagnostics": []
     },
     {
@@ -569,7 +596,7 @@
           "aliasOf": null
         },
         "dark": {
-          "raw": 0,
+          "raw": -2,
           "aliasOf": null
         }
       },
@@ -583,7 +610,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "7951f8cec5819fa192996c0fe5ba210b75f016ba",
+      "figmaKey": "9bbeb87ff361486333e42e47bf06ac22aa2b8fe8",
       "diagnostics": []
     },
     {
@@ -610,7 +637,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "9cd41d540b5a29da4ce75311c4bc5ec00199269b",
+      "figmaKey": "65e50c4f1c080f62faedd77c1717066723a691d5",
       "diagnostics": []
     },
     {
@@ -637,7 +664,7 @@
       },
       "description": "요소와 요소사이에 사용",
       "hidden": false,
-      "figmaKey": "193fbe1302b9720b933cf2ddab7cefb17130820b",
+      "figmaKey": "f903ebffd88f64ad1be86f3a886688b0347528bd",
       "diagnostics": []
     },
     {
@@ -664,7 +691,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "ad232e1fa81db745909ce1f3d4dd5f88e272aaee",
+      "figmaKey": "576296688469fb1b8638a17c8271d6602295c97d",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -695,7 +722,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "7ca0c83efd2e8c011454290d7b5c55321e1e644c",
+      "figmaKey": "0fb66066820037da333694e0c42d010c892eb137",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -726,7 +753,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "fde9d40de345560d8940cbd2705e5ef9e15c1d96",
+      "figmaKey": "5396d637a79850045b816c45ba2f1fa42f881cce",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -757,7 +784,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "9f62fdd6a44091cf805e0014cda5f480f747b529",
+      "figmaKey": "ce57cb536f97a9d06a35f008bb5e20330ed82b1d",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -788,7 +815,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "b20c84c4090b75cdf64187e2749eae5ca5845f70",
+      "figmaKey": "8254a464302e87eb7e5b3d1034f2204fd6a8301c",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -819,7 +846,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "4b87fbd3fe7839f26264c6650c6474f2980448fe",
+      "figmaKey": "4b951e6e6cb3fcfa5983e06f84e26170b77fce05",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -850,7 +877,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "fc7527a762c8c32d796ad658c97aa0944cce2dbe",
+      "figmaKey": "8dd4f8c9615f2a2b15cb367b966faa7ebe036274",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -881,7 +908,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "9a760c23ff557bd3b2edf56393941a71035e27ec",
+      "figmaKey": "db949e1d22e1e5c3fa74fad7b7974727ee7980b4",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -912,7 +939,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "f812ede674af5ed8dd7e5cda44d22139bba55937",
+      "figmaKey": "2e935fb714993264b6f371ec10304dbca25f704a",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -943,7 +970,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "34271ca915a44cd52e9aa900582881dfd2061786",
+      "figmaKey": "aad86393698749911bacf5998ee7af65b76d9c88",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -974,7 +1001,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "18d32735d19860dd7dd0670dee0d5dee577780e9",
+      "figmaKey": "9de785f7cacd80305c4d2366987e94739db774d5",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -1005,7 +1032,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "08d7f2c5b1fc5b7fb2333e38fe5246aea8c5cda5",
+      "figmaKey": "13832520c3240a6c0cee13936444acaca248c7db",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -1036,7 +1063,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "c98227744816e9986f8034cd3fadc1ed2fb33033",
+      "figmaKey": "c6135a06b92244e56cd5c23e0d4fb70677b53b35",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -1067,7 +1094,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "1223c24a2b372800e842e55adee744f20a1fa828",
+      "figmaKey": "c51bbe6ca26cb3acb9a0579c9daf461c2b7dcd0d",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -1098,7 +1125,7 @@
       },
       "description": null,
       "hidden": false,
-      "figmaKey": "c9524ac80790582ee40b6b3c844cacb3614745ce",
+      "figmaKey": "de1202e5a5bbc56c6061890d458852b30d4d5065",
       "diagnostics": [
         "documentation:missing",
         "platform-code:missing-ios",
@@ -1129,7 +1156,7 @@
       },
       "description": "화면 여백 구성에 사용 (단일 프레임엔 사용 불가)",
       "hidden": false,
-      "figmaKey": "648051a74cbe6881abda348746b4c5bfcb9f1ff0",
+      "figmaKey": "fa0ec309b4fb722db4c540c0cf881ad129c48d2c",
       "diagnostics": []
     },
     {
@@ -1156,7 +1183,7 @@
       },
       "description": "화면 여백 구성에 사용 (단일 프레임엔 사용 불가)",
       "hidden": false,
-      "figmaKey": "f5bd43007c8113f82dd43a9261c79e44361dfcf3",
+      "figmaKey": "f366a43c0bd2f50780122fed925c379a60782ae7",
       "diagnostics": []
     },
     {
@@ -1183,7 +1210,7 @@
       },
       "description": "화면 여백 구성에 사용 (단일 프레임엔 사용 불가)",
       "hidden": false,
-      "figmaKey": "2cda558895594edc4973b04bfa456df17f10c651",
+      "figmaKey": "b2dedc91b08e7e21d145546bbc1dc4209ae78068",
       "diagnostics": []
     },
     {
@@ -1210,7 +1237,7 @@
       },
       "description": "화면 여백 구성에 사용 (단일 프레임엔 사용 불가)",
       "hidden": false,
-      "figmaKey": "0b5e6faa5a14143634587e4ebb083777067b1050",
+      "figmaKey": "ffd90173addbb973f1bd75bde838e35dc0fbeca3",
       "diagnostics": []
     },
     {
@@ -1237,7 +1264,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "1963df32e49375a8911b8e0e322b9ab38680268a",
+      "figmaKey": "0ccdb4e5b0423c9ae55e9cc2d1f3bc76eb1e881c",
       "diagnostics": []
     },
     {
@@ -1264,7 +1291,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "d98438aed042ca842fd0a89196a0695e6bd3845b",
+      "figmaKey": "b6ed13aba423555315ee4c8c509721bb0fe52af9",
       "diagnostics": []
     },
     {
@@ -1291,7 +1318,34 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "9d2990701dadc4d8e8a49df3cd967e25b9e374c0",
+      "figmaKey": "2320e381b301e70a2a7cb778ab5caaceef9246a5",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.padding.box.125",
+      "name": "system/size/padding/box/125",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 10,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 10,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "gap"
+      ],
+      "platformCode": {
+        "ios": "paddingBox125",
+        "android": "paddingBox125",
+        "web": "padding-box-125"
+      },
+      "description": "프레임과 컨텐츠 사이 여백",
+      "hidden": false,
+      "figmaKey": "441c4860dac521d59ea520abe4403aa1ef09ce5b",
       "diagnostics": []
     },
     {
@@ -1318,7 +1372,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "4e0efc3daae3094f3bc35cfcb9e45b90ed15b988",
+      "figmaKey": "3c0a6546fa20f313f5f806fbd9e652d4247c4660",
       "diagnostics": []
     },
     {
@@ -1345,7 +1399,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "e77605bde54c49ce68fdd28688ea5d2498616bdf",
+      "figmaKey": "eeaae77536449c2669cfebc1ca0c1966fe21e7c0",
       "diagnostics": []
     },
     {
@@ -1372,7 +1426,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "21f33e8882b504a30294f99ae2dbb6c5b08378bf",
+      "figmaKey": "0681bccc532c223a387d47dcef4be5210dece8d0",
       "diagnostics": []
     },
     {
@@ -1399,7 +1453,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "43e9c0ca4c023695436ffff916a15661b8269ba6",
+      "figmaKey": "3aea69f5ffd4d52ee97fc29323dd871f25f21335",
       "diagnostics": []
     },
     {
@@ -1426,7 +1480,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "b2950a34f888478d3fc1683177f77162f703b001",
+      "figmaKey": "b6fd4c38860aa2bb6e2b4f4a9a3ee132743da8d0",
       "diagnostics": []
     },
     {
@@ -1453,7 +1507,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "6e6a6ec1bf05b9fe1dcc54f129e69d648bfe02e7",
+      "figmaKey": "bf6b8080ce8f1eb8536647830645b9c088c80d71",
       "diagnostics": []
     },
     {
@@ -1480,7 +1534,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "946bf2cb08ba88ece1a671342d256792f3f2b946",
+      "figmaKey": "38c43981bd898ecd7b6976393e356e302baa12f8",
       "diagnostics": []
     },
     {
@@ -1507,7 +1561,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "9b47c852d489e6853a765fd4ab8610ebbfb8de71",
+      "figmaKey": "9b6370ee1e69d258941ff55184e78f57797c483e",
       "diagnostics": []
     },
     {
@@ -1534,7 +1588,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "48423c794c858086409d3cd5cc3b2632fe30290c",
+      "figmaKey": "845308a6ab9e0552cfdfdbbf5347257a315103db",
       "diagnostics": []
     },
     {
@@ -1561,7 +1615,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "590d1e004c46eb2180be28b8620977c759e97c04",
+      "figmaKey": "b635aacfbaf9bc220aa4cf80d1c6d39bb80b0d7d",
       "diagnostics": []
     },
     {
@@ -1588,7 +1642,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "e6e52ffc302a4cb222244468ff9d2bb992076d6e",
+      "figmaKey": "4d0cbb560be117914fbdaa23aecb30f064857703",
       "diagnostics": [
         "platform-code:missing-ios"
       ]
@@ -1617,7 +1671,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "b819967213c6b164f68248282e232a3d34f8c6b3",
+      "figmaKey": "9778005cd45d3f6cb5dc6e5792e9479035e567dd",
       "diagnostics": []
     },
     {
@@ -1644,7 +1698,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "66d70d3453b0f0996a2b5b7874271b05642ea72e",
+      "figmaKey": "0e7caca92297603ea02c466b64e59a0938775e85",
       "diagnostics": []
     },
     {
@@ -1671,7 +1725,7 @@
       },
       "description": "프레임과 컨텐츠 사이 여백",
       "hidden": false,
-      "figmaKey": "21a8d981529f623ee6ead3960215fff226f558cc",
+      "figmaKey": "3a7fb0b47f8f2206423a5ed4109a5a841abbacce",
       "diagnostics": []
     },
     {
@@ -1698,7 +1752,7 @@
       },
       "description": "요소 모서리의 둥글기",
       "hidden": false,
-      "figmaKey": "4ebc9afb544a2b017105443e7c730a32680fbf0b",
+      "figmaKey": "62b1d7402809a5da2aec946c41297c21537fa581",
       "diagnostics": []
     },
     {
@@ -1725,7 +1779,7 @@
       },
       "description": "요소 모서리의 둥글기",
       "hidden": false,
-      "figmaKey": "b2f567a2aa917a12c87dd3e542af796947c8c89b",
+      "figmaKey": "1f28957caa4edd8f05271183c2773ff0106a509d",
       "diagnostics": []
     },
     {
@@ -1752,7 +1806,7 @@
       },
       "description": "요소 모서리의 둥글기",
       "hidden": false,
-      "figmaKey": "a21f2b7e64c3570f8e4940c83ca5a7fabd9f01b0",
+      "figmaKey": "7673094f6af588955648a85a79021611f794f642",
       "diagnostics": []
     },
     {
@@ -1779,7 +1833,7 @@
       },
       "description": "요소 모서리의 둥글기",
       "hidden": false,
-      "figmaKey": "c183d0baff2ca75b1d357df9f255fdfea7a12e0c",
+      "figmaKey": "a85a3357e41b8d8bcdbb9498d30b578d7579a80c",
       "diagnostics": []
     },
     {
@@ -1806,7 +1860,7 @@
       },
       "description": "요소 모서리의 둥글기",
       "hidden": false,
-      "figmaKey": "8f436966dde5f0414cc2a20630bbe7521c5ff5f8",
+      "figmaKey": "ee7ae4f63eef167411e47c873f41d92b45002c17",
       "diagnostics": []
     },
     {
@@ -1833,7 +1887,7 @@
       },
       "description": "요소 모서리의 둥글기",
       "hidden": false,
-      "figmaKey": "f02e4ad5168151f3f268d31269b7029188086f1c",
+      "figmaKey": "225e662ee58833448c68932d5340894a0072c210",
       "diagnostics": []
     },
     {
@@ -1860,7 +1914,7 @@
       },
       "description": "요소 모서리의 둥글기",
       "hidden": false,
-      "figmaKey": "fa197e7d45409331bab4a5b11716f9feeb565195",
+      "figmaKey": "229e89543bb698e247387f0d06d6cd61aa628b40",
       "diagnostics": []
     },
     {
@@ -1887,7 +1941,7 @@
       },
       "description": "요소 모서리의 둥글기",
       "hidden": false,
-      "figmaKey": "5947232ecf66b1a0e3de7ec9b291d777bbc931fb",
+      "figmaKey": "0c93b671fc85a9515d4ebf7460e390fb7211f459",
       "diagnostics": []
     },
     {
@@ -1914,14 +1968,41 @@
       },
       "description": "요소 모서리의 둥글기",
       "hidden": false,
-      "figmaKey": "2ea6ce81b3940dcc32b98ccebdfd0fe7369f7a8e",
+      "figmaKey": "e188a6dcefda075b46ec4ae2796018a43aae814b",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.size.radius.pill",
+      "name": "system/size/radius/pill",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 999,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 999,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "corner-radius"
+      ],
+      "platformCode": {
+        "ios": "radiusPill",
+        "android": "radiusPill",
+        "web": "radius-pill"
+      },
+      "description": "캡슐/알약 형태 컴포넌트에 사용",
+      "hidden": false,
+      "figmaKey": "0a5d46876195a12f6aa564a2373133c94c748202",
       "diagnostics": []
     }
   ],
   "diagnostics": [
     {
       "code": "documentation:missing",
-      "message": "22/67 tokens have empty descriptions."
+      "message": "22/70 tokens have empty descriptions."
     }
   ]
 }

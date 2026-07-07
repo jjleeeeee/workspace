@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Avatar } from "../Avatar/Avatar";
 import { ChordIcon } from "../../assets/chord-icons";
+import { chordLogoNames } from "../../assets/chord-logos";
 import {
   TopNavigation,
   topNavigationLeadingTypeOptions,
@@ -13,6 +14,7 @@ import "./TopNavigation.css";
 
 const figmaControlNames = [
   "mode",
+  "os",
   "textType",
   "scrollBg",
   "marquee",
@@ -24,10 +26,12 @@ const figmaControlNames = [
   "showTrailing",
   "showImage",
   "showOfficialBadge",
+  "logoName",
 ] as const;
 
 const argTypes = {
   mode: { control: { type: "inline-radio" }, options: topNavigationModeOptions },
+  os: { control: { type: "inline-radio" }, options: ["ios", "android"] },
   textType: { control: { type: "select" }, options: topNavigationTextTypeOptions },
   scrollBg: { control: { type: "inline-radio" }, options: topNavigationScrollBgOptions },
   leadingType: { control: { type: "select" }, options: topNavigationLeadingTypeOptions },
@@ -39,16 +43,12 @@ const argTypes = {
   showTrailing: { control: { type: "boolean" } },
   showImage: { control: { type: "boolean" } },
   showOfficialBadge: { control: { type: "boolean" } },
+  logoName: { control: { type: "select" }, options: chordLogoNames },
 } as const;
 
 const leadingIcon = <ChordIcon name="arrowLeftMedium" size={24} />;
 const trailingIcon = <ChordIcon name="closeMedium" size={24} />;
 const avatarSlot = <Avatar size="xsmall" />;
-const logoSvg = (
-  <svg height="24" viewBox="0 0 80 24" width="80" xmlns="http://www.w3.org/2000/svg">
-    <rect fill="currentColor" height="24" rx="4" width="80" />
-  </svg>
-);
 
 const meta = {
   title: "Atoms/TopNavigation",
@@ -57,7 +57,8 @@ const meta = {
     mode: "default",
     textType: "center",
     scrollBg: "off",
-    leadingType: "icon-avatar",
+    leadingType: "icon",
+    leadingSlot: leadingIcon,
     marquee: false,
     titleLabel: "Title",
     subTitleLabel: "SubTitle",
@@ -68,8 +69,9 @@ const meta = {
     showTrailing: true,
     showImage: true,
     showOfficialBadge: true,
+    logoName: "defaultShopWText",
     imageSlot: avatarSlot,
-    logoSlot: logoSvg,
+    trailingSlot: trailingIcon,
   },
   argTypes,
   parameters: {
@@ -91,7 +93,7 @@ export const Playground: Story = {};
 export const TextTypes: Story = {
   parameters: { controls: { disable: true } },
   render: (args) => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 8, width: 393 }}>
       {(["default", "left", "center", "search", "img", "img-text", "logo-svg", "logo-svg-center"] as const).map(
         (tt) => (
           <div key={tt} style={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -103,7 +105,6 @@ export const TextTypes: Story = {
               leadingSlot={leadingIcon}
               trailingSlot={trailingIcon}
               imageSlot={avatarSlot}
-              logoSlot={logoSvg}
             />
           </div>
         ),
@@ -155,17 +156,22 @@ export const SubTitleVariants: Story = {
 export const NestedTypes: Story = {
   parameters: { controls: { disable: true } },
   render: (args) => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 16, width: 393 }}>
       {topNavigationLeadingTypeOptions.map((leadingType) => (
         <div key={leadingType} style={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>leadingType={leadingType}</span>
-          <TopNavigation {...args} leadingType={leadingType} />
+          <TopNavigation
+            {...args}
+            leadingType={leadingType}
+            leadingSlot={undefined}
+            leadingAvatarSlot={undefined}
+          />
         </div>
       ))}
       {topNavigationTrailingCountOptions.map((trailingCount) => (
         <div key={trailingCount} style={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <span style={{ color: "#666", fontFamily: "monospace", fontSize: 11 }}>trailingCount={trailingCount}</span>
-          <TopNavigation {...args} trailingCount={trailingCount} />
+          <TopNavigation {...args} trailingCount={trailingCount} trailingSlot={undefined} />
         </div>
       ))}
     </div>

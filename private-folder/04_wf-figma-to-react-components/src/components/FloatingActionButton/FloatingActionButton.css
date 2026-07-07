@@ -14,7 +14,7 @@
   border: 1px solid var(--fab-stroke);
   border-radius: 999px;
   background: linear-gradient(var(--fab-overlay), var(--fab-overlay)), var(--fab-bg);
-  box-shadow: 0 6px 28px 0 rgb(0 0 0 / 10%);
+  box-shadow: var(--cds-system-shadow-lg, 0 6px 28px 0 rgb(0 0 0 / 10%));
   color: var(--fab-icon-color);
   cursor: pointer;
   padding: 0;
@@ -36,10 +36,15 @@
   --fab-icon-color: var(--cds-system-fixed-color-icon-default, #ffffff);
 }
 
-.chord-fab:not(:disabled):hover {
+.chord-fab:hover {
   --fab-overlay: var(--cds-system-color-button-hover, #0000000a);
 }
 
-.chord-fab[data-mode="fixed"]:not(:disabled):hover {
+.chord-fab[data-mode="fixed"]:hover {
   --fab-overlay: var(--cds-system-fixed-color-button-hover, #ffffff0d);
+}
+
+.chord-fab:disabled:hover,
+.chord-fab[data-mode="fixed"]:disabled:hover {
+  --fab-overlay: transparent;
 }

@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
+import { cx } from "../../utils/cx";
 import "./ToggleSwitch.css";
 
 export type ToggleSwitchMode = "default" | "fixed";
@@ -14,10 +15,6 @@ export type ToggleSwitchProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "t
   size?: ToggleSwitchSize;
   status?: ToggleSwitchStatus;
 };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export function resolveToggleSwitchStatus(
   status: ToggleSwitchStatus | undefined,

@@ -68,7 +68,7 @@ verify visually, and record lessons before moving on.
 - Build React components in this package only.
 - Use Framelink/Figma MCP and Console MCP to read Figma component data.
 - Use `index.md` only as a component address registry.
-- Copy token JSON files into this package.
+- Read tokens from the sibling `chord-design-system/tokens` folder via relative path (do not copy JSON into this package).
 - Create or update `src/figma/<component>.source.md` before implementation.
 - Create Storybook stories with `Playground`, variants/states, and
   `FigmaCompare`.

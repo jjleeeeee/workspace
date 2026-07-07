@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from "react";
+import { cx } from "../../utils/cx";
 import "./LoadingDot.css";
 
 export type LoadingDotMode = "default" | "fixed";
@@ -11,10 +12,6 @@ export type LoadingDotProps = HTMLAttributes<HTMLSpanElement> & {
   mode?: LoadingDotMode;
   size?: LoadingDotSize;
 };
-
-function cx(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export function normalizeLoadingDotColor(size: LoadingDotSize, color: LoadingDotColor) {
   return size === "medium" && color === "white" ? "primary" : color;
