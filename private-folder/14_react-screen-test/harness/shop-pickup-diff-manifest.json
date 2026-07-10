@@ -1,0 +1,76 @@
+{
+  "screen": "shop-pickup",
+  "figma": {
+    "fileKey": "VHF5kgkVRAtctETQfeVL1W",
+    "nodeId": "216:418127",
+    "frameWidth": 393,
+    "frameHeight": 2086
+  },
+  "viewport": {
+    "width": 393,
+    "height": 852,
+    "deviceScaleFactor": 2
+  },
+  "sections": [
+    {
+      "name": "top",
+      "scroll_y": 0,
+      "capture_height": 852
+    },
+    {
+      "name": "mid",
+      "scroll_y": 852,
+      "capture_height": 852
+    },
+    {
+      "name": "bottom",
+      "scroll_y": 1704,
+      "capture_height": 382
+    }
+  ],
+  "mask_regions": [
+    {
+      "name": "status-bar",
+      "rect": [
+        0,
+        0,
+        393,
+        44
+      ]
+    }
+  ],
+  "critical_regions": [
+    {
+      "name": "cta-button",
+      "rect": [
+        16,
+        1980,
+        361,
+        52
+      ],
+      "min_score": 90
+    }
+  ],
+  "color_regions": [
+    {
+      "name": "page-bg",
+      "css_var": "--cds-system-color-surface-default-gray-50",
+      "expected_hex": "#F7F8FA"
+    },
+    {
+      "name": "card-surface",
+      "css_var": "--cds-system-color-surface-default",
+      "expected_hex": "#FFFFFF"
+    },
+    {
+      "name": "accent-primary",
+      "css_var": "--cds-system-color-roles-accent-primary",
+      "expected_hex": "#00CBD5"
+    },
+    {
+      "name": "text-default",
+      "css_var": "--cds-system-color-text-default",
+      "expected_hex": "#000000"
+    }
+  ]
+}
