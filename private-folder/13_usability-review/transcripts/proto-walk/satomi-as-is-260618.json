@@ -1,0 +1,81 @@
+flow-as-is.json 그래프를 Satomi 퍼소나로 traversal한다. auto_next 전환은 walker에 투명하게 처리.
+
+**경로 추적:**
+- T1: `35:75221` → click `[하단 좌측 아이콘]` → auto: `35:77111` → auto: `35:78110` → auto: `35:78120`
+- T2: `35:78120` → click `가입(35:78168)` → auto: `35:78452` → auto: `35:78792`
+- T3: `35:78792` → click `TOMORROW X TOGETHER(35:78811)` → `35:79132`
+- T4: `35:79132` = REACH_FRAME → REACHED
+
+---
+
+```json
+{
+  "scenario_id": "proto-walk-global-home-community-search-v1",
+  "persona": "satomi",
+  "version": "as-is",
+  "date": "2026-06-18",
+  "goal": "Discover → 커뮤니티 검색 → Tomorrow x Together 선택 → 가입 클릭 → 커뮤니티 피드 진입",
+  "start_frame": "35:75221",
+  "reach_frame": "35:79132",
+  "max_turns": 10,
+  "turns": [
+    {
+      "turn": 1,
+      "frame_id": "35:75221",
+      "frame_name": "Discover",
+      "choice_id": "I35:76163;87669:2362",
+      "reasoning": "화면을 쭉 내려보니 '추천 커뮤니티'라는 글자가 보이긴 했는데, 거기서 직접 투모로우바이투게더를 찾아 가입할 수 있는 방법이 없더라고요. 누를 수 있는 곳이 왼쪽 아래 아이콘 하나뿐이어서, 혹시 커뮤니티 탐색 메뉴가 거기 있을까 싶어서 일단 눌러봤습니다 💦",
+      "emotion": "혼란",
+      "confusion_level": 3,
+      "friction": {
+        "type": "label_unclear",
+        "note": "하단 좌측 아이콘에 텍스트 라벨이 없어서 어떤 기능인지 알 수 없었어요. 검색인지, 커뮤니티인지, 홈인지 전혀 짐작이 안 됐고, 선택지가 그것 하나뿐이라 그냥 눌렀습니다. 아이콘 옆에 한 마디라도 써 있었으면 훨씬 안심이 됐을 텐데요."
+      }
+    },
+    {
+      "turn": 2,
+      "frame_id": "35:78120",
+      "frame_name": "검색",
+      "choice_id": "35:78168",
+      "reasoning": "검색 화면이 열리면서 아티스트 목록이 나왔는데, 'TOMORROW X TOGETHER' 이름 옆에 '가입'이라고 또렷하게 쓰인 버튼이 보였어요. 딸도 모아이고 저도 늘 관심 갖고 있던 그룹이라 반가웠고, '가입' 글자가 명확해서 망설임 없이 눌렀습니다 ✨",
+      "emotion": "기대",
+      "confusion_level": 2,
+      "friction": null
+    },
+    {
+      "turn": 3,
+      "frame_id": "35:78792",
+      "frame_name": "검색",
+      "choice_id": "35:78811",
+      "reasoning": "가입 버튼을 누르고 나니 화면이 살짝 바뀐 것 같으면서 'TOMORROW X TOGETHER'가 목록에 여전히 보였어요. 이제 제 커뮤니티에 들어온 것 같은 느낌이 들어서, 이름을 눌러 커뮤니티 안으로 들어가봤습니다 ☺️",
+      "emotion": "안도",
+      "confusion_level": 2,
+      "friction": null
+    },
+    {
+      "turn": 4,
+      "frame_id": "35:79132",
+      "frame_name": "커뮤니티_피드탭_하이라이트",
+      "choice_id": "REACHED",
+      "reasoning": "드디어 투모로우바이투게더 커뮤니티 안에 들어왔네요. 'Joined'라고 표시되어 있고 멤버 수도 보이고, 피드에 수빈이가 올린 포스트와 'Feed', 'Live / Media', 'Shop' 탭이 한눈에 들어와서 마음이 놓였어요. 여기서 모아 분들과 함께 활동할 수 있겠다 싶어 기뻤습니다 🌸",
+      "emotion": "기대",
+      "confusion_level": 1,
+      "friction": null
+    }
+  ],
+  "summary": {
+    "reached": true,
+    "total_turns": 4,
+    "confusion_avg": 2.0,
+    "friction_count": 1,
+    "friction_types": ["label_unclear"],
+    "notes": "가입 버튼(가입) 자체는 즉시 발견. 최대 마찰 지점은 Discover 화면의 하단 좌측 아이콘 — 텍스트 라벨 없음, 유일한 hotspot이라 선택했으나 confusion_level 3. 가입 후 커뮤니티 진입 경로(35:78792 → 35:79132)는 비교적 자연스러웠음."
+  }
+}
+```
+
+**Walk 요약:**
+- 도달: Y, 턴 수: 4
+- confusion 평균: 2.0
+- 마찰점: 1 (`label_unclear` — Discover 화면 하단 좌측 아이콘 텍스트 라벨 부재)
+- H1 기준선(confusion ≥ 3, 턴 6+, 마찰 ≥ 2)과 비교하면 AS-IS임에도 턴 수는 짧았으나, **진입 시작 지점의 발견성 문제(아이콘 라벨 없음)는 H3 label_unclear 1건으로 확인됨**

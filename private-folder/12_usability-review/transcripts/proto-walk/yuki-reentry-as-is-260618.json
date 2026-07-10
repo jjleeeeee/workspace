@@ -1,0 +1,215 @@
+flow 그래프 BFS 추적 후 유키 퍼소나로 traversal 실행합니다.
+
+**경로 분석 결과:**
+- 35:79132 → (H at y=9796) → 35:79355 → auto→35:78115→auto→35:78286 (검색, 루프)
+- 35:78286 → [하단 우측 아이콘] → 35:79132 (루프백)
+- 35:79132 → (H at y=9077) → 35:78792 → [하단 우측 아이콘] → 35:75221 ✓
+
+```json
+{
+  "scenario_id": "proto-walk-global-home-community-reentry-v1",
+  "persona": "yuki",
+  "version": "as-is",
+  "date": "2026-06-18",
+  "start_frame": "35:79132",
+  "reach_frame": "35:75221",
+  "goal": "TXT 커뮤니티 피드에서 Discover(글로벌홈)로 이탈하라.",
+
+  "turns": [
+    {
+      "turn": 1,
+      "frame_id": "35:79132",
+      "frame_name": "커뮤니티_피드탭_하이라이트",
+      "frame_texts_visible": [
+        "TOMORROW X TOGETHER", "12.5M members", "Joined",
+        "Home", "Feed", "Live / Media", "Shop",
+        "Highlight", "Fan", "Artist", "Party"
+      ],
+      "available_hotspots": [
+        {
+          "id": "I35:79349;87669:2362",
+          "label": "[하단 우측 아이콘]",
+          "bbox_y": 9796
+        },
+        {
+          "id": "I35:79354;64535:23272;68650:2404",
+          "label": "[하단 우측 아이콘]",
+          "bbox_y": 9077
+        }
+      ],
+      "choice_id": "I35:79349;87669:2362",
+      "reasoning": "Discover 화면으로 가고 싶은데 하단에 아이콘이 두 개 다 '[하단 우측 아이콘]'이라서 어느 게 글로벌홈인지 전혀 모르겠어요. 일단 더 아래쪽(y=9796)에 있는 게 하단 탭 바처럼 생겼을 것 같아서 그걸 눌러볼게요.",
+      "emotion": "혼란",
+      "confusion_level": 3,
+      "friction": {
+        "type": "label_unclear",
+        "note": "동일 라벨 '[하단 우측 아이콘]' 2개가 전혀 다른 목적지로 연결. bbox 위치 외 시각 단서 없음."
+      },
+      "dest_actual": "35:79355 → (auto) → 35:78115 → (auto) → 35:78286"
+    },
+
+    {
+      "turn": 2,
+      "frame_id": "35:78286",
+      "frame_name": "검색",
+      "note": "35:79355 auto_next → 35:78115 auto_next → 35:78286 자동 경유",
+      "frame_texts_visible": [
+        "나의 커뮤니티", "TOMORROW X TOGETHER", "SEVENTEEN",
+        "CORTIS", "BTS", "LE SSERAFIM",
+        "투모로우바이투게더커뮤니티오픈", "더 가까이 소통해보세요!",
+        "아티스트", "Weverse DM"
+      ],
+      "available_hotspots": [
+        {
+          "id": "35:78334",
+          "label": "가입",
+          "bbox_y": 9539
+        },
+        {
+          "id": "I35:78451;68650:39004",
+          "label": "[하단 우측 아이콘]",
+          "bbox_y": 9077
+        }
+      ],
+      "choice_id": "I35:78451;68650:39004",
+      "reasoning": "어?? 커뮤니티 검색 화면이 나왔어요💦 Discover 가려고 눌렀는데 이상한 데로 왔잖아요... 여기서 '가입' 버튼은 아닌 것 같고, 하단 우측 아이콘을 누르면 혹시 Discover 탭으로 가는 거 아닐까 싶어서 눌러볼게요.",
+      "emotion": "짜증",
+      "confusion_level": 4,
+      "friction": {
+        "type": "unexpected_dest",
+        "note": "Discover 탭 이탈을 기대했으나 커뮤니티 검색 화면(나의 커뮤니티 목록)으로 이동. 의도와 완전히 다른 목적지."
+      },
+      "dest_actual": "35:79132"
+    },
+
+    {
+      "turn": 3,
+      "frame_id": "35:79132",
+      "frame_name": "커뮤니티_피드탭_하이라이트",
+      "note": "시작 화면으로 루프백 (2번째 방문)",
+      "frame_texts_visible": [
+        "TOMORROW X TOGETHER", "12.5M members", "Joined",
+        "Home", "Feed", "Live / Media", "Shop",
+        "Highlight", "Fan", "Artist", "Party"
+      ],
+      "available_hotspots": [
+        {
+          "id": "I35:79349;87669:2362",
+          "label": "[하단 우측 아이콘]",
+          "bbox_y": 9796
+        },
+        {
+          "id": "I35:79354;64535:23272;68650:2404",
+          "label": "[하단 우측 아이콘]",
+          "bbox_y": 9077
+        }
+      ],
+      "choice_id": "I35:79354;64535:23272;68650:2404",
+      "reasoning": "에... 다시 TXT 커뮤니티 피드로 돌아와버렸어요( ；∀；) 아까 아래쪽 아이콘 눌렀더니 안 됐으니까 이번엔 위쪽(y=9077)에 있는 다른 [하단 우측 아이콘]을 눌러볼게요. 어느 게 Discover인지 전혀 모르겠고 촛토 답답해요🥺",
+      "emotion": "짜증",
+      "confusion_level": 4,
+      "friction": {
+        "type": "dead_end",
+        "note": "검색 화면의 [하단 우측 아이콘]이 35:79132로 루프백. 아이콘 2개가 동일 라벨이라 재시도 전략 없이 소거법 사용."
+      },
+      "dest_actual": "35:78792"
+    },
+
+    {
+      "turn": 4,
+      "frame_id": "35:78792",
+      "frame_name": "검색",
+      "frame_texts_visible": [
+        "나의 커뮤니티", "TOMORROW X TOGETHER", "SEVENTEEN",
+        "CORTIS", "BTS", "LE SSERAFIM",
+        "아티스트", "Weverse DM"
+      ],
+      "available_hotspots": [
+        {
+          "id": "I35:78795;68650:39004",
+          "label": "[하단 우측 아이콘]",
+          "bbox_y": 9077
+        },
+        {
+          "id": "I35:78798;3484:12480",
+          "label": "TOMORROW\nX TOGETHER",
+          "bbox_y": 9169
+        },
+        {
+          "id": "35:78811",
+          "label": "TOMORROW X TOGETHER",
+          "bbox_y": 9511
+        }
+      ],
+      "choice_id": "I35:78795;68650:39004",
+      "reasoning": "또 검색 화면인데 아까랑 약간 달라 보여요. TOMORROW X TOGETHER 누르면 다시 커뮤니티로 돌아가는 것 같아서 그건 아닌 것 같고, 하단 우측 아이콘이 이번엔 Discover로 가는 거면 좋겠어요. 다른 선택지가 없어서 눌러볼게요.",
+      "emotion": "혼란",
+      "confusion_level": 4,
+      "friction": null,
+      "dest_actual": "35:75221"
+    },
+
+    {
+      "turn": 5,
+      "frame_id": "35:75221",
+      "frame_name": "Discover",
+      "frame_texts_visible": [
+        "TOMORROW X TOGETHER WORLD TOUR",
+        "새로워진 위버스를 만나보세요!",
+        "Global Fandom Platform, Weverse",
+        "Now LIVE",
+        "추천 커뮤니티",
+        "놓치지 말아야 할 소식",
+        "요즘 많이 본 미디어",
+        "DM 트렌드",
+        "최신 인기 포스트"
+      ],
+      "choice_id": "REACHED",
+      "reasoning": "드디어 Discover 화면이에요! '추천 커뮤니티', 'Now LIVE', '놓치지 말아야 할 소식' 같은 글로벌 피드가 보이니까 여기가 맞는 것 같아요. 근데 여기 오는 데 너무 많이 헤맸어요... 탭 아이콘이 전부 똑같이 생겨서 어떤 게 어디로 가는지 몰랐거든요🥺 우연히 도착한 느낌이에요.",
+      "emotion": "안도",
+      "confusion_level": 2,
+      "friction": null
+    }
+  ],
+
+  "summary": {
+    "reached": true,
+    "total_decision_turns": 4,
+    "total_turns_including_reached": 5,
+    "session_retention": false,
+    "actual_path": [
+      "35:79132 (start)",
+      "35:79355 → (auto) → 35:78115 → (auto) → 35:78286 (검색·루프)",
+      "35:79132 (루프백, 2번째 방문)",
+      "35:78792 (검색)",
+      "35:75221 (Discover · REACHED)"
+    ],
+    "confusion_avg": 3.4,
+    "friction_count": 3,
+    "friction_types": ["label_unclear", "unexpected_dest", "dead_end"],
+    "key_pain_points": [
+      "동일 라벨 '[하단 우측 아이콘]' 2개가 전혀 다른 목적지로 연결 — 선택 단서 0",
+      "Turn 1 결과: Discover가 아닌 검색 화면(나의 커뮤니티 목록) 착지 → unexpected_dest",
+      "Turn 2 결과: 검색 화면 [하단 우측 아이콘]이 커뮤니티 피드로 루프백 → dead_end",
+      "Turn 3: 소거법으로 다른 아이콘 시도 — 발견 근거 없는 우연적 성공",
+      "Discover 진입점이 커뮤니티 피드에서 직접 노출되지 않음 (직접 탭 없음)"
+    ],
+    "hypothesis_signal": {
+      "H1_confusion_avg_gte_3": true,
+      "H1_turns_gte_4": true,
+      "H1_status": "지지",
+      "W1_score": 3,
+      "W1_note": "도달했으나 재검색 동선 반복 (턴 4, 세션 미유지)",
+      "W2_score": 2,
+      "W2_note": "confusion_avg 3.4 — 진입점 인지 실패, 소거법으로 도달",
+      "W3_score": 1,
+      "W3_note": "세션 컨텍스트 미유지. '내가 보던 TXT 커뮤니티'로 즉시 재진입 불가. friction 3건."
+    }
+  }
+}
+```
+
+**TL;DR**
+- Discover 도달은 성공했으나 4턴 소요, confusion_avg 3.4 — H1 지지
+- 핵심 결함: 동일 라벨 아이콘 2개 + 루프백 경로가 소거법 탐색 강제
+- W1=3/W2=2/W3=1 → AS-IS 기준선 확인. TO-BE에 직접 탭 또는 컨텍스트 진입점 필요

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "components": [
+    {
+      "name": "stage-label",
+      "shape": "white rounded rectangle or black capsule depending on background",
+      "radiusPx": "8-20",
+      "usage": "Section labels such as QUESTION, LLM, ANSWER or workflow phases."
+    },
+    {
+      "name": "qa-bubble",
+      "shape": "small white rounded bubble with leading Q/A badge and placeholder text lines",
+      "radiusPx": "12-18",
+      "usage": "Question-answer piles, later regrouped into workflow categories."
+    },
+    {
+      "name": "workflow-circle",
+      "shape": "large circle with thin stroke, sometimes overlapping or connected with vertical note lines",
+      "radiusPx": "150-200",
+      "usage": "Plan/design/research/test/review/guide and similar flows."
+    },
+    {
+      "name": "instruction-document",
+      "shape": "document card with accumulating short rules",
+      "radiusPx": "16-24",
+      "usage": "Project instructions, Claude.md/AGENT.md/Gemini.md concepts."
+    },
+    {
+      "name": "media-noise-bubble",
+      "shape": "dark chat bubble without tail unless tail quality is deliberate",
+      "radiusPx": "16",
+      "usage": "Information overload scenes."
+    }
+  ]
+}

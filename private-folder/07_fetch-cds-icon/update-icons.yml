@@ -1,0 +1,140 @@
+# Figma Chord DS 아이콘을 assets/svg/ 에 자동 동기화하고 PR을 생성한다.
+#
+# 필수 secret (chord-design-system 저장소 Settings → Secrets → Actions):
+#   FIGMA_ACCESS_TOKEN — Figma personal access token (file read 권한)
+name: update-icons
+
+on:
+  schedule:
+    - cron: '0 23 * * 1'  # KST 08:00 매주 화요일
+  workflow_dispatch:
+    inputs:
+      force:
+        description: '--force (drop existing SVGs and refetch all)'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+
+concurrency:
+  group: update-icons
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    name: cds-icons-sync
+    runs-on:
+      group: weverse-common
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout chord-design-system
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Setup Node (for svgo)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install svgo
+        run: npm install -g svgo
+
+      - name: Setup GitHub CLI
+        run: |
+          type -p gh >/dev/null || (
+            curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+              | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+            echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+              | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+            sudo apt-get update
+            sudo apt-get install -y gh
+          )
+          gh --version
+
+      - name: Run fetch_icons
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+        run: |
+          FORCE_FLAG=""
+          if [ "${{ inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+          python3 scripts/fetch_icons.py $FORCE_FLAG
+
+      - name: Create pull request for generated icons
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/svg assets/index.ts
+
+          if git diff --staged --quiet; then
+            echo "pr_status=skipped" >> "$GITHUB_OUTPUT"
+            echo "::notice title=PR skipped::No icon changes detected."
+            {
+              echo "## Icon sync result"
+              echo ""
+              echo "**Status:** skipped (no changes)"
+              echo ""
+              echo "| Field | Value |"
+              echo "| --- | --- |"
+              echo "| Event | \`${{ github.event_name }}\` |"
+              echo "| Force | \`${{ inputs.force || 'false' }}\` |"
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BRANCH="feature/icons-sync-${GITHUB_RUN_ID}"
+          TITLE="chore(icons): sync from Figma"
+
+          git checkout -b "$BRANCH"
+          git commit \
+            -m "$TITLE" \
+            -m "Triggered by: ${{ github.event_name }}"
+          git push -u origin "$BRANCH"
+
+          PR_BODY=$(printf '%s\n' \
+            "## Summary" \
+            "Sync Chord DS icons from Figma via \`scripts/fetch_icons.py\`." \
+            "" \
+            "## Trigger" \
+            "- Event: \`${{ github.event_name }}\`" \
+            "- Force: \`${{ inputs.force || 'false' }}\`")
+
+          PR_URL=$(gh pr create \
+            --base develop \
+            --head "$BRANCH" \
+            --title "$TITLE" \
+            --body "$PR_BODY" \
+            --reviewer jj-lee_wev)
+
+          echo "pr_status=created" >> "$GITHUB_OUTPUT"
+          echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
+          echo "::notice title=Pull request created::${PR_URL}"
+
+          {
+            echo "## Icon sync result"
+            echo ""
+            echo "**Status:** pull request created"
+            echo ""
+            echo "| Field | Value |"
+            echo "| --- | --- |"
+            echo "| Pull request | ${PR_URL} |"
+            echo "| Head branch | \`${BRANCH}\` |"
+            echo "| Base branch | \`develop\` |"
+            echo "| Event | \`${{ github.event_name }}\` |"
+            echo "| Force | \`${{ inputs.force || 'false' }}\` |"
+          } >> "$GITHUB_STEP_SUMMARY"

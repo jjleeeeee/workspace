@@ -1,0 +1,83 @@
+/* LatestNotice section styles */
+/* Source: Figma node 2:2342 */
+
+.wmfv2__notice {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Figma-frozen: node 2:2342 gap between mainHeader(48) and card(y=52) */
+}
+
+/* Section header: "최신 Notice" — Heavy 19px, h-48, px-16 */
+.wmfv2__notice__header {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding-inline: var(--cds-system-size-padding-box-200, 16px);
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-400); /* 19px */
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700); /* 700 */
+  color: var(--cds-system-color-text-default);
+}
+
+/* Card: mx-10, rounded-16, white bg, shadow */
+.wmfv2__notice__card {
+  margin-inline: 10px;
+  border-radius: 16px;
+  background: #ffffff; /* ponytail: card bg is always white regardless of theme */
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  padding: var(--cds-system-size-padding-box-200, 16px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Right column */
+.wmfv2__notice__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0; /* allow text truncation inside flex child */
+  flex: 1;
+}
+
+/* Row 1: artist name + time */
+.wmfv2__notice__row1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmfv2__notice__artist {
+  display: block;
+  flex: 1;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-circular-base-text-size-text-200); /* 16px */
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700); /* Bold */
+  color: var(--cds-system-color-text-default);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wmfv2__notice__time {
+  display: block;
+  flex-shrink: 0;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-circular-base-text-size-text-75); /* 13px */
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-400); /* Regular */
+  color: var(--cds-system-color-text-gray-500);
+}
+
+/* Row 2: notice text — 2-line clamp */
+.wmfv2__notice__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-circular-base-text-size-text-75); /* 13px */
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-400); /* Regular */
+  color: var(--cds-system-color-text-gray-600);
+}

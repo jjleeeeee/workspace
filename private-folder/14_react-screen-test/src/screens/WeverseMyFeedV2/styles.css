@@ -1,0 +1,139 @@
+/* WeverseMyFeedV2 — main layout styles */
+
+/* ── iOS Status Bar ──────────────────────────────────────────────────────── */
+.wmfv2__status-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px; /* Figma-frozen: iPhone status bar height */
+  z-index: 52;
+  background: var(--cds-system-color-surface-default);
+  display: flex;
+  align-items: center;
+  padding: 14px 16px 0;
+  box-sizing: border-box;
+}
+
+.wmfv2__status-bar__time {
+  font-family: var(--cds-typography-default-font-family-body, 'SF Pro Text', system-ui, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--cds-system-color-text-default, #000);
+  flex: 1;
+}
+
+.wmfv2__status-bar__icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wmfv2 {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background: var(--cds-system-color-surface-default);
+  font-family: var(--cds-typography-default-font-family-body, ui-sans-serif, system-ui, sans-serif);
+}
+
+/* ── Top nav (sticky, hide on scroll-down) ───────────────────────────────── */
+.wmfv2__topnav {
+  position: fixed;
+  /* top set via inline style (STATUS_BAR_H) */
+  left: 0;
+  right: 0;
+  z-index: 51;
+  transition: transform 180ms cubic-bezier(0.3, 1, 0.72, 1);
+}
+
+.wmfv2__topnav--hidden {
+  transform: translateY(-100%);
+  transition: transform 220ms cubic-bezier(0.32, 0, 0.7, 0);
+}
+
+/* No custom scroll container — uses window scroll for Playwright harness compatibility */
+
+/* ── Tabs ────────────────────────────────────────────────────────────────── */
+.wmfv2__tabs {
+  position: sticky;
+  z-index: 50;
+  background: var(--cds-system-color-surface-default);
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 0 var(--cds-system-size-padding-box-200, 16px);
+  border-bottom: 1px solid var(--cds-system-color-divide-gray-100, #ebedf2);
+}
+
+.wmfv2__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.wmfv2__tab-label {
+  font-family: var(--cds-typography-default-font-family-title, 'WeGothicSans', sans-serif);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 23px;
+  color: var(--cds-system-color-text-gray-700, #484848);
+}
+
+.wmfv2__tab[aria-selected="true"] .wmfv2__tab-label {
+  color: var(--cds-system-color-text-default, #000);
+}
+
+.wmfv2__tab-icon {
+  height: 24px;
+  width: 45px; /* Figma-frozen: SVG viewBox 45×24 — exact match prevents distortion */
+  object-fit: contain;
+}
+
+.wmfv2__tab-slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--cds-system-color-text-default, #000);
+  transition: transform 200ms ease, width 200ms ease;
+  will-change: transform, width;
+}
+
+/* ── Content ─────────────────────────────────────────────────────────────── */
+.wmfv2__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Figma-frozen: content frame auto-layout gap=32px */
+  padding-top: 4px; /* Figma-frozen: content frame padding-top=4px */
+  padding-bottom: 16px;
+}
+
+.wmfv2__section {
+  padding: 0;
+}
+
+.wmfv2__section--merch {
+  padding-top: 5px; /* Figma-frozen: Figma MerchSlot at frame y=1480, React at 1475 — 5px shift aligns product-list with Figma crop at scroll_y=1704 */
+}
+
+/* ── Bottom nav ──────────────────────────────────────────────────────────── */
+.wmfv2__bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+.wmfv2__bottom-nav-spacer {
+  height: 450px; /* Figma-frozen: extended to allow scroll_y=1704 for harness bottom section (needs page ≥ 2556px) */
+}

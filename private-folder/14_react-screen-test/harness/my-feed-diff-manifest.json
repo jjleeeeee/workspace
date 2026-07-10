@@ -1,0 +1,64 @@
+{
+  "screen": "my-feed",
+  "figma": {
+    "fileKey": "gnxpCiUTQhuWVgmdiSh61A",
+    "nodeId": "2:2207",
+    "frameWidth": 393,
+    "frameHeight": 2259
+  },
+  "viewport": {
+    "width": 393,
+    "height": 852
+  },
+  "sections": [
+    { "name": "nav-tab",  "scroll_y": 0,    "capture_height": 160 },
+    { "name": "live",     "scroll_y": 146,  "capture_height": 400 },
+    { "name": "moments",  "scroll_y": 590,  "capture_height": 240 },
+    { "name": "dm",       "scroll_y": 840,  "capture_height": 260 },
+    { "name": "notice",   "scroll_y": 1100, "capture_height": 200 },
+    { "name": "shop",     "scroll_y": 1350, "capture_height": 852 }
+  ],
+  "color_regions": [
+    {
+      "name": "surface-default",
+      "css_var": "--cds-system-color-surface-default",
+      "expected_hex": "#FFFFFF"
+    },
+    {
+      "name": "accent-primary",
+      "css_var": "--cds-system-color-roles-accent-primary",
+      "expected_hex": "#00CBD5"
+    },
+    {
+      "name": "text-default",
+      "css_var": "--cds-system-color-text-default",
+      "expected_hex": "#000000"
+    },
+    {
+      "name": "text-red-accent",
+      "css_var": "--cds-system-color-text-red-accent",
+      "expected_hex": "#FF1744"
+    },
+    {
+      "name": "surface-gray-50",
+      "css_var": "--cds-system-color-surface-default-gray-50",
+      "expected_hex": "#F7F8FA"
+    }
+  ],
+  "critical_regions": [
+    {
+      "name": "live-badge",
+      "rect": [16, 168, 50, 22]
+    },
+    {
+      "name": "tab-my-feed-active",
+      "rect": [0, 98, 80, 48]
+    }
+  ],
+  "mask_regions": [
+    {
+      "name": "status-bar",
+      "rect": [0, 0, 393, 44]
+    }
+  ]
+}

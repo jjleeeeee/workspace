@@ -1,0 +1,96 @@
+/* ── MediaSlot (Moments) ───────────────────────────────────────────────────── */
+.wmfv2__media-slot {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px; /* Figma-frozen: 4px gap between title and card (255-48-4=203px card) */
+}
+
+.wmfv2__media-slot__title {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-400);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-400);
+  color: var(--cds-system-color-text-default);
+  margin: 0;
+  padding: 12px var(--cds-system-size-padding-box-200, 16px);
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+/* Card wrapper — shadow + rounded + overflow-clip */
+.wmfv2__media-slot__card {
+  margin-inline: 10px; /* Figma: px-10 on card container */
+  border-radius: var(--cds-system-size-radius-box-200, 16px);
+  overflow: hidden;
+  background: var(--cds-system-color-surface-default);
+  box-shadow: 0px 6px 28px rgba(0, 0, 0, 0.1); /* Figma-frozen: node 2:2276 card shadow */
+}
+
+.wmfv2__media-slot__scroll {
+  display: flex;
+  gap: 12px; /* Figma: gap-12 between slots */
+  padding: var(--cds-system-size-padding-box-200, 16px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.wmfv2__media-slot__scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.wmfv2__media-slot__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-100, 8px);
+  flex-shrink: 0;
+  width: 78px; /* Figma-frozen: node 2:2276 slot width */
+}
+
+.wmfv2__media-slot__thumb {
+  width: 78px;
+  height: 143px; /* Figma-frozen: MediaSlot total 255px - title48 - gap4 - card_pad32 - info28 = 143px */
+  border-radius: var(--cds-system-size-radius-box-100, 8px);
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Avatar + name: horizontal row below thumbnail */
+.wmfv2__media-slot__info {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-50, 4px);
+  overflow: hidden;
+  width: 78px;
+}
+
+/* Force chord Avatar to consistent size */
+.wmfv2__media-slot__avatar-wrap {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.wmfv2__media-slot__avatar-wrap > * {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+}
+
+.wmfv2__media-slot__name {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-default);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}

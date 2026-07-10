@@ -1,0 +1,10 @@
+import { render } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+import { {{NAME}} } from "./{{NAME}}";
+
+describe("{{NAME}}", () => {
+  it("renders with BEM block class chord-{{NAME_KEBAB}}", () => {
+    const { container } = render(<{{NAME}} />);
+    expect(container.querySelector(".chord-{{NAME_KEBAB}}")).toBeInTheDocument();
+  });
+});

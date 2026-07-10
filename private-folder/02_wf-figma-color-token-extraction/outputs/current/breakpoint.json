@@ -1,0 +1,131 @@
+{
+  "$schema": "https://our-ds-mcp/schemas/tokens.v1.json",
+  "source": {
+    "origin": "figma:Chord Design System",
+    "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
+    "collection": "WDS_tokens",
+    "version": "0.6.0",
+    "freshness": "2026-07-03T00:06:03.351Z",
+    "coverage": {
+      "total": 4,
+      "documented": 4,
+      "hidden": 0
+    },
+    "stageLabel": "v1.0"
+  },
+  "modes": [
+    "light",
+    "dark"
+  ],
+  "tokens": [
+    {
+      "id": "token:system.breakpoint.desktop-min",
+      "name": "system/breakpoint/desktop-min",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 1024,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 1024,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": "breakpointDesktopMin",
+        "android": "breakpointDesktopMin",
+        "web": "--system-breakpoint-desktop-min"
+      },
+      "description": "Phone in landscape, Tablet in landscape, Foldable in landscape (unfolded), Desktop",
+      "hidden": false,
+      "figmaKey": "f92111025be709ee406858066470d0e447ef90cd",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.breakpoint.mobile-max",
+      "name": "system/breakpoint/mobile-max",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 673,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 673,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": "breakpointMobileMax",
+        "android": "breakpointMobileMax",
+        "web": "--system-breakpoint-mobile-max"
+      },
+      "description": "Phone in portrait",
+      "hidden": false,
+      "figmaKey": "17b7c729a040e722ff8224b10fbe2a89bae38c27",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.breakpoint.tablet-max",
+      "name": "system/breakpoint/tablet-max",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 1023,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 1023,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": "breakpointTabletMax",
+        "android": "breakpointTabletMax",
+        "web": "--system-breakpoint-tablet-max"
+      },
+      "description": "Tablet in portrait, Foldable in portrait (unfolded)",
+      "hidden": false,
+      "figmaKey": "29538a696608b532cf43142b1175c6941e52a4f3",
+      "diagnostics": []
+    },
+    {
+      "id": "token:system.breakpoint.tablet-min",
+      "name": "system/breakpoint/tablet-min",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 674,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 674,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "width-height"
+      ],
+      "platformCode": {
+        "ios": "breakpointTabletMin",
+        "android": "breakpointTabletMin",
+        "web": "--system-breakpoint-tablet-min"
+      },
+      "description": "Tablet in portrait, Foldable in portrait (unfolded)",
+      "hidden": false,
+      "figmaKey": "93a514c73d56f19a4347d864d6591492b132bae6",
+      "diagnostics": []
+    }
+  ],
+  "diagnostics": []
+}

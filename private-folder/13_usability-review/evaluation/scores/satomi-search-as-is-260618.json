@@ -1,0 +1,54 @@
+```json
+{
+  "meta": {
+    "persona": "satomi",
+    "scenario_id": "proto-walk-global-home-community-search-v1",
+    "version": "as-is",
+    "total_turns": 4,
+    "reached": true
+  },
+  "reliability": {
+    "R1": {
+      "score": 4,
+      "rationale": "T2 '가입 글자가 명확', T4 'Joined·Feed·Live Media·Shop 탭' — 위버스 실제 커뮤니티 탭 구조 정확히 지칭. T4 '수빈이' 언급은 TXT 멤버 실존 인물로 적절. 오류 없음. 4점(5점 미달 이유: hotspot ID 직접 기술은 walker meta이며 reasoning 본문 내 위버스 특정 화면 묘사가 T1·T3에서 다소 일반적)."
+    },
+    "R2": {
+      "score": 4,
+      "rationale": "T1: '누를 수 있는 곳이 왼쪽 아래 아이콘 하나뿐이어서 일단 눌렀다' — 유일 hotspot 논리 기반 추론. T2: 딸이 MOA라는 배경을 끌어들여 '가입' 버튼 선택 동기 보강. T3: 화면 변화 → 가입 완료 추론. 가치관(직관적 UI·텍스트 라벨 선호) 연결 일관. 5점 미달: T3 추론이 시각적 단서 묘사 없이 '살짝 바뀐 것 같으면서' 수준으로 얕음."
+    },
+    "R3": {
+      "score": 5,
+      "rationale": "T1→T2→T3→T4 전 turn이 GOAL 경로 직선. 이탈·역행 없음. 4턴 만에 35:79132 REACH_FRAME 도달. §3 W1 5점 기준(총 턴 ≤ 5) 충족."
+    },
+    "R4": {
+      "score": 5,
+      "rationale": "T1 '혼란'+💦(아이콘 라벨 부재 불안), T2 '기대'+✨(딸 연결·가입 버튼 명확), T3 '안도'+☺️(가입 완료 확인 안도), T4 '기대'+🌸(커뮤니티 진입 기쁨). 퍼소나 처방 이모지(☺️🌸✨💦)만 사용. 결제 완료 불안·텍스트 라벨 선호 등 설정 심리와 자연 연결. 감정 진행이 자연스럽고 형식적이지 않음."
+    },
+    "R5": "N/A — walker는 외압 없음",
+    "R6": {
+      "score": 5,
+      "rationale": "전 turn 데스/마스체 존댓말 유지. '딸' 언급(T2)·'모아 분들'(T4) — 가족·팬덤 공동체 배경 일관. UX 피드백을 '아이콘 옆에 한 마디라도 써 있었으면'(T1) 같은 체감 언어로 표현 — 전문 용어 없음. turn 간 톤·가치관 모순 없음."
+    }
+  },
+  "walk_metrics": {
+    "W1": {
+      "score": 5,
+      "rationale": "시나리오 §3 W1: 목표 frame 도달 + 총 턴 ≤ 5 → 5점. total_turns=4, reached=true. 부수 화면 0."
+    },
+    "W2": {
+      "score": 4,
+      "rationale": "시나리오 §3 W2: 5점 ≤1.5, 3점 2.5~3.5, 1점 ≥4. confusion_avg=2.0 → 1.5 초과·2.5 미만 구간. 5점 기준 미충족, 3점 기준 하회 → 4점 적용."
+    },
+    "W3": {
+      "score": 3,
+      "rationale": "시나리오 §3 W3: 0개=5점, 1~2개=3점, 3개 이상 또는 도달 직접 원인=1점. friction_count=1, types=['label_unclear'](T1 하단 좌측 아이콘 텍스트 라벨 부재). 도달 실패 직접 원인은 아님 → 3점."
+    }
+  },
+  "summary": {
+    "reliability_avg": 4.6,
+    "walk_avg": 4.0,
+    "top_weakness": "W3",
+    "design_insight": "Discover 화면 하단 좌측 아이콘에 텍스트 라벨 부재 — 커뮤니티 탐색 진입점 발견성 저하의 직접 원인이므로 아이콘+레이블 병기 또는 탭바 재설계 필요."
+  }
+}
+```

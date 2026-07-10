@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Selection">
+<path id="Vector" d="M11.2783 2.84746L12.2952 4.73803C12.9721 5.99629 14.0037 7.0285 15.262 7.70475L17.1525 8.72168C18.1714 9.2693 18.1714 10.7301 17.1525 11.2783L15.262 12.2952C14.0037 12.9721 12.9715 14.0037 12.2952 15.262L11.2783 17.1525C10.7307 18.1714 9.26994 18.1714 8.72168 17.1525L7.70475 15.262C7.02787 14.0037 5.9963 12.9715 4.73803 12.2952L2.84746 11.2783C1.82862 10.7307 1.82862 9.26994 2.84746 8.72168L4.73803 7.70475C5.9963 7.02787 7.0285 5.99629 7.70475 4.73803L8.72168 2.84746C9.2693 1.82862 10.7301 1.82862 11.2783 2.84746Z" fill="url(#paint0_radial_0_80)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_80" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(4.74311 5.98398) rotate(27.017) scale(14.7873)">
+<stop stop-color="#4FF0FF"/>
+<stop offset="0.230769" stop-color="#96FAFF"/>
+<stop offset="0.557692" stop-color="#14D4C8"/>
+<stop offset="1" stop-color="#FD76FF"/>
+</radialGradient>
+</defs>
+</svg>

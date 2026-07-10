@@ -1,0 +1,729 @@
+.shopPickup {
+  background: var(--cds-system-color-surface-default-gray-50);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--cds-typography-default-font-family-body, Pretendard, sans-serif);
+  position: relative;
+}
+
+/* ── GNB ─────────────────────────────────────────────────────────────────── */
+.shopPickup .chord-top-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.shopPickup .gnbBackBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Body ─────────────────────────────────────────────────────────────────── */
+.shopPickup .body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-150);
+  padding: var(--cds-system-size-padding-box-150) var(--cds-system-size-padding-box-100);
+  padding-bottom: var(--cds-system-size-padding-box-1000);
+}
+
+/* ── Section Card ─────────────────────────────────────────────────────────── */
+.shopPickup .card {
+  background: var(--cds-system-color-surface-default);
+  border-radius: var(--cds-system-size-radius-box-200);
+  padding: var(--cds-system-size-padding-box-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-200);
+  width: 100%;
+  box-shadow: var(--cds-system-shadow-large);
+}
+
+.shopPickup .sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-300);
+}
+
+.shopPickup .sectionTitleText {
+  flex: 1;
+  font-size: var(--cds-typography-default-base-text-size-text-300);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-300);
+  color: var(--cds-system-color-text-default);
+}
+
+/* ── Order Product ────────────────────────────────────────────────────────── */
+.shopPickup .productCard {
+  gap: var(--cds-system-size-padding-box-150);
+}
+
+.shopPickup .shippingDateRow {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-75);
+}
+
+.shopPickup .shippingDateLabel {
+  font-size: var(--cds-typography-default-base-text-size-text-75);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75);
+  color: var(--cds-system-color-text-primary);
+}
+
+.shopPickup .shippingDateValue {
+  font-size: var(--cds-typography-default-base-text-size-text-75);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75);
+  color: var(--cds-system-color-text-primary);
+}
+
+.shopPickup .productRow {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-150);
+  align-items: flex-start;
+}
+
+.shopPickup .thumbnail {
+  width: 80px; /* Figma-frozen: 216:418139 */
+  height: 80px;
+  border-radius: var(--cds-system-size-radius-box-75);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.shopPickup .thumbnail img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shopPickup .productDetail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-50);
+  flex: 1;
+  padding-top: var(--cds-system-size-padding-box-50);
+  min-width: 0;
+}
+
+.shopPickup .productName {
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: var(--cds-system-color-text-gray-700);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.shopPickup .productOption {
+  display: block;
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: var(--cds-system-color-text-gray-500);
+}
+
+.shopPickup .priceRow {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-25);
+  align-items: center;
+}
+
+.shopPickup .priceCurrency {
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-default);
+}
+
+.shopPickup .priceAmount {
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-default);
+}
+
+.shopPickup .totalRow {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-200);
+  padding-top: var(--cds-system-size-padding-box-200);
+  border-top: 1px solid var(--cds-system-color-divide-gray-75);
+}
+
+.shopPickup .totalLabel {
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200);
+  color: var(--cds-system-color-text-gray-900);
+  white-space: nowrap;
+}
+
+.shopPickup .totalPriceRight {
+  flex: 1;
+  display: flex;
+  gap: var(--cds-system-size-padding-box-25);
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* ── Orderer ──────────────────────────────────────────────────────────────── */
+.shopPickup .ordererInfo {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-200);
+  align-items: flex-start;
+}
+
+.shopPickup .ordererText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-75);
+  min-width: 0;
+}
+
+.shopPickup .ordererName {
+  display: block;
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200);
+  color: var(--cds-system-color-text-default);
+}
+
+.shopPickup .ordererEmail,
+.shopPickup .ordererPhone {
+  display: block;
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200);
+  color: var(--cds-system-color-text-gray-700);
+  word-break: break-all;
+}
+
+/* ── Pickup ───────────────────────────────────────────────────────────────── */
+.shopPickup .pickupLocation {
+  display: block;
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-gray-700);
+}
+
+.shopPickup .pickupTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-50);
+}
+
+.shopPickup .pickupTitleText {
+  font-size: var(--cds-typography-default-base-text-size-text-300);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-300);
+  color: var(--cds-system-color-text-default);
+  white-space: nowrap;
+}
+
+.shopPickup .pickupDesc {
+  display: block;
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-gray-700);
+}
+
+/* ── Shipping method ──────────────────────────────────────────────────────── */
+.shopPickup .shippingMethodList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-150);
+}
+
+.shopPickup .shippingItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cds-system-size-padding-box-100);
+  cursor: pointer;
+  min-height: 44px; /* Figma-frozen: 216:418183 */
+}
+
+.shopPickup .shippingItemContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-25);
+}
+
+.shopPickup .shippingItemTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopPickup .shippingName {
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-default);
+}
+
+.shopPickup .shippingDesc {
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: var(--cds-system-color-text-gray-500);
+}
+
+/* ── Radio button ─────────────────────────────────────────────────────────── */
+.shopPickup .radioBtn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cds-system-color-outline-default-300a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: border-color 0.15s;
+}
+
+.shopPickup .radioBtn.selected {
+  border-color: var(--cds-system-color-roles-primary);
+  background: var(--cds-system-color-roles-primary);
+}
+
+.shopPickup .radioBtn.selected::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cds-system-color-surface-default);
+}
+
+/* ── Message box ──────────────────────────────────────────────────────────── */
+.shopPickup .messageBox {
+  background: var(--cds-system-color-surface-default-gray-50);
+  border-radius: var(--cds-system-size-radius-box-75);
+  padding: var(--cds-system-size-padding-box-100);
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-75);
+}
+
+.shopPickup .messageBox--notice {
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-25);
+  align-items: flex-start;
+}
+
+.shopPickup .messageBoxLine {
+  display: block;
+  padding-left: 1em;
+  position: relative;
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-gray-700);
+}
+
+.shopPickup .messageBoxLine::before {
+  content: '•';
+  position: absolute;
+  left: 0.2em;
+}
+
+.shopPickup .messageBoxText {
+  flex: 1;
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-gray-700);
+  white-space: pre-line;
+}
+
+/* ── Cash ─────────────────────────────────────────────────────────────────── */
+.shopPickup .cashInputRow {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-100);
+  align-items: flex-start;
+}
+
+.shopPickup .cashTextField {
+  flex: 1;
+  border: 1px solid var(--cds-system-color-status-inactive-gray);
+  border-radius: var(--cds-system-size-radius-box-100);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--cds-system-size-padding-box-200);
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  color: var(--cds-system-color-text-gray-400);
+  background: var(--cds-system-color-surface-default);
+  overflow: hidden;
+}
+
+.shopPickup .cashAvailableRow {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-50);
+  align-items: center;
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  white-space: nowrap;
+}
+
+.shopPickup .cashAvailableLabel {
+  color: var(--cds-system-color-text-gray-700);
+}
+
+.shopPickup .cashCheckRow {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-75);
+  align-items: center;
+  cursor: pointer;
+}
+
+.shopPickup .checkCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cds-system-color-outline-default-300a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.shopPickup .checkCircle.checked {
+  background: var(--cds-system-color-roles-primary);
+  border-color: var(--cds-system-color-roles-primary);
+}
+
+.shopPickup .checkCircle.checked::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cds-system-color-surface-default);
+}
+
+.shopPickup .checkLabel {
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200);
+  color: var(--cds-system-color-text-gray-700);
+}
+
+/* ── Payment Amount ───────────────────────────────────────────────────────── */
+.shopPickup .priceBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-100);
+}
+
+.shopPickup .subtotalRow {
+  display: flex;
+  align-items: center;
+}
+
+.shopPickup .subtotalLabel {
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-gray-700);
+  width: 140px;
+}
+
+.shopPickup .subtotalPrice {
+  flex: 1;
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-gray-800);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.shopPickup .cashDiscount {
+  color: var(--cds-system-color-text-primary);
+}
+
+.shopPickup .finalSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-75);
+  padding-top: var(--cds-system-size-padding-box-200);
+  border-top: 1px solid var(--cds-system-color-divide-gray-75);
+}
+
+.shopPickup .finalRow {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-200);
+}
+
+.shopPickup .finalLabel {
+  flex: 1;
+  font-size: var(--cds-typography-default-base-text-size-text-300);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-300);
+  color: var(--cds-system-color-text-default);
+}
+
+.shopPickup .finalPriceRight {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-25);
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.shopPickup .cashRewardRow {
+  display: flex;
+  align-items: center;
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-primary);
+  white-space: nowrap;
+}
+
+.shopPickup .cashRewardLabel {
+  flex-shrink: 0;
+}
+
+.shopPickup .cashRewardAmount {
+  flex: 1;
+  display: flex;
+  gap: var(--cds-system-size-padding-box-25);
+  justify-content: flex-end;
+}
+
+/* ── Payment Method ───────────────────────────────────────────────────────── */
+.shopPickup .paymentOptionRow {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-75);
+  align-items: center;
+  padding: var(--cds-system-size-padding-box-75) 0;
+  cursor: pointer;
+}
+
+.shopPickup .paymentOptionLabel {
+  font-size: var(--cds-typography-default-base-text-size-text-200);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-200);
+}
+
+.shopPickup .paymentOptionLabel.selected {
+  color: var(--cds-system-color-text-primary);
+}
+
+.shopPickup .paymentOptionLabel.unselected {
+  color: var(--cds-system-color-text-default);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+}
+
+/* ── Card Carousel ────────────────────────────────────────────────────────── */
+.shopPickup .cardCarousel {
+  overflow-x: auto;
+  display: flex;
+  gap: var(--cds-system-size-padding-box-100);
+  padding-bottom: var(--cds-system-size-padding-box-50);
+  scrollbar-width: none;
+}
+
+.shopPickup .cardCarousel::-webkit-scrollbar {
+  display: none;
+}
+
+.shopPickup .weverseCard {
+  flex-shrink: 0;
+  width: 304px; /* Figma-frozen: 216:418277 */
+  height: 100px;
+  background: var(--cds-system-color-surface-default);
+  border-radius: var(--cds-system-size-radius-box-150);
+  display: flex;
+  gap: var(--cds-system-size-padding-box-100);
+  align-items: center;
+  padding: var(--cds-system-size-padding-box-200) var(--cds-system-size-padding-box-200) var(--cds-system-size-padding-box-200) var(--cds-system-size-padding-box-100);
+}
+
+.shopPickup .weverseCard.active {
+  border: 1.5px solid var(--cds-system-color-roles-primary);
+}
+
+.shopPickup .weverseCard.inactive {
+  border: 1px solid var(--cds-system-color-outline-gray-100);
+}
+
+.shopPickup .cardImageWrap {
+  width: 68px; /* Figma-frozen: 216:418278 */
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.shopPickup .cardImg {
+  width: 40px;
+  height: 63px;
+  object-fit: cover;
+  border-radius: var(--cds-system-size-radius-box-50);
+}
+
+.shopPickup .cardInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-100);
+  min-width: 0;
+}
+
+.shopPickup .cardNameRow {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-75);
+  align-items: flex-start;
+}
+
+.shopPickup .cardName {
+  flex: 1;
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-default);
+  min-width: 0;
+}
+
+.shopPickup .cardDetailRow {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-75);
+  align-items: center;
+}
+
+.shopPickup .cardDetailText {
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-gray-500);
+  white-space: nowrap;
+}
+
+.shopPickup .cardDivider {
+  width: 1px;
+  height: 12px;
+  background: var(--cds-system-color-divide-gray-200);
+}
+
+.shopPickup .installmentRow {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-25);
+  align-items: center;
+}
+
+.shopPickup .installmentText {
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-gray-800);
+  white-space: nowrap;
+}
+
+/* ── Terms ────────────────────────────────────────────────────────────────── */
+.shopPickup .termsContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-100);
+}
+
+.shopPickup .termItem {
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: var(--cds-system-color-text-gray-800);
+  padding-left: 1.25em;
+  position: relative;
+  margin: 0;
+}
+
+.shopPickup .termItem::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+}
+
+/* ── Bottom ───────────────────────────────────────────────────────────────── */
+.shopPickup .bottom {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopPickup .floatingBtnRow {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 var(--cds-system-size-padding-box-125) var(--cds-system-size-padding-box-125) 0;
+}
+
+.shopPickup .bottomBar {
+  backdrop-filter: blur(50px);
+  background: var(--cds-system-color-surface-default);
+  border-top: 1px solid var(--cds-system-color-outline-default-100a);
+  padding: var(--cds-system-size-padding-box-150) var(--cds-system-size-padding-box-200) var(--cds-system-size-padding-box-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-150);
+}
+
+.shopPickup .termsAgreement {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-50);
+  align-items: flex-start;
+}
+
+.shopPickup .termsArrow {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  align-self: center;
+  transform: scaleY(-1);
+}
+
+.shopPickup .termsText {
+  flex: 1;
+  font-size: var(--cds-typography-default-base-text-size-text-75);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75);
+  color: var(--cds-system-color-text-gray-500);
+}
+
+/* BottomNavigation DS 오버라이드 — gradient 없는 컨텍스트 */
+.shopPickup .chord-bottom-navigation__gradient {
+  display: none;
+}
+
+.shopPickup .chord-bottom-navigation {
+  height: 95px; /* Figma-frozen: 216:418330 */
+  background: var(--cds-system-color-surface-default);
+}
+
+.shopPickup .chord-bottom-navigation__bar {
+  justify-content: center;
+}

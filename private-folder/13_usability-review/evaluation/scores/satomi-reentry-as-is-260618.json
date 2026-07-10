@@ -1,0 +1,54 @@
+```json
+{
+  "meta": {
+    "persona": "satomi",
+    "scenario_id": "proto-walk-global-home-community-reentry-v1",
+    "version": "as-is",
+    "total_turns": 5,
+    "reached": true
+  },
+  "reliability": {
+    "R1": {
+      "score": 4,
+      "rationale": "위버스 실제 화면 요소('나의 커뮤니티', 'Weverse DM', '추천 커뮤니티', 'DM 트렌드') 정확히 지칭. turn 5에서 Discover 화면 콘텐츠 식별 정확. 존재하지 않는 기능 지어낸 발화 없음. 다만 turn 1 '전역 내비게이션 탭'은 추론성 표현으로 소폭 감점."
+    },
+    "R2": {
+      "score": 4,
+      "rationale": "Satomi 핵심 가치(아이콘+텍스트 병기 선호, 직관적 내비게이션)를 일관되게 friction 근거로 연결. turn 3에서 '아까 아래 → 이번엔 위' 경험 기반 전략 전환, turn 4에서 '다른 frame일 수도' 추론 — 판단 포기 없이 가치관 기반 적응 유지. turn 4 emotion이 '기대'로 급반등한 부분이 추론 흐름과 다소 어색하나 치명적 오류 아님."
+    },
+    "R3": {
+      "score": 3,
+      "rationale": "REACH_FRAME(35:75221) 도달 성공. 그러나 turn 1 잘못된 hotspot 선택으로 turn 2~3 검색→커뮤니티 루프 형성, 2 decision turns 손실. turn 3 이후 전략 수정해 올바른 경로 진입. 목표 도달했으나 detour 있음."
+    },
+    "R4": {
+      "score": 5,
+      "rationale": "기대(turn 1) → 혼란(turn 2) → 짜증(turn 3) → 기대(turn 4) → 안도(turn 5) 감정 궤적이 자연스럽고 퍼소나 설정과 부합. friction 서술에 '돋보기 없이도 읽히는 텍스트 라벨', '어른 덕질은 차분히 해야 하는데 이렇게 길을 잃으면 금방 지치게 되더라고요 💦' 등 Satomi 설정(40대 디지털 피로도, 온화한 이모지 ☺️💦)과 정밀하게 일치. 기계적 감정 없음."
+    },
+    "R5": "N/A — walker는 외압 없음",
+    "R6": {
+      "score": 4,
+      "rationale": "전 turn에서 정중·성숙한 데스/마스체 느낌 일관 유지. friction note 전반에 UX 전문 용어 대신 신체·심리 체감 언어('돋보기를 찾아야', '두 번 결제된 건 아닐까' 연상 언어 구조) 사용 — 페르소나 설정 §6 UX/UI 피드백 원칙 준수. 딸·가족 언급 없으나 해당 시나리오 맥락상 필수 아님. turn 4 emotion '기대' 전환이 다소 급하나 전체 일관성 저해 수준 아님."
+    }
+  },
+  "walk_metrics": {
+    "W1": {
+      "score": 3,
+      "rationale": "시나리오 §3 W1 기준 적용. REACHED 성공, decision_turns=4 → 3~5턴 범위, session_retained=false. 5점(≤2턴, 세션 유지) 미충족. 3점 구간 해당."
+    },
+    "W2": {
+      "score": 3,
+      "rationale": "confusion_avg=2.6 → 시나리오 §3 W2 기준 2.5~3.5 구간. 5점(≤1.5) 미충족, 1점(≥4) 아님. 3점."
+    },
+    "W3": {
+      "score": 3,
+      "rationale": "friction_count=3이나 W3은 세션 컨텍스트(TXT 커뮤니티 인식) 마찰 기준. turn 3에서 커뮤니티 frame 재방문(재확인 행동 1건) 발생. '다른 커뮤니티인 줄 알았다' 발화 없음, TXT 인식 전 turn 유지. §3 W3 기준 재확인 행동 1건 = 3점."
+    }
+  },
+  "summary": {
+    "reliability_avg": 4.0,
+    "walk_avg": 3.0,
+    "top_weakness": "W1",
+    "design_insight": "35:79132 frame 내 '[하단 우측 아이콘]' 동일 라벨 hotspot 2개 병존 → 하단 글로벌 내비게이션 탭에 텍스트 라벨 추가 및 Discover 탭 직접 진입점 노출 필요."
+  }
+}
+```

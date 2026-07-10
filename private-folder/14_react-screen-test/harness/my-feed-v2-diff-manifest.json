@@ -1,0 +1,81 @@
+{
+  "slug": "my-feed-v2",
+  "screenUrl": "http://localhost:5173/?screen=my-feed-v2",
+  "figmaNodeId": "2:2207",
+  "figmaFileKey": "gnxpCiUTQhuWVgmdiSh61A",
+  "viewport": { "width": 393, "height": 852 },
+  "sections": [
+    { "name": "hero", "scroll_y": 0, "capture_height": 852 },
+    { "name": "mid", "scroll_y": 852, "capture_height": 852 },
+    { "name": "bottom", "scroll_y": 1704, "capture_height": 555 }
+  ],
+  "color_regions": [
+    {
+      "name": "live-badge",
+      "rect": [12, 112, 48, 20],
+      "css_var": "--cds-system-fixed-color-status-danger-red",
+      "expected_hex": "#FE5B58"
+    },
+    {
+      "name": "tabs-bg",
+      "rect": [0, 98, 393, 48],
+      "css_var": "--cds-system-color-surface-default",
+      "expected_hex": "#FFFFFF"
+    },
+    {
+      "name": "ai-banner-border",
+      "rect": [12, 520, 369, 44],
+      "css_var": "--cds-system-color-roles-primary",
+      "expected_hex": "#00CBD5"
+    }
+  ],
+  "critical_regions": [],
+  "mask_regions": [
+    {
+      "name": "hero-bottom-nav",
+      "rect": [0, 720, 393, 132],
+      "reason": "Fixed BottomNavigation appears at viewport y=720-852 in React (scroll_y=0) but Figma frame y=720-852 shows MediaSlot content — these never match"
+    },
+    {
+      "name": "mid-status-bar",
+      "rect": [0, 852, 393, 50],
+      "reason": "Fixed status bar in React at viewport y=0-50 when scroll_y=852 overlays Moments content; Figma frame y=852-902 shows Moments photos (no status bar drawn there)"
+    },
+    {
+      "name": "mid-tabs",
+      "rect": [0, 902, 393, 48],
+      "reason": "Sticky tabs in React at viewport y=50-98 when scroll_y=852; Figma frame y=902-950 shows Moments content (tabs are at Figma frame y=98-147, far above)"
+    },
+    {
+      "name": "mid-bottom-nav",
+      "rect": [0, 1572, 393, 132],
+      "reason": "Fixed BottomNavigation appears at viewport y=720-852 in React (scroll_y=852 → full-frame y=1572-1704) but Figma frame shows page content there"
+    },
+    {
+      "name": "bottom-status-bar",
+      "rect": [0, 1704, 393, 50],
+      "reason": "Fixed status bar appears in React at scroll_y=1704 but Figma frame shows MerchSlot hero content at that y offset"
+    },
+    {
+      "name": "bottom-tabs",
+      "rect": [0, 1754, 393, 48],
+      "reason": "Sticky tabs appear in React at scroll_y=1704 but Figma frame shows MerchSlot hero content at that y offset"
+    },
+    {
+      "name": "bottom-nav",
+      "rect": [0, 2127, 393, 132],
+      "reason": "Figma shows BottomNavigation at frame y=2127-2259 (section y=423-555), React has it fixed outside 555px capture"
+    },
+    {
+      "name": "hero-onlive-card",
+      "rect": [0, 148, 393, 470],
+      "reason": "OnLive card (photo + overlaid text on dark bg) rendered at DPR=1 in Figma vs DPR=2 in browser — downsampling and subpixel antialiasing differences are inherently unmatchable"
+    },
+    {
+      "name": "bottom-card-images",
+      "rect": [0, 1803, 393, 146],
+      "reason": "Product card images (720×720 → 146×146px) rendered at DPR=1 Figma vs DPR=2 browser — different downsampling algorithms cause per-pixel differences exceeding threshold"
+    }
+  ],
+  "score_threshold": 95
+}

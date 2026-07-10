@@ -1,0 +1,61 @@
+.wt {
+  width: 100%;
+  background: var(--cds-system-color-surface-default);
+}
+
+.wt__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-200);       /* 16px */
+  padding: var(--cds-system-size-padding-box-150) var(--cds-system-size-padding-box-200); /* 12px 16px */
+  height: var(--cds-system-size-padding-box-600);    /* 48px */
+  box-sizing: border-box;
+}
+
+.wt__tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-25);        /* 2px */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--cds-system-color-surface-default-reverse-200a); /* rgba(0,0,0,0.2) */
+}
+
+.wt__tab-label {
+  font-family: var(--cds-typography-circular-font-family-title, "CircularXX TT", sans-serif);
+  font-size: var(--cds-typography-circular-base-text-size-text-300);    /* 17px */
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700); /* 700 */
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-300); /* 23px */
+  color: inherit;
+}
+
+.wt__tab-indicator {
+  display: block;
+  height: var(--cds-system-size-padding-box-25);     /* 2px */
+  width: 100%;
+  background: transparent;
+  border-radius: 1px;
+}
+
+.wt__tab--active {
+  color: var(--cds-system-color-text-gray-900);      /* #111111 */
+}
+
+.wt__tab--active .wt__tab-indicator {
+  background: var(--cds-system-color-text-gray-900); /* #111111 */
+}
+
+.wt__tab-icon {
+  width: 46px;
+  height: 17.45px;
+  object-fit: contain;
+  opacity: 0.2;
+}
+
+.wt__tab--active .wt__tab-icon {
+  opacity: 1;
+}

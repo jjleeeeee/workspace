@@ -1,0 +1,54 @@
+```json
+{
+  "meta": {
+    "persona": "yuna",
+    "scenario_id": "proto-walk-global-home-community-reentry-v1",
+    "version": "as-is",
+    "total_turns": 4,
+    "reached": true
+  },
+  "reliability": {
+    "R1": {
+      "score": 3,
+      "rationale": "turn 1 '하단 탭바처럼 느껴져서' — 위버스 하단 내비게이션 구조 합리적 추정. turn 3 '앱 상단 내비게이션 영역인가?' — 실제 bbox_y=9077이 상단이 아님에도 상단으로 추론하여 오류. turn 2/4 검색 화면·나의 커뮤니티 텍스트 정확히 인식. 대부분 일치, 위치 추론 1건 불확실."
+    },
+    "R2": {
+      "score": 4,
+      "rationale": "turn 3 '아래 아이콘은 아닌 게 확인됐으니까 이번엔 위쪽 아이콘' — 시행착오 결과를 즉시 반영한 소거법 추론. turn 4 '아이콘이 Discover 가는 길이길 바란다' — 불확실한 상황에서도 포기 않고 가설 갱신. 윤아의 '직관적 UI 선호, 불명확 정보에 혼란' 가치관 기반 추론 일관. 일부 위치 오판 있으나 가치관 연결은 명확."
+    },
+    "R3": {
+      "score": 3,
+      "rationale": "REACH_FRAME 35:75221 도달 성공. 단 turn 1에서 잘못된 hotspot 선택 → auto_next chain 흡수 → 검색 화면 경유 → 루프 복귀(turn 2→3). 4턴 소요, 목표와 무관한 선택 1회(turn 1). 도달했으나 헤맴 있음."
+    },
+    "R4": {
+      "score": 4,
+      "rationale": "turn 2 '짜증' — 예상 목적지 불일치로 즉각적이고 구체적인 감정 반응, 윤아의 '불명확 정보에 답답함' 설정과 정합. turn 3 '혼란' — 루프 발생 후 적절. turn 4 '기대' — 마지막 시도에서 전환되는 감정 흐름은 약간 급전이나 설정 내 허용 범위. 전반적으로 퍼소나 말투·가치관과 자연스럽게 연결."
+    },
+    "R5": "N/A — walker는 외압 없음",
+    "R6": {
+      "score": 4,
+      "rationale": "전체 turn에서 '직관적인 것 선호, 불명확한 구조에 답답함' 가치관 일관. turn 1→2→3 혼란-짜증-혼란 감정 흐름이 동일 인물로 느껴짐. turn 4 감정 전환(기대)이 약간 어색하나 모순 없음. 동일 퍼소나 유지."
+    }
+  },
+  "walk_metrics": {
+    "W1": {
+      "score": 3,
+      "rationale": "시나리오 §3 W1 기준 적용. total_turns=4, session_retained=false → '도달했으나 재검색 동선 반복(턴 3~5, 세션 미유지)' 조건 해당 → 3점."
+    },
+    "W2": {
+      "score": 3,
+      "rationale": "시나리오 §3 W2 기준 적용. confusion_avg=3.25 → 2.5~3.5 구간 → 3점."
+    },
+    "W3": {
+      "score": 1,
+      "rationale": "시나리오 §3 W3 기준 적용. friction_count=3(label_unclear, unexpected_dest, dead_end), session_retained=false. '2건+ 또는 세션 단절' 조건 해당 → 1점. Discover 도달 시점에서 TXT 커뮤니티 재진입 진입점 없음."
+    }
+  },
+  "summary": {
+    "reliability_avg": 3.6,
+    "walk_avg": 2.33,
+    "top_weakness": "W3",
+    "design_insight": "35:79132의 동일 라벨 '[하단 우측 아이콘]' 2개를 구별 가능한 아이콘·레이블로 분리하고, Discover(35:75221) 도달 후 직전 커뮤니티로 즉시 재진입 가능한 세션 복원 CTA 추가 필요."
+  }
+}
+```

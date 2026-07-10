@@ -1,0 +1,312 @@
+{
+  "source": "content/cds-status-report-slide-deck.md",
+  "slideCount": 28,
+  "styleKit": "../style-kit/DECK.md",
+  "chartLibrary": "Chart.js",
+  "iconLibrary": "Lucide",
+  "slides": [
+    {
+      "index": 1,
+      "title": "CDS 인식 및 사용 현황 리포트",
+      "type": "cover",
+      "background": "cover-gradient",
+      "context": "표지다. 이 덱은 \"CDS를 왜 안 지키는가\"를 따지는 문서가 아니라, PD 업무 흐름 안에서 CDS가 어디서 작동하고 어디서 멈추는지를 보여주는 현황 리포트다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 2,
+      "title": "이 조사는 \"왜 안 지키는가\"보다 \"어디서부터 달라지는가\"를 보기 위해 시작했다",
+      "type": "context",
+      "background": "black",
+      "context": "조사 배경을 짧고 담담하게 설명한다. 교육을 했는데도 왜 깨지는지를 묻되, \"교육 실패\"나 \"디자이너 태도 문제\"로 몰아가지 않는다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": true
+    },
+    {
+      "index": 3,
+      "title": "이 덱은 준수 여부보다 실제 판단 흐름을 본다",
+      "type": "comparison",
+      "background": "black",
+      "context": "청중이 이 덱을 읽는 관점을 정렬한다. compliance lens가 아니라 lifecycle lens로 읽어야 이후 장표가 자연스럽다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 4,
+      "title": "현재 분석 범위는 14명, 수치 차트는 분모를 나눠 읽어야 한다",
+      "type": "signal-chart",
+      "background": "black",
+      "context": "조사 범위를 명확히 보여준다. 총 14명 전체를 다뤘지만, 수치 차트의 분모는 주제에 따라 달라진다는 점을 처음부터 고지한다.",
+      "usesChart": true,
+      "chart": {
+        "library": "Chart.js",
+        "kind": "doughnut",
+        "config": "assets/charts/config/slide-04-doughnut.json"
+      },
+      "usesLucide": true
+    },
+    {
+      "index": 5,
+      "title": "이 덱의 숫자는 통계가 아니라 반복된 신호의 카운트다",
+      "type": "cards",
+      "background": "black",
+      "context": "이 자료가 설문 통계가 아니라 인터뷰 기반 신호 분석임을 방어한다. 차트가 있어도 과학적 비율처럼 읽히면 안 된다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": true
+    },
+    {
+      "index": 6,
+      "title": "핵심 진단: CDS는 화면의 전환점마다 다시 해석된다",
+      "type": "diagnosis-message",
+      "background": "black",
+      "context": "덱 전체의 핵심 진단을 기존보다 더 날카롭게 바꾼다. \"운영은 되고 선행은 안 된다\"가 아니라 \"전환점마다 CDS가 다시 해석된다\"가 중심이다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 7,
+      "title": "CDS 이슈는 선행에서 운영으로 넘어가는 라이프사이클 이슈다",
+      "type": "lifecycle-flow",
+      "background": "cover-gradient",
+      "context": "덱의 메인 모델을 보여준다. 이후 모든 장표는 이 라이프사이클의 어느 구간에서 발생하는 문제인지에 붙여 읽는다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": true
+    },
+    {
+      "index": 8,
+      "title": "반복 신호는 \"효용\"과 \"전환 비용\"을 동시에 보여준다",
+      "type": "signal-chart",
+      "background": "cover-gradient",
+      "context": "숫자로 볼 수 있는 반복 신호를 라이프사이클 관점으로 재해석한다. 강점과 취약점이 함께 보이게 한다.",
+      "usesChart": true,
+      "chart": {
+        "library": "Chart.js",
+        "kind": "horizontal-bar",
+        "config": "assets/charts/config/slide-08-horizontal-bar.json",
+        "denominator": 11
+      },
+      "usesLucide": false
+    },
+    {
+      "index": 9,
+      "title": "CDS를 시작하는 방식은 네 갈래로 나뉜다",
+      "type": "signal-chart",
+      "background": "cover-gradient",
+      "context": "CDS 사용 시작 방식이 하나가 아니라 네 갈래라는 사실을 보여준다. 특히 기존의 \"CDS 먼저 조립 5명\" 표현을 더 엄밀하게 수정한다.",
+      "usesChart": true,
+      "chart": {
+        "library": "Chart.js",
+        "kind": "horizontal-bar",
+        "config": "assets/charts/config/slide-09-horizontal-bar.json",
+        "denominator": 11
+      },
+      "usesLucide": false
+    },
+    {
+      "index": 10,
+      "title": "CDS의 효용은 조건부로 강하게 체감된다",
+      "type": "cards",
+      "background": "cover-gradient",
+      "context": "CDS가 실제로 잘 작동하는 영역을 인정한다. 단, 제목부터 조건부 효용으로 낮춰 잡는다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 11,
+      "title": "효용은 전환점에서 약해진다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "CDS 효용이 낮아지는 조건을 정리한다. 이 장표는 사용자가 말한 \"선행이 확정되면 기존 운영건이 레거시가 된다\"는 관점을 반영한다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 12,
+      "title": "선행의 쟁점은 처음부터 쓰는가보다 언제 돌아오는가다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "선행 구간을 무조건 문제로 보지 않는다. 선행에서 CDS를 보지 않는 것은 창의성 문제가 아니라 탐색 범위와 재싱크 비용의 균형 문제다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 13,
+      "title": "확정/구축 단계는 CDS 복귀 여부를 결정하는 관문이다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "선행이 실제 제품으로 넘어가는 순간을 확대한다. 이 전환점이 관리되지 않으면 \"선행에서 만든 자유로운 구조\"가 운영의 예외가 된다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 14,
+      "title": "운영 DS-first는 확인되지만, 모든 운영이 같은 상태는 아니다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "운영 DS-first 신호를 다시 말하되, 조건을 붙인다. 운영 화면이라고 항상 같은 난이도가 아니라는 점을 분명히 한다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 15,
+      "title": "선행이 흡수되지 않으면 운영 진입과 동시에 레거시 후보가 된다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "레거시와 마이그레이션을 별도 문제로 끌어올린다. 사용자가 제기한 핵심 전환 관점을 가장 직접적으로 반영하는 장표다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 16,
+      "title": "예외는 취향보다 조건에서 발생한다",
+      "type": "tag-cluster",
+      "background": "cover-gradient",
+      "context": "예외 사유를 개인 취향이 아니라 업무 조건으로 정리한다. 예외가 계속 생기는 이유를 방어 가능하게 보여준다.",
+      "usesChart": false,
+      "chart": {
+        "library": null,
+        "kind": "tag-cluster",
+        "note": "Prefer tag cluster; use Chart.js only if quantitative emphasis is needed."
+      },
+      "usesLucide": true
+    },
+    {
+      "index": 17,
+      "title": "컴포넌트 이슈는 특정 영역에 몰려 있다",
+      "type": "signal-chart",
+      "background": "cover-gradient",
+      "context": "어떤 컴포넌트에서 문제가 많이 언급되는지 보여준다. 단, 사용률이 아니라 언급 인원이라는 점을 분명히 한다.",
+      "usesChart": true,
+      "chart": {
+        "library": "Chart.js",
+        "kind": "horizontal-bar",
+        "config": "assets/charts/config/slide-17-horizontal-bar.json",
+        "denominator": 11
+      },
+      "usesLucide": false
+    },
+    {
+      "index": 18,
+      "title": "리스트아이템은 \"없는 컴포넌트\"보다 \"정의가 흔들리는 컴포넌트\"에 가깝다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "리스트아이템을 사례로 깊게 본다. 반복 언급이 많다는 것은 컴포넌트가 없다는 뜻이 아니라, 정의와 사용 범위가 흔들린다는 뜻일 수 있다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 19,
+      "title": "개발 구현 상태가 보이지 않으면 CDS 판단이 다시 사람에게 돌아간다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "개발 구현 상태가 불투명하면 CDS 신뢰가 흔들린다는 발견을 시각화한다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 20,
+      "title": "디테치는 빈도보다 잔여 효과가 문제다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "디테치 문제를 과장하지 않되, 잔여 효과는 분명히 보여준다. 자기보고상 빈도는 낮아도 한 번의 잔여가 개발 혼선을 만들 수 있다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 21,
+      "title": "도메인 반복 패턴은 이미 생기고 있지만, 아직 운영 기준은 약하다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "도메인 라이브러리가 공식적으로 존재한다고 말하기보다, 도메인 안에서 반복 패턴이 생기고 있다는 수준으로 정확히 표현한다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 22,
+      "title": "반복 패턴은 공통화할 것과 도메인에 둘 것을 나눠야 한다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "도메인 패턴과 CDS 관리 범위를 나누는 질문을 만든다. 문서화나 관리 의무를 강요하지 않고 판단 기준을 제안한다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 23,
+      "title": "CDS 기준이 기획 언어로 번역되지 않으면 통역 비용이 생긴다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "기획자와의 협업 문제를 \"기획자가 모른다\"로 단순화하지 않는다. CDS가 의사결정 언어로 공유되지 않을 때 생기는 통역 비용을 보여준다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 24,
+      "title": "사람에게 묻기 전 확인할 수 있는 기준이 부족하다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "정보 채널 문제를 다룬다. LLM 코드 챗봇은 실사용자가 적으므로 핵심 해결책으로 과장하지 않고, 질문 부담을 줄이는 여러 채널 중 하나로 둔다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 25,
+      "title": "심리적 불안은 리드 레벨에서 예외 판단 언어로 번역된다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "심리적 신호를 다룬다. 개인을 약하게 보이게 만들기보다, 판단 기준이 약할 때 생기는 자기검열과 리드 보정 구조로 설명한다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 26,
+      "title": "파트리드는 CDS와 화면 목적 사이의 완충 장치로 작동한다",
+      "type": "content",
+      "background": "cover-gradient",
+      "context": "파트리드 3명의 역할을 정리한다. 이들은 CDS를 무시하는 레이어가 아니라, 파트원과 DS 기준 사이에서 완충·검수·번역을 하는 레이어다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": false
+    },
+    {
+      "index": 27,
+      "title": "팀리드와 HoD는 발견을 뒤집기보다 전환점 리스크를 보강했다",
+      "type": "matrix",
+      "background": "cover-gradient",
+      "context": "팀리드 그룹의 발화를 균형 있게 반영하고, HoD가 이 차이를 어떻게 상위 원칙으로 흡수했는지 보여준다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": true
+    },
+    {
+      "index": 28,
+      "title": "리더십이 확인한 쟁점은 \"더 지켜라\"가 아니라 \"무엇을 남기고 무엇을 풀 것인가\"다",
+      "type": "closing-question",
+      "background": "cover-gradient",
+      "context": "마지막 장이다. HoD 인터뷰로 보강된 리더십 쟁점을 정리하되, 액션을 강하게 처방하기보다 선택해야 할 운영 원칙으로 닫는다.",
+      "usesChart": false,
+      "chart": null,
+      "usesLucide": true
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "figma_url": "https://www.figma.com/design/hSZA1GLBpbgIyDFOnibf99/Untitled?node-id=287-16607&t=HGZdG885C2yjFSHi-11",
+  "figma_file_key": "hSZA1GLBpbgIyDFOnibf99",
+  "figma_node_id": "287:16607",
+  "normalization": {
+    "source_scale": 3,
+    "source_crop_top": 340,
+    "source_crop_bottom": 251,
+    "canvas_place_x": 140,
+    "canvas_place_y": 73,
+    "background_hex": "#FFFFFF"
+  },
+  "masked_regions": [],
+  "critical_regions": [
+    {
+      "rect": {
+        "x": 469,
+        "y": 646,
+        "width": 44,
+        "height": 22
+      },
+      "minimum_score": 95,
+      "max_position_delta": 4,
+      "reason": "Inline More CTA must sit on the final body-text baseline, not in a separate row."
+    }
+  ],
+  "color_regions": [
+    {
+      "name": "card surface",
+      "rect": {
+        "x": 505,
+        "y": 535,
+        "width": 8,
+        "height": 8
+      },
+      "sample_mode": "all",
+      "max_average_distance": 0.015,
+      "figma_token_name": "system/color/surface/default-3",
+      "swift_reference": "ChordToken.Color.surfaceDefault3.swiftUIColor",
+      "figma_resolved_value": "#FFFFFF",
+      "swift_resolved_value": "#FFFFFF",
+      "reason": "Card background must resolve to the same surface token."
+    },
+    {
+      "name": "avatar pink",
+      "rect": {
+        "x": 168,
+        "y": 512,
+        "width": 44,
+        "height": 48
+      },
+      "sample_mode": "dominant_foreground",
+      "max_average_distance": 0.08,
+      "figma_token_name": "FigmaLocal/avatar-pink",
+      "swift_reference": "FigmaLocalColor.avatarPink.swiftUIColor",
+      "figma_resolved_value": "#FF1E91",
+      "swift_resolved_value": "#FF1E91",
+      "reason": "Avatar badge fill is a Figma-local color without a design-system token."
+    },
+    {
+      "name": "more primary text",
+      "rect": {
+        "x": 469,
+        "y": 646,
+        "width": 44,
+        "height": 22
+      },
+      "sample_mode": "dominant_foreground",
+      "max_average_distance": 0.12,
+      "figma_token_name": "system/color/text/primary",
+      "swift_reference": "ChordToken.Color.textPrimary.swiftUIColor",
+      "figma_resolved_value": "#00B8C1",
+      "swift_resolved_value": "#00B8C1",
+      "reason": "Inline More CTA must use the primary text color token."
+    },
+    {
+      "name": "title text default",
+      "rect": {
+        "x": 215,
+        "y": 515,
+        "width": 220,
+        "height": 24
+      },
+      "sample_mode": "foreground",
+      "max_average_distance": 0.22,
+      "figma_token_name": "system/color/text/default",
+      "swift_reference": "ChordToken.Color.textDefault.swiftUIColor",
+      "figma_resolved_value": "#000000",
+      "swift_resolved_value": "#000000",
+      "reason": "Primary title text must use text/default."
+    },
+    {
+      "name": "subtitle gray",
+      "rect": {
+        "x": 215,
+        "y": 535,
+        "width": 100,
+        "height": 16
+      },
+      "sample_mode": "foreground",
+      "max_average_distance": 0.22,
+      "figma_token_name": "system/color/text/gray-500",
+      "swift_reference": "ChordToken.Color.textGray500.swiftUIColor",
+      "figma_resolved_value": "#8E8E8E",
+      "swift_resolved_value": "#8E8E8E",
+      "reason": "Subtitle text must use text/gray-500."
+    }
+  ],
+  "semantic_pass_regions": [
+    {
+      "rect": {
+        "x": 160,
+        "y": 565,
+        "width": 309,
+        "height": 112
+      },
+      "figma_token_name": "Typography/body-s/system-400 + FigmaLiveNewsCard/body-baseline",
+      "swift_reference": "ChordToken.Typography.bodySSystem400 + FigmaLiveNewsCardMetrics.bodyLineSpacing",
+      "figma_resolved_value": "fontSize=15,lineSpacing=2.5,topInset=1",
+      "swift_resolved_value": "fontSize=15,lineSpacing=2.5,topInset=1",
+      "reason": "Body copy uses the same typography token and Figma-frozen baseline metrics; the inline More CTA remains covered by a separate critical region."
+    },
+    {
+      "rect": {
+        "x": 160,
+        "y": 700,
+        "width": 250,
+        "height": 34
+      },
+      "figma_token_name": "Typography/body-s/system-700",
+      "swift_reference": "ChordToken.Typography.bodySSystem700",
+      "figma_resolved_value": "fontSize=15,weight=700",
+      "swift_resolved_value": "fontSize=15,weight=700",
+      "reason": "CTA label uses the same typography token; residual delta is platform text rendering."
+    }
+  ]
+}

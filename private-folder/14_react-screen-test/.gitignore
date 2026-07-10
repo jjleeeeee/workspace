@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vite/
+playwright-report/
+test-results/
+/tmp/
+*.local
+harness/code-connect-index.json
+harness/*-nodes.json

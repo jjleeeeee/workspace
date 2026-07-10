@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "extractionKind": "figma-console-mcp compact node summary",
+  "sourceFile": {
+    "key": "237R2Xz39e9Dr9KjdJPIlI",
+    "name": "[ClickTF] Design to Dev. WorkFlow(Test Ver.)",
+    "url": "https://www.figma.com/slides/237R2Xz39e9Dr9KjdJPIlI"
+  },
+  "slide": {
+    "index": 30,
+    "nodeId": "152:1971",
+    "name": "Slide 30",
+    "width": 1920,
+    "height": 1080,
+    "childCount": 2,
+    "x": 19440,
+    "y": 1320,
+    "likelyLayout": "process-or-docs"
+  },
+  "observedPatterns": {
+    "canvas": {
+      "width": 1920,
+      "height": 1080
+    },
+    "finalFontRule": "Force Pretendard for web PPT output, even when Figma reports another font.",
+    "likelyLayout": "process-or-docs",
+    "rootChildCount": 2,
+    "expectedTextHierarchy": "Extract exact text layers on the next deep pass when this slide becomes a rule candidate.",
+    "expectedShapeHierarchy": "Use this compact node as a routing summary; deep geometry should be captured only for promoted patterns."
+  }
+}

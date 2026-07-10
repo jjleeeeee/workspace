@@ -1,0 +1,18 @@
+import "./{{NAME}}.css";
+
+export type {{NAME}}Props = {
+  // TODO: Figma node {{NODE_ID}} — fill props from get_design_context + tokens from Name.css
+  className?: string;
+};
+
+export function {{NAME}}({ className, ...rest }: {{NAME}}Props) {
+  const cls = ["chord-{{NAME_KEBAB}}", className].filter(Boolean).join(" ");
+  return (
+    <div
+      aria-label="{{NAME}}"
+      className={cls}
+      data-testid="{{NAME_KEBAB}}"
+      {...rest}
+    />
+  );
+}

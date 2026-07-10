@@ -1,0 +1,11 @@
+rank,aggregate_type,aggregate_key,component_key,component_name,component_set_key,component_set_name,total_detachments,total_insertions,detach_rate,unique_detach_weeks,variant_count,start_date,end_date,library_file_key,raw_weekly_rows
+1,component_set,0befc61ab89f810594677109814548f8cde49928,,icon_area,0befc61ab89f810594677109814548f8cde49928,icon_area,380,497844,0.000763,46,14,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300
+2,component_set,6f1fa3aadc347f4c8c2f26405695b2415dbdcb95,,💠 [V2] Chips,6f1fa3aadc347f4c8c2f26405695b2415dbdcb95,💠 [V2] Chips,128,4768,0.026846,9,15,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300
+3,component_set,bc850a83d50e399bb879539cdd32c3e8ed1363e2,,Chip,bc850a83d50e399bb879539cdd32c3e8ed1363e2,Chip,112,6238,0.017954,20,14,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300
+4,component_set,70d2a20bcdfe3ac7a3c3190410d9a255d8783e1d,,💠 Text Button,70d2a20bcdfe3ac7a3c3190410d9a255d8783e1d,💠 Text Button,103,14247,0.007230,28,41,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300
+5,component_set,d0a05143f1a3867b7d8d30eacf939b885d41e0eb,,💠 [V2] Thumbnail,d0a05143f1a3867b7d8d30eacf939b885d41e0eb,💠 [V2] Thumbnail,100,4781,0.020916,9,3,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300
+6,component_set,7cad657b87eb753c744c98849fdd9f8fa2b7b0bf,,Header,7cad657b87eb753c744c98849fdd9f8fa2b7b0bf,Header,99,35577,0.002783,33,4,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300
+7,component_set,e120970b1638c0fa7a5b7638923eb91479384ebe,,💠 [V2] List_Item_Native,e120970b1638c0fa7a5b7638923eb91479384ebe,💠 [V2] List_Item_Native,78,16584,0.004703,25,3,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300
+8,component_set,fb53806b85b3b2400f17ec46e8823fe4537f410a,,logo,fb53806b85b3b2400f17ec46e8823fe4537f410a,logo,70,1901,0.036823,21,16,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300
+9,component_set,b6973db505637145acfd337744898805a74662ae,,[V1] List_Item_Web,b6973db505637145acfd337744898805a74662ae,[V1] List_Item_Web,62,3236,0.019159,12,4,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300
+10,component_set,ae7a99a105523716cad6a1a640fcb6d5b86e68cf,,[V1] Tabs,ae7a99a105523716cad6a1a640fcb6d5b86e68cf,[V1] Tabs,58,4938,0.011746,19,6,2025-06-01,2026-05-31,DWEduE6GfxYMlyxKPNJ8jA,21300

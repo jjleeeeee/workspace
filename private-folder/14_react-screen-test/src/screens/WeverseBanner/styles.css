@@ -1,0 +1,215 @@
+.wb {
+  width: 100%;
+}
+
+.wb__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-400);        /* 32px */
+  padding: 0 var(--cds-system-size-padding-box-200);  /* 0 16px */
+}
+
+/* ── Main banner ─────────────────────────────────── */
+.wb__main {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px; /* Figma-frozen: banner card radius */
+  overflow: hidden;
+}
+
+.wb__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* gradient: darkens bottom 45% of image */
+/* Figma-frozen: rgba(0,0,0,0.6) — no exact CDS token for 60% black */
+.wb__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+/* pagination number — top-right glass pill */
+.wb__pagination-num {
+  position: absolute;
+  top: var(--cds-system-size-padding-box-200);       /* 16px */
+  right: var(--cds-system-size-padding-box-200);     /* 16px */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-50);        /* 4px */
+  padding: var(--cds-system-size-padding-box-25) var(--cds-system-size-padding-box-50); /* 2px 4px */
+  background: var(--cds-system-color-surface-default-reverse-300a); /* rgba(0,0,0,0.3) */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px; /* Figma-frozen: pagination pill radius */
+}
+
+.wb__pn-front {
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--cds-system-color-text-default-reverse); /* #FFFFFF */
+  min-width: 17px;
+  text-align: center;
+}
+
+.wb__pn-line {
+  display: block;
+  width: 0;
+  height: var(--cds-system-size-padding-box-100);    /* 8px */
+  border-left: 1px solid var(--cds-system-color-surface-default-300a); /* rgba(255,255,255,0.3) */
+}
+
+.wb__pn-back {
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--cds-system-color-text-white-400a-same); /* rgba(255,255,255,0.5) */
+  min-width: 16px;
+  text-align: center;
+}
+
+/* text + badge at bottom */
+.wb__bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-50);        /* 4px */
+  padding: var(--cds-system-size-padding-box-250);   /* 20px */
+}
+
+.wb__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--cds-system-size-padding-box-100); /* 0 8px */
+  height: var(--cds-system-size-padding-box-300);    /* 24px */
+  background: var(--cds-system-color-surface-default-reverse-200a); /* rgba(0,0,0,0.2) */
+  border-radius: 100px;
+  font-family: "SF Pro Text", -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--cds-system-color-text-default-reverse); /* #FFFFFF */
+}
+
+.wb__text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--cds-system-size-padding-box-75);        /* 6px */
+  width: 100%;
+}
+
+.wb__title {
+  font-family: "SF Pro Display", -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 33px;
+  color: var(--cds-system-color-text-default-reverse); /* #FFFFFF */
+  text-align: center;
+  margin: 0;
+}
+
+.wb__subtitle {
+  font-family: "SF Pro Text", -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--cds-system-color-surface-default-600a); /* rgba(255,255,255,0.8) */
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Line Ad ─────────────────────────────────────── */
+.wb__ad {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 var(--cds-system-size-padding-box-200); /* 0 0 0 16px */
+  height: 95px; /* Figma-frozen: Line_ad fixed height */
+  border-radius: 20px; /* Figma-frozen: ad card radius */
+  overflow: hidden;
+  /* Brand color — not in CDS tokens */
+  background: linear-gradient(90deg, #C32A2D 0%, #640000 100%);
+}
+
+.wb__ad-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--cds-system-size-padding-box-25);        /* 2px */
+  flex: 1;
+}
+
+.wb__ad-title {
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 23px;
+  color: var(--cds-system-color-text-default-reverse); /* #FFFFFF */
+  margin: 0;
+}
+
+.wb__ad-subtitle {
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--cds-system-color-surface-default-500a); /* rgba(255,255,255,0.65) */
+  margin: 0;
+}
+
+.wb__ad-right {
+  position: relative;
+  flex-shrink: 0;
+  width: 145px; /* Figma-frozen: ad image slot width */
+  height: 98px; /* Figma-frozen: ad image slot height */
+  margin-top: -1px;
+}
+
+.wb__ad-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wb__ad-tag {
+  position: absolute;
+  bottom: 10px;
+  right: var(--cds-system-size-padding-box-50);       /* 4px */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--cds-system-size-padding-box-25) var(--cds-system-size-padding-box-50); /* 2px 4px */
+  gap: var(--cds-system-size-padding-box-50);         /* 4px */
+  border: 1px solid var(--cds-system-color-surface-default-150a); /* rgba(255,255,255,0.15) */
+  border-radius: 100px;
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  color: var(--cds-system-color-text-white-400a-same); /* rgba(255,255,255,0.5) */
+}
+
+/* ── Dots ────────────────────────────────────────── */
+.wb__dots {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--cds-system-size-padding-box-150); /* 12px */
+}

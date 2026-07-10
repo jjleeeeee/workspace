@@ -1,0 +1,168 @@
+/* OnLive section — WeverseMyFeedV2 */
+/* Figma node 2:2241 · card 373×392px */
+
+/* ── Outer wrapper (horizontal margin) ────────────────────────────────────── */
+.wmfv2__live__outer {
+  margin-inline: 10px; /* Figma: On Live section px-10 */
+}
+
+/* ── Card shell ───────────────────────────────────────────────────────────── */
+.wmfv2__live__card {
+  position: relative;
+  height: 392px; /* Figma-frozen: Figma node 2:2241 bannerLive h=392px */
+  border-radius: var(--cds-system-size-radius-box-200, 16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1f1f1f; /* Figma-frozen: gray-75 dark bg */
+  overflow: hidden;
+}
+
+/* ── Video thumbnail ──────────────────────────────────────────────────────── */
+.wmfv2__live__thumb {
+  position: absolute;
+  /* Figma: 162×288 video area, centered at x=105.5 → centered in card */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 162px;   /* Figma-frozen: video thumbnail width */
+  height: 268px;  /* Figma-frozen: video thumbnail height */
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Gradient overlay (transparent top 50% → solid #1f1f1f bottom) ─────── */
+.wmfv2__live__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(31, 31, 31, 0) 50%, #1f1f1f 70%, #1f1f1f 100%);
+  pointer-events: none;
+}
+
+/* ── Contents overlay ────────────────────────────────────────────────────── */
+.wmfv2__live__contents {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px; /* Figma: 12px padding all sides */
+}
+
+/* ── Top row: LIVE badge ─────────────────────────────────────────────────── */
+.wmfv2__live__top {
+  display: flex;
+  align-items: flex-start;
+}
+
+.wmfv2__live__badge {
+  display: inline-flex;
+  align-items: center;
+  height: 30px; /* Figma-frozen */
+  padding: 6px 12px; /* Figma: py-6 px-12 */
+  border-radius: 100px; /* pill */
+  border: 1.5px solid #ffffff;
+  background: var(--cds-system-fixed-color-status-danger-red, #fe5b58);
+  color: #ffffff;
+  font-size: 14px; /* Figma: Bold 14px */
+  font-weight: 700;
+  line-height: 18px;
+  font-family: var(--cds-typography-default-font-family-body);
+}
+
+/* ── Bottom area: artist + title + stats ─────────────────────────────────── */
+.wmfv2__live__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-100, 8px);
+  /* Figma: contents bottom starts at y≈273 in 392px card */
+  padding-bottom: 16px;
+}
+
+/* Artist name + official badge */
+.wmfv2__live__artist-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmfv2__live__artist {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: 14px; /* Figma: WeGothicSans Bold 14px */
+  font-weight: 700;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.wmfv2__live__official {
+  width: 12px; /* Figma-frozen: official badge 12×12 */
+  height: 12px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Live title */
+.wmfv2__live__title {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: 25px; /* Figma: WeGothicSans Heavy 25px */
+  font-weight: 800;
+  line-height: 33px; /* Figma: line-height 33px */
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Stats row */
+.wmfv2__live__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--cds-system-size-padding-box-75, 6px);
+}
+
+.wmfv2__live__stat-item {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-75, 6px);
+}
+
+.wmfv2__live__sep {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px; /* Figma: 13px */
+  font-family: var(--cds-typography-default-font-family-body);
+  line-height: 1;
+}
+
+.wmfv2__live__stat-label {
+  color: rgba(255, 255, 255, 0.5); /* Figma: labels rgba(255,255,255,0.5) */
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: 13px; /* Figma: 13px */
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.wmfv2__live__stat-value {
+  color: rgba(255, 255, 255, 0.65); /* Figma: values rgba(255,255,255,0.65) */
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+/* CC tag */
+.wmfv2__live__cc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  padding: 1px var(--cds-system-size-padding-box-50, 4px);
+  border-radius: var(--cds-system-size-radius-box-50, 4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: 10px; /* Figma: 10px */
+  font-weight: 700;
+  line-height: 1;
+}

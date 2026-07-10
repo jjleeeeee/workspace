@@ -1,0 +1,813 @@
+/* WeverseMyFeed screen styles */
+/* Source: Figma node 1:33946, file CfJjVluQYgJhPzgctgPIfH */
+
+/* ── Root ───────────────────────────────────────────────────────────────── */
+.wmf {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background: var(--cds-system-color-surface-default);
+  font-family: var(--cds-typography-default-font-family-body, ui-sans-serif, system-ui, sans-serif);
+}
+
+/* ── Status bar spacer (matches Figma 50px status bar height) ───────────── */
+.wmf__status-bar {
+  height: 50px; /* Figma-frozen: statusBarHeight from WeverseMyFeedMetrics */
+  background: var(--cds-system-color-surface-default);
+}
+
+/* ── Top Nav (sticky, hides on scroll-down, shows on scroll-up) ─────────── */
+.wmf__topnav {
+  position: sticky;
+  top: 0;
+  z-index: 51;
+  background: var(--cds-system-color-surface-default);
+  /* ponytail: show fast (Ease Out 180ms), hide slightly slower (Ease In 220ms) */
+  transition: transform 180ms cubic-bezier(0.3, 1, 0.72, 1);
+}
+
+.wmf__topnav--hidden {
+  transform: translateY(-100%);
+  transition: transform 220ms cubic-bezier(0.32, 0, 0.7, 0);
+}
+
+/* ── Tabs Row (local — chord Tabs doesn't support mixed icon+text tabs) ─── */
+.wmf__tabs-row {
+  position: sticky;
+  z-index: 50;
+  background: var(--cds-system-color-surface-default);
+  /* ponytail: no top transition — instant snap prevents gap on scroll-up */
+  display: flex;
+  align-items: stretch; /* tabs fill full 48px — enables justify-content:center on buttons */
+  gap: var(--cds-system-size-padding-box-200, 16px);
+  height: 48px;
+  padding-inline: var(--cds-system-size-padding-box-200, 16px);
+}
+
+.wmf__tab {
+  position: relative;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* center text vertically in full 48px height */
+  height: 100%;
+  gap: var(--cds-system-size-padding-box-25, 2px);
+}
+
+.wmf__tab-label {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-circular-base-text-size-text-300);
+  line-height: var(--cds-typography-circular-base-lineheight-text-lineheight-300);
+  font-weight: var(--cds-typography-circular-base-text-weight-text-weight-700);
+  color: var(--cds-system-color-text-gray-700, #484848);
+  white-space: nowrap;
+}
+
+.wmf__tab[aria-selected="true"] .wmf__tab-label {
+  color: var(--cds-system-color-text-gray-900, #111); /* Figma: active */
+}
+
+/* single sliding indicator — translates to active tab via inline style */
+/* bottom = (48px - lineheight-300 23px - gap-25 2px - bar 2px) / 2 = 10.5px */
+.wmf__tab-slider {
+  position: absolute;
+  bottom: 10.5px;
+  left: 0;
+  height: 2px;
+  background: var(--cds-system-color-outline-default, black);
+  border-radius: 1px;
+  /* DS Motion: Ease In Out 300ms for in-screen element movement */
+  transition: transform 300ms cubic-bezier(0.65, 0, 0.35, 1),
+              width 300ms cubic-bezier(0.65, 0, 0.35, 1);
+  pointer-events: none;
+}
+
+.wmf__tab-icon {
+  height: 17px; /* Figma: Party logo 44.63×17 */
+  width: 45px;
+  object-fit: contain;
+  display: block;
+  /* ponytail: SVG fill-opacity patched to 1; opacity maps black → #484848 gray */
+  filter: brightness(0);
+  opacity: 0.72;
+}
+
+.wmf__tab[aria-selected="true"] .wmf__tab-icon {
+  filter: brightness(0);
+  opacity: 0.93; /* match #111 active */
+}
+
+/* ── Main scroll area ───────────────────────────────────────────────────── */
+.wmf__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-300, 24px); /* Figma: system/size/padding/box/300 */
+  padding-top: 0;
+  padding-bottom: 265px; /* Figma-frozen: match Figma frame height for footer section capture */
+}
+
+/* ── LIVE Banner ─────────────────────────────────────────────────────────── */
+.wmf__live-banner {
+  position: relative;
+  margin-inline: 10px; /* Figma: On Live section px-10 */
+  height: 392px; /* Figma-frozen: 1:33946 LIVE banner card height */
+  border-radius: var(--cds-system-size-radius-box-200, 16px);
+  overflow: hidden;
+  background: #1f1f1f; /* Figma-frozen: gray-75 */
+}
+
+.wmf__live-banner-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+  display: block;
+}
+
+.wmf__live-banner-gradient {
+  position: absolute;
+  inset: 0;
+  /* Figma: from rgba(31,31,31,0) at 50%, solid #1f1f1f at 70% */
+  background: linear-gradient(180deg, rgba(31,31,31,0) 50%, #1f1f1f 70%, #1f1f1f 100%);
+  pointer-events: none;
+}
+
+/* Flex container — sits above gradient */
+.wmf__live-banner-contents {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 12px 12px 28px; /* Figma: pt-12 px-12 pb-28 */
+}
+
+.wmf__live-banner-top {
+  display: flex;
+  align-items: center;
+}
+
+.wmf__live-badge {
+  display: flex;
+  align-items: center;
+  height: 30px; /* Figma-frozen */
+  padding: 6px 12px; /* Figma: py-6 px-12 */
+  border-radius: 100px; /* Figma: pill */
+  border: 1.5px solid #ffffff;
+  background: var(--cds-system-fixed-color-status-danger-red, #fe5b58);
+  color: #ffffff;
+  font-size: 14px; /* Figma: base/text_size/text-100=14px */
+  font-weight: 700;
+  line-height: 18px;
+}
+
+/* Bottom: artist + title + stats */
+.wmf__live-banner-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-100, 8px);
+  width: 100%;
+}
+
+.wmf__live-title-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-100, 8px);
+  padding-inline: 12px;
+  width: 100%;
+}
+
+.wmf__live-artist {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+.wmf__live-title {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-600);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-600);
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+.wmf__live-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--cds-system-size-padding-box-75, 6px);
+  height: 24px;
+  width: 100%;
+}
+
+.wmf__live-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-75, 6px);
+}
+
+.wmf__live-stat,
+.wmf__live-dot {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-75);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.wmf__live-cc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  padding: 1px var(--cds-system-size-padding-box-50, 4px);
+  border-radius: var(--cds-system-size-radius-box-50, 4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-25);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-25);
+}
+
+/* ── AI Banner ───────────────────────────────────────────────────────────── */
+.wmf__ai-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-75, 6px);
+  margin-inline: 10px; /* Figma: AI Button section px-10 */
+  padding: var(--cds-system-size-padding-box-200, 16px);
+  border-radius: 30px; /* Figma: pill */
+  border: 1px solid var(--cds-system-color-roles-primary);
+  background: var(--cds-system-color-surface-default);
+}
+
+.wmf__ai-prompt {
+  flex: 1;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-default);
+  margin: 0;
+}
+
+/* ── Moments ─────────────────────────────────────────────────────────────── */
+.wmf__moments {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.wmf__moments-title {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-400);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-400);
+  color: var(--cds-system-color-text-default);
+  margin: 0;
+  padding: 12px var(--cds-system-size-padding-box-200, 16px);
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+/* Card wrapper — shadow + rounded + overflow-clip */
+.wmf__moments-card {
+  margin-inline: 10px; /* Figma: px-10 on card container */
+  border-radius: var(--cds-system-size-radius-box-200, 16px);
+  overflow: hidden;
+  background: var(--cds-system-color-surface-default);
+  box-shadow: var(--cds-system-shadow-lg, 0px 6px 28px rgba(0, 0, 0, 0.1));
+}
+
+.wmf__moments-scroll {
+  display: flex;
+  gap: 12px; /* Figma: gap-12 */
+  padding: var(--cds-system-size-padding-box-200, 16px); /* Figma: p-16 */
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.wmf__moments-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.wmf__moment-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-100, 8px); /* Figma: gap-8 between thumb and info */
+  flex-shrink: 0;
+  width: 100px; /* Figma-frozen: moment slot width */
+}
+
+.wmf__moment-thumb {
+  width: 100px; /* Figma-frozen: 1:33946 moment thumbnail width */
+  height: 133px; /* Figma-frozen: 1:33946 moment thumbnail height */
+  border-radius: var(--cds-system-size-radius-box-100, 8px);
+  overflow: hidden;
+  background: #ececec; /* Figma-frozen: visible bg for transparent/unloaded thumbs */
+}
+
+.wmf__moment-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Avatar + name: horizontal row below thumbnail */
+.wmf__moment-info {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-50, 4px); /* Figma: gap-4 */
+  overflow: hidden;
+  width: 100px;
+}
+
+/* Force chord Avatar to 30×30 */
+.wmf__moment-avatar-wrap {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.wmf__moment-avatar-wrap > * {
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  min-height: 30px !important;
+}
+
+.wmf__moment-name {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-default);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Shared section title ────────────────────────────────────────────────── */
+.wmf__section-title {
+  font-family: var(--cds-typography-circular-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-400);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-400);
+  color: var(--cds-system-color-text-default);
+  margin: 0;
+  padding: 12px var(--cds-system-size-padding-box-200, 16px);
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── DM Section ──────────────────────────────────────────────────────────── */
+.wmf__dm {
+  display: flex;
+  flex-direction: column;
+}
+
+.wmf__dm-card {
+  margin-inline: 10px;
+  border-radius: var(--cds-system-size-radius-box-200, 16px);
+  background: var(--cds-system-color-surface-default);
+  box-shadow: var(--cds-system-shadow-lg, 0px 6px 28px rgba(0, 0, 0, 0.1));
+  padding: var(--cds-system-size-padding-box-200, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-150, 12px);
+}
+
+.wmf__dm-header {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-100, 8px);
+}
+
+.wmf__dm-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.wmf__dm-name-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmf__dm-name {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-default);
+}
+
+.wmf__dm-badge {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.wmf__dm-sub {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-gray-500);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wmf__dm-hide {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-gray-400);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.wmf__dm-bubble {
+  background: var(--cds-system-color-surface-primary, #DFFAFB);
+  border-radius: var(--cds-system-size-radius-box-200, 16px);
+  padding: var(--cds-system-size-padding-box-150, 12px) var(--cds-system-size-padding-box-200, 16px);
+}
+
+.wmf__dm-message {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-default);
+}
+
+.wmf__dm-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  padding: var(--cds-system-size-padding-box-100, 8px);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: var(--cds-system-color-roles-primary);
+}
+
+/* ── Notice Section ──────────────────────────────────────────────────────── */
+.wmf__notice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-150, 12px);
+}
+
+.wmf__notice-card {
+  margin-inline: 10px;
+  border-radius: var(--cds-system-size-radius-box-200, 16px);
+  background: var(--cds-system-color-surface-default);
+  box-shadow: var(--cds-system-shadow-lg, 0px 6px 28px rgba(0, 0, 0, 0.1));
+  padding: var(--cds-system-size-padding-box-200, 16px);
+}
+
+.wmf__notice-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cds-system-size-padding-box-100, 8px);
+}
+
+.wmf__notice-artist-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--cds-system-size-radius-box-100, 8px);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.wmf__notice-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.wmf__notice-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cds-system-size-padding-box-100, 8px);
+}
+
+.wmf__notice-artist {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: var(--cds-system-color-text-default);
+}
+
+.wmf__notice-time {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-gray-500);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.wmf__notice-text {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: var(--cds-system-color-text-gray-700);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ── Shop Section ────────────────────────────────────────────────────────── */
+.wmf__shop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-150, 12px);
+  padding-inline: 10px;
+}
+
+.wmf__shop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 6px;
+}
+
+.wmf__shop-title-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wmf__shop-title-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmf__shop-title {
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-400);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-400);
+  color: var(--cds-system-color-text-default);
+}
+
+.wmf__shop-title-badge {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.wmf__shop-sub {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-75);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75);
+  color: var(--cds-system-color-text-gray-500);
+}
+
+.wmf__shop-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.72;
+}
+
+.wmf__shop-hero-card {
+  border-radius: var(--cds-system-size-radius-box-200, 16px);
+  overflow: hidden;
+  background: var(--cds-system-color-surface-default);
+  box-shadow: var(--cds-system-shadow-lg, 0px 6px 28px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.wmf__shop-fan-tag {
+  position: absolute;
+  top: var(--cds-system-size-padding-box-100, 8px);
+  left: var(--cds-system-size-padding-box-100, 8px);
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--cds-system-size-padding-box-100, 8px);
+  border-radius: var(--cds-system-size-radius-box-50, 4px);
+  background: var(--cds-system-color-roles-membership-violet, #9C36FF);
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-default-reverse);
+  z-index: 1;
+}
+
+.wmf__shop-card-img-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: var(--cds-system-size-radius-box-100, 8px);
+  overflow: hidden;
+  background: var(--cds-system-color-surface-secondary, #F5F5F5);
+}
+
+.wmf__shop-hero-img-wrap {
+  position: relative;
+  background: #F5C0B8; /* Figma-frozen: hero card coral/salmon bg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px; /* Figma-frozen: hero card image area */
+  overflow: hidden;
+}
+
+.wmf__shop-hero-img {
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+.wmf__shop-hero-info {
+  padding: var(--cds-system-size-padding-box-150, 12px) var(--cds-system-size-padding-box-200, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-75, 6px);
+}
+
+.wmf__shop-upcoming-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wmf__shop-upcoming {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--cds-system-size-padding-box-100, 8px);
+  border-radius: var(--cds-system-size-radius-box-50, 4px);
+  background: var(--cds-system-color-roles-primary, #00CBD5);
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-default-reverse);
+}
+
+.wmf__shop-days {
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-75);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-75);
+  color: var(--cds-system-color-text-gray-500);
+}
+
+.wmf__shop-product-name {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-default);
+}
+
+.wmf__shop-tags-row {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-50, 4px);
+  flex-wrap: wrap;
+}
+
+.wmf__shop-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--cds-system-size-padding-box-100, 8px);
+  border-radius: var(--cds-system-size-radius-box-50, 4px);
+  border: 1px solid var(--cds-system-color-outline-gray-100, #EBEDF2);
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-gray-600);
+}
+
+/* 3-column scroll for mini shop cards */
+.wmf__shop-cards {
+  display: flex;
+  gap: var(--cds-system-size-padding-box-100, 8px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.wmf__shop-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.wmf__shop-card {
+  flex-shrink: 0;
+  width: 115px; /* Figma-frozen: mini card width ~(373-16)/3 */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.wmf__shop-card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+}
+
+.wmf__shop-card-name {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-50);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-50);
+  color: var(--cds-system-color-text-default);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.wmf__shop-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--cds-system-size-padding-box-100, 8px);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: var(--cds-system-color-text-gray-700);
+}
+
+/* ── Bottom Navigation wrapper (chord BottomNavigation fixed float) ─────── */
+/* gradient breaks out of 393px wrapper to full viewport */
+.wmf__bnav-wrapper .chord-bottom-navigation__gradient {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+}
+
+.wmf__bnav-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 393px; /* Figma: iPhone 15 Pro canvas width */
+  max-width: 100%;
+  z-index: 100;
+}

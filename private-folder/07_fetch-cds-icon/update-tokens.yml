@@ -1,0 +1,155 @@
+# chord-design-system tokens/** 변경 시 repository_dispatch 로 트리거되거나 수동 실행.
+#
+# 필수 secret (web_cds 저장소 Settings → Secrets → Actions):
+#   CHORD_DS_READ_TOKEN — weversecorp/chord-design-system contents read 권한 PAT
+#     (GITHUB_TOKEN 은 다른 private repo 읽기 불가)
+name: update-tokens
+
+on:
+  repository_dispatch:
+    types: [tokens-updated]
+  workflow_dispatch:
+    inputs:
+      cds_ref:
+        description: 'chord-design-system ref (branch/tag/SHA)'
+        required: false
+        default: 'develop'
+
+concurrency:
+  group: update-tokens
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    name: wds-tokens-sync
+    runs-on:
+      group: weverse-common
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Resolve chord-design-system ref
+        id: meta
+        run: |
+          REF="${{ github.event.client_payload.ref }}"
+          BRANCH="${{ github.event.client_payload.branch }}"
+          if [ -z "$REF" ]; then
+            REF="${{ inputs.cds_ref }}"
+          fi
+          if [ -z "$REF" ]; then
+            REF="develop"
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "branch=${BRANCH:-}" >> "$GITHUB_OUTPUT"
+          echo "Sync source: weversecorp/chord-design-system@${REF}"
+
+      - name: Checkout web_cds
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Setup GitHub CLI
+        run: |
+          type -p gh >/dev/null || (
+            curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+              | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+            echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+              | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+            sudo apt-get update
+            sudo apt-get install -y gh
+          )
+          gh --version
+
+      - name: Run wds-tokens-sync
+        env:
+          GH_TOKEN: ${{ secrets.CHORD_DS_READ_TOKEN }}
+        run: |
+          python3 .claude/skills/wds-tokens-sync/sync.py \
+            --from-github \
+            --ref "${{ steps.meta.outputs.ref }}"
+
+      - name: Create pull request for generated tokens
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add packages/tokens/src/generated/tokens.css \
+                  packages/tokens/src/generated/vars.ts
+
+          REF="${{ steps.meta.outputs.ref }}"
+          SOURCE_BRANCH="${{ steps.meta.outputs.branch }}"
+
+          if git diff --staged --quiet; then
+            echo "pr_status=skipped" >> "$GITHUB_OUTPUT"
+            echo "::notice title=PR skipped::No token changes detected — develop is already in sync with chord-design-system@${REF}."
+            {
+              echo "## Token sync result"
+              echo ""
+              echo "**Status:** skipped (no changes)"
+              echo ""
+              echo "| Field | Value |"
+              echo "| --- | --- |"
+              echo "| Source | \`weversecorp/chord-design-system@${REF}\` |"
+              echo "| Target branch | \`develop\` |"
+              echo "| Event | \`${{ github.event_name }}\` |"
+              echo "| Source branch | \`${SOURCE_BRANCH:-—}\` |"
+              echo ""
+              echo "Generated \`tokens.css\` and \`vars.ts\` match the files already on \`develop\`. No pull request was created."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BRANCH="feature/tokens-sync-${GITHUB_RUN_ID}"
+          TITLE="chore(tokens): sync from chord-design-system@${REF}"
+
+          git checkout -b "$BRANCH"
+          git commit \
+            -m "$TITLE" \
+            -m "Triggered by: ${{ github.event_name }}" \
+            -m "Source branch: ${SOURCE_BRANCH}"
+          git push -u origin "$BRANCH"
+
+          PR_BODY=$(printf '%s\n' \
+            "## Summary" \
+            "Sync token outputs from \`weversecorp/chord-design-system@${REF}\`." \
+            "" \
+            "## Trigger" \
+            "- Event: \`${{ github.event_name }}\`" \
+            "- Source branch: \`${SOURCE_BRANCH}\`")
+
+          PR_URL=$(gh pr create \
+            --base develop \
+            --head "$BRANCH" \
+            --title "$TITLE" \
+            --body "$PR_BODY" \
+            --reviewer hwboo_wev,jh-han_wev,james-eden_wev)
+
+          echo "pr_status=created" >> "$GITHUB_OUTPUT"
+          echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
+          echo "branch=${BRANCH}" >> "$GITHUB_OUTPUT"
+          echo "::notice title=Pull request created::${PR_URL}"
+
+          {
+            echo "## Token sync result"
+            echo ""
+            echo "**Status:** pull request created"
+            echo ""
+            echo "| Field | Value |"
+            echo "| --- | --- |"
+            echo "| Pull request | ${PR_URL} |"
+            echo "| Head branch | \`${BRANCH}\` |"
+            echo "| Base branch | \`develop\` |"
+            echo "| Source | \`weversecorp/chord-design-system@${REF}\` |"
+            echo "| Event | \`${{ github.event_name }}\` |"
+            echo "| Source branch | \`${SOURCE_BRANCH:-—}\` |"
+          } >> "$GITHUB_STEP_SUMMARY"

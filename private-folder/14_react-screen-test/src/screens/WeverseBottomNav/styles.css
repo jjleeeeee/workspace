@@ -1,0 +1,186 @@
+/* ── Container: 393×132 total (Figma-frozen height) ─ */
+.wbn {
+  position: relative;
+  width: 100%;
+  height: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Fade above the bar — Figma: linear-gradient(180deg, transparent 57%, rgba(255,255,255,0.32) 100%) */
+.wbn__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 57%,
+    var(--cds-system-color-surface-default-300a) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Inner bar row ────────────────────────────────── */
+.wbn__bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-200);        /* 16px */
+  padding: var(--cds-system-size-padding-box-50);     /* 4px */
+  margin: 0 21px var(--cds-system-size-padding-box-50); /* Figma: x:21, 4px padding */
+}
+
+/* ── Tabs glass pill ──────────────────────────────── */
+.wbn__tabs {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  padding: var(--cds-system-size-padding-box-50);     /* 4px inner padding */
+}
+
+/* Frosted glass background pill — Liquid Glass effect */
+.wbn__tabs-glass {
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 247, 247, 0.82);
+  backdrop-filter: blur(20px) url(#liquid-glass-tabs) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-radius: 296px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    inset 1.8px 3px 0 -2px rgba(255, 255, 255, 0.9),
+    inset -2px -2px 0 -2px rgba(255, 255, 255, 0.8),
+    inset -3px -8px 1px -6px rgba(255, 255, 255, 0.6),
+    inset -0.3px -1px 4px 0 rgba(0, 0, 0, 0.08),
+    inset -1.5px 2.5px 0 -2px rgba(0, 0, 0, 0.12),
+    inset 0 3px 4px -2px rgba(0, 0, 0, 0.1),
+    inset 2px -6.5px 1px -4px rgba(0, 0, 0, 0.06),
+    0 1px 5px 0 rgba(0, 0, 0, 0.06),
+    0 6px 16px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ── Tab button ───────────────────────────────────── */
+.wbn__tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  padding: 6px 8px 7px; /* Figma-frozen: Figma tab padding */
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #404040; /* inactive icon/text color */
+  z-index: 1;
+  min-width: 0;
+}
+
+/* Sliding active tab indicator — liquid glass pill */
+.wbn__tab-indicator {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc((100% - 8px) / 4);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px) url(#liquid-glass-tab-active) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 1px 2px 0 -1px rgba(255, 255, 255, 0.9),
+    inset -1px -1px 0 -1px rgba(255, 255, 255, 0.7),
+    inset 0 1px 2px -1px rgba(0, 0, 0, 0.08),
+    inset 0 -1px 2px -1px rgba(0, 0, 0, 0.06),
+    0 1px 3px 0 rgba(0, 0, 0, 0.08),
+    0 2px 6px 0 rgba(0, 0, 0, 0.04);
+  transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wbn__tab-indicator { transition: none; }
+}
+
+.wbn__tab--active {
+  color: #393939; /* Figma: active tab label color */
+}
+
+.wbn__tab-label {
+  font-family: "SF Pro", -apple-system, sans-serif;
+  font-weight: 510; /* Figma: Medium */
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: inherit;
+  width: 100%;
+}
+
+.wbn__tab--active .wbn__tab-label {
+  font-weight: 590; /* Figma: Semibold for active */
+}
+
+/* ── Search FAB ───────────────────────────────────── */
+.wbn__search {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  padding: 0;
+}
+
+/* Liquid Glass base — 굴절+블러 레이어 */
+.wbn__search-glass {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px) url(#liquid-glass-tabs) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    inset 0 2px 3px -1px rgba(255, 255, 255, 0.55),
+    inset 0 -2px 3px -1px rgba(0, 0, 0, 0.1),
+    0 2px 8px 0 rgba(25, 209, 201, 0.35),
+    0 6px 20px 0 rgba(25, 209, 201, 0.2);
+  z-index: 0;
+}
+
+/* PNG — mix-blend-mode: screen으로 glass 위에 색상 합성 */
+.wbn__search-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+/* Lottie 아이콘 */
+.wbn__search-lottie {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}

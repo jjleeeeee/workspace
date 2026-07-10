@@ -1,0 +1,314 @@
+#!/usr/bin/env python3
+import argparse
+import json
+import re
+from pathlib import Path
+
+
+SWIFT_KEYWORDS = {
+    "associatedtype", "class", "deinit", "enum", "extension", "fileprivate",
+    "func", "import", "init", "inout", "internal", "let", "open",
+    "operator", "private", "precedencegroup", "protocol", "public",
+    "rethrows", "static", "struct", "subscript", "typealias", "var",
+    "break", "case", "continue", "default", "defer", "do", "else",
+    "fallthrough", "for", "guard", "if", "in", "repeat", "return",
+    "switch", "where", "while", "as", "Any", "catch", "false", "is",
+    "nil", "super", "self", "Self", "throw", "throws", "true", "try",
+}
+
+
+def load_json(path):
+    with open(path, "r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def words(value):
+    return [word for word in re.split(r"[^A-Za-z0-9]+", value) if word]
+
+
+def lower_camel(parts):
+    raw_words = []
+    for part in parts:
+        raw_words.extend(words(part))
+    if not raw_words:
+        return "token"
+    first = raw_words[0][:1].lower() + raw_words[0][1:]
+    rest = [word[:1].upper() + word[1:] for word in raw_words[1:]]
+    name = first + "".join(rest)
+    if name[:1].isdigit():
+        name = "value" + name[:1].upper() + name[1:]
+    if name in SWIFT_KEYWORDS:
+        name += "Token"
+    return name
+
+
+def upper_camel(value):
+    return "".join(word[:1].upper() + word[1:] for word in words(value)) or "Token"
+
+
+def swift_string(value):
+    return json.dumps(value, ensure_ascii=False)
+
+
+def normalize_hex(value):
+    if not isinstance(value, str):
+        return "#000000"
+    if value.startswith("#"):
+        return value.upper()
+    return f"#{value.upper()}"
+
+
+def mode_raw(token, mode, fallback_mode=None):
+    values = token.get("values", {})
+    if mode in values:
+        return values[mode].get("raw")
+    if fallback_mode and fallback_mode in values:
+        return values[fallback_mode].get("raw")
+    if values:
+        return next(iter(values.values())).get("raw")
+    return None
+
+
+def color_name(token):
+    ios_name = token.get("platformCode", {}).get("ios")
+    if ios_name:
+        return lower_camel([ios_name])
+    path = token["name"].split("/")
+    return lower_camel(path[2:] if path[:2] == ["system", "color"] else path)
+
+
+def emit_colors(color_doc):
+    lines = ["  public enum Color {"]
+    seen = set()
+    for token in color_doc["tokens"]:
+        if token.get("type") != "color":
+            continue
+        name = color_name(token)
+        if name in seen:
+            continue
+        seen.add(name)
+        light = normalize_hex(mode_raw(token, "light"))
+        dark = normalize_hex(mode_raw(token, "dark", "light"))
+        lines.append(
+            f"    public static let {name} = ChordColorToken("
+            f"name: {swift_string(token['name'])}, "
+            f"lightHex: {swift_string(light)}, "
+            f"darkHex: {swift_string(dark)})"
+        )
+    lines.append("  }")
+    return lines
+
+
+def size_group_and_name(token):
+    path = token["name"].split("/")
+    parts = path[2:] if path[:2] == ["system", "size"] else path
+    group = upper_camel(parts[0])
+    member = lower_camel(parts[1:])
+    return group, member
+
+
+def emit_sizes(size_doc):
+    groups = {}
+    for token in size_doc["tokens"]:
+        if token.get("type") != "dimension":
+            continue
+        group, member = size_group_and_name(token)
+        raw = mode_raw(token, "light")
+        if raw is None:
+            continue
+        groups.setdefault(group, {})
+        groups[group].setdefault(member, raw)
+
+    lines = []
+    for group in sorted(groups):
+        lines.append(f"  public enum {group} {{")
+        for member, raw in sorted(groups[group].items()):
+            lines.append(f"    public static let {member}: CGFloat = {raw}")
+        lines.append("  }")
+    return lines
+
+
+def typography_name(token):
+    return lower_camel(token["name"].replace("/", "-").split("-"))
+
+
+def emit_typography(typography_doc):
+    lines = ["  public enum Typography {"]
+    seen = set()
+    for token in typography_doc["tokens"]:
+      name = typography_name(token)
+      if name in seen:
+          continue
+      resolved = token.get("resolved", {})
+      values = resolved.get("ios") or resolved.get("mode-1") or next(iter(resolved.values()), None)
+      if not values:
+          continue
+      seen.add(name)
+      lines.append(
+          f"    public static let {name} = ChordTypographyToken("
+          f"name: {swift_string(token['name'])}, "
+          f"fontSize: {values.get('fontSize', 0)}, "
+          f"lineHeight: {values.get('lineHeight', 0)}, "
+          f"weight: {values.get('fontWeight', 400)}, "
+          f"letterSpacing: {values.get('letterSpacing', 0)})"
+      )
+    lines.append("  }")
+    return lines
+
+
+def build_swift(color_doc, size_doc, typography_doc):
+    lines = [
+        "// Generated by scripts/generate_chord_tokens.py. Do not edit by hand.",
+        "import SwiftUI",
+        "import Foundation",
+        "",
+        "#if canImport(UIKit)",
+        "import UIKit",
+        "#elseif canImport(AppKit)",
+        "import AppKit",
+        "#endif",
+        "",
+        "public struct ChordColorToken: Equatable, Sendable {",
+        "  public let name: String",
+        "  public let lightHex: String",
+        "  public let darkHex: String",
+        "",
+        "  public init(name: String, lightHex: String, darkHex: String) {",
+        "    self.name = name",
+        "    self.lightHex = lightHex",
+        "    self.darkHex = darkHex",
+        "  }",
+        "",
+        "  public var swiftUIColor: SwiftUI.Color {",
+        "    Self.dynamicColor(lightHex: lightHex, darkHex: darkHex)",
+        "  }",
+        "",
+        "  private static func dynamicColor(lightHex: String, darkHex: String) -> SwiftUI.Color {",
+        "    #if canImport(UIKit)",
+        "    SwiftUI.Color(UIColor { traitCollection in",
+        "      nativeColor(hex: traitCollection.userInterfaceStyle == .dark ? darkHex : lightHex)",
+        "    })",
+        "    #elseif canImport(AppKit)",
+        "    SwiftUI.Color(NSColor(name: nil) { appearance in",
+        "      let isDark = appearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua",
+        "      return nativeColor(hex: isDark ? darkHex : lightHex)",
+        "    })",
+        "    #else",
+        "    SwiftUI.Color(hex: lightHex)",
+        "    #endif",
+        "  }",
+        "",
+        "  #if canImport(UIKit)",
+        "  private static func nativeColor(hex: String) -> UIColor {",
+        "    let rgba = rgbaComponents(hex: hex)",
+        "    return UIColor(red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha)",
+        "  }",
+        "  #elseif canImport(AppKit)",
+        "  private static func nativeColor(hex: String) -> NSColor {",
+        "    let rgba = rgbaComponents(hex: hex)",
+        "    return NSColor(red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha)",
+        "  }",
+        "  #endif",
+        "",
+        "  private static func rgbaComponents(hex: String) -> (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {",
+        "    let text = hex.trimmingCharacters(in: CharacterSet(charactersIn: \"#\"))",
+        "    let value = UInt64(text, radix: 16) ?? 0",
+        "    let red: UInt64",
+        "    let green: UInt64",
+        "    let blue: UInt64",
+        "    let alpha: UInt64",
+        "",
+        "    if text.count == 8 {",
+        "      red = (value >> 24) & 0xff",
+        "      green = (value >> 16) & 0xff",
+        "      blue = (value >> 8) & 0xff",
+        "      alpha = value & 0xff",
+        "    } else {",
+        "      red = (value >> 16) & 0xff",
+        "      green = (value >> 8) & 0xff",
+        "      blue = value & 0xff",
+        "      alpha = 0xff",
+        "    }",
+        "",
+        "    return (",
+        "      red: CGFloat(red) / 255.0,",
+        "      green: CGFloat(green) / 255.0,",
+        "      blue: CGFloat(blue) / 255.0,",
+        "      alpha: CGFloat(alpha) / 255.0",
+        "    )",
+        "  }",
+        "}",
+        "",
+        "public struct ChordTypographyToken: Equatable, Sendable {",
+        "  public let name: String",
+        "  public let fontSize: CGFloat",
+        "  public let lineHeight: CGFloat",
+        "  public let weight: Int",
+        "  public let letterSpacing: CGFloat",
+        "",
+        "  public init(name: String, fontSize: CGFloat, lineHeight: CGFloat, weight: Int, letterSpacing: CGFloat) {",
+        "    self.name = name",
+        "    self.fontSize = fontSize",
+        "    self.lineHeight = lineHeight",
+        "    self.weight = weight",
+        "    self.letterSpacing = letterSpacing",
+        "  }",
+        "",
+        "  public var font: SwiftUI.Font {",
+        "    .system(size: fontSize, weight: swiftUIFontWeight)",
+        "  }",
+        "",
+        "  public var lineSpacing: CGFloat {",
+        "    max(lineHeight - fontSize, 0)",
+        "  }",
+        "",
+        "  private var swiftUIFontWeight: SwiftUI.Font.Weight {",
+        "    switch weight {",
+        "    case 800...:",
+        "      .heavy",
+        "    case 700:",
+        "      .bold",
+        "    case 600:",
+        "      .semibold",
+        "    case 500:",
+        "      .medium",
+        "    case 300:",
+        "      .light",
+        "    case ...200:",
+        "      .ultraLight",
+        "    default:",
+        "      .regular",
+        "    }",
+        "  }",
+        "}",
+        "",
+        "public enum ChordToken {",
+    ]
+    lines.extend(emit_colors(color_doc))
+    lines.extend(emit_sizes(size_doc))
+    lines.extend(emit_typography(typography_doc))
+    lines.append("}")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--tokens-dir", default="~/Desktop/chord-design-system/tokens")
+    parser.add_argument("--output", default="Sources/SwiftUIPreviewTest/Generated/ChordTokens.swift")
+    args = parser.parse_args()
+
+    tokens_dir = Path(args.tokens_dir).expanduser()
+    output = Path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+
+    swift = build_swift(
+        load_json(tokens_dir / "color.json"),
+        load_json(tokens_dir / "size.json"),
+        load_json(tokens_dir / "typography.semantic.json"),
+    )
+    output.write_text(swift, encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()

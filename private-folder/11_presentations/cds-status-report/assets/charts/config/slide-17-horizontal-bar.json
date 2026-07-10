@@ -1,0 +1,58 @@
+{
+  "slide": 17,
+  "library": "Chart.js",
+  "type": "bar",
+  "orientation": "horizontal",
+  "denominator": 11,
+  "data": {
+    "labels": [
+      "리스트아이템",
+      "버튼",
+      "아바타/갓배지",
+      "텍스트필드",
+      "바텀시트",
+      "툴팁",
+      "타이틀 영역",
+      "테이블/리더보드"
+    ],
+    "datasets": [
+      {
+        "label": "언급 인원",
+        "data": [
+          7,
+          7,
+          6,
+          4,
+          4,
+          4,
+          4,
+          3
+        ]
+      }
+    ]
+  },
+  "options": {
+    "responsive": false,
+    "indexAxis": "y",
+    "plugins": {
+      "legend": {
+        "display": false
+      },
+      "tooltip": {
+        "enabled": true
+      }
+    },
+    "scales": {
+      "x": {
+        "beginAtZero": true,
+        "max": 11
+      },
+      "y": {
+        "ticks": {
+          "autoSkip": false
+        }
+      }
+    }
+  },
+  "displayRule": "사용량이 아니라 문제/판단/예외/개선 필요로 언급된 인원임을 명시한다."
+}

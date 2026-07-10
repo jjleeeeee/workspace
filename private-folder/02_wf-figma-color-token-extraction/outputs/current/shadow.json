@@ -1,0 +1,144 @@
+{
+  "$schema": "https://our-ds-mcp/schemas/tokens.v1.json",
+  "source": {
+    "origin": "figma:Chord Design System",
+    "fileKey": "DWEduE6GfxYMlyxKPNJ8jA",
+    "collection": "WDS_tokens",
+    "version": "0.6.0",
+    "freshness": "2026-07-03T00:06:03.351Z",
+    "coverage": {
+      "total": 4,
+      "documented": 0,
+      "hidden": 0
+    },
+    "stageLabel": "v1.0"
+  },
+  "modes": [
+    "light",
+    "dark"
+  ],
+  "tokens": [
+    {
+      "id": "token:system.shadow.blur.large",
+      "name": "system/shadow/blur/large",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 24,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 24,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "shadow"
+      ],
+      "platformCode": {
+        "ios": "shadowBlurLarge",
+        "android": "shadowBlurLarge",
+        "web": "shadow-blur-large"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "e81043af6c82a7c077f4e5e4e38de0e848bad496",
+      "diagnostics": [
+        "documentation:missing"
+      ]
+    },
+    {
+      "id": "token:system.shadow.position.x.large",
+      "name": "system/shadow/position/x/large",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 0,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 0,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "shadow"
+      ],
+      "platformCode": {
+        "ios": "shadowPositionxLarge",
+        "android": "shadowPositionxLarge",
+        "web": "shadow-position-x-large"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "e3b97044b91668c212eca0f098c2458f47677166",
+      "diagnostics": [
+        "documentation:missing"
+      ]
+    },
+    {
+      "id": "token:system.shadow.position.y.large",
+      "name": "system/shadow/position/y/large",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 6,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 6,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "shadow"
+      ],
+      "platformCode": {
+        "ios": "shadowPositionyLarge",
+        "android": "shadowPositionyLarge",
+        "web": "shadow-position-y-large"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "642f2a3511914ef2c45ff1e3b7f46f874995b818",
+      "diagnostics": [
+        "documentation:missing"
+      ]
+    },
+    {
+      "id": "token:system.shadow.spread.large",
+      "name": "system/shadow/spread/large",
+      "type": "dimension",
+      "values": {
+        "light": {
+          "raw": 0,
+          "aliasOf": null
+        },
+        "dark": {
+          "raw": 0,
+          "aliasOf": null
+        }
+      },
+      "usage": [
+        "shadow"
+      ],
+      "platformCode": {
+        "ios": "shadowSpreadLarge",
+        "android": "shadowSpreadLarge",
+        "web": "shadow-spread-large"
+      },
+      "description": null,
+      "hidden": false,
+      "figmaKey": "506a2a6116da717f69a165c3f66238b83b92ae92",
+      "diagnostics": [
+        "documentation:missing"
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "documentation:missing",
+      "message": "4/4 tokens have empty descriptions."
+    }
+  ]
+}

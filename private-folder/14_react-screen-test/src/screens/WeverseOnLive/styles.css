@@ -1,0 +1,192 @@
+.wol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-system-size-padding-box-50);        /* 4px */
+  width: 100%;
+}
+
+/* ── Section header ────────────────────────────── */
+.wol__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 var(--cds-system-size-padding-box-200); /* 0 16px */
+  gap: var(--cds-system-size-padding-box-150);       /* 12px */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wol__header-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.wol__title {
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 25px;
+  color: var(--cds-system-color-text-default);       /* #000000 */
+  margin: 0;
+}
+
+.wol__subtitle {
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--cds-system-color-text-gray-500);      /* #8E8E8E */
+  margin: 0;
+}
+
+.wol__trailing {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Card ────────────────────────────────────── */
+.wol__card-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--cds-system-size-padding-box-150); /* 0 10px – Figma-frozen: 10px slot */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wol__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: var(--cds-system-color-surface-default); /* #FFFFFF */
+  box-shadow: 0px 6px 28px 0px var(--cds-system-color-surface-default-reverse-100a); /* rgba(0,0,0,0.1) */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ── Card headers ────────────────────────────── */
+.wol__top-header,
+.wol__bottom-header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: stretch;
+  gap: var(--cds-system-size-padding-box-150);       /* 12px – Figma: 10px+12px padding combo */
+  padding: var(--cds-system-size-padding-box-150) 0; /* 12px 0 */
+}
+
+.wol__card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--cds-system-size-padding-box-150);       /* 12px */
+  padding: var(--cds-system-size-padding-box-100) var(--cds-system-size-padding-box-200); /* 8px 16px */
+  min-height: var(--cds-system-size-padding-box-600); /* 48px */
+  box-sizing: border-box;
+}
+
+.wol__leading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-negative-100); /* -8px overlap */
+  width: 38px;
+  flex-shrink: 0;
+}
+
+.wol__live-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--cds-system-size-padding-box-25) var(--cds-system-size-padding-box-50); /* 2px 4px */
+  height: 16px;
+  background: var(--cds-system-color-roles-negative); /* #FE5B58 */
+  border: 1px solid var(--cds-system-color-surface-default); /* #FFFFFF */
+  border-radius: var(--cds-system-size-padding-box-50); /* 4px */
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 13px;
+  color: var(--cds-system-color-text-default-reverse); /* #FFFFFF */
+  margin-top: -6px;
+}
+
+.wol__card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  gap: var(--cds-system-size-padding-box-150);       /* 10px → closest: 12px */
+}
+
+.wol__card-name {
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--cds-system-color-text-default);       /* #000000 */
+  margin: 0;
+}
+
+.wol__card-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-25);        /* 2px */
+}
+
+.wol__card-group {
+  font-family: WeGothicSans, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--cds-system-color-text-gray-500);      /* #8E8E8E */
+}
+
+.wol__official-badge {
+  width: var(--cds-system-size-padding-box-150);     /* 12px */
+  height: var(--cds-system-size-padding-box-150);    /* 12px */
+  flex-shrink: 0;
+}
+
+/* ── Content thumbnail ──────────────────────── */
+.wol__content {
+  position: relative;
+  width: 100%;
+  height: 209px; /* Figma-frozen: Common_Slot content height */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.wol__content-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.wol__content-img--active {
+  opacity: 1;
+}
+
+.wol__content-dots {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--cds-system-size-padding-box-150) 0; /* 12px 0 */
+  height: 32px;
+}

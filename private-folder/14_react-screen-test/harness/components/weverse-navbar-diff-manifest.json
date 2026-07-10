@@ -1,0 +1,19 @@
+{
+  "screen": "weverse-navbar",
+  "figma": {
+    "file_key": "hSZA1GLBpbgIyDFOnibf99",
+    "node_id": "1:12979",
+    "url": "https://www.figma.com/design/hSZA1GLBpbgIyDFOnibf99/?node-id=1-12979"
+  },
+  "viewport": { "width": 393, "height": 48, "dpr": 1 },
+  "color_regions": [
+    { "name": "navbar-bg", "rect": [0, 0, 393, 48], "css_var": "--cds-system-color-surface-default", "expected_hex": "#ffffff" },
+    { "name": "sparkle-icon", "rect": [313, 12, 24, 24], "css_var": null, "expected_hex": "#00CBD5" }
+  ],
+  "critical_regions": [
+    { "name": "weverse-logo", "rect": [16, 13, 100, 22], "min_score": 85 },
+    { "name": "trailing-icons", "rect": [305, 4, 80, 40], "min_score": 85 }
+  ],
+  "mask_regions": [],
+  "sections": []
+}

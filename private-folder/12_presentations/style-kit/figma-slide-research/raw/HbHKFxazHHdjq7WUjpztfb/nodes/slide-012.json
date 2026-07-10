@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "extractionKind": "figma-console-mcp compact node summary",
+  "sourceFile": {
+    "key": "HbHKFxazHHdjq7WUjpztfb",
+    "name": "Chord ChatBot",
+    "url": "https://www.figma.com/slides/HbHKFxazHHdjq7WUjpztfb"
+  },
+  "slide": {
+    "index": 12,
+    "nodeId": "3:90451",
+    "name": "Slide 12",
+    "width": 1920,
+    "height": 1080,
+    "childCount": 69,
+    "x": 23760,
+    "y": 0,
+    "likelyLayout": "problem-or-painpoint"
+  },
+  "observedPatterns": {
+    "canvas": {
+      "width": 1920,
+      "height": 1080
+    },
+    "finalFontRule": "Force Pretendard for web PPT output, even when Figma reports another font.",
+    "likelyLayout": "problem-or-painpoint",
+    "rootChildCount": 69,
+    "expectedTextHierarchy": "Extract exact text layers on the next deep pass when this slide becomes a rule candidate.",
+    "expectedShapeHierarchy": "Use this compact node as a routing summary; deep geometry should be captured only for promoted patterns."
+  }
+}

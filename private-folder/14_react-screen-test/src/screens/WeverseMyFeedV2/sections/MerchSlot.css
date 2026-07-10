@@ -1,0 +1,319 @@
+/* MerchSlot — Weverse Shop card section */
+/* Figma node 2:2379 */
+
+.wmfv2__merch {
+  padding: 0 10px;
+}
+
+.wmfv2__merch__card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* ── 1. Header ────────────────────────────────── */
+.wmfv2__merch__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  height: 72px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+
+.wmfv2__merch__header-avatar {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.wmfv2__merch__header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wmfv2__merch__header-title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmfv2__merch__header-title {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cds-system-color-text-default);
+  line-height: 1.2;
+}
+
+.wmfv2__merch__header-badge {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.wmfv2__merch__header-sub {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--cds-system-color-text-subtle, #6b7280);
+  line-height: 1.2;
+}
+
+/* ── 2. Hero image ────────────────────────────── */
+.wmfv2__merch__hero-wrap {
+  padding: 0 16px;
+  height: 176px; /* Figma-frozen: Figma node 2:2386 thumbnail h=176px */
+  box-sizing: border-box;
+}
+
+.wmfv2__merch__hero-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.wmfv2__merch__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wmfv2__merch__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+}
+
+.wmfv2__merch__hero-corner-badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmfv2__merch__hero-fav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.wmfv2__merch__hero-fc-tag {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 1px 4px;
+  line-height: 1.4;
+}
+
+.wmfv2__merch__hero-bottom-bar {
+  position: absolute;
+  top: 152px; /* Figma-frozen: 176-24, node 2:2393 top=[152px] */
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: #5989fe;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.wmfv2__merch__hero-bottom-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmfv2__merch__hero-bottom-badge {
+  width: 12px;
+  height: 12px;
+}
+
+.wmfv2__merch__hero-upcoming {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.wmfv2__merch__hero-days {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* ── 3. Product info ──────────────────────────── */
+.wmfv2__merch__product-info {
+  padding: 8px 16px 4px; /* Figma-frozen: bottomHeader y=248 info y=8 h=36, tags y=48 → 8 top, 4 bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wmfv2__merch__product-artist {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cds-system-color-text-default);
+  line-height: 1.3;
+}
+
+.wmfv2__merch__product-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--cds-system-color-text-subtle, #374151);
+  line-height: 1.3;
+}
+
+/* ── 4. Tags ──────────────────────────────────── */
+.wmfv2__merch__tags {
+  padding: 0 16px 8px; /* Figma-frozen: tags y=48 no extra top padding (info ends y=44 in bottomHeader), 8px bottom */
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.wmfv2__merch__tag {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--cds-system-color-text-subtle, #6b7280);
+  border: 1px solid var(--cds-system-color-border-default, #d1d5db);
+  border-radius: 4px;
+  padding: 0 6px; /* Figma-frozen: tag height=16px = 2×border(1px) + line-height(14px), no extra v-padding */
+  line-height: 1.4;
+}
+
+/* ── 5. Horizontal product list ───────────────── */
+.wmfv2__merch__product-list {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 8px 16px 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.wmfv2__merch__product-list::-webkit-scrollbar {
+  display: none;
+}
+
+.wmfv2__merch__product-card {
+  flex: 0 0 146px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wmfv2__merch__product-card-img-wrap {
+  position: relative;
+  width: 146px;
+  height: 146px; /* Figma-frozen: Figma node aspect-[323/323] = square */
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f5f5f5; /* Figma-frozen: Merch(Native) card background #F5F5F5 visible at rounded corners */
+}
+
+.wmfv2__merch__product-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wmfv2__merch__product-card-overlay {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmfv2__merch__product-card-fc-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.wmfv2__merch__product-card-fc-tag {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  padding: 1px 4px;
+  line-height: 1.4;
+  /* Figma-frozen: purple FC tag background from Figma node */
+  background: rgba(120, 60, 220, 0.75);
+}
+
+.wmfv2__merch__product-card-artist {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cds-system-color-text-default);
+  line-height: 1.3;
+  /* Figma-frozen: artist name wraps to 2 lines in 146px card width */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.wmfv2__merch__product-card-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--cds-system-color-text-subtle, #374151);
+  line-height: 1.3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Figma-frozen: Merch(Native) max h=224px → 2-line artist + 2-line name */
+  -webkit-box-orient: vertical;
+}
+
+/* ── 6. Footer ────────────────────────────────── */
+.wmfv2__merch__footer {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wmfv2__merch__more-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cds-system-color-text-default);
+  cursor: pointer;
+  line-height: 1;
+}

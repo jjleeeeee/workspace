@@ -1,0 +1,145 @@
+/* DmSection — WeverseMyFeedV2 */
+/* Source: Figma node 2:2277 */
+
+.wmfv2__dm {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Figma-frozen: node 2:2277 gap between commonSlot(48) and card(y=52) */
+}
+
+/* Section header row */
+.wmfv2__dm__title {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding-inline: var(--cds-system-size-padding-box-200, 16px);
+  font-family: var(--cds-typography-default-font-family-title);
+  font-size: var(--cds-typography-default-base-text-size-text-400);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-800);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-400);
+  color: var(--cds-system-color-text-default);
+}
+
+/* Card */
+.wmfv2__dm__card {
+  margin-inline: 10px;
+  border-radius: var(--cds-system-size-radius-box-200, 16px);
+  background: var(--cds-system-color-surface-default);
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+  padding-top: var(--cds-system-size-padding-box-200, 16px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* TitleHeader row */
+.wmfv2__dm__header {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-100, 8px);
+  min-height: 48px;
+  padding-inline: var(--cds-system-size-padding-box-200, 16px);
+}
+
+.wmfv2__dm__meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.wmfv2__dm__name-row {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-50, 4px);
+}
+
+.wmfv2__dm__name {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-150);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-700);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-150);
+  color: var(--cds-system-color-text-default);
+}
+
+.wmfv2__dm__badge {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+/* Sub-info row: group · time · tags */
+.wmfv2__dm__sub-row {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-system-size-padding-box-50, 4px);
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.wmfv2__dm__sub {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-25);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-25);
+  color: var(--cds-system-color-text-gray-500);
+  white-space: nowrap;
+}
+
+.wmfv2__dm__dot {
+  display: block;
+  color: var(--cds-system-color-text-gray-500);
+  font-size: var(--cds-typography-default-base-text-size-text-25);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-25);
+}
+
+/* Inline tag: "Hide from artist" / CC / SDH */
+.wmfv2__dm__tag {
+  display: inline-flex;
+  align-items: center;
+  height: 16px;
+  padding: 1px var(--cds-system-size-padding-box-50, 4px);
+  border-radius: var(--cds-system-size-radius-box-50, 4px);
+  border: 1px solid var(--cds-system-color-outline-gray-200);
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-25);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-400);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-25);
+  color: var(--cds-system-color-text-gray-500);
+  white-space: nowrap;
+}
+
+/* Bubble row */
+.wmfv2__dm__bubble-row {
+  padding-left: 64px; /* Figma-frozen: avatar(40) + gap(8) + header-pl(16) = 64 */
+  padding-right: var(--cds-system-size-padding-box-200, 16px);
+  padding-top: 4px; /* Figma-frozen: 4px gap between header bottom and bubble top in bubbleContainer */
+  padding-bottom: var(--cds-system-size-padding-box-200, 16px);
+  margin-bottom: 4px; /* Figma-frozen: gap between bubbleContainer(94px) and footer(56px) = 20px, existing pb:16 + mb:4 = 20 */
+}
+
+.wmfv2__dm__bubble {
+  background: var(--cds-system-color-surface-primary-100, #bbf3f6);
+  border: 1px solid rgba(0, 203, 213, 0.1);
+  border-radius: 4px 24px 24px 24px; /* Figma: TL-4 TR-24 BR-24 BL-24 */
+  padding: var(--cds-system-size-padding-box-150, 12px) var(--cds-system-size-padding-box-200, 16px);
+}
+
+.wmfv2__dm__message {
+  display: block;
+  font-family: var(--cds-typography-default-font-family-body);
+  font-size: var(--cds-typography-default-base-text-size-text-100);
+  font-weight: var(--cds-typography-default-base-text-weight-text-weight-500);
+  line-height: var(--cds-typography-default-base-lineheight-text-lineheight-100);
+  color: var(--cds-system-color-text-default);
+}
+
+/* Footer CTA */
+.wmfv2__dm__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+}

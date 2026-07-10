@@ -1,0 +1,5 @@
+.wnb {
+  background: var(--cds-system-color-surface-default);
+  width: 100%;
+  min-height: var(--cds-system-size-padding-box-600); /* 48px */
+}

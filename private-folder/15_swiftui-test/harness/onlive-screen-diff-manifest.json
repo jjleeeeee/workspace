@@ -1,0 +1,323 @@
+{
+  "figma_url": "https://www.figma.com/design/hSZA1GLBpbgIyDFOnibf99/Untitled?node-id=402-7059&t=HGZdG885C2yjFSHi-11",
+  "figma_file_key": "hSZA1GLBpbgIyDFOnibf99",
+  "figma_node_id": "402:7059",
+  "normalization": {
+    "source_scale": 3.04,
+    "source_crop_top": 150,
+    "source_crop_bottom": 0,
+    "canvas_place_x": 0,
+    "canvas_place_y": 0,
+    "background_hex": "#FFFFFF"
+  },
+  "masked_regions": [
+    {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 393,
+        "height": 50
+      },
+      "reason": "iOS status bar time and system indicators are simulator-owned."
+    },
+    {
+      "rect": {
+        "x": 0,
+        "y": 818,
+        "width": 393,
+        "height": 34
+      },
+      "reason": "Home indicator is system chrome."
+    },
+    {
+      "rect": {
+        "x": 338,
+        "y": 48,
+        "width": 55,
+        "height": 62
+      },
+      "reason": "SwiftUI preview host floating controls overlap the top trailing navigation area."
+    }
+  ],
+  "critical_regions": [
+    {
+      "rect": {
+        "x": 16,
+        "y": 164,
+        "width": 122,
+        "height": 32
+      },
+      "minimum_score": 95,
+      "max_position_delta": 4,
+      "reason": "Selected and unselected chip tabs must keep the Figma small-chip geometry."
+    },
+    {
+      "rect": {
+        "x": 160,
+        "y": 396,
+        "width": 73,
+        "height": 16
+      },
+      "minimum_score": 95,
+      "max_position_delta": 4,
+      "reason": "Pagination dots must show the Figma 5-dot carousel count and spacing."
+    },
+    {
+      "rect": {
+        "x": 32,
+        "y": 433,
+        "width": 36,
+        "height": 48
+      },
+      "minimum_score": 90,
+      "max_position_delta": 5,
+      "reason": "Avatar and LIVE badge must render as the DS-backed subject identity, not a blank placeholder."
+    },
+    {
+      "rect": {
+        "x": 32,
+        "y": 560,
+        "width": 329,
+        "height": 24
+      },
+      "minimum_score": 95,
+      "max_position_delta": 4,
+      "reason": "Footer CTA row must align with the Figma ListItem baseline and trailing arrow."
+    }
+  ],
+  "color_regions": [
+    {
+      "name": "screen background",
+      "rect": {
+        "x": 8,
+        "y": 620,
+        "width": 10,
+        "height": 10
+      },
+      "sample_mode": "all",
+      "max_average_distance": 0.02,
+      "figma_token_name": "system/color/surface/default",
+      "swift_reference": "ChordToken.Color.surfaceDefault.swiftUIColor",
+      "figma_resolved_value": "#FFFFFF",
+      "swift_resolved_value": "#FFFFFF",
+      "reason": "Screen background must use surface/default."
+    },
+    {
+      "name": "section title text",
+      "rect": {
+        "x": 16,
+        "y": 124,
+        "width": 88,
+        "height": 24
+      },
+      "sample_mode": "foreground",
+      "max_average_distance": 0.12,
+      "figma_token_name": "system/color/text/default",
+      "swift_reference": "ChordToken.Color.textDefault.swiftUIColor",
+      "figma_resolved_value": "#000000",
+      "swift_resolved_value": "#000000",
+      "reason": "ON LIVE title must use text/default."
+    },
+    {
+      "name": "selected chip fill",
+      "rect": {
+        "x": 20,
+        "y": 172,
+        "width": 45,
+        "height": 18
+      },
+      "sample_mode": "all",
+      "max_average_distance": 0.02,
+      "figma_token_name": "system/color/surface/default-reverse",
+      "swift_reference": "ChordToken.Color.surfaceDefaultReverse.swiftUIColor",
+      "figma_resolved_value": "#000000",
+      "swift_resolved_value": "#000000",
+      "reason": "Selected chip background must use surface/default-reverse."
+    },
+    {
+      "name": "unselected chip outline",
+      "rect": {
+        "x": 83,
+        "y": 166,
+        "width": 54,
+        "height": 31
+      },
+      "sample_mode": "foreground",
+      "max_average_distance": 0.12,
+      "figma_token_name": "system/color/button/outlined_gray",
+      "swift_reference": "ChordToken.Color.buttonOutlinedGray.swiftUIColor",
+      "figma_resolved_value": "#DEDEDE",
+      "swift_resolved_value": "#DEDEDE",
+      "reason": "Unselected chip outline must use the button outlined gray token."
+    },
+    {
+      "name": "card surface",
+      "rect": {
+        "x": 26,
+        "y": 426,
+        "width": 16,
+        "height": 16
+      },
+      "sample_mode": "all",
+      "max_average_distance": 0.02,
+      "figma_token_name": "system/color/surface/default-4",
+      "swift_reference": "ChordToken.Color.surfaceDefault4.swiftUIColor",
+      "figma_resolved_value": "#FFFFFF",
+      "swift_resolved_value": "#FFFFFF",
+      "reason": "Card background must use surface/default-4."
+    },
+    {
+      "name": "live title text",
+      "rect": {
+        "x": 78,
+        "y": 438,
+        "width": 207,
+        "height": 23
+      },
+      "sample_mode": "foreground",
+      "max_average_distance": 0.12,
+      "figma_token_name": "system/color/text/default",
+      "swift_reference": "ChordToken.Color.textDefault.swiftUIColor",
+      "figma_resolved_value": "#000000",
+      "swift_resolved_value": "#000000",
+      "reason": "Live title must use text/default."
+    },
+    {
+      "name": "artist subtitle text",
+      "rect": {
+        "x": 79,
+        "y": 459,
+        "width": 70,
+        "height": 17
+      },
+      "sample_mode": "foreground",
+      "max_average_distance": 0.14,
+      "figma_token_name": "system/color/text/gray-500",
+      "swift_reference": "ChordToken.Color.textGray500.swiftUIColor",
+      "figma_resolved_value": "#8E8E8E",
+      "swift_resolved_value": "#8E8E8E",
+      "reason": "Artist subtitle must use text/gray-500."
+    },
+    {
+      "name": "official badge",
+      "rect": {
+        "x": 143,
+        "y": 459,
+        "width": 12,
+        "height": 12
+      },
+      "sample_mode": "dominant_foreground",
+      "max_average_distance": 0.14,
+      "figma_token_name": "system/color/text/primary",
+      "swift_reference": "ChordToken.Color.textPrimary.swiftUIColor",
+      "figma_resolved_value": "#00B8C1",
+      "swift_resolved_value": "#00B8C1",
+      "reason": "Official badge should use the primary turquoise token."
+    },
+    {
+      "name": "live badge red",
+      "rect": {
+        "x": 36,
+        "y": 458,
+        "width": 30,
+        "height": 16
+      },
+      "sample_mode": "dominant_foreground",
+      "max_average_distance": 0.12,
+      "figma_token_name": "system/fixed_color/status/danger-red",
+      "swift_reference": "ChordToken.Color.fixedStatusDangerRed.swiftUIColor",
+      "figma_resolved_value": "#FE5B58",
+      "swift_resolved_value": "#FE5B58",
+      "reason": "LIVE badge fill must use fixed danger red."
+    },
+    {
+      "name": "footer divider",
+      "rect": {
+        "x": 16,
+        "y": 540,
+        "width": 361,
+        "height": 1
+      },
+      "sample_mode": "all",
+      "max_average_distance": 0.05,
+      "figma_token_name": "system/color/divide/default-50a",
+      "swift_reference": "ChordToken.Color.divideDefault50a.swiftUIColor",
+      "figma_resolved_value": "#0000000A",
+      "swift_resolved_value": "#0000000A",
+      "reason": "Footer separator must use the faint default-50a divider token."
+    },
+    {
+      "name": "footer cta text",
+      "rect": {
+        "x": 32,
+        "y": 564,
+        "width": 275,
+        "height": 22
+      },
+      "sample_mode": "foreground",
+      "max_average_distance": 0.12,
+      "figma_token_name": "system/color/text/default",
+      "swift_reference": "ChordToken.Color.textDefault.swiftUIColor",
+      "figma_resolved_value": "#000000",
+      "swift_resolved_value": "#000000",
+      "reason": "Footer CTA text must use text/default."
+    },
+    {
+      "name": "top navigation icons",
+      "rect": {
+        "x": 18,
+        "y": 63,
+        "width": 357,
+        "height": 24
+      },
+      "sample_mode": "foreground",
+      "max_average_distance": 0.16,
+      "figma_token_name": "system/color/icon/default",
+      "swift_reference": "ChordToken.Color.iconDefault.swiftUIColor",
+      "figma_resolved_value": "#000000",
+      "swift_resolved_value": "#000000",
+      "reason": "Top navigation glyphs must use icon/default."
+    }
+  ],
+  "semantic_pass_regions": [
+    {
+      "rect": {
+        "x": 16,
+        "y": 122,
+        "width": 120,
+        "height": 28
+      },
+      "figma_token_name": "headline-m/system-800",
+      "swift_reference": "ChordToken.Typography.headlineMSystem800",
+      "figma_resolved_value": "fontSize=21,lineHeight=27,weight=800",
+      "swift_resolved_value": "fontSize=21,lineHeight=27,weight=800",
+      "reason": "Section title uses the same typography token; residual delta is platform font rendering."
+    },
+    {
+      "rect": {
+        "x": 78,
+        "y": 437,
+        "width": 220,
+        "height": 40
+      },
+      "figma_token_name": "body-m/system-700 + caption-m/system-400",
+      "swift_reference": "ChordToken.Typography.bodyMSystem700 + ChordToken.Typography.captionMSystem400",
+      "figma_resolved_value": "title=16/22/700,subtitle=13/17/400",
+      "swift_resolved_value": "title=16/22/700,subtitle=13/17/400",
+      "reason": "Card title header text uses DS typography tokens; icon and avatar are covered by critical/color regions."
+    },
+    {
+      "rect": {
+        "x": 32,
+        "y": 491,
+        "width": 329,
+        "height": 38
+      },
+      "figma_token_name": "body-xs/system-400",
+      "swift_reference": "ChordToken.Typography.bodyXsSystem400",
+      "figma_resolved_value": "fontSize=14,lineHeight=18,weight=400",
+      "swift_resolved_value": "fontSize=14,lineHeight=18,weight=400",
+      "reason": "Body copy uses the same typography token; emoji glyph rendering can vary by platform."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "_comment": "Copy to harness/<screen-slug>-diff-manifest.json and fill in values",
+  "screen": "screen-slug",
+  "figma": {
+    "fileKey": "FIGMA_FILE_KEY",
+    "nodeId": "NODE:ID"
+  },
+  "viewport": {
+    "width": 393,
+    "height": 852,
+    "deviceScaleFactor": 2
+  },
+  "_sections_comment": "Optional. Omit for single-viewport screens. Add when screen is taller than 852px (scrollable). Save ONE full-height Figma screenshot — harness crops it per section automatically.",
+  "sections": [
+    {
+      "name": "hero",
+      "_comment": "scroll_y: CSS px to scroll before capture. capture_height: CSS px to crop.",
+      "scroll_y": 0,
+      "capture_height": 852
+    },
+    {
+      "name": "feed",
+      "scroll_y": 852,
+      "capture_height": 852
+    },
+    {
+      "name": "footer",
+      "scroll_y": 1704,
+      "capture_height": 400
+    }
+  ],
+  "mask_regions": [
+    {
+      "name": "status-bar",
+      "_comment": "Mask OS status bar to avoid time/signal diff. rect: [x, y, width, height] in CSS px",
+      "rect": [0, 0, 393, 44]
+    }
+  ],
+  "critical_regions": [
+    {
+      "name": "example-cta",
+      "_comment": "rect: [x, y, width, height] in CSS px (before DPR)",
+      "rect": [16, 720, 361, 48],
+      "min_score": 95
+    }
+  ],
+  "color_regions": [
+    {
+      "name": "primary-button",
+      "_comment": "figma_token: Figma variable path; css_var: --cds-* var; expected_hex: auto-filled by populate-manifest",
+      "rect": [16, 720, 361, 48],
+      "figma_token": "system/color/button/default",
+      "css_var": "--cds-system-color-button-default",
+      "expected_hex": "#00CBD5"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "extractionKind": "figma-console-mcp compact node summary",
+  "sourceFile": {
+    "key": "5ApcqynkNIBm8gFf0pCfft",
+    "name": "LLM to Harness Workflow",
+    "url": "https://www.figma.com/slides/5ApcqynkNIBm8gFf0pCfft"
+  },
+  "slide": {
+    "index": 18,
+    "nodeId": "37:745",
+    "name": "Slide 18",
+    "width": 1920,
+    "height": 1080,
+    "childCount": 3,
+    "x": 32400,
+    "y": 0,
+    "likelyLayout": "llm-typing-pattern"
+  },
+  "observedPatterns": {
+    "canvas": {
+      "width": 1920,
+      "height": 1080
+    },
+    "finalFontRule": "Force Pretendard for web PPT output, even when Figma reports another font.",
+    "likelyLayout": "llm-typing-pattern",
+    "rootChildCount": 3,
+    "expectedTextHierarchy": "Extract exact text layers on the next deep pass when this slide becomes a rule candidate.",
+    "expectedShapeHierarchy": "Use this compact node as a routing summary; deep geometry should be captured only for promoted patterns."
+  }
+}

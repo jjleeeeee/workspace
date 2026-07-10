@@ -1,0 +1,30 @@
+/* AiBanner section styles */
+/* Source: Figma nodes 2:2274, 2:2377 */
+
+.wmfv2__ai-banner {
+  margin-inline: 10px;
+  height: 53px; /* Figma-frozen: AI Banner instance 2:2275 h=53px */
+  box-sizing: border-box;
+  padding: 0 var(--cds-system-size-padding-box-200, 16px);
+  border: 1px solid var(--cds-system-color-roles-primary);
+  border-radius: 999px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.wmfv2__ai-banner__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.wmfv2__ai-banner__text {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--cds-system-color-text-default);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

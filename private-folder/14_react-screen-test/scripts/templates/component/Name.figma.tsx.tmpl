@@ -1,0 +1,15 @@
+import figma from "@figma/code-connect";
+import { {{NAME}} } from "./{{NAME}}";
+
+figma.connect(
+  {{NAME}},
+  "{{FIGMA_URL}}",
+  {
+    props: {
+{{PROPS_BLOCK}}
+    },
+    example: ({{EXAMPLE_PARAMS}}) => (
+      <{{NAME}} {{EXAMPLE_ATTRS}} />
+    ),
+  }
+);

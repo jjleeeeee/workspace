@@ -1,0 +1,54 @@
+{
+  "slide": 8,
+  "library": "Chart.js",
+  "type": "bar",
+  "orientation": "horizontal",
+  "denominator": 11,
+  "data": {
+    "labels": [
+      "운영/반복 업무에서 시간 단축 체감",
+      "디테치 빈도는 낮다고 보는 자기보고",
+      "리스트아이템 관련 어려움 또는 논의",
+      "개발 구현 상태 불투명 언급",
+      "기획자 통역 비용 언급",
+      "LLM 코드 챗봇 실사용"
+    ],
+    "datasets": [
+      {
+        "label": "언급 인원",
+        "data": [
+          8,
+          8,
+          7,
+          6,
+          5,
+          1
+        ]
+      }
+    ]
+  },
+  "options": {
+    "responsive": false,
+    "indexAxis": "y",
+    "plugins": {
+      "legend": {
+        "display": false
+      },
+      "tooltip": {
+        "enabled": true
+      }
+    },
+    "scales": {
+      "x": {
+        "beginAtZero": true,
+        "max": 11
+      },
+      "y": {
+        "ticks": {
+          "autoSkip": false
+        }
+      }
+    }
+  },
+  "displayRule": "항목 라벨에는 n=11 기준임을 함께 표기한다."
+}
