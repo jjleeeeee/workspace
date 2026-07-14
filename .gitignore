@@ -31,6 +31,8 @@ figma-make-template/
 second-brain/
 private-folder/95_mac-app-test/
 .claude/worktrees/
+chord-design-system/
+design-diff-desktop-app/
 
 # 임시/실험 산출물 — Codex 리뷰 노이즈 제거
 .tmp/
