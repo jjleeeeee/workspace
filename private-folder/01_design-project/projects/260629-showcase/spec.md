@@ -6,6 +6,7 @@
 
 <!-- 위키 내용 paste 시작 -->
 <!-- adf:unknown type="layoutSection" -->
+<!-- adf:unknown type="layoutSection" -->
 {
   "type": "layoutSection",
   "marks": [
@@ -185,9 +186,9 @@
                         {
                           "type": "status",
                           "attrs": {
-                            "color": "yellow",
+                            "color": "blue",
                             "style": "bold",
-                            "text": "Draft"
+                            "text": "Done"
                           }
                         },
                         {

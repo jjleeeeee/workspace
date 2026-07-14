@@ -14,6 +14,8 @@ export default defineConfig({
         __dirname,
         "../04_wf-figma-to-react-components/src/components/index.ts"
       ),
+      "react": path.resolve(__dirname, "node_modules/react"),
+      "react-dom": path.resolve(__dirname, "node_modules/react-dom"),
     },
   },
   test: {
